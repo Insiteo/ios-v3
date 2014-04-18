@@ -1,4 +1,4 @@
-# Insiteo Android sample application
+# Insiteo iOS sample application
 =======
 
 
