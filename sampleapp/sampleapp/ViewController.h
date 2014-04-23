@@ -17,6 +17,8 @@
     ISMap2DView * m_map2DView;
     
     ISGfxLocationProvider * m_locationProvider;
+    ISGfxItineraryProvider * m_itineraryProvider;
+    ISGeofenceProvider * m_geofenceProvider;
 }
 
 @property (nonatomic, retain) IBOutlet UIView * mapContentView;

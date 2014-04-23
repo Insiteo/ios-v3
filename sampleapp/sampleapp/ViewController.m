@@ -40,7 +40,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)startMap {
     //Initialize map controller
-    m_map2DView = [ISMap2DView map2DViewWithFrame:self.mapContentView.frame andMapListener:self];
+    m_map2DView = [[ISMap2DView map2DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
     [self.mapContentView addSubview:m_map2DView];
     
     //Add location renderer
@@ -48,8 +48,8 @@ int const ACTIONSHEET_ACTIONS = 1;
     [m_map2DView addRenderer:[m_locationProvider renderer]];
     
     //Add itinerary renderer
-    ISGfxItineraryProvider * itineraryProvider = [m_locationProvider getLbsModule:LBS_MODULE_ITINERARY];
-    ISItineraryRenderer * itineraryRenderer = [itineraryProvider renderer];
+    m_itineraryProvider = [[m_locationProvider getLbsModule:LBS_MODULE_ITINERARY] retain];
+    ISItineraryRenderer * itineraryRenderer = [m_itineraryProvider renderer];
     [itineraryRenderer setRenderListener:self];
     [m_map2DView addRenderer:itineraryRenderer];
     
@@ -59,6 +59,9 @@ int const ACTIONSHEET_ACTIONS = 1;
 //    [itineraryProvider setBackStrokeThickness:20.0];
 //    [itineraryProvider setBackFillColor:[UIColor blueColor]];
 //    [itineraryProvider setOnlyPath:YES];
+    
+    //Geofencing
+    m_geofenceProvider = [[m_locationProvider getLbsModule:LBS_MODULE_GEOFENCING] retain];
     
     [m_map2DView startRendering];
 }
@@ -325,11 +328,9 @@ int const ACTIONSHEET_ACTIONS = 1;
 }
 
 - (void)mainRecomputeItinerary {
-    ISGfxItineraryProvider * itineraryProvider = [m_locationProvider getLbsModule:LBS_MODULE_ITINERARY];
-    
-    if (itineraryProvider != nil) {
+    if (m_itineraryProvider != nil) {
         //Request an itinerary frow the current user location
-        [itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:CGPointMake(200, 100) andEndMapId:2 andListener:self andPMR:NO];
+        [m_itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:CGPointMake(200, 100) andEndMapId:2 andListener:self andPMR:NO];
     }
 }
 
@@ -360,22 +361,20 @@ int const ACTIONSHEET_ACTIONS = 1;
 #pragma mark - IBAction
 
 - (void)computeItinerary {
-    ISGfxItineraryProvider * itineraryProvider = [m_locationProvider getLbsModule:LBS_MODULE_ITINERARY];
-    if (itineraryProvider != nil) {
+    if (m_itineraryProvider != nil) {
         //Request an itinerary between two points on the current map
-        [itineraryProvider requestItineraryWithStartPoint:CGPointMake(50, 50) andStartMapId:1 andEndPoint:CGPointMake(200, 100) andEndMapId:2 andListener:self andPMR:NO];
+        [m_itineraryProvider requestItineraryWithStartPoint:CGPointMake(50, 50) andStartMapId:1 andEndPoint:CGPointMake(200, 100) andEndMapId:2 andListener:self andPMR:NO];
     }
 }
 
 - (void)computeOptimizedRoute {
-    ISGfxItineraryProvider * itineraryProvider = [m_locationProvider getLbsModule:LBS_MODULE_ITINERARY];
-    if (itineraryProvider != nil) {
+    if (m_itineraryProvider != nil) {
 #define FIRST_MAP_ID 1
 #define SECOND_MAP_ID 2
 #define MAX_COORDINATES 200
         
         //Request an optimized itinerary for random positions
-        [itineraryProvider requestOptimizedItineraryWithWaypoints:[NSArray arrayWithObjects:[ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], nil] andOptimMode:ISEOptimizationModeNearestNeighbourShortestPath andKeepFirstPosition:YES andKeepLastPosition:NO andListener:self andPMR:NO];
+        [m_itineraryProvider requestOptimizedItineraryWithWaypoints:[NSArray arrayWithObjects:[ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], nil] andOptimMode:ISEOptimizationModeNearestNeighbourShortestPath andKeepFirstPosition:YES andKeepLastPosition:NO andListener:self andPMR:NO];
     }
 }
 
@@ -465,16 +464,13 @@ int const ACTIONSHEET_ACTIONS = 1;
 }
 
 - (IBAction)onLocationButtonPush:(id)sender {
-    //Get geofence module
-    ISGeofenceProvider * geofenceProvider = [m_locationProvider getLbsModule:LBS_MODULE_GEOFENCING];
-
     //Check if location is started
     if (m_locationProvider.isStarted) {
         //Stop location
         [m_locationProvider stopLocation];
         
         //"Stop" geofencing
-        [geofenceProvider setListener:nil];
+        [m_geofenceProvider setListener:nil];
         
         //And reset rotation
         [m_map2DView rotateWithAngle:0 andAnimated:NO];
@@ -483,7 +479,7 @@ int const ACTIONSHEET_ACTIONS = 1;
         [NSThread detachNewThreadSelector:@selector(threadStartLocation) toTarget:self withObject:nil];
         
         //"Start" geofencing
-        [geofenceProvider setListener:self];
+        [m_geofenceProvider setListener:self];
     }
 }
 
@@ -502,6 +498,14 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [m_map2DView release];
+    [m_locationProvider release];
+    [m_itineraryProvider release];
+    [m_geofenceProvider release];
+    [super dealloc];
 }
 
 @end
