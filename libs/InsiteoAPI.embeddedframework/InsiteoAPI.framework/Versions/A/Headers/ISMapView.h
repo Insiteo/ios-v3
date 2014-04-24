@@ -211,6 +211,7 @@
  @param animated Boolean used to know if an animation needs to be performed.
  */
 - (void)centerMapWithPosition:(ISPosition *)position andAnimated:(Boolean)animated;
+- (void)translateAutomatic:(ISPosition *)position __deprecated_msg("Please now use the centerMapWithPosition:andAnimated method");
 
 /*!
  Method used to center the map on a specific position (in meters).
@@ -250,6 +251,7 @@
  @param animated A Boolean used to know if we zoom with animation.
  */
 - (void)zoomWithZoomLevel:(float)zoomLevel andAnimated:(Boolean)animated;
+- (void)zoomAutomatic:(NSNumber *)zoomLevel __deprecated_msg("Please now use the zoomWithZoomLevel:andAnimated method");
 
 /*!
  Method called to zoom to a zoom level for a specific map. We keep the current center position.
@@ -290,6 +292,7 @@
  @param duration Wanted animation duration.
  */
 - (void)rotateWithAngle:(float)angle andAnimated:(Boolean)animated andDuration:(float)duration;
+- (void)setRotationAngle:(float)rotationAngle __deprecated_msg("Please now use the rotateWithAngle method");
 
 #pragma mark - Change
 
@@ -364,6 +367,7 @@
  @param priority The priority to update.
  */
 - (void)setRendererPriorityWithRTOClass:(Class)rtoClass andPriority:(int)priority;
+- (void)setPriorityWithRTOClass:(Class)rtoClass andPriority:(int)priority __deprecated_msg("Please now use the setRendererPriorityWithRTOClass:andPriority method");
 
 /*!
  Method called to specify if a Renderer need to be displayed.
@@ -371,6 +375,7 @@
  @param display Boolean used to set if the Renderer will be displayed.
  */
 - (void)setRendererDisplayWithRTOClass:(Class)rtoClass andDisplay:(Boolean)display;
+- (void)setDisplayEnabledWithRTOClass:(Class)rtoClass andDisplay:(Boolean)displayEnabled __deprecated_msg("Please now use the setRendererDisplayWithRTOClass:andDisplay method");
 
 /*!
  Method called to specify if a Renderer need to answer on a touch event.
@@ -378,6 +383,7 @@
  @param touch Boolean used to set if the Renderer will handle touch events.
  */
 - (void)setRendererTouchWithRTOClass:(Class)rtoClass andTouch:(Boolean)touch;
+- (void)setTouchEnabledWithRTOClass:(Class)rtoClass andTouch:(Boolean)touchEnabled __deprecated_msg("Please now use the setTouchEnabledWithRTOClass:andTouch method");
 
 #pragma mark - RTO Management
 
