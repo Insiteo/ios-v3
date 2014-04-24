@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISGeofenceProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGeofenceProvider</TokenIdentifier>
+			<Abstract type="html">This class handles the geofencing process. You can retrieve an instance of it by calling getModule:GEOFENCING on your location provider. It provides a way to be notified when location is detected in a certain area (see ISGeofenceZone, defined on Insiteo servers. To use this class, you just have to call setListener(ISPGeofenceListener, and start the location. The listener will then receive notification each time location enter/stay/leave an area.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/setListener:</TokenIdentifier>
+			<Abstract type="html">Geofencing notifications listener.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPGeofenceListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceProvider/listener</TokenIdentifier>
+			<Abstract type="html">Geofencing notifications listener.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPGeofenceListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/setIsInitialized:</TokenIdentifier>
+			<Abstract type="html">Boolean use to know if the provider is initialized.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isInitialized</Declaration>
+			
+			
+			<Anchor>//api/name/isInitialized</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceProvider/isInitialized</TokenIdentifier>
+			<Abstract type="html">Boolean use to know if the provider is initialized.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isInitialized</Declaration>
+			
+			
+			<Anchor>//api/name/isInitialized</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

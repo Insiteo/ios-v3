@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISInitTask.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISInitTask</TokenIdentifier>
+			<Abstract type="html">Class used to represent an API initialization task.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>
+			
+			<NodeRef refid="34"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitTask/setInitListener:</TokenIdentifier>
+			<Abstract type="html">initialization events listener.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
+			
+			
+			<Anchor>//api/name/initListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitTask/initListener</TokenIdentifier>
+			<Abstract type="html">initialization events listener.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
+			
+			
+			<Anchor>//api/name/initListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitTask/initWithInitListener:andInitParameters:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithInitListener:(id&lt;ISPInitListener&gt;)listener andInitParameters:(ISInitParameters *)initParameters</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The initialization listener to notify.</Abstract>
+				</Parameter><Parameter>
+					<Name>initParameters</Name>
+					<Abstract type="html">The initialization parameters to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithInitListener:andInitParameters:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitTask/initAPI</TokenIdentifier>
+			<Abstract type="html">Method called to initialize the API.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)initAPI</Declaration>
+			
+			
+			<Anchor>//api/name/initAPI</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

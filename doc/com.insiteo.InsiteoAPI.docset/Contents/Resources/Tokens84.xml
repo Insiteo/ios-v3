@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPCompassListener.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPCompassListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle compass events.</Abstract>
+			<DeclaredIn>ISPCompassListener.h</DeclaredIn>
+			
+			<NodeRef refid="84"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPCompassListener/onAzimuthChanged:</TokenIdentifier>
+			<Abstract type="html">Method called when the azimuth changed.</Abstract>
+			<DeclaredIn>ISPCompassListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onAzimuthChanged:(float)azimuthInRad</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>azimuthInRad</Name>
+					<Abstract type="html">Last azimuth.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onAzimuthChanged:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

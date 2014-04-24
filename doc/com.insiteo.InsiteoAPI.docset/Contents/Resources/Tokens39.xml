@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISItineraryRenderer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItineraryRenderer</TokenIdentifier>
+			<Abstract type="html">Class used to handle itinerary rendering.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setCurrentStepId:</TokenIdentifier>
+			<Abstract type="html">Current itinerary step identifier.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int currentStepId</Declaration>
+			
+			
+			<Anchor>//api/name/currentStepId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryRenderer/currentStepId</TokenIdentifier>
+			<Abstract type="html">Current itinerary step identifier.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int currentStepId</Declaration>
+			
+			
+			<Anchor>//api/name/currentStepId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setRenderListener:</TokenIdentifier>
+			<Abstract type="html">Listener reference for ISGfxItinerary special touch events.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPItineraryRenderListener&gt; renderListener</Declaration>
+			
+			
+			<Anchor>//api/name/renderListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryRenderer/renderListener</TokenIdentifier>
+			<Abstract type="html">Listener reference for ISGfxItinerary special touch events.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPItineraryRenderListener&gt; renderListener</Declaration>
+			
+			
+			<Anchor>//api/name/renderListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setItineraryAvailable:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if an itinerary is available (stored).</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean itineraryAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/itineraryAvailable</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryRenderer/itineraryAvailable</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if an itinerary is available (stored).</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean itineraryAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/itineraryAvailable</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setLayer:</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryRenderer/layer</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/updateItinerary:</TokenIdentifier>
+			<Abstract type="html">Method called to update the displayed itinerary.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateItinerary:(ISGfxItinerary *)gfxItinerary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>gfxItinerary</Name>
+					<Abstract type="html">New itinerary to display.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateItinerary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setBackFillColor:</TokenIdentifier>
+			<Abstract type="html">Method called to change the itinerary route background color.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)setBackFillColor:(UIColor *)backFillColor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>backFillColor</Name>
+					<Abstract type="html">New background color.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBackFillColor:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setBackStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Method called to change the itinerary route background thickness.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)setBackStrokeThickness:(float)backStrokeThickness</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>backStrokeThickness</Name>
+					<Abstract type="html">New background thickness.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBackStrokeThickness:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setFrontFillColor:</TokenIdentifier>
+			<Abstract type="html">Method called to change the itinerary route foreground color.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)setFrontFillColor:(UIColor *)frontFillColor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frontFillColor</Name>
+					<Abstract type="html">New foreground color.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFrontFillColor:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setFrontStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Method called to change the itinerary route foreground thickness.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)setFrontStrokeThickness:(float)frontStrokeThickness</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frontStrokeThickness</Name>
+					<Abstract type="html">New foreground thickness.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFrontStrokeThickness:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setSelectedFillColor:</TokenIdentifier>
+			<Abstract type="html">Method called to change the itinerary route selected color.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)setSelectedFillColor:(UIColor *)selectedFillColor</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>selectedFillColor</Name>
+					<Abstract type="html">New selected color.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSelectedFillColor:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRenderer/setOnlyPath:</TokenIdentifier>
+			<Abstract type="html">Method called to change the way the route is drawn.</Abstract>
+			<DeclaredIn>ISItineraryRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)setOnlyPath:(Boolean)onlyPath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>onlyPath</Name>
+					<Abstract type="html">Boolean used to know if the itinerary only draw its path and no additional overlays.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOnlyPath:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

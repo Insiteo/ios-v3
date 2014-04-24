@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISDBHelperAnalytics.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISDBHelperAnalytics</TokenIdentifier>
+			<Abstract type="html">Class that handles analytics database stuff.</Abstract>
+			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/instance</TokenIdentifier>
+			<Abstract type="html">Method used to get the ISDBHelperAnalytics unique instance.</Abstract>
+			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			
+			<Declaration>+ (ISDBHelperAnalytics *)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">The ISDBHelperAnalytics unique instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/addUserEvent:</TokenIdentifier>
+			<Abstract type="html">Method used to send a analytics user event.</Abstract>
+			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			
+			<Declaration>+ (void)addUserEvent:(ISAnalyticsUserEvent *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The event to send.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addUserEvent:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/addGenericEvent:</TokenIdentifier>
+			<Abstract type="html">Method used to send a analytics generic event.</Abstract>
+			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			
+			<Declaration>+ (void)addGenericEvent:(ISAnalyticsGenericEvent *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The event to send.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGenericEvent:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/addLocationEvent:</TokenIdentifier>
+			<Abstract type="html">Method used to send a analytics location event.</Abstract>
+			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			
+			<Declaration>+ (void)addLocationEvent:(ISAnalyticsLocationEvent *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The event to send.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addLocationEvent:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,1147 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ISPRTO Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">InsiteoAPI </a></h1>
+				<a id="developerHome" href="../index.html">INSITEO</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ISPRTO Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/mapId">&nbsp;&nbsp;&nbsp;&nbsp;mapId</option>
+	
+	<option value="//api/name/object3d">&nbsp;&nbsp;&nbsp;&nbsp;object3d</option>
+	
+	<option value="//api/name/renderMode">&nbsp;&nbsp;&nbsp;&nbsp;renderMode</option>
+	
+	<option value="//api/name/rtoId">&nbsp;&nbsp;&nbsp;&nbsp;rtoId</option>
+	
+	<option value="//api/name/zoneId">&nbsp;&nbsp;&nbsp;&nbsp;zoneId</option>
+	
+	<option value="//api/name/zoneOffset">&nbsp;&nbsp;&nbsp;&nbsp;zoneOffset</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/cloneRTO">&nbsp;&nbsp;&nbsp;&nbsp;- cloneRTO</option>
+	
+	<option value="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:">&nbsp;&nbsp;&nbsp;&nbsp;- invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</option>
+	
+	<option value="//api/name/onTouchDown:">&nbsp;&nbsp;&nbsp;&nbsp;- onTouchDown:</option>
+	
+	<option value="//api/name/onTouchMove:">&nbsp;&nbsp;&nbsp;&nbsp;- onTouchMove:</option>
+	
+	<option value="//api/name/onTouchUp:">&nbsp;&nbsp;&nbsp;&nbsp;- onTouchUp:</option>
+	
+	<option value="//api/name/removeFromLayer:">&nbsp;&nbsp;&nbsp;&nbsp;- removeFromLayer:</option>
+	
+	<option value="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:">&nbsp;&nbsp;&nbsp;&nbsp;- render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</option>
+	
+	<option value="//api/name/setResources">&nbsp;&nbsp;&nbsp;&nbsp;- setResources</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_General">General</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Rendering">Rendering</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Touch">Touch</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapId">mapId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/object3d">object3d</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/renderMode">renderMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rtoId">rtoId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoneId">zoneId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoneOffset">zoneOffset</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cloneRTO">cloneRTO</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:">invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onTouchDown:">onTouchDown:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onTouchMove:">onTouchMove:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onTouchUp:">onTouchUp:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeFromLayer:">removeFromLayer:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:">render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setResources">setResources</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ISPRTO Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ISPRTO Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ISPRTO.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Protocol used to represent the beahviour of an RTO (rendering and touch).</p><div class="warning"><p><strong>Warning:</strong> In order to create an RTO with bitmaps, Cocos2d needs to be initialized, otherwise the application will crash.</p></div><div class="warning"><p><strong>Warning:</strong> In order to use Cocos2d and your own RTO (add to the current ISLayer), you will need to give it a unique identifier which you can get by calling <a href="../Classes/ISLayer.html#//api/name/generateCocos2dUniqueId">[ISLayer generateCocos2dUniqueId]</a>.</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="General" name="task_General"></a>
+						<h3 class="subsubtitle task-title">General</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rtoId">&nbsp;&nbsp;rtoId</a></code>
+		<span class="tooltip"><p>A RTO unique identifier for the current class.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapId">&nbsp;&nbsp;mapId</a></code>
+		<span class="tooltip"><p>RTO related map identifier (@see ISERTOMapId for general).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/zoneId">&nbsp;&nbsp;zoneId</a></code>
+		<span class="tooltip"><p>Related zone identifier (-1 if no zone).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cloneRTO">&ndash;&nbsp;cloneRTO</a></code>
+		<span class="tooltip"><p>Method called to clone an RTO (used when adding an RTO in several zones).</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+						
+						<a title="Rendering" name="task_Rendering"></a>
+						<h3 class="subsubtitle task-title">Rendering</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:">&ndash;&nbsp;invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</a></code>
+		<span class="tooltip"><p>Method called to draw an RTO with a ratio and an offset.
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
+If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setResources">&ndash;&nbsp;setResources</a></code>
+		<span class="tooltip"><p>Method called to initialize RTO resources such as images, labels etc&hellip;</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeFromLayer:">&ndash;&nbsp;removeFromLayer:</a></code>
+		<span class="tooltip"><p>Method called to remove an RTO from the Cocos2d layer.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+						
+						<a title="Touch" name="task_Touch"></a>
+						<h3 class="subsubtitle task-title">Touch</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/onTouchDown:">&ndash;&nbsp;onTouchDown:</a></code>
+		<span class="tooltip"><p>Method called when an RTO was touched down.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/onTouchMove:">&ndash;&nbsp;onTouchMove:</a></code>
+		<span class="tooltip"><p>Method called when an RTO was touch-moved.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/onTouchUp:">&ndash;&nbsp;onTouchUp:</a></code>
+		<span class="tooltip"><p>Method called when an RTO was touched up.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/renderMode">&nbsp;&nbsp;renderMode</a></code>
+		<span class="tooltip"><p>Current map render mode (2D or 3D).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/zoneOffset">&nbsp;&nbsp;zoneOffset</a></code>
+		<span class="tooltip"><p>Zone offset in meters</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/object3d">&nbsp;&nbsp;object3d</a></code>
+		<span class="tooltip"><p>3D Object to handle in case of 3D rendering.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:">&ndash;&nbsp;render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</a></code>
+		<span class="tooltip"><p>Method called to handle 3D rendering stuff.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/mapId" title="mapId"></a>
+	<h3 class="subsubtitle method-title">mapId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>RTO related map identifier (@see ISERTOMapId for general).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int mapId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>RTO related map identifier (@see ISERTOMapId for general).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/object3d" title="object3d"></a>
+	<h3 class="subsubtitle method-title">object3d</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>3D Object to handle in case of 3D rendering.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CC3Node *object3d</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>3D Object to handle in case of 3D rendering.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/renderMode" title="renderMode"></a>
+	<h3 class="subsubtitle method-title">renderMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Current map render mode (2D or 3D).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) ISERenderMode renderMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Current map render mode (2D or 3D).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rtoId" title="rtoId"></a>
+	<h3 class="subsubtitle method-title">rtoId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A RTO unique identifier for the current class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int rtoId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A RTO unique identifier for the current class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/zoneId" title="zoneId"></a>
+	<h3 class="subsubtitle method-title">zoneId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Related zone identifier (-1 if no zone).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int zoneId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Related zone identifier (-1 if no zone).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/zoneOffset" title="zoneOffset"></a>
+	<h3 class="subsubtitle method-title">zoneOffset</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Zone offset in meters</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) CC3Vector zoneOffset</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Zone offset in meters</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cloneRTO" title="cloneRTO"></a>
+	<h3 class="subsubtitle method-title">cloneRTO</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to clone an RTO (used when adding an RTO in several zones).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPRTO&gt;)cloneRTO</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result cloned RTO.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to clone an RTO (used when adding an RTO in several zones).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:" title="invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:"></a>
+	<h3 class="subsubtitle method-title">invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to draw an RTO with a ratio and an offset.
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
+If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)invalidateWithLayer:(ISLayer *)<em>layer</em> andRatio:(double)<em>ratio</em> andOffset:(CGPoint)<em>offset</em> andAngle:(float)<em>angle</em> andPriority:(int)<em>priority</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layer</em></dt>
+			<dd><p>The destination Cocos2d layer where this object should be added to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ratio</em></dt>
+			<dd><p>The real/screen coord ratio, this is used to transform the object&rsquo;s real coords into screen coords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>angle</em></dt>
+			<dd><p>The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>The renderer priority, used as Z by Cocos2d.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to draw an RTO with a ratio and an offset.
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
+If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/onTouchDown:" title="onTouchDown:"></a>
+	<h3 class="subsubtitle method-title">onTouchDown:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called when an RTO was touched down.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISETouchObjectResult)onTouchDown:(ISTouch *)<em>touch</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>touch</em></dt>
+			<dd><p>Object that contains iOS touch information.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Touch event handling result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called when an RTO was touched down.</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/onTouchMove:" title="onTouchMove:"></a>
+	<h3 class="subsubtitle method-title">onTouchMove:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called when an RTO was touch-moved.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISETouchObjectResult)onTouchMove:(ISTouch *)<em>touch</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>touch</em></dt>
+			<dd><p>Object that contains iOS touch information.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Touch event handling result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called when an RTO was touch-moved.</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/onTouchUp:" title="onTouchUp:"></a>
+	<h3 class="subsubtitle method-title">onTouchUp:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called when an RTO was touched up.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISETouchObjectResult)onTouchUp:(ISTouch *)<em>touch</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>touch</em></dt>
+			<dd><p>Object that contains iOS touch information.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Touch event handling result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called when an RTO was touched up.</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeFromLayer:" title="removeFromLayer:"></a>
+	<h3 class="subsubtitle method-title">removeFromLayer:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to remove an RTO from the Cocos2d layer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeFromLayer:(ISLayer *)<em>layer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layer</em></dt>
+			<dd><p>The current Cocos2d layer used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to remove an RTO from the Cocos2d layer.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:" title="render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:"></a>
+	<h3 class="subsubtitle method-title">render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to handle 3D rendering stuff.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)render3DWithScene:(CC3Scene *)<em>scene</em> andLayer:(CC3Node *)<em>layer</em> andCurrentMap:(id&lt;ISPMapData&gt;)<em>map</em> andRatio:(float)<em>ratio</em> andAngle:(float)<em>angle</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scene</em></dt>
+			<dd><p>Current 3D scene.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layer</em></dt>
+			<dd><p>Layer where the RTO is.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>map</em></dt>
+			<dd><p>Current displayed map.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ratio</em></dt>
+			<dd><p>Current ratio (depending on the current zoom level).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>angle</em></dt>
+			<dd><p>Current angle.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to handle 3D rendering stuff.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setResources" title="setResources"></a>
+	<h3 class="subsubtitle method-title">setResources</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to initialize RTO resources such as images, labels etc&hellip;</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setResources</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to initialize RTO resources such as images, labels etc&hellip;</p><div class="warning"><p><strong>Warning:</strong> This method will be called on the main thread (UI Thread).</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

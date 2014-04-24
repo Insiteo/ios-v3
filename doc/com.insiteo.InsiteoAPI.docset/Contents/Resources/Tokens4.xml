@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISAnalyticsGenericEvent.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsGenericEvent</TokenIdentifier>
+			<Abstract type="html">Class used to represent an analytics generic event.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/setEventType:</TokenIdentifier>
+			<Abstract type="html">An NSString which identify the event.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *eventType</Declaration>
+			
+			
+			<Anchor>//api/name/eventType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsGenericEvent/eventType</TokenIdentifier>
+			<Abstract type="html">An NSString which identify the event.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *eventType</Declaration>
+			
+			
+			<Anchor>//api/name/eventType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:andDParam1:andDParam2:andSParam1:andSParam2:andPParam1:andPParam2:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andDParam1:(double)dParam1 andDParam2:(double)dParam2 andSParam1:(NSString *)sParam1 andSParam2:(NSString *)sParam2 andPParam1:(ISPosition *)pParam1 andPParam2:(ISPosition *)pParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam1</Name>
+					<Abstract type="html">First double field.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam2</Name>
+					<Abstract type="html">Second double field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam1</Name>
+					<Abstract type="html">First NSString field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam2</Name>
+					<Abstract type="html">Second NSString field.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam1</Name>
+					<Abstract type="html">First ISPosition.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam2</Name>
+					<Abstract type="html">Second ISPosition.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andDParam1:andDParam2:andSParam1:andSParam2:andPParam1:andPParam2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andSParam1:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andSParam1:(NSString *)sParam1</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam1</Name>
+					<Abstract type="html">First NSString field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andSParam1:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:andSParam1:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andSParam1:(NSString *)sParam1</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field..</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam1</Name>
+					<Abstract type="html">First NSString field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andSParam1:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andDParam1:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andDParam1:(double)dParam1</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam1</Name>
+					<Abstract type="html">First double field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andDParam1:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:andDParam1:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andDParam1:(double)dParam1</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam1</Name>
+					<Abstract type="html">First double field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andDParam1:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:andDParam1:andDParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andDParam1:(double)dParam1 andDParam2:(double)dParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam1</Name>
+					<Abstract type="html">First double field.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam2</Name>
+					<Abstract type="html">Second double field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andDParam1:andDParam2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:andDParam1:andDParam2:andSParam1:andSParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andDParam1:(double)dParam1 andDParam2:(double)dParam2 andSParam1:(NSString *)sParam1 andSParam2:(NSString *)sParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam1</Name>
+					<Abstract type="html">First double field.</Abstract>
+				</Parameter><Parameter>
+					<Name>dParam2</Name>
+					<Abstract type="html">Second double field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam1</Name>
+					<Abstract type="html">First NSString field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam2</Name>
+					<Abstract type="html">Second NSString field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andDParam1:andDParam2:andSParam1:andSParam2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andSParam1:andSParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andSParam1:(NSString *)sParam1 andSParam2:(NSString *)sParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam1</Name>
+					<Abstract type="html">First NSString field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam2</Name>
+					<Abstract type="html">Second NSString field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andSParam1:andSParam2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andPParam1:andPParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andPParam1:(ISPosition *)pParam1 andPParam2:(ISPosition *)pParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam1</Name>
+					<Abstract type="html">First ISPosition.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam2</Name>
+					<Abstract type="html">Second ISPosition.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andPParam1:andPParam2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andPParam1:andPParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andPParam1:(ISPosition *)pParam1 andPParam2:(ISPosition *)pParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam1</Name>
+					<Abstract type="html">First ISPosition.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam2</Name>
+					<Abstract type="html">Second ISPosition.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andPParam1:andPParam2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:andPParam1:andPParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andPParam1:(ISPosition *)pParam1 andPParam2:(ISPosition *)pParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam1</Name>
+					<Abstract type="html">First ISPosition.</Abstract>
+				</Parameter><Parameter>
+					<Name>pParam2</Name>
+					<Abstract type="html">Second ISPosition.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andPParam1:andPParam2:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

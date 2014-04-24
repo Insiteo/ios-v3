@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISGfxItineraryProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGfxItineraryProvider</TokenIdentifier>
+			<Abstract type="html">Class used to manage and RENDER Itinerary requests.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setProgressiveDrawing:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean progressiveDrawing</Declaration>
+			
+			
+			<Anchor>//api/name/progressiveDrawing</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/progressiveDrawing</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean progressiveDrawing</Declaration>
+			
+			
+			<Anchor>//api/name/progressiveDrawing</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setBackFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *backFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/backFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/backFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *backFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/backFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setBackStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float backStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/backStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/backStrokeThickness</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float backStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/backStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setFrontFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *frontFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/frontFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/frontFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *frontFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/frontFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setFrontStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frontStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/frontStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/frontStrokeThickness</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frontStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/frontStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setSelectedFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route if selected.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *selectedFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/selectedFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/selectedFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route if selected.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *selectedFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/selectedFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setOnlyPath:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if only the path is drawn.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean onlyPath</Declaration>
+			
+			
+			<Anchor>//api/name/onlyPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/onlyPath</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if only the path is drawn.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean onlyPath</Declaration>
+			
+			
+			<Anchor>//api/name/onlyPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItineraryProvider/setRenderer:</TokenIdentifier>
+			<Abstract type="html">Itinerary Renderer.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItineraryRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItineraryProvider/renderer</TokenIdentifier>
+			<Abstract type="html">Itinerary Renderer.</Abstract>
+			<DeclaredIn>ISGfxItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItineraryRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

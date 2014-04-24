@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISMap2DView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMap2DView</TokenIdentifier>
+			<Abstract type="html">Class used to handle 2D map rendering (using Cocos2d).</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>
+			
+			<NodeRef refid="46"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISMap2DView/map2DViewWithFrame:andMapListener:</TokenIdentifier>
+			<Abstract type="html">Static constructor.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>+ (ISMap2DView *)map2DViewWithFrame:(CGRect)frame andMapListener:(id&lt;ISPMapListener&gt;)mapListener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">Wanted rendering frame.</Abstract>
+				</Parameter><Parameter>
+					<Name>mapListener</Name>
+					<Abstract type="html">Listener used to handle map events.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/map2DViewWithFrame:andMapListener:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

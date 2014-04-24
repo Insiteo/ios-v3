@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISInitInformation.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISInitInformation</TokenIdentifier>
+			<Abstract type="html">Class used to represent the initialization result information.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitInformation/setMapsPath:</TokenIdentifier>
+			<Abstract type="html">Maps resources path.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *mapsPath</Declaration>
+			
+			
+			<Anchor>//api/name/mapsPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitInformation/mapsPath</TokenIdentifier>
+			<Abstract type="html">Maps resources path.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *mapsPath</Declaration>
+			
+			
+			<Anchor>//api/name/mapsPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitInformation/setContentPath:</TokenIdentifier>
+			<Abstract type="html">Content resources path.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *contentPath</Declaration>
+			
+			
+			<Anchor>//api/name/contentPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitInformation/contentPath</TokenIdentifier>
+			<Abstract type="html">Content resources path.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *contentPath</Declaration>
+			
+			
+			<Anchor>//api/name/contentPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitInformation/setLbsServer:</TokenIdentifier>
+			<Abstract type="html">LBS server.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *lbsServer</Declaration>
+			
+			
+			<Anchor>//api/name/lbsServer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitInformation/lbsServer</TokenIdentifier>
+			<Abstract type="html">LBS server.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *lbsServer</Declaration>
+			
+			
+			<Anchor>//api/name/lbsServer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitInformation/setAnalyticsServer:</TokenIdentifier>
+			<Abstract type="html">Analytics server.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *analyticsServer</Declaration>
+			
+			
+			<Anchor>//api/name/analyticsServer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitInformation/analyticsServer</TokenIdentifier>
+			<Abstract type="html">Analytics server.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *analyticsServer</Declaration>
+			
+			
+			<Anchor>//api/name/analyticsServer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitInformation/setZipFullMd5:</TokenIdentifier>
+			<Abstract type="html">Zip full md5.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipFullMd5</Declaration>
+			
+			
+			<Anchor>//api/name/zipFullMd5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitInformation/zipFullMd5</TokenIdentifier>
+			<Abstract type="html">Zip full md5.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipFullMd5</Declaration>
+			
+			
+			<Anchor>//api/name/zipFullMd5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitInformation/setZipLiteMd5:</TokenIdentifier>
+			<Abstract type="html">Zip lite md5.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipLiteMd5</Declaration>
+			
+			
+			<Anchor>//api/name/zipLiteMd5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitInformation/zipLiteMd5</TokenIdentifier>
+			<Abstract type="html">Zip lite md5.</Abstract>
+			<DeclaredIn>ISInitInformation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipLiteMd5</Declaration>
+			
+			
+			<Anchor>//api/name/zipLiteMd5</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

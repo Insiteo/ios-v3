@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISCC2Zone.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISCC2Zone</TokenIdentifier>
+			<Abstract type="html">2D zone representation.</Abstract>
+			<DeclaredIn>ISCC2Zone.h</DeclaredIn>
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISCC2Zone/setZone:</TokenIdentifier>
+			<Abstract type="html">ISGfxZone zone to use for geometry.</Abstract>
+			<DeclaredIn>ISCC2Zone.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISGfxZone *zone</Declaration>
+			
+			
+			<Anchor>//api/name/zone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISCC2Zone/zone</TokenIdentifier>
+			<Abstract type="html">ISGfxZone zone to use for geometry.</Abstract>
+			<DeclaredIn>ISCC2Zone.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISGfxZone *zone</Declaration>
+			
+			
+			<Anchor>//api/name/zone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISCC2Zone/initWithZone:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISCC2Zone.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithZone:(ISGfxZone *)zone</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zone</Name>
+					<Abstract type="html">ISGfxZone zone to use for geometry.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithZone:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

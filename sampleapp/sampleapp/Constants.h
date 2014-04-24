@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define SITE_ID 356
+#define SITE_ID 300
 #define VERSION 1
 #define LANGUAGE @"fr"
 #define SERVER TEST_SERVER

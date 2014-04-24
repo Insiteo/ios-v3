@@ -1,0 +1,1323 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ISLocationProvider Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">InsiteoAPI </a></h1>
+				<a id="developerHome" href="../index.html">INSITEO</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ISLocationProvider Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/isStarted">&nbsp;&nbsp;&nbsp;&nbsp;isStarted</option>
+	
+	<option value="//api/name/lastLocation">&nbsp;&nbsp;&nbsp;&nbsp;lastLocation</option>
+	
+	<option value="//api/name/locationFlags">&nbsp;&nbsp;&nbsp;&nbsp;locationFlags</option>
+	
+	<option value="//api/name/locationListener">&nbsp;&nbsp;&nbsp;&nbsp;locationListener</option>
+	
+	<option value="//api/name/locationServices">&nbsp;&nbsp;&nbsp;&nbsp;locationServices</option>
+	
+	<option value="//api/name/sessionId">&nbsp;&nbsp;&nbsp;&nbsp;sessionId</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/getLocationCodeVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getLocationCodeVersion</option>
+	
+	<option value="//api/name/getLocationPackageVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getLocationPackageVersion</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/changeLocationWithFlags:">&nbsp;&nbsp;&nbsp;&nbsp;- changeLocationWithFlags:</option>
+	
+	<option value="//api/name/getLbsModule:">&nbsp;&nbsp;&nbsp;&nbsp;- getLbsModule:</option>
+	
+	<option value="//api/name/onAzimuthReceived:">&nbsp;&nbsp;&nbsp;&nbsp;- onAzimuthReceived:</option>
+	
+	<option value="//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:">&nbsp;&nbsp;&nbsp;&nbsp;- requestUniqueLocationWithLocationRequestListener:andLocationFlags:</option>
+	
+	<option value="//api/name/startLocation:andLocationListener:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:</option>
+	
+	<option value="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</option>
+	
+	<option value="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</option>
+	
+	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:</option>
+	
+	<option value="//api/name/stopLocation">&nbsp;&nbsp;&nbsp;&nbsp;- stopLocation</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isStarted">isStarted</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastLocation">lastLocation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationFlags">locationFlags</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationListener">locationListener</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationServices">locationServices</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sessionId">sessionId</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLocationCodeVersion">getLocationCodeVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLocationPackageVersion">getLocationPackageVersion</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changeLocationWithFlags:">changeLocationWithFlags:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLbsModule:">getLbsModule:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onAzimuthReceived:">onAzimuthReceived:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:">requestUniqueLocationWithLocationRequestListener:andLocationFlags:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:">startLocation:andLocationListener:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:">startLocation:andLocationListener:andScanFrequency:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopLocation">stopLocation</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ISLocationProvider Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ISLocationProvider Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ISLocationProvider.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Class used to provide and get user locations.</p><div class="warning"><p><strong>Warning:</strong> When using this class, you will need to tag your implementor as C++ class (*.mm extension).</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lastLocation">&nbsp;&nbsp;lastLocation</a></code>
+		<span class="tooltip"><p>Last computed location.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationListener">&nbsp;&nbsp;locationListener</a></code>
+		<span class="tooltip"><p>Location listener.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isStarted">&nbsp;&nbsp;isStarted</a></code>
+		<span class="tooltip"><p>Boolean used to know if the location provider is started.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationServices">&nbsp;&nbsp;locationServices</a></code>
+		<span class="tooltip"><p>Location services list.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sessionId">&nbsp;&nbsp;sessionId</a></code>
+		<span class="tooltip"><p>Last location session identifier (-1 if failed, 0 if fake, >0 otherwise).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationFlags">&nbsp;&nbsp;locationFlags</a></code>
+		<span class="tooltip"><p>Current location flags</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLocationPackageVersion">+&nbsp;getLocationPackageVersion</a></code>
+		<span class="tooltip"><p>Static method used to know the current location package version.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLocationCodeVersion">+&nbsp;getLocationCodeVersion</a></code>
+		<span class="tooltip"><p>Static method used to know the current location library version.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLbsModule:">&ndash;&nbsp;getLbsModule:</a></code>
+		<span class="tooltip"><p>Method used to get a lbs module with a specifi type.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:">&ndash;&nbsp;startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</a></code>
+		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:">&ndash;&nbsp;startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</a></code>
+		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:</a></code>
+		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startLocation:andLocationListener:">&ndash;&nbsp;startLocation:andLocationListener:</a></code>
+		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopLocation">&ndash;&nbsp;stopLocation</a></code>
+		<span class="tooltip"><p>Method used to stop the location.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/changeLocationWithFlags:">&ndash;&nbsp;changeLocationWithFlags:</a></code>
+		<span class="tooltip"><p>Method used to change the location flags.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:">&ndash;&nbsp;requestUniqueLocationWithLocationRequestListener:andLocationFlags:</a></code>
+		<span class="tooltip"><p>Method called to get a one shot location (After a timeout of 10 seconds with no computed location, fail callback is called).</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/onAzimuthReceived:">&ndash;&nbsp;onAzimuthReceived:</a></code>
+		<span class="tooltip"><p>Intern method used to update azimuth information.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/isStarted" title="isStarted"></a>
+	<h3 class="subsubtitle method-title">isStarted</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean used to know if the location provider is started.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean isStarted</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean used to know if the location provider is started.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lastLocation" title="lastLocation"></a>
+	<h3 class="subsubtitle method-title">lastLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Last computed location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISLocation *lastLocation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Last computed location.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationFlags" title="locationFlags"></a>
+	<h3 class="subsubtitle method-title">locationFlags</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Current location flags</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int locationFlags</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Current location flags</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationListener" title="locationListener"></a>
+	<h3 class="subsubtitle method-title">locationListener</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Location listener.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) id&lt;ISPLocationListener&gt; locationListener</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Location listener.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationServices" title="locationServices"></a>
+	<h3 class="subsubtitle method-title">locationServices</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Location services list.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSMutableDictionary *locationServices</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Location services list.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sessionId" title="sessionId"></a>
+	<h3 class="subsubtitle method-title">sessionId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Last location session identifier (-1 if failed, 0 if fake, >0 otherwise).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int sessionId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Last location session identifier (-1 if failed, 0 if fake, >0 otherwise).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getLocationCodeVersion" title="getLocationCodeVersion"></a>
+	<h3 class="subsubtitle method-title">getLocationCodeVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to know the current location library version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getLocationCodeVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Current location library version.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to know the current location library version.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getLocationPackageVersion" title="getLocationPackageVersion"></a>
+	<h3 class="subsubtitle method-title">getLocationPackageVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to know the current location package version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (int)getLocationPackageVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Current location package version.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to know the current location package version.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/changeLocationWithFlags:" title="changeLocationWithFlags:"></a>
+	<h3 class="subsubtitle method-title">changeLocationWithFlags:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to change the location flags.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)changeLocationWithFlags:(int)<em>flags</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>flags</em></dt>
+			<dd><p>New location flags.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to change the location flags.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getLbsModule:" title="getLbsModule:"></a>
+	<h3 class="subsubtitle method-title">getLbsModule:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to get a lbs module with a specifi type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPLbsModule&gt;)getLbsModule:(LbsModuleType)<em>lbsModuleType</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>lbsModuleType</em></dt>
+			<dd><p>Lbs module type.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to get a lbs module with a specifi type.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/onAzimuthReceived:" title="onAzimuthReceived:"></a>
+	<h3 class="subsubtitle method-title">onAzimuthReceived:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Intern method used to update azimuth information.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)onAzimuthReceived:(float)<em>azimuth</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>azimuth</em></dt>
+			<dd><p>Azimuth to use.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Intern method used to update azimuth information.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:" title="requestUniqueLocationWithLocationRequestListener:andLocationFlags:"></a>
+	<h3 class="subsubtitle method-title">requestUniqueLocationWithLocationRequestListener:andLocationFlags:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to get a one shot location (After a timeout of 10 seconds with no computed location, fail callback is called).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISLocationRequest *)requestUniqueLocationWithLocationRequestListener:(id&lt;ISPLocationRequestListener&gt;)<em>locationRequestListener</em> andLocationFlags:(int)<em>locationFlags</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationRequestListener</em></dt>
+			<dd><p>Listener to notify when a location is computed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationFlags</em></dt>
+			<dd><p>Location flags to used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The related location request to identify callers.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to get a one shot location (After a timeout of 10 seconds with no computed location, fail callback is called).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startLocation:andLocationListener:" title="startLocation:andLocationListener:"></a>
+	<h3 class="subsubtitle method-title">startLocation:andLocationListener:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to start the location with specific configuration.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationFlags</em></dt>
+			<dd><p>Location flags.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationListener</em></dt>
+			<dd><p>Location events listener.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to start the location with specific configuration.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:" title="startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:"></a>
+	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to start the location with specific configuration.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationFlags</em></dt>
+			<dd><p>Location flags.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationListener</em></dt>
+			<dd><p>Location events listener.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>defaultMapId</em></dt>
+			<dd><p>Default map identifier to use</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>forceDefaultMap</em></dt>
+			<dd><p>Boolean used to know if we force the default map.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to start the location with specific configuration.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:" title="startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:"></a>
+	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to start the location with specific configuration.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em> andScanFrequency:(int)<em>scanFrequency</em> andLocationPath:(NSString *)<em>locationPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationFlags</em></dt>
+			<dd><p>Location flags.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationListener</em></dt>
+			<dd><p>Location events listener.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>defaultMapId</em></dt>
+			<dd><p>Default map identifier to use</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>forceDefaultMap</em></dt>
+			<dd><p>Boolean used to know if we force the default map.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scanFrequency</em></dt>
+			<dd><p>Location scan frequency.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationPath</em></dt>
+			<dd><p>The location package directory.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to start the location with specific configuration.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:" title="startLocation:andLocationListener:andScanFrequency:"></a>
+	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to start the location with specific configuration.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationFlags</em></dt>
+			<dd><p>Location flags.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationListener</em></dt>
+			<dd><p>Location events listener.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scanFrequency</em></dt>
+			<dd><p>Location scan frequency.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to start the location with specific configuration.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopLocation" title="stopLocation"></a>
+	<h3 class="subsubtitle method-title">stopLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to stop the location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopLocation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to stop the location.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISGenericRenderer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGenericRenderer</TokenIdentifier>
+			<Abstract type="html">Class used to represent the generic map renderer we will use.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRenderer/setRtos:</TokenIdentifier>
+			<Abstract type="html">RTO HashMap.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *rtos</Declaration>
+			
+			
+			<Anchor>//api/name/rtos</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRenderer/rtos</TokenIdentifier>
+			<Abstract type="html">RTO HashMap.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *rtos</Declaration>
+			
+			
+			<Anchor>//api/name/rtos</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRenderer/setRtosLock:</TokenIdentifier>
+			<Abstract type="html">The RTO NSArray mutex.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSLock *rtosLock</Declaration>
+			
+			
+			<Anchor>//api/name/rtosLock</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRenderer/rtosLock</TokenIdentifier>
+			<Abstract type="html">The RTO NSArray mutex.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSLock *rtosLock</Declaration>
+			
+			
+			<Anchor>//api/name/rtosLock</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRenderer/setHasMoved:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we moved.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean hasMoved</Declaration>
+			
+			
+			<Anchor>//api/name/hasMoved</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRenderer/hasMoved</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we moved.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean hasMoved</Declaration>
+			
+			
+			<Anchor>//api/name/hasMoved</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRenderer/setLayer:</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRenderer/layer</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRenderer/initWithRTOClass:andPriority:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithRTOClass:(Class)rtoClass andPriority:(int)priority</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">Related RTO class.</Abstract>
+				</Parameter><Parameter>
+					<Name>priority</Name>
+					<Abstract type="html">Renderer priority.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithRTOClass:andPriority:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRenderer/removeRTOWithId:</TokenIdentifier>
+			<Abstract type="html">Method called to remove a RTO with its identifier.</Abstract>
+			<DeclaredIn>ISGenericRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRTOWithId:(int)rtoId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoId</Name>
+					<Abstract type="html">RTO identifier to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRTOWithId:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

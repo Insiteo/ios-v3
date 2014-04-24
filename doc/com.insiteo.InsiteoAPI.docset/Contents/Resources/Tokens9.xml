@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISAuthManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAuthManager</TokenIdentifier>
+			<Abstract type="html">Class used to manage INSITEO authentication.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/setIsConnected:</TokenIdentifier>
+			<Abstract type="html">Intern boolean used to know if we are connected.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isConnected</Declaration>
+			
+			
+			<Anchor>//api/name/isConnected</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAuthManager/isConnected</TokenIdentifier>
+			<Abstract type="html">Intern boolean used to know if we are connected.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isConnected</Declaration>
+			
+			
+			<Anchor>//api/name/isConnected</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/loginWithUsername:andPassword:andServerType:andListener:</TokenIdentifier>
+			<Abstract type="html">Method used to log in.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password andServerType:(ISEServerType)serverType andListener:(id&lt;ISPAuthListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>username</Name>
+					<Abstract type="html">The username.</Abstract>
+				</Parameter><Parameter>
+					<Name>password</Name>
+					<Abstract type="html">The password.</Abstract>
+				</Parameter><Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">The related server type.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The listener to notify.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/loginWithUsername:andPassword:andServerType:andListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/logoutWithServerType:andListener:</TokenIdentifier>
+			<Abstract type="html">Method used to log out.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)logoutWithServerType:(ISEServerType)serverType andListener:(id&lt;ISPAuthListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">The related server type.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The listener to notify.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/logoutWithServerType:andListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/refreshSitesWithServerType:andListener:</TokenIdentifier>
+			<Abstract type="html">Method used to get all available sites.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)refreshSitesWithServerType:(ISEServerType)serverType andListener:(id&lt;ISPAuthListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">The related server type.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The listener to notify.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/refreshSitesWithServerType:andListener:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

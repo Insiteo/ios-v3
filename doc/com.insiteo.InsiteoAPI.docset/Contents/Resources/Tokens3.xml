@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISAnalyticsConfig.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsConfig</TokenIdentifier>
+			<Abstract type="html">Class which represents the analytics configuration.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsConfig/setServiceUrl:</TokenIdentifier>
+			<Abstract type="html">Remote service URL (from ISInitProvider.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *serviceUrl</Declaration>
+			
+			
+			<Anchor>//api/name/serviceUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsConfig/serviceUrl</TokenIdentifier>
+			<Abstract type="html">Remote service URL (from ISInitProvider.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *serviceUrl</Declaration>
+			
+			
+			<Anchor>//api/name/serviceUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsConfig/setFrequency:</TokenIdentifier>
+			<Abstract type="html">HTTP request frequency (in seconds).</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frequency</Declaration>
+			
+			
+			<Anchor>//api/name/frequency</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsConfig/frequency</TokenIdentifier>
+			<Abstract type="html">HTTP request frequency (in seconds).</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frequency</Declaration>
+			
+			
+			<Anchor>//api/name/frequency</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsConfig/setNbEventsByRequest:</TokenIdentifier>
+			<Abstract type="html">Number of events sent in one request.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int nbEventsByRequest</Declaration>
+			
+			
+			<Anchor>//api/name/nbEventsByRequest</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsConfig/nbEventsByRequest</TokenIdentifier>
+			<Abstract type="html">Number of events sent in one request.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int nbEventsByRequest</Declaration>
+			
+			
+			<Anchor>//api/name/nbEventsByRequest</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsConfig/setLocationFrequency:</TokenIdentifier>
+			<Abstract type="html">Location event frequency.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float locationFrequency</Declaration>
+			
+			
+			<Anchor>//api/name/locationFrequency</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsConfig/locationFrequency</TokenIdentifier>
+			<Abstract type="html">Location event frequency.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float locationFrequency</Declaration>
+			
+			
+			<Anchor>//api/name/locationFrequency</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsConfig/initWithServiceUrl:andFrequency:andNbEventsByRequest:andLocationFrequency:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsConfig.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithServiceUrl:(NSString *)serviceUrl andFrequency:(float)frequency andNbEventsByRequest:(int)nbEventsByRequest andLocationFrequency:(float)locationFrequency</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serviceUrl</Name>
+					<Abstract type="html">Remote service URL.</Abstract>
+				</Parameter><Parameter>
+					<Name>frequency</Name>
+					<Abstract type="html">HTTP request frequency.</Abstract>
+				</Parameter><Parameter>
+					<Name>nbEventsByRequest</Name>
+					<Abstract type="html">Number of events sent in one request.</Abstract>
+				</Parameter><Parameter>
+					<Name>locationFrequency</Name>
+					<Abstract type="html">Location event frequency.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithServiceUrl:andFrequency:andNbEventsByRequest:andLocationFrequency:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

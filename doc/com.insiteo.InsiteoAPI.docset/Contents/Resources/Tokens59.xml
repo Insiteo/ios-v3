@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISMeetMeInsCreateUserRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMeInsCreateUserRequest</TokenIdentifier>
+			<Abstract type="html">ISMeetMeInsCreateUserRequest</Abstract>
+			<DeclaredIn>ISMeetMeInsCreateUserRequest.h</DeclaredIn>
+			
+			<NodeRef refid="59"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

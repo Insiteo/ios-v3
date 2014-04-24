@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISAnalyticsManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsManager</TokenIdentifier>
+			<Abstract type="html">Class that manages analytics events.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/setConfig:</TokenIdentifier>
+			<Abstract type="html">Analytics configuration.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISAnalyticsConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsManager/config</TokenIdentifier>
+			<Abstract type="html">Analytics configuration.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISAnalyticsConfig *config</Declaration>
+			
+			
+			<Anchor>//api/name/config</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISAnalyticsManager/instance</TokenIdentifier>
+			<Abstract type="html">Static method called to get the ISAnalyticsManager unique instance.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>+ (ISAnalyticsManager *)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">The ISAnalyticsManager unique instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/addGenericEvent:</TokenIdentifier>
+			<Abstract type="html">Method called to add an analytics generic event.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)addGenericEvent:(ISAnalyticsGenericEvent *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The related generic event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGenericEvent:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/addLocationEvent:</TokenIdentifier>
+			<Abstract type="html">Method called to add an analytics location event.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)addLocationEvent:(ISAnalyticsLocationEvent *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The related location event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addLocationEvent:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

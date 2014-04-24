@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPLbsModuleRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPLbsModuleRequest</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle LBS module request.</Abstract>
+			<DeclaredIn>ISPLbsModuleRequest.h</DeclaredIn>
+			
+			<NodeRef refid="90"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModuleRequest/getProtocol</TokenIdentifier>
+			<Abstract type="html">Method called to get the current used protocol.</Abstract>
+			<DeclaredIn>ISPLbsModuleRequest.h</DeclaredIn>			
+			
+			<Declaration>- (ELocProtocol)getProtocol</Declaration>
+			
+			<ReturnValue><Abstract type="html">Current used protocol.</Abstract></ReturnValue>
+			<Anchor>//api/name/getProtocol</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISAnalyticsUserEvent.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsUserEvent</TokenIdentifier>
+			<Abstract type="html">Class used to represent an analytics user event.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setVersion:</TokenIdentifier>
+			<Abstract type="html">Application version (&quot;%version_%name&quot;).</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *version</Declaration>
+			
+			
+			<Anchor>//api/name/version</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/version</TokenIdentifier>
+			<Abstract type="html">Application version (&quot;%version_%name&quot;).</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *version</Declaration>
+			
+			
+			<Anchor>//api/name/version</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setApiVersion:</TokenIdentifier>
+			<Abstract type="html">INSITEO api version.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *apiVersion</Declaration>
+			
+			
+			<Anchor>//api/name/apiVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/apiVersion</TokenIdentifier>
+			<Abstract type="html">INSITEO api version.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *apiVersion</Declaration>
+			
+			
+			<Anchor>//api/name/apiVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setSiteId:</TokenIdentifier>
+			<Abstract type="html">INSITEO site identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/siteId</TokenIdentifier>
+			<Abstract type="html">INSITEO site identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setApplicationVersion:</TokenIdentifier>
+			<Abstract type="html">INSITEO application version.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/applicationVersion</TokenIdentifier>
+			<Abstract type="html">INSITEO application version.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setLanguage:</TokenIdentifier>
+			<Abstract type="html">INSITEO language.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/language</TokenIdentifier>
+			<Abstract type="html">INSITEO language.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setPlatform:</TokenIdentifier>
+			<Abstract type="html">Device platform.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *platform</Declaration>
+			
+			
+			<Anchor>//api/name/platform</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/platform</TokenIdentifier>
+			<Abstract type="html">Device platform.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *platform</Declaration>
+			
+			
+			<Anchor>//api/name/platform</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setOsVersion:</TokenIdentifier>
+			<Abstract type="html">Device os version.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/osVersion</TokenIdentifier>
+			<Abstract type="html">Device os version.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setResolution:</TokenIdentifier>
+			<Abstract type="html">Device resolution.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *resolution</Declaration>
+			
+			
+			<Anchor>//api/name/resolution</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/resolution</TokenIdentifier>
+			<Abstract type="html">Device resolution.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *resolution</Declaration>
+			
+			
+			<Anchor>//api/name/resolution</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setCarrier:</TokenIdentifier>
+			<Abstract type="html">Device carrier.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *carrier</Declaration>
+			
+			
+			<Anchor>//api/name/carrier</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/carrier</TokenIdentifier>
+			<Abstract type="html">Device carrier.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *carrier</Declaration>
+			
+			
+			<Anchor>//api/name/carrier</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setNetwork:</TokenIdentifier>
+			<Abstract type="html">Device network.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *network</Declaration>
+			
+			
+			<Anchor>//api/name/network</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/network</TokenIdentifier>
+			<Abstract type="html">Device network.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *network</Declaration>
+			
+			
+			<Anchor>//api/name/network</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setDeviceName:</TokenIdentifier>
+			<Abstract type="html">Device name.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *deviceName</Declaration>
+			
+			
+			<Anchor>//api/name/deviceName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/deviceName</TokenIdentifier>
+			<Abstract type="html">Device name.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *deviceName</Declaration>
+			
+			
+			<Anchor>//api/name/deviceName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setModelName:</TokenIdentifier>
+			<Abstract type="html">Device model name.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *modelName</Declaration>
+			
+			
+			<Anchor>//api/name/modelName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/modelName</TokenIdentifier>
+			<Abstract type="html">Device model name.</Abstract>
+			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *modelName</Declaration>
+			
+			
+			<Anchor>//api/name/modelName</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISPackageUpdater.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISPackageUpdater</TokenIdentifier>
+			<Abstract type="html">Class used to manage INSITEO data packages inside an application.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>
+			
+			<NodeRef refid="68"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/setDownloadPackages:</TokenIdentifier>
+			<Abstract type="html">Array of packages that need to be downloaded.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *downloadPackages</Declaration>
+			
+			
+			<Anchor>//api/name/downloadPackages</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackageUpdater/downloadPackages</TokenIdentifier>
+			<Abstract type="html">Array of packages that need to be downloaded.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *downloadPackages</Declaration>
+			
+			
+			<Anchor>//api/name/downloadPackages</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/setInitListener:</TokenIdentifier>
+			<Abstract type="html">Init listener used to notify for update events.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
+			
+			
+			<Anchor>//api/name/initListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackageUpdater/initListener</TokenIdentifier>
+			<Abstract type="html">Init listener used to notify for update events.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
+			
+			
+			<Anchor>//api/name/initListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/updatePackagesWithWantedPackages:</TokenIdentifier>
+			<Abstract type="html">Method used to updates all application packages.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			
+			<Declaration>- (void)updatePackagesWithWantedPackages:(NSArray *)wantedPackages</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>wantedPackages</Name>
+					<Abstract type="html">An array of wanted packages that need to be updated.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updatePackagesWithWantedPackages:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/updatePackagesWithWantedPackages:andForce:</TokenIdentifier>
+			<Abstract type="html">Method used to updates all application packages.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			
+			<Declaration>- (void)updatePackagesWithWantedPackages:(NSArray *)wantedPackages andForce:(Boolean)force</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>wantedPackages</Name>
+					<Abstract type="html">An array of wanted packages that need to be updated.</Abstract>
+				</Parameter><Parameter>
+					<Name>force</Name>
+					<Abstract type="html">Boolean used to know if we force the download of all packages.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updatePackagesWithWantedPackages:andForce:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/checkPackages:</TokenIdentifier>
+			<Abstract type="html">Method used to check all application packages.</Abstract>
+			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			
+			<Declaration>- (void)checkPackages:(Boolean)forceDownload</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>forceDownload</Name>
+					<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/checkPackages:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

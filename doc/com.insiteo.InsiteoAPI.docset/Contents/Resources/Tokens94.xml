@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPMapData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPMapData</TokenIdentifier>
+			<Abstract type="html">Class used to represent an INSITEO maps with its geoloc attributes and identifiers.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>
+			
+			<NodeRef refid="94"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setMapId:</TokenIdentifier>
+			<Abstract type="html">INSITEO map identifier.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/mapId</TokenIdentifier>
+			<Abstract type="html">INSITEO map identifier.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setTypeId:</TokenIdentifier>
+			<Abstract type="html">INSITEO map type identifier.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			
+			
+			<Anchor>//api/name/typeId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/typeId</TokenIdentifier>
+			<Abstract type="html">INSITEO map type identifier.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			
+			
+			<Anchor>//api/name/typeId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setName:</TokenIdentifier>
+			<Abstract type="html">INSITEO map name.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/name</TokenIdentifier>
+			<Abstract type="html">INSITEO map name.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setFloor:</TokenIdentifier>
+			<Abstract type="html">INSITEO map floor identifier.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int floor</Declaration>
+			
+			
+			<Anchor>//api/name/floor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/floor</TokenIdentifier>
+			<Abstract type="html">INSITEO map floor identifier.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int floor</Declaration>
+			
+			
+			<Anchor>//api/name/floor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setFloorName:</TokenIdentifier>
+			<Abstract type="html">INSITEO map floor name.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *floorName</Declaration>
+			
+			
+			<Anchor>//api/name/floorName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/floorName</TokenIdentifier>
+			<Abstract type="html">INSITEO map floor name.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *floorName</Declaration>
+			
+			
+			<Anchor>//api/name/floorName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setIsDebugMap:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map is used only in debug mode (cf. ISCommonConstants.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isDebugMap</Declaration>
+			
+			
+			<Anchor>//api/name/isDebugMap</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/isDebugMap</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map is used only in debug mode (cf. ISCommonConstants.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isDebugMap</Declaration>
+			
+			
+			<Anchor>//api/name/isDebugMap</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setSortIndex:</TokenIdentifier>
+			<Abstract type="html">Index used to sort maps.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
+			
+			
+			<Anchor>//api/name/sortIndex</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/sortIndex</TokenIdentifier>
+			<Abstract type="html">Index used to sort maps.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
+			
+			
+			<Anchor>//api/name/sortIndex</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setAzimuth:</TokenIdentifier>
+			<Abstract type="html">INSITEO map azimuth.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float azimuth</Declaration>
+			
+			
+			<Anchor>//api/name/azimuth</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/azimuth</TokenIdentifier>
+			<Abstract type="html">INSITEO map azimuth.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float azimuth</Declaration>
+			
+			
+			<Anchor>//api/name/azimuth</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setIsOriented:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map is oriented.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isOriented</Declaration>
+			
+			
+			<Anchor>//api/name/isOriented</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/isOriented</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map is oriented.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isOriented</Declaration>
+			
+			
+			<Anchor>//api/name/isOriented</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setIsGeoReferenced:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map is geo referenced.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isGeoReferenced</Declaration>
+			
+			
+			<Anchor>//api/name/isGeoReferenced</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/isGeoReferenced</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map is geo referenced.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isGeoReferenced</Declaration>
+			
+			
+			<Anchor>//api/name/isGeoReferenced</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setGeoMatrix:</TokenIdentifier>
+			<Abstract type="html">INSITEO map geoMatrix.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISGeoMatrix *geoMatrix</Declaration>
+			
+			
+			<Anchor>//api/name/geoMatrix</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/geoMatrix</TokenIdentifier>
+			<Abstract type="html">INSITEO map geoMatrix.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISGeoMatrix *geoMatrix</Declaration>
+			
+			
+			<Anchor>//api/name/geoMatrix</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapData/setScale:</TokenIdentifier>
+			<Abstract type="html">Map scale.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float scale</Declaration>
+			
+			
+			<Anchor>//api/name/scale</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPMapData/scale</TokenIdentifier>
+			<Abstract type="html">Map scale.</Abstract>
+			<DeclaredIn>ISPMapData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float scale</Declaration>
+			
+			
+			<Anchor>//api/name/scale</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

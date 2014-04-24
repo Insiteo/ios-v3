@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISZonePoi.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISZonePoi</TokenIdentifier>
+			<Abstract type="html">@class ISZonePoi
+Class used to represent the association between a Zone (MapAPI) and a Poi (CatalogAPI).</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>
+			
+			<NodeRef refid="80"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setZoneId:</TokenIdentifier>
+			<Abstract type="html">Related zone identifier.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoneId</Declaration>
+			
+			
+			<Anchor>//api/name/zoneId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/zoneId</TokenIdentifier>
+			<Abstract type="html">Related zone identifier.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoneId</Declaration>
+			
+			
+			<Anchor>//api/name/zoneId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setZoneName:</TokenIdentifier>
+			<Abstract type="html">Related zone name.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zoneName</Declaration>
+			
+			
+			<Anchor>//api/name/zoneName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/zoneName</TokenIdentifier>
+			<Abstract type="html">Related zone name.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zoneName</Declaration>
+			
+			
+			<Anchor>//api/name/zoneName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setPoiId:</TokenIdentifier>
+			<Abstract type="html">Related poiId.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int poiId</Declaration>
+			
+			
+			<Anchor>//api/name/poiId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/poiId</TokenIdentifier>
+			<Abstract type="html">Related poiId.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int poiId</Declaration>
+			
+			
+			<Anchor>//api/name/poiId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setExternalId:</TokenIdentifier>
+			<Abstract type="html">Related poi external id.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalId</Declaration>
+			
+			
+			<Anchor>//api/name/externalId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/externalId</TokenIdentifier>
+			<Abstract type="html">Related poi external id.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalId</Declaration>
+			
+			
+			<Anchor>//api/name/externalId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setOffsetX:</TokenIdentifier>
+			<Abstract type="html">Poi x offset from zone center.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float offsetX</Declaration>
+			
+			
+			<Anchor>//api/name/offsetX</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/offsetX</TokenIdentifier>
+			<Abstract type="html">Poi x offset from zone center.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float offsetX</Declaration>
+			
+			
+			<Anchor>//api/name/offsetX</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setOffsetY:</TokenIdentifier>
+			<Abstract type="html">Poi y offset from zone center.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float offsetY</Declaration>
+			
+			
+			<Anchor>//api/name/offsetY</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/offsetY</TokenIdentifier>
+			<Abstract type="html">Poi y offset from zone center.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float offsetY</Declaration>
+			
+			
+			<Anchor>//api/name/offsetY</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setMapId:</TokenIdentifier>
+			<Abstract type="html">Related map identifier.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/mapId</TokenIdentifier>
+			<Abstract type="html">Related map identifier.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setZonePosX:</TokenIdentifier>
+			<Abstract type="html">Related zone x coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float zonePosX</Declaration>
+			
+			
+			<Anchor>//api/name/zonePosX</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/zonePosX</TokenIdentifier>
+			<Abstract type="html">Related zone x coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float zonePosX</Declaration>
+			
+			
+			<Anchor>//api/name/zonePosX</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setZonePosY:</TokenIdentifier>
+			<Abstract type="html">Related zone y coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float zonePosY</Declaration>
+			
+			
+			<Anchor>//api/name/zonePosY</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/zonePosY</TokenIdentifier>
+			<Abstract type="html">Related zone y coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float zonePosY</Declaration>
+			
+			
+			<Anchor>//api/name/zonePosY</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setExtra1:</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/extra1</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setExtra2:</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/extra2</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setExtra3:</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/extra3</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setFExtra1:</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/fExtra1</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZonePoi/setZone:</TokenIdentifier>
+			<Abstract type="html">Related zone.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) ISGfxZone *zone</Declaration>
+			
+			
+			<Anchor>//api/name/zone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZonePoi/zone</TokenIdentifier>
+			<Abstract type="html">Related zone.</Abstract>
+			<DeclaredIn>ISZonePoi.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) ISGfxZone *zone</Declaration>
+			
+			
+			<Anchor>//api/name/zone</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

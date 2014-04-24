@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISDBHelperMap.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISDBHelperMap</TokenIdentifier>
+			<Abstract type="html">Static class used to handle map SQL requests.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/instance</TokenIdentifier>
+			<Abstract type="html">Static method used to get the unique instance of the ISDBHelperMap.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (ISDBHelperMap *)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">ISDBHelperMap unique instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getZoomLevelsWithMap:</TokenIdentifier>
+			<Abstract type="html">Method called to get all zoom levels relative to a specified map identifier and map scale.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableArray *)getZoomLevelsWithMap:(ISGfxMapData *)map</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>map</Name>
+					<Abstract type="html">Related map.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array that contains all concerned zoom levels.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZoomLevelsWithMap:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getMapsWithDebug:</TokenIdentifier>
+			<Abstract type="html">Method called to get all maps. The debug parameter is used to filter or not the DEBUG maps.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDictionary *)getMapsWithDebug:(Boolean)debug</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>debug</Name>
+					<Abstract type="html">A boolean used to know if we filter DEBUG maps.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array that contains all concerned maps.</Abstract></ReturnValue>
+			<Anchor>//api/name/getMapsWithDebug:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getMapWithMapId:</TokenIdentifier>
+			<Abstract type="html">Method called to get a specific map.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (ISGfxMapData *)getMapWithMapId:(int)mapId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">The map identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The concerned map. Could be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/getMapWithMapId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getMapRootId</TokenIdentifier>
+			<Abstract type="html">Method called to the root map identifier.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (int)getMapRootId</Declaration>
+			
+			<ReturnValue><Abstract type="html">The root map identifier (int).</Abstract></ReturnValue>
+			<Anchor>//api/name/getMapRootId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getZonePoisForIdZone:andExternal:</TokenIdentifier>
+			<Abstract type="html">Method called to get ZonePois related to a specified zone id.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableArray *)getZonePoisForIdZone:(int)idZone andExternal:(Boolean)external</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>idZone</Name>
+					<Abstract type="html">Zone identifier to consider.</Abstract>
+				</Parameter><Parameter>
+					<Name>external</Name>
+					<Abstract type="html">A boolean used to know if associations are external.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All concerned ISZonePoi associations.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZonePoisForIdZone:andExternal:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getZonePoisForIdPoi:</TokenIdentifier>
+			<Abstract type="html">Method called to get ZonePois related to a specified poi id.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableArray *)getZonePoisForIdPoi:(int)idPoi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>idPoi</Name>
+					<Abstract type="html">Poi identifier to consider.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All concerned ISZonePoi associations.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZonePoisForIdPoi:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getExternalZonePoisForExtIdPoi:</TokenIdentifier>
+			<Abstract type="html">Method called to get ZonePois related to a specified poi external id.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableArray *)getExternalZonePoisForExtIdPoi:(NSString *)extIdPoi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>extIdPoi</Name>
+					<Abstract type="html">Poi external identifier to consider.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All concerned ISZonePoi associations.</Abstract></ReturnValue>
+			<Anchor>//api/name/getExternalZonePoisForExtIdPoi:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getZoneCategoriesForIdZone:andExternal:</TokenIdentifier>
+			<Abstract type="html">Method called to get ZoneCategory related to a specified zone id.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableArray *)getZoneCategoriesForIdZone:(int)idZone andExternal:(Boolean)external</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>idZone</Name>
+					<Abstract type="html">Zone identifier to consider.</Abstract>
+				</Parameter><Parameter>
+					<Name>external</Name>
+					<Abstract type="html">A boolean used to know if associations are external.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All concerned ISZoneCategory associations.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZoneCategoriesForIdZone:andExternal:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getZoneCategoriesForIdCategory:</TokenIdentifier>
+			<Abstract type="html">Method called to get ZoneCategory related to a specified category id.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableArray *)getZoneCategoriesForIdCategory:(int)idCategory</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>idCategory</Name>
+					<Abstract type="html">Category identifier to consider.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All concerned ISZoneCategory associations.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZoneCategoriesForIdCategory:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperMap/getExternalZoneCategoriesForExtIdCategory:</TokenIdentifier>
+			<Abstract type="html">Method called to get ZoneCategory related to a specified external category id.</Abstract>
+			<DeclaredIn>ISDBHelperMap.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableArray *)getExternalZoneCategoriesForExtIdCategory:(NSString *)extIdCategory</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>extIdCategory</Name>
+					<Abstract type="html">Category external identifier to consider.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">All concerned ISZoneCategory associations.</Abstract></ReturnValue>
+			<Anchor>//api/name/getExternalZoneCategoriesForExtIdCategory:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

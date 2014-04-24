@@ -69,13 +69,13 @@ int const ACTIONSHEET_ACTIONS = 1;
 #pragma mark - ISPInitListener
 
 - (void)launch:(NSString *)message {
-    ISInitProvider * iProv = [ISInitProvider instance];
+    ISInitProvider * initProvider = [ISInitProvider instance];
     
     //Check that packges exist for map (MAP_DATA_PACKAGE), location, itinerary, and geofencing
-    if (    [iProv hasPackageWithPackageType:MAP_DATA_PACKAGE andServerType:SERVER]
-        &&  [iProv hasPackageWithPackageType:LOCATION_PACKAGE andServerType:SERVER]
-        &&  [iProv hasPackageWithPackageType:ITINERARY_PACKAGE andServerType:SERVER]
-        &&  [iProv hasPackageWithPackageType:GEOFENCING_PACKAGE andServerType:SERVER]) {
+    if (    [initProvider hasPackageWithPackageType:MAP_DATA_PACKAGE andServerType:SERVER]
+        &&  [initProvider hasPackageWithPackageType:LOCATION_PACKAGE andServerType:SERVER]
+        &&  [initProvider hasPackageWithPackageType:ITINERARY_PACKAGE andServerType:SERVER]
+        &&  [initProvider hasPackageWithPackageType:GEOFENCING_PACKAGE andServerType:SERVER]) {
         //If a message needs to be displayed
         if (message != nil) {
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"STR_INFORMATION", nil) message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"STR_OK", nil) otherButtonTitles:nil];
@@ -360,19 +360,19 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 #pragma mark - IBAction
 
+#define FIRST_MAP_ID 4
+#define SECOND_MAP_ID 5
+#define MAX_COORDINATES 400
+
 - (void)computeItinerary {
     if (m_itineraryProvider != nil) {
         //Request an itinerary between two points on the current map
-        [m_itineraryProvider requestItineraryWithStartPoint:CGPointMake(50, 50) andStartMapId:1 andEndPoint:CGPointMake(200, 100) andEndMapId:2 andListener:self andPMR:NO];
+        [m_itineraryProvider requestItineraryWithStartPoint:CGPointMake(180, 260) andStartMapId:FIRST_MAP_ID andEndPoint:CGPointMake(400, 380) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
     }
 }
 
 - (void)computeOptimizedRoute {
     if (m_itineraryProvider != nil) {
-#define FIRST_MAP_ID 1
-#define SECOND_MAP_ID 2
-#define MAX_COORDINATES 200
-        
         //Request an optimized itinerary for random positions
         [m_itineraryProvider requestOptimizedItineraryWithWaypoints:[NSArray arrayWithObjects:[ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:FIRST_MAP_ID], [ISPosition ISPositionWithX:rand()%MAX_COORDINATES andY:rand()%MAX_COORDINATES andMapId:SECOND_MAP_ID], nil] andOptimMode:ISEOptimizationModeNearestNeighbourShortestPath andKeepFirstPosition:YES andKeepLastPosition:NO andListener:self andPMR:NO];
     }

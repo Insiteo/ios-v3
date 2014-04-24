@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISGfxZone.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGfxZone</TokenIdentifier>
+			<Abstract type="html">Class used to represent a Map Zone.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>
+			
+			<NodeRef refid="30"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setIdZone:</TokenIdentifier>
+			<Abstract type="html">Zone identifier.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int idZone</Declaration>
+			
+			
+			<Anchor>//api/name/idZone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/idZone</TokenIdentifier>
+			<Abstract type="html">Zone identifier.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int idZone</Declaration>
+			
+			
+			<Anchor>//api/name/idZone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setGuid:</TokenIdentifier>
+			<Abstract type="html">Zone GUID.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/guid</TokenIdentifier>
+			<Abstract type="html">Zone GUID.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setTypeId:</TokenIdentifier>
+			<Abstract type="html">Zone type identifier.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			
+			
+			<Anchor>//api/name/typeId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/typeId</TokenIdentifier>
+			<Abstract type="html">Zone type identifier.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			
+			
+			<Anchor>//api/name/typeId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setName:</TokenIdentifier>
+			<Abstract type="html">Zone name.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/name</TokenIdentifier>
+			<Abstract type="html">Zone name.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setMetersPosition:</TokenIdentifier>
+			<Abstract type="html">Zone position (in meters).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *metersPosition</Declaration>
+			
+			
+			<Anchor>//api/name/metersPosition</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/metersPosition</TokenIdentifier>
+			<Abstract type="html">Zone position (in meters).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *metersPosition</Declaration>
+			
+			
+			<Anchor>//api/name/metersPosition</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZ:</TokenIdentifier>
+			<Abstract type="html">Z value (to order rendering/touch).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int z</Declaration>
+			
+			
+			<Anchor>//api/name/z</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/z</TokenIdentifier>
+			<Abstract type="html">Z value (to order rendering/touch).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int z</Declaration>
+			
+			
+			<Anchor>//api/name/z</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoomMin:</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is visible.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMin</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMin</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoomMin</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is visible.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMin</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMin</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoomMax:</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is hidden.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMax</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMax</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoomMax</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is hidden.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMax</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMax</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setPoints:</TokenIdentifier>
+			<Abstract type="html">Zone node points.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/points</TokenIdentifier>
+			<Abstract type="html">Zone node points.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setTiles:</TokenIdentifier>
+			<Abstract type="html">Zone tiles references.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *tiles</Declaration>
+			
+			
+			<Anchor>//api/name/tiles</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/tiles</TokenIdentifier>
+			<Abstract type="html">Zone tiles references.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *tiles</Declaration>
+			
+			
+			<Anchor>//api/name/tiles</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setActionType:</TokenIdentifier>
+			<Abstract type="html">Zone action type (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int actionType</Declaration>
+			
+			
+			<Anchor>//api/name/actionType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/actionType</TokenIdentifier>
+			<Abstract type="html">Zone action type (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int actionType</Declaration>
+			
+			
+			<Anchor>//api/name/actionType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setActionParameter:</TokenIdentifier>
+			<Abstract type="html">Zone action parameter (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *actionParameter</Declaration>
+			
+			
+			<Anchor>//api/name/actionParameter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/actionParameter</TokenIdentifier>
+			<Abstract type="html">Zone action parameter (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *actionParameter</Declaration>
+			
+			
+			<Anchor>//api/name/actionParameter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setSortIndex:</TokenIdentifier>
+			<Abstract type="html">Zone sort index.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
+			
+			
+			<Anchor>//api/name/sortIndex</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/sortIndex</TokenIdentifier>
+			<Abstract type="html">Zone sort index.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
+			
+			
+			<Anchor>//api/name/sortIndex</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setComments:</TokenIdentifier>
+			<Abstract type="html">Zone comments (if needed).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *comments</Declaration>
+			
+			
+			<Anchor>//api/name/comments</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/comments</TokenIdentifier>
+			<Abstract type="html">Zone comments (if needed).</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *comments</Declaration>
+			
+			
+			<Anchor>//api/name/comments</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setExtra1:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/extra1</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setExtra2:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/extra2</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setExtra3:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/extra3</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setExtra4:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra4</Declaration>
+			
+			
+			<Anchor>//api/name/extra4</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/extra4</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra4</Declaration>
+			
+			
+			<Anchor>//api/name/extra4</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setExtra5:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra5</Declaration>
+			
+			
+			<Anchor>//api/name/extra5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/extra5</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra5</Declaration>
+			
+			
+			<Anchor>//api/name/extra5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setFExtra1:</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/fExtra1</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setDispExtra1:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/dispExtra1</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setDispExtra2:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra2</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/dispExtra2</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra2</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setDispExtra3:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra3</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/dispExtra3</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra3</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setDispFExtra1:</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float dispFExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispFExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/dispFExtra1</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float dispFExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispFExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setNeedToBeDisplayed:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
+			
+			
+			<Anchor>//api/name/needToBeDisplayed</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/needToBeDisplayed</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
+			
+			
+			<Anchor>//api/name/needToBeDisplayed</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setIsTouched:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
+			
+			
+			<Anchor>//api/name/isTouched</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/isTouched</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
+			
+			
+			<Anchor>//api/name/isTouched</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoneColor:</TokenIdentifier>
+			<Abstract type="html">Zone rendering color.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
+			
+			
+			<Anchor>//api/name/zoneColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoneColor</TokenIdentifier>
+			<Abstract type="html">Zone rendering color.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
+			
+			
+			<Anchor>//api/name/zoneColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setIsHidden:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone handle touch event and if it&apos;s displayed.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isHidden</Declaration>
+			
+			
+			<Anchor>//api/name/isHidden</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/isHidden</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone handle touch event and if it&apos;s displayed.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isHidden</Declaration>
+			
+			
+			<Anchor>//api/name/isHidden</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastRatio:</TokenIdentifier>
+			<Abstract type="html">Last rendering ratio.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
+			
+			
+			<Anchor>//api/name/lastRatio</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastRatio</TokenIdentifier>
+			<Abstract type="html">Last rendering ratio.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
+			
+			
+			<Anchor>//api/name/lastRatio</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastOffset:</TokenIdentifier>
+			<Abstract type="html">Last rendering offset.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
+			
+			
+			<Anchor>//api/name/lastOffset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastOffset</TokenIdentifier>
+			<Abstract type="html">Last rendering offset.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
+			
+			
+			<Anchor>//api/name/lastOffset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setNbShelf:</TokenIdentifier>
+			<Abstract type="html">3D shelf count.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int nbShelf</Declaration>
+			
+			
+			<Anchor>//api/name/nbShelf</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/nbShelf</TokenIdentifier>
+			<Abstract type="html">3D shelf count.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int nbShelf</Declaration>
+			
+			
+			<Anchor>//api/name/nbShelf</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setP1:</TokenIdentifier>
+			<Abstract type="html">3D first front point.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint p1</Declaration>
+			
+			
+			<Anchor>//api/name/p1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/p1</TokenIdentifier>
+			<Abstract type="html">3D first front point.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint p1</Declaration>
+			
+			
+			<Anchor>//api/name/p1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setP2:</TokenIdentifier>
+			<Abstract type="html">3D second front point.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint p2</Declaration>
+			
+			
+			<Anchor>//api/name/p2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/p2</TokenIdentifier>
+			<Abstract type="html">3D second front point.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint p2</Declaration>
+			
+			
+			<Anchor>//api/name/p2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/containsPoint:</TokenIdentifier>
+			<Abstract type="html">Method used to know if a point is in the concerned Zone.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)containsPoint:(CGPoint)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">Point to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the zone contains the point, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsPoint:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setOffset:andRatio:</TokenIdentifier>
+			<Abstract type="html">Method called to update the last offset and ratio computed.</Abstract>
+			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			
+			<Declaration>- (void)setOffset:(CGPoint)offset andRatio:(float)ratio</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">Last offset computed.</Abstract>
+				</Parameter><Parameter>
+					<Name>ratio</Name>
+					<Abstract type="html">Last ratio computed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOffset:andRatio:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

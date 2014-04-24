@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISItineraryBaseRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItineraryBaseRequest</TokenIdentifier>
+			<Abstract type="html">Class used to represent a base itinerary request.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/setItinerary:</TokenIdentifier>
+			<Abstract type="html">Request itinerary (will be filled by the ISItineraryProvider.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItinerary *itinerary</Declaration>
+			
+			
+			<Anchor>//api/name/itinerary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryBaseRequest/itinerary</TokenIdentifier>
+			<Abstract type="html">Request itinerary (will be filled by the ISItineraryProvider.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItinerary *itinerary</Declaration>
+			
+			
+			<Anchor>//api/name/itinerary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/setListener:</TokenIdentifier>
+			<Abstract type="html">Itinerary request listener.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) id&lt;ISPItineraryRequestListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryBaseRequest/listener</TokenIdentifier>
+			<Abstract type="html">Itinerary request listener.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) id&lt;ISPItineraryRequestListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/setItineraryProvider:</TokenIdentifier>
+			<Abstract type="html">Itinerary provider reference.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISItineraryProvider *itineraryProvider</Declaration>
+			
+			
+			<Anchor>//api/name/itineraryProvider</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryBaseRequest/itineraryProvider</TokenIdentifier>
+			<Abstract type="html">Itinerary provider reference.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISItineraryProvider *itineraryProvider</Declaration>
+			
+			
+			<Anchor>//api/name/itineraryProvider</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/setPmr:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean pmr</Declaration>
+			
+			
+			<Anchor>//api/name/pmr</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryBaseRequest/pmr</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean pmr</Declaration>
+			
+			
+			<Anchor>//api/name/pmr</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/initWithItineraryProvider:andListener:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andListener:(id&lt;ISPItineraryRequestListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>itineraryProvider</Name>
+					<Abstract type="html">Itinerary provider reference.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Object to notify when the request succeeded or failed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithItineraryProvider:andListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/getRoute</TokenIdentifier>
+			<Abstract type="html">Method called to execute the Itinerary request.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)getRoute</Declaration>
+			
+			<ReturnValue><Abstract type="html">A boolean used to know if the request succeeded.</Abstract></ReturnValue>
+			<Anchor>//api/name/getRoute</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISAnalyticsThread.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsThread</TokenIdentifier>
+			<Abstract type="html">NSThread which handles analytics stuff.</Abstract>
+			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsThread/setIsStarted:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the ISAnalyticsManager is started.</Abstract>
+			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isStarted</Declaration>
+			
+			
+			<Anchor>//api/name/isStarted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsThread/isStarted</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the ISAnalyticsManager is started.</Abstract>
+			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isStarted</Declaration>
+			
+			
+			<Anchor>//api/name/isStarted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsThread/initWithMaxEvents:andServiceUrl:andFrequency:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithMaxEvents:(int)maxEvents andServiceUrl:(NSString *)serviceUrl andFrequency:(float)frequency</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>maxEvents</Name>
+					<Abstract type="html">Number of events sent in one request.</Abstract>
+				</Parameter><Parameter>
+					<Name>serviceUrl</Name>
+					<Abstract type="html">Remote service URL.</Abstract>
+				</Parameter><Parameter>
+					<Name>frequency</Name>
+					<Abstract type="html">HTTP request frequency (in seconds).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithMaxEvents:andServiceUrl:andFrequency:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISAnalyticsAbstractEvent.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsAbstractEvent</TokenIdentifier>
+			<Abstract type="html">Class used to represent an analytics abstract event.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setTimeStamp:</TokenIdentifier>
+			<Abstract type="html">Event timestamp.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int64_t timeStamp</Declaration>
+			
+			
+			<Anchor>//api/name/timeStamp</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/timeStamp</TokenIdentifier>
+			<Abstract type="html">Event timestamp.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int64_t timeStamp</Declaration>
+			
+			
+			<Anchor>//api/name/timeStamp</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setGuid:</TokenIdentifier>
+			<Abstract type="html">Event related GUID.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/guid</TokenIdentifier>
+			<Abstract type="html">Event related GUID.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setEventId:</TokenIdentifier>
+			<Abstract type="html">Event database identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int eventId</Declaration>
+			
+			
+			<Anchor>//api/name/eventId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/eventId</TokenIdentifier>
+			<Abstract type="html">Event database identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int eventId</Declaration>
+			
+			
+			<Anchor>//api/name/eventId</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
