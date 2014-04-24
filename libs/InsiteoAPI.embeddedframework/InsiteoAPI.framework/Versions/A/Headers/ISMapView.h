@@ -238,12 +238,14 @@
  @param animated Boolean used to know if an animation needs to be performed.
  */
 - (void)zoomIn:(Boolean)animated;
+- (void)zoomIn __deprecated_msg("Please now use the zoomIn: method");
 
 /*!
  Method called to zoom out (zoom level--).
  @param animated Boolean used to know if an animation needs to be performed.
  */
 - (void)zoomOut:(Boolean)animated;
+- (void)zoomOut __deprecated_msg("Please now use the zoomOut: method");
 
 /*!
  Method called to zoom to a zoom level for a specific map. We keep the current center position.
