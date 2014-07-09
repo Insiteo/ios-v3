@@ -1,58 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISAnalyticsThread.html">
+	<File path="Classes/ISCC3Zone.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsThread</TokenIdentifier>
-			<Abstract type="html">NSThread which handles analytics stuff.</Abstract>
-			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISCC3Zone</TokenIdentifier>
+			<Abstract type="html">3D zone representation.</Abstract>
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>
 			
 			<NodeRef refid="7"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsThread/setIsStarted:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the ISAnalyticsManager is started.</Abstract>
-			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISCC3Zone/setZone:</TokenIdentifier>
+			<Abstract type="html">ISGfxZone zone to use for geometry.</Abstract>
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean isStarted</Declaration>
+			<Declaration>@property (assign) ISGfxZone *zone</Declaration>
 			
 			
-			<Anchor>//api/name/isStarted</Anchor>
+			<Anchor>//api/name/zone</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsThread/isStarted</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the ISAnalyticsManager is started.</Abstract>
-			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISCC3Zone/zone</TokenIdentifier>
+			<Abstract type="html">ISGfxZone zone to use for geometry.</Abstract>
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean isStarted</Declaration>
+			<Declaration>@property (assign) ISGfxZone *zone</Declaration>
 			
 			
-			<Anchor>//api/name/isStarted</Anchor>
+			<Anchor>//api/name/zone</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsThread/initWithMaxEvents:andServiceUrl:andFrequency:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISCC3Zone/setZoneColor:</TokenIdentifier>
+			<Abstract type="html">3D rendering color.</Abstract>
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ccColor3B zoneColor</Declaration>
+			
+			
+			<Anchor>//api/name/zoneColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISCC3Zone/zoneColor</TokenIdentifier>
+			<Abstract type="html">3D rendering color.</Abstract>
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ccColor3B zoneColor</Declaration>
+			
+			
+			<Anchor>//api/name/zoneColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISCC3Zone/setMapScale:</TokenIdentifier>
+			<Abstract type="html">Current map scale.</Abstract>
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float mapScale</Declaration>
+			
+			
+			<Anchor>//api/name/mapScale</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISCC3Zone/mapScale</TokenIdentifier>
+			<Abstract type="html">Current map scale.</Abstract>
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float mapScale</Declaration>
+			
+			
+			<Anchor>//api/name/mapScale</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISCC3Zone/initWithZone:andMap:andTagName:andColor:</TokenIdentifier>
 			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISAnalyticsThread.h</DeclaredIn>			
+			<DeclaredIn>ISCC3Zone.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithMaxEvents:(int)maxEvents andServiceUrl:(NSString *)serviceUrl andFrequency:(float)frequency</Declaration>
+			<Declaration>- (id)initWithZone:(ISGfxZone *)zone andMap:(ISMap *)map andTagName:(NSString *)tagName andColor:(ccColor3B)zoneColor</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>maxEvents</Name>
-					<Abstract type="html">Number of events sent in one request.</Abstract>
+					<Name>zone</Name>
+					<Abstract type="html">ISGfxZone zone to use for geometry.</Abstract>
 				</Parameter><Parameter>
-					<Name>serviceUrl</Name>
-					<Abstract type="html">Remote service URL.</Abstract>
+					<Name>map</Name>
+					<Abstract type="html">Related map.</Abstract>
 				</Parameter><Parameter>
-					<Name>frequency</Name>
-					<Abstract type="html">HTTP request frequency (in seconds).</Abstract>
+					<Name>tagName</Name>
+					<Abstract type="html">Cocos tag name to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoneColor</Name>
+					<Abstract type="html">3D rendering color.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithMaxEvents:andServiceUrl:andFrequency:</Anchor>
+			<Anchor>//api/name/initWithZone:andMap:andTagName:andColor:</Anchor>
 		</Token>
 		
 	</File>

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ISPZone Protocol Reference</title>
+		<title>ISGfxGeofenceArea Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ISPZone Protocol Reference</h1>
+				<h1 class="hideInXcode">ISGfxGeofenceArea Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,9 +40,7 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/mapId">&nbsp;&nbsp;&nbsp;&nbsp;mapId</option>
-	
-	<option value="//api/name/zoneHeight">&nbsp;&nbsp;&nbsp;&nbsp;zoneHeight</option>
+	<option value="//api/name/area">&nbsp;&nbsp;&nbsp;&nbsp;area</option>
 	
 	
 	
@@ -51,9 +49,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:">&nbsp;&nbsp;&nbsp;&nbsp;- invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:</option>
-	
-	<option value="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:">&nbsp;&nbsp;&nbsp;&nbsp;- render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</option>
+	<option value="//api/name/initWithArea:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithArea:</option>
 	
 	
 	
@@ -79,9 +75,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapId">mapId</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoneHeight">zoneHeight</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/area">area</a></span></li>
 	
 </ul></li>
 
@@ -91,9 +85,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:">invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:">render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithArea:">initWithArea:</a></span></li>
 	
 </ul></li>
 
@@ -102,7 +94,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ISPZone Protocol Reference" name="top"></a>
+				<a title="ISGfxGeofenceArea Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -111,18 +103,21 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ISPZone Protocol Reference</h1>
+						<h1 class="title title-header">ISGfxGeofenceArea Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">CCNode</td>
+</tr><tr>
 	<td class="specification-title">Conforms to</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-value"><a href="../Protocols/ISPRTO.html">ISPRTO</a></td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ISPZone.h</td>
+	<td class="specification-value">ISGfxGeofenceArea.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -132,7 +127,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Protocol used to define a render Zone.</p>
+						<p>Class used to display a GeofenceArea.</p>
 					</div>
 					
 					
@@ -150,29 +145,15 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapId">&nbsp;&nbsp;mapId</a></code>
-		<span class="tooltip"><p>id<ISPZone> map identifier.</p></span>
+		<code><a href="#//api/name/area">&nbsp;&nbsp;area</a></code>
+		<span class="tooltip"><p>Related geofence area.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/zoneHeight">&nbsp;&nbsp;zoneHeight</a></code>
-		<span class="tooltip"><p>id<ISPZone> map scale.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:">&ndash;&nbsp;invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:</a></code>
-		<span class="tooltip"><p>Method called to draw a RTO according to the Zone context.</p></span>
-	</span>
 	
-	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:">&ndash;&nbsp;render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</a></code>
-		<span class="tooltip"><p>Method called to render in 3D a RTO according to the Zone context.</p></span>
+		<code><a href="#//api/name/initWithArea:">&ndash;&nbsp;initWithArea:</a></code>
+		<span class="tooltip"><p>Main constructor.</p></span>
 	</span>
 	
 	
@@ -190,18 +171,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/mapId" title="mapId"></a>
-	<h3 class="subsubtitle method-title">mapId</h3>
+	<a name="//api/name/area" title="area"></a>
+	<h3 class="subsubtitle method-title">area</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>id<ISPZone> map identifier.</p>
+		<p>Related geofence area.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int mapId</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISGeofenceArea *area</code></div>
 
     
 	
@@ -213,7 +194,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>id<ISPZone> map identifier.</p>
+		<p>Related geofence area.</p>
 	</div>
 	
 	
@@ -224,48 +205,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPZone.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/zoneHeight" title="zoneHeight"></a>
-	<h3 class="subsubtitle method-title">zoneHeight</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>id<ISPZone> map scale.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float zoneHeight</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>id<ISPZone> map scale.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPZone.h</code><br />
+		<code class="declared-in-ref">ISGfxGeofenceArea.h</code><br />
 	</div>				
 	
 	
@@ -282,18 +222,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:" title="invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:"></a>
-	<h3 class="subsubtitle method-title">invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:</h3>
+	<a name="//api/name/initWithArea:" title="initWithArea:"></a>
+	<h3 class="subsubtitle method-title">initWithArea:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method called to draw a RTO according to the Zone context.</p>
+		<p>Main constructor.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)invalidateWithLayer:(ISLayer *)<em>layer</em> andRatio:(double)<em>ratio</em> andOffset:(CGPoint)<em>offset</em> andAngle:(float)<em>angle</em> andPriority:(int)<em>priority</em> andRTO:(id&lt;ISPRTO&gt;)<em>rto</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithArea:(ISGeofenceArea *)<em>area</em></code></div>
 
     
 	
@@ -301,33 +241,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>layer</em></dt>
-			<dd><p>Current Cocos2d layer.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>ratio</em></dt>
-			<dd><p>Current map ratio.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>offset</em></dt>
-			<dd><p>Current map offset.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>angle</em></dt>
-			<dd><p>Current map angle (clockwise).</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>priority</em></dt>
-			<dd><p>Renderer priority, used to set Z property in Cocos2d.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>rto</em></dt>
-			<dd><p>RTO to draw in.</p></dd>
+			<dt><em>area</em></dt>
+			<dd><p>Related geofence <a href="#//api/name/area">area</a>.</p></dd>
 		</dl>
 		
 	</div>
@@ -340,7 +255,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to draw a RTO according to the Zone context.</p>
+		<p>Main constructor.</p>
 	</div>
 	
 	
@@ -351,83 +266,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPZone.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:" title="render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:"></a>
-	<h3 class="subsubtitle method-title">render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method called to render in 3D a RTO according to the Zone context.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)render3DWithScene:(CC3Scene *)<em>scene</em> andLayer:(CC3Node *)<em>layer</em> andCurrentMap:(id&lt;ISPMapData&gt;)<em>map</em> andRatio:(float)<em>ratio</em> andRTO:(id&lt;ISPRTO&gt;)<em>rto</em> andAngle:(float)<em>angle</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>scene</em></dt>
-			<dd><p>Current 3D scene.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>layer</em></dt>
-			<dd><p>Layer where the RTO is.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>map</em></dt>
-			<dd><p>Current displayed map.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>ratio</em></dt>
-			<dd><p>Current ratio (depending on the current zoom level).</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>rto</em></dt>
-			<dd><p>RTO to draw in.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>angle</em></dt>
-			<dd><p>Current angle.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to render in 3D a RTO according to the Zone context.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPZone.h</code><br />
+		<code class="declared-in-ref">ISGfxGeofenceArea.h</code><br />
 	</div>				
 	
 	
@@ -446,7 +285,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-07-09)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

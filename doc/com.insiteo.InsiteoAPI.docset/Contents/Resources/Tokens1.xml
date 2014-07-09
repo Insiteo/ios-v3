@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISAbstractElem.html">
+	<File path="Classes/ISAnalyticsAbstractEvent.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISAbstractElem</TokenIdentifier>
-			<Abstract type="html">Intern class used to represent an analytics abstract database element.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsAbstractEvent</TokenIdentifier>
+			<Abstract type="html">Class used to represent an analytics abstract event.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>
 			
 			<NodeRef refid="1"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAbstractElem/setEventId:</TokenIdentifier>
-			<Abstract type="html">The related databse event identifier.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setTimeStamp:</TokenIdentifier>
+			<Abstract type="html">Event timestamp.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int64_t timeStamp</Declaration>
+			
+			
+			<Anchor>//api/name/timeStamp</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/timeStamp</TokenIdentifier>
+			<Abstract type="html">Event timestamp.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int64_t timeStamp</Declaration>
+			
+			
+			<Anchor>//api/name/timeStamp</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setGuid:</TokenIdentifier>
+			<Abstract type="html">Event related GUID.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/guid</TokenIdentifier>
+			<Abstract type="html">Event related GUID.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setEventId:</TokenIdentifier>
+			<Abstract type="html">Event database identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite) int eventId</Declaration>
 			
@@ -23,74 +67,14 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAbstractElem/eventId</TokenIdentifier>
-			<Abstract type="html">The related databse event identifier.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/eventId</TokenIdentifier>
+			<Abstract type="html">Event database identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readwrite) int eventId</Declaration>
 			
 			
 			<Anchor>//api/name/eventId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAbstractElem/setEventType:</TokenIdentifier>
-			<Abstract type="html">The event type.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int eventType</Declaration>
-			
-			
-			<Anchor>//api/name/eventType</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAbstractElem/eventType</TokenIdentifier>
-			<Abstract type="html">The event type.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int eventType</Declaration>
-			
-			
-			<Anchor>//api/name/eventType</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAbstractElem/initWithEventId:andEventType:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
-			
-			<Declaration>- (id)initWithEventId:(int)eventId andEventType:(int)eventType</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>eventId</Name>
-					<Abstract type="html">The related databse event identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>eventType</Name>
-					<Abstract type="html">The event type.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/initWithEventId:andEventType:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISAbstractElem/ISAbstractElemWithEventId:andEventType:</TokenIdentifier>
-			<Abstract type="html">Static constructor.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
-			
-			<Declaration>+ (ISAbstractElem *)ISAbstractElemWithEventId:(int)eventId andEventType:(int)eventType</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>eventId</Name>
-					<Abstract type="html">The related databse event identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>eventType</Name>
-					<Abstract type="html">The event type.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ISAbstractElemWithEventId:andEventType:</Anchor>
 		</Token>
 		
 	</File>

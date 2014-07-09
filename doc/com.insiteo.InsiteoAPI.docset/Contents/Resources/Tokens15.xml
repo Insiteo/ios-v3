@@ -1,73 +1,475 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISDBHelperAnalytics.html">
+	<File path="Classes/ISGeofenceArea.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISDBHelperAnalytics</TokenIdentifier>
-			<Abstract type="html">Class that handles analytics database stuff.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGeofenceArea</TokenIdentifier>
+			<Abstract type="html">Class used to represent a geofencing area.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>
 			
 			<NodeRef refid="15"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/instance</TokenIdentifier>
-			<Abstract type="html">Method used to get the ISDBHelperAnalytics unique instance.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setGUID:</TokenIdentifier>
+			<Abstract type="html">Geofencing area identifier.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
 			
-			<Declaration>+ (ISDBHelperAnalytics *)instance</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *GUID</Declaration>
 			
-			<ReturnValue><Abstract type="html">The ISDBHelperAnalytics unique instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/instance</Anchor>
+			
+			<Anchor>//api/name/GUID</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/addUserEvent:</TokenIdentifier>
-			<Abstract type="html">Method used to send a analytics user event.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/GUID</TokenIdentifier>
+			<Abstract type="html">Geofencing area identifier.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
 			
-			<Declaration>+ (void)addUserEvent:(ISAnalyticsUserEvent *)event</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">The event to send.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) NSString *GUID</Declaration>
 			
-			<Anchor>//api/name/addUserEvent:</Anchor>
+			
+			<Anchor>//api/name/GUID</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/addGenericEvent:</TokenIdentifier>
-			<Abstract type="html">Method used to send a analytics generic event.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setCenter:</TokenIdentifier>
+			<Abstract type="html">Area center (position in meters).</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
 			
-			<Declaration>+ (void)addGenericEvent:(ISAnalyticsGenericEvent *)event</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">The event to send.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) ISPosition *center</Declaration>
 			
-			<Anchor>//api/name/addGenericEvent:</Anchor>
+			
+			<Anchor>//api/name/center</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISDBHelperAnalytics/addLocationEvent:</TokenIdentifier>
-			<Abstract type="html">Method used to send a analytics location event.</Abstract>
-			<DeclaredIn>ISDBHelperAnalytics.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/center</TokenIdentifier>
+			<Abstract type="html">Area center (position in meters).</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
 			
-			<Declaration>+ (void)addLocationEvent:(ISAnalyticsLocationEvent *)event</Declaration>
+			<Declaration>@property (nonatomic, retain) ISPosition *center</Declaration>
+			
+			
+			<Anchor>//api/name/center</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setPolygon:</TokenIdentifier>
+			<Abstract type="html">Area polygon (points in millimeters).</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *polygon</Declaration>
+			
+			
+			<Anchor>//api/name/polygon</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/polygon</TokenIdentifier>
+			<Abstract type="html">Area polygon (points in millimeters).</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *polygon</Declaration>
+			
+			
+			<Anchor>//api/name/polygon</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setIndexZoomLevel:</TokenIdentifier>
+			<Abstract type="html">Zoom level index.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int indexZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/indexZoomLevel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/indexZoomLevel</TokenIdentifier>
+			<Abstract type="html">Zoom level index.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int indexZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/indexZoomLevel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setIndexes:</TokenIdentifier>
+			<Abstract type="html">Array containing all tile indexes where the area is present.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *indexes</Declaration>
+			
+			
+			<Anchor>//api/name/indexes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/indexes</TokenIdentifier>
+			<Abstract type="html">Array containing all tile indexes where the area is present.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *indexes</Declaration>
+			
+			
+			<Anchor>//api/name/indexes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setTimeToEnter:</TokenIdentifier>
+			<Abstract type="html">Time needed to consider that we enter the area.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToEnter</Declaration>
+			
+			
+			<Anchor>//api/name/timeToEnter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/timeToEnter</TokenIdentifier>
+			<Abstract type="html">Time needed to consider that we enter the area.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToEnter</Declaration>
+			
+			
+			<Anchor>//api/name/timeToEnter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setTimeToLeave:</TokenIdentifier>
+			<Abstract type="html">Time needed to consider that we leave the area.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToLeave</Declaration>
+			
+			
+			<Anchor>//api/name/timeToLeave</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/timeToLeave</TokenIdentifier>
+			<Abstract type="html">Time needed to consider that we leave the area.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToLeave</Declaration>
+			
+			
+			<Anchor>//api/name/timeToLeave</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setTimeToStay:</TokenIdentifier>
+			<Abstract type="html">Time needed to consider that we stay in the area.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToStay</Declaration>
+			
+			
+			<Anchor>//api/name/timeToStay</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/timeToStay</TokenIdentifier>
+			<Abstract type="html">Time needed to consider that we stay in the area.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval timeToStay</Declaration>
+			
+			
+			<Anchor>//api/name/timeToStay</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setEnterEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the enter event is enabled.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean enterEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/enterEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/enterEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the enter event is enabled.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean enterEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/enterEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setStayEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the stay event is enabled.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean stayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/stayEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/stayEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the stay event is enabled.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean stayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/stayEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setLeaveEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the leave event is enabled.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean leaveEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/leaveEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/leaveEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the leave event is enabled.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean leaveEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/leaveEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setExtra1:</TokenIdentifier>
+			<Abstract type="html">Extra data attribute.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/extra1</TokenIdentifier>
+			<Abstract type="html">Extra data attribute.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setExtra2:</TokenIdentifier>
+			<Abstract type="html">Extra data attribute.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/extra2</TokenIdentifier>
+			<Abstract type="html">Extra data attribute.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setExtra3:</TokenIdentifier>
+			<Abstract type="html">Extra data attribute.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/extra3</TokenIdentifier>
+			<Abstract type="html">Extra data attribute.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISGeofenceArea/ISGeofenceAreaWithPBZone:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISGeofenceAreaWithPBZone:(Zone *)pbzone</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">The event to send.</Abstract>
+					<Name>pbzone</Name>
+					<Abstract type="html">Zone used to create the area.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/addLocationEvent:</Anchor>
+			<Anchor>//api/name/ISGeofenceAreaWithPBZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/initWithPBZone:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithPBZone:(Zone *)pbZone</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pbZone</Name>
+					<Abstract type="html">Zone used to create the area.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithPBZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/initWithGUID:andPosition:andSize:andContent:andEnteredEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</TokenIdentifier>
+			<Abstract type="html">Second constructor.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithGUID:(NSString *)guid andPosition:(ISPosition *)center andSize:(float)size andContent:(NSString *)content andEnteredEnabled:(Boolean)enteredEnabled andEnteredTime:(float)enteredTime andStayedEnabled:(Boolean)stayedEnabled andStayedTime:(float)stayedTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">The guid that should be used for the new GeofenceArea. Guid can not be nil or empty!</Abstract>
+				</Parameter><Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The center of the GeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size for the square.</Abstract>
+				</Parameter><Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The content for the created GeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>enteredEnabled</Name>
+					<Abstract type="html">True if entered event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>enteredTime</Name>
+					<Abstract type="html">The threshold time to trigger the entered event.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayedEnabled</Name>
+					<Abstract type="html">True if stayed event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayedTime</Name>
+					<Abstract type="html">The threshold time to trigger the stayed event.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveEnabled</Name>
+					<Abstract type="html">True if leave event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveTime</Name>
+					<Abstract type="html">The threshold time to trigger the leave event.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithGUID:andPosition:andSize:andContent:andEnteredEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/initWithZoneId:andZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</TokenIdentifier>
+			<Abstract type="html">Second constructor.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithZoneId:(int)zoneId andZonePoi:(ISZonePoi *)zonePoi andContent:(NSString *)content andEnterEnabled:(Boolean)enterEnabled andEnterTime:(float)enterTime andStayEnabled:(Boolean)stayEnabled andStayTime:(float)stayTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andDefaultGeoWidth:(float)defaultGeoWidth</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Related zone identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Related Zone/Poi association (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The content for the created GeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>enterEnabled</Name>
+					<Abstract type="html">True if entered event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>enterTime</Name>
+					<Abstract type="html">The threshold time to trigger the entered event.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayEnabled</Name>
+					<Abstract type="html">True if stayed event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayTime</Name>
+					<Abstract type="html">The threshold time to trigger the stayed event.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveEnabled</Name>
+					<Abstract type="html">True if leave event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveTime</Name>
+					<Abstract type="html">The threshold time to trigger the leave event.</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultGeoWidth</Name>
+					<Abstract type="html">The default geofence depth.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithZoneId:andZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/containsPositionWithPosition:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the area contains a specified position.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)containsPositionWithPosition:(ISPosition *)position</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">Position to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the area contains the position, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsPositionWithPosition:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISGeofenceArea/getGuidWithZonePoi:andZoneId:</TokenIdentifier>
+			<Abstract type="html">Static method used to get a geofence zone guid from a Zone/Poi association or a zone identifier.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getGuidWithZonePoi:(ISZonePoi *)zonePoi andZoneId:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Zone/Poi reference (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Corresponding zone identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getGuidWithZonePoi:andZoneId:</Anchor>
 		</Token>
 		
 	</File>

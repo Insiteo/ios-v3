@@ -1,172 +1,532 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISPosition.html">
+	<File path="Classes/ISRect.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISPosition</TokenIdentifier>
-			<Abstract type="html">Class used to represent a position in our map api.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISRect</TokenIdentifier>
+			<Abstract type="html">Class used to represent a rectangle defined by 4 int values (left, top, right, bottom (ex: 0/0/50/150).</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>
 			
 			<NodeRef refid="69"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/setCoordinates:</TokenIdentifier>
-			<Abstract type="html">Position coordinates (in meters).</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setLeft:</TokenIdentifier>
+			<Abstract type="html">Left value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) CGPoint coordinates</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int left</Declaration>
 			
 			
-			<Anchor>//api/name/coordinates</Anchor>
+			<Anchor>//api/name/left</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISPosition/coordinates</TokenIdentifier>
-			<Abstract type="html">Position coordinates (in meters).</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/left</TokenIdentifier>
+			<Abstract type="html">Left value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) CGPoint coordinates</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int left</Declaration>
 			
 			
-			<Anchor>//api/name/coordinates</Anchor>
+			<Anchor>//api/name/left</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/setMapId:</TokenIdentifier>
-			<Abstract type="html">Relative map id.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setTop:</TokenIdentifier>
+			<Abstract type="html">Top value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int top</Declaration>
 			
 			
-			<Anchor>//api/name/mapId</Anchor>
+			<Anchor>//api/name/top</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISPosition/mapId</TokenIdentifier>
-			<Abstract type="html">Relative map id.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/top</TokenIdentifier>
+			<Abstract type="html">Top value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int top</Declaration>
 			
 			
-			<Anchor>//api/name/mapId</Anchor>
+			<Anchor>//api/name/top</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/initWithX:andY:andMapId:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setRight:</TokenIdentifier>
+			<Abstract type="html">Right value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int right</Declaration>
+			
+			
+			<Anchor>//api/name/right</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/right</TokenIdentifier>
+			<Abstract type="html">Right value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int right</Declaration>
+			
+			
+			<Anchor>//api/name/right</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setBottom:</TokenIdentifier>
+			<Abstract type="html">Bottom value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int bottom</Declaration>
+			
+			
+			<Anchor>//api/name/bottom</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/bottom</TokenIdentifier>
+			<Abstract type="html">Bottom value.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int bottom</Declaration>
+			
+			
+			<Anchor>//api/name/bottom</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setCenter:</TokenIdentifier>
+			<Abstract type="html">Center of the rectangle.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint center</Declaration>
+			
+			
+			<Anchor>//api/name/center</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/center</TokenIdentifier>
+			<Abstract type="html">Center of the rectangle.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint center</Declaration>
+			
+			
+			<Anchor>//api/name/center</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setTopLeft:</TokenIdentifier>
+			<Abstract type="html">Top left point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topLeft</Declaration>
+			
+			
+			<Anchor>//api/name/topLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/topLeft</TokenIdentifier>
+			<Abstract type="html">Top left point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topLeft</Declaration>
+			
+			
+			<Anchor>//api/name/topLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setTopRight:</TokenIdentifier>
+			<Abstract type="html">Top right point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topRight</Declaration>
+			
+			
+			<Anchor>//api/name/topRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/topRight</TokenIdentifier>
+			<Abstract type="html">Top right point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topRight</Declaration>
+			
+			
+			<Anchor>//api/name/topRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setBottomLeft:</TokenIdentifier>
+			<Abstract type="html">Bottom left point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomLeft</Declaration>
+			
+			
+			<Anchor>//api/name/bottomLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/bottomLeft</TokenIdentifier>
+			<Abstract type="html">Bottom left point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomLeft</Declaration>
+			
+			
+			<Anchor>//api/name/bottomLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/setBottomRight:</TokenIdentifier>
+			<Abstract type="html">Bottom right point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRect/bottomRight</TokenIdentifier>
+			<Abstract type="html">Bottom right point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/initWithLeft:andTop:andRight:andBottom:</TokenIdentifier>
 			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithX:(double)x andY:(double)y andMapId:(int)mapId</Declaration>
+			<Declaration>- (id)initWithLeft:(int)left andTop:(int)top andRight:(int)right andBottom:(int)bottom</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>x</Name>
-					<Abstract type="html">X double coordinate.</Abstract>
+					<Name>left</Name>
+					<Abstract type="html">Left int value (X coordinate).</Abstract>
 				</Parameter><Parameter>
-					<Name>y</Name>
-					<Abstract type="html">Y double coordinate.</Abstract>
+					<Name>top</Name>
+					<Abstract type="html">Top int value (Y coordinate).</Abstract>
 				</Parameter><Parameter>
-					<Name>mapId</Name>
-					<Abstract type="html">Map identifier to use.</Abstract>
+					<Name>right</Name>
+					<Abstract type="html">Right int value (X coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>bottom</Name>
+					<Abstract type="html">Bottom int value (Y coordinate).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithX:andY:andMapId:</Anchor>
+			<Anchor>//api/name/initWithLeft:andTop:andRight:andBottom:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/initWithISPosition:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/initWithLeft:andTop:andWidth:andHeight:</TokenIdentifier>
 			<Abstract type="html">Constructor.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithISPosition:(ISPosition *)position</Declaration>
+			<Declaration>- (id)initWithLeft:(int)left andTop:(int)top andWidth:(int)width andHeight:(int)height</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>position</Name>
-					<Abstract type="html">ISPosition to use for instantiate the new one.</Abstract>
+					<Name>left</Name>
+					<Abstract type="html">Left int value (X coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>top</Name>
+					<Abstract type="html">Top int value (Y coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>width</Name>
+					<Abstract type="html">Rect int width.</Abstract>
+				</Parameter><Parameter>
+					<Name>height</Name>
+					<Abstract type="html">Rect int height.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithISPosition:</Anchor>
+			<Anchor>//api/name/initWithLeft:andTop:andWidth:andHeight:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISPosition/ISPositionWithX:andY:andMapId:</TokenIdentifier>
-			<Abstract type="html">Static main constructor.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/initWithCenterX:andCenterY:andWidth:andHeight:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>+ (id)ISPositionWithX:(double)x andY:(double)y andMapId:(int)mapId</Declaration>
+			<Declaration>- (id)initWithCenterX:(int)centerX andCenterY:(int)centerY andWidth:(int)width andHeight:(int)height</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>centerX</Name>
+					<Abstract type="html">Rect center X int coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>centerY</Name>
+					<Abstract type="html">Rect center Y int coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>width</Name>
+					<Abstract type="html">Rect int width.</Abstract>
+				</Parameter><Parameter>
+					<Name>height</Name>
+					<Abstract type="html">Rect int height.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithCenterX:andCenterY:andWidth:andHeight:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/initWithCGRect:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithCGRect:(CGRect)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">CGRect to use for instantiate the new one.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithCGRect:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISRect/ISRectWithLeft:andTop:andRight:andBottom:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISRectWithLeft:(int)left andTop:(int)top andRight:(int)right andBottom:(int)bottom</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>left</Name>
+					<Abstract type="html">Left int value (X coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>top</Name>
+					<Abstract type="html">Top int value (Y coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>right</Name>
+					<Abstract type="html">Right int value (X coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>bottom</Name>
+					<Abstract type="html">Bottom int value (Y coordinate).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISRectWithLeft:andTop:andRight:andBottom:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISRect/ISRectWithCGRect:</TokenIdentifier>
+			<Abstract type="html">Static constructor.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISRectWithCGRect:(CGRect)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">CGRect to use for instantiate the new one.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISRectWithCGRect:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/contains:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the ISRect contains the given point.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)contains:(CGPoint)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">Point to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the ISRect contains the point, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/contains:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/containsWithX:andY:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the ISRect contains the given coordinates.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)containsWithX:(int)x andY:(int)y</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>x</Name>
-					<Abstract type="html">X double coordinate.</Abstract>
+					<Abstract type="html">X coordinate to test.</Abstract>
 				</Parameter><Parameter>
 					<Name>y</Name>
-					<Abstract type="html">Y double coordinate.</Abstract>
-				</Parameter><Parameter>
-					<Name>mapId</Name>
-					<Abstract type="html">Map identifier to use.</Abstract>
+					<Abstract type="html">Y coordinate to test.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ISPositionWithX:andY:andMapId:</Anchor>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the ISRect contains the coordinates, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsWithX:andY:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/setValuesWithPosition:</TokenIdentifier>
-			<Abstract type="html">copy values from position, without new allocation.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/toCGRect</TokenIdentifier>
+			<Abstract type="html">Method used to convert the ISRect into CGRect.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>- (void)setValuesWithPosition:(ISPosition *)position</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>position</Name>
-					<Abstract type="html">ISPosition to use for update current values.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (CGRect)toCGRect</Declaration>
 			
-			<Anchor>//api/name/setValuesWithPosition:</Anchor>
+			<ReturnValue><Abstract type="html">The related converted CGRect.</Abstract></ReturnValue>
+			<Anchor>//api/name/toCGRect</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/offsetWithOffset:</TokenIdentifier>
-			<Abstract type="html">Method used to offset the ISPosition.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/centerX</TokenIdentifier>
+			<Abstract type="html">Method used to get the center x coordinate.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>- (void)offsetWithOffset:(CGPoint)offset</Declaration>
+			<Declaration>- (int)centerX</Declaration>
+			
+			<ReturnValue><Abstract type="html">The center x coordinate.</Abstract></ReturnValue>
+			<Anchor>//api/name/centerX</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/centerY</TokenIdentifier>
+			<Abstract type="html">Method used to get the center y coordinate.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (int)centerY</Declaration>
+			
+			<ReturnValue><Abstract type="html">The center y coordinate.</Abstract></ReturnValue>
+			<Anchor>//api/name/centerY</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/width</TokenIdentifier>
+			<Abstract type="html">Method used to get ISRect width.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (int)width</Declaration>
+			
+			<ReturnValue><Abstract type="html">The ISRect width.</Abstract></ReturnValue>
+			<Anchor>//api/name/width</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/height</TokenIdentifier>
+			<Abstract type="html">Method used to get ISRect height.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (int)height</Declaration>
+			
+			<ReturnValue><Abstract type="html">The ISRect height.</Abstract></ReturnValue>
+			<Anchor>//api/name/height</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/offset:</TokenIdentifier>
+			<Abstract type="html">Method called to offset ISRect.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (void)offset:(CGPoint)offset</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>offset</Name>
-					<Abstract type="html">CGPoint use to offset the position on X/Y axis.</Abstract>
+					<Abstract type="html">The offset to apply.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/offsetWithOffset:</Anchor>
+			<Anchor>//api/name/offset:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/x</TokenIdentifier>
-			<Abstract type="html">X coordinate accessor.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/isEqualToISRectWithLeft:andTop:andRight:andBottom:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the ISRect is equal to an specified ISRect.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>- (double)x</Declaration>
-			
-			
-			<Anchor>//api/name/x</Anchor>
+			<Declaration>- (Boolean)isEqualToISRectWithLeft:(int)left andTop:(int)top andRight:(int)right andBottom:(int)bottom</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>left</Name>
+					<Abstract type="html">Left value of the ISRect to compare.</Abstract>
+				</Parameter><Parameter>
+					<Name>top</Name>
+					<Abstract type="html">Top value of the ISRect to compare.</Abstract>
+				</Parameter><Parameter>
+					<Name>right</Name>
+					<Abstract type="html">Right value of the ISRect to compare.</Abstract>
+				</Parameter><Parameter>
+					<Name>bottom</Name>
+					<Abstract type="html">Bottom value of the ISRect to compare.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the two ISRect are equals, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/isEqualToISRectWithLeft:andTop:andRight:andBottom:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/y</TokenIdentifier>
-			<Abstract type="html">Y coordinate accessor.</Abstract>
-			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/isEqualToISRect:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the ISRect is equal to an specified ISRect.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
-			<Declaration>- (double)y</Declaration>
+			<Declaration>- (Boolean)isEqualToISRect:(ISRect *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">ISRect to compare.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the two ISRect are equals, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/isEqualToISRect:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/updateWithLeft:andTop:andRight:andBottom:</TokenIdentifier>
+			<Abstract type="html">Method used to update the ISRect with 4 specified values.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
 			
+			<Declaration>- (void)updateWithLeft:(int)left andTop:(int)top andRight:(int)right andBottom:(int)bottom</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>left</Name>
+					<Abstract type="html">Left use for update.</Abstract>
+				</Parameter><Parameter>
+					<Name>top</Name>
+					<Abstract type="html">Top value use for update.</Abstract>
+				</Parameter><Parameter>
+					<Name>right</Name>
+					<Abstract type="html">Right value use for update.</Abstract>
+				</Parameter><Parameter>
+					<Name>bottom</Name>
+					<Abstract type="html">Bottom value use for update.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<Anchor>//api/name/y</Anchor>
+			<Anchor>//api/name/updateWithLeft:andTop:andRight:andBottom:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRect/updateWithISRect:</TokenIdentifier>
+			<Abstract type="html">Method used to update the ISRect with a specified ISRect.</Abstract>
+			<DeclaredIn>ISRect.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateWithISRect:(ISRect *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">ISRect to use for update.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateWithISRect:</Anchor>
 		</Token>
 		
 	</File>

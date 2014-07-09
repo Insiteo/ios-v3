@@ -44,11 +44,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/onLoginDoneWithSuccess:andError:">&nbsp;&nbsp;&nbsp;&nbsp;- onLoginDoneWithSuccess:andError:</option>
+	<option value="//api/name/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:">&nbsp;&nbsp;&nbsp;&nbsp;- onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</option>
 	
 	<option value="//api/name/onLogoutDoneWithSuccess:andError:">&nbsp;&nbsp;&nbsp;&nbsp;- onLogoutDoneWithSuccess:andError:</option>
 	
-	<option value="//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:">&nbsp;&nbsp;&nbsp;&nbsp;- onRefreshSitesDoneWithSuccess:andError:andSites:</option>
+	<option value="//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:">&nbsp;&nbsp;&nbsp;&nbsp;- onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</option>
 	
 	
 	
@@ -78,11 +78,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onLoginDoneWithSuccess:andError:">onLoginDoneWithSuccess:andError:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:">onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onLogoutDoneWithSuccess:andError:">onLogoutDoneWithSuccess:andError:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:">onRefreshSitesDoneWithSuccess:andError:andSites:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:">onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</a></span></li>
 	
 </ul></li>
 
@@ -139,7 +139,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/onLoginDoneWithSuccess:andError:">&ndash;&nbsp;onLoginDoneWithSuccess:andError:</a></code>
+		<code><a href="#//api/name/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:">&ndash;&nbsp;onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</a></code>
 		<span class="tooltip"><p>Method called when a login task is done.</p></span>
 	</span>
 	
@@ -153,11 +153,11 @@
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:">&ndash;&nbsp;onRefreshSitesDoneWithSuccess:andError:andSites:</a></code>
-		<span class="tooltip"><p>Method called when a refresh sites task is done.</p></span>
+		<code><a href="#//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:">&ndash;&nbsp;onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</a></code>
+		<span class="tooltip"><p>Method called to refresh user available sites.</p></span>
 	</span>
 	
-	<span class="task-item-suffix">required method</span>
+	
 </li>
 						</ul>
 						
@@ -176,8 +176,8 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/onLoginDoneWithSuccess:andError:" title="onLoginDoneWithSuccess:andError:"></a>
-	<h3 class="subsubtitle method-title">onLoginDoneWithSuccess:andError:</h3>
+	<a name="//api/name/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:" title="onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:"></a>
+	<h3 class="subsubtitle method-title">onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</h3>
 	
 	
 	
@@ -187,7 +187,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)onLoginDoneWithSuccess:(Boolean)<em>success</em> andError:(ISInsiteoError *)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)onLoginDoneWithSuccess:(Boolean)<em>success</em> andError:(ISInsiteoError *)<em>error</em> andSites:(NSArray *)<em>sites</em> andRoleId:(ERoleID)<em>roleId</em> andRemote:(Boolean)<em>remote</em></code></div>
 
     
 	
@@ -202,6 +202,21 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>error</em></dt>
 			<dd><p>Related error if no success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sites</em></dt>
+			<dd><p>Logged user available sites.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>roleId</em></dt>
+			<dd><p>Logged user role identifier.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>remote</em></dt>
+			<dd><p>Boolean used to know if login is local or remote.</p></dd>
 		</dl>
 		
 	</div>
@@ -288,18 +303,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:" title="onRefreshSitesDoneWithSuccess:andError:andSites:"></a>
-	<h3 class="subsubtitle method-title">onRefreshSitesDoneWithSuccess:andError:andSites:</h3>
+	<a name="//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:" title="onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:"></a>
+	<h3 class="subsubtitle method-title">onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method called when a refresh sites task is done.</p>
+		<p>Method called to refresh user available sites.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)onRefreshSitesDoneWithSuccess:(Boolean)<em>success</em> andError:(ISInsiteoError *)<em>error</em> andSites:(NSArray *)<em>sites</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)onRefreshSitesDoneWithSuccess:(Boolean)<em>success</em> andError:(ISInsiteoError *)<em>error</em> andSites:(NSArray *)<em>sites</em> andRoleId:(ERoleID)<em>roleId</em></code></div>
 
     
 	
@@ -308,7 +323,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>success</em></dt>
-			<dd><p><b>YES</b> if the refreshing succeeded, otherwise <b>NO</b>.</p></dd>
+			<dd><p><b>YES</b> if the refresh succeeded, otherwise <b>NO</b>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -318,7 +333,12 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>sites</em></dt>
-			<dd><p>Available sites if success (could be nil).</p></dd>
+			<dd><p>Refreshed available sites.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>roleId</em></dt>
+			<dd><p>Refreshed user role identifier.</p></dd>
 		</dl>
 		
 	</div>
@@ -331,7 +351,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called when a refresh sites task is done.</p>
+		<p>Method called to refresh user available sites.</p>
 	</div>
 	
 	
@@ -361,7 +381,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-07-09)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

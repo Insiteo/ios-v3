@@ -1,46 +1,909 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGfxMeetMePerson.html">
+	<File path="Classes/ISInitProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGfxMeetMePerson</TokenIdentifier>
-			<Abstract type="html">Class used to render an ISMeetMePerson on the map.</Abstract>
-			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISInitProvider</TokenIdentifier>
+			<Abstract type="html">Class used to provide all generic INSITEO methods.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>
 			
 			<NodeRef refid="28"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/initWithPerson:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setIsInitialized:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the online initialization succeeded.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithPerson:(ISMeetMePerson *)person</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>person</Name>
-					<Abstract type="html">Person used for rendering (position, color, etc...).</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (readwrite) Boolean isInitialized</Declaration>
 			
-			<Anchor>//api/name/initWithPerson:</Anchor>
+			
+			<Anchor>//api/name/isInitialized</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/updatePerson:</TokenIdentifier>
-			<Abstract type="html">Method called to update related person information.</Abstract>
-			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/isInitialized</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the online initialization succeeded.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
 			
-			<Declaration>- (void)updatePerson:(ISMeetMePerson *)person</Declaration>
+			<Declaration>@property (readwrite) Boolean isInitialized</Declaration>
+			
+			
+			<Anchor>//api/name/isInitialized</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setInitListener:</TokenIdentifier>
+			<Abstract type="html">initialization events listener.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
+			
+			
+			<Anchor>//api/name/initListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/initListener</TokenIdentifier>
+			<Abstract type="html">initialization events listener.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
+			
+			
+			<Anchor>//api/name/initListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setMapRoot:</TokenIdentifier>
+			<Abstract type="html">The current root map.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISMap *mapRoot</Declaration>
+			
+			
+			<Anchor>//api/name/mapRoot</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/mapRoot</TokenIdentifier>
+			<Abstract type="html">The current root map.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISMap *mapRoot</Declaration>
+			
+			
+			<Anchor>//api/name/mapRoot</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setMaps:</TokenIdentifier>
+			<Abstract type="html">All the maps stored in an NSDictionnary (key &lt;=&gt; map identifier : NSNumber).</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *maps</Declaration>
+			
+			
+			<Anchor>//api/name/maps</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/maps</TokenIdentifier>
+			<Abstract type="html">All the maps stored in an NSDictionnary (key &lt;=&gt; map identifier : NSNumber).</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *maps</Declaration>
+			
+			
+			<Anchor>//api/name/maps</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setSortedMaps:</TokenIdentifier>
+			<Abstract type="html">An array containing all sorted maps.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedMaps</Declaration>
+			
+			
+			<Anchor>//api/name/sortedMaps</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/sortedMaps</TokenIdentifier>
+			<Abstract type="html">An array containing all sorted maps.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *sortedMaps</Declaration>
+			
+			
+			<Anchor>//api/name/sortedMaps</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setZones:</TokenIdentifier>
+			<Abstract type="html">All maps zones.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *zones</Declaration>
+			
+			
+			<Anchor>//api/name/zones</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/zones</TokenIdentifier>
+			<Abstract type="html">All maps zones.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *zones</Declaration>
+			
+			
+			<Anchor>//api/name/zones</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setLastInitDate:</TokenIdentifier>
+			<Abstract type="html">Last initialization date.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDate *lastInitDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastInitDate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/lastInitDate</TokenIdentifier>
+			<Abstract type="html">Last initialization date.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDate *lastInitDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastInitDate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setSiteId:</TokenIdentifier>
+			<Abstract type="html">Application site identifier.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/siteId</TokenIdentifier>
+			<Abstract type="html">Application site identifier.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setServerUrl:</TokenIdentifier>
+			<Abstract type="html">Application server URL.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *serverUrl</Declaration>
+			
+			
+			<Anchor>//api/name/serverUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/serverUrl</TokenIdentifier>
+			<Abstract type="html">Application server URL.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *serverUrl</Declaration>
+			
+			
+			<Anchor>//api/name/serverUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setLanguage:</TokenIdentifier>
+			<Abstract type="html">Application language.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/language</TokenIdentifier>
+			<Abstract type="html">Application language.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setServerType:</TokenIdentifier>
+			<Abstract type="html">INSITEO server type.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/serverType</TokenIdentifier>
+			<Abstract type="html">INSITEO server type.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setApplicationVersion:</TokenIdentifier>
+			<Abstract type="html">Application version.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/applicationVersion</TokenIdentifier>
+			<Abstract type="html">Application version.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setPackageUpdater:</TokenIdentifier>
+			<Abstract type="html">INSITEO packages updater.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) PackageUpdater *packageUpdater</Declaration>
+			
+			
+			<Anchor>//api/name/packageUpdater</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/packageUpdater</TokenIdentifier>
+			<Abstract type="html">INSITEO packages updater.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) PackageUpdater *packageUpdater</Declaration>
+			
+			
+			<Anchor>//api/name/packageUpdater</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setAnalyticsAutoStart:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we can start analytics automatically.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean analyticsAutoStart</Declaration>
+			
+			
+			<Anchor>//api/name/analyticsAutoStart</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/analyticsAutoStart</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we can start analytics automatically.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean analyticsAutoStart</Declaration>
+			
+			
+			<Anchor>//api/name/analyticsAutoStart</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setRenderMode:</TokenIdentifier>
+			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISERenderMode renderMode</Declaration>
+			
+			
+			<Anchor>//api/name/renderMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/renderMode</TokenIdentifier>
+			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISERenderMode renderMode</Declaration>
+			
+			
+			<Anchor>//api/name/renderMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setStartPath:</TokenIdentifier>
+			<Abstract type="html">Initialization URL.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *startPath</Declaration>
+			
+			
+			<Anchor>//api/name/startPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/startPath</TokenIdentifier>
+			<Abstract type="html">Initialization URL.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *startPath</Declaration>
+			
+			
+			<Anchor>//api/name/startPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setDataPath:</TokenIdentifier>
+			<Abstract type="html">Application resources read-only data path.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dataPath</Declaration>
+			
+			
+			<Anchor>//api/name/dataPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/dataPath</TokenIdentifier>
+			<Abstract type="html">Application resources read-only data path.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dataPath</Declaration>
+			
+			
+			<Anchor>//api/name/dataPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setRwDataPath:</TokenIdentifier>
+			<Abstract type="html">Application resources read-write data path.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *rwDataPath</Declaration>
+			
+			
+			<Anchor>//api/name/rwDataPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/rwDataPath</TokenIdentifier>
+			<Abstract type="html">Application resources read-write data path.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *rwDataPath</Declaration>
+			
+			
+			<Anchor>//api/name/rwDataPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setApiInformation:</TokenIdentifier>
+			<Abstract type="html">Init provider data.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) InitInformation *apiInformation</Declaration>
+			
+			
+			<Anchor>//api/name/apiInformation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/apiInformation</TokenIdentifier>
+			<Abstract type="html">Init provider data.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) InitInformation *apiInformation</Declaration>
+			
+			
+			<Anchor>//api/name/apiInformation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setDbHelpers:</TokenIdentifier>
+			<Abstract type="html">A NSArray which contains all application database helpers.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *dbHelpers</Declaration>
+			
+			
+			<Anchor>//api/name/dbHelpers</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/dbHelpers</TokenIdentifier>
+			<Abstract type="html">A NSArray which contains all application database helpers.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *dbHelpers</Declaration>
+			
+			
+			<Anchor>//api/name/dbHelpers</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/setDebugListener:</TokenIdentifier>
+			<Abstract type="html">A debug listener reference (used to get debug event).</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;PDebugListener&gt; debugListener</Declaration>
+			
+			
+			<Anchor>//api/name/debugListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInitProvider/debugListener</TokenIdentifier>
+			<Abstract type="html">A debug listener reference (used to get debug event).</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;PDebugListener&gt; debugListener</Declaration>
+			
+			
+			<Anchor>//api/name/debugListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/instance</TokenIdentifier>
+			<Abstract type="html">Static method used to get the unique instance of the InitProvider.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (ISInitProvider *)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">InitProvider unique instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/setAPIKey:</TokenIdentifier>
+			<Abstract type="html">Static method used to set the API key.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (void)setAPIKey:(NSString *)apiKey</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>person</Name>
-					<Abstract type="html">Person to update from.</Abstract>
+					<Name>apiKey</Name>
+					<Abstract type="html">The API key to use.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/updatePerson:</Anchor>
+			<Anchor>//api/name/setAPIKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/APIKey</TokenIdentifier>
+			<Abstract type="html">Static method used to get the API key used.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)APIKey</Declaration>
+			
+			<ReturnValue><Abstract type="html">The API key used.</Abstract></ReturnValue>
+			<Anchor>//api/name/APIKey</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/setISToken:</TokenIdentifier>
+			<Abstract type="html">Static method used to set the API token.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (void)setISToken:(NSString *)isToken</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>isToken</Name>
+					<Abstract type="html">The API token to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setISToken:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/ISToken</TokenIdentifier>
+			<Abstract type="html">Static method used to get the API token used.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)ISToken</Declaration>
+			
+			<ReturnValue><Abstract type="html">The API token used.</Abstract></ReturnValue>
+			<Anchor>//api/name/ISToken</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/getBaseURL:</TokenIdentifier>
+			<Abstract type="html">Static method used to get the default INSITEO server URL from a given server type.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getBaseURL:(ISEServerType)server</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>server</Name>
+					<Abstract type="html">The wanted server type.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The server URL to use.</Abstract></ReturnValue>
+			<Anchor>//api/name/getBaseURL:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/siteVersionString</TokenIdentifier>
+			<Abstract type="html">Method called to get an NSString representing the site version.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)siteVersionString</Declaration>
+			
+			<ReturnValue><Abstract type="html">Related NSString (ex: @&quot;56/1/fr&quot;).</Abstract></ReturnValue>
+			<Anchor>//api/name/siteVersionString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/startAPIWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andInitListener:andServerType:andAnalyticsAutoStart:andRenderMode:</TokenIdentifier>
+			<Abstract type="html">Method used to initialize the API.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPCancelable&gt;)startAPIWithServerUrl:(NSString *)serverUrl andSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language andForceDownload:(Boolean)forceDownload andInitListener:(id&lt;ISPInitListener&gt;)listener andServerType:(ISEServerType)serverType andAnalyticsAutoStart:(Boolean)analyticsAutoStart andRenderMode:(ISERenderMode)renderMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serverUrl</Name>
+					<Abstract type="html">The server URL to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">The site identifier to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>applicationVersion</Name>
+					<Abstract type="html">The application version to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>language</Name>
+					<Abstract type="html">The language to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>forceDownload</Name>
+					<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The init listener to notify.</Abstract>
+				</Parameter><Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">INSITEO server type to communicate with.</Abstract>
+				</Parameter><Parameter>
+					<Name>analyticsAutoStart</Name>
+					<Abstract type="html">Boolean used to know if we can start analytics automatically.</Abstract>
+				</Parameter><Parameter>
+					<Name>renderMode</Name>
+					<Abstract type="html">Wanted render mode.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a task that can be cancelled.</Abstract></ReturnValue>
+			<Anchor>//api/name/startAPIWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andInitListener:andServerType:andAnalyticsAutoStart:andRenderMode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/startAPIWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andInitListener:andServerType:</TokenIdentifier>
+			<Abstract type="html">Method used to initialize the API.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPCancelable&gt;)startAPIWithServerUrl:(NSString *)serverUrl andSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language andForceDownload:(Boolean)forceDownload andInitListener:(id&lt;ISPInitListener&gt;)listener andServerType:(ISEServerType)serverType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serverUrl</Name>
+					<Abstract type="html">The server URL to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">The site identifier to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>applicationVersion</Name>
+					<Abstract type="html">The application version to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>language</Name>
+					<Abstract type="html">The language to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>forceDownload</Name>
+					<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The init listener to notify.</Abstract>
+				</Parameter><Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">INSITEO server type to communicate with.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a task that can be cancelled.</Abstract></ReturnValue>
+			<Anchor>//api/name/startAPIWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andInitListener:andServerType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/startAPIWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andInitListener:</TokenIdentifier>
+			<Abstract type="html">Method used to initialize the API.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPCancelable&gt;)startAPIWithServerUrl:(NSString *)serverUrl andSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language andForceDownload:(Boolean)forceDownload andInitListener:(id&lt;ISPInitListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serverUrl</Name>
+					<Abstract type="html">The server URL to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">The site identifier to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>applicationVersion</Name>
+					<Abstract type="html">The application version to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>language</Name>
+					<Abstract type="html">The language to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>forceDownload</Name>
+					<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The init listener to notify.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a task that can be cancelled.</Abstract></ReturnValue>
+			<Anchor>//api/name/startAPIWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andInitListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/updatePackagesWithInitListener:</TokenIdentifier>
+			<Abstract type="html">Method used to update application packages.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPCancelable&gt;)updatePackagesWithInitListener:(id&lt;ISPInitListener&gt;)initListener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>initListener</Name>
+					<Abstract type="html">The init listener to notify.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a task that can be cancelled.</Abstract></ReturnValue>
+			<Anchor>//api/name/updatePackagesWithInitListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/updatePackagesWithInitListener:andWantedPackages:</TokenIdentifier>
+			<Abstract type="html">Method used to update application packages.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPCancelable&gt;)updatePackagesWithInitListener:(id&lt;ISPInitListener&gt;)initListener andWantedPackages:(NSArray *)wantedPackages</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>initListener</Name>
+					<Abstract type="html">The init listener to notify.</Abstract>
+				</Parameter><Parameter>
+					<Name>wantedPackages</Name>
+					<Abstract type="html">An array of ISPackageType value that need to be updated.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a task that can be cancelled.</Abstract></ReturnValue>
+			<Anchor>//api/name/updatePackagesWithInitListener:andWantedPackages:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/updatePackagesWithInitListener:andWantedPackages:andForce:</TokenIdentifier>
+			<Abstract type="html">Method used to update application packages.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPCancelable&gt;)updatePackagesWithInitListener:(id&lt;ISPInitListener&gt;)initListener andWantedPackages:(NSArray *)wantedPackages andForce:(Boolean)force</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>initListener</Name>
+					<Abstract type="html">The init listener to notify.</Abstract>
+				</Parameter><Parameter>
+					<Name>wantedPackages</Name>
+					<Abstract type="html">An array of ISPackageType value that need to be updated.</Abstract>
+				</Parameter><Parameter>
+					<Name>force</Name>
+					<Abstract type="html">Boolean used to know if we force the download of all packages.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">a task that can be cancelled.</Abstract></ReturnValue>
+			<Anchor>//api/name/updatePackagesWithInitListener:andWantedPackages:andForce:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/hasPackageWithPackageType:andSiteId:andApplicationVersion:andLanguage:andServerType:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the application has a specific package type stored.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasPackageWithPackageType:(ISPackageType)packageType andSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language andServerType:(ISEServerType)serverType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter><Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">Site identifier to consider.</Abstract>
+				</Parameter><Parameter>
+					<Name>applicationVersion</Name>
+					<Abstract type="html">Application version to consider.</Abstract>
+				</Parameter><Parameter>
+					<Name>language</Name>
+					<Abstract type="html">Language to consider.</Abstract>
+				</Parameter><Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">INSITEO server type to communicate with.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it exists, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPackageWithPackageType:andSiteId:andApplicationVersion:andLanguage:andServerType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/hasPackageWithPackageType:andSiteId:andApplicationVersion:andLanguage:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the application has a specific package type stored.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasPackageWithPackageType:(ISPackageType)packageType andSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter><Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">Site identifier to consider.</Abstract>
+				</Parameter><Parameter>
+					<Name>applicationVersion</Name>
+					<Abstract type="html">Application version to consider.</Abstract>
+				</Parameter><Parameter>
+					<Name>language</Name>
+					<Abstract type="html">Language to consider.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it exists, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPackageWithPackageType:andSiteId:andApplicationVersion:andLanguage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/hasPackageWithPackageType:andServerType:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the application has a specific package type stored. (In this case we use last application state : siteId, applicationVersion, language.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasPackageWithPackageType:(ISPackageType)packageType andServerType:(ISEServerType)serverType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter><Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">INSITEO server type to communicate with.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it exists, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPackageWithPackageType:andServerType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/hasPackageWithPackageType:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the application has a specific package type stored. (In this case we use last application state : siteId, applicationVersion, language.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasPackageWithPackageType:(ISPackageType)packageType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it exists, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPackageWithPackageType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/getPathWithPackageType:</TokenIdentifier>
+			<Abstract type="html">Method used to get the absolute path of a package.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)getPathWithPackageType:(ISPackageType)packageType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Absolute package path.</Abstract></ReturnValue>
+			<Anchor>//api/name/getPathWithPackageType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/getCurrentPackageVersionWithPackageType:</TokenIdentifier>
+			<Abstract type="html">Method used to get current version of a package.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (int)getCurrentPackageVersionWithPackageType:(ISPackageType)packageType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The current package version.</Abstract></ReturnValue>
+			<Anchor>//api/name/getCurrentPackageVersionWithPackageType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/getNewPackages</TokenIdentifier>
+			<Abstract type="html">Method used to know which new packages are available.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)getNewPackages</Declaration>
+			
+			<ReturnValue><Abstract type="html">An NSString array of new packages label.</Abstract></ReturnValue>
+			<Anchor>//api/name/getNewPackages</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/getMapWithMapId:</TokenIdentifier>
+			<Abstract type="html">Method called to get a specific map with its identifier.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISMap *)getMapWithMapId:(int)mapId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">Wanted map identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related ISPMapData.</Abstract></ReturnValue>
+			<Anchor>//api/name/getMapWithMapId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/getZoneWithId:</TokenIdentifier>
+			<Abstract type="html">Method called to get a specific zone with its identifier.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISZone *)getZoneWithId:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Wanted zone identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related id&lt;ISPMap&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZoneWithId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitProvider/getZonesWithMapId:</TokenIdentifier>
+			<Abstract type="html">Method called to get all the zones into a given map.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)getZonesWithMapId:(int)mapId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">Wanted map identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of ISZone *.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZonesWithMapId:</Anchor>
 		</Token>
 		
 	</File>

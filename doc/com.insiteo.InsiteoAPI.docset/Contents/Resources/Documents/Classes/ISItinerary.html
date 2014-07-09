@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ISPMapRepository Protocol Reference</title>
+		<title>ISItinerary Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ISPMapRepository Protocol Reference</h1>
+				<h1 class="hideInXcode">ISItinerary Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,13 +40,21 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/mapRoot">&nbsp;&nbsp;&nbsp;&nbsp;mapRoot</option>
+	<option value="//api/name/boundingRects">&nbsp;&nbsp;&nbsp;&nbsp;boundingRects</option>
 	
-	<option value="//api/name/maps">&nbsp;&nbsp;&nbsp;&nbsp;maps</option>
+	<option value="//api/name/costDist">&nbsp;&nbsp;&nbsp;&nbsp;costDist</option>
 	
-	<option value="//api/name/sortedMaps">&nbsp;&nbsp;&nbsp;&nbsp;sortedMaps</option>
+	<option value="//api/name/costTime">&nbsp;&nbsp;&nbsp;&nbsp;costTime</option>
 	
-	<option value="//api/name/zones">&nbsp;&nbsp;&nbsp;&nbsp;zones</option>
+	<option value="//api/name/endMapId">&nbsp;&nbsp;&nbsp;&nbsp;endMapId</option>
+	
+	<option value="//api/name/endPoint">&nbsp;&nbsp;&nbsp;&nbsp;endPoint</option>
+	
+	<option value="//api/name/instructions">&nbsp;&nbsp;&nbsp;&nbsp;instructions</option>
+	
+	<option value="//api/name/startMapId">&nbsp;&nbsp;&nbsp;&nbsp;startMapId</option>
+	
+	<option value="//api/name/startPoint">&nbsp;&nbsp;&nbsp;&nbsp;startPoint</option>
 	
 	
 	
@@ -55,11 +63,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/getMapWithMapId:">&nbsp;&nbsp;&nbsp;&nbsp;- getMapWithMapId:</option>
-	
-	<option value="//api/name/getZoneWithId:">&nbsp;&nbsp;&nbsp;&nbsp;- getZoneWithId:</option>
-	
-	<option value="//api/name/getZonesWithMapId:">&nbsp;&nbsp;&nbsp;&nbsp;- getZonesWithMapId:</option>
+	<option value="//api/name/getNbSections">&nbsp;&nbsp;&nbsp;&nbsp;- getNbSections</option>
 	
 	
 	
@@ -85,13 +89,21 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapRoot">mapRoot</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/boundingRects">boundingRects</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maps">maps</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/costDist">costDist</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sortedMaps">sortedMaps</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/costTime">costTime</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zones">zones</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endMapId">endMapId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endPoint">endPoint</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instructions">instructions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startMapId">startMapId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPoint">startPoint</a></span></li>
 	
 </ul></li>
 
@@ -101,11 +113,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMapWithMapId:">getMapWithMapId:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getZoneWithId:">getZoneWithId:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getZonesWithMapId:">getZonesWithMapId:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNbSections">getNbSections</a></span></li>
 	
 </ul></li>
 
@@ -114,7 +122,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ISPMapRepository Protocol Reference" name="top"></a>
+				<a title="ISItinerary Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -123,18 +131,18 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ISPMapRepository Protocol Reference</h1>
+						<h1 class="title title-header">ISItinerary Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Conforms to</td>
+	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ISPMapRepository.h</td>
+	<td class="specification-value">ISItineraryStructures.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -144,7 +152,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Protocol used to provide Map and Zone functions (storage, accessors).</p>
+						<p>Class used to define an Itinerary with its <a href="#//api/name/instructions">instructions</a>.</p>
 					</div>
 					
 					
@@ -162,53 +170,67 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapRoot">&nbsp;&nbsp;mapRoot</a></code>
-		<span class="tooltip"><p>The current root map.</p></span>
+		<code><a href="#//api/name/startPoint">&nbsp;&nbsp;startPoint</a></code>
+		<span class="tooltip"><p>Start point.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
+	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getMapWithMapId:">&ndash;&nbsp;getMapWithMapId:</a></code>
-		<span class="tooltip"><p>Method called to get a specific map with its identifier.</p></span>
+		<code><a href="#//api/name/startMapId">&nbsp;&nbsp;startMapId</a></code>
+		<span class="tooltip"><p>Start map identifier.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/endPoint">&nbsp;&nbsp;endPoint</a></code>
+		<span class="tooltip"><p>End point.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/endMapId">&nbsp;&nbsp;endMapId</a></code>
+		<span class="tooltip"><p>End map identifier.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/instructions">&nbsp;&nbsp;instructions</a></code>
+		<span class="tooltip"><p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISInstruction.html">ISInstruction</a>).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/costTime">&nbsp;&nbsp;costTime</a></code>
+		<span class="tooltip"><p>Time cost.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/costDist">&nbsp;&nbsp;costDist</a></code>
+		<span class="tooltip"><p>Distance cost.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/boundingRects">&nbsp;&nbsp;boundingRects</a></code>
+		<span class="tooltip"><p>A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNbSections">&ndash;&nbsp;getNbSections</a></code>
+		<span class="tooltip"><p>Method used to get the total amout of sections.</p></span>
 	</span>
 	
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/maps">&nbsp;&nbsp;maps</a></code>
-		<span class="tooltip"><p>All the maps stored in an NSDictionnary (key &lt;=> map identifier : NSNumber).</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/sortedMaps">&nbsp;&nbsp;sortedMaps</a></code>
-		<span class="tooltip"><p>An array containing all sorted <a href="#//api/name/maps">maps</a>.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/zones">&nbsp;&nbsp;zones</a></code>
-		<span class="tooltip"><p>All <a href="#//api/name/maps">maps</a> zones.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getZoneWithId:">&ndash;&nbsp;getZoneWithId:</a></code>
-		<span class="tooltip"><p>Method called to get a specific zone with its identifier.</p></span>
-	</span>
 	
-	<span class="task-item-suffix">required method</span>
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getZonesWithMapId:">&ndash;&nbsp;getZonesWithMapId:</a></code>
-		<span class="tooltip"><p>Method called to get all the <a href="#//api/name/zones">zones</a> into a given map.</p></span>
-	</span>
-	
-	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
@@ -223,18 +245,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/mapRoot" title="mapRoot"></a>
-	<h3 class="subsubtitle method-title">mapRoot</h3>
+	<a name="//api/name/boundingRects" title="boundingRects"></a>
+	<h3 class="subsubtitle method-title">boundingRects</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The current root map.</p>
+		<p>A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) id&lt;ISPMapData&gt; mapRoot</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSMutableDictionary *boundingRects</code></div>
 
     
 	
@@ -246,7 +268,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The current root map.</p>
+		<p>A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</p>
 	</div>
 	
 	
@@ -257,25 +279,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPMapRepository.h</code><br />
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/maps" title="maps"></a>
-	<h3 class="subsubtitle method-title">maps</h3>
+	<a name="//api/name/costDist" title="costDist"></a>
+	<h3 class="subsubtitle method-title">costDist</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>All the maps stored in an NSDictionnary (key &lt;=> map identifier : NSNumber).</p>
+		<p>Distance cost.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSDictionary *maps</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSNumber *costDist</code></div>
 
     
 	
@@ -287,7 +309,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>All the maps stored in an NSDictionnary (key &lt;=> map identifier : NSNumber).</p>
+		<p>Distance cost.</p>
 	</div>
 	
 	
@@ -298,25 +320,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPMapRepository.h</code><br />
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/sortedMaps" title="sortedMaps"></a>
-	<h3 class="subsubtitle method-title">sortedMaps</h3>
+	<a name="//api/name/costTime" title="costTime"></a>
+	<h3 class="subsubtitle method-title">costTime</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An array containing all sorted <a href="#//api/name/maps">maps</a>.</p>
+		<p>Time cost.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *sortedMaps</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSNumber *costTime</code></div>
 
     
 	
@@ -328,7 +350,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An array containing all sorted <a href="#//api/name/maps">maps</a>.</p>
+		<p>Time cost.</p>
 	</div>
 	
 	
@@ -339,25 +361,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPMapRepository.h</code><br />
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/zones" title="zones"></a>
-	<h3 class="subsubtitle method-title">zones</h3>
+	<a name="//api/name/endMapId" title="endMapId"></a>
+	<h3 class="subsubtitle method-title">endMapId</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>All <a href="#//api/name/maps">maps</a> zones.</p>
+		<p>End map identifier.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSDictionary *zones</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int endMapId</code></div>
 
     
 	
@@ -369,7 +391,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>All <a href="#//api/name/maps">maps</a> zones.</p>
+		<p>End map identifier.</p>
 	</div>
 	
 	
@@ -380,7 +402,171 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPMapRepository.h</code><br />
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/endPoint" title="endPoint"></a>
+	<h3 class="subsubtitle method-title">endPoint</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>End point.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) CGPoint endPoint</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>End point.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/instructions" title="instructions"></a>
+	<h3 class="subsubtitle method-title">instructions</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISInstruction.html">ISInstruction</a>).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSMutableArray *instructions</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISInstruction.html">ISInstruction</a>).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startMapId" title="startMapId"></a>
+	<h3 class="subsubtitle method-title">startMapId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Start map identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int startMapId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Start map identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startPoint" title="startPoint"></a>
+	<h3 class="subsubtitle method-title">startPoint</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Start point.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) CGPoint startPoint</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Start point.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
 	</div>				
 	
 	
@@ -397,36 +583,26 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/getMapWithMapId:" title="getMapWithMapId:"></a>
-	<h3 class="subsubtitle method-title">getMapWithMapId:</h3>
+	<a name="//api/name/getNbSections" title="getNbSections"></a>
+	<h3 class="subsubtitle method-title">getNbSections</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method called to get a specific map with its identifier.</p>
+		<p>Method used to get the total amout of sections.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPMapData&gt;)getMapWithMapId:(int)<em>mapId</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (int)getNbSections</code></div>
 
     
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>mapId</em></dt>
-			<dd><p>Wanted map identifier.</p></dd>
-		</dl>
-		
-	</div>
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The related <a href="../Protocols/ISPMapData.html">ISPMapData</a>.</p>
+		<p>The total amout of sections.</p>
 	</div>
 	
 	
@@ -435,7 +611,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to get a specific map with its identifier.</p>
+		<p>Method used to get the total amout of sections.</p>
 	</div>
 	
 	
@@ -446,119 +622,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPMapRepository.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/getZoneWithId:" title="getZoneWithId:"></a>
-	<h3 class="subsubtitle method-title">getZoneWithId:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method called to get a specific zone with its identifier.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPZone&gt;)getZoneWithId:(int)<em>zoneId</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>zoneId</em></dt>
-			<dd><p>Wanted zone identifier.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The related id<ISPMap>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to get a specific zone with its identifier.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPMapRepository.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/getZonesWithMapId:" title="getZonesWithMapId:"></a>
-	<h3 class="subsubtitle method-title">getZonesWithMapId:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method called to get all the <a href="#//api/name/zones">zones</a> into a given map.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSArray *)getZonesWithMapId:(int)<em>mapId</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>mapId</em></dt>
-			<dd><p>Wanted map identifier.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An array of id<a href="../Protocols/ISPZone.html">ISPZone</a>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to get all the <a href="#//api/name/zones">zones</a> into a given map.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPMapRepository.h</code><br />
+		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
 	</div>				
 	
 	
@@ -577,7 +641,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-07-09)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

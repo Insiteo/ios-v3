@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ISGfxMapData Class Reference</title>
+		<title>ISMap Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ISGfxMapData Class Reference</h1>
+				<h1 class="hideInXcode">ISMap Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,6 +39,8 @@
 	
 	
 	<option value="properties">Properties</option>
+	
+	<option value="//api/name/azimuth">&nbsp;&nbsp;&nbsp;&nbsp;azimuth</option>
 	
 	<option value="//api/name/backgroundColor">&nbsp;&nbsp;&nbsp;&nbsp;backgroundColor</option>
 	
@@ -64,9 +66,31 @@
 	
 	<option value="//api/name/fitToScreen">&nbsp;&nbsp;&nbsp;&nbsp;fitToScreen</option>
 	
+	<option value="//api/name/floor">&nbsp;&nbsp;&nbsp;&nbsp;floor</option>
+	
+	<option value="//api/name/floorName">&nbsp;&nbsp;&nbsp;&nbsp;floorName</option>
+	
+	<option value="//api/name/geoMatrix">&nbsp;&nbsp;&nbsp;&nbsp;geoMatrix</option>
+	
+	<option value="//api/name/isDebugMap">&nbsp;&nbsp;&nbsp;&nbsp;isDebugMap</option>
+	
+	<option value="//api/name/isGeoReferenced">&nbsp;&nbsp;&nbsp;&nbsp;isGeoReferenced</option>
+	
+	<option value="//api/name/isOriented">&nbsp;&nbsp;&nbsp;&nbsp;isOriented</option>
+	
 	<option value="//api/name/isSlideActive">&nbsp;&nbsp;&nbsp;&nbsp;isSlideActive</option>
 	
+	<option value="//api/name/mapId">&nbsp;&nbsp;&nbsp;&nbsp;mapId</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/scale">&nbsp;&nbsp;&nbsp;&nbsp;scale</option>
+	
+	<option value="//api/name/sortIndex">&nbsp;&nbsp;&nbsp;&nbsp;sortIndex</option>
+	
 	<option value="//api/name/startCenterPosition">&nbsp;&nbsp;&nbsp;&nbsp;startCenterPosition</option>
+	
+	<option value="//api/name/typeId">&nbsp;&nbsp;&nbsp;&nbsp;typeId</option>
 	
 	<option value="//api/name/zoneColor">&nbsp;&nbsp;&nbsp;&nbsp;zoneColor</option>
 	
@@ -115,6 +139,8 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/azimuth">azimuth</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/backgroundColor">backgroundColor</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultZoomLevel">defaultZoomLevel</a></span></li>
@@ -139,9 +165,31 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fitToScreen">fitToScreen</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floor">floor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floorName">floorName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/geoMatrix">geoMatrix</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDebugMap">isDebugMap</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isGeoReferenced">isGeoReferenced</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isOriented">isOriented</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isSlideActive">isSlideActive</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapId">mapId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/scale">scale</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sortIndex">sortIndex</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startCenterPosition">startCenterPosition</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/typeId">typeId</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoneColor">zoneColor</a></span></li>
 	
@@ -174,7 +222,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ISGfxMapData Class Reference" name="top"></a>
+				<a title="ISMap Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -183,7 +231,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ISGfxMapData Class Reference</h1>
+						<h1 class="title title-header">ISMap Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -193,11 +241,8 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/ISPMapData.html">ISPMapData</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ISGfxMapData.h</td>
+	<td class="specification-value">ISMap.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -207,7 +252,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Class used to represent a Map entity.</p>
+						<p>Class used to represent an INSITEO map entity.</p>
 					</div>
 					
 					
@@ -224,6 +269,90 @@
 
 						<ul class="task-list">
 							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapId">&nbsp;&nbsp;mapId</a></code>
+		<span class="tooltip"><p>INSITEO map identifier.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/typeId">&nbsp;&nbsp;typeId</a></code>
+		<span class="tooltip"><p>INSITEO map type identifier.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+		<span class="tooltip"><p>INSITEO map name.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/floor">&nbsp;&nbsp;floor</a></code>
+		<span class="tooltip"><p>INSITEO map floor identifier.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/floorName">&nbsp;&nbsp;floorName</a></code>
+		<span class="tooltip"><p>INSITEO map <a href="#//api/name/floor">floor</a> <a href="#//api/name/name">name</a>.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDebugMap">&nbsp;&nbsp;isDebugMap</a></code>
+		<span class="tooltip"><p>Boolean used to know if the map is used only in debug mode (cf. <a href="../Classes/ISCommonConstants.html">ISCommonConstants</a>.h).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sortIndex">&nbsp;&nbsp;sortIndex</a></code>
+		<span class="tooltip"><p>Index used to sort maps.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/azimuth">&nbsp;&nbsp;azimuth</a></code>
+		<span class="tooltip"><p>INSITEO map azimuth.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isOriented">&nbsp;&nbsp;isOriented</a></code>
+		<span class="tooltip"><p>Boolean used to know if the map is oriented.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isGeoReferenced">&nbsp;&nbsp;isGeoReferenced</a></code>
+		<span class="tooltip"><p>Boolean used to know if the map is geo referenced.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/geoMatrix">&nbsp;&nbsp;geoMatrix</a></code>
+		<span class="tooltip"><p>INSITEO map geoMatrix.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/scale">&nbsp;&nbsp;scale</a></code>
+		<span class="tooltip"><p>Map scale.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/zoomLevels">&nbsp;&nbsp;zoomLevels</a></code>
 		<span class="tooltip"><p>Map zoom levels.</p></span>
@@ -391,6 +520,47 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/azimuth" title="azimuth"></a>
+	<h3 class="subsubtitle method-title">azimuth</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>INSITEO map azimuth.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) float azimuth</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>INSITEO map azimuth.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/backgroundColor" title="backgroundColor"></a>
 	<h3 class="subsubtitle method-title">backgroundColor</h3>
 	
@@ -425,7 +595,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -466,7 +636,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -507,7 +677,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -548,7 +718,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -589,7 +759,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -630,7 +800,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -671,7 +841,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -712,7 +882,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -753,7 +923,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -794,7 +964,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -835,7 +1005,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -876,7 +1046,253 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/floor" title="floor"></a>
+	<h3 class="subsubtitle method-title">floor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>INSITEO map floor identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int floor</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>INSITEO map floor identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/floorName" title="floorName"></a>
+	<h3 class="subsubtitle method-title">floorName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>INSITEO map <a href="#//api/name/floor">floor</a> <a href="#//api/name/name">name</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *floorName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>INSITEO map <a href="#//api/name/floor">floor</a> <a href="#//api/name/name">name</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/geoMatrix" title="geoMatrix"></a>
+	<h3 class="subsubtitle method-title">geoMatrix</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>INSITEO map geoMatrix.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISGeoMatrix *geoMatrix</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>INSITEO map geoMatrix.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDebugMap" title="isDebugMap"></a>
+	<h3 class="subsubtitle method-title">isDebugMap</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean used to know if the map is used only in debug mode (cf. <a href="../Classes/ISCommonConstants.html">ISCommonConstants</a>.h).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) Boolean isDebugMap</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean used to know if the map is used only in debug mode (cf. <a href="../Classes/ISCommonConstants.html">ISCommonConstants</a>.h).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isGeoReferenced" title="isGeoReferenced"></a>
+	<h3 class="subsubtitle method-title">isGeoReferenced</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean used to know if the map is geo referenced.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) Boolean isGeoReferenced</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean used to know if the map is geo referenced.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isOriented" title="isOriented"></a>
+	<h3 class="subsubtitle method-title">isOriented</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean used to know if the map is oriented.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) Boolean isOriented</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean used to know if the map is oriented.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -917,7 +1333,171 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapId" title="mapId"></a>
+	<h3 class="subsubtitle method-title">mapId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>INSITEO map identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int mapId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>INSITEO map identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>INSITEO map name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>INSITEO map name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/scale" title="scale"></a>
+	<h3 class="subsubtitle method-title">scale</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Map scale.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) float scale</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Map scale.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sortIndex" title="sortIndex"></a>
+	<h3 class="subsubtitle method-title">sortIndex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Index used to sort maps.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int sortIndex</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Index used to sort maps.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -958,7 +1538,48 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/typeId" title="typeId"></a>
+	<h3 class="subsubtitle method-title">typeId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>INSITEO map type identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int typeId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>INSITEO map type identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -999,7 +1620,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1040,7 +1661,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1081,7 +1702,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1122,7 +1743,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1188,7 +1809,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1244,7 +1865,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1300,7 +1921,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1356,7 +1977,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxMapData.h</code><br />
+		<code class="declared-in-ref">ISMap.h</code><br />
 	</div>				
 	
 	
@@ -1375,7 +1996,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-07-09)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

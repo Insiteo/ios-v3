@@ -1,109 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISPackageUpdater.html">
+	<File path="Classes/ISRWDBHelper.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISPackageUpdater</TokenIdentifier>
-			<Abstract type="html">Class used to manage INSITEO data packages inside an application.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISRWDBHelper</TokenIdentifier>
+			<Abstract type="html">Static class used to handle ReadWrite SQLITE requests.</Abstract>
+			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>
 			
 			<NodeRef refid="68"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/setDownloadPackages:</TokenIdentifier>
-			<Abstract type="html">Array of packages that need to be downloaded.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRWDBHelper/initializeWithDatabasePath:</TokenIdentifier>
+			<Abstract type="html">Method used to initilase the DataHelper.</Abstract>
+			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *downloadPackages</Declaration>
-			
-			
-			<Anchor>//api/name/downloadPackages</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISPackageUpdater/downloadPackages</TokenIdentifier>
-			<Abstract type="html">Array of packages that need to be downloaded.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *downloadPackages</Declaration>
-			
-			
-			<Anchor>//api/name/downloadPackages</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/setInitListener:</TokenIdentifier>
-			<Abstract type="html">Init listener used to notify for update events.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
-			
-			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
-			
-			
-			<Anchor>//api/name/initListener</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISPackageUpdater/initListener</TokenIdentifier>
-			<Abstract type="html">Init listener used to notify for update events.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
-			
-			<Declaration>@property (assign) id&lt;ISPInitListener&gt; initListener</Declaration>
-			
-			
-			<Anchor>//api/name/initListener</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/updatePackagesWithWantedPackages:</TokenIdentifier>
-			<Abstract type="html">Method used to updates all application packages.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
-			
-			<Declaration>- (void)updatePackagesWithWantedPackages:(NSArray *)wantedPackages</Declaration>
+			<Declaration>- (void)initializeWithDatabasePath:(NSString *)databasePath</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>wantedPackages</Name>
-					<Abstract type="html">An array of wanted packages that need to be updated.</Abstract>
+					<Name>databasePath</Name>
+					<Abstract type="html">Application path where the database is located.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/updatePackagesWithWantedPackages:</Anchor>
+			<Anchor>//api/name/initializeWithDatabasePath:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/updatePackagesWithWantedPackages:andForce:</TokenIdentifier>
-			<Abstract type="html">Method used to updates all application packages.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRWDBHelper/executeInsert:</TokenIdentifier>
+			<Abstract type="html">Method used to execute an SQL INSERT query.</Abstract>
+			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>			
 			
-			<Declaration>- (void)updatePackagesWithWantedPackages:(NSArray *)wantedPackages andForce:(Boolean)force</Declaration>
+			<Declaration>- (int)executeInsert:(NSString *)request</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>wantedPackages</Name>
-					<Abstract type="html">An array of wanted packages that need to be updated.</Abstract>
-				</Parameter><Parameter>
-					<Name>force</Name>
-					<Abstract type="html">Boolean used to know if we force the download of all packages.</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">The NSString sqlite query.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/updatePackagesWithWantedPackages:andForce:</Anchor>
+			<ReturnValue><Abstract type="html">the id of the inserted row, or Constants.NULL_ID if failed.</Abstract></ReturnValue>
+			<Anchor>//api/name/executeInsert:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISPackageUpdater/checkPackages:</TokenIdentifier>
-			<Abstract type="html">Method used to check all application packages.</Abstract>
-			<DeclaredIn>ISPackageUpdater.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRWDBHelper/executeRequest:</TokenIdentifier>
+			<Abstract type="html">Method used to execute an SQL query.</Abstract>
+			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>			
 			
-			<Declaration>- (void)checkPackages:(Boolean)forceDownload</Declaration>
+			<Declaration>- (Boolean)executeRequest:(NSString *)request</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>forceDownload</Name>
-					<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
+					<Name>request</Name>
+					<Abstract type="html">The NSString sqlite query.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/checkPackages:</Anchor>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the query succeeded, else &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/executeRequest:</Anchor>
 		</Token>
 		
 	</File>

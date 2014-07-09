@@ -1,41 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISCommonConstants.html">
+	<File path="Classes/ISGenericRTO.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISCommonConstants</TokenIdentifier>
-			<Abstract type="html">Class used to provide general constants.</Abstract>
-			<DeclaredIn>ISCommonConstants.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGenericRTO</TokenIdentifier>
+			<Abstract type="html">Class which represent a basi RTO object (name + pin image).</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>
 			
 			<NodeRef refid="12"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISCommonConstants/getDebugMode</TokenIdentifier>
-			<Abstract type="html">Method used to know if we are in DEBUG mode.</Abstract>
-			<DeclaredIn>ISCommonConstants.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/initWithName:andPosition:</TokenIdentifier>
+			<Abstract type="html">Main constructor</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
 			
-			<Declaration>+ (Boolean)getDebugMode</Declaration>
-			
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if we are in DEBUG mode, otherwise, &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/getDebugMode</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISCommonConstants/setDebugMode:</TokenIdentifier>
-			<Abstract type="html">Method used to set the DEBUG mode.</Abstract>
-			<DeclaredIn>ISCommonConstants.h</DeclaredIn>			
-			
-			<Declaration>+ (void)setDebugMode:(Boolean)debugMode</Declaration>
+			<Declaration>- (id)initWithName:(NSString *)name andPosition:(ISPosition *)position</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>debugMode</Name>
-					<Abstract type="html">Boolean parameter used to set the DEBUG mode status.</Abstract>
+					<Name>name</Name>
+					<Abstract type="html">RTO displayed label.</Abstract>
+				</Parameter><Parameter>
+					<Name>position</Name>
+					<Abstract type="html">RTO position in meters (could be nil in case of zone rendering).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setDebugMode:</Anchor>
+			<Anchor>//api/name/initWithName:andPosition:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/hideTextBox</TokenIdentifier>
+			<Abstract type="html">Method called to hide the annotation.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>- (void)hideTextBox</Declaration>
+			
+			
+			<Anchor>//api/name/hideTextBox</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/showTextBox</TokenIdentifier>
+			<Abstract type="html">Method called to show the annotation.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>- (void)showTextBox</Declaration>
+			
+			
+			<Anchor>//api/name/showTextBox</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/showHide</TokenIdentifier>
+			<Abstract type="html">Method called to toggle RTO appearance.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>- (void)showHide</Declaration>
+			
+			
+			<Anchor>//api/name/showHide</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setOver:</TokenIdentifier>
+			<Abstract type="html">Method called to render the annotation as touched or not.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>- (void)setOver:(Boolean)over</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>over</Name>
+					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if you want a touched effect, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOver:</Anchor>
 		</Token>
 		
 	</File>

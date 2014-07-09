@@ -1,278 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISAnalyticsUserEvent.html">
+	<File path="Classes/ISCommonConstants.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsUserEvent</TokenIdentifier>
-			<Abstract type="html">Class used to represent an analytics user event.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISCommonConstants</TokenIdentifier>
+			<Abstract type="html">Class used to provide general constants.</Abstract>
+			<DeclaredIn>ISCommonConstants.h</DeclaredIn>
 			
 			<NodeRef refid="8"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setVersion:</TokenIdentifier>
-			<Abstract type="html">Application version (&quot;%version_%name&quot;).</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISCommonConstants/getDebugMode</TokenIdentifier>
+			<Abstract type="html">Method used to know if we are in DEBUG mode.</Abstract>
+			<DeclaredIn>ISCommonConstants.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *version</Declaration>
+			<Declaration>+ (Boolean)getDebugMode</Declaration>
 			
-			
-			<Anchor>//api/name/version</Anchor>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if we are in DEBUG mode, otherwise, &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDebugMode</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/version</TokenIdentifier>
-			<Abstract type="html">Application version (&quot;%version_%name&quot;).</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *version</Declaration>
-			
-			
-			<Anchor>//api/name/version</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setApiVersion:</TokenIdentifier>
-			<Abstract type="html">INSITEO api version.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *apiVersion</Declaration>
-			
-			
-			<Anchor>//api/name/apiVersion</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/apiVersion</TokenIdentifier>
-			<Abstract type="html">INSITEO api version.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *apiVersion</Declaration>
-			
-			
-			<Anchor>//api/name/apiVersion</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setSiteId:</TokenIdentifier>
-			<Abstract type="html">INSITEO site identifier.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
-			
-			
-			<Anchor>//api/name/siteId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/siteId</TokenIdentifier>
-			<Abstract type="html">INSITEO site identifier.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
-			
-			
-			<Anchor>//api/name/siteId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setApplicationVersion:</TokenIdentifier>
-			<Abstract type="html">INSITEO application version.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
-			
-			
-			<Anchor>//api/name/applicationVersion</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/applicationVersion</TokenIdentifier>
-			<Abstract type="html">INSITEO application version.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
-			
-			
-			<Anchor>//api/name/applicationVersion</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setLanguage:</TokenIdentifier>
-			<Abstract type="html">INSITEO language.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
-			
-			
-			<Anchor>//api/name/language</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/language</TokenIdentifier>
-			<Abstract type="html">INSITEO language.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
-			
-			
-			<Anchor>//api/name/language</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setPlatform:</TokenIdentifier>
-			<Abstract type="html">Device platform.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *platform</Declaration>
-			
-			
-			<Anchor>//api/name/platform</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/platform</TokenIdentifier>
-			<Abstract type="html">Device platform.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *platform</Declaration>
-			
-			
-			<Anchor>//api/name/platform</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setOsVersion:</TokenIdentifier>
-			<Abstract type="html">Device os version.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *osVersion</Declaration>
-			
-			
-			<Anchor>//api/name/osVersion</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/osVersion</TokenIdentifier>
-			<Abstract type="html">Device os version.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *osVersion</Declaration>
-			
-			
-			<Anchor>//api/name/osVersion</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setResolution:</TokenIdentifier>
-			<Abstract type="html">Device resolution.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *resolution</Declaration>
-			
-			
-			<Anchor>//api/name/resolution</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/resolution</TokenIdentifier>
-			<Abstract type="html">Device resolution.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *resolution</Declaration>
-			
-			
-			<Anchor>//api/name/resolution</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setCarrier:</TokenIdentifier>
-			<Abstract type="html">Device carrier.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *carrier</Declaration>
-			
-			
-			<Anchor>//api/name/carrier</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/carrier</TokenIdentifier>
-			<Abstract type="html">Device carrier.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *carrier</Declaration>
-			
-			
-			<Anchor>//api/name/carrier</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setNetwork:</TokenIdentifier>
-			<Abstract type="html">Device network.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *network</Declaration>
-			
-			
-			<Anchor>//api/name/network</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/network</TokenIdentifier>
-			<Abstract type="html">Device network.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *network</Declaration>
-			
-			
-			<Anchor>//api/name/network</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setDeviceName:</TokenIdentifier>
-			<Abstract type="html">Device name.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *deviceName</Declaration>
-			
-			
-			<Anchor>//api/name/deviceName</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/deviceName</TokenIdentifier>
-			<Abstract type="html">Device name.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *deviceName</Declaration>
-			
-			
-			<Anchor>//api/name/deviceName</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsUserEvent/setModelName:</TokenIdentifier>
-			<Abstract type="html">Device model name.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *modelName</Declaration>
-			
-			
-			<Anchor>//api/name/modelName</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsUserEvent/modelName</TokenIdentifier>
-			<Abstract type="html">Device model name.</Abstract>
-			<DeclaredIn>ISAnalyticsUserEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *modelName</Declaration>
-			
-			
-			<Anchor>//api/name/modelName</Anchor>
+			<TokenIdentifier>//apple_ref/occ/clm/ISCommonConstants/setDebugMode:</TokenIdentifier>
+			<Abstract type="html">Method used to set the DEBUG mode.</Abstract>
+			<DeclaredIn>ISCommonConstants.h</DeclaredIn>			
+			
+			<Declaration>+ (void)setDebugMode:(Boolean)debugMode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>debugMode</Name>
+					<Abstract type="html">Boolean parameter used to set the DEBUG mode status.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDebugMode:</Anchor>
 		</Token>
 		
 	</File>

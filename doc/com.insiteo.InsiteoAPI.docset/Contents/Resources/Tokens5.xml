@@ -1,158 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISAnalyticsLocationEvent.html">
+	<File path="Classes/ISAuthManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISAnalyticsLocationEvent</TokenIdentifier>
-			<Abstract type="html">Class used to represent an analytics location event.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISAuthManager</TokenIdentifier>
+			<Abstract type="html">Class used to manage INSITEO authentication.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>
 			
 			<NodeRef refid="5"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsLocationEvent/setPosition:</TokenIdentifier>
-			<Abstract type="html">ISPosition field.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/setIsConnected:</TokenIdentifier>
+			<Abstract type="html">Intern boolean used to know if we are connected.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			<Declaration>@property (nonatomic, readonly) Boolean isConnected</Declaration>
 			
 			
-			<Anchor>//api/name/position</Anchor>
+			<Anchor>//api/name/isConnected</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsLocationEvent/position</TokenIdentifier>
-			<Abstract type="html">ISPosition field.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISAuthManager/isConnected</TokenIdentifier>
+			<Abstract type="html">Intern boolean used to know if we are connected.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			<Declaration>@property (nonatomic, readonly) Boolean isConnected</Declaration>
 			
 			
-			<Anchor>//api/name/position</Anchor>
+			<Anchor>//api/name/isConnected</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsLocationEvent/setAccuracy:</TokenIdentifier>
-			<Abstract type="html">Location accuracy.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/setCurrentUserMail:</TokenIdentifier>
+			<Abstract type="html">Intern boolean used to know if we are connected.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float accuracy</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *currentUserMail</Declaration>
 			
 			
-			<Anchor>//api/name/accuracy</Anchor>
+			<Anchor>//api/name/currentUserMail</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsLocationEvent/accuracy</TokenIdentifier>
-			<Abstract type="html">Location accuracy.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISAuthManager/currentUserMail</TokenIdentifier>
+			<Abstract type="html">Intern boolean used to know if we are connected.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float accuracy</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *currentUserMail</Declaration>
 			
 			
-			<Anchor>//api/name/accuracy</Anchor>
+			<Anchor>//api/name/currentUserMail</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsLocationEvent/setAzimuth:</TokenIdentifier>
-			<Abstract type="html">Location azimuth.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/loginWithUsername:andPassword:andServerType:andListener:</TokenIdentifier>
+			<Abstract type="html">Method used to log in.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float azimuth</Declaration>
-			
-			
-			<Anchor>//api/name/azimuth</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsLocationEvent/azimuth</TokenIdentifier>
-			<Abstract type="html">Location azimuth.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float azimuth</Declaration>
-			
-			
-			<Anchor>//api/name/azimuth</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsLocationEvent/setFlags:</TokenIdentifier>
-			<Abstract type="html">Location flags.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int flags</Declaration>
-			
-			
-			<Anchor>//api/name/flags</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsLocationEvent/flags</TokenIdentifier>
-			<Abstract type="html">Location flags.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int flags</Declaration>
-			
-			
-			<Anchor>//api/name/flags</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsLocationEvent/initWithX:andY:andMapId:andAccuracy:andAzimuth:andFlags:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
-			
-			<Declaration>- (id)initWithX:(double)x andY:(double)y andMapId:(int)mapId andAccuracy:(float)accuracy andAzimuth:(float)azimuth andFlags:(int)flags</Declaration>
+			<Declaration>- (void)loginWithUsername:(NSString *)username andPassword:(NSString *)password andServerType:(ISEServerType)serverType andListener:(id&lt;ISPAuthListener&gt;)listener</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>x</Name>
-					<Abstract type="html">Location x coordinates (in meters).</Abstract>
+					<Name>username</Name>
+					<Abstract type="html">The username.</Abstract>
 				</Parameter><Parameter>
-					<Name>y</Name>
-					<Abstract type="html">Location y coordinates (in meters).</Abstract>
+					<Name>password</Name>
+					<Abstract type="html">The password.</Abstract>
 				</Parameter><Parameter>
-					<Name>mapId</Name>
-					<Abstract type="html">Location map identifier.</Abstract>
+					<Name>serverType</Name>
+					<Abstract type="html">The related server type.</Abstract>
 				</Parameter><Parameter>
-					<Name>accuracy</Name>
-					<Abstract type="html">Location accuracy.</Abstract>
-				</Parameter><Parameter>
-					<Name>azimuth</Name>
-					<Abstract type="html">Location azimuth.</Abstract>
-				</Parameter><Parameter>
-					<Name>flags</Name>
-					<Abstract type="html">Location flags.</Abstract>
+					<Name>listener</Name>
+					<Abstract type="html">The listener to notify.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithX:andY:andMapId:andAccuracy:andAzimuth:andFlags:</Anchor>
+			<Anchor>//api/name/loginWithUsername:andPassword:andServerType:andListener:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsLocationEvent/initWithPosition:andAccuracy:andAzimuth:andFlags:</TokenIdentifier>
-			<Abstract type="html">Constructor.</Abstract>
-			<DeclaredIn>ISAnalyticsLocationEvent.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/logoutWithServerType:andListener:</TokenIdentifier>
+			<Abstract type="html">Method used to log out.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithPosition:(ISPosition *)position andAccuracy:(float)accuracy andAzimuth:(float)azimuth andFlags:(int)flags</Declaration>
+			<Declaration>- (void)logoutWithServerType:(ISEServerType)serverType andListener:(id&lt;ISPAuthListener&gt;)listener</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>position</Name>
-					<Abstract type="html">Location position.</Abstract>
+					<Name>serverType</Name>
+					<Abstract type="html">The related server type.</Abstract>
 				</Parameter><Parameter>
-					<Name>accuracy</Name>
-					<Abstract type="html">Location accuracy.</Abstract>
-				</Parameter><Parameter>
-					<Name>azimuth</Name>
-					<Abstract type="html">Location azimuth.</Abstract>
-				</Parameter><Parameter>
-					<Name>flags</Name>
-					<Abstract type="html">Location flags.</Abstract>
+					<Name>listener</Name>
+					<Abstract type="html">The listener to notify.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithPosition:andAccuracy:andAzimuth:andFlags:</Anchor>
+			<Anchor>//api/name/logoutWithServerType:andListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAuthManager/refreshSitesWithServerType:andListener:</TokenIdentifier>
+			<Abstract type="html">Method used to get all available sites.</Abstract>
+			<DeclaredIn>ISAuthManager.h</DeclaredIn>			
+			
+			<Declaration>- (void)refreshSitesWithServerType:(ISEServerType)serverType andListener:(id&lt;ISPAuthListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">The related server type.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">The listener to notify.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/refreshSitesWithServerType:andListener:</Anchor>
 		</Token>
 		
 	</File>

@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGfxLocationProvider.html">
+	<File path="Classes/ISGfxMeetMeProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGfxLocationProvider</TokenIdentifier>
-			<Abstract type="html">Class used to provide, get and RENDER user locations.</Abstract>
-			<DeclaredIn>ISGfxLocationProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGfxMeetMeProvider</TokenIdentifier>
+			<Abstract type="html">@header ISGfxMeetMeProvider.h
+ISGfxMeetMeProvider</Abstract>
+			<DeclaredIn>ISGfxMeetMeProvider.h</DeclaredIn>
 			
 			<NodeRef refid="26"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocationProvider/setRenderer:</TokenIdentifier>
-			<Abstract type="html">Location Renderer.</Abstract>
-			<DeclaredIn>ISGfxLocationProvider.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMeProvider/setRenderer:</TokenIdentifier>
+			<Abstract type="html">MeetMe renderer (used to render ISGfxPerson).</Abstract>
+			<DeclaredIn>ISGfxMeetMeProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISLocationRenderer *renderer</Declaration>
+			<Declaration>@property (readonly) ISMeetMeRenderer *renderer</Declaration>
 			
 			
 			<Anchor>//api/name/renderer</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxLocationProvider/renderer</TokenIdentifier>
-			<Abstract type="html">Location Renderer.</Abstract>
-			<DeclaredIn>ISGfxLocationProvider.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxMeetMeProvider/renderer</TokenIdentifier>
+			<Abstract type="html">MeetMe renderer (used to render ISGfxPerson).</Abstract>
+			<DeclaredIn>ISGfxMeetMeProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISLocationRenderer *renderer</Declaration>
+			<Declaration>@property (readonly) ISMeetMeRenderer *renderer</Declaration>
 			
 			
 			<Anchor>//api/name/renderer</Anchor>

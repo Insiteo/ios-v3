@@ -1,234 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISInitParameters.html">
+	<File path="Classes/ISItinerary.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISInitParameters</TokenIdentifier>
-			<Abstract type="html">Class used to define API initialization parameters.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItinerary</TokenIdentifier>
+			<Abstract type="html">Class used to define an Itinerary with its instructions.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>
 			
 			<NodeRef refid="32"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/setServerUrl:</TokenIdentifier>
-			<Abstract type="html">Server URL to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setStartPoint:</TokenIdentifier>
+			<Abstract type="html">Start point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *serverUrl</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CGPoint startPoint</Declaration>
 			
 			
-			<Anchor>//api/name/serverUrl</Anchor>
+			<Anchor>//api/name/startPoint</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInitParameters/serverUrl</TokenIdentifier>
-			<Abstract type="html">Server URL to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/startPoint</TokenIdentifier>
+			<Abstract type="html">Start point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *serverUrl</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CGPoint startPoint</Declaration>
 			
 			
-			<Anchor>//api/name/serverUrl</Anchor>
+			<Anchor>//api/name/startPoint</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/setSiteId:</TokenIdentifier>
-			<Abstract type="html">Site identifier to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setStartMapId:</TokenIdentifier>
+			<Abstract type="html">Start map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int startMapId</Declaration>
 			
 			
-			<Anchor>//api/name/siteId</Anchor>
+			<Anchor>//api/name/startMapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInitParameters/siteId</TokenIdentifier>
-			<Abstract type="html">Site identifier to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/startMapId</TokenIdentifier>
+			<Abstract type="html">Start map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int startMapId</Declaration>
 			
 			
-			<Anchor>//api/name/siteId</Anchor>
+			<Anchor>//api/name/startMapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/setApplicationVersion:</TokenIdentifier>
-			<Abstract type="html">Application version to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setEndPoint:</TokenIdentifier>
+			<Abstract type="html">End point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CGPoint endPoint</Declaration>
 			
 			
-			<Anchor>//api/name/applicationVersion</Anchor>
+			<Anchor>//api/name/endPoint</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInitParameters/applicationVersion</TokenIdentifier>
-			<Abstract type="html">Application version to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/endPoint</TokenIdentifier>
+			<Abstract type="html">End point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CGPoint endPoint</Declaration>
 			
 			
-			<Anchor>//api/name/applicationVersion</Anchor>
+			<Anchor>//api/name/endPoint</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/setLanguage:</TokenIdentifier>
-			<Abstract type="html">Language to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setEndMapId:</TokenIdentifier>
+			<Abstract type="html">End map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int endMapId</Declaration>
 			
 			
-			<Anchor>//api/name/language</Anchor>
+			<Anchor>//api/name/endMapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInitParameters/language</TokenIdentifier>
-			<Abstract type="html">Language to use.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/endMapId</TokenIdentifier>
+			<Abstract type="html">End map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int endMapId</Declaration>
 			
 			
-			<Anchor>//api/name/language</Anchor>
+			<Anchor>//api/name/endMapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/setServerType:</TokenIdentifier>
-			<Abstract type="html">INSITEO server type.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setInstructions:</TokenIdentifier>
+			<Abstract type="html">An array that contains all the itinerary instructions (array of ISInstruction.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *instructions</Declaration>
 			
 			
-			<Anchor>//api/name/serverType</Anchor>
+			<Anchor>//api/name/instructions</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInitParameters/serverType</TokenIdentifier>
-			<Abstract type="html">INSITEO server type.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/instructions</TokenIdentifier>
+			<Abstract type="html">An array that contains all the itinerary instructions (array of ISInstruction.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *instructions</Declaration>
 			
 			
-			<Anchor>//api/name/serverType</Anchor>
+			<Anchor>//api/name/instructions</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/setForceDownload:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setCostTime:</TokenIdentifier>
+			<Abstract type="html">Time cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean forceDownload</Declaration>
+			<Declaration>@property (nonatomic, retain) NSNumber *costTime</Declaration>
 			
 			
-			<Anchor>//api/name/forceDownload</Anchor>
+			<Anchor>//api/name/costTime</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInitParameters/forceDownload</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/costTime</TokenIdentifier>
+			<Abstract type="html">Time cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean forceDownload</Declaration>
+			<Declaration>@property (nonatomic, retain) NSNumber *costTime</Declaration>
 			
 			
-			<Anchor>//api/name/forceDownload</Anchor>
+			<Anchor>//api/name/costTime</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/setRenderMode:</TokenIdentifier>
-			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setCostDist:</TokenIdentifier>
+			<Abstract type="html">Distance cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) ISERenderMode renderMode</Declaration>
+			<Declaration>@property (nonatomic, retain) NSNumber *costDist</Declaration>
 			
 			
-			<Anchor>//api/name/renderMode</Anchor>
+			<Anchor>//api/name/costDist</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInitParameters/renderMode</TokenIdentifier>
-			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/costDist</TokenIdentifier>
+			<Abstract type="html">Distance cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) ISERenderMode renderMode</Declaration>
+			<Declaration>@property (nonatomic, retain) NSNumber *costDist</Declaration>
 			
 			
-			<Anchor>//api/name/renderMode</Anchor>
+			<Anchor>//api/name/costDist</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISInitParameters/getServerTypeString:</TokenIdentifier>
-			<Abstract type="html">Static method used to get the server type NSString identifier.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setBoundingRects:</TokenIdentifier>
+			<Abstract type="html">A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>+ (NSString *)getServerTypeString:(ISEServerType)serverType</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>serverType</Name>
-					<Abstract type="html">INSITEO server type.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The related NSString.</Abstract></ReturnValue>
-			<Anchor>//api/name/getServerTypeString:</Anchor>
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *boundingRects</Declaration>
+			
+			
+			<Anchor>//api/name/boundingRects</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISInitParameters/getServerTypeStringForURL:</TokenIdentifier>
-			<Abstract type="html">Static method used to get the server NSString for use in URLs.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/boundingRects</TokenIdentifier>
+			<Abstract type="html">A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>+ (NSString *)getServerTypeStringForURL:(ISEServerType)serverType</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>serverType</Name>
-					<Abstract type="html">INSITEO server type.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The related NSString to use in URLs only.</Abstract></ReturnValue>
-			<Anchor>//api/name/getServerTypeStringForURL:</Anchor>
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *boundingRects</Declaration>
+			
+			
+			<Anchor>//api/name/boundingRects</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitParameters/initWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andServerType:andRenderMode:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISInitParameters.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/getNbSections</TokenIdentifier>
+			<Abstract type="html">Method used to get the total amout of sections.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithServerUrl:(NSString *)serverUrl andSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language andForceDownload:(Boolean)forceDownload andServerType:(ISEServerType)serverType andRenderMode:(ISERenderMode)renderMode</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>serverUrl</Name>
-					<Abstract type="html">The server URL to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>siteId</Name>
-					<Abstract type="html">The site identifier to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>applicationVersion</Name>
-					<Abstract type="html">The application version to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>language</Name>
-					<Abstract type="html">The language to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>forceDownload</Name>
-					<Abstract type="html">Boolean used to know if we force the download of packages even if the application is up to date.</Abstract>
-				</Parameter><Parameter>
-					<Name>serverType</Name>
-					<Abstract type="html">INSITEO server type to communicate with.</Abstract>
-				</Parameter><Parameter>
-					<Name>renderMode</Name>
-					<Abstract type="html">Wanted render mode.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (int)getNbSections</Declaration>
 			
-			<Anchor>//api/name/initWithServerUrl:andSiteId:andApplicationVersion:andLanguage:andForceDownload:andServerType:andRenderMode:</Anchor>
+			<ReturnValue><Abstract type="html">The total amout of sections.</Abstract></ReturnValue>
+			<Anchor>//api/name/getNbSections</Anchor>
 		</Token>
 		
 	</File>

@@ -1,63 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISRWDBHelper.html">
+	<File path="Classes/ISReverseRect.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISRWDBHelper</TokenIdentifier>
-			<Abstract type="html">Static class used to handle ReadWrite SQLITE requests.</Abstract>
-			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISReverseRect</TokenIdentifier>
+			<Abstract type="html">Class used to represent a rectangle defined by 4 int values (left, top, right, bottom) but whith the Y axis reversed (ex: 0/150/50/0).</Abstract>
+			<DeclaredIn>ISReverseRect.h</DeclaredIn>
 			
 			<NodeRef refid="71"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISRWDBHelper/initializeWithDatabasePath:</TokenIdentifier>
-			<Abstract type="html">Method used to initilase the DataHelper.</Abstract>
-			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>			
-			
-			<Declaration>- (void)initializeWithDatabasePath:(NSString *)databasePath</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>databasePath</Name>
-					<Abstract type="html">Application path where the database is located.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/initializeWithDatabasePath:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISRWDBHelper/executeInsert:</TokenIdentifier>
-			<Abstract type="html">Method used to execute an SQL INSERT query.</Abstract>
-			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>			
-			
-			<Declaration>- (int)executeInsert:(NSString *)request</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>request</Name>
-					<Abstract type="html">The NSString sqlite query.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">the id of the inserted row, or Constants.NULL_ID if failed.</Abstract></ReturnValue>
-			<Anchor>//api/name/executeInsert:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISRWDBHelper/executeRequest:</TokenIdentifier>
-			<Abstract type="html">Method used to execute an SQL query.</Abstract>
-			<DeclaredIn>ISRWDBHelper.h</DeclaredIn>			
-			
-			<Declaration>- (Boolean)executeRequest:(NSString *)request</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>request</Name>
-					<Abstract type="html">The NSString sqlite query.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the query succeeded, else &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/executeRequest:</Anchor>
-		</Token>
 		
 	</File>
 </Tokens>
