@@ -33,6 +33,9 @@ int const ACTIONSHEET_ACTIONS = 1;
     id<ISPCancelable> initTask = [[ISInitProvider instance] startAPIWithServerUrl:serverUrl andSiteId:SITE_ID andApplicationVersion:VERSION andLanguage:LANGUAGE andForceDownload:NO andInitListener:self andServerType:SERVER];
     [self setCurrentTask:initTask];
     
+    //Create cancelable progress dialog. Canceling dialog will also cancel init task
+    m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [m_hud setMode:MBProgressHUDModeIndeterminate];
     [m_hud setLabelText:NSLocalizedString(@"STR_INITIALIZING", nil)];
     [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
@@ -41,9 +44,6 @@ int const ACTIONSHEET_ACTIONS = 1;
     [tapGestureRecognizer setNumberOfTapsRequired:2];
     [m_hud addGestureRecognizer:tapGestureRecognizer];
     [tapGestureRecognizer release];
-    
-    //Create cancelable progress dialog. Canceling dialog will aslso cancel init task
-    m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)startMap {
@@ -62,11 +62,11 @@ int const ACTIONSHEET_ACTIONS = 1;
     [m_map2DView addRenderer:itineraryRenderer];
     
     //Possible itinerary customization...
-//    [itineraryProvider setFrontStrokeThickness:15.0];
-//    [itineraryProvider setFrontFillColor:[UIColor redColor]];
-//    [itineraryProvider setBackStrokeThickness:20.0];
-//    [itineraryProvider setBackFillColor:[UIColor blueColor]];
-//    [itineraryProvider setOnlyPath:YES];
+    //    [itineraryProvider setFrontStrokeThickness:15.0];
+    //    [itineraryProvider setFrontFillColor:[UIColor redColor]];
+    //    [itineraryProvider setBackStrokeThickness:20.0];
+    //    [itineraryProvider setBackFillColor:[UIColor blueColor]];
+    //    [itineraryProvider setOnlyPath:YES];
     
     //Geofencing
     m_geofenceProvider = [[m_locationProvider getLbsModule:LBS_MODULE_GEOFENCING] retain];
@@ -108,7 +108,10 @@ int const ACTIONSHEET_ACTIONS = 1;
     //Start an asynchronous download, and get running task (thus it can be canceled)
     id<ISPCancelable> updateTask = [[ISInitProvider instance] updatePackagesWithInitListener:self];
     [self setCurrentTask:updateTask];
-
+    
+    //Create the progress dialog. If it is canceled, it cancels the running download task
+    m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [m_hud setMode:MBProgressHUDModeDeterminate];
     [m_hud setProgress:0.0];
     [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
@@ -118,9 +121,6 @@ int const ACTIONSHEET_ACTIONS = 1;
     [tapGestureRecognizer setNumberOfTapsRequired:2];
     [m_hud addGestureRecognizer:tapGestureRecognizer];
     [tapGestureRecognizer release];
-    
-    //Create the progress dialog. If it is canceled, it cnacels the running download task
-    m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 - (void)onInitDone:(ISEInitAPIResult)result andError:(ISInsiteoError *)error {
@@ -475,7 +475,7 @@ int const ACTIONSHEET_ACTIONS = 1;
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
     [m_locationProvider startLocation:NAVIGATION_FLAGS andLocationListener:self];
-
+    
     [pool release];
 }
 
