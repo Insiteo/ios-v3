@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISZone.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISZone</TokenIdentifier>
+			<Abstract type="html">Class used to represent an INSITEO zone entity.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>
+			
+			<NodeRef refid="76"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setIdZone:</TokenIdentifier>
+			<Abstract type="html">Zone identifier.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int idZone</Declaration>
+			
+			
+			<Anchor>//api/name/idZone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/idZone</TokenIdentifier>
+			<Abstract type="html">Zone identifier.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int idZone</Declaration>
+			
+			
+			<Anchor>//api/name/idZone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setGuid:</TokenIdentifier>
+			<Abstract type="html">Zone GUID.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/guid</TokenIdentifier>
+			<Abstract type="html">Zone GUID.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setTypeId:</TokenIdentifier>
+			<Abstract type="html">Zone type identifier.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			
+			
+			<Anchor>//api/name/typeId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/typeId</TokenIdentifier>
+			<Abstract type="html">Zone type identifier.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			
+			
+			<Anchor>//api/name/typeId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setLabel:</TokenIdentifier>
+			<Abstract type="html">Zone label.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/label</TokenIdentifier>
+			<Abstract type="html">Zone label.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setCenter:</TokenIdentifier>
+			<Abstract type="html">Zone center in meters.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *center</Declaration>
+			
+			
+			<Anchor>//api/name/center</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/center</TokenIdentifier>
+			<Abstract type="html">Zone center in meters.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *center</Declaration>
+			
+			
+			<Anchor>//api/name/center</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setMapId:</TokenIdentifier>
+			<Abstract type="html">ISZone * map identifier.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/mapId</TokenIdentifier>
+			<Abstract type="html">ISZone * map identifier.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setZ:</TokenIdentifier>
+			<Abstract type="html">Z value (to order rendering/touch).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int z</Declaration>
+			
+			
+			<Anchor>//api/name/z</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/z</TokenIdentifier>
+			<Abstract type="html">Z value (to order rendering/touch).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int z</Declaration>
+			
+			
+			<Anchor>//api/name/z</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setZoomMin:</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is visible.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMin</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMin</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/zoomMin</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is visible.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMin</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMin</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setZoomMax:</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is hidden.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMax</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMax</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/zoomMax</TokenIdentifier>
+			<Abstract type="html">ZoomLevel from which the zone is hidden.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int zoomMax</Declaration>
+			
+			
+			<Anchor>//api/name/zoomMax</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setPoints:</TokenIdentifier>
+			<Abstract type="html">Zone node points.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/points</TokenIdentifier>
+			<Abstract type="html">Zone node points.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *points</Declaration>
+			
+			
+			<Anchor>//api/name/points</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setTiles:</TokenIdentifier>
+			<Abstract type="html">Zone tiles references.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *tiles</Declaration>
+			
+			
+			<Anchor>//api/name/tiles</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/tiles</TokenIdentifier>
+			<Abstract type="html">Zone tiles references.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *tiles</Declaration>
+			
+			
+			<Anchor>//api/name/tiles</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setActionType:</TokenIdentifier>
+			<Abstract type="html">Zone action type (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int actionType</Declaration>
+			
+			
+			<Anchor>//api/name/actionType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/actionType</TokenIdentifier>
+			<Abstract type="html">Zone action type (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int actionType</Declaration>
+			
+			
+			<Anchor>//api/name/actionType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setActionParameter:</TokenIdentifier>
+			<Abstract type="html">Zone action parameter (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *actionParameter</Declaration>
+			
+			
+			<Anchor>//api/name/actionParameter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/actionParameter</TokenIdentifier>
+			<Abstract type="html">Zone action parameter (ZoomIn, ZoomOut etc...).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *actionParameter</Declaration>
+			
+			
+			<Anchor>//api/name/actionParameter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setSortIndex:</TokenIdentifier>
+			<Abstract type="html">Zone sort index.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
+			
+			
+			<Anchor>//api/name/sortIndex</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/sortIndex</TokenIdentifier>
+			<Abstract type="html">Zone sort index.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
+			
+			
+			<Anchor>//api/name/sortIndex</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setComments:</TokenIdentifier>
+			<Abstract type="html">Zone comments (if needed).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *comments</Declaration>
+			
+			
+			<Anchor>//api/name/comments</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/comments</TokenIdentifier>
+			<Abstract type="html">Zone comments (if needed).</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *comments</Declaration>
+			
+			
+			<Anchor>//api/name/comments</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setExtra1:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/extra1</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setExtra2:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/extra2</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setExtra3:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/extra3</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setExtra4:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra4</Declaration>
+			
+			
+			<Anchor>//api/name/extra4</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/extra4</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra4</Declaration>
+			
+			
+			<Anchor>//api/name/extra4</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setExtra5:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra5</Declaration>
+			
+			
+			<Anchor>//api/name/extra5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/extra5</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra5</Declaration>
+			
+			
+			<Anchor>//api/name/extra5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setFExtra1:</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/fExtra1</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setDispExtra1:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/dispExtra1</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setDispExtra2:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra2</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/dispExtra2</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra2</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setDispExtra3:</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra3</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/dispExtra3</TokenIdentifier>
+			<Abstract type="html">String extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *dispExtra3</Declaration>
+			
+			
+			<Anchor>//api/name/dispExtra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setDispFExtra1:</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float dispFExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispFExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/dispFExtra1</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float dispFExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/dispFExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setIsHidden:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone handle touch event and if it&apos;s displayed.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isHidden</Declaration>
+			
+			
+			<Anchor>//api/name/isHidden</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/isHidden</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone handle touch event and if it&apos;s displayed.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isHidden</Declaration>
+			
+			
+			<Anchor>//api/name/isHidden</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setP1:</TokenIdentifier>
+			<Abstract type="html">Shelf left side point.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *p1</Declaration>
+			
+			
+			<Anchor>//api/name/p1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/p1</TokenIdentifier>
+			<Abstract type="html">Shelf left side point.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *p1</Declaration>
+			
+			
+			<Anchor>//api/name/p1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setP2:</TokenIdentifier>
+			<Abstract type="html">Shelf right side point.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *p2</Declaration>
+			
+			
+			<Anchor>//api/name/p2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/p2</TokenIdentifier>
+			<Abstract type="html">Shelf right side point.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *p2</Declaration>
+			
+			
+			<Anchor>//api/name/p2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZone/setIsDisplayShelving:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone is a display shelving.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isDisplayShelving</Declaration>
+			
+			
+			<Anchor>//api/name/isDisplayShelving</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZone/isDisplayShelving</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the zone is a display shelving.</Abstract>
+			<DeclaredIn>ISZone.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isDisplayShelving</Declaration>
+			
+			
+			<Anchor>//api/name/isDisplayShelving</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

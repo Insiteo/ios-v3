@@ -1,0 +1,1918 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>ISGeofenceProvider Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">InsiteoAPI </a></h1>
+				<a id="developerHome" href="../index.html">INSITEO</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">ISGeofenceProvider Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/isInitialized">&nbsp;&nbsp;&nbsp;&nbsp;isInitialized</option>
+	
+	<option value="//api/name/listener">&nbsp;&nbsp;&nbsp;&nbsp;listener</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithGUID:andCenter:andContent:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andSize:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithGUID:andCenter:andContent:andSize:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithZoneId:andContent:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithZoneId:andContent:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithZoneId:andContent:andEventTime:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithZoneId:andContent:andEventTime:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithZonePoi:andContent:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithZonePoi:andContent:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</option>
+	
+	<option value="//api/name/addGeofenceAreaWithZonePoi:andContent:andEventTime:">&nbsp;&nbsp;&nbsp;&nbsp;- addGeofenceAreaWithZonePoi:andContent:andEventTime:</option>
+	
+	<option value="//api/name/geofenceAreaExistsWithArea:">&nbsp;&nbsp;&nbsp;&nbsp;- geofenceAreaExistsWithArea:</option>
+	
+	<option value="//api/name/geofenceAreaExistsWithGuid:">&nbsp;&nbsp;&nbsp;&nbsp;- geofenceAreaExistsWithGuid:</option>
+	
+	<option value="//api/name/geofenceAreaExistsWithZoneId:">&nbsp;&nbsp;&nbsp;&nbsp;- geofenceAreaExistsWithZoneId:</option>
+	
+	<option value="//api/name/geofenceAreaExistsWithZonePoi:">&nbsp;&nbsp;&nbsp;&nbsp;- geofenceAreaExistsWithZonePoi:</option>
+	
+	<option value="//api/name/removeGeofenceAreaWithArea:">&nbsp;&nbsp;&nbsp;&nbsp;- removeGeofenceAreaWithArea:</option>
+	
+	<option value="//api/name/removeGeofenceAreaWithGuid:">&nbsp;&nbsp;&nbsp;&nbsp;- removeGeofenceAreaWithGuid:</option>
+	
+	<option value="//api/name/removeGeofenceAreaWithZoneId:">&nbsp;&nbsp;&nbsp;&nbsp;- removeGeofenceAreaWithZoneId:</option>
+	
+	<option value="//api/name/removeGeofenceAreaWithZonePoi:">&nbsp;&nbsp;&nbsp;&nbsp;- removeGeofenceAreaWithZonePoi:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isInitialized">isInitialized</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listener">listener</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:">addGeofenceAreaWithGUID:andCenter:andContent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:">addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andSize:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithZoneId:andContent:">addGeofenceAreaWithZoneId:andContent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:">addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithZoneId:andContent:andEventTime:">addGeofenceAreaWithZoneId:andContent:andEventTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithZonePoi:andContent:">addGeofenceAreaWithZonePoi:andContent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:">addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGeofenceAreaWithZonePoi:andContent:andEventTime:">addGeofenceAreaWithZonePoi:andContent:andEventTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/geofenceAreaExistsWithArea:">geofenceAreaExistsWithArea:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/geofenceAreaExistsWithGuid:">geofenceAreaExistsWithGuid:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/geofenceAreaExistsWithZoneId:">geofenceAreaExistsWithZoneId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/geofenceAreaExistsWithZonePoi:">geofenceAreaExistsWithZonePoi:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeGeofenceAreaWithArea:">removeGeofenceAreaWithArea:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeGeofenceAreaWithGuid:">removeGeofenceAreaWithGuid:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeGeofenceAreaWithZoneId:">removeGeofenceAreaWithZoneId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeGeofenceAreaWithZonePoi:">removeGeofenceAreaWithZonePoi:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="ISGeofenceProvider Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">ISGeofenceProvider Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value"><a href="../Protocols/ISPLbsModule.html">ISPLbsModule</a></td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">ISGeofenceProvider.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class handles the geofencing process. You can retrieve an instance of it by calling getModule:GEOFENCING on your location provider. It provides a way to be notified when location is detected in a certain area (see <a href="../Classes/ISGeofenceZone.html">ISGeofenceZone</a>), defined on Insiteo servers. To use this class, you just have to call setListener(<a href="../Protocols/ISPGeofenceListener.html">ISPGeofenceListener</a>), and start the location. The <a href="#//api/name/listener">listener</a> will then receive notification each time location enter/stay/leave an area.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/listener">&nbsp;&nbsp;listener</a></code>
+		<span class="tooltip"><p>Geofencing notifications listener.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isInitialized">&nbsp;&nbsp;isInitialized</a></code>
+		<span class="tooltip"><p>Boolean use to know if the provider is initialized.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/geofenceAreaExistsWithGuid:">&ndash;&nbsp;geofenceAreaExistsWithGuid:</a></code>
+		<span class="tooltip"><p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified guid.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/geofenceAreaExistsWithZoneId:">&ndash;&nbsp;geofenceAreaExistsWithZoneId:</a></code>
+		<span class="tooltip"><p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified zone identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/geofenceAreaExistsWithZonePoi:">&ndash;&nbsp;geofenceAreaExistsWithZonePoi:</a></code>
+		<span class="tooltip"><p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified Zone/Poi association.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/geofenceAreaExistsWithArea:">&ndash;&nbsp;geofenceAreaExistsWithArea:</a></code>
+		<span class="tooltip"><p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithZoneId:andContent:">&ndash;&nbsp;addGeofenceAreaWithZoneId:andContent:</a></code>
+		<span class="tooltip"><p>Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithZoneId:andContent:andEventTime:">&ndash;&nbsp;addGeofenceAreaWithZoneId:andContent:andEventTime:</a></code>
+		<span class="tooltip"><p>Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:">&ndash;&nbsp;addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> for the given zone. The area will be constructed with the given parameters.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithZonePoi:andContent:">&ndash;&nbsp;addGeofenceAreaWithZonePoi:andContent:</a></code>
+		<span class="tooltip"><p>Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithZonePoi:andContent:andEventTime:">&ndash;&nbsp;addGeofenceAreaWithZonePoi:andContent:andEventTime:</a></code>
+		<span class="tooltip"><p>Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:">&ndash;&nbsp;addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> for the given Zone/Poi association. The area will be constructed with the given parameters.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:">&ndash;&nbsp;addGeofenceAreaWithGUID:andCenter:andContent:</a></code>
+		<span class="tooltip"><p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:">&ndash;&nbsp;addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:</a></code>
+		<span class="tooltip"><p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:">&ndash;&nbsp;addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</a></code>
+		<span class="tooltip"><p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andSize:">&ndash;&nbsp;addGeofenceAreaWithGUID:andCenter:andContent:andSize:</a></code>
+		<span class="tooltip"><p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:">&ndash;&nbsp;addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:</a></code>
+		<span class="tooltip"><p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">&ndash;&nbsp;addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> around the given Position. The area will be a square constructed with the given size.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeGeofenceAreaWithGuid:">&ndash;&nbsp;removeGeofenceAreaWithGuid:</a></code>
+		<span class="tooltip"><p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to its guid.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeGeofenceAreaWithZoneId:">&ndash;&nbsp;removeGeofenceAreaWithZoneId:</a></code>
+		<span class="tooltip"><p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to a zone identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeGeofenceAreaWithZonePoi:">&ndash;&nbsp;removeGeofenceAreaWithZonePoi:</a></code>
+		<span class="tooltip"><p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to a Zone/Poi association.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeGeofenceAreaWithArea:">&ndash;&nbsp;removeGeofenceAreaWithArea:</a></code>
+		<span class="tooltip"><p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/isInitialized" title="isInitialized"></a>
+	<h3 class="subsubtitle method-title">isInitialized</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Boolean use to know if the provider is initialized.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean isInitialized</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Boolean use to know if the provider is initialized.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/listener" title="listener"></a>
+	<h3 class="subsubtitle method-title">listener</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Geofencing notifications listener.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (assign) id&lt;ISPGeofenceListener&gt; listener</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Geofencing notifications listener.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:" title="addGeofenceAreaWithGUID:andCenter:andContent:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithGUID:andCenter:andContent:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)<em>guid</em> andCenter:(ISPosition *)<em>center</em> andContent:(NSString *)<em>content</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>The guid that should be used for the new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>. Guid can not be null or empty!</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center of the <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> or null if it was not properly created.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:" title="addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)<em>guid</em> andCenter:(ISPosition *)<em>center</em> andContent:(NSString *)<em>content</em> andEnterEnabled:(Boolean)<em>enteredEnabled</em> andEnteredTime:(float)<em>enteredTime</em> andStayedEnabled:(Boolean)<em>stayedEnabled</em> andStayedTime:(float)<em>stayedTime</em> andLeaveEnabled:(Boolean)<em>leaveEnabled</em> andLeaveTime:(float)<em>leaveTime</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>The guid that should be used for the new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>. Guid can not be null or empty!</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center of the <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enteredEnabled</em></dt>
+			<dd><p>True if entered event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enteredTime</em></dt>
+			<dd><p>The threshold time to trigger the entered event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayedEnabled</em></dt>
+			<dd><p>True if stayed event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayedTime</em></dt>
+			<dd><p>The threshold time to trigger the stayed event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveEnabled</em></dt>
+			<dd><p>True if leave event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveTime</em></dt>
+			<dd><p>The threshold time to trigger the leave event.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> or null if it was not properly created.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:" title="addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> around the given Position. The area will be a square constructed with the given size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)<em>guid</em> andCenter:(ISPosition *)<em>center</em> andContent:(NSString *)<em>content</em> andEnterEnabled:(Boolean)<em>enteredEnabled</em> andEnteredTime:(float)<em>enteredTime</em> andStayedEnabled:(Boolean)<em>stayedEnabled</em> andStayedTime:(float)<em>stayedTime</em> andLeaveEnabled:(Boolean)<em>leaveEnabled</em> andLeaveTime:(float)<em>leaveTime</em> andSize:(float)<em>size</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>The guid that should be used for the new GeofenceArea. Guid can not be nil or empty!</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center of the GeofenceArea.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created GeofenceArea.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enteredEnabled</em></dt>
+			<dd><p>True if entered event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enteredTime</em></dt>
+			<dd><p>The threshold time to trigger the entered event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayedEnabled</em></dt>
+			<dd><p>True if stayed event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayedTime</em></dt>
+			<dd><p>The threshold time to trigger the stayed event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveEnabled</em></dt>
+			<dd><p>True if leave event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveTime</em></dt>
+			<dd><p>The threshold time to trigger the leave event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The size for the square.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created GeofenceArea or nil if it was not properly created.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> around the given Position. The area will be a square constructed with the given size.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:" title="addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)<em>guid</em> andCenter:(ISPosition *)<em>center</em> andContent:(NSString *)<em>content</em> andEventTime:(float)<em>eventTime</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>The guid that should be used for the new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>. Guid can not be null or empty!</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center of the <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventTime</em></dt>
+			<dd><p>The time used to trigged the geofencing events.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> or null if it was not properly created.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:" title="addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithGUID:andCenter:andContent:andEventTime:andSize:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)<em>guid</em> andCenter:(ISPosition *)<em>center</em> andContent:(NSString *)<em>content</em> andEventTime:(float)<em>eventTime</em> andSize:(float)<em>size</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>The guid that should be used for the new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>. Guid can not be null or empty!</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center of the <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventTime</em></dt>
+			<dd><p>The time used to trigged the geofencing events.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The size for the square.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The created GeofenceArea or null if it was not properly created.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andSize:" title="addGeofenceAreaWithGUID:andCenter:andContent:andSize:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithGUID:andCenter:andContent:andSize:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)<em>guid</em> andCenter:(ISPosition *)<em>center</em> andContent:(NSString *)<em>content</em> andSize:(float)<em>size</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>The guid that should be used for the new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>. Guid can not be null or empty!</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>center</em></dt>
+			<dd><p>The center of the <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> or null if it was not properly created.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The size for the square.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to <a href="#//api/name/addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:">addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</a> with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithZoneId:andContent:" title="addGeofenceAreaWithZoneId:andContent:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithZoneId:andContent:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)<em>zoneId</em> andContent:(NSString *)<em>content</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zoneId</em></dt>
+			<dd><p>zone identifier.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created GeofenceArea.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:" title="addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> for the given zone. The area will be constructed with the given parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)<em>zoneId</em> andContent:(NSString *)<em>content</em> andEnterEnabled:(Boolean)<em>enterEnabled</em> andEnterTime:(float)<em>enterTime</em> andStayEnabled:(Boolean)<em>stayEnabled</em> andStayTime:(float)<em>stayTime</em> andLeaveEnabled:(Boolean)<em>leaveEnabled</em> andLeaveTime:(float)<em>leaveTime</em> andDefaultGeoWidth:(float)<em>defaultGeoWidth</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zoneId</em></dt>
+			<dd><p>zone identifier.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created GeofenceArea.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enterEnabled</em></dt>
+			<dd><p>True if entered event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enterTime</em></dt>
+			<dd><p>The threshold time to trigger the entered event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayEnabled</em></dt>
+			<dd><p>True if stayed event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayTime</em></dt>
+			<dd><p>The threshold time to trigger the stayed event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveEnabled</em></dt>
+			<dd><p>True if leave event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveTime</em></dt>
+			<dd><p>The threshold time to trigger the leave event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>defaultGeoWidth</em></dt>
+			<dd><p>The default geofence depth.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> for the given zone. The area will be constructed with the given parameters.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithZoneId:andContent:andEventTime:" title="addGeofenceAreaWithZoneId:andContent:andEventTime:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithZoneId:andContent:andEventTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)<em>zoneId</em> andContent:(NSString *)<em>content</em> andEventTime:(float)<em>eventTime</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zoneId</em></dt>
+			<dd><p>zone identifier.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created GeofenceArea.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventTime</em></dt>
+			<dd><p>The time used to trigged the geofencing events.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithZonePoi:andContent:" title="addGeofenceAreaWithZonePoi:andContent:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithZonePoi:andContent:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)<em>zonePoi</em> andContent:(NSString *)<em>content</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zonePoi</em></dt>
+			<dd><p>Related Zone/Poi association (could be nil).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created GeofenceArea.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:" title="addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> for the given Zone/Poi association. The area will be constructed with the given parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)<em>zonePoi</em> andContent:(NSString *)<em>content</em> andEnterEnabled:(Boolean)<em>enterEnabled</em> andEnterTime:(float)<em>enterTime</em> andStayEnabled:(Boolean)<em>stayEnabled</em> andStayTime:(float)<em>stayTime</em> andLeaveEnabled:(Boolean)<em>leaveEnabled</em> andLeaveTime:(float)<em>leaveTime</em> andDefaultGeoWidth:(float)<em>defaultGeoWidth</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zonePoi</em></dt>
+			<dd><p>Related Zone/Poi association (could be nil).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created GeofenceArea.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enterEnabled</em></dt>
+			<dd><p>True if entered event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enterTime</em></dt>
+			<dd><p>The threshold time to trigger the entered event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayEnabled</em></dt>
+			<dd><p>True if stayed event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stayTime</em></dt>
+			<dd><p>The threshold time to trigger the stayed event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveEnabled</em></dt>
+			<dd><p>True if leave event should be enabled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>leaveTime</em></dt>
+			<dd><p>The threshold time to trigger the leave event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>defaultGeoWidth</em></dt>
+			<dd><p>The default geofence depth.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> for the given Zone/Poi association. The area will be constructed with the given parameters.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addGeofenceAreaWithZonePoi:andContent:andEventTime:" title="addGeofenceAreaWithZonePoi:andContent:andEventTime:"></a>
+	<h3 class="subsubtitle method-title">addGeofenceAreaWithZonePoi:andContent:andEventTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)<em>zonePoi</em> andContent:(NSString *)<em>content</em> andEventTime:(float)<em>eventTime</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zonePoi</em></dt>
+			<dd><p>Related Zone/Poi association (could be nil).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>content</em></dt>
+			<dd><p>The content for the created GeofenceArea.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventTime</em></dt>
+			<dd><p>The time used to trigged the geofencing events.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/geofenceAreaExistsWithArea:" title="geofenceAreaExistsWithArea:"></a>
+	<h3 class="subsubtitle method-title">geofenceAreaExistsWithArea:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)geofenceAreaExistsWithArea:(ISGeofenceArea *)<em>area</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>Corresponding area.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the area already exists; otherwise <b>NO</b>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/geofenceAreaExistsWithGuid:" title="geofenceAreaExistsWithGuid:"></a>
+	<h3 class="subsubtitle method-title">geofenceAreaExistsWithGuid:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified guid.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)geofenceAreaExistsWithGuid:(NSString *)<em>guid</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>Corresponding area guid.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the area already exists; otherwise <b>NO</b>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified guid.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/geofenceAreaExistsWithZoneId:" title="geofenceAreaExistsWithZoneId:"></a>
+	<h3 class="subsubtitle method-title">geofenceAreaExistsWithZoneId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified zone identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)geofenceAreaExistsWithZoneId:(int)<em>zoneId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zoneId</em></dt>
+			<dd><p>Corresponding area zone identifier.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the area already exists; otherwise <b>NO</b>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified zone identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/geofenceAreaExistsWithZonePoi:" title="geofenceAreaExistsWithZonePoi:"></a>
+	<h3 class="subsubtitle method-title">geofenceAreaExistsWithZonePoi:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified Zone/Poi association.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)geofenceAreaExistsWithZonePoi:(ISZonePoi *)<em>zonePoi</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zonePoi</em></dt>
+			<dd><p>Zone/Poi association.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the area already exists; otherwise <b>NO</b>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to know if a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> exists with a specified Zone/Poi association.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeGeofenceAreaWithArea:" title="removeGeofenceAreaWithArea:"></a>
+	<h3 class="subsubtitle method-title">removeGeofenceAreaWithArea:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeGeofenceAreaWithArea:(ISGeofenceArea *)<em>area</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>area</em></dt>
+			<dd><p>Area to remove.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeGeofenceAreaWithGuid:" title="removeGeofenceAreaWithGuid:"></a>
+	<h3 class="subsubtitle method-title">removeGeofenceAreaWithGuid:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to its guid.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeGeofenceAreaWithGuid:(NSString *)<em>guid</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>guid</em></dt>
+			<dd><p>Corresponding area guid to remove.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to its guid.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeGeofenceAreaWithZoneId:" title="removeGeofenceAreaWithZoneId:"></a>
+	<h3 class="subsubtitle method-title">removeGeofenceAreaWithZoneId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to a zone identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeGeofenceAreaWithZoneId:(int)<em>zoneId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zoneId</em></dt>
+			<dd><p>Corresponding zone identifier to remove from.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to a zone identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeGeofenceAreaWithZonePoi:" title="removeGeofenceAreaWithZonePoi:"></a>
+	<h3 class="subsubtitle method-title">removeGeofenceAreaWithZonePoi:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to a Zone/Poi association.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeGeofenceAreaWithZonePoi:(ISZonePoi *)<em>zonePoi</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zonePoi</em></dt>
+			<dd><p>Corresponding Zone/Poi association to remove from.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to remove a <a href="../Classes/ISGeofenceArea.html">ISGeofenceArea</a> according to a Zone/Poi association.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-07-09)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

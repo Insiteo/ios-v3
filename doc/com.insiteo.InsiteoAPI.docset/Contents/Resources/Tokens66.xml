@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISPosition.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISPosition</TokenIdentifier>
+			<Abstract type="html">Class used to represent a position in our map api.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>
+			
+			<NodeRef refid="66"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/setCoordinates:</TokenIdentifier>
+			<Abstract type="html">Position coordinates (in meters).</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint coordinates</Declaration>
+			
+			
+			<Anchor>//api/name/coordinates</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPosition/coordinates</TokenIdentifier>
+			<Abstract type="html">Position coordinates (in meters).</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint coordinates</Declaration>
+			
+			
+			<Anchor>//api/name/coordinates</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/setMapId:</TokenIdentifier>
+			<Abstract type="html">Relative map id.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPosition/mapId</TokenIdentifier>
+			<Abstract type="html">Relative map id.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/initWithX:andY:andMapId:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithX:(double)x andY:(double)y andMapId:(int)mapId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X double coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y double coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">Map identifier to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithX:andY:andMapId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/initWithISPosition:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithISPosition:(ISPosition *)position</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">ISPosition to use for instantiate the new one.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithISPosition:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISPosition/ISPositionWithX:andY:andMapId:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISPositionWithX:(double)x andY:(double)y andMapId:(int)mapId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X double coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y double coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">Map identifier to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISPositionWithX:andY:andMapId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/setValuesWithPosition:</TokenIdentifier>
+			<Abstract type="html">copy values from position, without new allocation.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>- (void)setValuesWithPosition:(ISPosition *)position</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">ISPosition to use for update current values.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setValuesWithPosition:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/offsetWithOffset:</TokenIdentifier>
+			<Abstract type="html">Method used to offset the ISPosition.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>- (void)offsetWithOffset:(CGPoint)offset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">CGPoint use to offset the position on X/Y axis.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/offsetWithOffset:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/x</TokenIdentifier>
+			<Abstract type="html">X coordinate accessor.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>- (double)x</Declaration>
+			
+			
+			<Anchor>//api/name/x</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPosition/y</TokenIdentifier>
+			<Abstract type="html">Y coordinate accessor.</Abstract>
+			<DeclaredIn>ISPosition.h</DeclaredIn>			
+			
+			<Declaration>- (double)y</Declaration>
+			
+			
+			<Anchor>//api/name/y</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

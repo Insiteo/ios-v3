@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISGfxItinerary.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGfxItinerary</TokenIdentifier>
+			<Abstract type="html">Class used to represent an itinerary that could be displayed with our map engine.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setItinerary:</TokenIdentifier>
+			<Abstract type="html">Related itinerary data.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItinerary *itinerary</Declaration>
+			
+			
+			<Anchor>//api/name/itinerary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/itinerary</TokenIdentifier>
+			<Abstract type="html">Related itinerary data.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItinerary *itinerary</Declaration>
+			
+			
+			<Anchor>//api/name/itinerary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setCurrentMapId:</TokenIdentifier>
+			<Abstract type="html">Current displayed map identifier.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int currentMapId</Declaration>
+			
+			
+			<Anchor>//api/name/currentMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/currentMapId</TokenIdentifier>
+			<Abstract type="html">Current displayed map identifier.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int currentMapId</Declaration>
+			
+			
+			<Anchor>//api/name/currentMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setCurrentStepId:</TokenIdentifier>
+			<Abstract type="html">Current step identifier.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int currentStepId</Declaration>
+			
+			
+			<Anchor>//api/name/currentStepId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/currentStepId</TokenIdentifier>
+			<Abstract type="html">Current step identifier.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int currentStepId</Declaration>
+			
+			
+			<Anchor>//api/name/currentStepId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setBackFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *backFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/backFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/backFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *backFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/backFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setBackStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float backStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/backStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/backStrokeThickness</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route background.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float backStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/backStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setFrontFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *frontFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/frontFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/frontFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *frontFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/frontFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setFrontStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frontStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/frontStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/frontStrokeThickness</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frontStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/frontStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setSelectedFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route if selected.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *selectedFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/selectedFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/selectedFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route if selected.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *selectedFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/selectedFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setOnlyPath:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the itinerary only draw its path and no additional overlays.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean onlyPath</Declaration>
+			
+			
+			<Anchor>//api/name/onlyPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/onlyPath</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the itinerary only draw its path and no additional overlays.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean onlyPath</Declaration>
+			
+			
+			<Anchor>//api/name/onlyPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setListener:</TokenIdentifier>
+			<Abstract type="html">Listener reference for ISGfxItinerary special touch events.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPItineraryRenderListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/listener</TokenIdentifier>
+			<Abstract type="html">Listener reference for ISGfxItinerary special touch events.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPItineraryRenderListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/setLayer:</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGfxItinerary/layer</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxItinerary/initWithItinerary:andItineraryRenderListener:andBackFillColor:andFrontFillColor:andSelectedFillColor:andFrontStrokeThickness:andBackStrokeThickness:andOnlyPath:andProgressiveDrawing:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISGfxItinerary.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithItinerary:(ISItinerary *)itinerary andItineraryRenderListener:(id&lt;ISPItineraryRenderListener&gt;)listener andBackFillColor:(UIColor *)backFillColor andFrontFillColor:(UIColor *)frontFillColor andSelectedFillColor:(UIColor *)selectedFillColor andFrontStrokeThickness:(float)frontStrokeThickness andBackStrokeThickness:(float)backStrokeThickness andOnlyPath:(Boolean)onlyPath andProgressiveDrawing:(Boolean)progDraw</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>itinerary</Name>
+					<Abstract type="html">Related itinerary data.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener reference for ISGfxItinerary special touch events.</Abstract>
+				</Parameter><Parameter>
+					<Name>backFillColor</Name>
+					<Abstract type="html">Color of the itinerary route background.</Abstract>
+				</Parameter><Parameter>
+					<Name>frontFillColor</Name>
+					<Abstract type="html">Color of the itinerary route foreground.</Abstract>
+				</Parameter><Parameter>
+					<Name>selectedFillColor</Name>
+					<Abstract type="html">Color of the itinerary route if selected.</Abstract>
+				</Parameter><Parameter>
+					<Name>frontStrokeThickness</Name>
+					<Abstract type="html">Thickness of the itinerary route foreground.</Abstract>
+				</Parameter><Parameter>
+					<Name>backStrokeThickness</Name>
+					<Abstract type="html">Thickness of the itinerary route background.</Abstract>
+				</Parameter><Parameter>
+					<Name>onlyPath</Name>
+					<Abstract type="html">Boolean used to know if the itinerary only draw its path and no additional overlays.</Abstract>
+				</Parameter><Parameter>
+					<Name>progDraw</Name>
+					<Abstract type="html">Boolean used to know if the itinerary if drawed progressively or not.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithItinerary:andItineraryRenderListener:andBackFillColor:andFrontFillColor:andSelectedFillColor:andFrontStrokeThickness:andBackStrokeThickness:andOnlyPath:andProgressiveDrawing:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
