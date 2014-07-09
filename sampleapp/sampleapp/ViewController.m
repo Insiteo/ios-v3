@@ -25,17 +25,25 @@ int const ACTIONSHEET_ACTIONS = 1;
 @implementation ViewController
 
 @synthesize mapContentView;
+@synthesize currentTask = m_currentTask;
 
 - (void)startAPI {
     [ISInitProvider setAPIKey:API_KEY];
     NSString * serverUrl = [ISInitProvider getBaseURL:SERVER];
     id<ISPCancelable> initTask = [[ISInitProvider instance] startAPIWithServerUrl:serverUrl andSiteId:SITE_ID andApplicationVersion:VERSION andLanguage:LANGUAGE andForceDownload:NO andInitListener:self andServerType:SERVER];
+    [self setCurrentTask:initTask];
+    
+    [m_hud setMode:MBProgressHUDModeIndeterminate];
+    [m_hud setLabelText:NSLocalizedString(@"STR_INITIALIZING", nil)];
+    [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
+    
+    UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onHudDoubleTapped:)];
+    [tapGestureRecognizer setNumberOfTapsRequired:2];
+    [m_hud addGestureRecognizer:tapGestureRecognizer];
+    [tapGestureRecognizer release];
     
     //Create cancelable progress dialog. Canceling dialog will aslso cancel init task
     m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [m_hud setMode:MBProgressHUDModeIndeterminate];
-    [m_hud setCancelable:initTask];
-    [m_hud setLabelText:NSLocalizedString(@"STR_INITIALIZING", nil)];
 }
 
 - (void)startMap {
@@ -98,14 +106,21 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)downloadPackages {
     //Start an asynchronous download, and get running task (thus it can be canceled)
-    id<ISPCancelable> initTask = [[ISInitProvider instance] updatePackagesWithInitListener:self];
+    id<ISPCancelable> updateTask = [[ISInitProvider instance] updatePackagesWithInitListener:self];
+    [self setCurrentTask:updateTask];
+
+    [m_hud setMode:MBProgressHUDModeDeterminate];
+    [m_hud setProgress:0.0];
+    [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
+    [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
+    
+    UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onHudDoubleTapped:)];
+    [tapGestureRecognizer setNumberOfTapsRequired:2];
+    [m_hud addGestureRecognizer:tapGestureRecognizer];
+    [tapGestureRecognizer release];
     
     //Create the progress dialog. If it is canceled, it cnacels the running download task
     m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [m_hud setMode:MBProgressHUDModeDeterminate];
-    [m_hud setCancelable:initTask];
-    [m_hud setProgress:0.0];
-    [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
 }
 
 - (void)onInitDone:(ISEInitAPIResult)result andError:(ISInsiteoError *)error {
@@ -171,8 +186,8 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)centerMap:(int)zoneId {
     //Center map
-    ISGfxZone * zone = [ISMapView getGfxZoneWithId:zoneId];
-    [m_map2DView centerMapWithPosition:zone.metersPosition andAnimated:YES];
+    ISZone * zone = [[ISInitProvider instance] getZoneWithId:zoneId];
+    [m_map2DView centerMapWithPosition:zone.center andAnimated:YES];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -200,7 +215,7 @@ int const ACTIONSHEET_ACTIONS = 1;
                 
                 for (ISZonePoi * zonePoi in zonesPois) {
                     //And add a new one
-                    ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalId andPosition:nil];
+                    ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalPoiId andPosition:nil];
                     [m_map2DView addRTO:rto inZone:zonePoi.zoneId];
                     [rto release];
                 }
@@ -228,8 +243,8 @@ int const ACTIONSHEET_ACTIONS = 1;
     
     for (ISZonePoi * zonePoi in zonesPois) {
         //And add a noew one
-        MyRto * rto = [[MyRto alloc] initWithName:zonePoi.externalId andPosition:nil];
-        [m_map2DView addRTO:rto inZone:idZone];
+        MyRto * rto = [[MyRto alloc] initWithName:zonePoi.externalPoiId andPosition:nil];
+        [m_map2DView addRTO:rto inZone:idZone withOffset:cc3v(zonePoi.offset.x, zonePoi.offset.y, 0)];
         [rto release];
     }
     
@@ -245,7 +260,7 @@ int const ACTIONSHEET_ACTIONS = 1;
     
 }
 
-- (void)onMapClicked {
+- (void)onMapClicked:(ISPosition *)touchPosition {
     
 }
 
@@ -413,7 +428,8 @@ int const ACTIONSHEET_ACTIONS = 1;
             }
         } else if (actionSheet.tag == ACTIONSHEET_CHANGE_MAP) {
             //Get clicked map
-            ISGfxMapData * map = [[m_map2DView.maps allValues] objectAtIndex:buttonIndex];
+            NSArray * maps = [[ISInitProvider instance].maps allValues];
+            ISMap * map = [maps objectAtIndex:buttonIndex];
             
             //Change the current map using the selected identifier
             [m_map2DView changeMapWithMapId:map.mapId andKeepPosition:NO andKeepZoomLevel:NO andKeepRotationAngle:NO];
@@ -442,8 +458,8 @@ int const ACTIONSHEET_ACTIONS = 1;
     UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"STR_CHOOSE_MAP", nil) delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     
     //List all maps in an UIActionSheet
-    NSArray * maps = [m_map2DView.maps allValues];
-    for (ISGfxMapData * map in maps) {
+    NSArray * maps = [[ISInitProvider instance].maps allValues];
+    for (ISMap * map in maps) {
         [actionSheet addButtonWithTitle:map.name];
     }
     
@@ -483,6 +499,11 @@ int const ACTIONSHEET_ACTIONS = 1;
     }
 }
 
+- (IBAction)onHudDoubleTapped:(id)sender {
+    [m_currentTask cancel];
+    [m_hud hide:YES];
+}
+
 #pragma mark - UI
 
 - (void)viewDidLoad {
@@ -501,6 +522,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 }
 
 - (void)dealloc {
+    [m_currentTask release];
     [m_map2DView release];
     [m_locationProvider release];
     [m_itineraryProvider release];

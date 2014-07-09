@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 INSITEO. All rights reserved.
 //
 
-#import <InsiteoAPI/InsiteoAPIGraphics.h>
+#import "InsiteoAPIGraphics.h"
 
 @interface MyRto : ISGenericRTO
 

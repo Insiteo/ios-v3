@@ -47,3 +47,4 @@
 "STR_LEFT" = "\nLeft ";
 "STR_NO_REGISTERED_BEACONS_TITLE" = "Information";
 "STR_NO_REGISTERED_BEACONS_MESSAGE" = "No known beacon detected. You are probably out of site";
+"STR_DOUBLE_TAP_TO_CANCEL" = "Double tap to cancel";

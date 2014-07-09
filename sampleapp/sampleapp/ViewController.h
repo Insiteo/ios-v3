@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <InsiteoAPI/InsiteoAPIGraphicsLocation.h>
+
+#import "InsiteoAPIGraphicsLocation.h"
+#import "MBProgressHUD.h"
 
 @interface ViewController : UIViewController <ISPInitListener, ISPMapListener, ISPLocationListener, ISPGeofenceListener, ISPItineraryRequestListener, ISPItineraryRenderListener, UIActionSheetDelegate> {
 
 @private
+    id<ISPCancelable> m_currentTask;
         
     MBProgressHUD * m_hud;
     ISMap2DView * m_map2DView;
@@ -22,5 +25,7 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIView * mapContentView;
+
+@property (nonatomic, retain) id<ISPCancelable> currentTask;
 
 @end
