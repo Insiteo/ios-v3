@@ -1,287 +1,300 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGfxZone.html">
+	<File path="Classes/ISInstruction.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGfxZone</TokenIdentifier>
-			<Abstract type="html">Class used to represent a Map Zone.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISInstruction</TokenIdentifier>
+			<Abstract type="html">Class used to define an itinerary Instruction.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>
 			
 			<NodeRef refid="27"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZone:</TokenIdentifier>
-			<Abstract type="html">Related zone entitie.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setInstructionId:</TokenIdentifier>
+			<Abstract type="html">Instruction identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *instructionId</Declaration>
 			
 			
-			<Anchor>//api/name/zone</Anchor>
+			<Anchor>//api/name/instructionId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zone</TokenIdentifier>
-			<Abstract type="html">Related zone entitie.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/instructionId</TokenIdentifier>
+			<Abstract type="html">Instruction identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *instructionId</Declaration>
 			
 			
-			<Anchor>//api/name/zone</Anchor>
+			<Anchor>//api/name/instructionId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoneHeight:</TokenIdentifier>
-			<Abstract type="html">ISZone * height.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setInstructionInformation:</TokenIdentifier>
+			<Abstract type="html">Instruction label.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) float zoneHeight</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *instructionInformation</Declaration>
 			
 			
-			<Anchor>//api/name/zoneHeight</Anchor>
+			<Anchor>//api/name/instructionInformation</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoneHeight</TokenIdentifier>
-			<Abstract type="html">ISZone * height.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/instructionInformation</TokenIdentifier>
+			<Abstract type="html">Instruction label.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) float zoneHeight</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *instructionInformation</Declaration>
 			
 			
-			<Anchor>//api/name/zoneHeight</Anchor>
+			<Anchor>//api/name/instructionInformation</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setNeedToBeDisplayed:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setBoundingRect:</TokenIdentifier>
+			<Abstract type="html">Instruction bounding rect (in ext coordinates).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CGRect boundingRect</Declaration>
 			
 			
-			<Anchor>//api/name/needToBeDisplayed</Anchor>
+			<Anchor>//api/name/boundingRect</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/needToBeDisplayed</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/boundingRect</TokenIdentifier>
+			<Abstract type="html">Instruction bounding rect (in ext coordinates).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
+			<Declaration>@property (nonatomic, readwrite) CGRect boundingRect</Declaration>
 			
 			
-			<Anchor>//api/name/needToBeDisplayed</Anchor>
+			<Anchor>//api/name/boundingRect</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setIsTouched:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setMapId:</TokenIdentifier>
+			<Abstract type="html">Instruction related map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
 			
 			
-			<Anchor>//api/name/isTouched</Anchor>
+			<Anchor>//api/name/mapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/isTouched</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/mapId</TokenIdentifier>
+			<Abstract type="html">Instruction related map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
 			
 			
-			<Anchor>//api/name/isTouched</Anchor>
+			<Anchor>//api/name/mapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoneColor:</TokenIdentifier>
-			<Abstract type="html">Zone rendering color.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setSteps:</TokenIdentifier>
+			<Abstract type="html">An array that contains all the instruction steps (array of ISSection.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *steps</Declaration>
 			
 			
-			<Anchor>//api/name/zoneColor</Anchor>
+			<Anchor>//api/name/steps</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoneColor</TokenIdentifier>
-			<Abstract type="html">Zone rendering color.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/steps</TokenIdentifier>
+			<Abstract type="html">An array that contains all the instruction steps (array of ISSection.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *steps</Declaration>
 			
 			
-			<Anchor>//api/name/zoneColor</Anchor>
+			<Anchor>//api/name/steps</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastRatio:</TokenIdentifier>
-			<Abstract type="html">Last rendering ratio.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setPictureUrl:</TokenIdentifier>
+			<Abstract type="html">Related picture url.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *pictureUrl</Declaration>
 			
 			
-			<Anchor>//api/name/lastRatio</Anchor>
+			<Anchor>//api/name/pictureUrl</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastRatio</TokenIdentifier>
-			<Abstract type="html">Last rendering ratio.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/pictureUrl</TokenIdentifier>
+			<Abstract type="html">Related picture url.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *pictureUrl</Declaration>
 			
 			
-			<Anchor>//api/name/lastRatio</Anchor>
+			<Anchor>//api/name/pictureUrl</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastOffset:</TokenIdentifier>
-			<Abstract type="html">Last rendering offset.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setOverlayUrl:</TokenIdentifier>
+			<Abstract type="html">Related overlay url (image to put on top of the picture: could be nil).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *overlayUrl</Declaration>
 			
 			
-			<Anchor>//api/name/lastOffset</Anchor>
+			<Anchor>//api/name/overlayUrl</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastOffset</TokenIdentifier>
-			<Abstract type="html">Last rendering offset.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/overlayUrl</TokenIdentifier>
+			<Abstract type="html">Related overlay url (image to put on top of the picture: could be nil).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *overlayUrl</Declaration>
 			
 			
-			<Anchor>//api/name/lastOffset</Anchor>
+			<Anchor>//api/name/overlayUrl</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setNbShelf:</TokenIdentifier>
-			<Abstract type="html">3D shelf count.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setRemainingDistance:</TokenIdentifier>
+			<Abstract type="html">Distance to arrival.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int nbShelf</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float remainingDistance</Declaration>
 			
 			
-			<Anchor>//api/name/nbShelf</Anchor>
+			<Anchor>//api/name/remainingDistance</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/nbShelf</TokenIdentifier>
-			<Abstract type="html">3D shelf count.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/remainingDistance</TokenIdentifier>
+			<Abstract type="html">Distance to arrival.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int nbShelf</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float remainingDistance</Declaration>
 			
 			
-			<Anchor>//api/name/nbShelf</Anchor>
+			<Anchor>//api/name/remainingDistance</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/containsPoint:</TokenIdentifier>
-			<Abstract type="html">Method used to know if a point is in the concerned Zone.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setLengthInMeters:</TokenIdentifier>
+			<Abstract type="html">Length in meters.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>- (Boolean)containsPoint:(CGPoint)point</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">Point to test.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the zone contains the point, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/containsPoint:</Anchor>
+			<Declaration>@property (nonatomic, readwrite) float lengthInMeters</Declaration>
+			
+			
+			<Anchor>//api/name/lengthInMeters</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setOffset:andRatio:</TokenIdentifier>
-			<Abstract type="html">Method called to update the last offset and ratio computed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/lengthInMeters</TokenIdentifier>
+			<Abstract type="html">Length in meters.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>- (void)setOffset:(CGPoint)offset andRatio:(float)ratio</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>offset</Name>
-					<Abstract type="html">Last offset computed.</Abstract>
-				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Last ratio computed.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readwrite) float lengthInMeters</Declaration>
 			
-			<Anchor>//api/name/setOffset:andRatio:</Anchor>
+			
+			<Anchor>//api/name/lengthInMeters</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:</TokenIdentifier>
-			<Abstract type="html">Method called to draw a RTO according to the Zone context.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setRemainingTime:</TokenIdentifier>
+			<Abstract type="html">Time to arrival.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>- (void)invalidateWithLayer:(ISLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle andPriority:(int)priority andRTO:(id&lt;ISPRTO&gt;)rto</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">Current Cocos2d layer.</Abstract>
-				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Current map ratio.</Abstract>
-				</Parameter><Parameter>
-					<Name>offset</Name>
-					<Abstract type="html">Current map offset.</Abstract>
-				</Parameter><Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">Current map angle (clockwise).</Abstract>
-				</Parameter><Parameter>
-					<Name>priority</Name>
-					<Abstract type="html">Renderer priority, used to set Z property in Cocos2d.</Abstract>
-				</Parameter><Parameter>
-					<Name>rto</Name>
-					<Abstract type="html">RTO to draw in.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readwrite) float remainingTime</Declaration>
 			
-			<Anchor>//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:andRTO:</Anchor>
+			
+			<Anchor>//api/name/remainingTime</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</TokenIdentifier>
-			<Abstract type="html">Method called to render in 3D a RTO according to the Zone context.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/remainingTime</TokenIdentifier>
+			<Abstract type="html">Time to arrival.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
 			
-			<Declaration>- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andRTO:(id&lt;ISPRTO&gt;)rto andAngle:(float)angle</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scene</Name>
-					<Abstract type="html">Current 3D scene.</Abstract>
-				</Parameter><Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">Layer where the RTO is.</Abstract>
-				</Parameter><Parameter>
-					<Name>map</Name>
-					<Abstract type="html">Current displayed map.</Abstract>
-				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Current ratio (depending on the current zoom level).</Abstract>
-				</Parameter><Parameter>
-					<Name>rto</Name>
-					<Abstract type="html">RTO to draw in.</Abstract>
-				</Parameter><Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">Current angle.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readwrite) float remainingTime</Declaration>
 			
-			<Anchor>//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</Anchor>
+			
+			<Anchor>//api/name/remainingTime</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setDurationInSeconds:</TokenIdentifier>
+			<Abstract type="html">Duration in seconds.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float durationInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/durationInSeconds</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/durationInSeconds</TokenIdentifier>
+			<Abstract type="html">Duration in seconds.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float durationInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/durationInSeconds</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/setIsMapChanger:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the section corresponds to a map change.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isMapChanger</Declaration>
+			
+			
+			<Anchor>//api/name/isMapChanger</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInstruction/isMapChanger</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the section corresponds to a map change.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean isMapChanger</Declaration>
+			
+			
+			<Anchor>//api/name/isMapChanger</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/hasPicture</TokenIdentifier>
+			<Abstract type="html">Method used to know if the instruction has a related picture.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasPicture</Declaration>
+			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the instruction has a related picture, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPicture</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInstruction/hasPictureUrl</TokenIdentifier>
+			<Abstract type="html">Method used to know if the instruction has a related picture url.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasPictureUrl</Declaration>
+			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the instruction has a related picture url, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPictureUrl</Anchor>
 		</Token>
 		
 	</File>

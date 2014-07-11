@@ -14,13 +14,14 @@
 @interface ViewController : UIViewController <ISPInitListener, ISPMapListener, ISPLocationListener, ISPGeofenceListener, ISPItineraryRequestListener, ISPItineraryRenderListener, UIActionSheetDelegate> {
 
 @private
+    
     id<ISPCancelable> m_currentTask;
         
     MBProgressHUD * m_hud;
     ISMap2DView * m_map2DView;
     
-    ISGfxLocationProvider * m_locationProvider;
-    ISGfxItineraryProvider * m_itineraryProvider;
+    ISLocationProvider * m_locationProvider;
+    ISItineraryProvider * m_itineraryProvider;
     ISGeofenceProvider * m_geofenceProvider;
 }
 

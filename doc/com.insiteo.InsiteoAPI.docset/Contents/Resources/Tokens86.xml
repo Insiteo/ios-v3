@@ -1,95 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPLbsModule.html">
+	<File path="Protocols/ISPMeetMeListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPLbsModule</TokenIdentifier>
-			<Abstract type="html">Protocol used to define a Location module.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPMeetMeListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle general MeetMe events.</Abstract>
+			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>
 			
 			<NodeRef refid="86"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLbsModuleType:</TokenIdentifier>
-			<Abstract type="html">Lbs module type (see enum for details).</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onPersonsReceived:andGroups:</TokenIdentifier>
+			<Abstract type="html">Method called when new persons and new groups are available.</Abstract>
+			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
 			
-			<Declaration>@property (readonly) LbsModuleType lbsModuleType</Declaration>
-			
-			
-			<Anchor>//api/name/lbsModuleType</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPLbsModule/lbsModuleType</TokenIdentifier>
-			<Abstract type="html">Lbs module type (see enum for details).</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
-			
-			<Declaration>@property (readonly) LbsModuleType lbsModuleType</Declaration>
-			
-			
-			<Anchor>//api/name/lbsModuleType</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/addLbsModuleRequest:</TokenIdentifier>
-			<Abstract type="html">Method called to add module data to the Lbs request.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
-			
-			<Declaration>- (Boolean)addLbsModuleRequest:(id&lt;PLbsModuleRequest&gt;)locRequest</Declaration>
+			<Declaration>- (void)onPersonsReceived:(NSDictionary *)persons andGroups:(NSDictionary *)groups</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locRequest</Name>
-					<Abstract type="html">Location request.</Abstract>
+					<Name>persons</Name>
+					<Abstract type="html">The new available persons.</Abstract>
+				</Parameter><Parameter>
+					<Name>groups</Name>
+					<Abstract type="html">The new available groups.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/addLbsModuleRequest:</Anchor>
+			<Anchor>//api/name/onPersonsReceived:andGroups:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLbsResponse:</TokenIdentifier>
-			<Abstract type="html">Method called to set module Lbs response.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onMeetMeError:</TokenIdentifier>
+			<Abstract type="html">Method called when a MeetMe error occured.</Abstract>
+			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)setLbsResponse:(id&lt;PLbsModuleResponse&gt;)locResponse</Declaration>
+			<Declaration>- (void)onMeetMeError:(ISInsiteoError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locResponse</Name>
-					<Abstract type="html">Location response.</Abstract>
+					<Name>error</Name>
+					<Abstract type="html">The related ISInsiteoError (code, message).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setLbsResponse:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLocation:</TokenIdentifier>
-			<Abstract type="html">Method called set the last location to the location module.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
-			
-			<Declaration>- (void)setLocation:(ISLocation *)location</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">Last location get from the location provider.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setLocation:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/clear</TokenIdentifier>
-			<Abstract type="html">Clear all data from this LBSModule. Module will need to be initialized before being used again.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
-			
-			<Declaration>- (void)clear</Declaration>
-			
-			
-			<Anchor>//api/name/clear</Anchor>
+			<Anchor>//api/name/onMeetMeError:</Anchor>
 		</Token>
 		
 	</File>

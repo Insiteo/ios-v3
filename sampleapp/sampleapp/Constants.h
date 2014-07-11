@@ -11,7 +11,7 @@
 #define SITE_ID 300
 #define VERSION 1
 #define LANGUAGE @"fr"
-#define SERVER TEST_SERVER
+#define SERVER ISEServerTypeTest
 #define API_KEY @"5a30df2a-6038-698f-e387-0691ff1239d6"
 
 @interface Constants : NSObject

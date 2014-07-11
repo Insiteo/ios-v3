@@ -29,8 +29,8 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)startAPI {
     [ISInitProvider setAPIKey:API_KEY];
-    NSString * serverUrl = [ISInitProvider getBaseURL:SERVER];
-    id<ISPCancelable> initTask = [[ISInitProvider instance] startAPIWithServerUrl:serverUrl andSiteId:SITE_ID andApplicationVersion:VERSION andLanguage:LANGUAGE andForceDownload:NO andInitListener:self andServerType:SERVER];
+    
+    id<ISPCancelable> initTask = [[ISInitProvider instance] startAPIWithServerType:SERVER andSiteId:SITE_ID andLanguage:LANGUAGE andListener:self];
     [self setCurrentTask:initTask];
     
     //Create cancelable progress dialog. Canceling dialog will also cancel init task
@@ -52,7 +52,7 @@ int const ACTIONSHEET_ACTIONS = 1;
     [self.mapContentView addSubview:m_map2DView];
     
     //Add location renderer
-    m_locationProvider = [[ISGfxLocationProvider alloc] init];
+    m_locationProvider = [[ISLocationProvider alloc] init];
     [m_map2DView addRenderer:[m_locationProvider renderer]];
     
     //Add itinerary renderer
@@ -184,12 +184,6 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 #pragma mark - UIAlertViewDelegate
 
-- (void)centerMap:(int)zoneId {
-    //Center map
-    ISZone * zone = [[ISInitProvider instance] getZoneWithId:zoneId];
-    [m_map2DView centerMapWithPosition:zone.center andAnimated:YES];
-}
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (alertView.tag) {
         case ALERTVIEW_UPDATE_PACKAGES : {
@@ -223,7 +217,7 @@ int const ACTIONSHEET_ACTIONS = 1;
                 //Center on first association
                 if ([zonesPois count] > 0) {
                     ISZonePoi * zonePoi = [zonesPois objectAtIndex:0];
-                    [self centerMap:zonePoi.zoneId];
+                    [m_map2DView centerMapWithPosition:zonePoi.position andAnimated:YES];
                 }
             }
             break;
@@ -249,7 +243,13 @@ int const ACTIONSHEET_ACTIONS = 1;
     }
     
     //Center map
-    [self centerMap:idZone];
+    if ([zonesPois count] > 1) {
+        ISZone * zone = [[ISInitProvider instance] getZoneWithId:idZone];
+        [m_map2DView centerMapWithPosition:zone.center andAnimated:YES];
+    } else {
+        ISZonePoi * zonePoi = [zonesPois objectAtIndex:0];
+        [m_map2DView centerMapWithPosition:zonePoi.position andAnimated:YES];
+    }
 }
 
 - (void)onMapChangeWithNewMapId:(int)newMapId andMapName:(NSString *)mapName {
@@ -342,19 +342,13 @@ int const ACTIONSHEET_ACTIONS = 1;
     }
 }
 
-- (void)mainRecomputeItinerary {
-    if (m_itineraryProvider != nil) {
-        //Request an itinerary frow the current user location
-        [m_itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:CGPointMake(200, 100) andEndMapId:2 andListener:self andPMR:NO];
-    }
-}
-
 - (void)onItineraryChangedWithRequest:(ISItineraryBaseRequest *)request andDistanceToItinerary:(float)distanceToItinerary {
     NSLog(@"%@", [NSString stringWithFormat:NSLocalizedString(@"STR_ITINERARY_CHANGED", nil), distanceToItinerary]);
     
     //If the distance to join the path is greater than 10 meters
     if (distanceToItinerary > 10.0) {
-        [self performSelectorOnMainThread:@selector(mainRecomputeItinerary) withObject:nil waitUntilDone:NO];
+        //Recompute
+        [request recompute];
     }
 }
 
@@ -381,8 +375,16 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)computeItinerary {
     if (m_itineraryProvider != nil) {
+        //Start location if it's not
+        if (!m_locationProvider.isStarted) {
+            [self onLocationButtonPush:nil];
+        }
+        
         //Request an itinerary between two points on the current map
-        [m_itineraryProvider requestItineraryWithStartPoint:CGPointMake(180, 260) andStartMapId:FIRST_MAP_ID andEndPoint:CGPointMake(400, 380) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
+        [m_itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:CGPointMake(400, 380) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
+        
+        //Example between two points (please check to not recompute it every time)
+//        [m_itineraryProvider requestItineraryWithStartPoint:CGPointMake(180, 260) andStartMapId:FIRST_MAP_ID andEndPoint:CGPointMake(400, 380) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
     }
 }
 
@@ -508,7 +510,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:NSLocalizedString(@"STR_MAP_TITLE", nil)];
+    [self setTitle:[NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"STR_SAMPLE_APP_TITLE", nil), API_VERSION]];
     
     //Actions item
     UIBarButtonItem * actionsItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onActionsItemButtonPush:)];

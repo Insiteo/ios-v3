@@ -1,172 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISLocationRenderer.html">
+	<File path="Classes/ISMapSettings.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISLocationRenderer</TokenIdentifier>
-			<Abstract type="html">Class used to render locations on the map.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMapSettings</TokenIdentifier>
+			<Abstract type="html">Class used to represent INSITEO map settings. It contains Geomatrix, scale and map identifier.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>
 			
 			<NodeRef refid="41"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLocations:</TokenIdentifier>
-			<Abstract type="html">Current locations to render.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapSettings/setMapId:</TokenIdentifier>
+			<Abstract type="html">Relative map identifier.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *locations</Declaration>
+			<Declaration>@property (nonatomic, readonly) int mapId</Declaration>
 			
 			
-			<Anchor>//api/name/locations</Anchor>
+			<Anchor>//api/name/mapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/locations</TokenIdentifier>
-			<Abstract type="html">Current locations to render.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapSettings/mapId</TokenIdentifier>
+			<Abstract type="html">Relative map identifier.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *locations</Declaration>
+			<Declaration>@property (nonatomic, readonly) int mapId</Declaration>
 			
 			
-			<Anchor>//api/name/locations</Anchor>
+			<Anchor>//api/name/mapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLocationLostColor:</TokenIdentifier>
-			<Abstract type="html">Location lost render color. (default: ccc3(255.0, 150.0, 0.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISMapSettings/ISMapSettingsWithMapId:andH11:andH12:andH21:andH22:andOffset1:andOffset2:andScaleToMeter:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) ccColor3B locationLostColor</Declaration>
-			
-			
-			<Anchor>//api/name/locationLostColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/locationLostColor</TokenIdentifier>
-			<Abstract type="html">Location lost render color. (default: ccc3(255.0, 150.0, 0.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor3B locationLostColor</Declaration>
-			
-			
-			<Anchor>//api/name/locationLostColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLocationColor:</TokenIdentifier>
-			<Abstract type="html">Location render color. (default: ccc3(0, 162.0, 255.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor3B locationColor</Declaration>
-			
-			
-			<Anchor>//api/name/locationColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/locationColor</TokenIdentifier>
-			<Abstract type="html">Location render color. (default: ccc3(0, 162.0, 255.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor3B locationColor</Declaration>
-			
-			
-			<Anchor>//api/name/locationColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setAccuracyColor:</TokenIdentifier>
-			<Abstract type="html">Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4F accuracyColor</Declaration>
-			
-			
-			<Anchor>//api/name/accuracyColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/accuracyColor</TokenIdentifier>
-			<Abstract type="html">Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4F accuracyColor</Declaration>
-			
-			
-			<Anchor>//api/name/accuracyColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLayer:</TokenIdentifier>
-			<Abstract type="html">Map view layer.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>@property (assign) ISLayer *layer</Declaration>
-			
-			
-			<Anchor>//api/name/layer</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/layer</TokenIdentifier>
-			<Abstract type="html">Map view layer.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>@property (assign) ISLayer *layer</Declaration>
-			
-			
-			<Anchor>//api/name/layer</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/updateLocation:</TokenIdentifier>
-			<Abstract type="html">Method called to update existing location.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
-			
-			<Declaration>- (void)updateLocation:(ISLocation *)location</Declaration>
+			<Declaration>+ (id)ISMapSettingsWithMapId:(int)mapId andH11:(double)h11 andH12:(double)h12 andH21:(double)h21 andH22:(double)h22 andOffset1:(double)offset1 andOffset2:(double)offset2 andScaleToMeter:(double)scaleToMeter</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">ISLocation to update.</Abstract>
+					<Name>mapId</Name>
+					<Abstract type="html">Relative mapId.</Abstract>
+				</Parameter><Parameter>
+					<Name>h11</Name>
+					<Abstract type="html">H11 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h12</Name>
+					<Abstract type="html">H12 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h21</Name>
+					<Abstract type="html">H21 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h22</Name>
+					<Abstract type="html">H22 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset1</Name>
+					<Abstract type="html">Matrix offset 1.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset2</Name>
+					<Abstract type="html">Matrix offset 2.</Abstract>
+				</Parameter><Parameter>
+					<Name>scaleToMeter</Name>
+					<Abstract type="html">Relative scale (used for coordinate conversion).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/updateLocation:</Anchor>
+			<Anchor>//api/name/ISMapSettingsWithMapId:andH11:andH12:andH21:andH22:andOffset1:andOffset2:andScaleToMeter:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/updateAzimuth:</TokenIdentifier>
-			<Abstract type="html">Method called to update the current azimuth.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapSettings/initWithMapId:andH11:andH12:andH21:andH22:andOffset1:andOffset2:andScaleToMeter:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
 			
-			<Declaration>- (void)updateAzimuth:(float)azimuth</Declaration>
+			<Declaration>- (id)initWithMapId:(int)mapId andH11:(double)h11 andH12:(double)h12 andH21:(double)h21 andH22:(double)h22 andOffset1:(double)offset1 andOffset2:(double)offset2 andScaleToMeter:(double)scaleToMeter</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>azimuth</Name>
-					<Abstract type="html">New azimuth to consider.</Abstract>
+					<Name>mapId</Name>
+					<Abstract type="html">Relative mapId.</Abstract>
+				</Parameter><Parameter>
+					<Name>h11</Name>
+					<Abstract type="html">H11 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h12</Name>
+					<Abstract type="html">H12 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h21</Name>
+					<Abstract type="html">H21 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h22</Name>
+					<Abstract type="html">H22 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset1</Name>
+					<Abstract type="html">Matrix offset 1.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset2</Name>
+					<Abstract type="html">Matrix offset 2.</Abstract>
+				</Parameter><Parameter>
+					<Name>scaleToMeter</Name>
+					<Abstract type="html">Relative scale (used for coordinate conversion).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/updateAzimuth:</Anchor>
+			<Anchor>//api/name/initWithMapId:andH11:andH12:andH21:andH22:andOffset1:andOffset2:andScaleToMeter:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setCompassDisplayEnabled:</TokenIdentifier>
-			<Abstract type="html">Method called to set compass visible or not.</Abstract>
-			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapSettings/toMeterWithXpx:andYpx:</TokenIdentifier>
+			<Abstract type="html">Method called to convert X/Y coordinate (in pixels) in meters.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
 			
-			<Declaration>- (void)setCompassDisplayEnabled:(Boolean)displayEnabled</Declaration>
+			<Declaration>- (CGPoint)toMeterWithXpx:(float)x andYpx:(float)y</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>displayEnabled</Name>
-					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the compass is visible, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
+					<Name>x</Name>
+					<Abstract type="html">X pixel coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y pixel coordinate.</Abstract>
 				</Parameter>
 			</Parameters>
+			<ReturnValue><Abstract type="html">A CGPoint containing X/Y meters coordinates.</Abstract></ReturnValue>
+			<Anchor>//api/name/toMeterWithXpx:andYpx:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapSettings/toPixelsWithXm:andYm:</TokenIdentifier>
+			<Abstract type="html">Method called to convert X/Y coordinate (in meters) in pixels.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
 			
-			<Anchor>//api/name/setCompassDisplayEnabled:</Anchor>
+			<Declaration>- (CGPoint)toPixelsWithXm:(float)x andYm:(float)y</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X meters coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y meters coordinate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A CGPoint containing X/Y pixels coordinates.</Abstract></ReturnValue>
+			<Anchor>//api/name/toPixelsWithXm:andYm:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapSettings/toExternalCoordsWithCoordMode:andXm:andYm:</TokenIdentifier>
+			<Abstract type="html">Method called to convert X/Y coordinate (in meters) in a specified coordinate mode.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
+			
+			<Declaration>- (CGPoint)toExternalCoordsWithCoordMode:(CoordinatesMode)coordMode andXm:(float)x andYm:(float)y</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordMode</Name>
+					<Abstract type="html">Wanted coordinate mode to convert to.</Abstract>
+				</Parameter><Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X meters coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y meters coordinate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A CGPoint containing X/Y coordinates (converted in specified coordinate mode).</Abstract></ReturnValue>
+			<Anchor>//api/name/toExternalCoordsWithCoordMode:andXm:andYm:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapSettings/toInternalCoordsWithCoordMode:andX:andY:</TokenIdentifier>
+			<Abstract type="html">Method called to convert X/Y coordinate (in pixels) in a specified coordinate mode.</Abstract>
+			<DeclaredIn>ISMapSettings.h</DeclaredIn>			
+			
+			<Declaration>- (CGPoint)toInternalCoordsWithCoordMode:(CoordinatesMode)coordMode andX:(float)x andY:(float)y</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordMode</Name>
+					<Abstract type="html">Wanted coordinate mode to convert to.</Abstract>
+				</Parameter><Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X pixel coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y pixel coordinate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A CGPoint containing X/Y coordinates (converted in specified coordinate mode).</Abstract></ReturnValue>
+			<Anchor>//api/name/toInternalCoordsWithCoordMode:andX:andY:</Anchor>
 		</Token>
 		
 	</File>

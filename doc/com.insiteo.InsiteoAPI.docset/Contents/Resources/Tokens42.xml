@@ -1,128 +1,972 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISLocationRequest.html">
+	<File path="Classes/ISMapView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISLocationRequest</TokenIdentifier>
-			<Abstract type="html">Class used to compute one unique location.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMapView</TokenIdentifier>
+			<Abstract type="html">Class used to represent the ISMapView (EAGLView).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>
 			
 			<NodeRef refid="42"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRequest/setLocationRequestListener:</TokenIdentifier>
-			<Abstract type="html">Listener to notify of location events.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setRenderMode:</TokenIdentifier>
+			<Abstract type="html">Rendering mode (2D or 3D)</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) id&lt;ISPLocationRequestListener&gt; locationRequestListener</Declaration>
+			<Declaration>@property (nonatomic, readonly) ISERenderMode renderMode</Declaration>
 			
 			
-			<Anchor>//api/name/locationRequestListener</Anchor>
+			<Anchor>//api/name/renderMode</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRequest/locationRequestListener</TokenIdentifier>
-			<Abstract type="html">Listener to notify of location events.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/renderMode</TokenIdentifier>
+			<Abstract type="html">Rendering mode (2D or 3D)</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) id&lt;ISPLocationRequestListener&gt; locationRequestListener</Declaration>
+			<Declaration>@property (nonatomic, readonly) ISERenderMode renderMode</Declaration>
 			
 			
-			<Anchor>//api/name/locationRequestListener</Anchor>
+			<Anchor>//api/name/renderMode</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRequest/setLocation:</TokenIdentifier>
-			<Abstract type="html">Computed location (could be nil).</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setMapDataManager:</TokenIdentifier>
+			<Abstract type="html">MapView manager.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISLocation *location</Declaration>
+			<Declaration>@property (nonatomic, retain) MapDataManager *mapDataManager</Declaration>
 			
 			
-			<Anchor>//api/name/location</Anchor>
+			<Anchor>//api/name/mapDataManager</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRequest/location</TokenIdentifier>
-			<Abstract type="html">Computed location (could be nil).</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/mapDataManager</TokenIdentifier>
+			<Abstract type="html">MapView manager.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISLocation *location</Declaration>
+			<Declaration>@property (nonatomic, retain) MapDataManager *mapDataManager</Declaration>
 			
 			
-			<Anchor>//api/name/location</Anchor>
+			<Anchor>//api/name/mapDataManager</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRequest/setTimer:</TokenIdentifier>
-			<Abstract type="html">Intern timer used to simulate a request timeout.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setMapListener:</TokenIdentifier>
+			<Abstract type="html">Map view events listener.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSTimer *timer</Declaration>
+			<Declaration>@property (assign) id&lt;ISPMapListener&gt; mapListener</Declaration>
 			
 			
-			<Anchor>//api/name/timer</Anchor>
+			<Anchor>//api/name/mapListener</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRequest/timer</TokenIdentifier>
-			<Abstract type="html">Intern timer used to simulate a request timeout.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/mapListener</TokenIdentifier>
+			<Abstract type="html">Map view events listener.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSTimer *timer</Declaration>
+			<Declaration>@property (assign) id&lt;ISPMapListener&gt; mapListener</Declaration>
 			
 			
-			<Anchor>//api/name/timer</Anchor>
+			<Anchor>//api/name/mapListener</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRequest/initWithLocationRequestListener:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setMapLayer:</TokenIdentifier>
+			<Abstract type="html">MapView Cocos layer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithLocationRequestListener:(id&lt;ISPLocationRequestListener&gt;)locationRequestListener</Declaration>
+			<Declaration>@property (nonatomic, retain) CCLayer *mapLayer</Declaration>
+			
+			
+			<Anchor>//api/name/mapLayer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/mapLayer</TokenIdentifier>
+			<Abstract type="html">MapView Cocos layer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLayer *mapLayer</Declaration>
+			
+			
+			<Anchor>//api/name/mapLayer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setCurrentMapId:</TokenIdentifier>
+			<Abstract type="html">Current displayed map identifier.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int currentMapId</Declaration>
+			
+			
+			<Anchor>//api/name/currentMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/currentMapId</TokenIdentifier>
+			<Abstract type="html">Current displayed map identifier.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int currentMapId</Declaration>
+			
+			
+			<Anchor>//api/name/currentMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setCurrentAzimuth:</TokenIdentifier>
+			<Abstract type="html">Current displayed map azimuth.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float currentAzimuth</Declaration>
+			
+			
+			<Anchor>//api/name/currentAzimuth</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/currentAzimuth</TokenIdentifier>
+			<Abstract type="html">Current displayed map azimuth.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float currentAzimuth</Declaration>
+			
+			
+			<Anchor>//api/name/currentAzimuth</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setCurrentZoomLevel:</TokenIdentifier>
+			<Abstract type="html">Current zoom level.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float currentZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/currentZoomLevel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/currentZoomLevel</TokenIdentifier>
+			<Abstract type="html">Current zoom level.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float currentZoomLevel</Declaration>
+			
+			
+			<Anchor>//api/name/currentZoomLevel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setRotationAngle:</TokenIdentifier>
+			<Abstract type="html">Current rotation angle (in degrees).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float rotationAngle</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngle</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/rotationAngle</TokenIdentifier>
+			<Abstract type="html">Current rotation angle (in degrees).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float rotationAngle</Declaration>
+			
+			
+			<Anchor>//api/name/rotationAngle</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setCurrentScreenCenter:</TokenIdentifier>
+			<Abstract type="html">Current screen center (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint currentScreenCenter</Declaration>
+			
+			
+			<Anchor>//api/name/currentScreenCenter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/currentScreenCenter</TokenIdentifier>
+			<Abstract type="html">Current screen center (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint currentScreenCenter</Declaration>
+			
+			
+			<Anchor>//api/name/currentScreenCenter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setTiledMapRenderer:</TokenIdentifier>
+			<Abstract type="html">Tile renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) TiledMapRenderer *tiledMapRenderer</Declaration>
+			
+			
+			<Anchor>//api/name/tiledMapRenderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/tiledMapRenderer</TokenIdentifier>
+			<Abstract type="html">Tile renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) TiledMapRenderer *tiledMapRenderer</Declaration>
+			
+			
+			<Anchor>//api/name/tiledMapRenderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setZoneRenderer:</TokenIdentifier>
+			<Abstract type="html">Zone renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ZoneRenderer *zoneRenderer</Declaration>
+			
+			
+			<Anchor>//api/name/zoneRenderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/zoneRenderer</TokenIdentifier>
+			<Abstract type="html">Zone renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ZoneRenderer *zoneRenderer</Declaration>
+			
+			
+			<Anchor>//api/name/zoneRenderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setMapSlideActived:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map slides on pan gestures.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean mapSlideActived</Declaration>
+			
+			
+			<Anchor>//api/name/mapSlideActived</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/mapSlideActived</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the map slides on pan gestures.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean mapSlideActived</Declaration>
+			
+			
+			<Anchor>//api/name/mapSlideActived</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setBoundariesActivated:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we lock the map to its boundaries (see: ISZoomLevel.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean boundariesActivated</Declaration>
+			
+			
+			<Anchor>//api/name/boundariesActivated</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMapView/boundariesActivated</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we lock the map to its boundaries (see: ISZoomLevel.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean boundariesActivated</Declaration>
+			
+			
+			<Anchor>//api/name/boundariesActivated</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/resetMap</TokenIdentifier>
+			<Abstract type="html">Method used to reset the current map with its default zoom level and start center.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)resetMap</Declaration>
+			
+			
+			<Anchor>//api/name/resetMap</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithZone:andAnimated:</TokenIdentifier>
+			<Abstract type="html">Method used to center the map on a specific zone.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)centerMapWithZone:(int)zoneId andAnimated:(Boolean)animated</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locationRequestListener</Name>
-					<Abstract type="html">Listener to notify of location events.</Abstract>
+					<Name>zoneId</Name>
+					<Abstract type="html">Related zone identifer.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithLocationRequestListener:</Anchor>
+			<Anchor>//api/name/centerMapWithZone:andAnimated:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRequest/onLocationComputed:</TokenIdentifier>
-			<Abstract type="html">Method called when a new location was computed.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithZone:andAnimated:andDuration:</TokenIdentifier>
+			<Abstract type="html">Method used to center the map on a specific zone.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>- (void)onLocationComputed:(ISLocation *)location</Declaration>
+			<Declaration>- (void)centerMapWithZone:(int)zoneId andAnimated:(Boolean)animated andDuration:(float)duration</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">New computed location.</Abstract>
+					<Name>zoneId</Name>
+					<Abstract type="html">Related zone identifer.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Wanted animation duration.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onLocationComputed:</Anchor>
+			<Anchor>//api/name/centerMapWithZone:andAnimated:andDuration:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRequest/onLocationFailed:</TokenIdentifier>
-			<Abstract type="html">Method called when an error occurred.</Abstract>
-			<DeclaredIn>ISLocationRequest.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithZone:andZoomLevel:andAnimated:andDuration:</TokenIdentifier>
+			<Abstract type="html">Method used to center the map on a specific zone.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
 			
-			<Declaration>- (void)onLocationFailed:(ISInsiteoError *)error</Declaration>
+			<Declaration>- (void)centerMapWithZone:(int)zoneId andZoomLevel:(float)zoomLevel andAnimated:(Boolean)animated andDuration:(float)duration</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">Related error.</Abstract>
+					<Name>zoneId</Name>
+					<Abstract type="html">Related zone identifer.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">Wanted zoom level.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Wanted animation duration.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onLocationFailed:</Anchor>
+			<Anchor>//api/name/centerMapWithZone:andZoomLevel:andAnimated:andDuration:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithPosition:andAnimated:</TokenIdentifier>
+			<Abstract type="html">Method used to center the map on a specific position (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)centerMapWithPosition:(ISPosition *)position andAnimated:(Boolean)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">The position (in meters) to center on (x, y, mapId).</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/centerMapWithPosition:andAnimated:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithPosition:andAnimated:andDuration:</TokenIdentifier>
+			<Abstract type="html">Method used to center the map on a specific position (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)centerMapWithPosition:(ISPosition *)position andAnimated:(Boolean)animated andDuration:(float)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">The position (in meters) to center on (x, y, mapId).</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Wanted animation duration.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/centerMapWithPosition:andAnimated:andDuration:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithPosition:andZoomLevel:andRotationAngle:andAnimated:andDuration:</TokenIdentifier>
+			<Abstract type="html">Method used to center the map on a specific position (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)centerMapWithPosition:(ISPosition *)position andZoomLevel:(float)zoomLevel andRotationAngle:(float)rotationAngle andAnimated:(Boolean)animated andDuration:(float)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">The position (in meters) to center on (x, y, mapId).</Abstract>
+				</Parameter><Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">Wanted zoom level.</Abstract>
+				</Parameter><Parameter>
+					<Name>rotationAngle</Name>
+					<Abstract type="html">Wanted rotation angle.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Wanted animation duration.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/centerMapWithPosition:andZoomLevel:andRotationAngle:andAnimated:andDuration:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/zoomIn:</TokenIdentifier>
+			<Abstract type="html">Method called to zoom in (zoom level++).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)zoomIn:(Boolean)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/zoomIn:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/zoomOut:</TokenIdentifier>
+			<Abstract type="html">Method called to zoom out (zoom level--).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)zoomOut:(Boolean)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/zoomOut:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/zoomWithZoomLevel:andAnimated:</TokenIdentifier>
+			<Abstract type="html">Method called to zoom to a zoom level for a specific map. We keep the current center position.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)zoomWithZoomLevel:(float)zoomLevel andAnimated:(Boolean)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">Wanted zoom level.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A Boolean used to know if we zoom with animation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/zoomWithZoomLevel:andAnimated:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/zoomWithZoomLevel:andAnimated:andDuration:</TokenIdentifier>
+			<Abstract type="html">Method called to zoom to a zoom level for a specific map. We keep the current center position.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)zoomWithZoomLevel:(float)zoomLevel andAnimated:(Boolean)animated andDuration:(float)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">Wanted zoom level.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A Boolean used to know if we zoom with animation.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Wanted animation duration.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/zoomWithZoomLevel:andAnimated:andDuration:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/zoomToSpan:andAnimated:</TokenIdentifier>
+			<Abstract type="html">Method called to zoom to a span rect (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)zoomToSpan:(ISRectF *)span andAnimated:(Boolean)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>span</Name>
+					<Abstract type="html">A rectangle defining the viewport to match.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A Boolean used to know if we zoom with animation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/zoomToSpan:andAnimated:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/zoomToSpan:andAnimated:andDuration:</TokenIdentifier>
+			<Abstract type="html">Method called to zoom to a span rect (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)zoomToSpan:(ISRectF *)span andAnimated:(Boolean)animated andDuration:(float)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>span</Name>
+					<Abstract type="html">A rectangle defining the viewport to match.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A Boolean used to know if we zoom with animation.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Wanted animation duration.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/zoomToSpan:andAnimated:andDuration:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/rotateWithAngle:andAnimated:</TokenIdentifier>
+			<Abstract type="html">Method called to rotate the map according a specific angle.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)rotateWithAngle:(float)angle andAnimated:(Boolean)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>angle</Name>
+					<Abstract type="html">The angle to rotate.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A Boolean used to know if we rotate with animation.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/rotateWithAngle:andAnimated:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/rotateWithAngle:andAnimated:andDuration:</TokenIdentifier>
+			<Abstract type="html">Method called to rotate the map according a specific angle.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)rotateWithAngle:(float)angle andAnimated:(Boolean)animated andDuration:(float)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>angle</Name>
+					<Abstract type="html">The angle to rotate.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">A Boolean used to know if we rotate with animation.</Abstract>
+				</Parameter><Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Wanted animation duration.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/rotateWithAngle:andAnimated:andDuration:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/changeMapWithMapId:andKeepPosition:andKeepZoomLevel:andKeepRotationAngle:</TokenIdentifier>
+			<Abstract type="html">Method used to show a Map with its id.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)changeMapWithMapId:(int)mapId andKeepPosition:(Boolean)keepPosition andKeepZoomLevel:(Boolean)keepZoomLevel andKeepRotationAngle:(Boolean)keepRotationAngle</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">The Map id to show.</Abstract>
+				</Parameter><Parameter>
+					<Name>keepPosition</Name>
+					<Abstract type="html">Boolean used to know if we keep the current position when changing map.</Abstract>
+				</Parameter><Parameter>
+					<Name>keepZoomLevel</Name>
+					<Abstract type="html">Boolean used to know if we keep the current zoom level when changing map.</Abstract>
+				</Parameter><Parameter>
+					<Name>keepRotationAngle</Name>
+					<Abstract type="html">Boolean used to know if we keep the current rotation angle when changing map.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/changeMapWithMapId:andKeepPosition:andKeepZoomLevel:andKeepRotationAngle:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/startRendering</TokenIdentifier>
+			<Abstract type="html">Method used to start map rendering.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)startRendering</Declaration>
+			
+			
+			<Anchor>//api/name/startRendering</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/stopRendering</TokenIdentifier>
+			<Abstract type="html">Method used to stop map rendering.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)stopRendering</Declaration>
+			
+			
+			<Anchor>//api/name/stopRendering</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/isRendering</TokenIdentifier>
+			<Abstract type="html">Method used to know if the map is currently rendering.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)isRendering</Declaration>
+			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the map is currently rendering, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/isRendering</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/disableBackground</TokenIdentifier>
+			<Abstract type="html">Method used to hide the background color (transparent behaviour).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)disableBackground</Declaration>
+			
+			
+			<Anchor>//api/name/disableBackground</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/getRendererWithRTOClass:</TokenIdentifier>
+			<Abstract type="html">Method used to get a specific map Renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPRenderer&gt;)getRendererWithRTOClass:(Class)rtoClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The Renderer corresponding class.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The corresponding Renderer, nil if not exists.</Abstract></ReturnValue>
+			<Anchor>//api/name/getRendererWithRTOClass:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/hasRenderer:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the map view has a specific renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasRenderer:(Class)rtoClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The Renderer corresponding class.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the map has the specified renderer, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasRenderer:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/addRenderer:</TokenIdentifier>
+			<Abstract type="html">Method used to add a specific Renderer (layer).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)addRenderer:(id&lt;ISPRenderer&gt;)renderer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>renderer</Name>
+					<Abstract type="html">The Renderer to add.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean used to know if the Renderer has been successfully added.</Abstract></ReturnValue>
+			<Anchor>//api/name/addRenderer:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/removeRendererWithRtoClass:</TokenIdentifier>
+			<Abstract type="html">Method used to remove a specific Renderer (layer) according to its related RTO class.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRendererWithRtoClass:(Class)rtoClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The related RTO class.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRendererWithRtoClass:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/removeRenderer:</TokenIdentifier>
+			<Abstract type="html">Method used to remove a specific Renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRenderer:(id&lt;ISPRenderer&gt;)renderer</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>renderer</Name>
+					<Abstract type="html">The renderer to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRenderer:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/clearRendererWithRTOClass:</TokenIdentifier>
+			<Abstract type="html">Method used to clear a specific Renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)clearRendererWithRTOClass:(Class)rtoClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The related RTO class.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/clearRendererWithRTOClass:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setRendererPriorityWithRTOClass:andPriority:</TokenIdentifier>
+			<Abstract type="html">Method called to set a priority to a specific Renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)setRendererPriorityWithRTOClass:(Class)rtoClass andPriority:(int)priority</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The related RTO class.</Abstract>
+				</Parameter><Parameter>
+					<Name>priority</Name>
+					<Abstract type="html">The priority to update.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRendererPriorityWithRTOClass:andPriority:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setRendererDisplayWithRTOClass:andDisplay:</TokenIdentifier>
+			<Abstract type="html">Method called to specify if a Renderer need to be displayed.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)setRendererDisplayWithRTOClass:(Class)rtoClass andDisplay:(Boolean)display</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The related RTO class.</Abstract>
+				</Parameter><Parameter>
+					<Name>display</Name>
+					<Abstract type="html">Boolean used to set if the Renderer will be displayed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRendererDisplayWithRTOClass:andDisplay:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setRendererTouchWithRTOClass:andTouch:</TokenIdentifier>
+			<Abstract type="html">Method called to specify if a Renderer need to answer on a touch event.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)setRendererTouchWithRTOClass:(Class)rtoClass andTouch:(Boolean)touch</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The related RTO class.</Abstract>
+				</Parameter><Parameter>
+					<Name>touch</Name>
+					<Abstract type="html">Boolean used to set if the Renderer will handle touch events.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRendererTouchWithRTOClass:andTouch:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/addRTO:</TokenIdentifier>
+			<Abstract type="html">Method used to add a simple RenderingTouchObject.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)addRTO:(id&lt;ISPRTO&gt;)rto</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">The RTO to add.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean used to know if a new ISGenericRenderer was created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addRTO:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/addRTO:inZone:</TokenIdentifier>
+			<Abstract type="html">Method used to add a RTO on a specific Zone.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)addRTO:(id&lt;ISPRTO&gt;)rto inZone:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">The RTO to add.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">The Zone id in which add the RTO.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean used to know if a new ISGenericRenderer was created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addRTO:inZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/addRTO:inZone:withOffset:</TokenIdentifier>
+			<Abstract type="html">Method used to add a RTO on a specific Zone with a specific offset.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)addRTO:(id&lt;ISPRTO&gt;)rto inZone:(int)zoneId withOffset:(CC3Vector)offset</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">The RTO to add.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">The Zone id in which add the RTO.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">Zone offset to consider.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Boolean used to know if a new ISGenericRenderer was created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addRTO:inZone:withOffset:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/removeRTO:</TokenIdentifier>
+			<Abstract type="html">Method called to remove an RTO from all zones where it&apos;s located.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRTO:(id&lt;ISPRTO&gt;)rto</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">The RTO to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRTO:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/removeRTO:fromZone:</TokenIdentifier>
+			<Abstract type="html">Method called to remove an RTO from a specific Zone.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRTO:(id&lt;ISPRTO&gt;)rto fromZone:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">The RTO to remove.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">The Zone id from which remove the RTO.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRTO:fromZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/clearZone:</TokenIdentifier>
+			<Abstract type="html">Method called to remove all the RTO present in the Zone.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)clearZone:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">id The concerned Zone.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/clearZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/clear</TokenIdentifier>
+			<Abstract type="html">Method called to remove all the RTO.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)clear</Declaration>
+			
+			
+			<Anchor>//api/name/clear</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/setRTOListener:withRTOClass:</TokenIdentifier>
+			<Abstract type="html">Method called to set a listener to a specific renderer.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)setRTOListener:(id&lt;ISPRTOListener&gt;)rtoListener withRTOClass:(Class)rtoClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rtoListener</Name>
+					<Abstract type="html">The listener to set.</Abstract>
+				</Parameter><Parameter>
+					<Name>rtoClass</Name>
+					<Abstract type="html">The related RTO class.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRTOListener:withRTOClass:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/getVisibleZones</TokenIdentifier>
+			<Abstract type="html">Method called to get all the current &quot;visible&quot; zones.</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)getVisibleZones</Declaration>
+			
+			<ReturnValue><Abstract type="html">All &quot;visible&quot; zones.</Abstract></ReturnValue>
+			<Anchor>//api/name/getVisibleZones</Anchor>
 		</Token>
 		
 	</File>

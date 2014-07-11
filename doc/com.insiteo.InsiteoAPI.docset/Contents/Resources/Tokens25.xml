@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGfxMeetMePerson.html">
+	<File path="Classes/ISInitTask.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGfxMeetMePerson</TokenIdentifier>
-			<Abstract type="html">Class used to render an ISMeetMePerson on the map.</Abstract>
-			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISInitTask</TokenIdentifier>
+			<Abstract type="html">Class used to represent an API initialization task.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>
 			
 			<NodeRef refid="25"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/initWithPerson:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitTask/initWithInitParameters:</TokenIdentifier>
 			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithPerson:(ISMeetMePerson *)person</Declaration>
+			<Declaration>- (id)initWithInitParameters:(InitParameters *)initParameters</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>person</Name>
-					<Abstract type="html">Person used for rendering (position, color, etc...).</Abstract>
+					<Name>initParameters</Name>
+					<Abstract type="html">The initialization parameters to use.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithPerson:</Anchor>
+			<Anchor>//api/name/initWithInitParameters:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/updatePerson:</TokenIdentifier>
-			<Abstract type="html">Method called to update related person information.</Abstract>
-			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInitTask/initAPI</TokenIdentifier>
+			<Abstract type="html">Method called to initialize the API.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
 			
-			<Declaration>- (void)updatePerson:(ISMeetMePerson *)person</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>person</Name>
-					<Abstract type="html">Person to update from.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)initAPI</Declaration>
 			
-			<Anchor>//api/name/updatePerson:</Anchor>
+			
+			<Anchor>//api/name/initAPI</Anchor>
 		</Token>
 		
 	</File>

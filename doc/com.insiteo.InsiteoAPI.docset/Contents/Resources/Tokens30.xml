@@ -1,96 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISInsiteoError.html">
+	<File path="Classes/ISItineraryOptimizedRequest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISInsiteoError</TokenIdentifier>
-			<Abstract type="html">Class used to represent an Insiteo error.</Abstract>
-			<DeclaredIn>ISInsiteoError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItineraryOptimizedRequest</TokenIdentifier>
+			<Abstract type="html">Class used to represent an optimized itinerary request.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>
 			
 			<NodeRef refid="30"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/setErrorCode:</TokenIdentifier>
-			<Abstract type="html">Error code.</Abstract>
-			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryOptimizedRequest/setWaypoints:</TokenIdentifier>
+			<Abstract type="html">Waypoints to pass through.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *errorCode</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *waypoints</Declaration>
 			
 			
-			<Anchor>//api/name/errorCode</Anchor>
+			<Anchor>//api/name/waypoints</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInsiteoError/errorCode</TokenIdentifier>
-			<Abstract type="html">Error code.</Abstract>
-			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryOptimizedRequest/waypoints</TokenIdentifier>
+			<Abstract type="html">Waypoints to pass through.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *errorCode</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *waypoints</Declaration>
 			
 			
-			<Anchor>//api/name/errorCode</Anchor>
+			<Anchor>//api/name/waypoints</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/setErrorMessage:</TokenIdentifier>
-			<Abstract type="html">Error message.</Abstract>
-			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryOptimizedRequest/setSortedWaypoints:</TokenIdentifier>
+			<Abstract type="html">Return sorted input waypoints.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *errorMessage</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *sortedWaypoints</Declaration>
 			
 			
-			<Anchor>//api/name/errorMessage</Anchor>
+			<Anchor>//api/name/sortedWaypoints</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISInsiteoError/errorMessage</TokenIdentifier>
-			<Abstract type="html">Error message.</Abstract>
-			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryOptimizedRequest/sortedWaypoints</TokenIdentifier>
+			<Abstract type="html">Return sorted input waypoints.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *errorMessage</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *sortedWaypoints</Declaration>
 			
 			
-			<Anchor>//api/name/errorMessage</Anchor>
+			<Anchor>//api/name/sortedWaypoints</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/initWithErrorCode:andErrorMessage:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryOptimizedRequest/setSortedWaypointsIndexes:</TokenIdentifier>
+			<Abstract type="html">Return sorted input waypoints indexes.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithErrorCode:(NSString *)errorCode andErrorMessage:(NSString *)errorMessage</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>errorCode</Name>
-					<Abstract type="html">Error code.</Abstract>
-				</Parameter><Parameter>
-					<Name>errorMessage</Name>
-					<Abstract type="html">Error message.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *sortedWaypointsIndexes</Declaration>
 			
-			<Anchor>//api/name/initWithErrorCode:andErrorMessage:</Anchor>
+			
+			<Anchor>//api/name/sortedWaypointsIndexes</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISInsiteoError/ISInsiteoErrorWithErrorCode:andErrorMessage:</TokenIdentifier>
-			<Abstract type="html">Static constructor.</Abstract>
-			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryOptimizedRequest/sortedWaypointsIndexes</TokenIdentifier>
+			<Abstract type="html">Return sorted input waypoints indexes.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
 			
-			<Declaration>+ (id)ISInsiteoErrorWithErrorCode:(NSString *)errorCode andErrorMessage:(NSString *)errorMessage</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>errorCode</Name>
-					<Abstract type="html">Error code.</Abstract>
-				</Parameter><Parameter>
-					<Name>errorMessage</Name>
-					<Abstract type="html">Error message.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *sortedWaypointsIndexes</Declaration>
 			
-			<Anchor>//api/name/ISInsiteoErrorWithErrorCode:andErrorMessage:</Anchor>
+			
+			<Anchor>//api/name/sortedWaypointsIndexes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryOptimizedRequest/setOptimMode:</TokenIdentifier>
+			<Abstract type="html">Route optimization algorithm mode.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEOptimizationMode optimMode</Declaration>
+			
+			
+			<Anchor>//api/name/optimMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryOptimizedRequest/optimMode</TokenIdentifier>
+			<Abstract type="html">Route optimization algorithm mode.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEOptimizationMode optimMode</Declaration>
+			
+			
+			<Anchor>//api/name/optimMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryOptimizedRequest/setKeepFirstPosition:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we treat the first position.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean keepFirstPosition</Declaration>
+			
+			
+			<Anchor>//api/name/keepFirstPosition</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryOptimizedRequest/keepFirstPosition</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we treat the first position.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean keepFirstPosition</Declaration>
+			
+			
+			<Anchor>//api/name/keepFirstPosition</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryOptimizedRequest/setKeepLastPosition:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we treat the last position.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean keepLastPosition</Declaration>
+			
+			
+			<Anchor>//api/name/keepLastPosition</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryOptimizedRequest/keepLastPosition</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we treat the last position.</Abstract>
+			<DeclaredIn>ISItineraryOptimizedRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean keepLastPosition</Declaration>
+			
+			
+			<Anchor>//api/name/keepLastPosition</Anchor>
 		</Token>
 		
 	</File>

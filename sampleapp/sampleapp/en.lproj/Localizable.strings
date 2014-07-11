@@ -32,7 +32,7 @@
 "STR_CLEAR_ITINERARY" = "Clear itinerary";
 "STR_CLEAR_ALL" = "Clear everything";
 "STR_CHOOSE_MAP" = "Please choose a map";
-"STR_MAP_TITLE" = "Map";
+"STR_SAMPLE_APP_TITLE" = "Sample app";
 "STR_MAP_SWITCHER_CLICKED" = "Map switcher clicked";
 "STR_WAYPOINT_CLICKED" = "Waypoint clicked";
 "STR_INSTRUCTION_CLICKED" = "Instruction %d clicked";

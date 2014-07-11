@@ -50,6 +50,8 @@
 	
 	<option value="//api/name/locationServices">&nbsp;&nbsp;&nbsp;&nbsp;locationServices</option>
 	
+	<option value="//api/name/renderer">&nbsp;&nbsp;&nbsp;&nbsp;renderer</option>
+	
 	<option value="//api/name/sessionId">&nbsp;&nbsp;&nbsp;&nbsp;sessionId</option>
 	
 	
@@ -76,11 +78,11 @@
 	
 	<option value="//api/name/startLocation:andLocationListener:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:</option>
 	
-	<option value="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</option>
-	
-	<option value="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</option>
-	
 	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:</option>
+	
+	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</option>
+	
+	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</option>
 	
 	<option value="//api/name/stopLocation">&nbsp;&nbsp;&nbsp;&nbsp;- stopLocation</option>
 	
@@ -118,6 +120,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationServices">locationServices</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/renderer">renderer</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sessionId">sessionId</a></span></li>
 	
 </ul></li>
@@ -146,11 +150,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:">startLocation:andLocationListener:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:">startLocation:andLocationListener:andScanFrequency:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopLocation">stopLocation</a></span></li>
 	
@@ -191,7 +195,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Class used to provide and get user locations.</p><div class="warning"><p><strong>Warning:</strong> When using this class, you will need to tag your implementor as C++ class (*.mm extension).</p></div>
+						<p>Class used to provide and get user locations.</p><div class="warning"><p><strong>Warning:</strong> When using this class, you will need to tag your implementor as C++ class (*.mm extension OR specific compiler settings).</p></div>
 					</div>
 					
 					
@@ -251,6 +255,13 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/renderer">&nbsp;&nbsp;renderer</a></code>
+		<span class="tooltip"><p>Location Renderer.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/getLocationPackageVersion">+&nbsp;getLocationPackageVersion</a></code>
 		<span class="tooltip"><p>Static method used to know the current location package version.</p></span>
 	</span>
@@ -272,14 +283,14 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:">&ndash;&nbsp;startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</a></code>
+		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</a></code>
 		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:">&ndash;&nbsp;startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</a></code>
+		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</a></code>
 		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
 	</span>
 	
@@ -528,6 +539,47 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Location services list.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/renderer" title="renderer"></a>
+	<h3 class="subsubtitle method-title">renderer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Location Renderer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISLocationRenderer *renderer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Location Renderer.</p>
 	</div>
 	
 	
@@ -964,148 +1016,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:" title="startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:"></a>
-	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to start the location with specific configuration.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>locationFlags</em></dt>
-			<dd><p>Location flags.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>locationListener</em></dt>
-			<dd><p>Location events listener.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>defaultMapId</em></dt>
-			<dd><p>Default map identifier to use</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>forceDefaultMap</em></dt>
-			<dd><p>Boolean used to know if we force the default map.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to start the location with specific configuration.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISLocationProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:" title="startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:"></a>
-	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andDefaultMapId:andForceDefaultMap:andScanFrequency:andLocationPath:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to start the location with specific configuration.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em> andScanFrequency:(int)<em>scanFrequency</em> andLocationPath:(NSString *)<em>locationPath</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>locationFlags</em></dt>
-			<dd><p>Location flags.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>locationListener</em></dt>
-			<dd><p>Location events listener.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>defaultMapId</em></dt>
-			<dd><p>Default map identifier to use</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>forceDefaultMap</em></dt>
-			<dd><p>Boolean used to know if we force the default map.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>scanFrequency</em></dt>
-			<dd><p>Location scan frequency.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>locationPath</em></dt>
-			<dd><p>The location package directory.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to start the location with specific configuration.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISLocationProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:" title="startLocation:andLocationListener:andScanFrequency:"></a>
 	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:</h3>
 	
@@ -1137,6 +1047,153 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>scanFrequency</em></dt>
 			<dd><p>Location scan frequency.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to start the location with specific configuration.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:" title="startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:"></a>
+	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to start the location with specific configuration.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationFlags</em></dt>
+			<dd><p>Location flags.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationListener</em></dt>
+			<dd><p>Location events listener.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scanFrequency</em></dt>
+			<dd><p>Location scan frequency.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>defaultMapId</em></dt>
+			<dd><p>Default map identifier to use</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>forceDefaultMap</em></dt>
+			<dd><p>Boolean used to know if we force the default map.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to start the location with specific configuration.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:" title="startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:"></a>
+	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to start the location with specific configuration.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em> andLocationPath:(NSString *)<em>locationPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationFlags</em></dt>
+			<dd><p>Location flags.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationListener</em></dt>
+			<dd><p>Location events listener.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>scanFrequency</em></dt>
+			<dd><p>Location scan frequency.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>defaultMapId</em></dt>
+			<dd><p>Default map identifier to use</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>forceDefaultMap</em></dt>
+			<dd><p>Boolean used to know if we force the default map.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locationPath</em></dt>
+			<dd><p>The location package directory.</p></dd>
 		</dl>
 		
 	</div>
@@ -1220,7 +1277,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-07-09)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-07-11)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

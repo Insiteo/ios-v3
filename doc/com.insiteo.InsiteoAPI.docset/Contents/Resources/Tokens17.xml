@@ -56,6 +56,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/setRenderer:</TokenIdentifier>
+			<Abstract type="html">Geofence area Renderer.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISGeofenceAreaRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceProvider/renderer</TokenIdentifier>
+			<Abstract type="html">Geofence area Renderer.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISGeofenceAreaRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/geofenceAreaExistsWithGuid:</TokenIdentifier>
 			<Abstract type="html">Method used to know if a ISGeofenceArea exists with a specified guid.</Abstract>
 			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
