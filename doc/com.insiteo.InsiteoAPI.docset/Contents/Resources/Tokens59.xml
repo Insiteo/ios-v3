@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISMeetMeProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMeProvider</TokenIdentifier>
+			<Abstract type="html">Class used to manage MeetMe methods.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>
+			
+			<NodeRef refid="59"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/setListener:</TokenIdentifier>
+			<Abstract type="html">MeetMe events listener (Requests).</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPMeetMeListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMeProvider/listener</TokenIdentifier>
+			<Abstract type="html">MeetMe events listener (Requests).</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPMeetMeListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/setUserName:</TokenIdentifier>
+			<Abstract type="html">User nickname.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMeProvider/userName</TokenIdentifier>
+			<Abstract type="html">User nickname.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSString *userName</Declaration>
+			
+			
+			<Anchor>//api/name/userName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/setUserId:</TokenIdentifier>
+			<Abstract type="html">User identifier.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSString *userId</Declaration>
+			
+			
+			<Anchor>//api/name/userId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMeProvider/userId</TokenIdentifier>
+			<Abstract type="html">User identifier.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSString *userId</Declaration>
+			
+			
+			<Anchor>//api/name/userId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/setIsConnected:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the user is connected.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) Boolean isConnected</Declaration>
+			
+			
+			<Anchor>//api/name/isConnected</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMeProvider/isConnected</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the user is connected.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) Boolean isConnected</Declaration>
+			
+			
+			<Anchor>//api/name/isConnected</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/setGroups:</TokenIdentifier>
+			<Abstract type="html">Current groups list.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSDictionary *groups</Declaration>
+			
+			
+			<Anchor>//api/name/groups</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMeProvider/groups</TokenIdentifier>
+			<Abstract type="html">Current groups list.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSDictionary *groups</Declaration>
+			
+			
+			<Anchor>//api/name/groups</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/setConnectedGroupsIDs:</TokenIdentifier>
+			<Abstract type="html">Array of groups the user is connected to.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSArray *connectedGroupsIDs</Declaration>
+			
+			
+			<Anchor>//api/name/connectedGroupsIDs</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMeProvider/connectedGroupsIDs</TokenIdentifier>
+			<Abstract type="html">Array of groups the user is connected to.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) NSArray *connectedGroupsIDs</Declaration>
+			
+			
+			<Anchor>//api/name/connectedGroupsIDs</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/setRenderer:</TokenIdentifier>
+			<Abstract type="html">MeetMe renderer (used to render ISGfxPerson).</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) ISMeetMeRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMeProvider/renderer</TokenIdentifier>
+			<Abstract type="html">MeetMe renderer (used to render ISGfxPerson).</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) ISMeetMeRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/getGroupByID:</TokenIdentifier>
+			<Abstract type="html">Method used to get a specific group with its identifier.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISMeetMeGroup *)getGroupByID:(int)groupId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">Wanted group identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The wanted group (could be nil).</Abstract></ReturnValue>
+			<Anchor>//api/name/getGroupByID:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/getGroupByName:</TokenIdentifier>
+			<Abstract type="html">Method used to get a specific group with its name.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISMeetMeGroup *)getGroupByName:(NSString *)groupName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupName</Name>
+					<Abstract type="html">Wanted group name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The wanted group (could be nil).</Abstract></ReturnValue>
+			<Anchor>//api/name/getGroupByName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/getGroupByExtID:</TokenIdentifier>
+			<Abstract type="html">Method used to get a specific group with its external identifier.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISMeetMeGroup *)getGroupByExtID:(NSString *)groupExtID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupExtID</Name>
+					<Abstract type="html">Wanted external group identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The wanted group (could be nil).</Abstract></ReturnValue>
+			<Anchor>//api/name/getGroupByExtID:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/getPersonsFromGroup:</TokenIdentifier>
+			<Abstract type="html">Method used to get all related persons from a specific group.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)getPersonsFromGroup:(int)groupId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">Wanted group identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of all persons from the wanted group (could be nil).</Abstract></ReturnValue>
+			<Anchor>//api/name/getPersonsFromGroup:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/disconnect</TokenIdentifier>
+			<Abstract type="html">Method used to disconnect the user from our servers.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)disconnect</Declaration>
+			
+			
+			<Anchor>//api/name/disconnect</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestConnectionWithListener:andLogin:andPassword:</TokenIdentifier>
+			<Abstract type="html">Method used to connect a user to the MeetMe service.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestConnectionWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andLogin:(NSString *)login andPassword:(NSString *)password</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>login</Name>
+					<Abstract type="html">User login.</Abstract>
+				</Parameter><Parameter>
+					<Name>password</Name>
+					<Abstract type="html">User password.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestConnectionWithListener:andLogin:andPassword:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onConnectionDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;connect&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onConnectionDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onConnectionDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestTmpConnectionWithListener:andName:</TokenIdentifier>
+			<Abstract type="html">Method used to create a temporary user and connect him to the MeetMe service.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestTmpConnectionWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andName:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">User name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestTmpConnectionWithListener:andName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onTmpConnectionDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;create temp user&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onTmpConnectionDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onTmpConnectionDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestUserRegistrationWithListener:andLogin:andPassword:andName:</TokenIdentifier>
+			<Abstract type="html">Method used to create a user in our MeetMe service.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestUserRegistrationWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andLogin:(NSString *)login andPassword:(NSString *)password andName:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>login</Name>
+					<Abstract type="html">User login.</Abstract>
+				</Parameter><Parameter>
+					<Name>password</Name>
+					<Abstract type="html">User password.</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">User name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestUserRegistrationWithListener:andLogin:andPassword:andName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onUserRegistrationDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;create user&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onUserRegistrationDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onUserRegistrationDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestGroupsWithListener:</TokenIdentifier>
+			<Abstract type="html">Method used to refresh the INSITEO MeetMe groups.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestGroupsWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestGroupsWithListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onGetGroupsDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;refresh groups&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onGetGroupsDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onGetGroupsDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestActiveGroupsWithListener:</TokenIdentifier>
+			<Abstract type="html">Method used to refresh the INSITEO MeetMe groups where the user is active.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestActiveGroupsWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestActiveGroupsWithListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onGetActiveGroupsDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;refresh active groups&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onGetActiveGroupsDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onGetActiveGroupsDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestGroupCreationWithListener:andGroupName:andGroupPassword:andEndDate:andCloseDate:andExclu:</TokenIdentifier>
+			<Abstract type="html">Method used to create an INSITEO MeetMe group.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestGroupCreationWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andGroupName:(NSString *)groupName andGroupPassword:(NSString *)groupPassword andEndDate:(NSTimeInterval)endDate andCloseDate:(NSTimeInterval)closeDate andExclu:(Boolean)isExclusive</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>groupName</Name>
+					<Abstract type="html">Name of the group we want to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>groupPassword</Name>
+					<Abstract type="html">Password of the group we want to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>endDate</Name>
+					<Abstract type="html">Date when the group will be deleted.</Abstract>
+				</Parameter><Parameter>
+					<Name>closeDate</Name>
+					<Abstract type="html">Date when the group will no longer accept users.</Abstract>
+				</Parameter><Parameter>
+					<Name>isExclusive</Name>
+					<Abstract type="html">Boolean used to know if we disconnect the user from all the other groups (by default we connect the user to the just created group).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestGroupCreationWithListener:andGroupName:andGroupPassword:andEndDate:andCloseDate:andExclu:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onCreateGroupDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;create group&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onCreateGroupDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onCreateGroupDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestJoinGroupWithListener:andGroupId:andGroupName:andGroupPassword:andExclu:</TokenIdentifier>
+			<Abstract type="html">Method used to join an INSITEO MeetMe group.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestJoinGroupWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andGroupId:(int)groupId andGroupName:(NSString *)groupName andGroupPassword:(NSString *)groupPassword andExclu:(Boolean)isExclusive</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">Wanted group identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>groupName</Name>
+					<Abstract type="html">Wanted group name.</Abstract>
+				</Parameter><Parameter>
+					<Name>groupPassword</Name>
+					<Abstract type="html">Wanted group password.</Abstract>
+				</Parameter><Parameter>
+					<Name>isExclusive</Name>
+					<Abstract type="html">Boolean used to know if we disconnect the user from all the other groups (by default we connect the user to the just created group).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestJoinGroupWithListener:andGroupId:andGroupName:andGroupPassword:andExclu:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onJoinGroupDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;join group&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onJoinGroupDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onJoinGroupDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestLeaveGroupsWithListener:andGroupIds:</TokenIdentifier>
+			<Abstract type="html">Method used to join an INSITEO MeetMe group.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestLeaveGroupsWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andGroupIds:(NSArray *)groupIds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>groupIds</Name>
+					<Abstract type="html">Array of group identifiers we want to leave.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestLeaveGroupsWithListener:andGroupIds:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onLeaveGroupsDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;leave groups&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onLeaveGroupsDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onLeaveGroupsDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestStatusChangeWithListener:andGroupIds:andNewStatus:</TokenIdentifier>
+			<Abstract type="html">Method used to change the user status for INSITEO MeetMe groups.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestStatusChangeWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andGroupIds:(NSArray *)groupIds andNewStatus:(UserStatus)newStatus</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>groupIds</Name>
+					<Abstract type="html">Array of group identifiers we want to change the status.</Abstract>
+				</Parameter><Parameter>
+					<Name>newStatus</Name>
+					<Abstract type="html">New user status to update.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestStatusChangeWithListener:andGroupIds:andNewStatus:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onStatusChangeDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;change status&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onStatusChangeDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onStatusChangeDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestExternalConnectionWithListener:andUserExtID:andUserName:andExtGroupIds:</TokenIdentifier>
+			<Abstract type="html">Method used to connect an external MeetMe user.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestExternalConnectionWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andUserExtID:(NSString *)userExtID andUserName:(NSString *)userName andExtGroupIds:(NSArray *)extGroupIds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>userExtID</Name>
+					<Abstract type="html">User external identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>userName</Name>
+					<Abstract type="html">User name.</Abstract>
+				</Parameter><Parameter>
+					<Name>extGroupIds</Name>
+					<Abstract type="html">User external group identifiers.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestExternalConnectionWithListener:andUserExtID:andUserName:andExtGroupIds:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onExternalConnectionDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;external connect&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onExternalConnectionDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onExternalConnectionDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestExternalJoinGroupWithListener:andExtGroupId:andExtGroupName:andBeginDate:andEndDate:andExclu:</TokenIdentifier>
+			<Abstract type="html">Method used to join an external MeetMe group.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestExternalJoinGroupWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andExtGroupId:(NSString *)extGroupId andExtGroupName:(NSString *)extGroupName andBeginDate:(NSTimeInterval)beginDate andEndDate:(NSTimeInterval)endDate andExclu:(Boolean)isExclusive</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>extGroupId</Name>
+					<Abstract type="html">External group identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>extGroupName</Name>
+					<Abstract type="html">External group name.</Abstract>
+				</Parameter><Parameter>
+					<Name>beginDate</Name>
+					<Abstract type="html">Group begin date.</Abstract>
+				</Parameter><Parameter>
+					<Name>endDate</Name>
+					<Abstract type="html">Group end date.</Abstract>
+				</Parameter><Parameter>
+					<Name>isExclusive</Name>
+					<Abstract type="html">Boolean used to know if we disconnect the user from all the other groups (by default we connect the user to the just created group).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestExternalJoinGroupWithListener:andExtGroupId:andExtGroupName:andBeginDate:andEndDate:andExclu:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onExternalJoinGroupDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;external join group&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onExternalJoinGroupDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onExternalJoinGroupDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestExternalLeaveGroupsWithListener:andGroupIds:andExtGroupIds:</TokenIdentifier>
+			<Abstract type="html">Method used to leave external MeetMe groups.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestExternalLeaveGroupsWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andGroupIds:(NSArray *)groupIds andExtGroupIds:(NSArray *)extGroupIds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>groupIds</Name>
+					<Abstract type="html">Group identifiers to leave from.</Abstract>
+				</Parameter><Parameter>
+					<Name>extGroupIds</Name>
+					<Abstract type="html">External group identifiers to leave from.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestExternalLeaveGroupsWithListener:andGroupIds:andExtGroupIds:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onExternalLeaveGroupsDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;external leave groups&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onExternalLeaveGroupsDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onExternalLeaveGroupsDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestExternalGroupsWithListener:andExtGroupIds:</TokenIdentifier>
+			<Abstract type="html">Method used to refresh external MeetMe groups.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestExternalGroupsWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andExtGroupIds:(NSArray *)extGroupIds</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>extGroupIds</Name>
+					<Abstract type="html">External group identifiers to refresh.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestExternalGroupsWithListener:andExtGroupIds:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onExternalRefreshGroupsDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;external refresh groups&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onExternalRefreshGroupsDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onExternalRefreshGroupsDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/requestExternalStatusChangeWithListener:andGroupIds:andNewStatus:</TokenIdentifier>
+			<Abstract type="html">Method used to change the user status for MeetMe groups.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISAbstractMeetMeRequest *)requestExternalStatusChangeWithListener:(id&lt;ISPMeetMeRequestListener&gt;)listener andGroupIds:(NSArray *)groupIds andNewStatus:(UserStatus)newStatus</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify (for MeetMeRequest events).</Abstract>
+				</Parameter><Parameter>
+					<Name>groupIds</Name>
+					<Abstract type="html">Array of group identifiers we want to change the status.</Abstract>
+				</Parameter><Parameter>
+					<Name>newStatus</Name>
+					<Abstract type="html">New user status to update.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted MeetMe request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestExternalStatusChangeWithListener:andGroupIds:andNewStatus:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMeProvider/onExternalStatusChangeDoneWithRequest:andError:andParser:</TokenIdentifier>
+			<Abstract type="html">Intern callback called when the &quot;external change status&quot; request succeeded or failed.</Abstract>
+			<DeclaredIn>ISMeetMeProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)onExternalStatusChangeDoneWithRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error andParser:(id&lt;PResponseParser&gt;)parser</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">Related request.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>parser</Name>
+					<Abstract type="html">The parser to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onExternalStatusChangeDoneWithRequest:andError:andParser:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

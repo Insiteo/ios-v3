@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISMap2DView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMap2DView</TokenIdentifier>
+			<Abstract type="html">Class used to handle 2D map rendering (using Cocos2d).</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>
+			
+			<NodeRef refid="40"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMap2DView/setCurrentRatio:</TokenIdentifier>
+			<Abstract type="html">Last computed ratio.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) double currentRatio</Declaration>
+			
+			
+			<Anchor>//api/name/currentRatio</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMap2DView/currentRatio</TokenIdentifier>
+			<Abstract type="html">Last computed ratio.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) double currentRatio</Declaration>
+			
+			
+			<Anchor>//api/name/currentRatio</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMap2DView/setCurrentOffset:</TokenIdentifier>
+			<Abstract type="html">Last computed offset.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint currentOffset</Declaration>
+			
+			
+			<Anchor>//api/name/currentOffset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMap2DView/currentOffset</TokenIdentifier>
+			<Abstract type="html">Last computed offset.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint currentOffset</Declaration>
+			
+			
+			<Anchor>//api/name/currentOffset</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMap2DView/setLastRotationAngle:</TokenIdentifier>
+			<Abstract type="html">Intern last rotation angle.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float lastRotationAngle</Declaration>
+			
+			
+			<Anchor>//api/name/lastRotationAngle</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMap2DView/lastRotationAngle</TokenIdentifier>
+			<Abstract type="html">Intern last rotation angle.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) float lastRotationAngle</Declaration>
+			
+			
+			<Anchor>//api/name/lastRotationAngle</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISMap2DView/map2DViewWithFrame:andMapListener:</TokenIdentifier>
+			<Abstract type="html">Static constructor.</Abstract>
+			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
+			
+			<Declaration>+ (ISMap2DView *)map2DViewWithFrame:(CGRect)frame andMapListener:(id&lt;ISPMapListener&gt;)mapListener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>frame</Name>
+					<Abstract type="html">Wanted rendering frame.</Abstract>
+				</Parameter><Parameter>
+					<Name>mapListener</Name>
+					<Abstract type="html">Listener used to handle map events.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/map2DViewWithFrame:andMapListener:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

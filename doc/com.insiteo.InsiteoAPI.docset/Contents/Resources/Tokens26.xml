@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISInsiteoError.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISInsiteoError</TokenIdentifier>
+			<Abstract type="html">Class used to represent an Insiteo error.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/setErrorCode:</TokenIdentifier>
+			<Abstract type="html">Error code.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *errorCode</Declaration>
+			
+			
+			<Anchor>//api/name/errorCode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInsiteoError/errorCode</TokenIdentifier>
+			<Abstract type="html">Error code.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *errorCode</Declaration>
+			
+			
+			<Anchor>//api/name/errorCode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/setErrorMessage:</TokenIdentifier>
+			<Abstract type="html">Error message.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *errorMessage</Declaration>
+			
+			
+			<Anchor>//api/name/errorMessage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISInsiteoError/errorMessage</TokenIdentifier>
+			<Abstract type="html">Error message.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *errorMessage</Declaration>
+			
+			
+			<Anchor>//api/name/errorMessage</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/initWithErrorCode:andErrorMessage:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithErrorCode:(NSString *)errorCode andErrorMessage:(NSString *)errorMessage</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>errorCode</Name>
+					<Abstract type="html">Error code.</Abstract>
+				</Parameter><Parameter>
+					<Name>errorMessage</Name>
+					<Abstract type="html">Error message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithErrorCode:andErrorMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInsiteoError/ISInsiteoErrorWithErrorCode:andErrorMessage:</TokenIdentifier>
+			<Abstract type="html">Static constructor.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISInsiteoErrorWithErrorCode:(NSString *)errorCode andErrorMessage:(NSString *)errorMessage</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>errorCode</Name>
+					<Abstract type="html">Error code.</Abstract>
+				</Parameter><Parameter>
+					<Name>errorMessage</Name>
+					<Abstract type="html">Error message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISInsiteoErrorWithErrorCode:andErrorMessage:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

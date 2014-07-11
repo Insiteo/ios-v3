@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPMotionListener.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPMotionListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle accelerometer events.</Abstract>
+			<DeclaredIn>ISPMotionListener.h</DeclaredIn>
+			
+			<NodeRef refid="88"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMotionListener/onMotionAvailable:</TokenIdentifier>
+			<Abstract type="html">Method called when a new motion result is available.</Abstract>
+			<DeclaredIn>ISPMotionListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onMotionAvailable:(int)motion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>motion</Name>
+					<Abstract type="html">New motion available.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onMotionAvailable:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

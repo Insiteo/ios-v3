@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISItineraryProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItineraryProvider</TokenIdentifier>
+			<Abstract type="html">Class used to manage Itinerary requests.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setInstructionsUpdateNotifyEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we have to notify on instructions update event.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean instructionsUpdateNotifyEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/instructionsUpdateNotifyEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/instructionsUpdateNotifyEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we have to notify on instructions update event.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean instructionsUpdateNotifyEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/instructionsUpdateNotifyEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setEmbeddedItineraryProvider:</TokenIdentifier>
+			<Abstract type="html">Embedded itinerary provider.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) EmbeddedItineraryProvider *embeddedItineraryProvider</Declaration>
+			
+			
+			<Anchor>//api/name/embeddedItineraryProvider</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/embeddedItineraryProvider</TokenIdentifier>
+			<Abstract type="html">Embedded itinerary provider.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) EmbeddedItineraryProvider *embeddedItineraryProvider</Declaration>
+			
+			
+			<Anchor>//api/name/embeddedItineraryProvider</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setLastLocation:</TokenIdentifier>
+			<Abstract type="html">Last location received.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISLocation *lastLocation</Declaration>
+			
+			
+			<Anchor>//api/name/lastLocation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/lastLocation</TokenIdentifier>
+			<Abstract type="html">Last location received.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISLocation *lastLocation</Declaration>
+			
+			
+			<Anchor>//api/name/lastLocation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setLastItinerary:</TokenIdentifier>
+			<Abstract type="html">Last itinerary computed.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItinerary *lastItinerary</Declaration>
+			
+			
+			<Anchor>//api/name/lastItinerary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/lastItinerary</TokenIdentifier>
+			<Abstract type="html">Last itinerary computed.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItinerary *lastItinerary</Declaration>
+			
+			
+			<Anchor>//api/name/lastItinerary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setSessionId:</TokenIdentifier>
+			<Abstract type="html">Intern session identifier (used to combine location and itinerary information).</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *sessionId</Declaration>
+			
+			
+			<Anchor>//api/name/sessionId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/sessionId</TokenIdentifier>
+			<Abstract type="html">Intern session identifier (used to combine location and itinerary information).</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *sessionId</Declaration>
+			
+			
+			<Anchor>//api/name/sessionId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setProgressiveDrawing:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean progressiveDrawing</Declaration>
+			
+			
+			<Anchor>//api/name/progressiveDrawing</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/progressiveDrawing</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean progressiveDrawing</Declaration>
+			
+			
+			<Anchor>//api/name/progressiveDrawing</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setBackFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *backFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/backFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/backFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route background.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *backFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/backFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setBackStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route background.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float backStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/backStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/backStrokeThickness</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route background.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float backStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/backStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setFrontFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *frontFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/frontFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/frontFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *frontFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/frontFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setFrontStrokeThickness:</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frontStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/frontStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/frontStrokeThickness</TokenIdentifier>
+			<Abstract type="html">Thickness of the itinerary route foreground.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float frontStrokeThickness</Declaration>
+			
+			
+			<Anchor>//api/name/frontStrokeThickness</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setSelectedFillColor:</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route if selected.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *selectedFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/selectedFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/selectedFillColor</TokenIdentifier>
+			<Abstract type="html">Color of the itinerary route if selected.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *selectedFillColor</Declaration>
+			
+			
+			<Anchor>//api/name/selectedFillColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setOnlyPath:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if only the path is drawn.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean onlyPath</Declaration>
+			
+			
+			<Anchor>//api/name/onlyPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/onlyPath</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if only the path is drawn.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean onlyPath</Declaration>
+			
+			
+			<Anchor>//api/name/onlyPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setRenderer:</TokenIdentifier>
+			<Abstract type="html">Itinerary Renderer.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItineraryRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/renderer</TokenIdentifier>
+			<Abstract type="html">Itinerary Renderer.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItineraryRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISItineraryProvider/getLocationId</TokenIdentifier>
+			<Abstract type="html">Static method used to get the last location identifier.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (int)getLocationId</Declaration>
+			
+			<ReturnValue><Abstract type="html">Current location get id.</Abstract></ReturnValue>
+			<Anchor>//api/name/getLocationId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:</TokenIdentifier>
+			<Abstract type="html">Method used to get a route from the user current location.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISItineraryRequest *)requestItineraryFromCurrentLocationWithEndPoint:(CGPoint)endPoint andEndMapId:(int)endMapId andListener:(id&lt;ISPItineraryRequestListener&gt;)listener andPMR:(Boolean)pmr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">Itinerary request end point.</Abstract>
+				</Parameter><Parameter>
+					<Name>endMapId</Name>
+					<Abstract type="html">Itinerary request end map identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify for ISItineraryRequest events (succeeded, failed).</Abstract>
+				</Parameter><Parameter>
+					<Name>pmr</Name>
+					<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Related request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/requestItineraryFromCurrentLocationWithEndPositions:andListener:andPMR:</TokenIdentifier>
+			<Abstract type="html">Method used to get a route from the user current location.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISItineraryRequest *)requestItineraryFromCurrentLocationWithEndPositions:(NSArray *)endPositions andListener:(id&lt;ISPItineraryRequestListener&gt;)listener andPMR:(Boolean)pmr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>endPositions</Name>
+					<Abstract type="html">Itinerary request end position array.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify for ISItineraryRequest events (succeeded, failed).</Abstract>
+				</Parameter><Parameter>
+					<Name>pmr</Name>
+					<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Related request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestItineraryFromCurrentLocationWithEndPositions:andListener:andPMR:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andListener:andPMR:</TokenIdentifier>
+			<Abstract type="html">Method used to get a route to the user current location.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISItineraryRequest *)requestItineraryToCurrentLocationWithStartPoint:(CGPoint)startPoint andStartMapId:(int)startMapId andListener:(id&lt;ISPItineraryRequestListener&gt;)listener andPMR:(Boolean)pmr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPoint</Name>
+					<Abstract type="html">Itinerary request start point.</Abstract>
+				</Parameter><Parameter>
+					<Name>startMapId</Name>
+					<Abstract type="html">Itinerary request start map identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify for ISItineraryRequest events (succeeded, failed).</Abstract>
+				</Parameter><Parameter>
+					<Name>pmr</Name>
+					<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Related request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andListener:andPMR:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/requestItineraryToCurrentLocationWithStartPositions:andListener:andPMR:</TokenIdentifier>
+			<Abstract type="html">Method used to get a route to the user current location.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISItineraryRequest *)requestItineraryToCurrentLocationWithStartPositions:(NSArray *)startPositions andListener:(id&lt;ISPItineraryRequestListener&gt;)listener andPMR:(Boolean)pmr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPositions</Name>
+					<Abstract type="html">Itinerary request start position array.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify for ISItineraryRequest events (succeeded, failed).</Abstract>
+				</Parameter><Parameter>
+					<Name>pmr</Name>
+					<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Related request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestItineraryToCurrentLocationWithStartPositions:andListener:andPMR:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andListener:andPMR:</TokenIdentifier>
+			<Abstract type="html">Method used to get a route between two points.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISItineraryRequest *)requestItineraryWithStartPoint:(CGPoint)startPoint andStartMapId:(int)startMapId andEndPoint:(CGPoint)endPoint andEndMapId:(int)endMapId andListener:(id&lt;ISPItineraryRequestListener&gt;)listener andPMR:(Boolean)pmr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPoint</Name>
+					<Abstract type="html">Itinerary request start point.</Abstract>
+				</Parameter><Parameter>
+					<Name>startMapId</Name>
+					<Abstract type="html">Itinerary request start map id.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPoint</Name>
+					<Abstract type="html">Itinerary request end point.</Abstract>
+				</Parameter><Parameter>
+					<Name>endMapId</Name>
+					<Abstract type="html">Itinerary request end map id.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify for ISItineraryRequest events (succeeded, failed).</Abstract>
+				</Parameter><Parameter>
+					<Name>pmr</Name>
+					<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Related request.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andListener:andPMR:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/requestItineraryWithStartPositions:andEndPositions:andListener:andPMR:</TokenIdentifier>
+			<Abstract type="html">Method used to get a route between two points.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISItineraryRequest *)requestItineraryWithStartPositions:(NSMutableArray *)startPositions andEndPositions:(NSMutableArray *)endPositions andListener:(id&lt;ISPItineraryRequestListener&gt;)listener andPMR:(Boolean)pmr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>startPositions</Name>
+					<Abstract type="html">Itinerary request start positions array.</Abstract>
+				</Parameter><Parameter>
+					<Name>endPositions</Name>
+					<Abstract type="html">Itinerary request end positions array.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify for ISItineraryRequest events (succeeded, failed).</Abstract>
+				</Parameter><Parameter>
+					<Name>pmr</Name>
+					<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Related request (nil if error).</Abstract></ReturnValue>
+			<Anchor>//api/name/requestItineraryWithStartPositions:andEndPositions:andListener:andPMR:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andListener:andPMR:</TokenIdentifier>
+			<Abstract type="html">Method used to get an optimized route between several points.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISItineraryOptimizedRequest *)requestOptimizedItineraryWithWaypoints:(NSArray *)waypoints andOptimMode:(ISEOptimizationMode)mode andKeepFirstPosition:(Boolean)keepFirstPosition andKeepLastPosition:(Boolean)keepLastPosition andListener:(id&lt;ISPItineraryRequestListener&gt;)listener andPMR:(Boolean)pmr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>waypoints</Name>
+					<Abstract type="html">Waypoints to pass through.</Abstract>
+				</Parameter><Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Algorithm optimization mode.</Abstract>
+				</Parameter><Parameter>
+					<Name>keepFirstPosition</Name>
+					<Abstract type="html">Boolean used to know if we treat the first position.</Abstract>
+				</Parameter><Parameter>
+					<Name>keepLastPosition</Name>
+					<Abstract type="html">Boolean used to know if we treat the last position.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Listener to notify for ISItineraryRequest events (succeeded, failed).</Abstract>
+				</Parameter><Parameter>
+					<Name>pmr</Name>
+					<Abstract type="html">Boolean used to know if we compute a route for disabled people.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Related request (nil if error).</Abstract></ReturnValue>
+			<Anchor>//api/name/requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andListener:andPMR:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/updateItinerary:</TokenIdentifier>
+			<Abstract type="html">Method called to update the last itinerary.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateItinerary:(ISItinerary *)itinerary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>itinerary</Name>
+					<Abstract type="html">Itinerary to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateItinerary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/preloadItineraryGraph</TokenIdentifier>
+			<Abstract type="html">Method used to load all itinerary data to memory, this way the 1st itinerary request will be faster.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)preloadItineraryGraph</Declaration>
+			
+			
+			<Anchor>//api/name/preloadItineraryGraph</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/lock</TokenIdentifier>
+			<Abstract type="html">Intern method used to lock the itinerary stuff.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)lock</Declaration>
+			
+			
+			<Anchor>//api/name/lock</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/unlock</TokenIdentifier>
+			<Abstract type="html">Intern method used to unlock the itinerary stuff.</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)unlock</Declaration>
+			
+			
+			<Anchor>//api/name/unlock</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

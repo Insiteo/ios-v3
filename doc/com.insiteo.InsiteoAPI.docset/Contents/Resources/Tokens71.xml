@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISUserSite.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISUserSite</TokenIdentifier>
+			<Abstract type="html">Class used to represent a user INSITEO site.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>
+			
+			<NodeRef refid="71"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setSiteID:</TokenIdentifier>
+			<Abstract type="html">Site identifier.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteID</Declaration>
+			
+			
+			<Anchor>//api/name/siteID</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/siteID</TokenIdentifier>
+			<Abstract type="html">Site identifier.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteID</Declaration>
+			
+			
+			<Anchor>//api/name/siteID</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setLabel:</TokenIdentifier>
+			<Abstract type="html">Site label (its name).</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/label</TokenIdentifier>
+			<Abstract type="html">Site label (its name).</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
+			
+			
+			<Anchor>//api/name/label</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setLanguages:</TokenIdentifier>
+			<Abstract type="html">Site available languages.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *languages</Declaration>
+			
+			
+			<Anchor>//api/name/languages</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/languages</TokenIdentifier>
+			<Abstract type="html">Site available languages.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *languages</Declaration>
+			
+			
+			<Anchor>//api/name/languages</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setVersions:</TokenIdentifier>
+			<Abstract type="html">Site available versions.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *versions</Declaration>
+			
+			
+			<Anchor>//api/name/versions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/versions</TokenIdentifier>
+			<Abstract type="html">Site available versions.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *versions</Declaration>
+			
+			
+			<Anchor>//api/name/versions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setServer:</TokenIdentifier>
+			<Abstract type="html">Server type.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType server</Declaration>
+			
+			
+			<Anchor>//api/name/server</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/server</TokenIdentifier>
+			<Abstract type="html">Server type.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType server</Declaration>
+			
+			
+			<Anchor>//api/name/server</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/initWithID:withLabel:withLanguages:withVersions:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithID:(int)siteId withLabel:(NSString *)label withLanguages:(NSArray *)languages withVersions:(NSArray *)versions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">Site identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">Site label (its name).</Abstract>
+				</Parameter><Parameter>
+					<Name>languages</Name>
+					<Abstract type="html">Site available languages.</Abstract>
+				</Parameter><Parameter>
+					<Name>versions</Name>
+					<Abstract type="html">Site available versions.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithID:withLabel:withLanguages:withVersions:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
