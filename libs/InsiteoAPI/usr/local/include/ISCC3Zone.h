@@ -13,8 +13,6 @@
 
 #import "CC3MeshNode.h"
 
-#define ZONE_DEFAULT_HEIGHT 3.0
-
 #import "cocos2d.h"
 #import "ISMap.h"
 
@@ -42,17 +40,11 @@
 @property (nonatomic, readwrite) ccColor3B zoneColor;
 
 /*!
- Current map scale.
- */
-@property (nonatomic, readwrite) float mapScale;
-
-/*!
  Main constructor.
  @param zone ISGfxZone zone to use for geometry.
- @param map Related map.
  @param tagName Cocos tag name to use.
  @param zoneColor 3D rendering color.
  */
-- (id)initWithZone:(ISGfxZone *)zone andMap:(ISMap *)map andTagName:(NSString *)tagName andColor:(ccColor3B)zoneColor;
+- (id)initWithZone:(ISGfxZone *)zone andTagName:(NSString *)tagName andColor:(ccColor3B)zoneColor;
 
 @end

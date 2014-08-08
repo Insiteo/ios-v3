@@ -22,6 +22,7 @@ public:
 	virtual void zoneOUT(InternalLocation * aLocation) = 0;
     virtual void onGpsStatusChange(bool aEnable) = 0;
 	virtual void onUserOnSite( bool aUserOnSite )= 0;
-	virtual void onAPMissing(InternalLocation * location, char * orderIDs, char * counts, int techno) = 0;
+	//virtual void onAPMissing(InternalLocation * location, char * orderIDs, char * counts, int techno) = 0;
+	virtual void onAPMissingV2(InternalLocation * location, char * orderIDs, char * counts, char * orderIDsseens, int techno) = 0;
 };
 

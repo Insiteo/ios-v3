@@ -80,7 +80,7 @@ public:
     void zoneOUT(InternalLocation * aLocation);
     void onGpsStatusChange(bool aEnable);
     void onUserOnSite(bool aUserOnSite);
-    void onAPMissing(InternalLocation * aLocation, char * aOrderIDs, char * aCounts, int aTechno);
+    void onAPMissingV2(InternalLocation * location, char * orderIDs, char * counts, char * orderIDsseens, int techno);
 };
 
 /*!

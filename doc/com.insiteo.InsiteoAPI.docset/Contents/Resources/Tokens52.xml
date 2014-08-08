@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISMeetMeInsCreateTmpUserRequest.html">
+	<File path="Classes/ISMeetMeInsConnectRequest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMeInsCreateTmpUserRequest</TokenIdentifier>
-			<Abstract type="html">ISMeetMeInsCreateTmpUserRequest</Abstract>
-			<DeclaredIn>ISMeetMeInsCreateTmpUserRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMeInsConnectRequest</TokenIdentifier>
+			<Abstract type="html">ISMeetMeInsConnectRequest</Abstract>
+			<DeclaredIn>ISMeetMeInsConnectRequest.h</DeclaredIn>
 			
 			<NodeRef refid="52"/>
 		</Token>

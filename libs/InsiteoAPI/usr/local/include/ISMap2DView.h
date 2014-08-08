@@ -27,18 +27,11 @@
     
 #pragma mark - Rendering
     
-    //Last computed ratio
-    double m_currentRatio;
     //Last computed offset
     CGPoint m_currentOffset;
     //Intern last rotation angle
     float m_lastRotationAngle;
 }
-
-/*!
- Last computed ratio.
- */
-@property (nonatomic, readonly) double currentRatio;
 
 /*!
  Last computed offset.

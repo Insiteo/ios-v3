@@ -54,3 +54,4 @@
 #import "ISAnalyticsGenericEvent.h"
 #import "ISAnalyticsLocationEvent.h"
 #import "ISAnalyticsManager.h"
+#import "ISPAnalyticsListener.h"

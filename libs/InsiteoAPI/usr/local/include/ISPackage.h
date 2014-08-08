@@ -26,7 +26,7 @@
  @constant ANALYTICS_PACKAGE The package that contains analytics configuration files.
  @constant GAMING_PACKAGE The package that contains gaming files.
  @constant MAP_3D_PACKAGE The package that contains all 3D files.
-
+ @constant EXTRAS_PACKAGE The package that contains all extras files.
  @constant UNKNOWN_PACKAGE Default NULL package type.
  */
 typedef enum {
@@ -42,6 +42,7 @@ typedef enum {
     GAMING_PACKAGE,
     APP_RESOURCES_PACKAGE,
     MAP_3D_PACKAGE,
+    EXTRAS_PACKAGE,
     UNKNOWN_PACKAGE,
 } ISPackageType;
 

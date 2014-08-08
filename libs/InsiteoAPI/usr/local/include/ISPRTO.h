@@ -21,6 +21,7 @@
 
 #import "ISTouch.h"
 #import "ISMap.h"
+#import "ISZonePoi.h"
 
 @class ISLayer;
 @class CC3Scene;
@@ -77,6 +78,11 @@ typedef enum {
  A RTO unique identifier for the current class.
  */
 @property (nonatomic, readonly) int rtoId;
+
+/*!
+ Related zone association (could be nil).
+ */
+@property (nonatomic, retain) ISZonePoi * zonePoi;
 
 /*!
  RTO related map identifier (@see ISERTOMapId for general).
@@ -161,11 +167,6 @@ typedef enum {
  Current map render mode (2D or 3D).
  */
 @property (nonatomic, assign) ISERenderMode renderMode;
-
-/*!
- Related zone identifier (-1 if no zone).
- */
-@property (nonatomic, readwrite) int zoneId;
 
 /*!
  Zone offset in meters

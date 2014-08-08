@@ -14,6 +14,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+extern int const DEFAULT_APPLICATION_VERSION;
+
 #import "ISPInitListener.h"
 #import "ISPCancelable.h"
 #import "ISRODBHelper.h"
@@ -468,12 +470,6 @@
  @param packageType The DB helper key used to find it.
  */
 - (void)registerDbHelper:(ISRODBHelper *)dbHelper andPackageType:(NSString *)packageType;
-
-/*
- Application should not use this method directly.
- Intern method called to reopen closed DB Helpers (to update API).
- */
-- (void)reopenDBHelpers;
 
 #pragma mark - Notify
 

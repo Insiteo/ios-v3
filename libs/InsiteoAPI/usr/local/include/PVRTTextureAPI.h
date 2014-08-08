@@ -1,8 +1,8 @@
 /******************************************************************************
 
- @File         OGLES2/PVRTTextureAPI.h
+ @File         OGLES/PVRTTextureAPI.h
 
- @Title        OGLES2/PVRTTextureAPI
+ @Title        OGLES/PVRTTextureAPI
 
  @Version      
 
@@ -10,7 +10,7 @@
 
  @Platform     ANSI compatible
 
- @Description  OGLES2 texture loading.
+ @Description  OGLES texture loading.
 
 ******************************************************************************/
 #ifndef _PVRTTEXTUREAPI_H_
@@ -81,7 +81,6 @@ EPVRTError PVRTTextureLoadFromPVR(	const char * const filename,
  @Description		Returns the bits per pixel (BPP) of the format.
 *****************************************************************************/
 unsigned int PVRTTextureFormatGetBPP(const GLuint nFormat, const GLuint nType);
-
 
 #endif /* _PVRTTEXTUREAPI_H_ */
 

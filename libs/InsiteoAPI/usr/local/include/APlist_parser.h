@@ -17,7 +17,7 @@
 #elif defined(ANDROID)
 #  include <tr1/unordered_map>
 #  define __UNORDERED_MAP   std::tr1::unordered_map
-# include "../../../EmbeddedLoc_trunk/src/EncryptionLib/src/InsiteoMACaddress.h"
+# include "../../../EmbeddedLocation/src/EncryptionLib/src/InsiteoMACaddress.h"
 #else
 #  include <unordered_map>
 #  define __UNORDERED_MAP   unordered_map

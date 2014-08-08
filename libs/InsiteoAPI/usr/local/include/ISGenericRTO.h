@@ -22,9 +22,13 @@ extern int const CLICKABLE_RTO_SIZE;
 #import "CCNode.h"
 #import "ISPRTO.h"
 #import "ISPosition.h"
+#import "ISGenericRTONode.h"
+#import "ISReverseRect.h"
+
+@class CC3Billboard;
 
 /*!
- Class which represent a basi RTO object (name + pin image).
+ Class which represent a basic RTO object (name + pin image).
  */
 @interface ISGenericRTO : CCNode <ISPRTO> {
     
@@ -32,78 +36,135 @@ extern int const CLICKABLE_RTO_SIZE;
     
 #pragma mark - Attributes
     
-    //Related map identifier
-    ISPosition * m_position;
+    //RTO position in meters
+    ISPosition * m_metersPosition;
     //Displayed name
     NSString * m_name;
+    NSString * m_label;
         
 #pragma mark - Rendering
     
     //RTO unique identifier (Map rendering)
     int m_rtoId;
-    //RTO pin image
-    CCSprite * m_pinImage;
-    //RTO textbox image
-    CCSprite * m_textBoxImage;
-    //RTO name label
-    CCLabelTTF * m_label;
+    
+    ISGenericRTONode * m_rtoNode;
+    
     //Internal boolean use to know if the textBox is hidden or not
-    Boolean m_textBoxHide;
+    Boolean m_windowDisplayed;
     //Last angle
     float m_lastAngle;
-    
-#pragma mark - Scrolling Text
-    
-    //Scrolling text value
-    int m_scrollingTextValue;
-    //RTO label default size
-    CGSize m_labelSize;
-    //Intern scroll count variable
-    int m_scrollCount;
+    CGPoint m_currentOffset;
+    float m_currentRatio;
+    ISMap * m_currentMap;
     
 #pragma mark - Touch
     
-    //Boolean used to know if its textbox was touched
-	Boolean m_textBoxTouched;
-    //Boolean used to know if its pin was touched
-	Boolean m_pinTouched;
+    //Boolean used to know if the RTO is draggable
+    Boolean m_draggable;
     //Internal point used to handle touch events
 	CGPoint m_referencePoint;
+    //Boolean used to know if its pin was touched
+	Boolean m_markerTouched;
+    //Boolean used to know if the icon was touched
+    Boolean m_actionButtonTouched;
+    //Boolean used to know if its textbox was touched
+	Boolean m_annotationTouched;
+    //Boolean used to know if the icon is clicked
+    Boolean m_actionButtonClicked;
+    
+#pragma mark - 3D
     
     //Zone offset to apply (if needed)
     CC3Vector m_zoneOffset;
     //Current render mode
     ISERenderMode m_renderMode;
-    //Related zone identifier (if needed)
-    int m_zoneId;
+    //3D main rendering node
+    CC3Node * m_cocos3dNode;
+    //3D billboard (for 3D rendering only)
+    CC3Billboard * m_billboard;
+    //Current 3D scene (for 3D rendering only)
+    CC3Scene * m_currentScene;
+    //Related Zone/Poi association (could be nil)
+    ISZonePoi * m_zonePoi;
 }
 
 /*!
+ RTO position in meters.
+ */
+@property (nonatomic, retain) ISPosition * metersPosition;
+
+/*!
+ Current rendering map.
+ */
+@property (nonatomic, retain) ISMap * currentMap;
+
+/*!
+ Boolean used to know if the RTO is draggable.
+ */
+@property (nonatomic, readwrite) Boolean draggable;
+
+/*!
+ Boolean used to know if the action button was clicked.
+ */
+@property (nonatomic, readonly) Boolean actionButtonClicked;
+
+/*!
+ Related 2D render node.
+ */
+@property (nonatomic, retain) ISGenericRTONode * rtoNode;
+
+/*!
+ Current 3D scene (for 3D rendering only).
+ */
+@property (nonatomic, assign) CC3Scene * currentScene;
+
+/*!
  Main constructor
- @param name RTO displayed label.
+ @param name RTO displayed name.
+ @param label RTO displayed label.
  @param position RTO position in meters (could be nil in case of zone rendering).
+ @param windowDisplayed Boolean used to know if the RTO window has to be displayed.
+ @param labelDisplayed Boolean used to know if the RTO label has to be displayed.
  */
-- (id)initWithName:(NSString *)name andPosition:(ISPosition *)position;
+- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)position andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed;
 
 /*!
- Method called to hide the annotation.
+ Method used to set the RTO label as displayed or not.
+ @param displayed Boolean used to set the label display state.
  */
-- (void)hideTextBox;
+- (void)setLabelDisplayed:(Boolean)displayed;
 
 /*!
- Method called to show the annotation.
+ Method used to knwo if the RTO toggle its window when the marker was clicked.
+ @return <b>YES</b> if you want a toggle action, otherwise <b>NO</b>.
  */
-- (void)showTextBox;
+- (Boolean)shouldToggleWindowOnMarkerClicked;
+
+/*!
+ Method called to hide the window.
+ */
+- (void)hideWindow;
+
+/*!
+ Method called to show the window.
+ */
+- (void)showWindow;
 
 /*!
  Method called to toggle RTO appearance.
  */
-- (void)showHide;
+- (void)toggleWindow;
 
 /*!
  Method called to render the annotation as touched or not.
  @param over <b>YES</b> if you want a touched effect, otherwise <b>NO</b>.
  */
 - (void)setOver:(Boolean)over;
+
+/*!
+ Method called to render the action button as touched or not.
+ @param over <b>YES</b> if you want a touched effect, otherwise <b>NO</b>.
+ */
+- (void)setOverAction:(Boolean)over;
 
 @end

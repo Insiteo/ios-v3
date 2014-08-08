@@ -1,36 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISLayer.html">
+	<File path="Classes/ISItineraryRequest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISLayer</TokenIdentifier>
-			<Abstract type="html">Class used to represent an INSITEO rendering layer.</Abstract>
-			<DeclaredIn>ISLayer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItineraryRequest</TokenIdentifier>
+			<Abstract type="html">Class used to represent an itinerary request.</Abstract>
+			<DeclaredIn>ISItineraryRequest.h</DeclaredIn>
 			
 			<NodeRef refid="34"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISLayer/isCocos2dInitialized</TokenIdentifier>
-			<Abstract type="html">Static method used to konw if the Cocos2d engine is initialized.</Abstract>
-			<DeclaredIn>ISLayer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRequest/setStartPositions:</TokenIdentifier>
+			<Abstract type="html">Itinerary start position array.</Abstract>
+			<DeclaredIn>ISItineraryRequest.h</DeclaredIn>			
 			
-			<Declaration>+ (Boolean)isCocos2dInitialized</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *startPositions</Declaration>
 			
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if  it&apos;s initialized, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/isCocos2dInitialized</Anchor>
+			
+			<Anchor>//api/name/startPositions</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISLayer/generateCocos2dUniqueId</TokenIdentifier>
-			<Abstract type="html">Static method used to get a unique render identifier for ISPRTO.</Abstract>
-			<DeclaredIn>ISLayer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryRequest/startPositions</TokenIdentifier>
+			<Abstract type="html">Itinerary start position array.</Abstract>
+			<DeclaredIn>ISItineraryRequest.h</DeclaredIn>			
 			
-			<Declaration>+ (int)generateCocos2dUniqueId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *startPositions</Declaration>
 			
-			<ReturnValue><Abstract type="html">InitProvider unique instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/generateCocos2dUniqueId</Anchor>
+			
+			<Anchor>//api/name/startPositions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRequest/setEndPositions:</TokenIdentifier>
+			<Abstract type="html">Itinerary end position array.</Abstract>
+			<DeclaredIn>ISItineraryRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *endPositions</Declaration>
+			
+			
+			<Anchor>//api/name/endPositions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryRequest/endPositions</TokenIdentifier>
+			<Abstract type="html">Itinerary end position array.</Abstract>
+			<DeclaredIn>ISItineraryRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *endPositions</Declaration>
+			
+			
+			<Anchor>//api/name/endPositions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRequest/initWithItineraryProvider:andLocationId:andListener:</TokenIdentifier>
+			<Abstract type="html">Secondary constructor.</Abstract>
+			<DeclaredIn>ISItineraryRequest.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andLocationId:(int)locationId andListener:(id&lt;ISPItineraryRequestListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>itineraryProvider</Name>
+					<Abstract type="html">Itinerary provider reference.</Abstract>
+				</Parameter><Parameter>
+					<Name>locationId</Name>
+					<Abstract type="html">Itinerary request location id (used to check if a valid location is available).</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Object to notify when the request succeeded or failed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithItineraryProvider:andLocationId:andListener:</Anchor>
 		</Token>
 		
 	</File>

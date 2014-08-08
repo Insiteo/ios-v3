@@ -34,6 +34,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/setListener:</TokenIdentifier>
+			<Abstract type="html">Analytics listener.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPAnalyticsListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsManager/listener</TokenIdentifier>
+			<Abstract type="html">Analytics listener.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPAnalyticsListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/ISAnalyticsManager/instance</TokenIdentifier>
 			<Abstract type="html">Static method called to get the ISAnalyticsManager unique instance.</Abstract>
 			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			

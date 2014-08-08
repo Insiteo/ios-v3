@@ -35,8 +35,6 @@
     double m_currentRatio;
 	//Renderer current offset
 	CGPoint m_currentOffset;
-    //Current displayed map identifier
-    int m_currentMapId;
     
 #pragma mark - Render
     

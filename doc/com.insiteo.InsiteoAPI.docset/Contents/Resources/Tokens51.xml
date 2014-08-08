@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISMeetMeInsCreateGroupRequest.html">
+	<File path="Classes/ISMeetMeInsChangeStatusRequest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMeInsCreateGroupRequest</TokenIdentifier>
-			<Abstract type="html">ISMeetMeInsCreateGroupRequest</Abstract>
-			<DeclaredIn>ISMeetMeInsCreateGroupRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMeInsChangeStatusRequest</TokenIdentifier>
+			<Abstract type="html">ISMeetMeInsChangeStatusRequest</Abstract>
+			<DeclaredIn>ISMeetMeInsChangeStatusRequest.h</DeclaredIn>
 			
 			<NodeRef refid="51"/>
 		</Token>

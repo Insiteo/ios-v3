@@ -17,9 +17,9 @@
 
 #import "ISLocation.h"
 #import "ISPRTO.h"
-
 #import "cocos2d.h"
 #import "CC3ShadowVolumes.h"
+#import "ISLocationNode.h"
 
 /*!
  Class used to represent a location result.
@@ -47,12 +47,10 @@
     double m_motionColorIntensity;
     //Slide wanted new position
     ISPosition * m_wantedPosition;
-    //Dot sprite
-    CCSprite * m_dot;
-    //Compass sprite
-    CCSprite * m_compass;
-    //Internal rendering accuracy count
-    float m_locCircleCount;
+    //
+    ISLocationNode * m_locationNode;
+    //
+    CCDrawNode * m_drawNode;
     //Location current azimuth
     NSNumber * m_azimuth;
     //Boolean used to store the last device orientation angle
@@ -63,13 +61,18 @@
 #pragma mark - 3D
     
     //3D sphere representation
-    CC3SphereNode * m_sphere;
+    CC3Node * m_cocos3dNode;
 }
 
 /*!
  Related location.
  */
 @property (nonatomic, retain) ISLocation * location;
+
+/*
+ Intern 2D rendering node.
+ */
+@property (nonatomic, retain) ISLocationNode * locationNode;
 
 /*!
  Current displayed map identifier.
@@ -85,11 +88,6 @@
  Location current azimuth.
  */
 @property (nonatomic, retain) NSNumber * azimuth;
-
-/*!
- Location dot sprite reference.
- */
-@property (nonatomic, retain) CCSprite * dot;
 
 /*!
  Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).

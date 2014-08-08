@@ -1,256 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGfxZone.html">
+	<File path="Classes/ISGfxMeetMePerson.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGfxZone</TokenIdentifier>
-			<Abstract type="html">Class used to represent a Map Zone.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGfxMeetMePerson</TokenIdentifier>
+			<Abstract type="html">Class used to render an ISMeetMePerson on the map.</Abstract>
+			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>
 			
 			<NodeRef refid="23"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZone:</TokenIdentifier>
-			<Abstract type="html">Related zone entitie.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/initWithPerson:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
-			
-			
-			<Anchor>//api/name/zone</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zone</TokenIdentifier>
-			<Abstract type="html">Related zone entitie.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
-			
-			
-			<Anchor>//api/name/zone</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoneHeight:</TokenIdentifier>
-			<Abstract type="html">ISZone * height.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) float zoneHeight</Declaration>
-			
-			
-			<Anchor>//api/name/zoneHeight</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoneHeight</TokenIdentifier>
-			<Abstract type="html">ISZone * height.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) float zoneHeight</Declaration>
-			
-			
-			<Anchor>//api/name/zoneHeight</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setNeedToBeDisplayed:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
-			
-			
-			<Anchor>//api/name/needToBeDisplayed</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/needToBeDisplayed</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
-			
-			
-			<Anchor>//api/name/needToBeDisplayed</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setIsTouched:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
-			
-			
-			<Anchor>//api/name/isTouched</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/isTouched</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
-			
-			
-			<Anchor>//api/name/isTouched</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoneColor:</TokenIdentifier>
-			<Abstract type="html">Zone rendering color.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
-			
-			
-			<Anchor>//api/name/zoneColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoneColor</TokenIdentifier>
-			<Abstract type="html">Zone rendering color.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
-			
-			
-			<Anchor>//api/name/zoneColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastRatio:</TokenIdentifier>
-			<Abstract type="html">Last rendering ratio.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
-			
-			
-			<Anchor>//api/name/lastRatio</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastRatio</TokenIdentifier>
-			<Abstract type="html">Last rendering ratio.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
-			
-			
-			<Anchor>//api/name/lastRatio</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastOffset:</TokenIdentifier>
-			<Abstract type="html">Last rendering offset.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
-			
-			
-			<Anchor>//api/name/lastOffset</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastOffset</TokenIdentifier>
-			<Abstract type="html">Last rendering offset.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
-			
-			
-			<Anchor>//api/name/lastOffset</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setNbShelf:</TokenIdentifier>
-			<Abstract type="html">3D shelf count.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int nbShelf</Declaration>
-			
-			
-			<Anchor>//api/name/nbShelf</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/nbShelf</TokenIdentifier>
-			<Abstract type="html">3D shelf count.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int nbShelf</Declaration>
-			
-			
-			<Anchor>//api/name/nbShelf</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/containsPoint:</TokenIdentifier>
-			<Abstract type="html">Method used to know if a point is in the concerned Zone.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>- (Boolean)containsPoint:(CGPoint)point</Declaration>
+			<Declaration>- (id)initWithPerson:(ISMeetMePerson *)person</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">Point to test.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the zone contains the point, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/containsPoint:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setOffset:andRatio:</TokenIdentifier>
-			<Abstract type="html">Method called to update the last offset and ratio computed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>- (void)setOffset:(CGPoint)offset andRatio:(float)ratio</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>offset</Name>
-					<Abstract type="html">Last offset computed.</Abstract>
-				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Last ratio computed.</Abstract>
+					<Name>person</Name>
+					<Abstract type="html">Person used for rendering (position, color, etc...).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setOffset:andRatio:</Anchor>
+			<Anchor>//api/name/initWithPerson:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</TokenIdentifier>
-			<Abstract type="html">Method called to render in 3D a RTO according to the Zone context.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/updatePerson:</TokenIdentifier>
+			<Abstract type="html">Method called to update related person information.</Abstract>
+			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
 			
-			<Declaration>- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andRTO:(id&lt;ISPRTO&gt;)rto andAngle:(float)angle</Declaration>
+			<Declaration>- (void)updatePerson:(ISMeetMePerson *)person</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>scene</Name>
-					<Abstract type="html">Current 3D scene.</Abstract>
-				</Parameter><Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">Layer where the RTO is.</Abstract>
-				</Parameter><Parameter>
-					<Name>map</Name>
-					<Abstract type="html">Current displayed map.</Abstract>
-				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Current ratio (depending on the current zoom level).</Abstract>
-				</Parameter><Parameter>
-					<Name>rto</Name>
-					<Abstract type="html">RTO to draw in.</Abstract>
-				</Parameter><Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">Current angle.</Abstract>
+					<Name>person</Name>
+					<Abstract type="html">Person to update from.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andRTO:andAngle:</Anchor>
+			<Anchor>//api/name/updatePerson:</Anchor>
 		</Token>
 		
 	</File>

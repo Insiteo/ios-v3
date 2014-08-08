@@ -94,9 +94,9 @@
     ISPosition * m_p1;
     //3D second front point
     ISPosition * m_p2;
-    //
+    //Custom geofence width. Used to create custom geofence zones on the fly
     float m_customGeoWidth;
-    //
+    //Boolean used to know if the zone is a display shelving
     Boolean m_isDisplayShelving;
 }
 

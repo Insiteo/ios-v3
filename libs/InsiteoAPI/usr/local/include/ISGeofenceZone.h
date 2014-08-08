@@ -25,12 +25,12 @@
  @constant LEFT After a position was considerer leaving and if no state change occured for a custom time, we consider that a position has left the zone.
  */
 typedef enum {
-	UNDEFINED,
+	UNDEFINED = 0,
     ENTERING,
-    ENTERED,
-    STAY,
+    ENTERED,    //2
+    STAY,       //3
     LEAVING,
-    LEFT
+    LEFT        //5
 } GeofenceEventType;
 
 /*!
@@ -60,6 +60,8 @@ typedef enum {
     Boolean m_notify;
     //Boolean used to know if we notify on left event
     Boolean m_isLeaveEnabled;
+    //Boolean used to know if the area was automatically added to the provider
+    Boolean m_autoStart;
 }
 
 /*!
@@ -111,6 +113,11 @@ typedef enum {
  Boolean used to know if we notify on left event.
  */
 @property (nonatomic, readwrite) Boolean isLeaveEnabled;
+
+/*!
+ Boolean used to know if the area was automatically added to the provider.
+ */
+@property (nonatomic, readwrite) Boolean autoStart;
 
 /*!
  Static main constructor.

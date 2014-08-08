@@ -80,12 +80,12 @@
     
     //3D rendering node
     CC3Node * m_cocos3dNode;
-    //3D itinerary spheres (used for path)
-    NSMutableArray * m_spheres;
     //Start 3D sphere
     CC3SphereNode * m_startSphere;
     //End 3D sphere
     CC3SphereNode * m_endSphere;
+    //Current 3D scene (for 3D rendering only)
+    CC3Scene * m_scene;
 }
 
 /*!
@@ -142,6 +142,11 @@
  Map view layer.
  */
 @property (assign) ISLayer * layer;
+
+/*!
+ Current 3D scene (for 3D rendering only).
+ */
+@property (assign) CC3Scene * scene;
 
 /*!
  Main constructor.

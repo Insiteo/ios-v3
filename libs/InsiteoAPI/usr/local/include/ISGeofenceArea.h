@@ -53,6 +53,8 @@
     NSString * m_extra2;
     //Extra data attribute
     NSString * m_extra3;
+    //Boolean used to know if the area was automatically added to the provider
+    Boolean m_autoStart;
 }
 
 /*!
@@ -124,6 +126,11 @@
  Extra data attribute.
  */
 @property (nonatomic, retain) NSString * extra3;
+
+/*!
+ Boolean used to know if the area was automatically added to the provider.
+ */
+@property (nonatomic, readwrite) Boolean autoStart;
 
 /*!
  Static main constructor.

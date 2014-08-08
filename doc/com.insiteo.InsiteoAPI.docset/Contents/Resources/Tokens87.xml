@@ -1,36 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPMeetMeRequestListener.html">
+	<File path="Protocols/ISPLocationRequestListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPMeetMeRequestListener</TokenIdentifier>
-			<Abstract type="html">Procotol used to handle MeetMe request events.</Abstract>
-			<DeclaredIn>ISPMeetMeRequestListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPLocationRequestListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle one shot location events.</Abstract>
+			<DeclaredIn>ISPLocationRequestListener.h</DeclaredIn>
 			
 			<NodeRef refid="87"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeRequestListener/onMeetMeRequestDoneWithSuccess:andRequest:andError:</TokenIdentifier>
-			<Abstract type="html">Method called when a MeetMe request succeeded.</Abstract>
-			<DeclaredIn>ISPMeetMeRequestListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationRequestListener/onUniqueLocationReceivedWithRequest:</TokenIdentifier>
+			<Abstract type="html">Method called when a one shot location was computed.</Abstract>
+			<DeclaredIn>ISPLocationRequestListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onMeetMeRequestDoneWithSuccess:(Boolean)success andRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error</Declaration>
+			<Declaration>- (void)onUniqueLocationReceivedWithRequest:(ISLocationRequest *)locationRequest</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>success</Name>
-					<Abstract type="html">Boolean used to know if the request succeeded.</Abstract>
-				</Parameter><Parameter>
-					<Name>request</Name>
-					<Abstract type="html">The related request.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The related error if success == false.</Abstract>
+					<Name>locationRequest</Name>
+					<Abstract type="html">Related location request (used to identify callers).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onMeetMeRequestDoneWithSuccess:andRequest:andError:</Anchor>
+			<Anchor>//api/name/onUniqueLocationReceivedWithRequest:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationRequestListener/onUniqueLocationFailedWithRequest:andError:</TokenIdentifier>
+			<Abstract type="html">Method called when a one shot location request failed.</Abstract>
+			<DeclaredIn>ISPLocationRequestListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onUniqueLocationFailedWithRequest:(ISLocationRequest *)locationRequest andError:(ISInsiteoError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationRequest</Name>
+					<Abstract type="html">Related location request (used to identify callers).</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Related Insiteo error.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onUniqueLocationFailedWithRequest:andError:</Anchor>
 		</Token>
 		
 	</File>

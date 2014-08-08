@@ -64,6 +64,8 @@
  */
 @property (nonatomic, readwrite) CGPoint mapCenter;
 
+@property (nonatomic, readonly) NSDictionary * zonesIndex;
+
 /*!
  Left value of the tile index bounds.
  */

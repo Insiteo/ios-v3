@@ -82,6 +82,15 @@
 - (id)initWithRTOClass:(Class)rtoClass andPriority:(int)priority;
 
 /*!
+ Method used to get the zone rendering position for a given RTO.
+ @param zone Zone to draw in.
+ @param rto RTO to draw.
+ @param ratio Current rendering ratio.
+ @param offset Current rendering offset.
+ */
+- (CGPoint)getZoneDrawPositionWithZone:(ISZone *)zone andRTO:(id<ISPRTO>)rto andRatio:(float)ratio andOffset:(CGPoint)offset;
+
+/*!
  Method called to remove a RTO with its identifier.
  @param rtoId RTO identifier to remove.
  */

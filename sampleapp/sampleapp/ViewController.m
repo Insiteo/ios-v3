@@ -209,7 +209,7 @@ int const ACTIONSHEET_ACTIONS = 1;
                 
                 for (ISZonePoi * zonePoi in zonesPois) {
                     //And add a new one
-                    ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalPoiId andPosition:nil];
+                    ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalPoiId andLabel:@"My label" andMetersPosition:nil andWindowDisplayed:YES andLabelDisplayed:YES];
                     [m_map2DView addRTO:rto inZone:zonePoi.zoneId];
                     [rto release];
                 }
@@ -237,7 +237,7 @@ int const ACTIONSHEET_ACTIONS = 1;
     
     for (ISZonePoi * zonePoi in zonesPois) {
         //And add a noew one
-        MyRto * rto = [[MyRto alloc] initWithName:zonePoi.externalPoiId andPosition:nil];
+        MyRto * rto = [[MyRto alloc] initWithName:zonePoi.externalPoiId andLabel:@"My label" andMetersPosition:nil andWindowDisplayed:YES andLabelDisplayed:YES];
         [m_map2DView addRTO:rto inZone:idZone withOffset:cc3v(zonePoi.offset.x, zonePoi.offset.y, 0)];
         [rto release];
     }
@@ -324,8 +324,10 @@ int const ACTIONSHEET_ACTIONS = 1;
         }
     }
     
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"STR_GEOFENCE_TITLE", nil) message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"STR_OK", nil) otherButtonTitles:nil];
-    [alert show];
+//    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"STR_GEOFENCE_TITLE", nil) message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"STR_OK", nil) otherButtonTitles:nil];
+//    [alert show];
+    
+    NSLog(@"%@", message);
 }
 
 - (void)onGeofenceDataCleared {

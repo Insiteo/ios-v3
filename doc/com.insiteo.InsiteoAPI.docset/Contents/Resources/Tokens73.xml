@@ -1,279 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISZoneCategory.html">
+	<File path="Classes/ISUserSite.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISZoneCategory</TokenIdentifier>
-			<Abstract type="html">@class ISZoneCategory
-Class used to represent the association between a Zone (MapAPI) and a Category (CatalogAPI).</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISUserSite</TokenIdentifier>
+			<Abstract type="html">Class used to represent a user INSITEO site.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>
 			
 			<NodeRef refid="73"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZoneId:</TokenIdentifier>
-			<Abstract type="html">Related zone identifier.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setSiteID:</TokenIdentifier>
+			<Abstract type="html">Site identifier.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int zoneId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int siteID</Declaration>
 			
 			
-			<Anchor>//api/name/zoneId</Anchor>
+			<Anchor>//api/name/siteID</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zoneId</TokenIdentifier>
-			<Abstract type="html">Related zone identifier.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/siteID</TokenIdentifier>
+			<Abstract type="html">Site identifier.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int zoneId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int siteID</Declaration>
 			
 			
-			<Anchor>//api/name/zoneId</Anchor>
+			<Anchor>//api/name/siteID</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZoneName:</TokenIdentifier>
-			<Abstract type="html">Related zone name.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setLabel:</TokenIdentifier>
+			<Abstract type="html">Site label (its name).</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *zoneName</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
 			
 			
-			<Anchor>//api/name/zoneName</Anchor>
+			<Anchor>//api/name/label</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zoneName</TokenIdentifier>
-			<Abstract type="html">Related zone name.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/label</TokenIdentifier>
+			<Abstract type="html">Site label (its name).</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *zoneName</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
 			
 			
-			<Anchor>//api/name/zoneName</Anchor>
+			<Anchor>//api/name/label</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setCategoryId:</TokenIdentifier>
-			<Abstract type="html">Related poiId.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setLanguages:</TokenIdentifier>
+			<Abstract type="html">Site available languages.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *categoryId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *languages</Declaration>
 			
 			
-			<Anchor>//api/name/categoryId</Anchor>
+			<Anchor>//api/name/languages</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/categoryId</TokenIdentifier>
-			<Abstract type="html">Related poiId.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/languages</TokenIdentifier>
+			<Abstract type="html">Site available languages.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *categoryId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *languages</Declaration>
 			
 			
-			<Anchor>//api/name/categoryId</Anchor>
+			<Anchor>//api/name/languages</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setOffsetX:</TokenIdentifier>
-			<Abstract type="html">Poi x offset from zone center.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setVersions:</TokenIdentifier>
+			<Abstract type="html">Site available versions.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float offsetX</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *versions</Declaration>
 			
 			
-			<Anchor>//api/name/offsetX</Anchor>
+			<Anchor>//api/name/versions</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/offsetX</TokenIdentifier>
-			<Abstract type="html">Poi x offset from zone center.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/versions</TokenIdentifier>
+			<Abstract type="html">Site available versions.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float offsetX</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *versions</Declaration>
 			
 			
-			<Anchor>//api/name/offsetX</Anchor>
+			<Anchor>//api/name/versions</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setOffsetY:</TokenIdentifier>
-			<Abstract type="html">Poi y offset from zone center.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setServer:</TokenIdentifier>
+			<Abstract type="html">Server type.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float offsetY</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEServerType server</Declaration>
 			
 			
-			<Anchor>//api/name/offsetY</Anchor>
+			<Anchor>//api/name/server</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/offsetY</TokenIdentifier>
-			<Abstract type="html">Poi y offset from zone center.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/server</TokenIdentifier>
+			<Abstract type="html">Server type.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) float offsetY</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEServerType server</Declaration>
 			
 			
-			<Anchor>//api/name/offsetY</Anchor>
+			<Anchor>//api/name/server</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setMapId:</TokenIdentifier>
-			<Abstract type="html">Related map identifier.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/initWithID:withLabel:withLanguages:withVersions:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			<Declaration>- (id)initWithID:(int)siteId withLabel:(NSString *)label withLanguages:(NSArray *)languages withVersions:(NSArray *)versions</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">Site identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">Site label (its name).</Abstract>
+				</Parameter><Parameter>
+					<Name>languages</Name>
+					<Abstract type="html">Site available languages.</Abstract>
+				</Parameter><Parameter>
+					<Name>versions</Name>
+					<Abstract type="html">Site available versions.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/mapId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/mapId</TokenIdentifier>
-			<Abstract type="html">Related map identifier.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
-			
-			
-			<Anchor>//api/name/mapId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZonePosX:</TokenIdentifier>
-			<Abstract type="html">Related zone x coordinates (in meters).</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float zonePosX</Declaration>
-			
-			
-			<Anchor>//api/name/zonePosX</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zonePosX</TokenIdentifier>
-			<Abstract type="html">Related zone x coordinates (in meters).</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float zonePosX</Declaration>
-			
-			
-			<Anchor>//api/name/zonePosX</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZonePosY:</TokenIdentifier>
-			<Abstract type="html">Related zone y coordinates (in meters).</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float zonePosY</Declaration>
-			
-			
-			<Anchor>//api/name/zonePosY</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zonePosY</TokenIdentifier>
-			<Abstract type="html">Related zone y coordinates (in meters).</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float zonePosY</Declaration>
-			
-			
-			<Anchor>//api/name/zonePosY</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setExtra1:</TokenIdentifier>
-			<Abstract type="html">NSString extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
-			
-			
-			<Anchor>//api/name/extra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/extra1</TokenIdentifier>
-			<Abstract type="html">NSString extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
-			
-			
-			<Anchor>//api/name/extra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setExtra2:</TokenIdentifier>
-			<Abstract type="html">NSString extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
-			
-			
-			<Anchor>//api/name/extra2</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/extra2</TokenIdentifier>
-			<Abstract type="html">NSString extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
-			
-			
-			<Anchor>//api/name/extra2</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setExtra3:</TokenIdentifier>
-			<Abstract type="html">NSString extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
-			
-			
-			<Anchor>//api/name/extra3</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/extra3</TokenIdentifier>
-			<Abstract type="html">NSString extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
-			
-			
-			<Anchor>//api/name/extra3</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setFExtra1:</TokenIdentifier>
-			<Abstract type="html">Float extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/fExtra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/fExtra1</TokenIdentifier>
-			<Abstract type="html">Float extra parameter.</Abstract>
-			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/fExtra1</Anchor>
+			<Anchor>//api/name/initWithID:withLabel:withLanguages:withVersions:</Anchor>
 		</Token>
 		
 	</File>

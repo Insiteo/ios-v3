@@ -13,6 +13,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern float DEFAULT_ZONE_HEIGHT;
+
 #import "cocos2d.h"
 #import "ISPosition.h"
 #import "ISZone.h"
@@ -74,11 +76,6 @@
 @property (nonatomic, retain) ISZone * zone;
 
 /*!
- ISZone * height.
- */
-@property (nonatomic, readonly) float zoneHeight;
-
-/*!
  Boolean used to know if the zone needs to be displayed.
  */
 @property (nonatomic, readwrite) Boolean needToBeDisplayed;
@@ -113,6 +110,12 @@
  */
 @property (nonatomic, readwrite) int nbShelf;
 
+/*!
+ Main constructor.
+ @param zone Related zone entitie.
+ @param map Zone map entitie.
+ @param renderMode Current render mode.
+ */
 - (id)initWithZone:(ISZone *)zone andMap:(ISMap *)map andRenderMode:(ISERenderMode)renderMode;
 
 /*!
@@ -130,14 +133,10 @@
 - (void)setOffset:(CGPoint)offset andRatio:(float)ratio;
 
 /*!
- Method called to render in 3D a RTO according to the Zone context.
- @param scene Current 3D scene.
- @param layer Layer where the RTO is.
- @param map Current displayed map.
- @param ratio Current ratio (depending on the current zoom level).
- @param rto RTO to draw in.
- @param angle Current angle.
+ Static method used to get an ISZone height.
+ @param zone Concerned zone.
+ @return Given zone height.
  */
-- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andRTO:(id<ISPRTO>)rto andAngle:(float)angle;
++ (float)zoneHeight:(ISZone *)zone;
 
 @end

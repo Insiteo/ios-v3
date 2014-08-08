@@ -15,6 +15,7 @@
 
 #import "ISAnalyticsGenericEvent.h"
 #import "ISAnalyticsLocationEvent.h"
+#import "ISPAnalyticsListener.h"
 
 @class AnalyticsThread;
 @class AnalyticsConfig;
@@ -45,12 +46,19 @@
     NSDate * m_lastLocationDate;
     //Request thread
     AnalyticsThread * m_thread;
+    //Analytics listener
+    id<ISPAnalyticsListener> m_listener;
 }
 
 /*!
  Analytics configuration.
  */
 @property (nonatomic, retain) AnalyticsConfig * config;
+
+/*!
+ Analytics listener.
+ */
+@property (assign) id<ISPAnalyticsListener> listener;
 
 /*!
  Static method called to get the ISAnalyticsManager unique instance.

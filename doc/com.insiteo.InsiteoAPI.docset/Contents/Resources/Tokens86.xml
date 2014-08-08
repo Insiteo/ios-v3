@@ -1,49 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPMeetMeListener.html">
+	<File path="Protocols/ISPLocationListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPMeetMeListener</TokenIdentifier>
-			<Abstract type="html">Protocol used to handle general MeetMe events.</Abstract>
-			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPLocationListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle Location events.</Abstract>
+			<DeclaredIn>ISPLocationListener.h</DeclaredIn>
 			
 			<NodeRef refid="86"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onPersonsReceived:andGroups:</TokenIdentifier>
-			<Abstract type="html">Method called when new persons and new groups are available.</Abstract>
-			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationListener/onLocationInitDoneWithSuccess:andError:</TokenIdentifier>
+			<Abstract type="html">Method called when the location init is done.</Abstract>
+			<DeclaredIn>ISPLocationListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onPersonsReceived:(NSDictionary *)persons andGroups:(NSDictionary *)groups</Declaration>
+			<Declaration>- (void)onLocationInitDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>persons</Name>
-					<Abstract type="html">The new available persons.</Abstract>
+					<Name>success</Name>
+					<Abstract type="html">Boolean used to know if the initialization succeeded or not.</Abstract>
 				</Parameter><Parameter>
-					<Name>groups</Name>
-					<Abstract type="html">The new available groups.</Abstract>
+					<Name>error</Name>
+					<Abstract type="html">Relative fail error. Could be nil if success.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onPersonsReceived:andGroups:</Anchor>
+			<Anchor>//api/name/onLocationInitDoneWithSuccess:andError:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onMeetMeError:</TokenIdentifier>
-			<Abstract type="html">Method called when a MeetMe error occured.</Abstract>
-			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationListener/onLocationReceived:</TokenIdentifier>
+			<Abstract type="html">Method called when a new location is received.</Abstract>
+			<DeclaredIn>ISPLocationListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onMeetMeError:(ISInsiteoError *)error</Declaration>
+			<Declaration>- (void)onLocationReceived:(ISLocation *)location</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The related ISInsiteoError (code, message).</Abstract>
+					<Name>location</Name>
+					<Abstract type="html">New location received.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onMeetMeError:</Anchor>
+			<Anchor>//api/name/onLocationReceived:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationListener/onAzimuthReceived:</TokenIdentifier>
+			<Abstract type="html">Method called when a new azimuth is received.</Abstract>
+			<DeclaredIn>ISPLocationListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onAzimuthReceived:(float)azimuth</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>azimuth</Name>
+					<Abstract type="html">Updated azimuth.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onAzimuthReceived:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationListener/noRegisteredBeaconDetected</TokenIdentifier>
+			<Abstract type="html">Method called when no registered beacon were detected.</Abstract>
+			<DeclaredIn>ISPLocationListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)noRegisteredBeaconDetected</Declaration>
+			
+			
+			<Anchor>//api/name/noRegisteredBeaconDetected</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationListener/onLocationLost:</TokenIdentifier>
+			<Abstract type="html">Method called when the location computed is lost.</Abstract>
+			<DeclaredIn>ISPLocationListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onLocationLost:(ISPosition *)lastPosition</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lastPosition</Name>
+					<Abstract type="html">The last known position.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onLocationLost:</Anchor>
 		</Token>
 		
 	</File>
