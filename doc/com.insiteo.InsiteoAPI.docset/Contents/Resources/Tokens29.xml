@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISItinerary.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItinerary</TokenIdentifier>
+			<Abstract type="html">Class used to define an Itinerary with its instructions.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setStartPoint:</TokenIdentifier>
+			<Abstract type="html">Start point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint startPoint</Declaration>
+			
+			
+			<Anchor>//api/name/startPoint</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/startPoint</TokenIdentifier>
+			<Abstract type="html">Start point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint startPoint</Declaration>
+			
+			
+			<Anchor>//api/name/startPoint</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setStartMapId:</TokenIdentifier>
+			<Abstract type="html">Start map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int startMapId</Declaration>
+			
+			
+			<Anchor>//api/name/startMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/startMapId</TokenIdentifier>
+			<Abstract type="html">Start map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int startMapId</Declaration>
+			
+			
+			<Anchor>//api/name/startMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setEndPoint:</TokenIdentifier>
+			<Abstract type="html">End point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint endPoint</Declaration>
+			
+			
+			<Anchor>//api/name/endPoint</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/endPoint</TokenIdentifier>
+			<Abstract type="html">End point.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint endPoint</Declaration>
+			
+			
+			<Anchor>//api/name/endPoint</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setEndMapId:</TokenIdentifier>
+			<Abstract type="html">End map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int endMapId</Declaration>
+			
+			
+			<Anchor>//api/name/endMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/endMapId</TokenIdentifier>
+			<Abstract type="html">End map identifier.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int endMapId</Declaration>
+			
+			
+			<Anchor>//api/name/endMapId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setInstructions:</TokenIdentifier>
+			<Abstract type="html">An array that contains all the itinerary instructions (array of ISInstruction.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *instructions</Declaration>
+			
+			
+			<Anchor>//api/name/instructions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/instructions</TokenIdentifier>
+			<Abstract type="html">An array that contains all the itinerary instructions (array of ISInstruction.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableArray *instructions</Declaration>
+			
+			
+			<Anchor>//api/name/instructions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setCostTime:</TokenIdentifier>
+			<Abstract type="html">Time cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *costTime</Declaration>
+			
+			
+			<Anchor>//api/name/costTime</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/costTime</TokenIdentifier>
+			<Abstract type="html">Time cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *costTime</Declaration>
+			
+			
+			<Anchor>//api/name/costTime</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setCostDist:</TokenIdentifier>
+			<Abstract type="html">Distance cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *costDist</Declaration>
+			
+			
+			<Anchor>//api/name/costDist</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/costDist</TokenIdentifier>
+			<Abstract type="html">Distance cost.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSNumber *costDist</Declaration>
+			
+			
+			<Anchor>//api/name/costDist</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/setBoundingRects:</TokenIdentifier>
+			<Abstract type="html">A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *boundingRects</Declaration>
+			
+			
+			<Anchor>//api/name/boundingRects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItinerary/boundingRects</TokenIdentifier>
+			<Abstract type="html">A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *boundingRects</Declaration>
+			
+			
+			<Anchor>//api/name/boundingRects</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItinerary/getNbSections</TokenIdentifier>
+			<Abstract type="html">Method used to get the total amout of sections.</Abstract>
+			<DeclaredIn>ISItineraryStructures.h</DeclaredIn>			
+			
+			<Declaration>- (int)getNbSections</Declaration>
+			
+			<ReturnValue><Abstract type="html">The total amout of sections.</Abstract></ReturnValue>
+			<Anchor>//api/name/getNbSections</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

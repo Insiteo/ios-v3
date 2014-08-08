@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPItineraryRenderListener.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPItineraryRenderListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle Itinerary special touch events.</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>
+			
+			<NodeRef refid="83"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPItineraryRenderListener/onWaypointClickedWithItinerary:andInstructionIndex:andSection:</TokenIdentifier>
+			<Abstract type="html">Method called when an Itinerary section was touched.</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onWaypointClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex andSection:(ISSection *)section</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>itinerary</Name>
+					<Abstract type="html">The related ISItinerary.</Abstract>
+				</Parameter><Parameter>
+					<Name>instructionIndex</Name>
+					<Abstract type="html">The related ISInstruction index.</Abstract>
+				</Parameter><Parameter>
+					<Name>section</Name>
+					<Abstract type="html">The touched ISSection.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onWaypointClickedWithItinerary:andInstructionIndex:andSection:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPItineraryRenderListener/onInstructionClickedWithItinerary:andInstructionIndex:</TokenIdentifier>
+			<Abstract type="html">Method called when an Itinerary instruction was touched (edges).</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onInstructionClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>itinerary</Name>
+					<Abstract type="html">The related ISItinerary.</Abstract>
+				</Parameter><Parameter>
+					<Name>instructionIndex</Name>
+					<Abstract type="html">The related ISInstruction index.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onInstructionClickedWithItinerary:andInstructionIndex:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPItineraryRenderListener/onMapSwitcherClickedWithNextPosition:</TokenIdentifier>
+			<Abstract type="html">Method called when an Itinerary map switcher was touched (waypoint used to change map).</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onMapSwitcherClickedWithNextPosition:(ISPosition *)nextPosition</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>nextPosition</Name>
+					<Abstract type="html">The next position to display.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onMapSwitcherClickedWithNextPosition:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

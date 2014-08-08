@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISPackage.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISPackage</TokenIdentifier>
+			<Abstract type="html">Class used to represent an INSITEO data package.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>
+			
+			<NodeRef refid="63"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setPackageType:</TokenIdentifier>
+			<Abstract type="html">Package type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISPackageType packageType</Declaration>
+			
+			
+			<Anchor>//api/name/packageType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/packageType</TokenIdentifier>
+			<Abstract type="html">Package type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISPackageType packageType</Declaration>
+			
+			
+			<Anchor>//api/name/packageType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setFileUrl:</TokenIdentifier>
+			<Abstract type="html">URL to download it.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *fileUrl</Declaration>
+			
+			
+			<Anchor>//api/name/fileUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/fileUrl</TokenIdentifier>
+			<Abstract type="html">URL to download it.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *fileUrl</Declaration>
+			
+			
+			<Anchor>//api/name/fileUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setVersion:</TokenIdentifier>
+			<Abstract type="html">Package version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int version</Declaration>
+			
+			
+			<Anchor>//api/name/version</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/version</TokenIdentifier>
+			<Abstract type="html">Package version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int version</Declaration>
+			
+			
+			<Anchor>//api/name/version</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setZipMd5:</TokenIdentifier>
+			<Abstract type="html">Package zip MD5.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipMd5</Declaration>
+			
+			
+			<Anchor>//api/name/zipMd5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/zipMd5</TokenIdentifier>
+			<Abstract type="html">Package zip MD5.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipMd5</Declaration>
+			
+			
+			<Anchor>//api/name/zipMd5</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setSize:</TokenIdentifier>
+			<Abstract type="html">Package size.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/size</TokenIdentifier>
+			<Abstract type="html">Package size.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int size</Declaration>
+			
+			
+			<Anchor>//api/name/size</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setSiteId:</TokenIdentifier>
+			<Abstract type="html">Package related site identifier.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/siteId</TokenIdentifier>
+			<Abstract type="html">Package related site identifier.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setApplicationVersion:</TokenIdentifier>
+			<Abstract type="html">Package related application version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/applicationVersion</TokenIdentifier>
+			<Abstract type="html">Package related application version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setLanguage:</TokenIdentifier>
+			<Abstract type="html">Package related language.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/language</TokenIdentifier>
+			<Abstract type="html">Package related language.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setServerType:</TokenIdentifier>
+			<Abstract type="html">Package related INSITEO server type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/serverType</TokenIdentifier>
+			<Abstract type="html">Package related INSITEO server type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setZipPath:</TokenIdentifier>
+			<Abstract type="html">Package temporary zip path.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipPath</Declaration>
+			
+			
+			<Anchor>//api/name/zipPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/zipPath</TokenIdentifier>
+			<Abstract type="html">Package temporary zip path.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipPath</Declaration>
+			
+			
+			<Anchor>//api/name/zipPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/initWithSiteId:andApplicationVersion:andLanguage:andZipPath:andServerType:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language andZipPath:(NSString *)zipPath andServerType:(ISEServerType)serverType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>siteId</Name>
+					<Abstract type="html">Package related site identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>applicationVersion</Name>
+					<Abstract type="html">Package related application version.</Abstract>
+				</Parameter><Parameter>
+					<Name>language</Name>
+					<Abstract type="html">Package related language.</Abstract>
+				</Parameter><Parameter>
+					<Name>zipPath</Name>
+					<Abstract type="html">Temporary package zipPath. (Could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">INSITEO server type.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithSiteId:andApplicationVersion:andLanguage:andZipPath:andServerType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISPackage/getPackageType:</TokenIdentifier>
+			<Abstract type="html">Static method used to know if the filename parameter corresponds to a known INSITEO package.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>+ (ISPackageType)getPackageType:(NSString *)filename</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filename</Name>
+					<Abstract type="html">The filename to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related ISPackageType. Could be UNKNOWN_PACKAGE.</Abstract></ReturnValue>
+			<Anchor>//api/name/getPackageType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISPackage/getPackageTypeWithDirectoryName:</TokenIdentifier>
+			<Abstract type="html">Static method used to know if the directoryName parameter corresponds to a known INSITEO package.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>+ (ISPackageType)getPackageTypeWithDirectoryName:(NSString *)directoryName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>directoryName</Name>
+					<Abstract type="html">The wanted package directory name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related ISPackageType. Could be UNKNOWN_PACKAGE.</Abstract></ReturnValue>
+			<Anchor>//api/name/getPackageTypeWithDirectoryName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISPackage/getDirectoryNameWithType:</TokenIdentifier>
+			<Abstract type="html">Static method used to get the application directory related to a specific package type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getDirectoryNameWithType:(ISPackageType)type</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>type</Name>
+					<Abstract type="html">Package type to consider.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related directory path. Could be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDirectoryNameWithType:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

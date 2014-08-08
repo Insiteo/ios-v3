@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPLbsModule.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPLbsModule</TokenIdentifier>
+			<Abstract type="html">Protocol used to define a Location module.</Abstract>
+			<DeclaredIn>ISPLbsModule.h</DeclaredIn>
+			
+			<NodeRef refid="85"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLbsModuleType:</TokenIdentifier>
+			<Abstract type="html">Lbs module type (see enum for details).</Abstract>
+			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) LbsModuleType lbsModuleType</Declaration>
+			
+			
+			<Anchor>//api/name/lbsModuleType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPLbsModule/lbsModuleType</TokenIdentifier>
+			<Abstract type="html">Lbs module type (see enum for details).</Abstract>
+			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			
+			<Declaration>@property (readonly) LbsModuleType lbsModuleType</Declaration>
+			
+			
+			<Anchor>//api/name/lbsModuleType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/addLbsModuleRequest:</TokenIdentifier>
+			<Abstract type="html">Method called to add module data to the Lbs request.</Abstract>
+			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)addLbsModuleRequest:(id&lt;PLbsModuleRequest&gt;)locRequest</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locRequest</Name>
+					<Abstract type="html">Location request.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addLbsModuleRequest:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLbsResponse:</TokenIdentifier>
+			<Abstract type="html">Method called to set module Lbs response.</Abstract>
+			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			
+			<Declaration>- (void)setLbsResponse:(id&lt;PLbsModuleResponse&gt;)locResponse</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locResponse</Name>
+					<Abstract type="html">Location response.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLbsResponse:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLocation:</TokenIdentifier>
+			<Abstract type="html">Method called set the last location to the location module.</Abstract>
+			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			
+			<Declaration>- (void)setLocation:(ISLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">Last location get from the location provider.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLocation:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/clear</TokenIdentifier>
+			<Abstract type="html">Clear all data from this LBSModule. Module will need to be initialized before being used again.</Abstract>
+			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			
+			<Declaration>- (void)clear</Declaration>
+			
+			
+			<Anchor>//api/name/clear</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

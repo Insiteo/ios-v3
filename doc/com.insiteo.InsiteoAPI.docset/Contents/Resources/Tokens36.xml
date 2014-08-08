@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISLocation.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISLocation</TokenIdentifier>
+			<Abstract type="html">Class used to represent a location result.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/setPosition:</TokenIdentifier>
+			<Abstract type="html">Location position (x, y, mapId.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			
+			
+			<Anchor>//api/name/position</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocation/position</TokenIdentifier>
+			<Abstract type="html">Location position (x, y, mapId.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			
+			
+			<Anchor>//api/name/position</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/setAccuracy:</TokenIdentifier>
+			<Abstract type="html">Location accuracy.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double accuracy</Declaration>
+			
+			
+			<Anchor>//api/name/accuracy</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocation/accuracy</TokenIdentifier>
+			<Abstract type="html">Location accuracy.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double accuracy</Declaration>
+			
+			
+			<Anchor>//api/name/accuracy</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/setLocationType:</TokenIdentifier>
+			<Abstract type="html">Location type (0 WIFI, 1 BLE, 2 GPS, 3 STEP, 4 FAKE).</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int locationType</Declaration>
+			
+			
+			<Anchor>//api/name/locationType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocation/locationType</TokenIdentifier>
+			<Abstract type="html">Location type (0 WIFI, 1 BLE, 2 GPS, 3 STEP, 4 FAKE).</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int locationType</Declaration>
+			
+			
+			<Anchor>//api/name/locationType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/initWithLocationType:andMapId:andX:andY:andAccuracy:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithLocationType:(int)locationType andMapId:(int)mapId andX:(double)x andY:(double)y andAccuracy:(double)accuracy</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationType</Name>
+					<Abstract type="html">Location type (used modules).</Abstract>
+				</Parameter><Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">Location map id.</Abstract>
+				</Parameter><Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X coordinate (in meters).</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y coordinate (in meters).</Abstract>
+				</Parameter><Parameter>
+					<Name>accuracy</Name>
+					<Abstract type="html">Location accuracy.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithLocationType:andMapId:andX:andY:andAccuracy:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/initWithLocation:</TokenIdentifier>
+			<Abstract type="html">Second constructor.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithLocation:(ISLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">Location to copy.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithLocation:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/updateWithLocation:</TokenIdentifier>
+			<Abstract type="html">Method used to update the location with another location.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateWithLocation:(ISLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">Location to use.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateWithLocation:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/x</TokenIdentifier>
+			<Abstract type="html">Accessor used to get the x coordinate.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>- (double)x</Declaration>
+			
+			
+			<Anchor>//api/name/x</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/y</TokenIdentifier>
+			<Abstract type="html">Accessor used to get the y coordinate.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>- (double)y</Declaration>
+			
+			
+			<Anchor>//api/name/y</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/mapId</TokenIdentifier>
+			<Abstract type="html">Accessor used to get the map identifier.</Abstract>
+			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			
+			<Declaration>- (int)mapId</Declaration>
+			
+			
+			<Anchor>//api/name/mapId</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

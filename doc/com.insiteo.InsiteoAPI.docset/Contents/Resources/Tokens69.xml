@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISReverseRect.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISReverseRect</TokenIdentifier>
+			<Abstract type="html">Class used to represent a rectangle defined by 4 int values (left, top, right, bottom) but whith the Y axis reversed (ex: 0/150/50/0).</Abstract>
+			<DeclaredIn>ISReverseRect.h</DeclaredIn>
+			
+			<NodeRef refid="69"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>
