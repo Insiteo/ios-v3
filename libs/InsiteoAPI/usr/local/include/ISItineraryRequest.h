@@ -39,14 +39,12 @@
     
 #pragma mark - Internal
     
-    //Start date
-    NSDate * m_startDate;
     //Timer used to check if a location is available
     NSTimer * m_locationTimer;
-    //Location id used to know if a new location is available
-    int m_locationId;
     //Boolean used to know if the request is from user location
     Boolean m_isFromUserLocation;
+    //
+    Boolean m_fromOrToLocation;
 }
 
 /*!
@@ -62,9 +60,9 @@
 /*!
  Secondary constructor.
  @param itineraryProvider Itinerary provider reference.
- @param locationId Itinerary request location id (used to check if a valid location is available).
+ @param fromOrToLocation Boolean used to know if the request is from or to a user location.
  @param listener Object to notify when the request succeeded or failed.
  */
-- (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andLocationId:(int)locationId andListener:(id<ISPItineraryRequestListener>)listener;
+- (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andFromOrToLocation:(Boolean)fromOrToLocation andListener:(id<ISPItineraryRequestListener>)listener;
 
 @end

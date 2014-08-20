@@ -18,6 +18,7 @@
 #import "ISPItineraryRequestListener.h"
 
 @class ISItineraryProvider;
+@class ISLocation;
 
 /*!
  Class used to represent a base itinerary request.
@@ -37,6 +38,8 @@
     id<ISPItineraryRequestListener> m_listener;
     //ISItineraryProvider reference
     ISItineraryProvider * m_itineraryProvider;
+    //
+    Boolean m_isFinished;
     
 #pragma mark - ISPCancelable
     
@@ -72,6 +75,8 @@
  @param listener Object to notify when the request succeeded or failed.
  */
 - (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andListener:(id<ISPItineraryRequestListener>)listener;
+
+- (void)setLocation:(ISLocation *)location;
 
 /*!
  Method called to execute the Itinerary request.

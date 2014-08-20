@@ -129,12 +129,6 @@
 @property (nonatomic, retain) ISItineraryRenderer * renderer;
 
 /*!
- Static method used to get the last location identifier.
- @return Current location get id.
- */
-+ (int)getLocationId;
-
-/*!
  Method used to get a route from the user current location.
  @param endPoint Itinerary request end point.
  @param endMapId Itinerary request end map identifier.
