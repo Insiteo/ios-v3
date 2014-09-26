@@ -118,6 +118,11 @@ extern NSString * const PACK_APP_RESOURCES_DIRECTORY_NAME;
 extern NSString * const PACK_3D_DIRECTORY_NAME;
 
 /*!
+ @"Extra"
+ */
+extern NSString * const PACK_EXTRAS_DIRECTORY_NAME;
+
+/*!
  Class used to represent an INSITEO data package.
  */
 @interface ISPackage : NSObject {

@@ -86,6 +86,26 @@ extern int const CLICKABLE_RTO_SIZE;
     CC3Scene * m_currentScene;
     //Related Zone/Poi association (could be nil)
     ISZonePoi * m_zonePoi;
+    
+#pragma mark - ISGenericRTONode
+    
+    //Annotation
+    UIColor * m_windowBackgroundColorNormal;
+    UIColor * m_windowBackgroundColorHighlighted;
+    
+    //Action
+    NSString * m_actionImagePath;
+    UIColor * m_actionBackgroundColorNormal;
+    UIColor * m_actionBackgroundColorHighlighted;
+    
+    //Indicator
+    NSString * m_indicatorImagePath;
+    
+    //Anchor
+    NSString * m_windowAnchorImagePath;
+    
+    //Marker
+    NSString * m_markerImagePath;
 }
 
 /*!
@@ -118,15 +138,59 @@ extern int const CLICKABLE_RTO_SIZE;
  */
 @property (nonatomic, assign) CC3Scene * currentScene;
 
+#pragma mark - ISGenericRTONode
+
+/*!
+ RTO window background color for normal state.
+ */
+@property (nonatomic, retain) UIColor * windowBackgroundColorNormal;
+
+/*!
+ RTO window background color for highlighted state.
+ */
+@property (nonatomic, retain) UIColor * windowBackgroundColorHighlighted;
+
+/*!
+ RTO action button sprite image path.
+ */
+@property (nonatomic, retain) NSString * actionImagePath;
+
+/*!
+ RTO action button background color for normal state.
+ */
+@property (nonatomic, retain) UIColor * actionBackgroundColorNormal;
+
+/*!
+ RTO action button background color for highlighted state.
+ */
+@property (nonatomic, retain) UIColor * actionBackgroundColorHighlighted;
+
+/*!
+ RTO indicator sprite image path.
+ */
+@property (nonatomic, retain) NSString * indicatorImagePath;
+
+/*!
+ RTO window anchor sprite image path.
+ */
+@property (nonatomic, retain) NSString * windowAnchorImagePath;
+
+/*!
+ RTO marker sprite image path.
+ */
+@property (nonatomic, retain) NSString * markerImagePath;
+
 /*!
  Main constructor
  @param name RTO displayed name.
  @param label RTO displayed label.
- @param position RTO position in meters (could be nil in case of zone rendering).
+ @param metersPosition RTO position in meters (could be nil in case of zone rendering).
  @param windowDisplayed Boolean used to know if the RTO window has to be displayed.
  @param labelDisplayed Boolean used to know if the RTO label has to be displayed.
  */
-- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)position andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed;
+- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed;
+
+- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath;
 
 /*!
  Method used to set the RTO label as displayed or not.

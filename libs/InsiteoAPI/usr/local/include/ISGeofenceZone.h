@@ -14,6 +14,8 @@
 #import <Foundation/Foundation.h>
 
 @class ISPosition;
+@class ISZone;
+@class ISZonePoi;
 
 /*!
  Enum used to represent a geofencing zone state.
@@ -62,6 +64,10 @@ typedef enum {
     Boolean m_isLeaveEnabled;
     //Boolean used to know if the area was automatically added to the provider
     Boolean m_autoStart;
+    //Related ISZone, could be nil
+    ISZone * m_zone;
+    //Related ISZonePOI, could be nil
+    ISZonePoi * m_zonePoi;
 }
 
 /*!
@@ -118,6 +124,16 @@ typedef enum {
  Boolean used to know if the area was automatically added to the provider.
  */
 @property (nonatomic, readwrite) Boolean autoStart;
+
+/*!
+ Related ISZone. Could be nil.
+ */
+@property (nonatomic, retain) ISZone * zone;
+
+/*!
+ Related ISZonePoi. Could be nil.
+ */
+@property (nonatomic, retain) ISZonePoi * zonePoi;
 
 /*!
  Static main constructor.

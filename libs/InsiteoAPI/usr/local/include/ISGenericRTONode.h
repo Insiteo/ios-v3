@@ -23,13 +23,12 @@
     //Window
     CCNode * m_windowNode;
     
+    //Annotation
     UIColor * m_windowBackgroundColorNormal;
     UIColor * m_windowBackgroundColorHighlighted;
-    
-    //Annotation
     CCLayerColor * m_annotationLayerColor;
     
-    //Indicator
+    //Action
     CCSprite * m_actionBackgroundSprite;
     CCSprite * m_actionSprite;
     
@@ -52,7 +51,11 @@
     NSString * m_windowAnchorImagePath;
     
     //Marker
+    NSString * m_markerImagePath;
     CCSprite * m_markerSprite;
+    
+    //Name
+    CCLabelTTF * m_descriptionName;
     
     //Description label
     CCLabelTTF * m_descriptionStrokeLabel;
@@ -140,9 +143,19 @@
 @property (nonatomic, retain) NSString * windowAnchorImagePath;
 
 /*!
+ RTO marker sprite image path.
+ */
+@property (nonatomic, retain) NSString * markerImagePath;
+
+/*!
  RTO marker cocos2d sprite.
  */
 @property (nonatomic, retain) CCSprite * markerSprite;
+
+/*!
+ RTO description cocos2d name.
+ */
+@property (nonatomic, retain) CCLabelTTF * descriptionName;
 
 /*!
  RTO description cocos2d stroke label.
@@ -160,6 +173,8 @@
  @param label RTO label.
  */
 - (id)initWithName:(NSString *)name andLabel:(NSString *)label;
+
+- (id)initWithName:(NSString *)name andLabel:(NSString *)label andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath;
 
 /*!
  Method called to update RTO resources.

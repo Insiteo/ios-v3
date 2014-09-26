@@ -76,6 +76,9 @@
  */
 - (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andListener:(id<ISPItineraryRequestListener>)listener;
 
+/*
+ Intern method use to handle the current user location.
+ */
 - (void)setLocation:(ISLocation *)location;
 
 /*!

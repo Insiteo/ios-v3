@@ -14,9 +14,10 @@
 #import <Foundation/Foundation.h>
 
 #import "ISPosition.h"
-#import "ISZonePoi.h"
 
 @class Zone;
+@class ISZone;
+@class ISZonePoi;
 
 /*!
  Class used to represent a geofencing area.
@@ -55,6 +56,10 @@
     NSString * m_extra3;
     //Boolean used to know if the area was automatically added to the provider
     Boolean m_autoStart;
+    //Related ISZone, could be nil
+    ISZone * m_zone;
+    //Related ISZonePOI, could be nil
+    ISZonePoi * m_zonePoi;
 }
 
 /*!
@@ -131,6 +136,16 @@
  Boolean used to know if the area was automatically added to the provider.
  */
 @property (nonatomic, readwrite) Boolean autoStart;
+
+/*!
+ Related ISZone. Could be nil.
+ */
+@property (nonatomic, retain) ISZone * zone;
+
+/*!
+ Related ISZonePoi. Could be nil.
+ */
+@property (nonatomic, retain) ISZonePoi * zonePoi;
 
 /*!
  Static main constructor.

@@ -260,6 +260,13 @@ extern int const DEFAULT_APPLICATION_VERSION;
 + (NSString *)ISToken;
 
 /*!
+ Static method used to get the server NSString for use in URLs.
+ @param serverType INSITEO server type.
+ @return The related NSString to use in URLs only.
+ */
++ (NSString *)getServerTypeString:(ISEServerType)serverType;
+
+/*!
  Static method used to get the default INSITEO server URL from a given server type.
  @param server The wanted server type.
  @result The server URL to use.
@@ -360,7 +367,7 @@ extern int const DEFAULT_APPLICATION_VERSION;
 /*!
  Method used to update application packages.
  @param initListener The init listener to notify.
- @param wantedPackages An array of ISPackageType value that need to be updated.
+ @param wantedPackages An array of ISPackage that need to be updated.
  @return a task that can be cancelled.
  */
 - (id<ISPCancelable>)updatePackagesWithInitListener:(id<ISPInitListener>)initListener andWantedPackages:(NSArray *)wantedPackages;
@@ -368,7 +375,7 @@ extern int const DEFAULT_APPLICATION_VERSION;
 /*!
  Method used to update application packages.
  @param initListener The init listener to notify.
- @param wantedPackages An array of ISPackageType value that need to be updated.
+ @param wantedPackages An array of ISPackage that need to be updated.
  @param force Boolean used to know if we force the download of all packages.
  @return a task that can be cancelled.
  */

@@ -129,6 +129,11 @@
 @property (nonatomic, retain) ISItineraryRenderer * renderer;
 
 /*!
+ Last Itinerary request (could be use to cancel last request before asking another one).
+ */
+@property (nonatomic, retain) ISItineraryBaseRequest * lastItineraryRequest;
+
+/*!
  Method used to get a route from the user current location.
  @param endPoint Itinerary request end point.
  @param endMapId Itinerary request end map identifier.
