@@ -56,25 +56,25 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRequest/initWithItineraryProvider:andLocationId:andListener:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryRequest/initWithItineraryProvider:andFromOrToLocation:andListener:</TokenIdentifier>
 			<Abstract type="html">Secondary constructor.</Abstract>
 			<DeclaredIn>ISItineraryRequest.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andLocationId:(int)locationId andListener:(id&lt;ISPItineraryRequestListener&gt;)listener</Declaration>
+			<Declaration>- (id)initWithItineraryProvider:(ISItineraryProvider *)itineraryProvider andFromOrToLocation:(Boolean)fromOrToLocation andListener:(id&lt;ISPItineraryRequestListener&gt;)listener</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>itineraryProvider</Name>
 					<Abstract type="html">Itinerary provider reference.</Abstract>
 				</Parameter><Parameter>
-					<Name>locationId</Name>
-					<Abstract type="html">Itinerary request location id (used to check if a valid location is available).</Abstract>
+					<Name>fromOrToLocation</Name>
+					<Abstract type="html">Boolean used to know if the request is from or to a user location.</Abstract>
 				</Parameter><Parameter>
 					<Name>listener</Name>
 					<Abstract type="html">Object to notify when the request succeeded or failed.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithItineraryProvider:andLocationId:andListener:</Anchor>
+			<Anchor>//api/name/initWithItineraryProvider:andFromOrToLocation:andListener:</Anchor>
 		</Token>
 		
 	</File>

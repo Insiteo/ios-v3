@@ -342,6 +342,50 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setZone:</TokenIdentifier>
+			<Abstract type="html">Related ISZone. Could be nil.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
+			
+			
+			<Anchor>//api/name/zone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/zone</TokenIdentifier>
+			<Abstract type="html">Related ISZone. Could be nil.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
+			
+			
+			<Anchor>//api/name/zone</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setZonePoi:</TokenIdentifier>
+			<Abstract type="html">Related ISZonePoi. Could be nil.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISZonePoi *zonePoi</Declaration>
+			
+			
+			<Anchor>//api/name/zonePoi</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/zonePoi</TokenIdentifier>
+			<Abstract type="html">Related ISZonePoi. Could be nil.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISZonePoi *zonePoi</Declaration>
+			
+			
+			<Anchor>//api/name/zonePoi</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/ISGeofenceArea/ISGeofenceAreaWithPBZone:</TokenIdentifier>
 			<Abstract type="html">Static main constructor.</Abstract>
 			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			

@@ -298,14 +298,25 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISItineraryProvider/getLocationId</TokenIdentifier>
-			<Abstract type="html">Static method used to get the last location identifier.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryProvider/setLastItineraryRequest:</TokenIdentifier>
+			<Abstract type="html">Last Itinerary request (could be use to cancel last request before asking another one).</Abstract>
 			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
 			
-			<Declaration>+ (int)getLocationId</Declaration>
+			<Declaration>@property (nonatomic, retain) ISItineraryBaseRequest *lastItineraryRequest</Declaration>
 			
-			<ReturnValue><Abstract type="html">Current location get id.</Abstract></ReturnValue>
-			<Anchor>//api/name/getLocationId</Anchor>
+			
+			<Anchor>//api/name/lastItineraryRequest</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryProvider/lastItineraryRequest</TokenIdentifier>
+			<Abstract type="html">Last Itinerary request (could be use to cancel last request before asking another one).</Abstract>
+			<DeclaredIn>ISItineraryProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISItineraryBaseRequest *lastItineraryRequest</Declaration>
+			
+			
+			<Anchor>//api/name/lastItineraryRequest</Anchor>
 		</Token>
 		
 		<Token>

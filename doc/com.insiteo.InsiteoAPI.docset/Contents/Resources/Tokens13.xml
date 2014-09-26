@@ -364,6 +364,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setMarkerImagePath:</TokenIdentifier>
+			<Abstract type="html">RTO marker sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *markerImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/markerImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/markerImagePath</TokenIdentifier>
+			<Abstract type="html">RTO marker sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *markerImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/markerImagePath</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setMarkerSprite:</TokenIdentifier>
 			<Abstract type="html">RTO marker cocos2d sprite.</Abstract>
 			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
@@ -383,6 +405,28 @@
 			
 			
 			<Anchor>//api/name/markerSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setDescriptionName:</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d name.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionName</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/descriptionName</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d name.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionName</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionName</Anchor>
 		</Token>
 		
 		<Token>

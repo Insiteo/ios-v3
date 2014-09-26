@@ -539,6 +539,22 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/getServerTypeString:</TokenIdentifier>
+			<Abstract type="html">Static method used to get the server NSString for use in URLs.</Abstract>
+			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getServerTypeString:(ISEServerType)serverType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>serverType</Name>
+					<Abstract type="html">INSITEO server type.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related NSString to use in URLs only.</Abstract></ReturnValue>
+			<Anchor>//api/name/getServerTypeString:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/ISInitProvider/getBaseURL:</TokenIdentifier>
 			<Abstract type="html">Static method used to get the default INSITEO server URL from a given server type.</Abstract>
 			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
@@ -757,7 +773,7 @@
 					<Abstract type="html">The init listener to notify.</Abstract>
 				</Parameter><Parameter>
 					<Name>wantedPackages</Name>
-					<Abstract type="html">An array of ISPackageType value that need to be updated.</Abstract>
+					<Abstract type="html">An array of ISPackage that need to be updated.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a task that can be cancelled.</Abstract></ReturnValue>
@@ -776,7 +792,7 @@
 					<Abstract type="html">The init listener to notify.</Abstract>
 				</Parameter><Parameter>
 					<Name>wantedPackages</Name>
-					<Abstract type="html">An array of ISPackageType value that need to be updated.</Abstract>
+					<Abstract type="html">An array of ISPackage that need to be updated.</Abstract>
 				</Parameter><Parameter>
 					<Name>force</Name>
 					<Abstract type="html">Boolean used to know if we force the download of all packages.</Abstract>

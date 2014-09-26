@@ -62,6 +62,10 @@
 	
 	<option value="//api/name/timeToLeave">&nbsp;&nbsp;&nbsp;&nbsp;timeToLeave</option>
 	
+	<option value="//api/name/zone">&nbsp;&nbsp;&nbsp;&nbsp;zone</option>
+	
+	<option value="//api/name/zonePoi">&nbsp;&nbsp;&nbsp;&nbsp;zonePoi</option>
+	
 	
 	
 	
@@ -122,6 +126,10 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeToLeave">timeToLeave</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zone">zone</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zonePoi">zonePoi</a></span></li>
+	
 </ul></li>
 
 
@@ -175,7 +183,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Class holding data for a geofencing zone. It contains the <a href="#//api/name/GUID">GUID</a> of the zone, and it&rsquo;s <a href="#//api/name/center">center</a>.</p>
+						<p>Class holding data for a geofencing <a href="#//api/name/zone">zone</a>. It contains the <a href="#//api/name/GUID">GUID</a> of the <a href="#//api/name/zone">zone</a>, and it&rsquo;s <a href="#//api/name/center">center</a>.</p>
 					</div>
 					
 					
@@ -194,14 +202,14 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/GUID">&nbsp;&nbsp;GUID</a></code>
-		<span class="tooltip"><p>Geofencing zone identifier.</p></span>
+		<span class="tooltip"><p>Geofencing <a href="#//api/name/zone">zone</a> identifier.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/center">&nbsp;&nbsp;center</a></code>
-		<span class="tooltip"><p>The position representing the center of this zone.</p></span>
+		<span class="tooltip"><p>The position representing the center of this <a href="#//api/name/zone">zone</a>.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -229,21 +237,21 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/timeToLeave">&nbsp;&nbsp;timeToLeave</a></code>
-		<span class="tooltip"><p>Internal time used to know when this zone will be left, whithout needing corrsponding area (in milliseconds).</p></span>
+		<span class="tooltip"><p>Internal time used to know when this <a href="#//api/name/zone">zone</a> will be left, whithout needing corrsponding area (in milliseconds).</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/eventType">&nbsp;&nbsp;eventType</a></code>
-		<span class="tooltip"><p>Current geofencing zone state.</p></span>
+		<span class="tooltip"><p>Current geofencing <a href="#//api/name/zone">zone</a> state.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/eventTime">&nbsp;&nbsp;eventTime</a></code>
-		<span class="tooltip"><p>Internal time used to update zone state.</p></span>
+		<span class="tooltip"><p>Internal time used to update <a href="#//api/name/zone">zone</a> state.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -265,6 +273,20 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/autoStart">&nbsp;&nbsp;autoStart</a></code>
 		<span class="tooltip"><p>Boolean used to know if the area was automatically added to the provider.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/zone">&nbsp;&nbsp;zone</a></code>
+		<span class="tooltip"><p>Related <a href="../Classes/ISZone.html">ISZone</a>. Could be nil.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/zonePoi">&nbsp;&nbsp;zonePoi</a></code>
+		<span class="tooltip"><p>Related <a href="../Classes/ISZonePoi.html">ISZonePoi</a>. Could be nil.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -302,7 +324,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Geofencing zone identifier.</p>
+		<p>Geofencing <a href="#//api/name/zone">zone</a> identifier.</p>
 	</div>		
 	
     
@@ -319,7 +341,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Geofencing zone identifier.</p>
+		<p>Geofencing <a href="#//api/name/zone">zone</a> identifier.</p>
 	</div>
 	
 	
@@ -384,7 +406,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The position representing the center of this zone.</p>
+		<p>The position representing the center of this <a href="#//api/name/zone">zone</a>.</p>
 	</div>		
 	
     
@@ -401,7 +423,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The position representing the center of this zone.</p>
+		<p>The position representing the center of this <a href="#//api/name/zone">zone</a>.</p>
 	</div>
 	
 	
@@ -425,7 +447,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Internal time used to update zone state.</p>
+		<p>Internal time used to update <a href="#//api/name/zone">zone</a> state.</p>
 	</div>		
 	
     
@@ -442,7 +464,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Internal time used to update zone state.</p>
+		<p>Internal time used to update <a href="#//api/name/zone">zone</a> state.</p>
 	</div>
 	
 	
@@ -466,7 +488,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Current geofencing zone state.</p>
+		<p>Current geofencing <a href="#//api/name/zone">zone</a> state.</p>
 	</div>		
 	
     
@@ -483,7 +505,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Current geofencing zone state.</p>
+		<p>Current geofencing <a href="#//api/name/zone">zone</a> state.</p>
 	</div>
 	
 	
@@ -712,7 +734,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Internal time used to know when this zone will be left, whithout needing corrsponding area (in milliseconds).</p>
+		<p>Internal time used to know when this <a href="#//api/name/zone">zone</a> will be left, whithout needing corrsponding area (in milliseconds).</p>
 	</div>		
 	
     
@@ -729,7 +751,89 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Internal time used to know when this zone will be left, whithout needing corrsponding area (in milliseconds).</p>
+		<p>Internal time used to know when this <a href="#//api/name/zone">zone</a> will be left, whithout needing corrsponding area (in milliseconds).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceZone.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/zone" title="zone"></a>
+	<h3 class="subsubtitle method-title">zone</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Related <a href="../Classes/ISZone.html">ISZone</a>. Could be nil.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISZone *zone</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Related <a href="../Classes/ISZone.html">ISZone</a>. Could be nil.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGeofenceZone.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/zonePoi" title="zonePoi"></a>
+	<h3 class="subsubtitle method-title">zonePoi</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Related <a href="../Classes/ISZonePoi.html">ISZonePoi</a>. Could be nil.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISZonePoi *zonePoi</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Related <a href="../Classes/ISZonePoi.html">ISZonePoi</a>. Could be nil.</p>
 	</div>
 	
 	
@@ -775,17 +879,17 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>GUID</em></dt>
-			<dd><p>Geofencing zone identifier.</p></dd>
+			<dd><p>Geofencing <a href="#//api/name/zone">zone</a> identifier.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>center</em></dt>
-			<dd><p>The position representing the <a href="#//api/name/center">center</a> of this zone.</p></dd>
+			<dd><p>The position representing the <a href="#//api/name/center">center</a> of this <a href="#//api/name/zone">zone</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>timeToLeave</em></dt>
-			<dd><p>Internal time used to know when this zone will be left, whithout needing corrsponding area (in milliseconds).</p></dd>
+			<dd><p>Internal time used to know when this <a href="#//api/name/zone">zone</a> will be left, whithout needing corrsponding area (in milliseconds).</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -864,17 +968,17 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>GUID</em></dt>
-			<dd><p>Geofencing zone identifier.</p></dd>
+			<dd><p>Geofencing <a href="#//api/name/zone">zone</a> identifier.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>center</em></dt>
-			<dd><p>The position representing the <a href="#//api/name/center">center</a> of this zone.</p></dd>
+			<dd><p>The position representing the <a href="#//api/name/center">center</a> of this <a href="#//api/name/zone">zone</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>timeToLeave</em></dt>
-			<dd><p>Internal time used to know when this zone will be left, whithout needing corrsponding area (in milliseconds).</p></dd>
+			<dd><p>Internal time used to know when this <a href="#//api/name/zone">zone</a> will be left, whithout needing corrsponding area (in milliseconds).</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -937,7 +1041,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-08-08)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

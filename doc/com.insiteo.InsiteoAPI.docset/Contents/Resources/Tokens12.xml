@@ -144,11 +144,187 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setWindowBackgroundColorNormal:</TokenIdentifier>
+			<Abstract type="html">RTO window background color for normal state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorNormal</Declaration>
+			
+			
+			<Anchor>//api/name/windowBackgroundColorNormal</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/windowBackgroundColorNormal</TokenIdentifier>
+			<Abstract type="html">RTO window background color for normal state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorNormal</Declaration>
+			
+			
+			<Anchor>//api/name/windowBackgroundColorNormal</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setWindowBackgroundColorHighlighted:</TokenIdentifier>
+			<Abstract type="html">RTO window background color for highlighted state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorHighlighted</Declaration>
+			
+			
+			<Anchor>//api/name/windowBackgroundColorHighlighted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/windowBackgroundColorHighlighted</TokenIdentifier>
+			<Abstract type="html">RTO window background color for highlighted state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorHighlighted</Declaration>
+			
+			
+			<Anchor>//api/name/windowBackgroundColorHighlighted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionImagePath:</TokenIdentifier>
+			<Abstract type="html">RTO action button sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *actionImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/actionImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionImagePath</TokenIdentifier>
+			<Abstract type="html">RTO action button sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *actionImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/actionImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionBackgroundColorNormal:</TokenIdentifier>
+			<Abstract type="html">RTO action button background color for normal state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorNormal</Declaration>
+			
+			
+			<Anchor>//api/name/actionBackgroundColorNormal</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionBackgroundColorNormal</TokenIdentifier>
+			<Abstract type="html">RTO action button background color for normal state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorNormal</Declaration>
+			
+			
+			<Anchor>//api/name/actionBackgroundColorNormal</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionBackgroundColorHighlighted:</TokenIdentifier>
+			<Abstract type="html">RTO action button background color for highlighted state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorHighlighted</Declaration>
+			
+			
+			<Anchor>//api/name/actionBackgroundColorHighlighted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionBackgroundColorHighlighted</TokenIdentifier>
+			<Abstract type="html">RTO action button background color for highlighted state.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorHighlighted</Declaration>
+			
+			
+			<Anchor>//api/name/actionBackgroundColorHighlighted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setIndicatorImagePath:</TokenIdentifier>
+			<Abstract type="html">RTO indicator sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *indicatorImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/indicatorImagePath</TokenIdentifier>
+			<Abstract type="html">RTO indicator sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *indicatorImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setWindowAnchorImagePath:</TokenIdentifier>
+			<Abstract type="html">RTO window anchor sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *windowAnchorImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/windowAnchorImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/windowAnchorImagePath</TokenIdentifier>
+			<Abstract type="html">RTO window anchor sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *windowAnchorImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/windowAnchorImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setMarkerImagePath:</TokenIdentifier>
+			<Abstract type="html">RTO marker sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *markerImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/markerImagePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/markerImagePath</TokenIdentifier>
+			<Abstract type="html">RTO marker sprite image path.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *markerImagePath</Declaration>
+			
+			
+			<Anchor>//api/name/markerImagePath</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:</TokenIdentifier>
 			<Abstract type="html">Main constructor</Abstract>
 			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)position andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed</Declaration>
+			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -157,7 +333,7 @@
 					<Name>label</Name>
 					<Abstract type="html">RTO displayed label.</Abstract>
 				</Parameter><Parameter>
-					<Name>position</Name>
+					<Name>metersPosition</Name>
 					<Abstract type="html">RTO position in meters (could be nil in case of zone rendering).</Abstract>
 				</Parameter><Parameter>
 					<Name>windowDisplayed</Name>
