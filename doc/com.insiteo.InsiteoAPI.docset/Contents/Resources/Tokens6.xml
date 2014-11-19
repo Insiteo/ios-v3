@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISBeaconProvider.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISBeaconProvider</TokenIdentifier>
+			<Abstract type="html">Class used to manage Insiteo Beacon and generic iBeacon.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISBeaconProvider/sharedInstance</TokenIdentifier>
+			<Abstract type="html">ISBeaconProvider singleton instance.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (ISBeaconProvider *)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/setBeaconRegions:</TokenIdentifier>
+			<Abstract type="html">Beacon Regions to monitor.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *beaconRegions</Declaration>
+			
+			
+			<Anchor>//api/name/beaconRegions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconProvider/beaconRegions</TokenIdentifier>
+			<Abstract type="html">Beacon Regions to monitor.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSArray *beaconRegions</Declaration>
+			
+			
+			<Anchor>//api/name/beaconRegions</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/setListener:</TokenIdentifier>
+			<Abstract type="html">Beacon listener.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) id&lt;ISPBeaconListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconProvider/listener</TokenIdentifier>
+			<Abstract type="html">Beacon listener.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) id&lt;ISPBeaconListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/refreshBeacons</TokenIdentifier>
+			<Abstract type="html">Method used to load Beacon Regions from new configuration file.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)refreshBeacons</Declaration>
+			
+			
+			<Anchor>//api/name/refreshBeacons</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/start</TokenIdentifier>
+			<Abstract type="html">Method used to start monitoring Beacon Regions.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/addRegion:</TokenIdentifier>
+			<Abstract type="html">Method used to add a Beacon Region to monitor.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)addRegion:(ISBeaconRegion *)beaconRegion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">Beacon Region to monitor.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRegion:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/addRegion:andNotifyEntryStateOnDisplay:</TokenIdentifier>
+			<Abstract type="html">Method used to add a Beacon Region to monitor.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)addRegion:(ISBeaconRegion *)beaconRegion andNotifyEntryStateOnDisplay:(BOOL)shouldDisplay</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">Beacon Region to monitor.</Abstract>
+				</Parameter><Parameter>
+					<Name>shouldDisplay</Name>
+					<Abstract type="html">Boolean used to know if app will start and delegate will be notified when user turn on the screen (cf. notifyEntryStateOnDisplay in CLBeaconRegion).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRegion:andNotifyEntryStateOnDisplay:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/stop</TokenIdentifier>
+			<Abstract type="html">Method used to stop monitoring regions.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)stop</Declaration>
+			
+			
+			<Anchor>//api/name/stop</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/removeRegion:</TokenIdentifier>
+			<Abstract type="html">Method used to manually remove a Beacon Region.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRegion:(ISBeaconRegion *)beaconRegion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">Beacon Region to remove (i.e. stop monitoring).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRegion:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

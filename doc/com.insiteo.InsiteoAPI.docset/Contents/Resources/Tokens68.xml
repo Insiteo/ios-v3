@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISRODBHelper.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISRODBHelper</TokenIdentifier>
+			<Abstract type="html">Static class used to handle ReadOnly SQLITE requests.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>
+			
+			<NodeRef refid="68"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/setDatabasePath:</TokenIdentifier>
+			<Abstract type="html">The database path.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *databasePath</Declaration>
+			
+			
+			<Anchor>//api/name/databasePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRODBHelper/databasePath</TokenIdentifier>
+			<Abstract type="html">The database path.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *databasePath</Declaration>
+			
+			
+			<Anchor>//api/name/databasePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/setDbLock:</TokenIdentifier>
+			<Abstract type="html">The database lock.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSLock *dbLock</Declaration>
+			
+			
+			<Anchor>//api/name/dbLock</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRODBHelper/dbLock</TokenIdentifier>
+			<Abstract type="html">The database lock.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSLock *dbLock</Declaration>
+			
+			
+			<Anchor>//api/name/dbLock</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/initializeWithDatabaseName:andDatabasePath:</TokenIdentifier>
+			<Abstract type="html">Method used to initialize the DataHelper.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (void)initializeWithDatabaseName:(NSString *)databaseName andDatabasePath:(NSString *)databasePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>databaseName</Name>
+					<Abstract type="html">The database name to use.</Abstract>
+				</Parameter><Parameter>
+					<Name>databasePath</Name>
+					<Abstract type="html">Application path where the database is located.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initializeWithDatabaseName:andDatabasePath:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/checkDatabase</TokenIdentifier>
+			<Abstract type="html">Method used to check if database exists.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)checkDatabase</Declaration>
+			
+			
+			<Anchor>//api/name/checkDatabase</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/openDatabase</TokenIdentifier>
+			<Abstract type="html">Method used to open the sqlite database.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)openDatabase</Declaration>
+			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it succeeded, else &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/openDatabase</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/closeDatabase</TokenIdentifier>
+			<Abstract type="html">Method used to close the sqlite database.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (void)closeDatabase</Declaration>
+			
+			
+			<Anchor>//api/name/closeDatabase</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/getStringWithStatement:andPosition:</TokenIdentifier>
+			<Abstract type="html">Method used to get a NSString from an sqlite statement and a field position.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)getStringWithStatement:(sqlite3_stmt *)statement andPosition:(int)position</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>statement</Name>
+					<Abstract type="html">The related sqlite statement.</Abstract>
+				</Parameter><Parameter>
+					<Name>position</Name>
+					<Abstract type="html">The related field position.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted NSString (could be nil).</Abstract></ReturnValue>
+			<Anchor>//api/name/getStringWithStatement:andPosition:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/executeSelect:andLock:</TokenIdentifier>
+			<Abstract type="html">Method used to execute an SQL SELECT query.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (sqlite3_stmt *)executeSelect:(NSString *)request andLock:(Boolean)lock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">The NSString sqlite query.</Abstract>
+				</Parameter><Parameter>
+					<Name>lock</Name>
+					<Abstract type="html">Boolean used to know if we need to lock the database during the query.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted sqlite statement (rows).</Abstract></ReturnValue>
+			<Anchor>//api/name/executeSelect:andLock:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/executeSelect:</TokenIdentifier>
+			<Abstract type="html">Method used to execute an SQL SELECT query.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (sqlite3_stmt *)executeSelect:(NSString *)request</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">The NSString sqlite query.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The resulted sqlite statement (rows).</Abstract></ReturnValue>
+			<Anchor>//api/name/executeSelect:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/updateDatabasePath</TokenIdentifier>
+			<Abstract type="html">Method used to update the current database path.</Abstract>
+			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateDatabasePath</Declaration>
+			
+			
+			<Anchor>//api/name/updateDatabasePath</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

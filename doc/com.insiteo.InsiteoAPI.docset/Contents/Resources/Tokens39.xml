@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISLocationNode.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISLocationNode</TokenIdentifier>
+			<Abstract type="html">Class used to handle cocos2d rendering of an ISGfxLocation.</Abstract>
+			<DeclaredIn>ISLocationNode.h</DeclaredIn>
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationNode/setDot:</TokenIdentifier>
+			<Abstract type="html">Location dot cocos2d sprite.</Abstract>
+			<DeclaredIn>ISLocationNode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *dot</Declaration>
+			
+			
+			<Anchor>//api/name/dot</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationNode/dot</TokenIdentifier>
+			<Abstract type="html">Location dot cocos2d sprite.</Abstract>
+			<DeclaredIn>ISLocationNode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *dot</Declaration>
+			
+			
+			<Anchor>//api/name/dot</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationNode/setCompass:</TokenIdentifier>
+			<Abstract type="html">Location compass cocos2d sprite.</Abstract>
+			<DeclaredIn>ISLocationNode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *compass</Declaration>
+			
+			
+			<Anchor>//api/name/compass</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationNode/compass</TokenIdentifier>
+			<Abstract type="html">Location compass cocos2d sprite.</Abstract>
+			<DeclaredIn>ISLocationNode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *compass</Declaration>
+			
+			
+			<Anchor>//api/name/compass</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

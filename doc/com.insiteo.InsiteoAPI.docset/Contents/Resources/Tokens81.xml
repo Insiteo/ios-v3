@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPAuthListener.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPAuthListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle INSITEO authentication.</Abstract>
+			<DeclaredIn>ISPAuthListener.h</DeclaredIn>
+			
+			<NodeRef refid="81"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPAuthListener/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</TokenIdentifier>
+			<Abstract type="html">Method called when a login task is done.</Abstract>
+			<DeclaredIn>ISPAuthListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onLoginDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ISERole)roleId andRemote:(Boolean)remote</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>success</Name>
+					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the login succeeded, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Related error if no success.</Abstract>
+				</Parameter><Parameter>
+					<Name>sites</Name>
+					<Abstract type="html">Logged user available sites.</Abstract>
+				</Parameter><Parameter>
+					<Name>roleId</Name>
+					<Abstract type="html">Logged user role identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>remote</Name>
+					<Abstract type="html">Boolean used to know if login is local or remote.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPAuthListener/onLogoutDoneWithSuccess:andError:</TokenIdentifier>
+			<Abstract type="html">Method called when a logout task is done.</Abstract>
+			<DeclaredIn>ISPAuthListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onLogoutDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>success</Name>
+					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the logout succeeded, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Related error if no success.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onLogoutDoneWithSuccess:andError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPAuthListener/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</TokenIdentifier>
+			<Abstract type="html">Method called to refresh user available sites.</Abstract>
+			<DeclaredIn>ISPAuthListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onRefreshSitesDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ISERole)roleId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>success</Name>
+					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the refresh succeeded, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Related error if no success.</Abstract>
+				</Parameter><Parameter>
+					<Name>sites</Name>
+					<Abstract type="html">Refreshed available sites.</Abstract>
+				</Parameter><Parameter>
+					<Name>roleId</Name>
+					<Abstract type="html">Refreshed user role identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
