@@ -1,152 +1,393 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISTileIndex.html">
+	<File path="Classes/ISRectF.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISTileIndex</TokenIdentifier>
-			<Abstract type="html">Class used to represent a Tile index (mapId, zoomLevel, x, y.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISRectF</TokenIdentifier>
+			<Abstract type="html">Class used to represent a rectangle defined by 4 float values (left, top, right, bottom (ex: 0.5/0.5/50.0/150.5).</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>
 			
 			<NodeRef refid="71"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTileIndex/setMapId:</TokenIdentifier>
-			<Abstract type="html">Tile map identifier.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setLeft:</TokenIdentifier>
+			<Abstract type="html">Left value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float left</Declaration>
 			
 			
-			<Anchor>//api/name/mapId</Anchor>
+			<Anchor>//api/name/left</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTileIndex/mapId</TokenIdentifier>
-			<Abstract type="html">Tile map identifier.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/left</TokenIdentifier>
+			<Abstract type="html">Left value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float left</Declaration>
 			
 			
-			<Anchor>//api/name/mapId</Anchor>
+			<Anchor>//api/name/left</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTileIndex/setZoomLevel:</TokenIdentifier>
-			<Abstract type="html">Tile zoom level.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setTop:</TokenIdentifier>
+			<Abstract type="html">Top value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int zoomLevel</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float top</Declaration>
 			
 			
-			<Anchor>//api/name/zoomLevel</Anchor>
+			<Anchor>//api/name/top</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTileIndex/zoomLevel</TokenIdentifier>
-			<Abstract type="html">Tile zoom level.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/top</TokenIdentifier>
+			<Abstract type="html">Top value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int zoomLevel</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float top</Declaration>
 			
 			
-			<Anchor>//api/name/zoomLevel</Anchor>
+			<Anchor>//api/name/top</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTileIndex/setX:</TokenIdentifier>
-			<Abstract type="html">Tile X coordinate.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setRight:</TokenIdentifier>
+			<Abstract type="html">Right value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int x</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float right</Declaration>
 			
 			
-			<Anchor>//api/name/x</Anchor>
+			<Anchor>//api/name/right</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTileIndex/x</TokenIdentifier>
-			<Abstract type="html">Tile X coordinate.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/right</TokenIdentifier>
+			<Abstract type="html">Right value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int x</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float right</Declaration>
 			
 			
-			<Anchor>//api/name/x</Anchor>
+			<Anchor>//api/name/right</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTileIndex/setY:</TokenIdentifier>
-			<Abstract type="html">Tile Y coordinate.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setBottom:</TokenIdentifier>
+			<Abstract type="html">Bottom value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int y</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float bottom</Declaration>
 			
 			
-			<Anchor>//api/name/y</Anchor>
+			<Anchor>//api/name/bottom</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTileIndex/y</TokenIdentifier>
-			<Abstract type="html">Tile Y coordinate.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/bottom</TokenIdentifier>
+			<Abstract type="html">Bottom value.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int y</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float bottom</Declaration>
 			
 			
-			<Anchor>//api/name/y</Anchor>
+			<Anchor>//api/name/bottom</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTileIndex/initWithMapId:andZoomLevel:andX:andY:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setCenter:</TokenIdentifier>
+			<Abstract type="html">Center of the rectangle.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint center</Declaration>
+			
+			
+			<Anchor>//api/name/center</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/center</TokenIdentifier>
+			<Abstract type="html">Center of the rectangle.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) CGPoint center</Declaration>
+			
+			
+			<Anchor>//api/name/center</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setTopLeft:</TokenIdentifier>
+			<Abstract type="html">Top left point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topLeft</Declaration>
+			
+			
+			<Anchor>//api/name/topLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/topLeft</TokenIdentifier>
+			<Abstract type="html">Top left point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topLeft</Declaration>
+			
+			
+			<Anchor>//api/name/topLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setTopRight:</TokenIdentifier>
+			<Abstract type="html">Top right point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topRight</Declaration>
+			
+			
+			<Anchor>//api/name/topRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/topRight</TokenIdentifier>
+			<Abstract type="html">Top right point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint topRight</Declaration>
+			
+			
+			<Anchor>//api/name/topRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setBottomLeft:</TokenIdentifier>
+			<Abstract type="html">Bottom left point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomLeft</Declaration>
+			
+			
+			<Anchor>//api/name/bottomLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/bottomLeft</TokenIdentifier>
+			<Abstract type="html">Bottom left point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomLeft</Declaration>
+			
+			
+			<Anchor>//api/name/bottomLeft</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/setBottomRight:</TokenIdentifier>
+			<Abstract type="html">Bottom right point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISRectF/bottomRight</TokenIdentifier>
+			<Abstract type="html">Bottom right point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) CGPoint bottomRight</Declaration>
+			
+			
+			<Anchor>//api/name/bottomRight</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/initWithLeft:andTop:andRight:andBottom:</TokenIdentifier>
 			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithMapId:(int)mapId andZoomLevel:(int)zoomLevel andX:(int)x andY:(int)y</Declaration>
+			<Declaration>- (id)initWithLeft:(float)left andTop:(float)top andRight:(float)right andBottom:(float)bottom</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>mapId</Name>
-					<Abstract type="html">Tile map identifier.</Abstract>
+					<Name>left</Name>
+					<Abstract type="html">Left float value (X coordinate).</Abstract>
 				</Parameter><Parameter>
-					<Name>zoomLevel</Name>
-					<Abstract type="html">Tile zoom level.</Abstract>
+					<Name>top</Name>
+					<Abstract type="html">Top float value (Y coordinate).</Abstract>
 				</Parameter><Parameter>
-					<Name>x</Name>
-					<Abstract type="html">Tile X coodinate.</Abstract>
+					<Name>right</Name>
+					<Abstract type="html">Right float value (X coordinate).</Abstract>
 				</Parameter><Parameter>
-					<Name>y</Name>
-					<Abstract type="html">Tile Y coodinate.</Abstract>
+					<Name>bottom</Name>
+					<Abstract type="html">Bottom float value (Y coordinate).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithMapId:andZoomLevel:andX:andY:</Anchor>
+			<Anchor>//api/name/initWithLeft:andTop:andRight:andBottom:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISTileIndex/ISTileIndexWithMapId:andZoomLevel:andX:andY:</TokenIdentifier>
-			<Abstract type="html">Static constructor.</Abstract>
-			<DeclaredIn>ISTileIndex.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/initWithLeft:andTop:andWidth:andHeight:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
 			
-			<Declaration>+ (id)ISTileIndexWithMapId:(int)mapId andZoomLevel:(int)zoomLevel andX:(int)x andY:(int)y</Declaration>
+			<Declaration>- (id)initWithLeft:(float)left andTop:(float)top andWidth:(float)width andHeight:(float)height</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>mapId</Name>
-					<Abstract type="html">Tile map identifier.</Abstract>
+					<Name>left</Name>
+					<Abstract type="html">Left float value (X coordinate).</Abstract>
 				</Parameter><Parameter>
-					<Name>zoomLevel</Name>
-					<Abstract type="html">Tile zoom level.</Abstract>
+					<Name>top</Name>
+					<Abstract type="html">Top float value (Y coordinate).</Abstract>
 				</Parameter><Parameter>
-					<Name>x</Name>
-					<Abstract type="html">Tile X coodinate.</Abstract>
+					<Name>width</Name>
+					<Abstract type="html">Rect float width.</Abstract>
 				</Parameter><Parameter>
-					<Name>y</Name>
-					<Abstract type="html">Tile Y coodinate.</Abstract>
+					<Name>height</Name>
+					<Abstract type="html">Rect float height.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/ISTileIndexWithMapId:andZoomLevel:andX:andY:</Anchor>
+			<Anchor>//api/name/initWithLeft:andTop:andWidth:andHeight:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISRectF/ISRectFWithLeft:andTop:andRight:andBottom:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISRectFWithLeft:(float)left andTop:(float)top andRight:(float)right andBottom:(float)bottom</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>left</Name>
+					<Abstract type="html">Left float value (X coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>top</Name>
+					<Abstract type="html">Top float value (Y coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>right</Name>
+					<Abstract type="html">Right float value (X coordinate).</Abstract>
+				</Parameter><Parameter>
+					<Name>bottom</Name>
+					<Abstract type="html">Bottom float value (Y coordinate).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISRectFWithLeft:andTop:andRight:andBottom:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISRectF/ISRectFWithCGRect:</TokenIdentifier>
+			<Abstract type="html">Static constructor.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISRectFWithCGRect:(CGRect)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">CGRect to use for instantiate the new one.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISRectFWithCGRect:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/contains:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the ISRectF contains the given point.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)contains:(CGPoint)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">Point to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the ISRectF contains the point, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/contains:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/containsWithX:andY:</TokenIdentifier>
+			<Abstract type="html">Method used to know if the ISRectF contains the given coordinates.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)containsWithX:(float)x andY:(float)y</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X coordinate to test.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y coordinate to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the ISRectF contains the coordinates, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsWithX:andY:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/toCGRect</TokenIdentifier>
+			<Abstract type="html">Method used to convert the ISRectF into CGRect.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>- (CGRect)toCGRect</Declaration>
+			
+			<ReturnValue><Abstract type="html">The related converted CGRect.</Abstract></ReturnValue>
+			<Anchor>//api/name/toCGRect</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/centerX</TokenIdentifier>
+			<Abstract type="html">Method used to get the center y coordinate.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>- (float)centerX</Declaration>
+			
+			<ReturnValue><Abstract type="html">The center y coordinate.</Abstract></ReturnValue>
+			<Anchor>//api/name/centerX</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/centerY</TokenIdentifier>
+			<Abstract type="html">Method used to get the center y coordinate.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>- (float)centerY</Declaration>
+			
+			<ReturnValue><Abstract type="html">The center y coordinate.</Abstract></ReturnValue>
+			<Anchor>//api/name/centerY</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/width</TokenIdentifier>
+			<Abstract type="html">Method used to get ISRectF width.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>- (float)width</Declaration>
+			
+			<ReturnValue><Abstract type="html">The ISRect width.</Abstract></ReturnValue>
+			<Anchor>//api/name/width</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRectF/height</TokenIdentifier>
+			<Abstract type="html">Method used to get ISRectF height.</Abstract>
+			<DeclaredIn>ISRectF.h</DeclaredIn>			
+			
+			<Declaration>- (float)height</Declaration>
+			
+			<ReturnValue><Abstract type="html">The ISRect height.</Abstract></ReturnValue>
+			<Anchor>//api/name/height</Anchor>
 		</Token>
 		
 	</File>

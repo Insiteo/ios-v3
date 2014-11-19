@@ -56,6 +56,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/setIsStarted:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the analytics manager is started.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isStarted</Declaration>
+			
+			
+			<Anchor>//api/name/isStarted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsManager/isStarted</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the analytics manager is started.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) Boolean isStarted</Declaration>
+			
+			
+			<Anchor>//api/name/isStarted</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/ISAnalyticsManager/instance</TokenIdentifier>
 			<Abstract type="html">Static method called to get the ISAnalyticsManager unique instance.</Abstract>
 			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
@@ -71,14 +93,14 @@
 			<Abstract type="html">Method called to add an analytics generic event.</Abstract>
 			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
 			
-			<Declaration>- (void)addGenericEvent:(ISAnalyticsGenericEvent *)event</Declaration>
+			<Declaration>- (Boolean)addGenericEvent:(ISAnalyticsGenericEvent *)event</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>event</Name>
 					<Abstract type="html">The related generic event.</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the event was successfully added, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
 			<Anchor>//api/name/addGenericEvent:</Anchor>
 		</Token>
 		
@@ -87,14 +109,14 @@
 			<Abstract type="html">Method called to add an analytics location event.</Abstract>
 			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
 			
-			<Declaration>- (void)addLocationEvent:(ISAnalyticsLocationEvent *)event</Declaration>
+			<Declaration>- (Boolean)addLocationEvent:(ISAnalyticsLocationEvent *)event</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>event</Name>
 					<Abstract type="html">The related location event.</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the event was successfully added, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
 			<Anchor>//api/name/addLocationEvent:</Anchor>
 		</Token>
 		

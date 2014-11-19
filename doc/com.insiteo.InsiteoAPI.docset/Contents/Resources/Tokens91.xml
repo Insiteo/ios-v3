@@ -1,30 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPMotionListener.html">
+	<File path="Protocols/ISPMeetMeListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPMotionListener</TokenIdentifier>
-			<Abstract type="html">Protocol used to handle accelerometer events.</Abstract>
-			<DeclaredIn>ISPMotionListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPMeetMeListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle general MeetMe events.</Abstract>
+			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>
 			
 			<NodeRef refid="91"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPMotionListener/onMotionAvailable:</TokenIdentifier>
-			<Abstract type="html">Method called when a new motion result is available.</Abstract>
-			<DeclaredIn>ISPMotionListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onPersonsReceived:andGroups:</TokenIdentifier>
+			<Abstract type="html">Method called when new persons and new groups are available.</Abstract>
+			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onMotionAvailable:(int)motion</Declaration>
+			<Declaration>- (void)onPersonsReceived:(NSDictionary *)persons andGroups:(NSDictionary *)groups</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>motion</Name>
-					<Abstract type="html">New motion available.</Abstract>
+					<Name>persons</Name>
+					<Abstract type="html">The new available persons.</Abstract>
+				</Parameter><Parameter>
+					<Name>groups</Name>
+					<Abstract type="html">The new available groups.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onMotionAvailable:</Anchor>
+			<Anchor>//api/name/onPersonsReceived:andGroups:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onMeetMeError:</TokenIdentifier>
+			<Abstract type="html">Method called when a MeetMe error occured.</Abstract>
+			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onMeetMeError:(ISInsiteoError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The related ISInsiteoError (code, message).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onMeetMeError:</Anchor>
 		</Token>
 		
 	</File>

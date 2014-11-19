@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPCancelable.html">
+	<File path="Protocols/ISPAnalyticsListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPCancelable</TokenIdentifier>
-			<Abstract type="html">Protocol used to allow users to cancel intern task (init, update etc...).</Abstract>
-			<DeclaredIn>ISPCancelable.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPAnalyticsListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle analytics events.</Abstract>
+			<DeclaredIn>ISPAnalyticsListener.h</DeclaredIn>
 			
 			<NodeRef refid="80"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPCancelable/cancel</TokenIdentifier>
-			<Abstract type="html">Method called to cancel the related task.</Abstract>
-			<DeclaredIn>ISPCancelable.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPAnalyticsListener/analyticsManagerShouldSendGenericEvent:</TokenIdentifier>
+			<Abstract type="html">Method called before sending an analytics event.</Abstract>
+			<DeclaredIn>ISPAnalyticsListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)cancel</Declaration>
-			
-			
-			<Anchor>//api/name/cancel</Anchor>
+			<Declaration>- (Boolean)analyticsManagerShouldSendGenericEvent:(ISAnalyticsGenericEvent *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The analytics event that will be sent.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if you want to send this event, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/analyticsManagerShouldSendGenericEvent:</Anchor>
 		</Token>
 		
 	</File>

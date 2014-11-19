@@ -167,7 +167,7 @@
 					<Abstract type="html">First integer field.</Abstract>
 				</Parameter><Parameter>
 					<Name>iParam2</Name>
-					<Abstract type="html">Second integer field..</Abstract>
+					<Abstract type="html">Second integer field.</Abstract>
 				</Parameter><Parameter>
 					<Name>sParam1</Name>
 					<Abstract type="html">First NSString field.</Abstract>
@@ -175,6 +175,34 @@
 			</Parameters>
 			
 			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andSParam1:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsGenericEvent/initWithEventType:andIParam1:andIParam2:andSParam1:andSParam2:</TokenIdentifier>
+			<Abstract type="html">Constructor.</Abstract>
+			<DeclaredIn>ISAnalyticsGenericEvent.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andSParam1:(NSString *)sParam1 andSParam2:(NSString *)sParam2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventType</Name>
+					<Abstract type="html">An NSString which identify the event.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam1</Name>
+					<Abstract type="html">First integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>iParam2</Name>
+					<Abstract type="html">Second integer field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam1</Name>
+					<Abstract type="html">First NSString field.</Abstract>
+				</Parameter><Parameter>
+					<Name>sParam2</Name>
+					<Abstract type="html">Second NSString field.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithEventType:andIParam1:andIParam2:andSParam1:andSParam2:</Anchor>
 		</Token>
 		
 		<Token>

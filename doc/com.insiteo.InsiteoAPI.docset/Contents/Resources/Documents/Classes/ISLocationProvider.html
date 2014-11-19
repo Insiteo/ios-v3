@@ -63,6 +63,8 @@
 	
 	<option value="//api/name/getLocationPackageVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getLocationPackageVersion</option>
 	
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
+	
 	
 	
 	
@@ -70,9 +72,9 @@
 	
 	<option value="//api/name/changeLocationWithFlags:">&nbsp;&nbsp;&nbsp;&nbsp;- changeLocationWithFlags:</option>
 	
-	<option value="//api/name/getLbsModule:">&nbsp;&nbsp;&nbsp;&nbsp;- getLbsModule:</option>
+	<option value="//api/name/deleteLogs">&nbsp;&nbsp;&nbsp;&nbsp;- deleteLogs</option>
 	
-	<option value="//api/name/onAzimuthReceived:">&nbsp;&nbsp;&nbsp;&nbsp;- onAzimuthReceived:</option>
+	<option value="//api/name/getLbsModule:">&nbsp;&nbsp;&nbsp;&nbsp;- getLbsModule:</option>
 	
 	<option value="//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:">&nbsp;&nbsp;&nbsp;&nbsp;- requestUniqueLocationWithLocationRequestListener:andLocationFlags:</option>
 	
@@ -82,7 +84,7 @@
 	
 	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</option>
 	
-	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</option>
+	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</option>
 	
 	<option value="//api/name/stopLocation">&nbsp;&nbsp;&nbsp;&nbsp;- stopLocation</option>
 	
@@ -134,6 +136,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLocationPackageVersion">getLocationPackageVersion</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
+	
 </ul></li>
 
 
@@ -142,9 +146,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/changeLocationWithFlags:">changeLocationWithFlags:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLbsModule:">getLbsModule:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteLogs">deleteLogs</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onAzimuthReceived:">onAzimuthReceived:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLbsModule:">getLbsModule:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:">requestUniqueLocationWithLocationRequestListener:andLocationFlags:</a></span></li>
 	
@@ -154,7 +158,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopLocation">stopLocation</a></span></li>
 	
@@ -276,6 +280,13 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+		<span class="tooltip"><p>Static method used to get the ISLocationProvider shared instance.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/getLbsModule:">&ndash;&nbsp;getLbsModule:</a></code>
 		<span class="tooltip"><p>Method used to get a lbs module with a specifi type.</p></span>
 	</span>
@@ -283,7 +294,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</a></code>
+		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</a></code>
 		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
 	</span>
 	
@@ -332,8 +343,8 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/onAzimuthReceived:">&ndash;&nbsp;onAzimuthReceived:</a></code>
-		<span class="tooltip"><p>Intern method used to update azimuth information.</p></span>
+		<code><a href="#//api/name/deleteLogs">&ndash;&nbsp;deleteLogs</a></code>
+		<span class="tooltip"><p>Method used to delete the location logs directory.</p></span>
 	</span>
 	
 	
@@ -737,6 +748,52 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to get the ISLocationProvider shared instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (ISLocationProvider *)sharedInstance</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The ISLocationProvider shared instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to get the ISLocationProvider shared instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -797,6 +854,52 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/deleteLogs" title="deleteLogs"></a>
+	<h3 class="subsubtitle method-title">deleteLogs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to delete the location logs directory.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)deleteLogs</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the directory was successfuly deleted, otherwise <b>NO</b>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to delete the location logs directory.</p><div class="warning"><p><strong>Warning:</strong> The ISLocationProvider needs to be stopped before calling this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/getLbsModule:" title="getLbsModule:"></a>
 	<h3 class="subsubtitle method-title">getLbsModule:</h3>
 	
@@ -831,57 +934,6 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Method used to get a lbs module with a specifi type.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISLocationProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/onAzimuthReceived:" title="onAzimuthReceived:"></a>
-	<h3 class="subsubtitle method-title">onAzimuthReceived:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Intern method used to update azimuth information.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)onAzimuthReceived:(float)<em>azimuth</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>azimuth</em></dt>
-			<dd><p>Azimuth to use.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Intern method used to update azimuth information.</p>
 	</div>
 	
 	
@@ -1148,8 +1200,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:" title="startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:"></a>
-	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:</h3>
+	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:" title="startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:"></a>
+	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</h3>
 	
 	
 	
@@ -1159,7 +1211,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em> andLocationPath:(NSString *)<em>locationPath</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em> andLocationPath:(NSString *)<em>locationPath</em> andUUIDService:(NSString *)<em>uuidService</em></code></div>
 
     
 	
@@ -1194,6 +1246,11 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>locationPath</em></dt>
 			<dd><p>The location package directory.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>uuidService</em></dt>
+			<dd><p>UUID service to scan for (could be nil).</p></dd>
 		</dl>
 		
 	</div>
@@ -1277,7 +1334,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

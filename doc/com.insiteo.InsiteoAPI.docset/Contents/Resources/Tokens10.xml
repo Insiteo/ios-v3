@@ -1,106 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISConfig.html">
+	<File path="Classes/ISCommonConstants.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISConfig</TokenIdentifier>
-			<Abstract type="html">Class used to manage common client/server url.</Abstract>
-			<DeclaredIn>ISConfig.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISCommonConstants</TokenIdentifier>
+			<Abstract type="html">Class used to provide general constants.</Abstract>
+			<DeclaredIn>ISCommonConstants.h</DeclaredIn>
 			
 			<NodeRef refid="10"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISConfig/getServiceUrlWithServerUrl:</TokenIdentifier>
-			<Abstract type="html">Method used to get the base service URL.</Abstract>
-			<DeclaredIn>ISConfig.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISCommonConstants/getDebugMode</TokenIdentifier>
+			<Abstract type="html">Method used to know if we are in DEBUG mode.</Abstract>
+			<DeclaredIn>ISCommonConstants.h</DeclaredIn>			
 			
-			<Declaration>+ (NSString *)getServiceUrlWithServerUrl:(NSString *)serverUrl</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>serverUrl</Name>
-					<Abstract type="html">Server url to use.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The resulted service URL.</Abstract></ReturnValue>
-			<Anchor>//api/name/getServiceUrlWithServerUrl:</Anchor>
+			<Declaration>+ (Boolean)getDebugMode</Declaration>
+			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if we are in DEBUG mode, otherwise, &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDebugMode</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISConfig/getInitUrlWithServerUrl:andSiteId:andApplicationVersion:andLanguage:</TokenIdentifier>
-			<Abstract type="html">Method used to get the init URL.</Abstract>
-			<DeclaredIn>ISConfig.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISCommonConstants/setDebugMode:</TokenIdentifier>
+			<Abstract type="html">Method used to set the DEBUG mode.</Abstract>
+			<DeclaredIn>ISCommonConstants.h</DeclaredIn>			
 			
-			<Declaration>+ (NSString *)getInitUrlWithServerUrl:(NSString *)serverUrl andSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language</Declaration>
+			<Declaration>+ (void)setDebugMode:(Boolean)debugMode</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>serverUrl</Name>
-					<Abstract type="html">Server url to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>siteId</Name>
-					<Abstract type="html">Site id to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>applicationVersion</Name>
-					<Abstract type="html">Application version to use.</Abstract>
-				</Parameter><Parameter>
-					<Name>language</Name>
-					<Abstract type="html">Language to use.</Abstract>
+					<Name>debugMode</Name>
+					<Abstract type="html">Boolean parameter used to set the DEBUG mode status.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The resulted init URL.</Abstract></ReturnValue>
-			<Anchor>//api/name/getInitUrlWithServerUrl:andSiteId:andApplicationVersion:andLanguage:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISConfig/localizedString:</TokenIdentifier>
-			<Abstract type="html">Method used to get a localized NSString from an NSString key (word to translate).</Abstract>
-			<DeclaredIn>ISConfig.h</DeclaredIn>			
 			
-			<Declaration>+ (NSString *)localizedString:(NSString *)key</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>key</Name>
-					<Abstract type="html">Word to translate.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The translated NSString.</Abstract></ReturnValue>
-			<Anchor>//api/name/localizedString:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISConfig/realLocalizedString:</TokenIdentifier>
-			<Abstract type="html">Method used to get the system localized NSString from an NSString key (word to translate).</Abstract>
-			<DeclaredIn>ISConfig.h</DeclaredIn>			
-			
-			<Declaration>+ (NSString *)realLocalizedString:(NSString *)key</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>key</Name>
-					<Abstract type="html">Word to translate.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The translated NSString.</Abstract></ReturnValue>
-			<Anchor>//api/name/realLocalizedString:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISConfig/localizedStringWithKey:andLanguage:</TokenIdentifier>
-			<Abstract type="html">Method used to get a localized NSString from an NSString key (word to translate) for a specific language.</Abstract>
-			<DeclaredIn>ISConfig.h</DeclaredIn>			
-			
-			<Declaration>+ (NSString *)localizedStringWithKey:(NSString *)key andLanguage:(NSString *)language</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>key</Name>
-					<Abstract type="html">Word to translate.</Abstract>
-				</Parameter><Parameter>
-					<Name>language</Name>
-					<Abstract type="html">The language to use.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The translated NSString.</Abstract></ReturnValue>
-			<Anchor>//api/name/localizedStringWithKey:andLanguage:</Anchor>
+			<Anchor>//api/name/setDebugMode:</Anchor>
 		</Token>
 		
 	</File>

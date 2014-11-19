@@ -1,738 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISMap.html">
+	<File path="Classes/ISLocationRenderer.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISMap</TokenIdentifier>
-			<Abstract type="html">Class used to represent an INSITEO map entity.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISLocationRenderer</TokenIdentifier>
+			<Abstract type="html">Class used to render locations on the map.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>
 			
 			<NodeRef refid="41"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setMapId:</TokenIdentifier>
-			<Abstract type="html">INSITEO map identifier.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLocations:</TokenIdentifier>
+			<Abstract type="html">Current locations to render.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *locations</Declaration>
 			
 			
-			<Anchor>//api/name/mapId</Anchor>
+			<Anchor>//api/name/locations</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/mapId</TokenIdentifier>
-			<Abstract type="html">INSITEO map identifier.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/locations</TokenIdentifier>
+			<Abstract type="html">Current locations to render.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *locations</Declaration>
 			
 			
-			<Anchor>//api/name/mapId</Anchor>
+			<Anchor>//api/name/locations</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setTypeId:</TokenIdentifier>
-			<Abstract type="html">INSITEO map type identifier.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLocationLostColor:</TokenIdentifier>
+			<Abstract type="html">Location lost render color. (default: ccc3(255.0, 150.0, 0.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ccColor3B locationLostColor</Declaration>
 			
 			
-			<Anchor>//api/name/typeId</Anchor>
+			<Anchor>//api/name/locationLostColor</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/typeId</TokenIdentifier>
-			<Abstract type="html">INSITEO map type identifier.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/locationLostColor</TokenIdentifier>
+			<Abstract type="html">Location lost render color. (default: ccc3(255.0, 150.0, 0.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int typeId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ccColor3B locationLostColor</Declaration>
 			
 			
-			<Anchor>//api/name/typeId</Anchor>
+			<Anchor>//api/name/locationLostColor</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setName:</TokenIdentifier>
-			<Abstract type="html">INSITEO map name.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLocationColor:</TokenIdentifier>
+			<Abstract type="html">Location render color. (default: ccc3(0, 162.0, 255.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ccColor3B locationColor</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/locationColor</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/name</TokenIdentifier>
-			<Abstract type="html">INSITEO map name.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/locationColor</TokenIdentifier>
+			<Abstract type="html">Location render color. (default: ccc3(0, 162.0, 255.0), none: ccc3(255.0, 255.0, 255.0)).</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *name</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ccColor3B locationColor</Declaration>
 			
 			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/locationColor</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setFloor:</TokenIdentifier>
-			<Abstract type="html">INSITEO map floor identifier.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setAccuracyColor:</TokenIdentifier>
+			<Abstract type="html">Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int floor</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ccColor4F accuracyColor</Declaration>
 			
 			
-			<Anchor>//api/name/floor</Anchor>
+			<Anchor>//api/name/accuracyColor</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/floor</TokenIdentifier>
-			<Abstract type="html">INSITEO map floor identifier.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/accuracyColor</TokenIdentifier>
+			<Abstract type="html">Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int floor</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ccColor4F accuracyColor</Declaration>
 			
 			
-			<Anchor>//api/name/floor</Anchor>
+			<Anchor>//api/name/accuracyColor</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setFloorName:</TokenIdentifier>
-			<Abstract type="html">INSITEO map floor name.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setLayer:</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *floorName</Declaration>
+			<Declaration>@property (assign) CCLayer *layer</Declaration>
 			
 			
-			<Anchor>//api/name/floorName</Anchor>
+			<Anchor>//api/name/layer</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/floorName</TokenIdentifier>
-			<Abstract type="html">INSITEO map floor name.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationRenderer/layer</TokenIdentifier>
+			<Abstract type="html">Map view layer.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *floorName</Declaration>
+			<Declaration>@property (assign) CCLayer *layer</Declaration>
 			
 			
-			<Anchor>//api/name/floorName</Anchor>
+			<Anchor>//api/name/layer</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setIsDebugMap:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the map is used only in debug mode (cf. ISCommonConstants.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isDebugMap</Declaration>
-			
-			
-			<Anchor>//api/name/isDebugMap</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/isDebugMap</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the map is used only in debug mode (cf. ISCommonConstants.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isDebugMap</Declaration>
-			
-			
-			<Anchor>//api/name/isDebugMap</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setSortIndex:</TokenIdentifier>
-			<Abstract type="html">Index used to sort maps.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
-			
-			
-			<Anchor>//api/name/sortIndex</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/sortIndex</TokenIdentifier>
-			<Abstract type="html">Index used to sort maps.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int sortIndex</Declaration>
-			
-			
-			<Anchor>//api/name/sortIndex</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setAzimuth:</TokenIdentifier>
-			<Abstract type="html">INSITEO map azimuth.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float azimuth</Declaration>
-			
-			
-			<Anchor>//api/name/azimuth</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/azimuth</TokenIdentifier>
-			<Abstract type="html">INSITEO map azimuth.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float azimuth</Declaration>
-			
-			
-			<Anchor>//api/name/azimuth</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setIsOriented:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the map is oriented.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isOriented</Declaration>
-			
-			
-			<Anchor>//api/name/isOriented</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/isOriented</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the map is oriented.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isOriented</Declaration>
-			
-			
-			<Anchor>//api/name/isOriented</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setIsGeoReferenced:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the map is geo referenced.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isGeoReferenced</Declaration>
-			
-			
-			<Anchor>//api/name/isGeoReferenced</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/isGeoReferenced</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the map is geo referenced.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isGeoReferenced</Declaration>
-			
-			
-			<Anchor>//api/name/isGeoReferenced</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setGeoMatrix:</TokenIdentifier>
-			<Abstract type="html">INSITEO map geoMatrix.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISGeoMatrix *geoMatrix</Declaration>
-			
-			
-			<Anchor>//api/name/geoMatrix</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/geoMatrix</TokenIdentifier>
-			<Abstract type="html">INSITEO map geoMatrix.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISGeoMatrix *geoMatrix</Declaration>
-			
-			
-			<Anchor>//api/name/geoMatrix</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setScale:</TokenIdentifier>
-			<Abstract type="html">Map scale.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float scale</Declaration>
-			
-			
-			<Anchor>//api/name/scale</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/scale</TokenIdentifier>
-			<Abstract type="html">Map scale.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float scale</Declaration>
-			
-			
-			<Anchor>//api/name/scale</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setZoomLevels:</TokenIdentifier>
-			<Abstract type="html">Map zoom levels.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *zoomLevels</Declaration>
-			
-			
-			<Anchor>//api/name/zoomLevels</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/zoomLevels</TokenIdentifier>
-			<Abstract type="html">Map zoom levels.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *zoomLevels</Declaration>
-			
-			
-			<Anchor>//api/name/zoomLevels</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setZoomMin:</TokenIdentifier>
-			<Abstract type="html">Zoom min value.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int zoomMin</Declaration>
-			
-			
-			<Anchor>//api/name/zoomMin</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/zoomMin</TokenIdentifier>
-			<Abstract type="html">Zoom min value.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int zoomMin</Declaration>
-			
-			
-			<Anchor>//api/name/zoomMin</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setZoomMax:</TokenIdentifier>
-			<Abstract type="html">Zoom max value.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int zoomMax</Declaration>
-			
-			
-			<Anchor>//api/name/zoomMax</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/zoomMax</TokenIdentifier>
-			<Abstract type="html">Zoom max value.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int zoomMax</Declaration>
-			
-			
-			<Anchor>//api/name/zoomMax</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setDefaultZoomLevel:</TokenIdentifier>
-			<Abstract type="html">Default zoom level.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int defaultZoomLevel</Declaration>
-			
-			
-			<Anchor>//api/name/defaultZoomLevel</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/defaultZoomLevel</TokenIdentifier>
-			<Abstract type="html">Default zoom level.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int defaultZoomLevel</Declaration>
-			
-			
-			<Anchor>//api/name/defaultZoomLevel</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setStartCenterPosition:</TokenIdentifier>
-			<Abstract type="html">Start center position (in meters).</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CGPoint startCenterPosition</Declaration>
-			
-			
-			<Anchor>//api/name/startCenterPosition</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/startCenterPosition</TokenIdentifier>
-			<Abstract type="html">Start center position (in meters).</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CGPoint startCenterPosition</Declaration>
-			
-			
-			<Anchor>//api/name/startCenterPosition</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setBackgroundColor:</TokenIdentifier>
-			<Abstract type="html">Map background color.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) UIColor *backgroundColor</Declaration>
-			
-			
-			<Anchor>//api/name/backgroundColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/backgroundColor</TokenIdentifier>
-			<Abstract type="html">Map background color.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) UIColor *backgroundColor</Declaration>
-			
-			
-			<Anchor>//api/name/backgroundColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setZoneColor:</TokenIdentifier>
-			<Abstract type="html">Color for zones border.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) UIColor *zoneColor</Declaration>
-			
-			
-			<Anchor>//api/name/zoneColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/zoneColor</TokenIdentifier>
-			<Abstract type="html">Color for zones border.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) UIColor *zoneColor</Declaration>
-			
-			
-			<Anchor>//api/name/zoneColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setDisplayBackgroundTile:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if we display a background tile to improve the rendering.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean displayBackgroundTile</Declaration>
-			
-			
-			<Anchor>//api/name/displayBackgroundTile</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/displayBackgroundTile</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if we display a background tile to improve the rendering.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean displayBackgroundTile</Declaration>
-			
-			
-			<Anchor>//api/name/displayBackgroundTile</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setFitToScreen:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if we need to fit to screen on load.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean fitToScreen</Declaration>
-			
-			
-			<Anchor>//api/name/fitToScreen</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/fitToScreen</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if we need to fit to screen on load.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean fitToScreen</Declaration>
-			
-			
-			<Anchor>//api/name/fitToScreen</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setIsSlideActive:</TokenIdentifier>
-			<Abstract type="html">Boolean used to activate auto-slide on the map (slide when flinging map).</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isSlideActive</Declaration>
-			
-			
-			<Anchor>//api/name/isSlideActive</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/isSlideActive</TokenIdentifier>
-			<Abstract type="html">Boolean used to activate auto-slide on the map (slide when flinging map).</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean isSlideActive</Declaration>
-			
-			
-			<Anchor>//api/name/isSlideActive</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setExtra1:</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
-			
-			
-			<Anchor>//api/name/extra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/extra1</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
-			
-			
-			<Anchor>//api/name/extra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setExtra2:</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
-			
-			
-			<Anchor>//api/name/extra2</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/extra2</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
-			
-			
-			<Anchor>//api/name/extra2</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setExtra3:</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
-			
-			
-			<Anchor>//api/name/extra3</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/extra3</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
-			
-			
-			<Anchor>//api/name/extra3</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setFExtra1:</TokenIdentifier>
-			<Abstract type="html">Float extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/fExtra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/fExtra1</TokenIdentifier>
-			<Abstract type="html">Float extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/fExtra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setDispExtra1:</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *dispExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/dispExtra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/dispExtra1</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *dispExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/dispExtra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setDispExtra2:</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *dispExtra2</Declaration>
-			
-			
-			<Anchor>//api/name/dispExtra2</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/dispExtra2</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *dispExtra2</Declaration>
-			
-			
-			<Anchor>//api/name/dispExtra2</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setDispExtra3:</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *dispExtra3</Declaration>
-			
-			
-			<Anchor>//api/name/dispExtra3</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/dispExtra3</TokenIdentifier>
-			<Abstract type="html">String extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSString *dispExtra3</Declaration>
-			
-			
-			<Anchor>//api/name/dispExtra3</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/setDispFExtra1:</TokenIdentifier>
-			<Abstract type="html">Float extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float dispFExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/dispFExtra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMap/dispFExtra1</TokenIdentifier>
-			<Abstract type="html">Float extra parameter.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float dispFExtra1</Declaration>
-			
-			
-			<Anchor>//api/name/dispFExtra1</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/getZoomLevelWithId:</TokenIdentifier>
-			<Abstract type="html">Method used to get a specific map zoom level.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
-			
-			<Declaration>- (ISZoomLevel *)getZoomLevelWithId:(int)level</Declaration>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/updateLocation:</TokenIdentifier>
+			<Abstract type="html">Method called to update existing location.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateLocation:(ISLocation *)location</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>level</Name>
-					<Abstract type="html">Zoom level identifer.</Abstract>
+					<Name>location</Name>
+					<Abstract type="html">ISLocation to update.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Related zoom level.</Abstract></ReturnValue>
-			<Anchor>//api/name/getZoomLevelWithId:</Anchor>
+			
+			<Anchor>//api/name/updateLocation:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/getMapCenterWithZoomLevel:</TokenIdentifier>
-			<Abstract type="html">Method used to get the map center (in meters) relative to a specific zoom level.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/updateAzimuth:</TokenIdentifier>
+			<Abstract type="html">Method called to update the current azimuth.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>- (NSValue *)getMapCenterWithZoomLevel:(int)level</Declaration>
+			<Declaration>- (void)updateAzimuth:(float)azimuth</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>level</Name>
-					<Abstract type="html">Zoom level identifer.</Abstract>
+					<Name>azimuth</Name>
+					<Abstract type="html">New azimuth to consider.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Related map center (in meters).</Abstract></ReturnValue>
-			<Anchor>//api/name/getMapCenterWithZoomLevel:</Anchor>
+			
+			<Anchor>//api/name/updateAzimuth:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/getTileBoundsWithZoomLevel:</TokenIdentifier>
-			<Abstract type="html">Method used to get the tile index bounds center relative to a specific zoom level.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationRenderer/setCompassDisplayEnabled:</TokenIdentifier>
+			<Abstract type="html">Method called to set compass visible or not.</Abstract>
+			<DeclaredIn>ISLocationRenderer.h</DeclaredIn>			
 			
-			<Declaration>- (ISRect *)getTileBoundsWithZoomLevel:(int)level</Declaration>
+			<Declaration>- (void)setCompassDisplayEnabled:(Boolean)displayEnabled</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>level</Name>
-					<Abstract type="html">Zoom level identifer.</Abstract>
+					<Name>displayEnabled</Name>
+					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the compass is visible, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Related tiles index bounds.</Abstract></ReturnValue>
-			<Anchor>//api/name/getTileBoundsWithZoomLevel:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMap/getMapBoundsWithZoomLevel:</TokenIdentifier>
-			<Abstract type="html">Method used to get the map bounds center relative to a specific zoom level.</Abstract>
-			<DeclaredIn>ISMap.h</DeclaredIn>			
 			
-			<Declaration>- (ISRectF *)getMapBoundsWithZoomLevel:(int)level</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>level</Name>
-					<Abstract type="html">Zoom level identifer.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Related map bounds.</Abstract></ReturnValue>
-			<Anchor>//api/name/getMapBoundsWithZoomLevel:</Anchor>
+			<Anchor>//api/name/setCompassDisplayEnabled:</Anchor>
 		</Token>
 		
 	</File>

@@ -1,58 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGeofenceAreaRenderer.html">
+	<File path="Classes/ISGeoMatrix.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGeofenceAreaRenderer</TokenIdentifier>
-			<Abstract type="html">Renderer used to display ISGeofenceArea (only for debug).</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGeoMatrix</TokenIdentifier>
+			<Abstract type="html">Class used to handle matrix conversion (meters to lat/long and lat/long to meters).</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>
 			
 			<NodeRef refid="17"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceAreaRenderer/setLayer:</TokenIdentifier>
-			<Abstract type="html">Current displayed layer.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/setH11:</TokenIdentifier>
+			<Abstract type="html">H11 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double h11</Declaration>
 			
 			
-			<Anchor>//api/name/layer</Anchor>
+			<Anchor>//api/name/h11</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceAreaRenderer/layer</TokenIdentifier>
-			<Abstract type="html">Current displayed layer.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeoMatrix/h11</TokenIdentifier>
+			<Abstract type="html">H11 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) ISLayer *layer</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double h11</Declaration>
 			
 			
-			<Anchor>//api/name/layer</Anchor>
+			<Anchor>//api/name/h11</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceAreaRenderer/setGfxGeofenceAreas:</TokenIdentifier>
-			<Abstract type="html">All ISGfxGeofenceArea displayed.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/setH12:</TokenIdentifier>
+			<Abstract type="html">H12 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableDictionary *gfxGeofenceAreas</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double h12</Declaration>
 			
 			
-			<Anchor>//api/name/gfxGeofenceAreas</Anchor>
+			<Anchor>//api/name/h12</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceAreaRenderer/gfxGeofenceAreas</TokenIdentifier>
-			<Abstract type="html">All ISGfxGeofenceArea displayed.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeoMatrix/h12</TokenIdentifier>
+			<Abstract type="html">H12 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableDictionary *gfxGeofenceAreas</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double h12</Declaration>
 			
 			
-			<Anchor>//api/name/gfxGeofenceAreas</Anchor>
+			<Anchor>//api/name/h12</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/setH21:</TokenIdentifier>
+			<Abstract type="html">H21 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double h21</Declaration>
+			
+			
+			<Anchor>//api/name/h21</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeoMatrix/h21</TokenIdentifier>
+			<Abstract type="html">H21 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double h21</Declaration>
+			
+			
+			<Anchor>//api/name/h21</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/setH22:</TokenIdentifier>
+			<Abstract type="html">H22 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double h22</Declaration>
+			
+			
+			<Anchor>//api/name/h22</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeoMatrix/h22</TokenIdentifier>
+			<Abstract type="html">H22 matrix argument.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double h22</Declaration>
+			
+			
+			<Anchor>//api/name/h22</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/setOffset1:</TokenIdentifier>
+			<Abstract type="html">Matrix offset 1.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double offset1</Declaration>
+			
+			
+			<Anchor>//api/name/offset1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeoMatrix/offset1</TokenIdentifier>
+			<Abstract type="html">Matrix offset 1.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double offset1</Declaration>
+			
+			
+			<Anchor>//api/name/offset1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/setOffset2:</TokenIdentifier>
+			<Abstract type="html">Matrix offset 2.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double offset2</Declaration>
+			
+			
+			<Anchor>//api/name/offset2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeoMatrix/offset2</TokenIdentifier>
+			<Abstract type="html">Matrix offset 2.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double offset2</Declaration>
+			
+			
+			<Anchor>//api/name/offset2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/setDet:</TokenIdentifier>
+			<Abstract type="html">Matrix determinant.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double det</Declaration>
+			
+			
+			<Anchor>//api/name/det</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeoMatrix/det</TokenIdentifier>
+			<Abstract type="html">Matrix determinant.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) double det</Declaration>
+			
+			
+			<Anchor>//api/name/det</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/initWithH11:andH12:andH21:andH22:andOffset1:andOffset2:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithH11:(double)h11 andH12:(double)h12 andH21:(double)h21 andH22:(double)h22 andOffset1:(double)offset1 andOffset2:(double)offset2</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>h11</Name>
+					<Abstract type="html">H11 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h12</Name>
+					<Abstract type="html">H12 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h21</Name>
+					<Abstract type="html">H21 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>h22</Name>
+					<Abstract type="html">H22 matrix argument.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset1</Name>
+					<Abstract type="html">Matrix offset 1.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset2</Name>
+					<Abstract type="html">Matrix offset 2.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithH11:andH12:andH21:andH22:andOffset1:andOffset2:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/toLatLongWithX:andY:</TokenIdentifier>
+			<Abstract type="html">Method used to convert X/Y meters coordinate in lat/long.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>- (CGPoint)toLatLongWithX:(double)x andY:(double)y</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>x</Name>
+					<Abstract type="html">X meters coordinate.</Abstract>
+				</Parameter><Parameter>
+					<Name>y</Name>
+					<Abstract type="html">Y meters coordinate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Converted lat/long coordinates.</Abstract></ReturnValue>
+			<Anchor>//api/name/toLatLongWithX:andY:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/toMeterWithLatitude:andLongitude:</TokenIdentifier>
+			<Abstract type="html">Method used to convert lat/long coordinate in meters.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>- (CGPoint)toMeterWithLatitude:(double)latitude andLongitude:(double)longitude</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>latitude</Name>
+					<Abstract type="html">The latitude to convert.</Abstract>
+				</Parameter><Parameter>
+					<Name>longitude</Name>
+					<Abstract type="html">The longitude to convert.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Converted meters coordinates.</Abstract></ReturnValue>
+			<Anchor>//api/name/toMeterWithLatitude:andLongitude:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeoMatrix/spanToMeterFromLatLongWithLatSpan:andLonSpan:</TokenIdentifier>
+			<Abstract type="html">Method used to convert lat/long span in meters.</Abstract>
+			<DeclaredIn>ISGeoMatrix.h</DeclaredIn>			
+			
+			<Declaration>- (CGPoint)spanToMeterFromLatLongWithLatSpan:(double)latSpan andLonSpan:(double)lonSpan</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>latSpan</Name>
+					<Abstract type="html">The latitude span to convert.</Abstract>
+				</Parameter><Parameter>
+					<Name>lonSpan</Name>
+					<Abstract type="html">The longitude span to convert.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Converted meters span.</Abstract></ReturnValue>
+			<Anchor>//api/name/spanToMeterFromLatLongWithLatSpan:andLonSpan:</Anchor>
 		</Token>
 		
 	</File>

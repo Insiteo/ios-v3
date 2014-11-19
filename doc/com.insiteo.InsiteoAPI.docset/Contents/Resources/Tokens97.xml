@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/ISPRenderer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPRenderer</TokenIdentifier>
+			<Abstract type="html">Protocol used to represent a map Renderer.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>
+			
+			<NodeRef refid="97"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/setRtoClass:</TokenIdentifier>
+			<Abstract type="html">The Renderer key (depending of the RTO classe).</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *rtoClass</Declaration>
+			
+			
+			<Anchor>//api/name/rtoClass</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPRenderer/rtoClass</TokenIdentifier>
+			<Abstract type="html">The Renderer key (depending of the RTO classe).</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *rtoClass</Declaration>
+			
+			
+			<Anchor>//api/name/rtoClass</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/setPriority:</TokenIdentifier>
+			<Abstract type="html">The current renderer priority (vertexZ equivalent in Cocos2d).</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int priority</Declaration>
+			
+			
+			<Anchor>//api/name/priority</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPRenderer/priority</TokenIdentifier>
+			<Abstract type="html">The current renderer priority (vertexZ equivalent in Cocos2d).</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int priority</Declaration>
+			
+			
+			<Anchor>//api/name/priority</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/setCurrentMap:</TokenIdentifier>
+			<Abstract type="html">Current map setter.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISMap *currentMap</Declaration>
+			
+			
+			<Anchor>//api/name/currentMap</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPRenderer/currentMap</TokenIdentifier>
+			<Abstract type="html">Current map setter.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISMap *currentMap</Declaration>
+			
+			
+			<Anchor>//api/name/currentMap</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/addRTO:</TokenIdentifier>
+			<Abstract type="html">Method called to add an RTO.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)addRTO:(id&lt;ISPRTO&gt;)rto</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">RTO to add.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A boolean if the RTO was successfully added.</Abstract></ReturnValue>
+			<Anchor>//api/name/addRTO:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/addRTO:inZone:</TokenIdentifier>
+			<Abstract type="html">Method called to add a RTO to a specific Zone.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)addRTO:(id&lt;ISPRTO&gt;)rto inZone:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">RTO to add.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Zone identifier to clear.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A boolean if the RTO was successfully added.</Abstract></ReturnValue>
+			<Anchor>//api/name/addRTO:inZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/removeRTO:</TokenIdentifier>
+			<Abstract type="html">Method called to remove an RTO.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRTO:(id&lt;ISPRTO&gt;)rto</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">RTO to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRTO:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/removeRTO:fromZone:</TokenIdentifier>
+			<Abstract type="html">Method called to remove a RTO from a specific Zone.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRTO:(id&lt;ISPRTO&gt;)rto fromZone:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rto</Name>
+					<Abstract type="html">RTO to remove.</Abstract>
+				</Parameter><Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Zone identifier to clear.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRTO:fromZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/clear</TokenIdentifier>
+			<Abstract type="html">Method called to clear the Renderer.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)clear</Declaration>
+			
+			
+			<Anchor>//api/name/clear</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/clearZone:</TokenIdentifier>
+			<Abstract type="html">Method called to clear all the RTO of a specific Zone.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)clearZone:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Zone identifier to clear.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/clearZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/render2DWithLayer:andRatio:andOffset:andAngle:</TokenIdentifier>
+			<Abstract type="html">Method called to draw the Renderer content (ie: ISPRTO for more information).
+To obtain object position on screen, do (objectpositioninmeter.x  aRatio + aOffset.x &lt;b&gt;AND&lt;/b&gt; aOffset.y - objectpositioninmeter.x  aRatio).</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)render2DWithLayer:(CCLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>layer</Name>
+					<Abstract type="html">The destination Cocos2d layer where this object should be added to.</Abstract>
+				</Parameter><Parameter>
+					<Name>ratio</Name>
+					<Abstract type="html">The real/screen coord ratio, this is used to transform the object&apos;s real coords into screen coords.</Abstract>
+				</Parameter><Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</Abstract>
+				</Parameter><Parameter>
+					<Name>angle</Name>
+					<Abstract type="html">The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/render2DWithLayer:andRatio:andOffset:andAngle:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/setDisplayEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the Renderer rendering is activated.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean displayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/displayEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPRenderer/displayEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the Renderer rendering is activated.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean displayEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/displayEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/setTouchEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the Renderer touch is activated.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean touchEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/touchEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPRenderer/touchEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the Renderer touch is activated.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean touchEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/touchEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/setRtoListener:</TokenIdentifier>
+			<Abstract type="html">Related renderer touch listener.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPRTOListener&gt; rtoListener</Declaration>
+			
+			
+			<Anchor>//api/name/rtoListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPRenderer/rtoListener</TokenIdentifier>
+			<Abstract type="html">Related renderer touch listener.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) id&lt;ISPRTOListener&gt; rtoListener</Declaration>
+			
+			
+			<Anchor>//api/name/rtoListener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/onTouchDown:</TokenIdentifier>
+			<Abstract type="html">Method called when a touch down event occured.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)onTouchDown:(ISTouch *)touch</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>touch</Name>
+					<Abstract type="html">Object that contains iOS touch information.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it consume the event, else &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/onTouchDown:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/onTouchMove:</TokenIdentifier>
+			<Abstract type="html">Method called when a move event occured.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)onTouchMove:(ISTouch *)touch</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>touch</Name>
+					<Abstract type="html">Object that contains iOS touch information.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it consume the event, else &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/onTouchMove:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/onTouchUp:</TokenIdentifier>
+			<Abstract type="html">Method called when a touch up event occured.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)onTouchUp:(ISTouch *)touch</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>touch</Name>
+					<Abstract type="html">Object that contains iOS touch information.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it consume the event, else &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/onTouchUp:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/setRenderMode:</TokenIdentifier>
+			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) ISERenderMode renderMode</Declaration>
+			
+			
+			<Anchor>//api/name/renderMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/ISPRenderer/renderMode</TokenIdentifier>
+			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) ISERenderMode renderMode</Declaration>
+			
+			
+			<Anchor>//api/name/renderMode</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/render3DWithScene:andRatio:andAngle:</TokenIdentifier>
+			<Abstract type="html">Method called to handle 3D rendering stuff.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (void)render3DWithScene:(CC3Scene *)scene andRatio:(float)ratio andAngle:(float)angle</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>scene</Name>
+					<Abstract type="html">Current 3D scene.</Abstract>
+				</Parameter><Parameter>
+					<Name>ratio</Name>
+					<Abstract type="html">Current ratio (depending on the current zoom level).</Abstract>
+				</Parameter><Parameter>
+					<Name>angle</Name>
+					<Abstract type="html">Current angle.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/render3DWithScene:andRatio:andAngle:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRenderer/getRTOsWithZoneId:</TokenIdentifier>
+			<Abstract type="html">Method used to get all RTO from a given zone identifier.</Abstract>
+			<DeclaredIn>ISPRenderer.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)getRTOsWithZoneId:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Corresponding zone identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of all linked RTO (could be nil).</Abstract></ReturnValue>
+			<Anchor>//api/name/getRTOsWithZoneId:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

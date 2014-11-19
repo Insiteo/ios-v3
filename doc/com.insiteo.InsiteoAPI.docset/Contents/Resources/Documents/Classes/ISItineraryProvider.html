@@ -75,10 +75,6 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/lock">&nbsp;&nbsp;&nbsp;&nbsp;- lock</option>
-	
-	<option value="//api/name/preloadItineraryGraph">&nbsp;&nbsp;&nbsp;&nbsp;- preloadItineraryGraph</option>
-	
 	<option value="//api/name/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:">&nbsp;&nbsp;&nbsp;&nbsp;- requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:</option>
 	
 	<option value="//api/name/requestItineraryFromCurrentLocationWithEndPositions:andListener:andPMR:">&nbsp;&nbsp;&nbsp;&nbsp;- requestItineraryFromCurrentLocationWithEndPositions:andListener:andPMR:</option>
@@ -92,8 +88,6 @@
 	<option value="//api/name/requestItineraryWithStartPositions:andEndPositions:andListener:andPMR:">&nbsp;&nbsp;&nbsp;&nbsp;- requestItineraryWithStartPositions:andEndPositions:andListener:andPMR:</option>
 	
 	<option value="//api/name/requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andListener:andPMR:">&nbsp;&nbsp;&nbsp;&nbsp;- requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andListener:andPMR:</option>
-	
-	<option value="//api/name/unlock">&nbsp;&nbsp;&nbsp;&nbsp;- unlock</option>
 	
 	<option value="//api/name/updateItinerary:">&nbsp;&nbsp;&nbsp;&nbsp;- updateItinerary:</option>
 	
@@ -157,10 +151,6 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lock">lock</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preloadItineraryGraph">preloadItineraryGraph</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:">requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestItineraryFromCurrentLocationWithEndPositions:andListener:andPMR:">requestItineraryFromCurrentLocationWithEndPositions:andListener:andPMR:</a></span></li>
@@ -174,8 +164,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestItineraryWithStartPositions:andEndPositions:andListener:andPMR:">requestItineraryWithStartPositions:andEndPositions:andListener:andPMR:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andListener:andPMR:">requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andListener:andPMR:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unlock">unlock</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateItinerary:">updateItinerary:</a></span></li>
 	
@@ -386,27 +374,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/updateItinerary:">&ndash;&nbsp;updateItinerary:</a></code>
 		<span class="tooltip"><p>Method called to update the last itinerary.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/preloadItineraryGraph">&ndash;&nbsp;preloadItineraryGraph</a></code>
-		<span class="tooltip"><p>Method used to load all itinerary data to memory, this way the 1st itinerary request will be faster.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/lock">&ndash;&nbsp;lock</a></code>
-		<span class="tooltip"><p>Intern method used to lock the itinerary stuff.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/unlock">&ndash;&nbsp;unlock</a></code>
-		<span class="tooltip"><p>Intern method used to un<a href="#//api/name/lock">lock</a> the itinerary stuff.</p></span>
 	</span>
 	
 	
@@ -1008,88 +975,6 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/lock" title="lock"></a>
-	<h3 class="subsubtitle method-title">lock</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Intern method used to lock the itinerary stuff.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)lock</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Intern method used to lock the itinerary stuff.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/preloadItineraryGraph" title="preloadItineraryGraph"></a>
-	<h3 class="subsubtitle method-title">preloadItineraryGraph</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to load all itinerary data to memory, this way the 1st itinerary request will be faster.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)preloadItineraryGraph</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to load all itinerary data to memory, this way the 1st itinerary request will be faster.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:" title="requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:"></a>
 	<h3 class="subsubtitle method-title">requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andListener:andPMR:</h3>
 	
@@ -1597,47 +1482,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/unlock" title="unlock"></a>
-	<h3 class="subsubtitle method-title">unlock</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Intern method used to un<a href="#//api/name/lock">lock</a> the itinerary stuff.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)unlock</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Intern method used to un<a href="#//api/name/lock">lock</a> the itinerary stuff.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/updateItinerary:" title="updateItinerary:"></a>
 	<h3 class="subsubtitle method-title">updateItinerary:</h3>
 	
@@ -1701,7 +1545,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

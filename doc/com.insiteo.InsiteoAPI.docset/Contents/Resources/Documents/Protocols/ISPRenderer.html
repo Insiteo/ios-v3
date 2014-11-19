@@ -69,7 +69,7 @@
 	
 	<option value="//api/name/clearZone:">&nbsp;&nbsp;&nbsp;&nbsp;- clearZone:</option>
 	
-	<option value="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:">&nbsp;&nbsp;&nbsp;&nbsp;- invalidateWithLayer:andRatio:andOffset:andAngle:</option>
+	<option value="//api/name/getRTOsWithZoneId:">&nbsp;&nbsp;&nbsp;&nbsp;- getRTOsWithZoneId:</option>
 	
 	<option value="//api/name/onTouchDown:">&nbsp;&nbsp;&nbsp;&nbsp;- onTouchDown:</option>
 	
@@ -80,6 +80,8 @@
 	<option value="//api/name/removeRTO:">&nbsp;&nbsp;&nbsp;&nbsp;- removeRTO:</option>
 	
 	<option value="//api/name/removeRTO:fromZone:">&nbsp;&nbsp;&nbsp;&nbsp;- removeRTO:fromZone:</option>
+	
+	<option value="//api/name/render2DWithLayer:andRatio:andOffset:andAngle:">&nbsp;&nbsp;&nbsp;&nbsp;- render2DWithLayer:andRatio:andOffset:andAngle:</option>
 	
 	<option value="//api/name/render3DWithScene:andRatio:andAngle:">&nbsp;&nbsp;&nbsp;&nbsp;- render3DWithScene:andRatio:andAngle:</option>
 	
@@ -145,7 +147,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearZone:">clearZone:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:">invalidateWithLayer:andRatio:andOffset:andAngle:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRTOsWithZoneId:">getRTOsWithZoneId:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onTouchDown:">onTouchDown:</a></span></li>
 	
@@ -156,6 +158,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeRTO:">removeRTO:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeRTO:fromZone:">removeRTO:fromZone:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/render2DWithLayer:andRatio:andOffset:andAngle:">render2DWithLayer:andRatio:andOffset:andAngle:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/render3DWithScene:andRatio:andAngle:">render3DWithScene:andRatio:andAngle:</a></span></li>
 	
@@ -293,7 +297,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:">&ndash;&nbsp;invalidateWithLayer:andRatio:andOffset:andAngle:</a></code>
+		<code><a href="#//api/name/render2DWithLayer:andRatio:andOffset:andAngle:">&ndash;&nbsp;render2DWithLayer:andRatio:andOffset:andAngle:</a></code>
 		<span class="tooltip"><p>Method called to draw the Renderer content (ie: <a href="../Protocols/ISPRTO.html">ISPRTO</a> for more information).
 To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).</p></span>
 	</span>
@@ -360,6 +364,13 @@ To obtain object position on screen, do (object_position_in_meter.x * aRatio + a
 	<span class="tooltip">
 		<code><a href="#//api/name/render3DWithScene:andRatio:andAngle:">&ndash;&nbsp;render3DWithScene:andRatio:andAngle:</a></code>
 		<span class="tooltip"><p>Method called to handle 3D rendering stuff.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRTOsWithZoneId:">&ndash;&nbsp;getRTOsWithZoneId:</a></code>
+		<span class="tooltip"><p>Method used to get all RTO from a given zone identifier.</p></span>
 	</span>
 	
 	
@@ -883,19 +894,18 @@ To obtain object position on screen, do (object_position_in_meter.x * aRatio + a
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:" title="invalidateWithLayer:andRatio:andOffset:andAngle:"></a>
-	<h3 class="subsubtitle method-title">invalidateWithLayer:andRatio:andOffset:andAngle:</h3>
+	<a name="//api/name/getRTOsWithZoneId:" title="getRTOsWithZoneId:"></a>
+	<h3 class="subsubtitle method-title">getRTOsWithZoneId:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method called to draw the Renderer content (ie: <a href="../Protocols/ISPRTO.html">ISPRTO</a> for more information).
-To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).</p>
+		<p>Method used to get all RTO from a given zone identifier.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)invalidateWithLayer:(ISLayer *)<em>layer</em> andRatio:(double)<em>ratio</em> andOffset:(CGPoint)<em>offset</em> andAngle:(float)<em>angle</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)getRTOsWithZoneId:(int)<em>zoneId</em></code></div>
 
     
 	
@@ -903,28 +913,18 @@ To obtain object position on screen, do (object_position_in_meter.x * aRatio + a
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>layer</em></dt>
-			<dd><p>The destination Cocos2d layer where this object should be added to.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>ratio</em></dt>
-			<dd><p>The real/screen coord ratio, this is used to transform the object&rsquo;s real coords into screen coords.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>offset</em></dt>
-			<dd><p>In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>angle</em></dt>
-			<dd><p>The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</p></dd>
+			<dt><em>zoneId</em></dt>
+			<dd><p>Corresponding zone identifier.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of all linked RTO (could be nil).</p>
+	</div>
 	
 	
 	
@@ -932,8 +932,7 @@ To obtain object position on screen, do (object_position_in_meter.x * aRatio + a
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to draw the Renderer content (ie: <a href="../Protocols/ISPRTO.html">ISPRTO</a> for more information).
-To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+		<p>Method used to get all RTO from a given zone identifier.</p>
 	</div>
 	
 	
@@ -1226,6 +1225,74 @@ To obtain object position on screen, do (object_position_in_meter.x * aRatio + a
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/render2DWithLayer:andRatio:andOffset:andAngle:" title="render2DWithLayer:andRatio:andOffset:andAngle:"></a>
+	<h3 class="subsubtitle method-title">render2DWithLayer:andRatio:andOffset:andAngle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to draw the Renderer content (ie: <a href="../Protocols/ISPRTO.html">ISPRTO</a> for more information).
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)render2DWithLayer:(CCLayer *)<em>layer</em> andRatio:(double)<em>ratio</em> andOffset:(CGPoint)<em>offset</em> andAngle:(float)<em>angle</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layer</em></dt>
+			<dd><p>The destination Cocos2d layer where this object should be added to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ratio</em></dt>
+			<dd><p>The real/screen coord ratio, this is used to transform the object&rsquo;s real coords into screen coords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>angle</em></dt>
+			<dd><p>The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to draw the Renderer content (ie: <a href="../Protocols/ISPRTO.html">ISPRTO</a> for more information).
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRenderer.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/render3DWithScene:andRatio:andAngle:" title="render3DWithScene:andRatio:andAngle:"></a>
 	<h3 class="subsubtitle method-title">render3DWithScene:andRatio:andAngle:</h3>
 	
@@ -1299,7 +1366,7 @@ To obtain object position on screen, do (object_position_in_meter.x * aRatio + a
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

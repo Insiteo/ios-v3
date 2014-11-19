@@ -46,9 +46,9 @@
 	
 	<option value="//api/name/lastRatio">&nbsp;&nbsp;&nbsp;&nbsp;lastRatio</option>
 	
-	<option value="//api/name/nbShelf">&nbsp;&nbsp;&nbsp;&nbsp;nbShelf</option>
-	
 	<option value="//api/name/needToBeDisplayed">&nbsp;&nbsp;&nbsp;&nbsp;needToBeDisplayed</option>
+	
+	<option value="//api/name/shelvesMinZoom">&nbsp;&nbsp;&nbsp;&nbsp;shelvesMinZoom</option>
 	
 	<option value="//api/name/zone">&nbsp;&nbsp;&nbsp;&nbsp;zone</option>
 	
@@ -57,18 +57,13 @@
 	
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/zoneHeight:">&nbsp;&nbsp;&nbsp;&nbsp;+ zoneHeight:</option>
-	
-	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
 	<option value="//api/name/containsPoint:">&nbsp;&nbsp;&nbsp;&nbsp;- containsPoint:</option>
 	
-	<option value="//api/name/initWithZone:andMap:andRenderMode:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithZone:andMap:andRenderMode:</option>
+	<option value="//api/name/initWithZone:andRenderMode:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithZone:andRenderMode:</option>
 	
 	<option value="//api/name/setOffset:andRatio:">&nbsp;&nbsp;&nbsp;&nbsp;- setOffset:andRatio:</option>
 	
@@ -102,9 +97,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastRatio">lastRatio</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nbShelf">nbShelf</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/needToBeDisplayed">needToBeDisplayed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shelvesMinZoom">shelvesMinZoom</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zone">zone</a></span></li>
 	
@@ -114,19 +109,13 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zoneHeight:">zoneHeight:</a></span></li>
-	
-</ul></li>
-
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsPoint:">containsPoint:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithZone:andMap:andRenderMode:">initWithZone:andMap:andRenderMode:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithZone:andRenderMode:">initWithZone:andRenderMode:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setOffset:andRatio:">setOffset:andRatio:</a></span></li>
 	
@@ -230,14 +219,14 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/nbShelf">&nbsp;&nbsp;nbShelf</a></code>
-		<span class="tooltip"><p>3D shelf count.</p></span>
+		<code><a href="#//api/name/shelvesMinZoom">&nbsp;&nbsp;shelvesMinZoom</a></code>
+		<span class="tooltip"><p>Min zoom level from which <a href="#//api/name/zone">zone</a> shelves are visible.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithZone:andMap:andRenderMode:">&ndash;&nbsp;initWithZone:andMap:andRenderMode:</a></code>
+		<code><a href="#//api/name/initWithZone:andRenderMode:">&ndash;&nbsp;initWithZone:andRenderMode:</a></code>
 		<span class="tooltip"><p>Main constructor.</p></span>
 	</span>
 	
@@ -253,13 +242,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/setOffset:andRatio:">&ndash;&nbsp;setOffset:andRatio:</a></code>
 		<span class="tooltip"><p>Method called to update the last offset and ratio computed.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/zoneHeight:">+&nbsp;zoneHeight:</a></code>
-		<span class="tooltip"><p>Static method used to get an <a href="../Classes/ISZone.html">ISZone</a> height.</p></span>
 	</span>
 	
 	
@@ -400,47 +382,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/nbShelf" title="nbShelf"></a>
-	<h3 class="subsubtitle method-title">nbShelf</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>3D shelf count.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int nbShelf</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>3D shelf count.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxZone.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/needToBeDisplayed" title="needToBeDisplayed"></a>
 	<h3 class="subsubtitle method-title">needToBeDisplayed</h3>
 	
@@ -465,6 +406,47 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Boolean used to know if the <a href="#//api/name/zone">zone</a> needs to be displayed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGfxZone.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shelvesMinZoom" title="shelvesMinZoom"></a>
+	<h3 class="subsubtitle method-title">shelvesMinZoom</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Min zoom level from which <a href="#//api/name/zone">zone</a> shelves are visible.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int shelvesMinZoom</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Min zoom level from which <a href="#//api/name/zone">zone</a> shelves are visible.</p>
 	</div>
 	
 	
@@ -567,68 +549,6 @@
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/zoneHeight:" title="zoneHeight:"></a>
-	<h3 class="subsubtitle method-title">zoneHeight:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Static method used to get an <a href="../Classes/ISZone.html">ISZone</a> height.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (float)zoneHeight:(ISZone *)<em>zone</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>zone</em></dt>
-			<dd><p>Concerned <a href="#//api/name/zone">zone</a>.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Given <a href="#//api/name/zone">zone</a> height.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Static method used to get an <a href="../Classes/ISZone.html">ISZone</a> height.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISGfxZone.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
 					
 					
 					<div class="section section-methods">
@@ -692,8 +612,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithZone:andMap:andRenderMode:" title="initWithZone:andMap:andRenderMode:"></a>
-	<h3 class="subsubtitle method-title">initWithZone:andMap:andRenderMode:</h3>
+	<a name="//api/name/initWithZone:andRenderMode:" title="initWithZone:andRenderMode:"></a>
+	<h3 class="subsubtitle method-title">initWithZone:andRenderMode:</h3>
 	
 	
 	
@@ -703,7 +623,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithZone:(ISZone *)<em>zone</em> andMap:(ISMap *)<em>map</em> andRenderMode:(ISERenderMode)<em>renderMode</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithZone:(ISZone *)<em>zone</em> andRenderMode:(ISERenderMode)<em>renderMode</em></code></div>
 
     
 	
@@ -713,11 +633,6 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>zone</em></dt>
 			<dd><p>Related <a href="#//api/name/zone">zone</a> entitie.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>map</em></dt>
-			<dd><p>Zone map entitie.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -821,7 +736,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

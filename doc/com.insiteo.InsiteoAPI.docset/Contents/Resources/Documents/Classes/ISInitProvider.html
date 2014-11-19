@@ -52,8 +52,6 @@
 	
 	<option value="//api/name/debugListener">&nbsp;&nbsp;&nbsp;&nbsp;debugListener</option>
 	
-	<option value="//api/name/initListener">&nbsp;&nbsp;&nbsp;&nbsp;initListener</option>
-	
 	<option value="//api/name/isInitialized">&nbsp;&nbsp;&nbsp;&nbsp;isInitialized</option>
 	
 	<option value="//api/name/language">&nbsp;&nbsp;&nbsp;&nbsp;language</option>
@@ -78,7 +76,13 @@
 	
 	<option value="//api/name/sortedMaps">&nbsp;&nbsp;&nbsp;&nbsp;sortedMaps</option>
 	
+	<option value="//api/name/startHandler">&nbsp;&nbsp;&nbsp;&nbsp;startHandler</option>
+	
 	<option value="//api/name/startPath">&nbsp;&nbsp;&nbsp;&nbsp;startPath</option>
+	
+	<option value="//api/name/updateHandler">&nbsp;&nbsp;&nbsp;&nbsp;updateHandler</option>
+	
+	<option value="//api/name/updateProgressHandler">&nbsp;&nbsp;&nbsp;&nbsp;updateProgressHandler</option>
 	
 	<option value="//api/name/zones">&nbsp;&nbsp;&nbsp;&nbsp;zones</option>
 	
@@ -92,6 +96,8 @@
 	<option value="//api/name/ISToken">&nbsp;&nbsp;&nbsp;&nbsp;+ ISToken</option>
 	
 	<option value="//api/name/getBaseURL:">&nbsp;&nbsp;&nbsp;&nbsp;+ getBaseURL:</option>
+	
+	<option value="//api/name/getRootDirectoryPath">&nbsp;&nbsp;&nbsp;&nbsp;+ getRootDirectoryPath</option>
 	
 	<option value="//api/name/getServerTypeString:">&nbsp;&nbsp;&nbsp;&nbsp;+ getServerTypeString:</option>
 	
@@ -128,21 +134,19 @@
 	
 	<option value="//api/name/siteVersionString">&nbsp;&nbsp;&nbsp;&nbsp;- siteVersionString</option>
 	
-	<option value="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:">&nbsp;&nbsp;&nbsp;&nbsp;- startAPIWithServerType:andSiteId:andLanguage:andListener:</option>
+	<option value="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:</option>
 	
-	<option value="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:">&nbsp;&nbsp;&nbsp;&nbsp;- startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:</option>
+	<option value="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:</option>
 	
-	<option value="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:">&nbsp;&nbsp;&nbsp;&nbsp;- startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:</option>
+	<option value="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:</option>
 	
-	<option value="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:">&nbsp;&nbsp;&nbsp;&nbsp;- startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:</option>
+	<option value="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:</option>
 	
-	<option value="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:">&nbsp;&nbsp;&nbsp;&nbsp;- startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:</option>
+	<option value="//api/name/updateWithUpdateHandler:andUpdateProgressHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- updateWithUpdateHandler:andUpdateProgressHandler:</option>
 	
-	<option value="//api/name/updatePackagesWithInitListener:">&nbsp;&nbsp;&nbsp;&nbsp;- updatePackagesWithInitListener:</option>
+	<option value="//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:">&nbsp;&nbsp;&nbsp;&nbsp;- updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:</option>
 	
-	<option value="//api/name/updatePackagesWithInitListener:andWantedPackages:">&nbsp;&nbsp;&nbsp;&nbsp;- updatePackagesWithInitListener:andWantedPackages:</option>
-	
-	<option value="//api/name/updatePackagesWithInitListener:andWantedPackages:andForce:">&nbsp;&nbsp;&nbsp;&nbsp;- updatePackagesWithInitListener:andWantedPackages:andForce:</option>
+	<option value="//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:">&nbsp;&nbsp;&nbsp;&nbsp;- updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:</option>
 	
 	
 	
@@ -180,8 +184,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/debugListener">debugListener</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initListener">initListener</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isInitialized">isInitialized</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/language">language</a></span></li>
@@ -206,7 +208,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sortedMaps">sortedMaps</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startHandler">startHandler</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPath">startPath</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateHandler">updateHandler</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateProgressHandler">updateProgressHandler</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/zones">zones</a></span></li>
 	
@@ -221,6 +229,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ISToken">ISToken</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getBaseURL:">getBaseURL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRootDirectoryPath">getRootDirectoryPath</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getServerTypeString:">getServerTypeString:</a></span></li>
 	
@@ -258,21 +268,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/siteVersionString">siteVersionString</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:">startAPIWithServerType:andSiteId:andLanguage:andListener:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:">startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:">startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:">startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:">startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateWithUpdateHandler:andUpdateProgressHandler:">updateWithUpdateHandler:andUpdateProgressHandler:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updatePackagesWithInitListener:">updatePackagesWithInitListener:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:">updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updatePackagesWithInitListener:andWantedPackages:">updatePackagesWithInitListener:andWantedPackages:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updatePackagesWithInitListener:andWantedPackages:andForce:">updatePackagesWithInitListener:andWantedPackages:andForce:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:">updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:</a></span></li>
 	
 </ul></li>
 
@@ -336,8 +344,22 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initListener">&nbsp;&nbsp;initListener</a></code>
-		<span class="tooltip"><p>initialization events listener.</p></span>
+		<code><a href="#//api/name/startHandler">&nbsp;&nbsp;startHandler</a></code>
+		<span class="tooltip"><p>Init start handler.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateHandler">&nbsp;&nbsp;updateHandler</a></code>
+		<span class="tooltip"><p>Init update handler.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/updateProgressHandler">&nbsp;&nbsp;updateProgressHandler</a></code>
+		<span class="tooltip"><p>Init update progress handler.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -525,6 +547,13 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/getRootDirectoryPath">+&nbsp;getRootDirectoryPath</a></code>
+		<span class="tooltip"><p>Static method used to get the default INSITEO directory path.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/siteVersionString">&ndash;&nbsp;siteVersionString</a></code>
 		<span class="tooltip"><p>Method called to get an NSString representing the site version.</p></span>
 	</span>
@@ -532,56 +561,49 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:">&ndash;&nbsp;startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:</a></code>
+		<code><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:">&ndash;&nbsp;startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:</a></code>
 		<span class="tooltip"><p>Method used to initialize the API.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:">&ndash;&nbsp;startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:</a></code>
+		<code><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:">&ndash;&nbsp;startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:</a></code>
 		<span class="tooltip"><p>Method used to initialize the API.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:">&ndash;&nbsp;startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:</a></code>
+		<code><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:">&ndash;&nbsp;startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:</a></code>
 		<span class="tooltip"><p>Method used to initialize the API.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:">&ndash;&nbsp;startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:</a></code>
+		<code><a href="#//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:">&ndash;&nbsp;startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:</a></code>
 		<span class="tooltip"><p>Method used to initialize the API.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:">&ndash;&nbsp;startAPIWithServerType:andSiteId:andLanguage:andListener:</a></code>
-		<span class="tooltip"><p>Method used to initialize the API.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/updatePackagesWithInitListener:">&ndash;&nbsp;updatePackagesWithInitListener:</a></code>
+		<code><a href="#//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:">&ndash;&nbsp;updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:</a></code>
 		<span class="tooltip"><p>Method used to update application packages.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/updatePackagesWithInitListener:andWantedPackages:">&ndash;&nbsp;updatePackagesWithInitListener:andWantedPackages:</a></code>
+		<code><a href="#//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:">&ndash;&nbsp;updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:</a></code>
 		<span class="tooltip"><p>Method used to update application packages.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/updatePackagesWithInitListener:andWantedPackages:andForce:">&ndash;&nbsp;updatePackagesWithInitListener:andWantedPackages:andForce:</a></code>
+		<code><a href="#//api/name/updateWithUpdateHandler:andUpdateProgressHandler:">&ndash;&nbsp;updateWithUpdateHandler:andUpdateProgressHandler:</a></code>
 		<span class="tooltip"><p>Method used to update application packages.</p></span>
 	</span>
 	
@@ -899,47 +921,6 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>A debug listener reference (used to get debug event).</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISInitProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initListener" title="initListener"></a>
-	<h3 class="subsubtitle method-title">initListener</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>initialization events listener.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (assign) id&lt;ISPInitListener&gt; initListener</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>initialization events listener.</p>
 	</div>
 	
 	
@@ -1449,6 +1430,47 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/startHandler" title="startHandler"></a>
+	<h3 class="subsubtitle method-title">startHandler</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Init start handler.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) ISInitProviderStartHandler startHandler</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Init start handler.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInitProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/startPath" title="startPath"></a>
 	<h3 class="subsubtitle method-title">startPath</h3>
 	
@@ -1473,6 +1495,88 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Initialization URL.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInitProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateHandler" title="updateHandler"></a>
+	<h3 class="subsubtitle method-title">updateHandler</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Init update handler.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) ISInitProviderUpdateHandler updateHandler</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Init update handler.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInitProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/updateProgressHandler" title="updateProgressHandler"></a>
+	<h3 class="subsubtitle method-title">updateProgressHandler</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Init update progress handler.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) ISInitProviderUpdateProgressHandler updateProgressHandler</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Init update progress handler.</p>
 	</div>
 	
 	
@@ -1670,6 +1774,52 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Static method used to get the default INSITEO server URL from a given server type.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInitProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRootDirectoryPath" title="getRootDirectoryPath"></a>
+	<h3 class="subsubtitle method-title">getRootDirectoryPath</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to get the default INSITEO directory path.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getRootDirectoryPath</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default INSITEO directory path.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to get the default INSITEO directory path.</p>
 	</div>
 	
 	
@@ -2535,8 +2685,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:" title="startAPIWithServerType:andSiteId:andLanguage:andListener:"></a>
-	<h3 class="subsubtitle method-title">startAPIWithServerType:andSiteId:andLanguage:andListener:</h3>
+	<a name="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:" title="startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:"></a>
+	<h3 class="subsubtitle method-title">startWithServerType:andSiteId:andLanguage:andStartHandler:andRenderMode:</h3>
 	
 	
 	
@@ -2546,7 +2696,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startAPIWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andListener:(id&lt;ISPInitListener&gt;)<em>listener</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andStartHandler:(ISInitProviderStartHandler)<em>startHandler</em> andRenderMode:(ISERenderMode)<em>renderMode</em></code></div>
 
     
 	
@@ -2569,256 +2719,8 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>listener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a task that can be cancelled.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to initialize the API.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISInitProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:" title="startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:"></a>
-	<h3 class="subsubtitle method-title">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to initialize the API.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startAPIWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andListener:(id&lt;ISPInitListener&gt;)<em>listener</em> andApplicationVersion:(int)<em>applicationVersion</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>serverType</em></dt>
-			<dd><p>INSITEO server type.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>siteId</em></dt>
-			<dd><p>The site identifier to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>language</em></dt>
-			<dd><p>The <a href="#//api/name/language">language</a> to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>listener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>applicationVersion</em></dt>
-			<dd><p>The application version to use.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a task that can be cancelled.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to initialize the API.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISInitProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:" title="startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:"></a>
-	<h3 class="subsubtitle method-title">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to initialize the API.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startAPIWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andListener:(id&lt;ISPInitListener&gt;)<em>listener</em> andApplicationVersion:(int)<em>applicationVersion</em> andForceDownload:(Boolean)<em>forceDownload</em> andAnalyticsAutoStart:(Boolean)<em>analyticsAutoStart</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>serverType</em></dt>
-			<dd><p>INSITEO server type.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>siteId</em></dt>
-			<dd><p>The site identifier to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>language</em></dt>
-			<dd><p>The <a href="#//api/name/language">language</a> to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>listener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>applicationVersion</em></dt>
-			<dd><p>The application version to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>forceDownload</em></dt>
-			<dd><p>Boolean used to know if we force the download of packages even if the application is up to date.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>analyticsAutoStart</em></dt>
-			<dd><p>Boolean used to know if we can start analytics automatically.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a task that can be cancelled.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to initialize the API.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISInitProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:" title="startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:"></a>
-	<h3 class="subsubtitle method-title">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to initialize the API.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startAPIWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andListener:(id&lt;ISPInitListener&gt;)<em>listener</em> andApplicationVersion:(int)<em>applicationVersion</em> andForceDownload:(Boolean)<em>forceDownload</em> andAnalyticsAutoStart:(Boolean)<em>analyticsAutoStart</em> andRenderMode:(ISERenderMode)<em>renderMode</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>serverType</em></dt>
-			<dd><p>INSITEO server type.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>siteId</em></dt>
-			<dd><p>The site identifier to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>language</em></dt>
-			<dd><p>The <a href="#//api/name/language">language</a> to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>listener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>applicationVersion</em></dt>
-			<dd><p>The application version to use.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>forceDownload</em></dt>
-			<dd><p>Boolean used to know if we force the download of packages even if the application is up to date.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>analyticsAutoStart</em></dt>
-			<dd><p>Boolean used to know if we can start analytics automatically.</p></dd>
+			<dt><em>startHandler</em></dt>
+			<dd><p>The API initialization handler to call.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2859,8 +2761,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:" title="startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:"></a>
-	<h3 class="subsubtitle method-title">startAPIWithServerType:andSiteId:andLanguage:andListener:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andRenderMode:andServerUrl:</h3>
+	<a name="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:" title="startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:"></a>
+	<h3 class="subsubtitle method-title">startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:</h3>
 	
 	
 	
@@ -2870,7 +2772,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startAPIWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andListener:(id&lt;ISPInitListener&gt;)<em>listener</em> andApplicationVersion:(int)<em>applicationVersion</em> andForceDownload:(Boolean)<em>forceDownload</em> andAnalyticsAutoStart:(Boolean)<em>analyticsAutoStart</em> andRenderMode:(ISERenderMode)<em>renderMode</em> andServerUrl:(NSString *)<em>serverUrl</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andStartHandler:(ISInitProviderStartHandler)<em>startHandler</em> andUpdateHandler:(ISInitProviderUpdateHandler)<em>updateHandler</em> andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)<em>updateProgressHandler</em> andRenderMode:(ISERenderMode)<em>renderMode</em></code></div>
 
     
 	
@@ -2893,8 +2795,200 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>listener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
+			<dt><em>startHandler</em></dt>
+			<dd><p>The API initialization handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateHandler</em></dt>
+			<dd><p>The API update handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateProgressHandler</em></dt>
+			<dd><p>The API update progress handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>renderMode</em></dt>
+			<dd><p>Wanted render mode.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a task that can be cancelled.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to initialize the API.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInitProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:" title="startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:"></a>
+	<h3 class="subsubtitle method-title">startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to initialize the API.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andStartHandler:(ISInitProviderStartHandler)<em>startHandler</em> andUpdateHandler:(ISInitProviderUpdateHandler)<em>updateHandler</em> andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)<em>updateProgressHandler</em> andRenderMode:(ISERenderMode)<em>renderMode</em> andApplicationVersion:(int)<em>applicationVersion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>serverType</em></dt>
+			<dd><p>INSITEO server type.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteId</em></dt>
+			<dd><p>The site identifier to use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>language</em></dt>
+			<dd><p>The <a href="#//api/name/language">language</a> to use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>startHandler</em></dt>
+			<dd><p>The API initialization handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateHandler</em></dt>
+			<dd><p>The API update handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateProgressHandler</em></dt>
+			<dd><p>The API update progress handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>renderMode</em></dt>
+			<dd><p>Wanted render mode.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>applicationVersion</em></dt>
+			<dd><p>The application version to use.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a task that can be cancelled.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to initialize the API.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInitProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:" title="startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:"></a>
+	<h3 class="subsubtitle method-title">startWithServerType:andSiteId:andLanguage:andStartHandler:andUpdateHandler:andUpdateProgressHandler:andRenderMode:andApplicationVersion:andForceDownload:andAnalyticsAutoStart:andServerUrl:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to initialize the API.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)startWithServerType:(ISEServerType)<em>serverType</em> andSiteId:(int)<em>siteId</em> andLanguage:(NSString *)<em>language</em> andStartHandler:(ISInitProviderStartHandler)<em>startHandler</em> andUpdateHandler:(ISInitProviderUpdateHandler)<em>updateHandler</em> andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)<em>updateProgressHandler</em> andRenderMode:(ISERenderMode)<em>renderMode</em> andApplicationVersion:(int)<em>applicationVersion</em> andForceDownload:(Boolean)<em>forceDownload</em> andAnalyticsAutoStart:(Boolean)<em>analyticsAutoStart</em> andServerUrl:(NSString *)<em>serverUrl</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>serverType</em></dt>
+			<dd><p>INSITEO server type.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteId</em></dt>
+			<dd><p>The site identifier to use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>language</em></dt>
+			<dd><p>The <a href="#//api/name/language">language</a> to use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>startHandler</em></dt>
+			<dd><p>The API initialization handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateHandler</em></dt>
+			<dd><p>The API update handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateProgressHandler</em></dt>
+			<dd><p>The API update progress handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>renderMode</em></dt>
+			<dd><p>Wanted render mode.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2910,11 +3004,6 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>analyticsAutoStart</em></dt>
 			<dd><p>Boolean used to know if we can start analytics automatically.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>renderMode</em></dt>
-			<dd><p>Wanted render mode.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2955,8 +3044,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updatePackagesWithInitListener:" title="updatePackagesWithInitListener:"></a>
-	<h3 class="subsubtitle method-title">updatePackagesWithInitListener:</h3>
+	<a name="//api/name/updateWithUpdateHandler:andUpdateProgressHandler:" title="updateWithUpdateHandler:andUpdateProgressHandler:"></a>
+	<h3 class="subsubtitle method-title">updateWithUpdateHandler:andUpdateProgressHandler:</h3>
 	
 	
 	
@@ -2966,7 +3055,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)updatePackagesWithInitListener:(id&lt;ISPInitListener&gt;)<em>initListener</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)updateWithUpdateHandler:(ISInitProviderUpdateHandler)<em>updateHandler</em> andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)<em>updateProgressHandler</em></code></div>
 
     
 	
@@ -2974,8 +3063,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>initListener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
+			<dt><em>updateHandler</em></dt>
+			<dd><p>The API update handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateProgressHandler</em></dt>
+			<dd><p>The API update progress handler to call.</p></dd>
 		</dl>
 		
 	</div>
@@ -3011,8 +3105,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updatePackagesWithInitListener:andWantedPackages:" title="updatePackagesWithInitListener:andWantedPackages:"></a>
-	<h3 class="subsubtitle method-title">updatePackagesWithInitListener:andWantedPackages:</h3>
+	<a name="//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:" title="updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:"></a>
+	<h3 class="subsubtitle method-title">updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:</h3>
 	
 	
 	
@@ -3022,7 +3116,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)updatePackagesWithInitListener:(id&lt;ISPInitListener&gt;)<em>initListener</em> andWantedPackages:(NSArray *)<em>wantedPackages</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)updateWithUpdateHandler:(ISInitProviderUpdateHandler)<em>updateHandler</em> andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)<em>updateProgressHandler</em> andWantedPackages:(NSArray *)<em>wantedPackages</em></code></div>
 
     
 	
@@ -3030,8 +3124,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>initListener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
+			<dt><em>updateHandler</em></dt>
+			<dd><p>The API update handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateProgressHandler</em></dt>
+			<dd><p>The API update progress handler to call.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -3072,8 +3171,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/updatePackagesWithInitListener:andWantedPackages:andForce:" title="updatePackagesWithInitListener:andWantedPackages:andForce:"></a>
-	<h3 class="subsubtitle method-title">updatePackagesWithInitListener:andWantedPackages:andForce:</h3>
+	<a name="//api/name/updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:" title="updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:"></a>
+	<h3 class="subsubtitle method-title">updateWithUpdateHandler:andUpdateProgressHandler:andWantedPackages:andForce:</h3>
 	
 	
 	
@@ -3083,7 +3182,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)updatePackagesWithInitListener:(id&lt;ISPInitListener&gt;)<em>initListener</em> andWantedPackages:(NSArray *)<em>wantedPackages</em> andForce:(Boolean)<em>force</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPCancelable&gt;)updateWithUpdateHandler:(ISInitProviderUpdateHandler)<em>updateHandler</em> andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)<em>updateProgressHandler</em> andWantedPackages:(NSArray *)<em>wantedPackages</em> andForce:(Boolean)<em>force</em></code></div>
 
     
 	
@@ -3091,8 +3190,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>initListener</em></dt>
-			<dd><p>The init listener to notify.</p></dd>
+			<dt><em>updateHandler</em></dt>
+			<dd><p>The API update handler to call.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>updateProgressHandler</em></dt>
+			<dd><p>The API update progress handler to call.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -3150,7 +3254,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

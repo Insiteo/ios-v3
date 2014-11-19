@@ -61,17 +61,21 @@
 	
 	<option value="//api/name/cloneRTO">&nbsp;&nbsp;&nbsp;&nbsp;- cloneRTO</option>
 	
-	<option value="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:">&nbsp;&nbsp;&nbsp;&nbsp;- invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</option>
-	
 	<option value="//api/name/onTouchDown:">&nbsp;&nbsp;&nbsp;&nbsp;- onTouchDown:</option>
 	
 	<option value="//api/name/onTouchMove:">&nbsp;&nbsp;&nbsp;&nbsp;- onTouchMove:</option>
 	
 	<option value="//api/name/onTouchUp:">&nbsp;&nbsp;&nbsp;&nbsp;- onTouchUp:</option>
 	
-	<option value="//api/name/removeFromLayer:">&nbsp;&nbsp;&nbsp;&nbsp;- removeFromLayer:</option>
+	<option value="//api/name/remove2DFromLayer:">&nbsp;&nbsp;&nbsp;&nbsp;- remove2DFromLayer:</option>
 	
-	<option value="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:">&nbsp;&nbsp;&nbsp;&nbsp;- render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</option>
+	<option value="//api/name/remove3DFromLayer:">&nbsp;&nbsp;&nbsp;&nbsp;- remove3DFromLayer:</option>
+	
+	<option value="//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:">&nbsp;&nbsp;&nbsp;&nbsp;- render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</option>
+	
+	<option value="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:">&nbsp;&nbsp;&nbsp;&nbsp;- render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</option>
+	
+	<option value="//api/name/setDisplayEnabled:">&nbsp;&nbsp;&nbsp;&nbsp;- setDisplayEnabled:</option>
 	
 	<option value="//api/name/setResources">&nbsp;&nbsp;&nbsp;&nbsp;- setResources</option>
 	
@@ -93,9 +97,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_General">General</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Rendering">Rendering</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Render 2D">Render 2D</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Touch">Touch</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Render 3D">Render 3D</a></span></li>
 	
 </ul></li>
 
@@ -127,17 +133,21 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cloneRTO">cloneRTO</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:">invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onTouchDown:">onTouchDown:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onTouchMove:">onTouchMove:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onTouchUp:">onTouchUp:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeFromLayer:">removeFromLayer:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remove2DFromLayer:">remove2DFromLayer:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:">render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remove3DFromLayer:">remove3DFromLayer:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:">render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:">render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDisplayEnabled:">setDisplayEnabled:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setResources">setResources</a></span></li>
 	
@@ -178,7 +188,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Protocol used to represent the beahviour of an RTO (rendering and touch).</p><div class="warning"><p><strong>Warning:</strong> In order to create an RTO with bitmaps, Cocos2d needs to be initialized, otherwise the application will crash.</p></div><div class="warning"><p><strong>Warning:</strong> In order to use Cocos2d and your own RTO (add to the current ISLayer), you will need to give it a unique identifier which you can get by calling <a href="../Classes/ISLayer.html#//api/name/generateCocos2dUniqueId">[ISLayer generateCocos2dUniqueId]</a>.</p></div>
+						<p>Protocol used to represent the beahviour of an RTO (rendering and touch).</p><div class="warning"><p><strong>Warning:</strong> In order to create an RTO with bitmaps, Cocos2d needs to be initialized, otherwise the application will crash.</p></div><div class="warning"><p><strong>Warning:</strong> In order to use Cocos2d and your own RTO (add to the current CCLayer), you will need to give it a unique identifier which you can get by calling <a href="../Classes/ISMapView.html#//api/name/generateCocos2dUniqueId">[ISMapView generateCocos2dUniqueId]</a>.</p></div>
 					</div>
 					
 					
@@ -222,17 +232,24 @@
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDisplayEnabled:">&ndash;&nbsp;setDisplayEnabled:</a></code>
+		<span class="tooltip"><p>Method called show or hide an RTO.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
 </li>
 						</ul>
 						
 						
-						<a title="Rendering" name="task_Rendering"></a>
-						<h3 class="subsubtitle task-title">Rendering</h3>
+						<a title="Render 2D" name="task_Render 2D"></a>
+						<h3 class="subsubtitle task-title">Render 2D</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:">&ndash;&nbsp;invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</a></code>
+		<code><a href="#//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:">&ndash;&nbsp;render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</a></code>
 		<span class="tooltip"><p>Method called to draw an RTO with a ratio and an offset.
 To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
 If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p></span>
@@ -241,15 +258,15 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setResources">&ndash;&nbsp;setResources</a></code>
-		<span class="tooltip"><p>Method called to initialize RTO resources such as images, labels etc&hellip;</p></span>
+		<code><a href="#//api/name/remove2DFromLayer:">&ndash;&nbsp;remove2DFromLayer:</a></code>
+		<span class="tooltip"><p>Method called to remove an RTO from the Cocos2d layer.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/removeFromLayer:">&ndash;&nbsp;removeFromLayer:</a></code>
-		<span class="tooltip"><p>Method called to remove an RTO from the Cocos2d layer.</p></span>
+		<code><a href="#//api/name/setResources">&ndash;&nbsp;setResources</a></code>
+		<span class="tooltip"><p>Method called to initialize RTO resources such as images, labels etc&hellip;</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -282,7 +299,15 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Render 3D" name="task_Render 3D"></a>
+						<h3 class="subsubtitle task-title">Render 3D</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/renderMode">&nbsp;&nbsp;renderMode</a></code>
 		<span class="tooltip"><p>Current map render mode (2D or 3D).</p></span>
@@ -305,8 +330,15 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:">&ndash;&nbsp;render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</a></code>
+		<code><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:">&ndash;&nbsp;render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</a></code>
 		<span class="tooltip"><p>Method called to handle 3D rendering stuff.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/remove3DFromLayer:">&ndash;&nbsp;remove3DFromLayer:</a></code>
+		<span class="tooltip"><p>Method called to remove an RTO from the Cocos3d layer.</p></span>
 	</span>
 	
 	
@@ -626,81 +658,6 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:" title="invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:"></a>
-	<h3 class="subsubtitle method-title">invalidateWithLayer:andRatio:andOffset:andAngle:andPriority:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method called to draw an RTO with a ratio and an offset.
-To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
-If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)invalidateWithLayer:(ISLayer *)<em>layer</em> andRatio:(double)<em>ratio</em> andOffset:(CGPoint)<em>offset</em> andAngle:(float)<em>angle</em> andPriority:(int)<em>priority</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>layer</em></dt>
-			<dd><p>The destination Cocos2d layer where this object should be added to.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>ratio</em></dt>
-			<dd><p>The real/screen coord ratio, this is used to transform the object&rsquo;s real coords into screen coords.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>offset</em></dt>
-			<dd><p>In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>angle</em></dt>
-			<dd><p>The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>priority</em></dt>
-			<dd><p>The renderer priority, used as Z by Cocos2d.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to draw an RTO with a ratio and an offset.
-To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
-If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPRTO.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/onTouchDown:" title="onTouchDown:"></a>
 	<h3 class="subsubtitle method-title">onTouchDown:</h3>
 	
@@ -869,8 +826,8 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/removeFromLayer:" title="removeFromLayer:"></a>
-	<h3 class="subsubtitle method-title">removeFromLayer:</h3>
+	<a name="//api/name/remove2DFromLayer:" title="remove2DFromLayer:"></a>
+	<h3 class="subsubtitle method-title">remove2DFromLayer:</h3>
 	
 	
 	
@@ -880,7 +837,7 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)removeFromLayer:(ISLayer *)<em>layer</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)remove2DFromLayer:(CCLayer *)<em>layer</em></code></div>
 
     
 	
@@ -920,8 +877,134 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:" title="render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:"></a>
-	<h3 class="subsubtitle method-title">render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:</h3>
+	<a name="//api/name/remove3DFromLayer:" title="remove3DFromLayer:"></a>
+	<h3 class="subsubtitle method-title">remove3DFromLayer:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to remove an RTO from the Cocos3d layer.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)remove3DFromLayer:(CC3Node *)<em>layer</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layer</em></dt>
+			<dd><p>The current Cocos3d layer used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to remove an RTO from the Cocos3d layer.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:" title="render2DWithLayer:andRatio:andOffset:andAngle:andPriority:"></a>
+	<h3 class="subsubtitle method-title">render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to draw an RTO with a ratio and an offset.
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
+If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)render2DWithLayer:(CCLayer *)<em>layer</em> andRatio:(double)<em>ratio</em> andOffset:(CGPoint)<em>offset</em> andAngle:(float)<em>angle</em> andPriority:(int)<em>priority</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>layer</em></dt>
+			<dd><p>The destination Cocos2d layer where this object should be added to.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ratio</em></dt>
+			<dd><p>The real/screen coord ratio, this is used to transform the object&rsquo;s real coords into screen coords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>offset</em></dt>
+			<dd><p>In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>angle</em></dt>
+			<dd><p>The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>The renderer priority, used as Z by Cocos2d.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to draw an RTO with a ratio and an offset.
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y &ndash; object_position_in_meter.x * aRatio).
+If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</p><div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:" title="render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:"></a>
+	<h3 class="subsubtitle method-title">render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</h3>
 	
 	
 	
@@ -931,7 +1014,7 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)render3DWithScene:(CC3Scene *)<em>scene</em> andLayer:(CC3Node *)<em>layer</em> andCurrentMap:(ISMap *)<em>map</em> andRatio:(float)<em>ratio</em> andAngle:(float)<em>angle</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)render3DWithScene:(CC3Scene *)<em>scene</em> andLayer:(CC3Node *)<em>layer</em> andCurrentMap:(ISMap *)<em>map</em> andRatio:(float)<em>ratio</em> andAngle:(float)<em>angle</em> andPriority:(int)<em>priority</em></code></div>
 
     
 	
@@ -963,6 +1046,11 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 			<dd><p>Current angle.</p></dd>
 		</dl>
 		
+		<dl class="argument-def parameter-def">
+			<dt><em>priority</em></dt>
+			<dd><p>The renderer priority, used as Z by Cocos2d.</p></dd>
+		</dl>
+		
 	</div>
 	
 	
@@ -974,6 +1062,57 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Method called to handle 3D rendering stuff.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDisplayEnabled:" title="setDisplayEnabled:"></a>
+	<h3 class="subsubtitle method-title">setDisplayEnabled:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called show or hide an RTO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setDisplayEnabled:(Boolean)<em>displayEnabled</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>displayEnabled</em></dt>
+			<dd><p><b>YES</b> for a visible RTO, otherwise <b>NO</b>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called show or hide an RTO.</p>
 	</div>
 	
 	
@@ -1044,7 +1183,7 @@ If this object has no position (ie: ISPRTO is put in a zone), simply draw it at 
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

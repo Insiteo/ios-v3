@@ -1,95 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPLbsModule.html">
+	<File path="Protocols/ISPItineraryRenderListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPLbsModule</TokenIdentifier>
-			<Abstract type="html">Protocol used to define a Location module.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPItineraryRenderListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle Itinerary special touch events.</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>
 			
 			<NodeRef refid="85"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLbsModuleType:</TokenIdentifier>
-			<Abstract type="html">Lbs module type (see enum for details).</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPItineraryRenderListener/onWaypointClickedWithItinerary:andInstructionIndex:andSection:</TokenIdentifier>
+			<Abstract type="html">Method called when an Itinerary section was touched.</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>			
 			
-			<Declaration>@property (readonly) LbsModuleType lbsModuleType</Declaration>
-			
-			
-			<Anchor>//api/name/lbsModuleType</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPLbsModule/lbsModuleType</TokenIdentifier>
-			<Abstract type="html">Lbs module type (see enum for details).</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
-			
-			<Declaration>@property (readonly) LbsModuleType lbsModuleType</Declaration>
-			
-			
-			<Anchor>//api/name/lbsModuleType</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/addLbsModuleRequest:</TokenIdentifier>
-			<Abstract type="html">Method called to add module data to the Lbs request.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
-			
-			<Declaration>- (Boolean)addLbsModuleRequest:(id&lt;PLbsModuleRequest&gt;)locRequest</Declaration>
+			<Declaration>- (void)onWaypointClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex andSection:(ISItinerarySection *)section</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locRequest</Name>
-					<Abstract type="html">Location request.</Abstract>
+					<Name>itinerary</Name>
+					<Abstract type="html">The related ISItinerary.</Abstract>
+				</Parameter><Parameter>
+					<Name>instructionIndex</Name>
+					<Abstract type="html">The related ISItineraryInstruction index.</Abstract>
+				</Parameter><Parameter>
+					<Name>section</Name>
+					<Abstract type="html">The touched ISItinerarySection.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/addLbsModuleRequest:</Anchor>
+			<Anchor>//api/name/onWaypointClickedWithItinerary:andInstructionIndex:andSection:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLbsResponse:</TokenIdentifier>
-			<Abstract type="html">Method called to set module Lbs response.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPItineraryRenderListener/onInstructionClickedWithItinerary:andInstructionIndex:</TokenIdentifier>
+			<Abstract type="html">Method called when an Itinerary instruction was touched (edges).</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)setLbsResponse:(id&lt;PLbsModuleResponse&gt;)locResponse</Declaration>
+			<Declaration>- (void)onInstructionClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locResponse</Name>
-					<Abstract type="html">Location response.</Abstract>
+					<Name>itinerary</Name>
+					<Abstract type="html">The related ISItinerary.</Abstract>
+				</Parameter><Parameter>
+					<Name>instructionIndex</Name>
+					<Abstract type="html">The related ISItineraryInstruction index.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setLbsResponse:</Anchor>
+			<Anchor>//api/name/onInstructionClickedWithItinerary:andInstructionIndex:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/setLocation:</TokenIdentifier>
-			<Abstract type="html">Method called set the last location to the location module.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPItineraryRenderListener/onMapSwitcherClickedWithNextPosition:</TokenIdentifier>
+			<Abstract type="html">Method called when an Itinerary map switcher was touched (waypoint used to change map).</Abstract>
+			<DeclaredIn>ISPItineraryRenderListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)setLocation:(ISLocation *)location</Declaration>
+			<Declaration>- (void)onMapSwitcherClickedWithNextPosition:(ISPosition *)nextPosition</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">Last location get from the location provider.</Abstract>
+					<Name>nextPosition</Name>
+					<Abstract type="html">The next position to display.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setLocation:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLbsModule/clear</TokenIdentifier>
-			<Abstract type="html">Clear all data from this LBSModule. Module will need to be initialized before being used again.</Abstract>
-			<DeclaredIn>ISPLbsModule.h</DeclaredIn>			
-			
-			<Declaration>- (void)clear</Declaration>
-			
-			
-			<Anchor>//api/name/clear</Anchor>
+			<Anchor>//api/name/onMapSwitcherClickedWithNextPosition:</Anchor>
 		</Token>
 		
 	</File>

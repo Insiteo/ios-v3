@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ISLocationNode Class Reference</title>
+		<title>ISLocationManager Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ISLocationNode Class Reference</h1>
+				<h1 class="hideInXcode">ISLocationManager Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -38,15 +38,17 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/compass">&nbsp;&nbsp;&nbsp;&nbsp;compass</option>
-	
-	<option value="//api/name/dot">&nbsp;&nbsp;&nbsp;&nbsp;dot</option>
 	
 	
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/isLocationAuthorized">&nbsp;&nbsp;&nbsp;&nbsp;- isLocationAuthorized</option>
+	
+	<option value="//api/name/requestAlwaysAuthorization">&nbsp;&nbsp;&nbsp;&nbsp;- requestAlwaysAuthorization</option>
+	
+	<option value="//api/name/requestWhenInUseAuthorization">&nbsp;&nbsp;&nbsp;&nbsp;- requestWhenInUseAuthorization</option>
 	
 	
 	
@@ -70,24 +72,26 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/compass">compass</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isLocationAuthorized">isLocationAuthorized</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dot">dot</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestAlwaysAuthorization">requestAlwaysAuthorization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestWhenInUseAuthorization">requestWhenInUseAuthorization</a></span></li>
 	
 </ul></li>
-
-
-
-
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ISLocationNode Class Reference" name="top"></a>
+				<a title="ISLocationManager Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -96,7 +100,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ISLocationNode Class Reference</h1>
+						<h1 class="title title-header">ISLocationManager Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -104,10 +108,13 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">CCNode</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">CLLocationManagerDelegate</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ISLocationNode.h</td>
+	<td class="specification-value">ISLocationManager.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -117,7 +124,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Class used to handle cocos2d rendering of an <a href="../Classes/ISGfxLocation.html">ISGfxLocation</a>.</p>
+						<p>Class used to manage CLLocationManager.</p>
 					</div>
 					
 					
@@ -135,17 +142,24 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/dot">&nbsp;&nbsp;dot</a></code>
-		<span class="tooltip"><p>Location dot cocos2d sprite.</p></span>
+		<code><a href="#//api/name/requestWhenInUseAuthorization">&ndash;&nbsp;requestWhenInUseAuthorization</a></code>
+		<span class="tooltip"><p>Method used to ask requestWhenInUseAuthorization (for iOS8+).</p></span>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/compass">&nbsp;&nbsp;compass</a></code>
-		<span class="tooltip"><p>Location compass cocos2d sprite.</p></span>
+		<code><a href="#//api/name/requestAlwaysAuthorization">&ndash;&nbsp;requestAlwaysAuthorization</a></code>
+		<span class="tooltip"><p>Method used to ask requestAlwaysAuthorization (for iOS8+).</p></span>
 	</span>
-	<span class="task-item-suffix">property</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isLocationAuthorized">&ndash;&nbsp;isLocationAuthorized</a></code>
+		<span class="tooltip"><p>Method used to know if CLAuthorizationStatus is Authorized (or AuthorizedWhenInUse for iOS8+).</p></span>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -156,27 +170,36 @@
 					
 					
 					
+					
+					
+					
+					
 					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/compass" title="compass"></a>
-	<h3 class="subsubtitle method-title">compass</h3>
+	<a name="//api/name/isLocationAuthorized" title="isLocationAuthorized"></a>
+	<h3 class="subsubtitle method-title">isLocationAuthorized</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Location compass cocos2d sprite.</p>
+		<p>Method used to know if CLAuthorizationStatus is Authorized (or AuthorizedWhenInUse for iOS8+).</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) CCSprite *compass</code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)isLocationAuthorized</code></div>
 
     
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If Location is Authorized or not.</p>
+	</div>
 	
 	
 	
@@ -184,7 +207,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Location compass cocos2d sprite.</p>
+		<p>Method used to know if CLAuthorizationStatus is Authorized (or AuthorizedWhenInUse for iOS8+).</p>
 	</div>
 	
 	
@@ -195,25 +218,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISLocationNode.h</code><br />
+		<code class="declared-in-ref">ISLocationManager.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/dot" title="dot"></a>
-	<h3 class="subsubtitle method-title">dot</h3>
+	<a name="//api/name/requestAlwaysAuthorization" title="requestAlwaysAuthorization"></a>
+	<h3 class="subsubtitle method-title">requestAlwaysAuthorization</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Location dot cocos2d sprite.</p>
+		<p>Method used to ask requestAlwaysAuthorization (for iOS8+).</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) CCSprite *dot</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)requestAlwaysAuthorization</code></div>
 
     
 	
@@ -225,7 +248,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Location dot cocos2d sprite.</p>
+		<p>Method used to ask requestAlwaysAuthorization (for iOS8+).</p>
 	</div>
 	
 	
@@ -236,17 +259,54 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISLocationNode.h</code><br />
+		<code class="declared-in-ref">ISLocationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestWhenInUseAuthorization" title="requestWhenInUseAuthorization"></a>
+	<h3 class="subsubtitle method-title">requestWhenInUseAuthorization</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to ask requestWhenInUseAuthorization (for iOS8+).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)requestWhenInUseAuthorization</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to ask requestWhenInUseAuthorization (for iOS8+).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationManager.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
-					
-					
-					
-					
 					
 					
 				</div>

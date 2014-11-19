@@ -1,269 +1,279 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISZoomLevel.html">
+	<File path="Classes/ISZoneCategory.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISZoomLevel</TokenIdentifier>
-			<Abstract type="html">Class used to represent a map zoom level.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISZoneCategory</TokenIdentifier>
+			<Abstract type="html">@class ISZoneCategory
+Class used to represent the association between a Zone (MapAPI) and a Category (CatalogAPI).</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>
 			
 			<NodeRef refid="77"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setLevel:</TokenIdentifier>
-			<Abstract type="html">ZoomLevel identifier.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZoneId:</TokenIdentifier>
+			<Abstract type="html">Related zone identifier.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int level</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int zoneId</Declaration>
 			
 			
-			<Anchor>//api/name/level</Anchor>
+			<Anchor>//api/name/zoneId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/level</TokenIdentifier>
-			<Abstract type="html">ZoomLevel identifier.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zoneId</TokenIdentifier>
+			<Abstract type="html">Related zone identifier.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int level</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int zoneId</Declaration>
 			
 			
-			<Anchor>//api/name/level</Anchor>
+			<Anchor>//api/name/zoneId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setTileWidthAtZ0:</TokenIdentifier>
-			<Abstract type="html">Tile width to consider.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZoneName:</TokenIdentifier>
+			<Abstract type="html">Related zone name.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) double tileWidthAtZ0</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *zoneName</Declaration>
 			
 			
-			<Anchor>//api/name/tileWidthAtZ0</Anchor>
+			<Anchor>//api/name/zoneName</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/tileWidthAtZ0</TokenIdentifier>
-			<Abstract type="html">Tile width to consider.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zoneName</TokenIdentifier>
+			<Abstract type="html">Related zone name.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) double tileWidthAtZ0</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *zoneName</Declaration>
 			
 			
-			<Anchor>//api/name/tileWidthAtZ0</Anchor>
+			<Anchor>//api/name/zoneName</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setTilesBounds:</TokenIdentifier>
-			<Abstract type="html">Tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setCategoryId:</TokenIdentifier>
+			<Abstract type="html">Related poiId.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISRect *tilesBounds</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *categoryId</Declaration>
 			
 			
-			<Anchor>//api/name/tilesBounds</Anchor>
+			<Anchor>//api/name/categoryId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/tilesBounds</TokenIdentifier>
-			<Abstract type="html">Tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/categoryId</TokenIdentifier>
+			<Abstract type="html">Related poiId.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISRect *tilesBounds</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *categoryId</Declaration>
 			
 			
-			<Anchor>//api/name/tilesBounds</Anchor>
+			<Anchor>//api/name/categoryId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setMapBounds:</TokenIdentifier>
-			<Abstract type="html">Map bounds (in meters).</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setOffsetX:</TokenIdentifier>
+			<Abstract type="html">Poi x offset from zone center.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISRectF *mapBounds</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float offsetX</Declaration>
 			
 			
-			<Anchor>//api/name/mapBounds</Anchor>
+			<Anchor>//api/name/offsetX</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/mapBounds</TokenIdentifier>
-			<Abstract type="html">Map bounds (in meters).</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/offsetX</TokenIdentifier>
+			<Abstract type="html">Poi x offset from zone center.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISRectF *mapBounds</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float offsetX</Declaration>
 			
 			
-			<Anchor>//api/name/mapBounds</Anchor>
+			<Anchor>//api/name/offsetX</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setMapCenter:</TokenIdentifier>
-			<Abstract type="html">Map center (in meters).</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setOffsetY:</TokenIdentifier>
+			<Abstract type="html">Poi y offset from zone center.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) CGPoint mapCenter</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float offsetY</Declaration>
 			
 			
-			<Anchor>//api/name/mapCenter</Anchor>
+			<Anchor>//api/name/offsetY</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/mapCenter</TokenIdentifier>
-			<Abstract type="html">Map center (in meters).</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/offsetY</TokenIdentifier>
+			<Abstract type="html">Poi y offset from zone center.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) CGPoint mapCenter</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float offsetY</Declaration>
 			
 			
-			<Anchor>//api/name/mapCenter</Anchor>
+			<Anchor>//api/name/offsetY</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setLeft:</TokenIdentifier>
-			<Abstract type="html">Left value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setMapId:</TokenIdentifier>
+			<Abstract type="html">Related map identifier.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int left</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
 			
 			
-			<Anchor>//api/name/left</Anchor>
+			<Anchor>//api/name/mapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/left</TokenIdentifier>
-			<Abstract type="html">Left value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/mapId</TokenIdentifier>
+			<Abstract type="html">Related map identifier.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int left</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int mapId</Declaration>
 			
 			
-			<Anchor>//api/name/left</Anchor>
+			<Anchor>//api/name/mapId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setTop:</TokenIdentifier>
-			<Abstract type="html">Top value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZonePosX:</TokenIdentifier>
+			<Abstract type="html">Related zone x coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int top</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float zonePosX</Declaration>
 			
 			
-			<Anchor>//api/name/top</Anchor>
+			<Anchor>//api/name/zonePosX</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/top</TokenIdentifier>
-			<Abstract type="html">Top value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zonePosX</TokenIdentifier>
+			<Abstract type="html">Related zone x coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int top</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float zonePosX</Declaration>
 			
 			
-			<Anchor>//api/name/top</Anchor>
+			<Anchor>//api/name/zonePosX</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setRight:</TokenIdentifier>
-			<Abstract type="html">Right value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setZonePosY:</TokenIdentifier>
+			<Abstract type="html">Related zone y coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int right</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float zonePosY</Declaration>
 			
 			
-			<Anchor>//api/name/right</Anchor>
+			<Anchor>//api/name/zonePosY</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/right</TokenIdentifier>
-			<Abstract type="html">Right value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/zonePosY</TokenIdentifier>
+			<Abstract type="html">Related zone y coordinates (in meters).</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int right</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float zonePosY</Declaration>
 			
 			
-			<Anchor>//api/name/right</Anchor>
+			<Anchor>//api/name/zonePosY</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/setBottom:</TokenIdentifier>
-			<Abstract type="html">Bottom value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setExtra1:</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int bottom</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
 			
 			
-			<Anchor>//api/name/bottom</Anchor>
+			<Anchor>//api/name/extra1</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISZoomLevel/bottom</TokenIdentifier>
-			<Abstract type="html">Bottom value of the tile index bounds.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/extra1</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int bottom</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
 			
 			
-			<Anchor>//api/name/bottom</Anchor>
+			<Anchor>//api/name/extra1</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/initWithLevel:andTileBounds:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setExtra2:</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithLevel:(int)level andTileBounds:(ISRect *)tileBounds</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>level</Name>
-					<Abstract type="html">Zoom level identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>tileBounds</Name>
-					<Abstract type="html">Tile index bounds.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
 			
-			<Anchor>//api/name/initWithLevel:andTileBounds:</Anchor>
+			
+			<Anchor>//api/name/extra2</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/addZoneIndexWithTilePosition:andZone:</TokenIdentifier>
-			<Abstract type="html">Method called to add a zone index for this zoom level.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/extra2</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>- (void)addZoneIndexWithTilePosition:(CGPoint)tilePosition andZone:(ISGfxZone *)zone</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>tilePosition</Name>
-					<Abstract type="html">The zone index (tile position X/Y).</Abstract>
-				</Parameter><Parameter>
-					<Name>zone</Name>
-					<Abstract type="html">The related zone.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
 			
-			<Anchor>//api/name/addZoneIndexWithTilePosition:andZone:</Anchor>
+			
+			<Anchor>//api/name/extra2</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISZoomLevel/getZonesOnTileWithX:andY:</TokenIdentifier>
-			<Abstract type="html">Method called to get the list of zones that are contained in a tile, belonging to this zoomLevel.</Abstract>
-			<DeclaredIn>ISZoomLevel.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setExtra3:</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
 			
-			<Declaration>- (NSArray *)getZonesOnTileWithX:(int)x andY:(int)y</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>x</Name>
-					<Abstract type="html">The x index of the tile, starting at 0.</Abstract>
-				</Parameter><Parameter>
-					<Name>y</Name>
-					<Abstract type="html">The y index of the tile, starting at 0.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A list of Zone, or null if no zone is defined for given args.</Abstract></ReturnValue>
-			<Anchor>//api/name/getZonesOnTileWithX:andY:</Anchor>
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/extra3</TokenIdentifier>
+			<Abstract type="html">NSString extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISZoneCategory/setFExtra1:</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISZoneCategory/fExtra1</TokenIdentifier>
+			<Abstract type="html">Float extra parameter.</Abstract>
+			<DeclaredIn>ISZoneCategory.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
 		</Token>
 		
 	</File>

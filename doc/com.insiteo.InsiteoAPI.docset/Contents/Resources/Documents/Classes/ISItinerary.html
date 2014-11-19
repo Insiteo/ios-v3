@@ -42,19 +42,23 @@
 	
 	<option value="//api/name/boundingRects">&nbsp;&nbsp;&nbsp;&nbsp;boundingRects</option>
 	
-	<option value="//api/name/costDist">&nbsp;&nbsp;&nbsp;&nbsp;costDist</option>
-	
-	<option value="//api/name/costTime">&nbsp;&nbsp;&nbsp;&nbsp;costTime</option>
-	
 	<option value="//api/name/endMapId">&nbsp;&nbsp;&nbsp;&nbsp;endMapId</option>
 	
 	<option value="//api/name/endPoint">&nbsp;&nbsp;&nbsp;&nbsp;endPoint</option>
 	
 	<option value="//api/name/instructions">&nbsp;&nbsp;&nbsp;&nbsp;instructions</option>
 	
+	<option value="//api/name/remainingDistance">&nbsp;&nbsp;&nbsp;&nbsp;remainingDistance</option>
+	
+	<option value="//api/name/remainingTime">&nbsp;&nbsp;&nbsp;&nbsp;remainingTime</option>
+	
 	<option value="//api/name/startMapId">&nbsp;&nbsp;&nbsp;&nbsp;startMapId</option>
 	
 	<option value="//api/name/startPoint">&nbsp;&nbsp;&nbsp;&nbsp;startPoint</option>
+	
+	<option value="//api/name/totalDistance">&nbsp;&nbsp;&nbsp;&nbsp;totalDistance</option>
+	
+	<option value="//api/name/totalTime">&nbsp;&nbsp;&nbsp;&nbsp;totalTime</option>
 	
 	
 	
@@ -91,19 +95,23 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/boundingRects">boundingRects</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/costDist">costDist</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/costTime">costTime</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endMapId">endMapId</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/endPoint">endPoint</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instructions">instructions</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remainingDistance">remainingDistance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remainingTime">remainingTime</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startMapId">startMapId</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startPoint">startPoint</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalDistance">totalDistance</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/totalTime">totalTime</a></span></li>
 	
 </ul></li>
 
@@ -142,7 +150,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ISItineraryStructures.h</td>
+	<td class="specification-value">ISItinerary.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -199,21 +207,21 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/instructions">&nbsp;&nbsp;instructions</a></code>
-		<span class="tooltip"><p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISInstruction.html">ISInstruction</a>).</p></span>
+		<span class="tooltip"><p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISItineraryInstruction.html">ISItineraryInstruction</a>).</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/costTime">&nbsp;&nbsp;costTime</a></code>
-		<span class="tooltip"><p>Time cost.</p></span>
+		<code><a href="#//api/name/totalDistance">&nbsp;&nbsp;totalDistance</a></code>
+		<span class="tooltip"><p>The total distance (in meters) from departure to arrival.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/costDist">&nbsp;&nbsp;costDist</a></code>
-		<span class="tooltip"><p>Distance cost.</p></span>
+		<code><a href="#//api/name/totalTime">&nbsp;&nbsp;totalTime</a></code>
+		<span class="tooltip"><p>The time (in seconds) from departure to arrival.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -221,6 +229,20 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/boundingRects">&nbsp;&nbsp;boundingRects</a></code>
 		<span class="tooltip"><p>A dictionnary which contains all bounding rect for a specified map (could be nil: offline mode).</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/remainingDistance">&nbsp;&nbsp;remainingDistance</a></code>
+		<span class="tooltip"><p>The remaining distance (in meters) from current location (or departure if no location is set) to arrival.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/remainingTime">&nbsp;&nbsp;remainingTime</a></code>
+		<span class="tooltip"><p>The time (in seconds) from current location (or departure if no location is set) to arrival.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -279,89 +301,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/costDist" title="costDist"></a>
-	<h3 class="subsubtitle method-title">costDist</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Distance cost.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSNumber *costDist</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Distance cost.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/costTime" title="costTime"></a>
-	<h3 class="subsubtitle method-title">costTime</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Time cost.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSNumber *costTime</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Time cost.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+		<code class="declared-in-ref">ISItinerary.h</code><br />
 	</div>				
 	
 	
@@ -402,7 +342,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+		<code class="declared-in-ref">ISItinerary.h</code><br />
 	</div>				
 	
 	
@@ -443,7 +383,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+		<code class="declared-in-ref">ISItinerary.h</code><br />
 	</div>				
 	
 	
@@ -456,7 +396,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISInstruction.html">ISInstruction</a>).</p>
+		<p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISItineraryInstruction.html">ISItineraryInstruction</a>).</p>
 	</div>		
 	
     
@@ -473,7 +413,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISInstruction.html">ISInstruction</a>).</p>
+		<p>An array that contains all the itinerary instructions (array of <a href="../Classes/ISItineraryInstruction.html">ISItineraryInstruction</a>).</p>
 	</div>
 	
 	
@@ -484,7 +424,89 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+		<code class="declared-in-ref">ISItinerary.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/remainingDistance" title="remainingDistance"></a>
+	<h3 class="subsubtitle method-title">remainingDistance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The remaining distance (in meters) from current location (or departure if no location is set) to arrival.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) double remainingDistance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The remaining distance (in meters) from current location (or departure if no location is set) to arrival.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItinerary.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/remainingTime" title="remainingTime"></a>
+	<h3 class="subsubtitle method-title">remainingTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The time (in seconds) from current location (or departure if no location is set) to arrival.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) double remainingTime</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The time (in seconds) from current location (or departure if no location is set) to arrival.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItinerary.h</code><br />
 	</div>				
 	
 	
@@ -525,7 +547,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+		<code class="declared-in-ref">ISItinerary.h</code><br />
 	</div>				
 	
 	
@@ -566,7 +588,89 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+		<code class="declared-in-ref">ISItinerary.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/totalDistance" title="totalDistance"></a>
+	<h3 class="subsubtitle method-title">totalDistance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The total distance (in meters) from departure to arrival.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) double totalDistance</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The total distance (in meters) from departure to arrival.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItinerary.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/totalTime" title="totalTime"></a>
+	<h3 class="subsubtitle method-title">totalTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The time (in seconds) from departure to arrival.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) double totalTime</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The time (in seconds) from departure to arrival.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISItinerary.h</code><br />
 	</div>				
 	
 	
@@ -622,7 +726,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryStructures.h</code><br />
+		<code class="declared-in-ref">ISItinerary.h</code><br />
 	</div>				
 	
 	
@@ -641,7 +745,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

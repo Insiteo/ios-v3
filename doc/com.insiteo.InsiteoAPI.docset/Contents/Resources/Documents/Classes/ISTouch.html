@@ -75,10 +75,6 @@
 	
 	<option value="//api/name/ISTouchWithISTouch:">&nbsp;&nbsp;&nbsp;&nbsp;+ ISTouchWithISTouch:</option>
 	
-	<option value="//api/name/tiltPointWithLayer:andPoint:">&nbsp;&nbsp;&nbsp;&nbsp;+ tiltPointWithLayer:andPoint:</option>
-	
-	<option value="//api/name/untiltPointWithLayer:andPoint:">&nbsp;&nbsp;&nbsp;&nbsp;+ untiltPointWithLayer:andPoint:</option>
-	
 	
 	
 	
@@ -150,10 +146,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ISTouchWithISTouch:">ISTouchWithISTouch:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tiltPointWithLayer:andPoint:">tiltPointWithLayer:andPoint:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/untiltPointWithLayer:andPoint:">untiltPointWithLayer:andPoint:</a></span></li>
-	
 </ul></li>
 
 
@@ -203,7 +195,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Class used to store iOS touch information such as UIEvent and relative <a href="../Classes/ISLayer.html">ISLayer</a>.</p>
+						<p>Class used to store iOS touch information such as UIEvent and relative CCLayer.</p>
 					</div>
 					
 					
@@ -299,7 +291,7 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/layer">&nbsp;&nbsp;layer</a></code>
-		<span class="tooltip"><p>Relative touched <a href="../Classes/ISLayer.html">ISLayer</a>.</p></span>
+		<span class="tooltip"><p>Relative touched CCLayer.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -342,20 +334,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/rotateWithAngle:andCenter:">&ndash;&nbsp;rotateWithAngle:andCenter:</a></code>
 		<span class="tooltip"><p>Method called to rotate all touch information.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tiltPointWithLayer:andPoint:">+&nbsp;tiltPointWithLayer:andPoint:</a></code>
-		<span class="tooltip"><p>Static method used to convert a point in a tilt coordinates.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/untiltPointWithLayer:andPoint:">+&nbsp;untiltPointWithLayer:andPoint:</a></code>
-		<span class="tooltip"><p>Static method used to convert a tilted point in normal coordinates.</p></span>
 	</span>
 	
 	
@@ -584,12 +562,12 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Relative touched <a href="../Classes/ISLayer.html">ISLayer</a>.</p>
+		<p>Relative touched CCLayer.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (assign) ISLayer *layer</code></div>
+	<div class="method-subsection method-declaration"><code>@property (assign) CCLayer *layer</code></div>
 
     
 	
@@ -601,7 +579,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Relative touched <a href="../Classes/ISLayer.html">ISLayer</a>.</p>
+		<p>Relative touched CCLayer.</p>
 	</div>
 	
 	
@@ -1005,128 +983,6 @@
 	
 </div>
 						
-						<div class="section-method">
-	<a name="//api/name/tiltPointWithLayer:andPoint:" title="tiltPointWithLayer:andPoint:"></a>
-	<h3 class="subsubtitle method-title">tiltPointWithLayer:andPoint:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Static method used to convert a point in a tilt coordinates.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (CGPoint)tiltPointWithLayer:(ISLayer *)<em>layer</em> andPoint:(CGPoint)<em>point</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>layer</em></dt>
-			<dd><p>Point related <a href="#//api/name/layer">layer</a>.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>point</em></dt>
-			<dd><p>The point to convert.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The tilted point</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Static method used to convert a point in a tilt coordinates.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISTouch.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/untiltPointWithLayer:andPoint:" title="untiltPointWithLayer:andPoint:"></a>
-	<h3 class="subsubtitle method-title">untiltPointWithLayer:andPoint:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Static method used to convert a tilted point in normal coordinates.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (CGPoint)untiltPointWithLayer:(ISLayer *)<em>layer</em> andPoint:(CGPoint)<em>point</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>layer</em></dt>
-			<dd><p>Point related <a href="#//api/name/layer">layer</a>.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>point</em></dt>
-			<dd><p>The point to convert.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The untilted point</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Static method used to convert a tilted point in normal coordinates.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISTouch.h</code><br />
-	</div>				
-	
-	
-</div>
-						
 					</div>
 					
 					
@@ -1147,7 +1003,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithEvent:(UIEvent *)<em>event</em> andTouches:(NSMutableArray *)<em>touches</em> andOriginalTouches:(NSMutableArray *)<em>originalTouches</em> andLayer:(ISLayer *)<em>layer</em> andTouchRays:(NSMutableArray *)<em>touchRays</em> andVectors:(NSMutableArray *)<em>vectors</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithEvent:(UIEvent *)<em>event</em> andTouches:(NSMutableArray *)<em>touches</em> andOriginalTouches:(NSMutableArray *)<em>originalTouches</em> andLayer:(CCLayer *)<em>layer</em> andTouchRays:(NSMutableArray *)<em>touchRays</em> andVectors:(NSMutableArray *)<em>vectors</em></code></div>
 
     
 	
@@ -1171,7 +1027,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>layer</em></dt>
-			<dd><p>Relative touched <a href="../Classes/ISLayer.html">ISLayer</a>.</p></dd>
+			<dd><p>Relative touched CCLayer.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1223,7 +1079,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithEvent:(UIEvent *)<em>event</em> andView:(UIView *)<em>view</em> andLayer:(ISLayer *)<em>layer</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithEvent:(UIEvent *)<em>event</em> andView:(UIView *)<em>view</em> andLayer:(CCLayer *)<em>layer</em></code></div>
 
     
 	
@@ -1242,7 +1098,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>layer</em></dt>
-			<dd><p>Relative touched <a href="../Classes/ISLayer.html">ISLayer</a>.</p></dd>
+			<dd><p>Relative touched CCLayer.</p></dd>
 		</dl>
 		
 	</div>
@@ -1341,7 +1197,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

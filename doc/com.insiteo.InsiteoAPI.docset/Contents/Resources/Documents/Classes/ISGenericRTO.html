@@ -79,6 +79,8 @@
 	
 	<option value="//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:</option>
 	
+	<option value="//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</option>
+	
 	<option value="//api/name/setLabelDisplayed:">&nbsp;&nbsp;&nbsp;&nbsp;- setLabelDisplayed:</option>
 	
 	<option value="//api/name/setOver:">&nbsp;&nbsp;&nbsp;&nbsp;- setOver:</option>
@@ -154,6 +156,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hideWindow">hideWindow</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:">initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:">initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLabelDisplayed:">setLabelDisplayed:</a></span></li>
 	
@@ -324,6 +328,13 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:">&ndash;&nbsp;initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:</a></code>
+		<span class="tooltip"><p>Main constructor</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:">&ndash;&nbsp;initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</a></code>
 		<span class="tooltip"><p>Main constructor</p></span>
 	</span>
 	
@@ -1087,6 +1098,117 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:" title="initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:"></a>
+	<h3 class="subsubtitle method-title">initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Main constructor</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em> andLabel:(NSString *)<em>label</em> andMetersPosition:(ISPosition *)<em>metersPosition</em> andWindowDisplayed:(Boolean)<em>windowDisplayed</em> andLabelDisplayed:(Boolean)<em>labelDisplayed</em> andWindowBackgroundColorNormal:(UIColor *)<em>windowBackgroundColorNormal</em> andWindowBackgroundColorHighlighted:(UIColor *)<em>windowBackgroundColorHighlighted</em> andActionImagePath:(NSString *)<em>actionImagePath</em> andActionBackgroundColorNormal:(UIColor *)<em>actionBackgroundColorNormal</em> andActionBackgroundColorHighlighted:(UIColor *)<em>actionBackgroundColorHighlighted</em> andIndicatorImagePath:(NSString *)<em>indicatorImagePath</em> andWindowAnchorImagePath:(NSString *)<em>windowAnchorImagePath</em> andMarkerImagePath:(NSString *)<em>markerImagePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>RTO displayed name.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>label</em></dt>
+			<dd><p>RTO displayed label.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>metersPosition</em></dt>
+			<dd><p>RTO position in meters (could be nil in case of zone rendering).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>windowDisplayed</em></dt>
+			<dd><p>Boolean used to know if the RTO window has to be displayed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>labelDisplayed</em></dt>
+			<dd><p>Boolean used to know if the RTO label has to be displayed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>windowBackgroundColorNormal</em></dt>
+			<dd><p>RTO window background color (normal state).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>windowBackgroundColorHighlighted</em></dt>
+			<dd><p>RTO window background color (highlighted state).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>actionImagePath</em></dt>
+			<dd><p>RTO action image path.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>actionBackgroundColorNormal</em></dt>
+			<dd><p>RTO action image background color (normal state).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>actionBackgroundColorHighlighted</em></dt>
+			<dd><p>RTO action image background color (highlighted state).</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>indicatorImagePath</em></dt>
+			<dd><p>RTO indicator image path.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>windowAnchorImagePath</em></dt>
+			<dd><p>RTO window anchor image path.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>markerImagePath</em></dt>
+			<dd><p>RTO marker image path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Main constructor</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISGenericRTO.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setLabelDisplayed:" title="setLabelDisplayed:"></a>
 	<h3 class="subsubtitle method-title">setLabelDisplayed:</h3>
 	
@@ -1380,7 +1502,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-09-26)</span><br />
+						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
