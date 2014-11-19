@@ -16,28 +16,13 @@
 
 #import "ISRect.h"
 #import "ISRectF.h"
-#import "ISGfxZone.h"
+
+@class ISGfxZone;
 
 /*!
  Class used to represent a map zoom level.
  */
-@interface ISZoomLevel : NSObject {
-    
-@private
-    
-	//ZoomLevel identifier
-	int m_level;
-    //Tile width to consider
-    double m_tileWidthAtZ0;
-    //Tile index bounds
-    ISRect * m_tilesBounds;
-    //Map bounds (in meters)
-    ISRectF * m_mapBounds;
-    //Map center (in meters)
-    CGPoint m_mapCenter;
-    //Zones index array
-    NSMutableDictionary * m_zonesIndex;
-}
+@interface ISZoomLevel : NSObject
 
 /*!
  ZoomLevel identifier.
@@ -64,6 +49,8 @@
  */
 @property (nonatomic, readwrite) CGPoint mapCenter;
 
+/*!
+ */
 @property (nonatomic, readonly) NSDictionary * zonesIndex;
 
 /*!
@@ -107,5 +94,10 @@
  @return A list of Zone, or null if no zone is defined for given args.
  */
 - (NSArray *)getZonesOnTileWithX:(int)x andY:(int)y;
+
+/*
+ Intern method used to clear zoom indexes (use on resetMap).
+ */
+- (void)clearIndexes;
 
 @end

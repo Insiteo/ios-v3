@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTVertex.h
-
- @Title        PVRTVertex
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Utility functions which process vertices.
+ @file         PVRTVertex.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Utility functions which process vertices.
 
 ******************************************************************************/
 #ifndef _PVRTVERTEX_H_
@@ -49,12 +41,12 @@ enum EPVRTDataType {
 *****************************************************************************/
 
 /*!***************************************************************************
- @Function			PVRTVertexRead
- @Output			pV
- @Input				pData
- @Input				eType
- @Input				nCnt
- @Description		Read a vector
+ @fn       			PVRTVertexRead
+ @param[out]			pV
+ @param[in]				pData
+ @param[in]				eType
+ @param[in]				nCnt
+ @brief      		Read a vector
 *****************************************************************************/
 void PVRTVertexRead(
 	PVRTVECTOR4f		* const pV,
@@ -63,11 +55,11 @@ void PVRTVertexRead(
 	const int			nCnt);
 
 /*!***************************************************************************
- @Function			PVRTVertexRead
- @Output			pV
- @Input				pData
- @Input				eType
- @Description		Read an int
+ @fn       			PVRTVertexRead
+ @param[out]			pV
+ @param[in]				pData
+ @param[in]				eType
+ @brief      		Read an int
 *****************************************************************************/
 void PVRTVertexRead(
 	unsigned int		* const pV,
@@ -75,12 +67,12 @@ void PVRTVertexRead(
 	const EPVRTDataType	eType);
 
 /*!***************************************************************************
- @Function			PVRTVertexWrite
- @Output			pOut
- @Input				eType
- @Input				nCnt
- @Input				pV
- @Description		Write a vector
+ @fn       			PVRTVertexWrite
+ @param[out]			pOut
+ @param[in]				eType
+ @param[in]				nCnt
+ @param[in]				pV
+ @brief      		Write a vector
 *****************************************************************************/
 void PVRTVertexWrite(
 	void				* const pOut,
@@ -89,11 +81,11 @@ void PVRTVertexWrite(
 	const PVRTVECTOR4f	* const pV);
 
 /*!***************************************************************************
- @Function			PVRTVertexWrite
- @Output			pOut
- @Input				eType
- @Input				V
- @Description		Write an int
+ @fn       			PVRTVertexWrite
+ @param[out]			pOut
+ @param[in]				eType
+ @param[in]				V
+ @brief      		Write an int
 *****************************************************************************/
 void PVRTVertexWrite(
 	void				* const pOut,
@@ -101,17 +93,17 @@ void PVRTVertexWrite(
 	const unsigned int	V);
 
 /*!***************************************************************************
- @Function			PVRTVertexTangentBitangent
- @Output			pvTan
- @Output			pvBin
- @Input				pvNor
- @Input				pfPosA
- @Input				pfPosB
- @Input				pfPosC
- @Input				pfTexA
- @Input				pfTexB
- @Input				pfTexC
- @Description		Calculates the tangent and bitangent vectors for
+ @fn       			PVRTVertexTangentBitangent
+ @param[out]			pvTan
+ @param[out]			pvBin
+ @param[in]				pvNor
+ @param[in]				pfPosA
+ @param[in]				pfPosB
+ @param[in]				pfPosC
+ @param[in]				pfTexA
+ @param[in]				pfTexB
+ @param[in]				pfTexC
+ @brief      		Calculates the tangent and bitangent vectors for
 					vertex 'A' of the triangle defined by the 3 supplied
 					3D position coordinates (pfPosA) and 2D texture
 					coordinates (pfTexA).
@@ -128,27 +120,27 @@ void PVRTVertexTangentBitangent(
 	const float			* const pfTexC);
 
 /*!***************************************************************************
- @Function			PVRTVertexGenerateTangentSpace
- @Output			pnVtxNumOut			Output vertex count
- @Output			pVtxOut				Output vertices (program must free() this)
- @Modified			pui32Idx			input AND output; index array for triangle list
- @Input				nVtxNum				Input vertex count
- @Input				pVtx				Input vertices
- @Input				nStride				Size of a vertex (in bytes)
- @Input				nOffsetPos			Offset in bytes to the vertex position
- @Input				eTypePos			Data type of the position
- @Input				nOffsetNor			Offset in bytes to the vertex normal
- @Input				eTypeNor			Data type of the normal
- @Input				nOffsetTex			Offset in bytes to the vertex texture coordinate to use
- @Input				eTypeTex			Data type of the texture coordinate
- @Input				nOffsetTan			Offset in bytes to the vertex tangent
- @Input				eTypeTan			Data type of the tangent
- @Input				nOffsetBin			Offset in bytes to the vertex bitangent
- @Input				eTypeBin			Data type of the bitangent
- @Input				nTriNum				Number of triangles
- @Input				fSplitDifference	Split a vertex if the DP3 of tangents/bitangents are below this (range -1..1)
- @Return			PVR_FAIL if there was a problem.
- @Description		Calculates the tangent space for all supplied vertices.
+ @fn       			PVRTVertexGenerateTangentSpace
+ @param[out]			pnVtxNumOut			Output vertex count
+ @param[out]			pVtxOut				Output vertices (program must free() this)
+ @param[in,out]			pui32Idx			input AND output; index array for triangle list
+ @param[in]				nVtxNum				Input vertex count
+ @param[in]				pVtx				Input vertices
+ @param[in]				nStride				Size of a vertex (in bytes)
+ @param[in]				nOffsetPos			Offset in bytes to the vertex position
+ @param[in]				eTypePos			Data type of the position
+ @param[in]				nOffsetNor			Offset in bytes to the vertex normal
+ @param[in]				eTypeNor			Data type of the normal
+ @param[in]				nOffsetTex			Offset in bytes to the vertex texture coordinate to use
+ @param[in]				eTypeTex			Data type of the texture coordinate
+ @param[in]				nOffsetTan			Offset in bytes to the vertex tangent
+ @param[in]				eTypeTan			Data type of the tangent
+ @param[in]				nOffsetBin			Offset in bytes to the vertex bitangent
+ @param[in]				eTypeBin			Data type of the bitangent
+ @param[in]				nTriNum				Number of triangles
+ @param[in]				fSplitDifference	Split a vertex if the DP3 of tangents/bitangents are below this (range -1..1)
+ @return			PVR_FAIL if there was a problem.
+ @brief      		Calculates the tangent space for all supplied vertices.
 					Writes tangent and bitangent vectors to the output
 					vertices, copies all other elements from input vertices.
 					Will split vertices if necessary - i.e. if two triangles

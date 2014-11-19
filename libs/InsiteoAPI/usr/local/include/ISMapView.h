@@ -15,12 +15,13 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "cocos2d.h"
+#import "CC3Scene.h"
+
 #import "ISPRenderer.h"
 #import "ISPRTO.h"
 #import "ISPMapListener.h"
 #import "ISRectF.h"
 #import "ISMap.h"
-#import "CC3Scene.h"
 
 @class MapDataManager;
 @class MapViewLayer;
@@ -31,13 +32,15 @@
 /*!
  Class used to represent the ISMapView (EAGLView).
  */
-@interface ISMapView : OPENGL_HWVIEW {
+@interface ISMapView : CCGLView {
 
 @protected
     
     //Rendering mode (2D or 3D)
     ISERenderMode m_renderMode;
     
+    //Last computed offset
+    CGPoint m_currentOffset;
     //Last computed ratio
     double m_currentRatio;
     
@@ -90,6 +93,11 @@
  Last computed ratio.
  */
 @property (nonatomic, readonly) double currentRatio;
+
+/*!
+ Last computed offset.
+ */
+@property (nonatomic, readonly) CGPoint currentOffset;
 
 /*!
  MapView manager.
@@ -151,10 +159,17 @@
  */
 @property (nonatomic, readwrite) Boolean boundariesActivated;
 
-/*
- Main constructor.
+/*!
+ Static method used to konw if the Cocos2d engine is initialized.
+ @return <b>YES</b> if  it's initialized, otherwise <b>NO</b>.
  */
-- (id)initWithFrame:(CGRect)frame andMapListener:(id<ISPMapListener>)mapListener;
++ (Boolean)isCocos2dInitialized;
+
+/*!
+ Static method used to get a unique render identifier for ISPRTO.
+ @return InitProvider unique instance.
+ */
++ (int)generateCocos2dUniqueId;
 
 /*
  Intern method used to create the map data manager.
@@ -217,6 +232,23 @@
  @param duration Wanted animation duration.
  */
 - (void)centerMapWithPosition:(ISPosition *)position andAnimated:(Boolean)animated andDuration:(float)duration;
+
+/*!
+ Method used to center the map on a specific position (in meters).
+ @param position The position (in meters) to center on (x, y, mapId).
+ @param rotationAngle Wanted rotation angle.
+ @param animated Boolean used to know if an animation needs to be performed.
+ */
+- (void)centerMapWithPosition:(ISPosition *)position andRotationAngle:(float)rotationAngle andAnimated:(Boolean)animated;
+
+/*!
+ Method used to center the map on a specific position (in meters).
+ @param position The position (in meters) to center on (x, y, mapId).
+ @param rotationAngle Wanted rotation angle.
+ @param animated Boolean used to know if an animation needs to be performed.
+ @param duration Wanted animation duration.
+ */
+- (void)centerMapWithPosition:(ISPosition *)position andRotationAngle:(float)rotationAngle andAnimated:(Boolean)animated andDuration:(float)duration;
 
 /*!
  Method used to center the map on a specific position (in meters).
@@ -448,6 +480,13 @@
  */
 - (void)clear;
 
+/*!
+ Method used to get all RTO from a given zone identifier.
+ @param zoneId Corresponding zone identifier.
+ @return An array of all linked RTO (could be nil).
+ */
+- (NSArray *)getRTOsWithZoneId:(int)zoneId;
+
 #pragma mark - Touch
 
 /*!
@@ -475,18 +514,5 @@
  Method called when the user releases the screen of the iPhone with his finger.
  */
 - (Boolean)touchesEndedWithTouch:(ISTouch *)touch;
-
-#pragma mark - Extra
-
-/*!
- @name Extra
- */
-
-/*!
- Method called to get all the current "visible" zones.
- @return All "visible" zones.
- @warning If a tile is 1px visible, it will return all its zones.
- */
-- (NSArray *)getVisibleZones;
 
 @end

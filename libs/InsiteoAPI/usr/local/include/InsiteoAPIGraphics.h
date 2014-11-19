@@ -22,7 +22,6 @@
 
 #pragma mark - Common
 
-#import "ISLayer.h"
 #import "ISGenericRenderer.h"
 #import "ISGenericRTO.h"
 
@@ -32,4 +31,5 @@
 #import "ISGfxZone.h"
 #import "ISMapView.h"
 #import "ISMap2DView.h"
+#import "ISMap3DView.h"
 #import "ISPMapListener.h"

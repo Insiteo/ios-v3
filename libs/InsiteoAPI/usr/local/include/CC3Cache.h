@@ -1,9 +1,9 @@
 /*
  * CC3Cache.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,6 +30,8 @@
 /** @file */	// Doxygen marker
 
 #import "CC3Foundation.h"
+#import "CC3OSExtensions.h"
+#import <pthread.h>
 
 
 #pragma mark CC3Cacheable
@@ -41,10 +43,10 @@
  * object's name property to extract the name under which the object will be identified
  * within the cache. Each object must have a unique name.
  */
-@protocol CC3Cacheable <NSObject>
+@protocol CC3Cacheable <CC3Object>
 
 /** A unique name to be used by the cache to store and retrieve this object. */
-@property(nonatomic, readonly) NSString* name;
+@property(nonatomic, retain, readonly) NSString* name;
 
 @end
 
@@ -59,8 +61,7 @@
  * the same name exists in the cache already. To replace an object in the cache, you must
  * first remove the existing object from the cache.
  *
- * CC3Cache implements the NSLocking protocol, and all access to the contents of the
- * cache is thread-safe.
+ * CC3Cache implements the NSLocking protocol, and all access to the cache contents is thread-safe.
  *
  * Each object may be held either strongly or weakly by this cache, depending on the value
  * of the isWeak property at the time the object was added to the cache.
@@ -103,10 +104,26 @@
 /** Removes the object with the specified name from the cache. */
 -(void) removeObjectNamed: (NSString*) name;
 
-/** Removes all objects from the cache. */
+/** 
+ * Removes all objects from the cache.
+ *
+ * This is typically invoked when 3D capabilities are no longer required, or will not be needed
+ * for a significant time, and the app wishes to release 3D resources. This method checks each
+ * cache entry, and logs an info message for any object that is weakly cached, as the existence
+ * of a weakly-cached entry is an indication that the cached object is being retained somewhere
+ * else within the app, and is therefore a potential source of a memory leak.
+ */
 -(void) removeAllObjects;
 
-/** Removes all objects that are instances of the specified class, or a subclass. */
+/** 
+ * Removes all objects that are instances of the specified class, or a subclass. 
+ *
+ * This is typically invoked when strongly cached objects are no longer required, or will not
+ * be needed for a significant time, and the app wishes to release 3D resources. This method
+ * checks each cache entry, and logs an info message for any object that is weakly cached, as
+ * the existence of a weakly-cached entry is an indication that the cached object is being 
+ * retained somewhere else within the app, and is therefore a potential source of a memory leak.
+ */
 -(void) removeAllObjectsOfType: (Class) type;
 
 /**
@@ -117,17 +134,26 @@
  */
 -(void) enumerateObjectsUsingBlock: (void (^) (id<CC3Cacheable> obj, BOOL* stop)) block;
 
+/** 
+ * Returns an array of all objects in this cache, sorted by name.
+ *
+ * This is a convenience method for use when listing items in the array during logging and development. 
+ *
+ * Since the objects are retained within the returned array, be careful not to hold on to the array,
+ * if you want weakly cached objects to be automatically removed from this cache.
+ */
+-(NSArray*) objectsSortedByName;
+
 /** A descriptive name of the type of object being cached. */
-@property(nonatomic, readonly) NSString* typeName;
+@property(nonatomic, retain, readonly) NSString* typeName;
 
 /** 
  * Indicates whether this cache holds weak references to the objects within.
  *
- * If the value of this property is YES, this cache will hold a weak reference to each 
- * object within the cache, and the presence of the object in the cache will not stop 
- * the object from being deallocated. In this case, each object should automatically
- * remove itself from this cache during deallocation, once all external strong references
- * to the object have been released.
+ * If the value of this property is YES, this cache will hold a weak reference to each object
+ * within the cache, and the presence of the object in the cache will not stop the object from
+ * being deallocated. In this case, each object should automatically remove itself from this
+ * cache during deallocation, once all external strong references to the object have been released.
  *
  * This property is set during cache instantiation and initialization, and can be changed
  * at any time, allowing the cache to hold a mix of weakly and strongly cached objects.
@@ -169,54 +195,3 @@
 +(id) strongCacheForType: (NSString*) typeName;
 
 @end
-
-
-#pragma mark CC3CacheableWrapper
-
-/**
- * An instance of CC3CacheableWrapper is used within a cache to hold a cached object.
- *
- * This is an abstract class. Subclasses determine whether an object is to be held strongly
- * or weakly within the cache.
- *
- * Implements the CC3Cacheable protocol. The wrapped object is returned in the cachedObject property.
- */
-@interface CC3CacheableWrapper : NSObject {
-	id<CC3Cacheable> _cachedObject;
-}
-
-/** Returns the object that has been cached. */
-@property(nonatomic, readonly) id<CC3Cacheable> cachedObject;
-
-
-#pragma mark Allocation and initialization
-
-/** Initializes this instance to wrap the specified cacheable object to be cached. */
--(id) initWith: (id<CC3Cacheable>) cachedObject;
-
-/** Allocates and initializes an autoreleased instance to wrap the specified cacheable object to be cached. */
-+(id) wrapperWith: (id<CC3Cacheable>) cachedObject;
-
-@end
-
-
-#pragma mark CC3WeakCacheableWrapper
-
-/**
- * An instance of CC3WeakCacheableWrapper is used within a cache to hold an object that is 
- * to be cached, without retaining that object. This permits the object to be deallocated
- * once it has been released from all retained references outside the cache.
- */
-@interface CC3WeakCacheableWrapper : CC3CacheableWrapper
-@end
-
-
-#pragma mark CC3StrongCacheableWrapper
-
-/**
- * An instance of CC3StrongCacheableWrapper is used within a cache to hold an object that is
- * to be retained when cached, so that it cannot be deallocated until removed from this cache.
- */
-@interface CC3StrongCacheableWrapper : CC3CacheableWrapper
-@end
-

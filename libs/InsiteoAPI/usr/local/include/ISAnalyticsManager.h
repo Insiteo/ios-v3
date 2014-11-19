@@ -24,31 +24,7 @@
 /*!
  Class that manages analytics events.
  */
-@interface ISAnalyticsManager : NSObject {
-    
-@private
-    
-#pragma mark - Config
-    
-    //Analytics configuration
-    AnalyticsConfig * m_config;
-    
-#pragma mark - Structure
-    
-    //Last user event (used to test changes)
-    AnalyticsUserEvent * m_lastUserEvent;
-    
-#pragma mark - Behavior
-    
-    //Boolean used to know if the ISAnalyticsManager is well initialized
-    Boolean m_isReady;
-    //Intern date to know when the last location event was sent
-    NSDate * m_lastLocationDate;
-    //Request thread
-    AnalyticsThread * m_thread;
-    //Analytics listener
-    id<ISPAnalyticsListener> m_listener;
-}
+@interface ISAnalyticsManager : NSObject
 
 /*!
  Analytics configuration.
@@ -59,6 +35,11 @@
  Analytics listener.
  */
 @property (assign) id<ISPAnalyticsListener> listener;
+
+/*!
+ Boolean used to know if the analytics manager is started.
+ */
+@property (nonatomic, readonly) Boolean isStarted;
 
 /*!
  Static method called to get the ISAnalyticsManager unique instance.
@@ -75,18 +56,20 @@
 /*
  Internal static method called to stop the ISAnalyticsManager.
  */
-- (void)stopAnalytics;
+- (Boolean)stopAnalytics;
 
 /*!
  Method called to add an analytics generic event.
  @param event The related generic event.
+ @result <b>YES</b> if the event was successfully added, otherwise <b>NO</b>.
  */
-- (void)addGenericEvent:(ISAnalyticsGenericEvent *)event;
+- (Boolean)addGenericEvent:(ISAnalyticsGenericEvent *)event;
 
 /*!
  Method called to add an analytics location event.
  @param event The related location event.
+ @result <b>YES</b> if the event was successfully added, otherwise <b>NO</b>.
  */
-- (void)addLocationEvent:(ISAnalyticsLocationEvent *)event;
+- (Boolean)addLocationEvent:(ISAnalyticsLocationEvent *)event;
 
 @end

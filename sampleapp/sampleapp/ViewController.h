@@ -11,14 +11,14 @@
 #import "InsiteoAPIGraphicsLocation.h"
 #import "MBProgressHUD.h"
 
-@interface ViewController : UIViewController <ISPInitListener, ISPMapListener, ISPLocationListener, ISPGeofenceListener, ISPItineraryRequestListener, ISPItineraryRenderListener, UIActionSheetDelegate> {
+@interface ViewController : UIViewController <ISPMapListener, ISPLocationListener, ISPGeofenceListener, ISPItineraryRequestListener, ISPItineraryRenderListener, UIActionSheetDelegate> {
 
 @private
     
     id<ISPCancelable> m_currentTask;
         
     MBProgressHUD * m_hud;
-    ISMap2DView * m_map2DView;
+    ISMapView * m_mapView;
     
     ISLocationProvider * m_locationProvider;
     ISItineraryProvider * m_itineraryProvider;

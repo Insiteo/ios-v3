@@ -22,5 +22,4 @@
 
 - (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andUserName:(NSString *)aUserName;
 
-
 @end

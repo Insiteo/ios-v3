@@ -1,9 +1,9 @@
 /*
  * CC3GLSLVariable.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2011-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2011-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -81,19 +81,19 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
 }
 
 /** The GL program object containing this variable. */
-@property(nonatomic, assign, readonly) CC3ShaderProgram* program;
+@property(nonatomic, readonly) CC3ShaderProgram* program;
 
 /**
  * The index of this variable within the GL program object.
  * This is distinct from the location property.
  */
-@property(nonatomic, assign, readonly) GLuint index;
+@property(nonatomic, readonly) GLuint index;
 
 /** 
  * The location of this variable within the GL program object.
  * This is distinct from the index property.
  */
-@property(nonatomic, assign, readonly) GLint location;
+@property(nonatomic, readonly) GLint location;
 
 /** The name of this variable in the GLSL shader source code. */
 @property(nonatomic, retain, readonly) NSString* name;
@@ -212,6 +212,17 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
 
 /** Allocates and initializes an autoreleased instance at the specified index within the specified program. */
 +(id) variableInProgram: (CC3ShaderProgram*) program atIndex: (GLuint) index;
+
+/**
+ * Ensures this variable has a valid name.
+ *  - Removes the subscript suffix ([0]), if it exists.
+ *  - Marks this variable as redundant, by setting the semantic to kCC3SemanticRedundant
+ *    if a subscript other than ([0]) exists.
+ *
+ * This method is invoked automatically when the instance is initialized. 
+ * Normally, you will never need to invoke this method.
+ */
+-(void) normalizeName;
 
 /**
  * Returns a newly allocated (retained) copy of this instance. The new copy will be an instance
@@ -467,7 +478,7 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
  *
  * The type property of this instance must be GL_FLOAT_MAT3.
  */
--(void) setMatrix3x3: (CC3Matrix3x3*) value;
+-(void) setMatrix3x3: (const CC3Matrix3x3*) value;
 
 /**
  * Sets the element at the specified index in this uniform to the specified value.
@@ -478,7 +489,7 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
  *
  * The type property of this instance must be GL_FLOAT_MAT3.
  */
--(void) setMatrix3x3: (CC3Matrix3x3*) value at: (GLuint) index;
+-(void) setMatrix3x3: (const CC3Matrix3x3*) value at: (GLuint) index;
 
 /**
  * Sets the 4x4 value of this uniform from the specified 4x3 value, adding the last identity row.
@@ -488,7 +499,7 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
  *
  * The type property of this instance must be GL_FLOAT_MAT4.
  */
--(void) setMatrix4x3: (CC3Matrix4x3*) value;
+-(void) setMatrix4x3: (const CC3Matrix4x3*) value;
 
 /**
  * Sets the 4x4 element at the specified index in this uniform to the specified 4x3 value,
@@ -500,7 +511,7 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
  *
  * The type property of this instance must be GL_FLOAT_MAT4.
  */
--(void) setMatrix4x3: (CC3Matrix4x3*) value at: (GLuint) index;
+-(void) setMatrix4x3: (const CC3Matrix4x3*) value at: (GLuint) index;
 
 /**
  * Sets the value of this uniform to the specified value.
@@ -510,7 +521,7 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
  *
  * The type property of this instance must be GL_FLOAT_MAT4.
  */
--(void) setMatrix4x4: (CC3Matrix4x4*) value;
+-(void) setMatrix4x4: (const CC3Matrix4x4*) value;
 
 /**
  * Sets the element at the specified index in this uniform to the specified value.
@@ -521,7 +532,7 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
  *
  * The type property of this instance must be GL_FLOAT_MAT4.
  */
--(void) setMatrix4x4: (CC3Matrix4x4*) value at: (GLuint) index;
+-(void) setMatrix4x4: (const CC3Matrix4x4*) value at: (GLuint) index;
 
 /**
  * Sets the value of this uniform to the specified value.
@@ -764,37 +775,6 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
  * The type property of this instance can be any value other than one of matrix types.
  * If the type property indicates an float type, the integers are normalized to floats between
  * 0 and 1. If the type property indicates a scalar, the R component of the specified color is
- * used. If the type property indicates a vector type with fewer than three components, the
- * R & G components are used. If the type property indicates a vector type with four components,
- * the A component is set to 255 (or 1 if float type).
- */
--(void) setColor: (ccColor3B) value;
-
-/**
- * Sets the element at the specified index in this uniform to the specified value.
- *
- * The specified index must be less than the value of the size property. This method may
- * still be used when this uniform has not been declared as an array. In this case, the
- * value of the size property will be one, and so the specified index must be zero.
- *
- * The type property of this instance can be any value other than one of matrix types.
- * If the type property indicates an float type, the integers are normalized to floats between
- * 0 and 1. If the type property indicates a scalar, the R component of the specified color is
- * used. If the type property indicates a vector type with fewer than three components, the
- * R & G components are used. If the type property indicates a vector type with four components,
- * the A component is set to 255 (or 1 if float type).
- */
--(void) setColor: (ccColor3B) value at: (GLuint) index;
-
-/**
- * Sets the value of this uniform to the specified value.
- *
- * If this uniform has been declared as an array, this method sets the value of the first
- * element in the array.
- *
- * The type property of this instance can be any value other than one of matrix types.
- * If the type property indicates an float type, the integers are normalized to floats between
- * 0 and 1. If the type property indicates a scalar, the R component of the specified color is
  * used. If the type property indicates a vector type with fewer than four components, the R & G,
  * or R, G & B components are used.
  */
@@ -847,6 +827,12 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
 /** Sets the value of this uniform from the value of the specified uniform. */
 -(void) setValueFromUniform: (CC3GLSLUniform*) uniform;
 
+/** Returns a string description of the current value of this uniform. */
+-(NSString*) valueDescription;
+
+#pragma mark Updating the GL engine
+
+
 /**
  * Invoked during drawing, after all of the content of the variable has been set using
  * the set... methods, in order to have the value of this variable set into the GL engine.
@@ -866,12 +852,47 @@ NSString* NSStringFromCC3GLSLVariableScope(CC3GLSLVariableScope scope);
 #pragma mark CC3GLSLUniformOverride
 
 /**
- * Instances of this class are held in the CC3ShaderProgramContext to allow the value of a uniform
+ * Instances of this class are held in the CC3ShaderContext to allow the value of a uniform
  * to be set directly by the application, on a node-by-node basis, to override the value retrieved
  * automatically from the scene via the semantic context of the uniform variable.
  *
  * An instance of this class does not set the state of the GL engine directly. Instead, it sets
- * the value of the actual uniform within the program that it overrides.
+ * the value of the actual uniform within the program and pure color program that it overrides.
  */
-@interface CC3GLSLUniformOverride : CC3GLSLUniform
+@interface CC3GLSLUniformOverride : CC3GLSLUniform {
+	CC3GLSLUniform* _programUniform;
+	CC3GLSLUniform* _pureColorProgramUniform;
+}
+
+/**
+ * If this instance is overriding the specified uniform, either from the program or the pure 
+ * color program, the value of the specified uniform is updated from the value of this instance.
+ *
+ * Returns whether the value of the specified uniform was updated.
+ */
+-(BOOL) updateIfOverriding: (CC3GLSLUniform*) uniform;
+
+
+#pragma mark Allocation and initialization
+
+/** 
+ * Initializes this instance to override the specified uniform, 
+ * plus the specified uniform in the related pure color program.
+ *
+ * The uniform parameter must not be nil. However, in many cases, the pureColorUniform 
+ * parameter can and will be nil.
+ */
+-(id) initForProgramUniform: (CC3GLSLUniform*) uniform
+ andPureColorProgramUniform: (CC3GLSLUniform*) pureColorUniform;
+
+/**
+ * Allocates and initializes an instance to override the specified uniform, 
+ * plus the specified uniform in the related pure color program.
+ *
+ * The uniform parameter must not be nil. However, in many cases, the pureColorUniform
+ * parameter can and will be nil.
+ */
++(id) uniformOverrideForProgramUniform: (CC3GLSLUniform*) uniform
+			andPureColorProgramUniform: (CC3GLSLUniform*) pureColorUniform;
+
 @end

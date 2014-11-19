@@ -1,9 +1,9 @@
 /*
  * CC3Rotator.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +35,7 @@
 
 
 #pragma mark -
-#pragma mark CC3Rotator
+#pragma mark Enumerations
 
 /** Enumeration of rotation types. */
 typedef enum {
@@ -47,6 +47,34 @@ typedef enum {
 	kCC3RotationTypeLocation,					/**< Rotation by looking at a particular location. */
 } CC3RotationType;
 
+/**
+ * Enumeration of options for constraining the rotation of a CC3Node when attempting to point
+ * at a target node or targetLocation. Targetting can be constrained to use either local or
+ * global coordinates, and can be further constrained to rotate only around a single axis.
+ */
+typedef enum {
+	kCC3TargettingConstraintLocalUnconstrained,		/**< Rotate around all axes in the local coordinate system. */
+	kCC3TargettingConstraintLocalXAxis,				/**< Rotate only around the X-axis in the local coordinate system. */
+	kCC3TargettingConstraintLocalYAxis,				/**< Rotate only around the Y-axis in the local coordinate system. */
+	kCC3TargettingConstraintLocalZAxis,				/**< Rotate only around the Z-axis in the local coordinate system. */
+	kCC3TargettingConstraintGlobalUnconstrained,	/**< Rotate around all axes in the global coordinate system. */
+	kCC3TargettingConstraintGlobalXAxis,			/**< Rotate only around the X-axis in the global coordinate system. */
+	kCC3TargettingConstraintGlobalYAxis,			/**< Rotate only around the Y-axis in the global coordinate system. */
+	kCC3TargettingConstraintGlobalZAxis,			/**< Rotate only around the Z-axis in the global coordinate system. */
+	
+	// Deprecated
+	kCC3TargettingAxisRestrictionNone __deprecated = kCC3TargettingConstraintGlobalUnconstrained,	/**< @deprecated Renamed to kCC3TargettingConstraintGlobalUnconstrained. */
+	kCC3TargettingAxisRestrictionXAxis __deprecated = kCC3TargettingConstraintGlobalXAxis,			/**< @deprecated Renamed to kCC3TargettingConstraintGlobalXAxis. */
+	kCC3TargettingAxisRestrictionYAxis __deprecated = kCC3TargettingConstraintGlobalYAxis,			/**< @deprecated Renamed to kCC3TargettingConstraintGlobalYAxis. */
+	kCC3TargettingAxisRestrictionZAxis __deprecated = kCC3TargettingConstraintGlobalZAxis,			/**< @deprecated Renamed to kCC3TargettingConstraintGlobalZAxis. */
+} CC3TargettingConstraint;
+
+/** @deprecated Renamed to CC3TargettingConstraint. */
+#define CC3TargettingAxisRestriction CC3TargettingConstraint
+
+
+#pragma mark -
+#pragma mark CC3Rotator
 /**
  * CC3otator encapsulates the various mechanisms of rotating a node, and converts between them.
  * Nodes delegate responsibility for managing their rotation to an encapsulated instance of CC3Rotator.
@@ -65,7 +93,7 @@ typedef enum {
  * rotating to look at a particular target location or node, and optionally track that target
  * location or node as it or the node of the rotator move around.
  */
-@interface CC3Rotator : NSObject <NSCopying> {}
+@interface CC3Rotator : NSObject <NSCopying>
 
 /**
  * Indicates whether this rotator supports changing rotation properties, including rotation,
@@ -146,6 +174,22 @@ typedef enum {
 @property(nonatomic, assign, readonly) GLfloat rotationAngle;
 
 /**
+ * The global location towards which this node is facing.
+ *
+ * Always returns kCC3VectorNull. Subclasses that support target tracking will override.
+ */
+@property(nonatomic, readonly) CC3Vector targetLocation;
+
+/**
+ * Indicates whether rotation should be constrained when attempting to rotate the node to
+ * point at the target or targetLocation.
+ *
+ * Always returns kCC3TargettingConstraintGlobalUnconstrained. Subclasses that support
+ * targetting will override.
+ */
+@property(nonatomic, readonly) CC3TargettingConstraint targettingConstraint;
+
+/**
  * The target node at which this rotator is pointed.
  *
  * Always returns nil. Subclasses that support target tracking will override.
@@ -159,6 +203,14 @@ typedef enum {
  * Always returns NO. Subclasses that support target tracking will override.
  */
 @property(nonatomic, assign, readonly) BOOL shouldTrackTarget;
+
+/**
+ * Returns whether the node should update itself towards the target.
+ *
+ * This implementation always returns NO.
+ * Subclasses that support targets will override.
+ */
+@property(nonatomic, readonly) BOOL shouldUpdateToTarget;
 
 /**
  * Indicates whether the node should automatically find and track the camera
@@ -177,6 +229,37 @@ typedef enum {
  * Subclasses that support target locations will override.
  */
 @property(nonatomic, readonly) BOOL shouldRotateToTargetLocation;
+
+/**
+ * If the target node of the node carrying this rotator is a CC3Light, the target
+ * can be tracked by the node for the purpose of updating the lighting of a contained
+ * bump-map texture, instead of rotating to face the light, as normally occurs with tracking.
+ *
+ * This property indicates whether the node should update its globalLightPosition
+ * from the tracked location of the light, instead of rotating to face the light.
+ *
+ * Always returns NO. Subclasses that support target tracking will override.
+ */
+@property(nonatomic, readonly) BOOL isTrackingForBumpMapping;
+
+/**
+ * Returns whether this rotator updates the target direction by tracking a target.
+ *
+ * Always returns NO. Subclasses that support target tracking will override.
+ */
+@property(nonatomic, readonly) BOOL isTrackingTargetDirection;
+
+/**
+ * If the specified node is the target node at which this rotator is pointed,
+ * the target of this rotator is set to nil.
+ *
+ * This method is required in order to be able to clear the target without retrieving it
+ * outside this object to test if it is nil. Since the target is weakly referenced, it may be
+ * deallocated while this rotator still maintains a reference to it. Any subsequent attempt
+ * to retrieve the target reference may result in attempting to retain and autorelease it,
+ * particularly under ARC, which will create a zombie object error.
+ */
+-(BOOL) clearIfTarget: (CC3Node*) aNode;
 
 
 #pragma mark Allocation and initialization
@@ -248,9 +331,8 @@ typedef enum {
 	CC3Vector4 _rotationVector;
 	GLubyte _incrementalRotationCount;
 	GLubyte _rotationType : 4;
-	GLubyte _targettingConstraint : 4;				// For CC3TargettingRotator subclass
 	GLubyte _orthonormalizationStartColumnNumber : 2;
-	BOOL _isRotationDirty : 1;
+	GLubyte _targettingConstraint : 4;				// For CC3TargettingRotator subclass
 	BOOL _shouldReverseForwardDirection : 1;		// For CC3DirectionalRotator subclass
 	BOOL _isNewTarget : 1;							// For CC3TargettingRotator subclass
 	BOOL _shouldTrackTarget : 1;					// For CC3TargettingRotator subclass
@@ -480,10 +562,10 @@ typedef enum {
 @property(nonatomic, assign) CC3Vector referenceUpDirection;
 
 /** @deprecated Renamed to referenceUpDirection. */
-@property(nonatomic, assign) CC3Vector sceneUpDirection DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3Vector sceneUpDirection __deprecated;
 
 /** @deprecated Renamed to referenceUpDirection. */
-@property(nonatomic, assign) CC3Vector worldUpDirection DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3Vector worldUpDirection __deprecated;
 
 /**
  * The direction, in the local coordinate system, that is considered to be 'up'. This corresponds
@@ -510,31 +592,6 @@ typedef enum {
 
 #pragma mark -
 #pragma mark CC3TargettingRotator
-
-/**
- * Enumeration of options for constraining the rotation of a CC3Node when attempting to point
- * at a target node or targetLocation. Targetting can be constrained to use either local or
- * global coordinates, and can be further constrained to rotate only around a single axis.
- */
-typedef enum {
-	kCC3TargettingConstraintLocalUnconstrained,		/**< Rotate around all axes in the local coordinate system. */
-	kCC3TargettingConstraintLocalXAxis,				/**< Rotate only around the X-axis in the local coordinate system. */
-	kCC3TargettingConstraintLocalYAxis,				/**< Rotate only around the Y-axis in the local coordinate system. */
-	kCC3TargettingConstraintLocalZAxis,				/**< Rotate only around the Z-axis in the local coordinate system. */
-	kCC3TargettingConstraintGlobalUnconstrained,	/**< Rotate around all axes in the global coordinate system. */
-	kCC3TargettingConstraintGlobalXAxis,			/**< Rotate only around the X-axis in the global coordinate system. */
-	kCC3TargettingConstraintGlobalYAxis,			/**< Rotate only around the Y-axis in the global coordinate system. */
-	kCC3TargettingConstraintGlobalZAxis,			/**< Rotate only around the Z-axis in the global coordinate system. */
-
-	// Deprecated
-	kCC3TargettingAxisRestrictionNone DEPRECATED_ATTRIBUTE = kCC3TargettingConstraintGlobalUnconstrained,	/**< @deprecated Renamed to kCC3TargettingConstraintGlobalUnconstrained. */
-	kCC3TargettingAxisRestrictionXAxis DEPRECATED_ATTRIBUTE = kCC3TargettingConstraintGlobalXAxis,			/**< @deprecated Renamed to kCC3TargettingConstraintGlobalXAxis. */
-	kCC3TargettingAxisRestrictionYAxis DEPRECATED_ATTRIBUTE = kCC3TargettingConstraintGlobalYAxis,			/**< @deprecated Renamed to kCC3TargettingConstraintGlobalYAxis. */
-	kCC3TargettingAxisRestrictionZAxis DEPRECATED_ATTRIBUTE = kCC3TargettingConstraintGlobalZAxis,			/**< @deprecated Renamed to kCC3TargettingConstraintGlobalZAxis. */
-} CC3TargettingConstraint;
-
-/** @deprecated Renamed to CC3TargettingConstraint. */
-#define CC3TargettingAxisRestriction CC3TargettingConstraint
 
 /**
  * CC3TargettingRotator is a subclass of CC3DirectionalRotator that can automatically track
@@ -574,7 +631,7 @@ typedef enum {
 @property(nonatomic, assign) CC3TargettingConstraint targettingConstraint;
 
 /** @deprecated Renamed to targettingConstraint. */
-@property(nonatomic, assign) CC3TargettingConstraint axisRestriction DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3TargettingConstraint axisRestriction __deprecated;
 
 /**
  * Rotates to look at the specified target location as viewed from the specified eye location,
@@ -586,15 +643,15 @@ typedef enum {
 -(void) rotateToTargetLocation: (CC3Vector) targLoc from: (CC3Vector) eyeLoc withUp: (CC3Vector) upDir;
 
 /** @deprecated Use rotateToTargetLocation:from:withUp: instead. */
--(void) rotateToTargetLocationFrom: (CC3Vector) aLocation DEPRECATED_ATTRIBUTE;
+-(void) rotateToTargetLocationFrom: (CC3Vector) aLocation __deprecated;
 
 /**
  * The target node at which this rotator is pointed. If the shouldTrackTarget property
  * is set to YES, the node will track the target so that it always points to the
  * target, regardless of how the target and this node move through the 3D scene.
  *
- * The target is not retained. If you destroy the target node, you must remove
- * it as the target of this rotator.
+ * The target is held as a weak reference. If you destroy the target node, you must
+ * remove it as the target of this rotator.
  */
 @property(nonatomic, assign, readwrite) CC3Node* target;
 
@@ -631,7 +688,7 @@ typedef enum {
 @property(nonatomic, readonly) BOOL shouldRotateToTargetLocation;
 
 /**
- * If the taget node of the node carrying this rotator is a CC3Light, the target
+ * If the target node of the node carrying this rotator is a CC3Light, the target
  * can be tracked by the node for the purpose of updating the lighting of a contained
  * bump-map texture, instead of rotating to face the light, as normally occurs with tracking.
  * 
@@ -642,13 +699,21 @@ typedef enum {
  */
 @property(nonatomic, assign) BOOL isTrackingForBumpMapping;
 
+/**
+ * Returns whether this rotator updates the target direction by tracking a target.
+ *
+ * Returns YES if this rotator has a target node, the shouldTrackTarget property is
+ * set to YES, and the isTrackingForBumpMapping property is set to NO.
+ */
+@property(nonatomic, readonly) BOOL isTrackingTargetDirection;
+
 @end
 
 
 #pragma mark -
 #pragma mark Deprecated CC3ReverseDirectionalRotator
 
-DEPRECATED_ATTRIBUTE
+__deprecated
 /**
  * Deprecated and functionality moved to CC3DirectionalRotator.
  * @deprecated Use an instance of CC3DirectionalRotator and set the shouldReverseForwardDirection

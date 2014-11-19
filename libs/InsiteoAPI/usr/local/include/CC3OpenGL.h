@@ -1,9 +1,9 @@
 /*
  * CC3OpenGL.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,12 +30,13 @@
 /** @file */	// Doxygen marker
 
 #import "CC3Identifiable.h"
-#import "CC3OpenGLFoundation.h"
+#import "CC3OSExtensions.h"
 #import "CC3Matrix4x4.h"
 
-@class CC3NodeDrawingVisitor, CC3Mesh, CC3MeshNode;
+@class CC3NodeDrawingVisitor, CC3Mesh, CC3Fog;
 @class CC3GLSLVariable, CC3GLSLUniform, CC3GLSLAttribute;
-@class CC3ShaderProgram, CC3ShaderProgramPrewarmer;
+@class CC3ShaderProgram, CC3ShaderPrewarmer;
+@protocol CC3OpenGLDelegate;
 
 
 /** Indicates that vertex attribute array is not available. */
@@ -43,7 +44,7 @@
 
 /** GL state tracking for vertex attributes. */
 typedef struct {
-	GLenum semantic;			/**< The cocos3d semantic of this content array, under OGLES 1.1. */
+	GLenum semantic;			/**< The Cocos3D semantic of this content array, under OGLES 1.1. */
 	GLenum glName;				/**< The GL content name, used to enable a vertex array under OGLES 1.1. */
 	GLenum elementType;			/**< The data type of each element. */
 	GLint elementSize;			/**< The number of elements in each vertex. */
@@ -78,14 +79,15 @@ typedef struct {
  * if the state really is changing.
  */
 @interface CC3OpenGL : CC3Identifiable {
-	BOOL _isPrimaryContext : 1;
+	CC3GLContext* _context;
+	NSMutableSet* _extensions;
+	NSTimeInterval _deletionDelay;
 
 @public
 
 	NSString* value_GL_VENDOR;
 	NSString* value_GL_RENDERER;
 	NSString* value_GL_VERSION;
-	NSArray* _extensions;
 	
 	CC3VertexAttr* vertexAttributes;
 	GLuint value_MaxVertexAttribsUsed;
@@ -99,8 +101,10 @@ typedef struct {
 	GLbitfield value_GL_COORD_REPLACE;				// Track up to 32 texture units
 	GLbitfield isKnownCap_GL_COORD_REPLACE;			// Track up to 32 texture units
 	
-	GLenum value_GL_BLEND_SRC;
-	GLenum value_GL_BLEND_DST;
+	GLenum value_GL_BLEND_SRC_RGB;
+	GLenum value_GL_BLEND_DST_RGB;
+	GLenum value_GL_BLEND_SRC_ALPHA;
+	GLenum value_GL_BLEND_DST_ALPHA;
 	
 	ccColor4F value_GL_COLOR_CLEAR_VALUE;
 	GLfloat value_GL_DEPTH_CLEAR_VALUE;
@@ -130,7 +134,7 @@ typedef struct {
 	GLint value_GL_MAX_SAMPLES;
 	GLint value_GL_MAX_TEXTURE_UNITS;
 	GLint value_GL_MAX_VERTEX_ATTRIBS;
-	GLint value_GL_MAX_VERTEX_UNITS;
+	GLint valueMaxBoneInfluencesPerVertex;
 	GLint value_GL_MAX_TEXTURE_SIZE;
 	GLint value_GL_MAX_CUBE_MAP_TEXTURE_SIZE;
 	GLint value_GL_MAX_RENDERBUFFER_SIZE;
@@ -208,11 +212,30 @@ typedef struct {
 
 }
 
+/** 
+ * The OpenGL engine context.
+ *
+ * The value of this property is automatically retrieved from the CCGLView.
+ */
+@property(nonatomic, retain) CC3GLContext* context;
+
 /**
  * Returns whether this instance is tracking state for the primary rendering GL context
  * on the rendering thread.
  */
-@property(nonatomic, readonly) BOOL isPrimaryContext;
+@property(nonatomic, readonly) BOOL isRenderingContext;
+
+/**
+ * Returns the CC3OpenGLDelegate delegate that will receive callback notifications for
+ * asynchronous OpenGL activities.
+ */
++(NSObject<CC3OpenGLDelegate>*) delegate;
+
+/**
+ * Sets the CC3OpenGLDelegate delegate that will receive callback notifications for
+ * asynchronous OpenGL activities.
+ */
++(void) setDelegate: (NSObject<CC3OpenGLDelegate>*) delegate;
 
 
 #pragma mark Capabilities
@@ -332,7 +355,7 @@ typedef struct {
 /** Enables the vertex attributes that have been bound and disables the rest. */
 -(void) enableBoundVertexAttributes;
 
-/** Enables the vertex attribute needed for drawing cocos2d 2D artifacts, and disables all the rest. */
+/** Enables the vertex attribute needed for drawing Cocos2D 2D artifacts, and disables all the rest. */
 -(void) enable2DVertexAttributes;
 
 /**
@@ -532,6 +555,9 @@ typedef struct {
  */
 -(void) setSpotlightCutoffAngle: (GLfloat) val at: (GLuint) ltIdx;
 
+/** Binds the specified fog configuration to the GL engine. */
+-(void) bindFog: (CC3Fog*) fog withVisitor: (CC3NodeDrawingVisitor*) visitor;
+
 /** Sets the color of the fog. */
 -(void) setFogColor: (ccColor4F) color;
 
@@ -568,8 +594,12 @@ typedef struct {
 /** Sets the alpha function and reference value. */
 -(void) setAlphaFunc: (GLenum) func reference: (GLfloat) ref;
 
-/** Sets the blend function. */
+/** Sets the blend function, forcing RGB and alpha blending to use the same blending function. */
 -(void) setBlendFuncSrc: (GLenum) src dst: (GLenum) dst;
+
+/** Sets the blend function, allowing RGB and alpha blending to be set separately. */
+-(void) setBlendFuncSrcRGB: (GLenum) srcRGB dstRGB: (GLenum) dstRGB
+				  srcAlpha: (GLenum) srcAlpha dstAlpha: (GLenum) dstAlpha;
 
 
 #pragma mark Textures
@@ -579,6 +609,18 @@ typedef struct {
 
 /** Deletes the texture with the specified ID from the GL engine. */
 -(void) deleteTexture: (GLuint) texID;
+
+/** 
+ * Clears the tracking of the specified texture.
+ *
+ * For each texture unit whose state tracking indicates that it is bound to the specified
+ * texture, sets the tracking state for that texture unit to the default texture ID (0),
+ * to ensure that the state tracking no longer expects to be bound to that texture.
+ *
+ * This method is invoked automatically whenever a GL texture is deleted, or whenever a 
+ * GL texture is removed from Cocos3D, but may still be in use by Cocos2D.
+ */
+-(void) clearTextureBinding: (GLuint) texID;
 
 /**
  * Loads the specified texture image data, with the specified characteristics,
@@ -705,6 +747,9 @@ typedef struct {
  */
 -(void) enablePointSpriteCoordReplace: (BOOL) onOff at: (GLuint) tuIdx;
 
+/** Returns a string description of the current texture object bindings for each texture unit. */
+-(NSString*) dumpTextureBindings;
+
 
 #pragma mark Matrices
 
@@ -715,13 +760,13 @@ typedef struct {
 -(void) activatePaletteMatrixStack: (GLuint) pmIdx;
 
 /** Activates the modelview matrix stack and replaces the current matrix with the specified matrix. */
--(void) loadModelviewMatrix: (CC3Matrix4x3*) mtx;
+-(void) loadModelviewMatrix: (const CC3Matrix4x3*) mtx;
 
 /** Activates the projection matrix stack and replaces the current matrix with the specified matrix. */
--(void) loadProjectionMatrix: (CC3Matrix4x4*) mtx;
+-(void) loadProjectionMatrix: (const CC3Matrix4x4*) mtx;
 
 /** Activates the specified palette matrix stack and replaces the current matrix with the specified matrix. */
--(void) loadPaletteMatrix: (CC3Matrix4x3*) mtx at: (GLuint) pmIdx;
+-(void) loadPaletteMatrix: (const CC3Matrix4x3*) mtx at: (GLuint) pmIdx;
 
 /** Activates the modelview matrix stack, pushes it down one level, and copies the old top to the new top. */
 -(void) pushModelviewMatrixStack;
@@ -896,16 +941,10 @@ typedef struct {
 /** Returns the current value in the GL engine of the specified string parameter. */
 -(NSString*) getString: (GLenum) param;
 
-/** 
- * Returns the maximum number of lights supported by the platform,
- * or zero if the platform does not impose a limit.
- */
+/** Returns the maximum number of lights supported by the platform. */
 @property(nonatomic, readonly) GLuint maxNumberOfLights;
 
-/**
- * Returns the maximum number of clip planes supported by the platform,
- * or zero if the platform does not impose a limit.
- */
+/** Returns the maximum number of clip planes supported by the platform. */
 @property(nonatomic, readonly) GLuint maxNumberOfClipPlanes;
 
 /**
@@ -930,7 +969,10 @@ typedef struct {
  * Returns the maximum number of vertex skinning bone influences per vertex
  * supported by the platform, or zero if the platform does not impose a limit.
  */
-@property(nonatomic, readonly) GLuint maxNumberOfVertexUnits;
+@property(nonatomic, readonly) GLuint maxNumberOfBoneInfluencesPerVertex;
+
+/** @deprecated Renamed to maxNumberOfBoneInfluencesPerVertex. */
+@property(nonatomic, readonly) GLuint maxNumberOfVertexUnits __deprecated;
 
 /**
  * Returns the maximum number of pixel samples supported by the platform,
@@ -1058,38 +1100,55 @@ typedef struct {
 
 #pragma mark GL Extensions
 
-/** Returns an array containing the names of the GL extensions supported by the platform. */
-@property(nonatomic, readonly) NSArray* extensions;
+/** Returns a collection of names of the GL extensions supported by the platform. */
+@property(nonatomic, retain, readonly) NSSet* extensions;
+
+/**
+ * Returns whether this platform supports the GL extension with the specified name, which
+ * should be the name of the GL extension, as registered with the OpenGL standards bodies,
+ * or as specified by the GPU driver manufacturer. 
+ *
+ * You may specify the name either with or without a "GL_" prefix 
+ * (eg. both @"OES_packed_depth_stencil" and @"GL_OES_packed_depth_stencil" will work if
+ * that extension is supported).
+ *
+ * This method checks the extensions collection for the presence of the specified name.
+ * Although this is an optimized hash test, you should generally not use this test in 
+ * time-critical code. If you need to frequently test for the presence of an extension
+ * (for example, within the render loop), you should invoke this method once at the 
+ * beginning of your app, and cache the resulting boolean value elsewhere in your code.
+ */
+-(BOOL) supportsExtension: (NSString*) extensionName;
 
 
 #pragma mark Shaders
 
-/** Returns a shader program suitable for painting mesh nodes in a solid color. */
-@property(nonatomic, retain, readonly) CC3ShaderProgram* pureColorProgram;
-
-/** Returns the shader program to use to draw the specified mesh node. */
--(CC3ShaderProgram*) programForMeshNode: (CC3MeshNode*) aMeshNode;
-
 /** 
- * Generates a new shader of the specifed type and returns its ID.
+ * Creates a new shader of the specifed type and returns its ID.
  *
  * The shaderType parameter must be one of the following values:
  *   - GL_VERTEX_SHADER
  *   - GL_FRAGMENT_SHADER
  */
--(GLuint) generateShader: (GLenum) shaderType;
+-(GLuint) createShader: (GLenum) shaderType;
 
 /** Deletes the shader with the specified ID from the GL engine. */
 -(void) deleteShader: (GLuint) shaderID;
 
+/** @deprecated Use the compileShader:from:sourceCodeStrings: method instead. */
+-(void) compileShader: (GLuint) shaderID fromSourceCodeStrings: (NSArray*) glslSources __deprecated;
+
 /**
- * Compiles the specified shader from the specified GLSL source code strings, which is an
- * array of NSStrings each containing GLSL source code.
+ * Compiles the specified shader from the specified number of GLSL source code strings, 
+ * which is an array of null-terminated UTF8 strings. The number of source strings in 
+ * the source string array must be at least as large as the specified count.
  *
  * You can use the getShaderWasCompiled: method to determine whether compilation was successful,
  * and the getLogForShader: method to retrieve the reason for any unsuccessful compilation.
  */
--(void) compileShader: (GLuint) shaderID fromSourceCodeStrings: (NSArray*) glslSources;
+-(void) compileShader: (GLuint) shaderID
+				 from: (GLuint) srcStrCount
+	sourceCodeStrings: (const GLchar**) srcCodeStrings;
 
 /** Returns whether the specified shader was successfully compiled. */
 -(BOOL) getShaderWasCompiled: (GLuint) shaderID;
@@ -1109,8 +1168,8 @@ typedef struct {
  */
 -(NSString*) defaultShaderPreamble;
 
-/** Generates a new GLSL program and returns its ID. */
--(GLuint) generateShaderProgram;
+/** Creates a new GLSL program and returns its ID. */
+-(GLuint) createShaderProgram;
 
 /** Deletes the shader program with the specified ID from the GL engine. */
 -(void) deleteShaderProgram: (GLuint) programID;
@@ -1139,7 +1198,7 @@ typedef struct {
  * This prewarmer can be used to force that first draw call to be made immediately,
  * and to an off-screen surface, so it won't be visible.
  */
-@property(nonatomic, retain) CC3ShaderProgramPrewarmer* shaderProgramPrewarmer;
+@property(nonatomic, retain) CC3ShaderPrewarmer* shaderProgramPrewarmer;
 
 /** Returns whether the specified shader was successfully linked. */
 -(BOOL) getShaderProgramWasLinked: (GLuint) programID;
@@ -1170,33 +1229,121 @@ typedef struct {
 -(void) releaseShaderCompiler;
 
 
+#pragma mark Debugging support
+
+/**
+ * Pushes the specified group marker into the GL command stream. This marker can be used
+ * by the debugger to organize the presentation of the commands in an OpenGL frame.
+ *
+ * This version must convert the specified marker string into a 'C' string in order to
+ * send it to the GL engine. For better performance, use the pushGroupMarkerC: version
+ * of this method, and consider using a static 'C' string, or caching the 'C' string to
+ * avoid creating it on each frame.
+ */
+-(void) pushGroupMarker: (NSString*) marker;
+
+/**
+ * Pushes the specified group marker into the GL command stream. This marker can be used
+ * by the debugger to organize the presentation of the commands in an OpenGL frame.
+ *
+ * For best performance, consider using a static string, or caching the string to avoid
+ * creating it on each frame.
+ */
+-(void) pushGroupMarkerC: (const char*) marker;
+
+/**
+ * Pops the current group marker from the GL command stream. 
+ *
+ * This is the complement to the pushGroupMarker: or pushGroupMarkerC: methods, 
+ * and you can use this method in conjunction with either of those methods.
+ */
+-(void) popGroupMarker;
+
+/**
+ * Inserts the specified marker into the GL command stream. This marker can be used
+ * by the debugger to organize the presentation of the commands in an OpenGL frame.
+ *
+ * This version must convert the specified marker string into a 'C' string in order to
+ * send it to the GL engine. For better performance, use the pushGroupMarkerC: version
+ * of this method, and consider using a static 'C' string, or caching the 'C' string to
+ * avoid creating it on each frame.
+ */
+-(void) insertEventMarker: (NSString*) marker;
+
+/**
+ * Inserts the specified marker into the GL command stream. This marker can be used
+ * by the debugger to organize the presentation of the commands in an OpenGL frame.
+ *
+ * For best performance, consider using a static string, or caching the string to avoid
+ * creating it on each frame.
+ */
+-(void) insertEventMarkerC: (const char*) marker;
+
+/** Capture the current OpenGL command stream frame, starting at this point. */
+-(void) captureOpenGLFrame;
+
+/** Sets the debug label for the specified GL object of the specified type. */
+-(void) setDebugLabel: (NSString*) label forObject: (GLuint) objID ofType: (GLenum) objType;
+
+/** Sets the debug label for the specified texture. */
+-(void) setDebugLabel: (NSString*) label forTexture: (GLuint) texID;
+
+/** Sets the debug label for the specified buffer. */
+-(void) setDebugLabel: (NSString*) label forBuffer: (GLuint) buffID;
+
+/** Sets the debug label for the specified shader. */
+-(void) setDebugLabel: (NSString*) label forShader: (GLuint) shaderID;
+
+/** Sets the debug label for the specified shader program. */
+-(void) setDebugLabel: (NSString*) label forShaderProgram: (GLuint) progID;
+
+/** Sets the debug label for the specified framebuffer. */
+-(void) setDebugLabel: (NSString*) label forFramebuffer: (GLuint) fbID;
+
+/** Sets the debug label for the specified renderbuffer. */
+-(void) setDebugLabel: (NSString*) label forRenderbuffer: (GLuint) rbID;
+
+/** Sets the debug label for the specified vertex array. */
+-(void) setDebugLabel: (NSString*) label forVertexArray: (GLuint) vaID;
+
+
 #pragma mark Aligning 2D & 3D state
 
 /**
- * Aligns the state within the GL engine to be suitable for 2D drawing by cocos2d.
+ * Aligns the state within the GL engine to be suitable for 2D drawing by Cocos2D.
  *
  * This is invoked automatically during the transition from 3D to 2D drawing. You can also  invoke
  * this method if you perform 3D activities outside of the normal drawing loop, and you find that
- * it interferes with subsequent 2D rendering by cocos2d. However, such occurrances should be rare,
+ * it interferes with subsequent 2D rendering by Cocos2D. However, such occurrances should be rare,
  * and in most circumstances you should never need to invoke this method.
  */
--(void) alignFor2DDrawing;
+-(void) alignFor2DDrawingWithVisitor: (CC3NodeDrawingVisitor*) visitor;
 
 /**
- * Aligns the state within the GL engine to be suitable for 3D drawing by cocos3d.
+ * Aligns the state within the GL engine to be suitable for 3D drawing by Cocos3D.
  *
  * This is invoked automatically during the transition from 2D to 3D drawing.
  */
--(void) alignFor3DDrawing;
+-(void) alignFor3DDrawingWithVisitor: (CC3NodeDrawingVisitor*) visitor;
+
+
+#pragma mark OpenGL resources
+
+/**
+ * Clears content and resource caches that use OpenGL, including the CC3ShaderPrewarmer
+ * instance in the shaderProgramPrewarmer property, and the following OpenGL resource caches:
+ *
+ * 	 - CC3Resource
+ *   - CC3Texture
+ *   - CC3ShaderProgram
+ *   - CC3Shader
+ *   - CC3ShaderSourceCode
+ *   - CC3ShaderSourceCode
+ */
+-(void) clearOpenGLResourceCaches;
 
 
 #pragma mark Allocation and initialization
-
-/**
- * Initializes this instance with the specified name, and marking whether this is the
- * primary GL rendering context.
- */
--(id) initWithName: (NSString*) aName asPrimaryContext: (BOOL) isPrimaryContext;
 
 /** 
  * Returns the shared singleton instance for the currently running thread, creating it if necessary.
@@ -1210,6 +1357,95 @@ typedef struct {
  * one for a single background thread that can be used for loading resources, textures, and shaders.
  */
 +(CC3OpenGL*) sharedGL;
+
+/** Returns the thread that is being used for primary rendering. */
++(NSThread*) renderThread;
+
+/** Returns whether the current thread is being used for primary rendering. */
++(BOOL) isRenderThread;
+
+/** 
+ * Terminates the current use of OpenGL by this application.
+ *
+ * Terminates the CCDirector.sharedDirector singleton. Terminates OpenGL and deletes all GL contexts,
+ * serving all threads. Also clears all caches that contain content that uses OpenGL, including:
+ * 	 - CC3Resource
+ *   - CC3Texture
+ *   - CC3ShaderProgram
+ *   - CC3Shader
+ *   - CC3ShaderSourceCode
+ *
+ * You can invoke this method when your app no longer needs support for OpenGL, or will not
+ * use OpenGL for a significant amount of time, in order to free up app and OpenGL memory
+ * used by your application.
+ *
+ * To ensure that further OpenGL calls are not attempted, before invoking this method, you should
+ * release all CC3Scenes that you have created or loaded, along with any Cocos2D components.
+ *
+ * To ensure that that the current GL activity has finished before pulling the rug out from
+ * under it, this request is queued for each existing context, on the thread for which the
+ * context was created, and will only be executed once any currently running tasks on the 
+ * queue have been completed.
+ *
+ * In addition, once dequeued, a short delay is imposed, before the context instance is 
+ * actually released and deallocated, to provide time for object deallocation and cleanup 
+ * after the caches have been cleared, and autorelease pools have been drained. The length
+ * of this delay may be different for each context instance, and is specified by the 
+ * deletionDelay property of each instance.
+ *
+ * Since much of the processing of this method is handled through queued operations, as 
+ * described above, this method will return as soon as the requests are queued, and well
+ * before the operations have completed, and OpenGL has been terminated. 
+ *
+ * You can choose to be notified once all operations triggered by this method have completed,
+ * and OpenGL has been terminated, by registering a delegate object using the setDelegate: 
+ * class method. The delegate object will be sent the didTerminateOpenGL method once  all 
+ * operations triggered by this method have completed, and OpenGL has been terminated. 
+ * You should use this delegate notification if you intend to make use of OpenGL again, 
+ * as you must wait for one OpenGL session to terminate before starting another.
+ *
+ * Note that, in order to ensure that OpenGL is free to shutdown, this method forces the
+ * CC3Texture shouldCacheAssociatedCCTextures class-side property to NO, so that any
+ * background loading that is currently occurring will not cache Cocos2D textures.
+ * If you had set this property to YES, and intend to restart OpenGL at some point, then
+ * you might want to set it back to YES before reloading 3D resources again.
+ *
+ * Use this method with caution, as creating the GL contexts again will require significant overhead.
+ */
++(void) terminateOpenGL;
+
+/**
+ * Indicates the length of time, in seconds, that this instance will wait after the terminateOpenGL
+ * method is invoked, before this instance is actually deleted. This delay is intended to provide
+ * time for object deallocation and cleanup after the caches have been cleared, and autorelease
+ * pools have been drained.
+ *
+ * The value of this property is specified in seconds. The initial value of this is 0 for the
+ * instance that is used on the primary rendering thread, and 0.25 for the instance that is used
+ * for loading resources in the background.
+ */
+@property(nonatomic, assign) NSTimeInterval deletionDelay;
+
+@end
+
+
+#pragma mark CC3OpenGLDelegate
+
+/**
+ * This protocol specifies methods that will be invoked by certain asynchronous operations
+ * performed by instances of CC3OpenGL.
+ *
+ * All callback notification methods are invoked on the main application thread.
+ */
+@protocol CC3OpenGLDelegate <CC3Object>
+
+@optional
+
+/** 
+ * This method is invoked once all of the operations triggered by invoking the CC3OpenGL
+ * terminateOpenGL class method have completed, and OpenGL has been terminated.
+ */
+-(void) didTerminateOpenGL;
 
 @end
 
@@ -1369,12 +1605,7 @@ void CC3SetGLCapAt(GLenum cap, GLuint idx, BOOL val, GLbitfield* stateBits, GLbi
 	}
 
 /**
- * If info logging is enabled AND this is the primary context, logs the specified
+ * If info logging is enabled AND this is the primary rendering context, logs the specified
  * info message, otherwise does nothing.
  */
-#if LOGGING_LEVEL_INFO
-#	define LogInfoIfPrimary(fmt, ...)	if (self.isPrimaryContext) LogInfo(fmt, ##__VA_ARGS__)
-#else
-#	define LogInfoIfPrimary(fmt, ...)
-#endif
-
+#define LogInfoIfPrimary(fmt, ...)	LogInfoIf(self.isRenderingContext, fmt, ##__VA_ARGS__)

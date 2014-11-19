@@ -20,13 +20,21 @@
 #import "ISLocation.h"
 #import "ISPMotionListener.h"
 
+#pragma mark - iBeacon
+
+#import "ISBeaconProvider.h"
+#import "ISPBeaconListener.h"
+#import "ISBeaconRegion.h"
+
 #pragma mark - Itinerary
 
 #import "ISItineraryProvider.h"
 #import "ISItineraryBaseRequest.h"
 #import "ISItineraryOptimizedRequest.h"
 #import "ISItineraryRequest.h"
-#import "ISItineraryStructures.h"
+#import "ISItinerary.h"
+#import "ISItinerarySection.h"
+#import "ISItineraryInstruction.h"
 #import "ISPItineraryRenderListener.h"
 #import "ISPItineraryRequestListener.h"
 
@@ -34,7 +42,6 @@
 
 #import "ISPGeofenceListener.h"
 #import "ISGeofenceProvider.h"
-#import "ISGeofenceZone.h"
 #import "ISGeofenceArea.h"
 
 #pragma mark - MeetMe

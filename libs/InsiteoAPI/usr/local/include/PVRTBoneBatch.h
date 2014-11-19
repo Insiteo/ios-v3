@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTBoneBatch.h
-
- @Title        PVRTBoneBatch
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Utility functions which process vertices.
+ @file         PVRTBoneBatch.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Utility functions which process vertices.
 
 ******************************************************************************/
 #ifndef _PVRTBONEBATCH_H_
@@ -23,8 +15,8 @@
  Handles a batch of bones
 *****************************************************************************/
 /*!***************************************************************************
-@Class CPVRTBoneBatches
-@Brief A class for processing vertices into bone batches
+ @class CPVRTBoneBatches
+ @brief A class for processing vertices into bone batches
 *****************************************************************************/
 class CPVRTBoneBatches
 {
@@ -36,22 +28,21 @@ public:
 	int	nBatchCnt;			/*!< Number of batches to render */
 
 	/*!***********************************************************************
-	 @Function		Create
-	 @Output		pnVtxNumOut		vertex count
-	 @Output		pVtxOut			Output vertices (program must free() this)
-	 @Modified		pui32Idx		index array for triangle list
-	 @Input			nVtxNum			vertex count
-	 @Input			pVtx			vertices
-	 @Input			nStride			Size of a vertex (in bytes)
-	 @Input			nOffsetWeight	Offset in bytes to the vertex bone-weights
-	 @Input			eTypeWeight		Data type of the vertex bone-weights
-	 @Input			nOffsetIdx		Offset in bytes to the vertex bone-indices
-	 @Input			eTypeIdx		Data type of the vertex bone-indices
-	 @Input			nTriNum			Number of triangles
-	 @Input			nBatchBoneMax	Number of bones a batch can reference
-	 @Input			nVertexBones	Number of bones affecting each vertex
-	 @Returns		PVR_SUCCESS if successful
-	 @Description	Fills the bone batch structure
+	 @brief      	Fills the bone batch structure
+	 @param[out]	pnVtxNumOut		vertex count
+	 @param[out]	pVtxOut			Output vertices (program must free() this)
+	 @param[in,out]	pui32Idx		index array for triangle list
+	 @param[in]		nVtxNum			vertex count
+	 @param[in]		pVtx			vertices
+	 @param[in]		nStride			Size of a vertex (in bytes)
+	 @param[in]		nOffsetWeight	Offset in bytes to the vertex bone-weights
+	 @param[in]		eTypeWeight		Data type of the vertex bone-weights
+	 @param[in]		nOffsetIdx		Offset in bytes to the vertex bone-indices
+	 @param[in]		eTypeIdx		Data type of the vertex bone-indices
+	 @param[in]		nTriNum			Number of triangles
+	 @param[in]		nBatchBoneMax	Number of bones a batch can reference
+	 @param[in]		nVertexBones	Number of bones affecting each vertex
+	 @return		PVR_SUCCESS if successful
 	*************************************************************************/
 	EPVRTError Create(
 		int					* const pnVtxNumOut,
@@ -69,8 +60,7 @@ public:
 		const int			nVertexBones);
 
 	/*!***********************************************************************
-	 @Function		Release
-	 @Description	Destroy the bone batch structure
+	 @brief      	Destroy the bone batch structure
 	*************************************************************************/
 	void Release()
 	{

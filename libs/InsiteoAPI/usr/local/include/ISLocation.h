@@ -19,17 +19,7 @@
 /*!
  Class used to represent a location result.
  */
-@interface ISLocation : NSObject {
-    
-@private
-    
-    //Location position (x, y, mapId)
-    ISPosition * m_position;            //see ISPosition.h for more details
-	//Location accuracy
-	double m_accuracy;
-    //Location type
-    int m_locationType;                 //0 WIFI, 1 BLE, 2 GPS, 3 STEP, 4 FAKE
-}
+@interface ISLocation : NSObject
 
 /*!
  Location position (x, y, mapId).
@@ -62,6 +52,11 @@
  */
 - (id)initWithLocation:(ISLocation *)location;
 
+/*!
+ Static method used to get an NSString which describes the location type.
+ @param location Corresponding location object.
+ @return WIFI, BLE, GPS, STEP, FAKE or UNKNOWN.
+ */
 + (NSString *)getLocationTypeName:(ISLocation *)location;
 
 /*!
@@ -84,6 +79,5 @@
  Accessor used to get the map identifier.
  */
 - (int)mapId;
-
 
 @end

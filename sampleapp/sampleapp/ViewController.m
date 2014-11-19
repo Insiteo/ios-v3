@@ -9,7 +9,13 @@
 #import "ViewController.h"
 
 int const ALERTVIEW_RETRY_INIT = 0;
+
+#if ASK_FOR_UPDATE
+
 int const ALERTVIEW_UPDATE_PACKAGES = 1;
+
+#endif
+
 int const ALERTVIEW_LOCATE_EXT_POI = 2;
 
 int const ACTIONSHEET_CHANGE_MAP = 0;
@@ -20,6 +26,8 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 @interface ViewController ()
 
+- (void)launch:(NSString *)message;
+
 @end
 
 @implementation ViewController
@@ -27,11 +35,52 @@ int const ACTIONSHEET_ACTIONS = 1;
 @synthesize mapContentView;
 @synthesize currentTask = m_currentTask;
 
+#if ASK_FOR_UPDATE
+
+- (void)proposePackageUpdate {
+    UIAlertView * myAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"STR_NEW_DATA_TITLE", nil) message:NSLocalizedString(@"STR_NEW_DATA_MESSAGE", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"STR_NO", nil) otherButtonTitles:NSLocalizedString(@"STR_YES", nil), nil];
+    [myAlert setTag:ALERTVIEW_UPDATE_PACKAGES];
+    [myAlert show];
+}
+
+- (void)downloadPackages {
+    //Create the progress dialog. If it is canceled, it cancels the running download task
+    m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [m_hud setMode:MBProgressHUDModeDeterminate];
+    [m_hud setProgress:0.0];
+    [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
+    [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
+    
+    //Start an asynchronous download, and get running task (thus it can be canceled)
+    id<ISPCancelable> updateTask = [[ISInitProvider instance] updateWithUpdateHandler:^(ISInsiteoError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        NSString * message = nil;
+        if (error != nil) {
+            message = NSLocalizedString(@"STR_UPDATE_FAILED", nil);
+        } else {
+            message = NSLocalizedString(@"STR_UPDATE_SUCCEEDED", nil);
+        }
+        
+        [self launch:message];
+    } andUpdateProgressHandler:^(ISPackageType packageType, Boolean download, int progress, int total) {
+        double hudProgress = (float)progress/(float)total;
+        [m_hud setProgress:hudProgress];
+    }];
+    [self setCurrentTask:updateTask];
+    
+    
+    UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onHudDoubleTapped:)];
+    [tapGestureRecognizer setNumberOfTapsRequired:2];
+    [m_hud addGestureRecognizer:tapGestureRecognizer];
+    [tapGestureRecognizer release];
+}
+
+#endif
+
 - (void)startAPI {
     [ISInitProvider setAPIKey:API_KEY];
-    
-    id<ISPCancelable> initTask = [[ISInitProvider instance] startAPIWithServerType:SERVER andSiteId:SITE_ID andLanguage:LANGUAGE andListener:self];
-    [self setCurrentTask:initTask];
     
     //Create cancelable progress dialog. Canceling dialog will also cancel init task
     m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -44,22 +93,111 @@ int const ACTIONSHEET_ACTIONS = 1;
     [tapGestureRecognizer setNumberOfTapsRequired:2];
     [m_hud addGestureRecognizer:tapGestureRecognizer];
     [tapGestureRecognizer release];
+    
+#if ASK_FOR_UPDATE
+    
+    id<ISPCancelable> initTask = [[ISInitProvider instance] startWithServerType:SERVER andSiteId:SITE_ID andLanguage:LANGUAGE andStartHandler:^NSArray *(ISInsiteoError *error, NSArray *newPackages) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if (error != nil) {
+            m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [m_hud setMode:MBProgressHUDModeText];
+            [m_hud setLabelText:error.errorCode];
+            [m_hud setDetailsLabelText:error.errorMessage];
+            [m_hud hide:YES afterDelay:2];
+            
+            [self launch:NSLocalizedString(@"STR_INIT_FAILED", nil)];
+        } else {
+            if ([newPackages count] > 0) {
+                [self proposePackageUpdate];
+            } else {
+                m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                [m_hud setMode:MBProgressHUDModeIndeterminate];
+                [m_hud setLabelText:NSLocalizedString(@"STR_INITIALIZING", nil)];
+                
+                [self launch:NSLocalizedString(@"STR_INIT_SUCCEEDED", nil)];
+                
+                [MBProgressHUD hideHUDForView:self.view animated:NO];
+            }
+        }
+        
+        return nil;
+    } andRenderMode:RENDER_MODE];
+    
+#else
+    
+    id<ISPCancelable> initTask = [[ISInitProvider instance] startWithServerType:SERVER andSiteId:SITE_ID andLanguage:LANGUAGE andStartHandler:^NSArray * (ISInsiteoError * error, NSArray * newPackages) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        if (error != nil) {
+            //Error HUD
+            m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [m_hud setMode:MBProgressHUDModeText];
+            [m_hud setLabelText:error.errorCode];
+            [m_hud setDetailsLabelText:error.errorMessage];
+            [m_hud hide:YES afterDelay:2];
+            
+            //Launch site
+            [self launch:NSLocalizedString(@"STR_INIT_FAILED", nil)];
+        } else {
+            //Update HUD
+            m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [m_hud setLabelText:NSLocalizedString(@"STR_UPDATING", nil)];
+            [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
+            
+            return newPackages;
+        }
+        
+        return nil;
+    } andUpdateHandler:^(ISInsiteoError * error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+        NSString * message = nil;
+        if (error != nil) {
+            message = NSLocalizedString(@"STR_UPDATE_FAILED", nil);
+        } else {
+            message = NSLocalizedString(@"STR_UPDATE_SUCCEEDED", nil);
+        }
+        
+        //Launch site
+        [self launch:message];
+    } andUpdateProgressHandler:^(ISPackageType packageType, Boolean download, int progress, int total) {
+        [m_hud setMode:MBProgressHUDModeDeterminate];
+        [m_hud setProgress:0.0];
+        
+        if (download) {
+            [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
+        } else {
+            [m_hud setLabelText:NSLocalizedString(@"STR_INSTALLING", nil)];
+        }
+        
+        double hudProgress = (float)progress/(float)total;
+        [m_hud setProgress:hudProgress];
+    } andRenderMode:RENDER_MODE];
+    
+#endif
+    
+    [self setCurrentTask:initTask];
 }
 
 - (void)startMap {
     //Initialize map controller
-    m_map2DView = [[ISMap2DView map2DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
-    [self.mapContentView addSubview:m_map2DView];
+    if (RENDER_MODE == ISERenderMode2D) {
+        m_mapView = [[ISMap2DView map2DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
+    } else {
+        m_mapView = [[ISMap3DView map3DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
+    }
+    [self.mapContentView addSubview:m_mapView];
     
     //Add location renderer
     m_locationProvider = [[ISLocationProvider alloc] init];
-    [m_map2DView addRenderer:[m_locationProvider renderer]];
+    [m_mapView addRenderer:[m_locationProvider renderer]];
     
     //Add itinerary renderer
-    m_itineraryProvider = [[m_locationProvider getLbsModule:LBS_MODULE_ITINERARY] retain];
+    m_itineraryProvider = (ISItineraryProvider *)[[m_locationProvider getLbsModule:LBS_MODULE_ITINERARY] retain];
     ISItineraryRenderer * itineraryRenderer = [m_itineraryProvider renderer];
     [itineraryRenderer setRenderListener:self];
-    [m_map2DView addRenderer:itineraryRenderer];
+    [m_mapView addRenderer:itineraryRenderer];
     
     //Possible itinerary customization...
     //    [itineraryProvider setFrontStrokeThickness:15.0];
@@ -69,9 +207,9 @@ int const ACTIONSHEET_ACTIONS = 1;
     //    [itineraryProvider setOnlyPath:YES];
     
     //Geofencing
-    m_geofenceProvider = [[m_locationProvider getLbsModule:LBS_MODULE_GEOFENCING] retain];
+    m_geofenceProvider = (ISGeofenceProvider *)[[m_locationProvider getLbsModule:LBS_MODULE_GEOFENCING] retain];
     
-    [m_map2DView startRendering];
+    [m_mapView startRendering];
 }
 
 #pragma mark - ISPInitListener
@@ -98,94 +236,13 @@ int const ACTIONSHEET_ACTIONS = 1;
     }
 }
 
-- (void)proposePackageUpdate {
-    UIAlertView * myAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"STR_NEW_DATA_TITLE", nil) message:NSLocalizedString(@"STR_NEW_DATA_MESSAGE", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"STR_NO", nil) otherButtonTitles:NSLocalizedString(@"STR_YES", nil), nil];
-    [myAlert setTag:ALERTVIEW_UPDATE_PACKAGES];
-    [myAlert show];
-}
-
-- (void)downloadPackages {
-    //Start an asynchronous download, and get running task (thus it can be canceled)
-    id<ISPCancelable> updateTask = [[ISInitProvider instance] updatePackagesWithInitListener:self];
-    [self setCurrentTask:updateTask];
-    
-    //Create the progress dialog. If it is canceled, it cancels the running download task
-    m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    [m_hud setMode:MBProgressHUDModeDeterminate];
-    [m_hud setProgress:0.0];
-    [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
-    [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
-    
-    UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onHudDoubleTapped:)];
-    [tapGestureRecognizer setNumberOfTapsRequired:2];
-    [m_hud addGestureRecognizer:tapGestureRecognizer];
-    [tapGestureRecognizer release];
-}
-
-- (void)onInitDone:(ISEInitAPIResult)result andError:(ISInsiteoError *)error {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    if (error != nil) {
-        m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [m_hud setMode:MBProgressHUDModeText];
-        [m_hud setLabelText:error.errorCode];
-        [m_hud setDetailsLabelText:error.errorMessage];
-        [m_hud hide:YES afterDelay:2];
-    }
-    
-    switch (result) {
-        case FAIL : {
-            [self launch:NSLocalizedString(@"STR_INIT_FAILED", nil)];
-            break;
-        }
-        case SUCCESS : {
-            m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [m_hud setMode:MBProgressHUDModeIndeterminate];
-            [m_hud setLabelText:NSLocalizedString(@"STR_INITIALIZING", nil)];
-            
-            [self launch:NSLocalizedString(@"STR_INIT_SUCCEEDED", nil)];
-            
-            [MBProgressHUD hideHUDForView:self.view animated:NO];
-            break;
-        }
-        case SUCCESS_NEW_DATA : {
-            [self proposePackageUpdate];
-            break;
-        }
-    }
-}
-
-- (void)onDownloadPackageWillStart:(ISPackageType)packageType {
-    
-}
-
-- (void)onDownloadProgressWithProgress:(int)progress andTotal:(int)total {
-    double hudProgress = (float)progress/(float)total;
-    [m_hud setProgress:hudProgress];
-}
-
-- (void)onInstallProgressWithProgress:(int)progress andTotal:(int)total {
-    double hudProgress = (float)progress/(float)total;
-    [m_hud setProgress:hudProgress];
-}
-
-- (void)onDataUpdateDone:(Boolean)success andError:(ISInsiteoError *)error {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    NSString * message = nil;
-    if (success == NO) {
-        message = NSLocalizedString(@"STR_UPDATE_FAILED", nil);
-    } else {
-        message = NSLocalizedString(@"STR_UPDATE_SUCCEEDED", nil);
-    }
-    [self launch:message];
-}
-
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     switch (alertView.tag) {
+            
+#if ASK_FOR_UPDATE
+            
         case ALERTVIEW_UPDATE_PACKAGES : {
             if (buttonIndex == alertView.cancelButtonIndex) {
                 [self launch:nil];
@@ -194,6 +251,9 @@ int const ACTIONSHEET_ACTIONS = 1;
             }
             break;
         }
+            
+#endif
+            
         case ALERTVIEW_RETRY_INIT:  {
             [self startAPI];
             break;
@@ -204,20 +264,20 @@ int const ACTIONSHEET_ACTIONS = 1;
                 NSArray * zonesPois = [ISDBHelperMap getExternalZonePoisForExtIdPoi:extId];
                 
                 //Clear all other ISGenericRTO/MyRto
-                [m_map2DView clearRendererWithRTOClass:[ISGenericRTO class]];
-                [m_map2DView clearRendererWithRTOClass:[MyRto class]];
+                [m_mapView clearRendererWithRTOClass:[ISGenericRTO class]];
+                [m_mapView clearRendererWithRTOClass:[MyRto class]];
                 
                 for (ISZonePoi * zonePoi in zonesPois) {
                     //And add a new one
                     ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalPoiId andLabel:@"My label" andMetersPosition:nil andWindowDisplayed:YES andLabelDisplayed:YES];
-                    [m_map2DView addRTO:rto inZone:zonePoi.zoneId];
+                    [m_mapView addRTO:rto inZone:zonePoi.zoneId];
                     [rto release];
                 }
                 
                 //Center on first association
                 if ([zonesPois count] > 0) {
                     ISZonePoi * zonePoi = [zonesPois objectAtIndex:0];
-                    [m_map2DView centerMapWithPosition:zonePoi.position andAnimated:YES];
+                    [m_mapView centerMapWithPosition:zonePoi.position andAnimated:YES];
                 }
             }
             break;
@@ -227,28 +287,27 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 #pragma mark - ISPMapListener
 
-- (void)onZoneClickedWithZone:(int)idZone andActionType:(int)actionType andActionParameter:(NSString *)actionParameter {
+- (void)onZoneClickedWithZone:(ISZone *)zone {
     //Get external zone pois associations
-    NSArray * zonesPois = [ISDBHelperMap getZonePoisForIdZone:idZone andExternal:YES];
+    NSArray * zonesPois = [ISDBHelperMap getZonePoisForIdZone:zone.idZone andExternal:YES];
     
     //Clear all other ISGenericRTO/MyRto
-    [m_map2DView clearRendererWithRTOClass:[ISGenericRTO class]];
-    [m_map2DView clearRendererWithRTOClass:[MyRto class]];
+    [m_mapView clearRendererWithRTOClass:[ISGenericRTO class]];
+    [m_mapView clearRendererWithRTOClass:[MyRto class]];
     
     for (ISZonePoi * zonePoi in zonesPois) {
         //And add a noew one
         MyRto * rto = [[MyRto alloc] initWithName:zonePoi.externalPoiId andLabel:@"My label" andMetersPosition:nil andWindowDisplayed:YES andLabelDisplayed:YES];
-        [m_map2DView addRTO:rto inZone:idZone withOffset:cc3v(zonePoi.offset.x, zonePoi.offset.y, 0)];
+        [m_mapView addRTO:rto inZone:zone.idZone withOffset:cc3v(zonePoi.offset.x, zonePoi.offset.y, 0)];
         [rto release];
     }
     
     //Center map
     if ([zonesPois count] > 1) {
-        ISZone * zone = [[ISInitProvider instance] getZoneWithId:idZone];
-        [m_map2DView centerMapWithPosition:zone.center andAnimated:YES];
+        [m_mapView centerMapWithPosition:zone.center andAnimated:YES];
     } else {
         ISZonePoi * zonePoi = [zonesPois objectAtIndex:0];
-        [m_map2DView centerMapWithPosition:zonePoi.position andAnimated:YES];
+        [m_mapView centerMapWithPosition:zonePoi.position andAnimated:YES];
     }
 }
 
@@ -272,20 +331,20 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)onLocationInitDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error {
     //Activate Location rendering
-    [m_map2DView setRendererDisplayWithRTOClass:[ISGfxLocation class] andDisplay:YES];
+    [m_mapView setRendererDisplayWithRTOClass:[ISGfxLocation class] andDisplay:YES];
 }
 
 - (void)onLocationReceived:(ISLocation *)location {
     NSLog(@"%@", NSLocalizedString(@"STR_LOC_RECEIVED", nil));
-    [m_map2DView centerMapWithPosition:location.position andAnimated:YES];
+    [m_mapView centerMapWithPosition:location.position andAnimated:YES];
 }
 
 - (void)onAzimuthReceived:(float)azimuth {
     //Check if we got a location before rotate the map
     if (m_locationProvider.lastLocation != nil) {
         //Update map rendering angle
-        float angle = (m_map2DView.currentAzimuth - azimuth);
-        [m_map2DView rotateWithAngle:angle andAnimated:NO];
+        float angle = (m_mapView.currentAzimuth - azimuth);
+        [m_mapView rotateWithAngle:angle andAnimated:NO];
     }
 }
 
@@ -300,27 +359,27 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 #pragma mark - ISPGeofenceListener
 
-- (void)onGeofenceDataUpdateWithEnteredZones:(NSArray *)enteredZones andStayedZones:(NSArray *)stayedZones andLeftZones:(NSArray *)leftZones {
+- (void)onGeofenceDataUpdateWithEnteredAreas:(NSArray *)enteredAreas andStayedAreas:(NSArray *)stayedAreas andLeftAreas:(NSArray *)leftAreas {
     NSString * message = @"";
     
-    if ([enteredZones count] > 0) {
+    if ([enteredAreas count] > 0) {
         message = [message stringByAppendingString:NSLocalizedString(@"STR_ENTERED", nil)];
-        for (ISGeofenceZone * geoZone in enteredZones) {
-            message = [message stringByAppendingFormat:@" %@ ", geoZone.GUID];
+        for (ISGeofenceArea * geoArea in enteredAreas) {
+            message = [message stringByAppendingFormat:@" %@ ", geoArea.GUID];
         }
     }
     
-    if ([stayedZones count] > 0) {
+    if ([stayedAreas count] > 0) {
         message = [message stringByAppendingString:NSLocalizedString(@"STR_STAYED", nil)];
-        for (ISGeofenceZone * geoZone in stayedZones) {
-            message = [message stringByAppendingFormat:@" %@ ", geoZone.GUID];
+        for (ISGeofenceArea * geoArea in stayedAreas) {
+            message = [message stringByAppendingFormat:@" %@ ", geoArea.GUID];
         }
     }
     
-    if ([leftZones count] > 0) {
+    if ([leftAreas count] > 0) {
         message = [message stringByAppendingString:NSLocalizedString(@"STR_LEFT", nil)];
-        for (ISGeofenceZone * geoZone in leftZones) {
-            message = [message stringByAppendingFormat:@" %@ ", geoZone.GUID];
+        for (ISGeofenceArea * geoArea in leftAreas) {
+            message = [message stringByAppendingFormat:@" %@ ", geoArea.GUID];
         }
     }
     
@@ -356,7 +415,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 #pragma mark - ISPItineraryRenderListener
 
-- (void)onWaypointClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex andSection:(ISSection *)section {
+- (void)onWaypointClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex andSection:(ISItinerarySection *)section {
     NSLog(@"%@", NSLocalizedString(@"STR_WAYPOINT_CLICKED", nil));
 }
 
@@ -366,14 +425,14 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)onMapSwitcherClickedWithNextPosition:(ISPosition *)nextPosition {
     NSLog(@"%@", NSLocalizedString(@"STR_MAP_SWITCHER_CLICKED", nil));
-    [m_map2DView centerMapWithPosition:nextPosition andAnimated:NO];
+    [m_mapView centerMapWithPosition:nextPosition andAnimated:NO];
 }
 
 #pragma mark - IBAction
 
-#define FIRST_MAP_ID 4
-#define SECOND_MAP_ID 5
-#define MAX_COORDINATES 400
+#define FIRST_MAP_ID 1
+#define SECOND_MAP_ID 2
+#define MAX_COORDINATES 50
 
 - (void)computeItinerary {
     if (m_itineraryProvider != nil) {
@@ -383,10 +442,10 @@ int const ACTIONSHEET_ACTIONS = 1;
         }
         
         //Request an itinerary between two points on the current map
-        [m_itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:CGPointMake(400, 380) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
+        [m_itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:CGPointMake(8, 23) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
         
         //Example between two points (please check to not recompute it every time)
-//        [m_itineraryProvider requestItineraryWithStartPoint:CGPointMake(180, 260) andStartMapId:FIRST_MAP_ID andEndPoint:CGPointMake(400, 380) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
+//        [m_itineraryProvider requestItineraryWithStartPoint:CGPointMake(20, 20) andStartMapId:FIRST_MAP_ID andEndPoint:CGPointMake(20, 20) andEndMapId:SECOND_MAP_ID andListener:self andPMR:NO];
     }
 }
 
@@ -421,12 +480,12 @@ int const ACTIONSHEET_ACTIONS = 1;
                 }
                 case 3 : {
                     //Clear itinerary
-                    [m_map2DView clearRendererWithRTOClass:[ISGfxItinerary class]];
+                    [m_mapView clearRendererWithRTOClass:[ISGfxItinerary class]];
                     break;
                 }
                 case 4 : {
                     //Clear all
-                    [m_map2DView clear];
+                    [m_mapView clear];
                     break;
                 }
             }
@@ -436,7 +495,7 @@ int const ACTIONSHEET_ACTIONS = 1;
             ISMap * map = [maps objectAtIndex:buttonIndex];
             
             //Change the current map using the selected identifier
-            [m_map2DView changeMapWithMapId:map.mapId andKeepPosition:NO andKeepZoomLevel:NO andKeepRotationAngle:NO];
+            [m_mapView changeMapWithMapId:map.mapId andKeepPosition:NO andKeepZoomLevel:NO andKeepRotationAngle:NO];
         }
     }
 }
@@ -493,7 +552,7 @@ int const ACTIONSHEET_ACTIONS = 1;
         [m_geofenceProvider setListener:nil];
         
         //And reset rotation
-        [m_map2DView rotateWithAngle:0 andAnimated:NO];
+        [m_mapView rotateWithAngle:0 andAnimated:NO];
     } else {
         //Start location
         [NSThread detachNewThreadSelector:@selector(threadStartLocation) toTarget:self withObject:nil];
@@ -527,7 +586,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)dealloc {
     [m_currentTask release];
-    [m_map2DView release];
+    [m_mapView release];
     [m_locationProvider release];
     [m_itineraryProvider release];
     [m_geofenceProvider release];

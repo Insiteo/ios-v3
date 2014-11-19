@@ -23,45 +23,7 @@
 /*!
  Class used to manage Itinerary requests.
  */
-@interface ISItineraryProvider : NSObject <ISPLbsModule> {
-    
-@protected
-    
-    //Boolean used to know if we have to notify on instructions update event
-    Boolean m_instructionsUpdateNotifyEnabled;
-    //Embedded itinerary provider
-    EmbeddedItineraryProvider * m_embeddedItineraryProvider;
-    //Last location received
-    ISLocation * m_lastLocation;
-    //Last itinerary computed
-    ISItinerary * m_lastItinerary;
-    //Intern session identifier (used to combine location and itinerary information)
-    NSNumber * m_sessionId;
-    
-#pragma mark - Internal
-    
-    //Last Itinerary request
-    ISItineraryBaseRequest * m_lastItineraryRequest;
-    //
-    NSLock * m_embeddedLock;
-    
-#pragma mark - Render
-    
-    //Itinerary map renderer
-	ISItineraryRenderer * m_itineraryRenderer;
-    //Back fill color
-    UIColor * m_backFillColor;
-    //Back stroke thicknesss
-    float m_backStrokeThickness;
-    //Front fill color
-    UIColor * m_frontFillColor;
-    //Front stroke thickness
-    float m_frontStrokeThickness;
-    //Selected fill color
-    UIColor * m_selectedFillColor;
-    //Boolean used to know if only the path is drawn
-    Boolean m_onlyPath;
-}
+@interface ISItineraryProvider : NSObject <ISPLbsModule>
 
 /*!
  Boolean used to know if we have to notify on instructions update event.
@@ -211,17 +173,17 @@
  */
 - (void)updateItinerary:(ISItinerary *)itinerary;
 
-/*!
+/*
  Method used to load all itinerary data to memory, this way the 1st itinerary request will be faster.
  */
 - (void)preloadItineraryGraph ;
 
-/*!
+/*
  Intern method used to lock the itinerary stuff.
 */
 - (void)lock;
 
-/*!
+/*
  Intern method used to unlock the itinerary stuff.
  */
 - (void)unlock;

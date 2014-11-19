@@ -26,7 +26,6 @@
 #pragma mark - Init
 
 #import "ISInitProvider.h"
-#import "ISPInitListener.h"
 
 #pragma mark - Package
 

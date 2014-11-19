@@ -34,25 +34,7 @@ typedef enum {
 /*!
  Class used to represent an optimized itinerary request.
  */
-@interface ISItineraryOptimizedRequest : ISItineraryRequest {
-    
-@private
-    
-    //Waypoints to pass through
-    NSArray * m_waypoints;
-    //Return sorted input waypoints
-    NSMutableArray * m_sortedWaypoints;
-    //Return sorted input waypoints indexes
-    NSMutableArray * m_sortedWaypointsIndexes;
-    
-    //Route optimization algorithm mode
-    ISEOptimizationMode m_optimMode;
-    
-    //Boolean used to know if we treat the first position
-    Boolean m_keepFirstPosition;
-    //Boolean used to know if we treat the last position
-    Boolean m_keepLastPosition;
-}
+@interface ISItineraryOptimizedRequest : ISItineraryRequest
 
 /*!
  Waypoints to pass through.

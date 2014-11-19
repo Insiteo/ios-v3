@@ -20,6 +20,8 @@
  */
 @protocol ISPAnalyticsListener <NSObject>
 
+@optional
+
 /*!
  Method called before sending an analytics event.
  @param event The analytics event that will be sent.

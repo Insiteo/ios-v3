@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTTrans.h
-
- @Title        PVRTTrans
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Set of functions used for 3D transformations and projections.
+ @file         PVRTTrans.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Set of functions used for 3D transformations and projections.
 
 ******************************************************************************/
 #ifndef _PVRTTRANS_H_
@@ -20,9 +12,12 @@
 /****************************************************************************
 ** Typedefs
 ****************************************************************************/
+/*!***************************************************************************
+ @brief      		PVRTBOUNDINGBOX is a typedef of a PVRTBOUNDINGBOX_TAG struct.
+*****************************************************************************/
 typedef struct PVRTBOUNDINGBOX_TAG
 {
-	PVRTVECTOR3	Point[8];
+	PVRTVECTOR3	Point[8];       ///< 8 Vertices
 } PVRTBOUNDINGBOX, *LPPVRTBOUNDINGBOX;
 
 /****************************************************************************
@@ -30,11 +25,11 @@ typedef struct PVRTBOUNDINGBOX_TAG
 ****************************************************************************/
 
 /*!***************************************************************************
- @Function			PVRTBoundingBoxCompute
- @Output			pBoundingBox
- @Input				pV
- @Input				nNumberOfVertices
- @Description		Calculate the eight vertices that surround an object.
+ @fn       			PVRTBoundingBoxCompute
+ @param[out]		pBoundingBox
+ @param[in]			pV
+ @param[in]			nNumberOfVertices
+ @brief      		Calculate the eight vertices that surround an object.
 					This "bounding box" is used later to determine whether
 					the object is visible or not.
 					This function should only be called once to determine the
@@ -46,13 +41,13 @@ void PVRTBoundingBoxCompute(
 	const int			nNumberOfVertices);
 
 /*!***************************************************************************
- @Function			PVRTBoundingBoxComputeInterleaved
- @Output			pBoundingBox
- @Input				pV
- @Input				nNumberOfVertices
- @Input				i32Offset
- @Input				i32Stride
- @Description		Calculate the eight vertices that surround an object.
+ @fn       			PVRTBoundingBoxComputeInterleaved
+ @param[out]		pBoundingBox
+ @param[in]			pV
+ @param[in]			nNumberOfVertices
+ @param[in]			i32Offset
+ @param[in]			i32Stride
+ @brief      		Calculate the eight vertices that surround an object.
 					This "bounding box" is used later to determine whether
 					the object is visible or not.
 					This function should only be called once to determine the
@@ -68,12 +63,12 @@ void PVRTBoundingBoxComputeInterleaved(
 	const int			i32Stride);
 
 /*!******************************************************************************
- @Function			PVRTBoundingBoxIsVisible
- @Output			pNeedsZClipping
- @Input				pBoundingBox
- @Input				pMatrix
- @Return			TRUE if the object is visible, FALSE if not.
- @Description		Determine if a bounding box is "visible" or not along the
+ @fn       			PVRTBoundingBoxIsVisible
+ @param[out]		pNeedsZClipping
+ @param[in]			pBoundingBox
+ @param[in]			pMatrix
+ @return			TRUE if the object is visible, FALSE if not.
+ @brief      		Determine if a bounding box is "visible" or not along the
 					Z axis.
 					If the function returns TRUE, the object is visible and should
 					be displayed (check bNeedsZClipping to know if Z Clipping needs
@@ -92,14 +87,14 @@ bool PVRTBoundingBoxIsVisible(
 	bool					* const pNeedsZClipping);
 
 /*!***************************************************************************
- @Function Name		PVRTTransformVec3Array
- @Output			pOut				Destination for transformed vectors
- @Input				nOutStride			Stride between vectors in pOut array
- @Input				pV					Input vector array
- @Input				nInStride			Stride between vectors in pV array
- @Input				pMatrix				Matrix to transform the vectors
- @Input				nNumberOfVertices	Number of vectors to transform
- @Description		Transform all vertices [X Y Z 1] in pV by pMatrix and
+ @fn                PVRTTransformVec3Array
+ @param[out]		pOut				Destination for transformed vectors
+ @param[in]			nOutStride			Stride between vectors in pOut array
+ @param[in]			pV					Input vector array
+ @param[in]			nInStride			Stride between vectors in pV array
+ @param[in]			pMatrix				Matrix to transform the vectors
+ @param[in]			nNumberOfVertices	Number of vectors to transform
+ @brief      		Transform all vertices [X Y Z 1] in pV by pMatrix and
  					store them in pOut.
 *****************************************************************************/
 void PVRTTransformVec3Array(
@@ -111,13 +106,13 @@ void PVRTTransformVec3Array(
 	const int			nNumberOfVertices);
 
 /*!***************************************************************************
- @Function			PVRTTransformArray
- @Output			pTransformedVertex	Destination for transformed vectors
- @Input				pV					Input vector array
- @Input				nNumberOfVertices	Number of vectors to transform
- @Input				pMatrix				Matrix to transform the vectors
- @Input				fW					W coordinate of input vector (e.g. use 1 for position, 0 for normal)
- @Description		Transform all vertices in pVertex by pMatrix and store them in
+ @fn       			PVRTTransformArray
+ @param[out]		pTransformedVertex	Destination for transformed vectors
+ @param[in]			pV					Input vector array
+ @param[in]			nNumberOfVertices	Number of vectors to transform
+ @param[in]			pMatrix				Matrix to transform the vectors
+ @param[in]			fW					W coordinate of input vector (e.g. use 1 for position, 0 for normal)
+ @brief      		Transform all vertices in pVertex by pMatrix and store them in
 					pTransformedVertex
 					- pTransformedVertex is the pointer that will receive transformed vertices.
 					- pVertex is the pointer to untransformed object vertices.
@@ -132,12 +127,12 @@ void PVRTTransformArray(
 	const VERTTYPE		fW = f2vt(1.0f));
 
 /*!***************************************************************************
- @Function			PVRTTransformArrayBack
- @Output			pTransformedVertex
- @Input				pVertex
- @Input				nNumberOfVertices
- @Input				pMatrix
- @Description		Transform all vertices in pVertex by the inverse of pMatrix
+ @fn       			PVRTTransformArrayBack
+ @param[out]		pTransformedVertex
+ @param[in]			pVertex
+ @param[in]			nNumberOfVertices
+ @param[in]			pMatrix
+ @brief      		Transform all vertices in pVertex by the inverse of pMatrix
 					and store them in pTransformedVertex.
 					- pTransformedVertex is the pointer that will receive transformed vertices.
 					- pVertex is the pointer to untransformed object vertices.
@@ -151,11 +146,11 @@ void PVRTTransformArrayBack(
 	const PVRTMATRIX	* const pMatrix);
 
 /*!***************************************************************************
- @Function			PVRTTransformBack
- @Output			pOut
- @Input				pV
- @Input				pM
- @Description		Transform vertex pV by the inverse of pMatrix
+ @fn       			PVRTTransformBack
+ @param[out]		pOut
+ @param[in]			pV
+ @param[in]			pM
+ @brief      		Transform vertex pV by the inverse of pMatrix
 					and store in pOut.
 *****************************************************************************/
 void PVRTTransformBack(
@@ -164,11 +159,11 @@ void PVRTTransformBack(
 	const PVRTMATRIX	* const pM);
 
 /*!***************************************************************************
- @Function			PVRTTransform
- @Output			pOut
- @Input				pV
- @Input				pM
- @Description		Transform vertex pV by pMatrix and store in pOut.
+ @fn       			PVRTTransform
+ @param[out]		pOut
+ @param[in]			pV
+ @param[in]			pM
+ @brief      		Transform vertex pV by pMatrix and store in pOut.
 *****************************************************************************/
 void PVRTTransform(
 	PVRTVECTOR4			* const pOut,

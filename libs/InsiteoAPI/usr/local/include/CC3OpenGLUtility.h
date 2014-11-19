@@ -1,9 +1,9 @@
 /*
  * CC3OpenGLUtility.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,18 +30,18 @@
 /** @file */	// Doxygen marker
 
 
-#include "CC3Environment.h"
+#import "CC3Environment.h"
 
 #if CC3_OGLES_1
-#include <OpenGLES/ES1/gl.h>
-#include <OpenGLES/ES1/glext.h>
-#include "CC3OpenGLES1Compatibility.h"
+#import <OpenGLES/ES1/gl.h>
+#import <OpenGLES/ES1/glext.h>
+#import "CC3OpenGLES1Compatibility.h"
 #endif	// CC3_OGLES_1
 
 #if CC3_OGLES_2
-#include <OpenGLES/ES2/gl.h>
-#include <OpenGLES/ES2/glext.h>
-#include "CC3OpenGLES2Compatibility.h"
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
+#import "CC3OpenGLES2Compatibility.h"
 #endif	// CC3_OGLES_2
 
 #if CC3_OGL
@@ -50,7 +50,7 @@
 #import "CC3OpenGLCompatibility.h"
 #endif	// CC3_OGL
 
-#include <stdio.h>
+#import <stdio.h>
 
 /** Returns a string containing the name of the specified GL enumeration code. */
 char* CC3GLEnumName(GLenum gle);
@@ -60,3 +60,10 @@ char* CC3GLEnumName(GLenum gle);
  * GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_FLOAT, GL_FIXED.
  */
 size_t CC3GLElementTypeSize(GLenum dataType);
+
+/** Returns the GL color format enum corresponding to the specified number of color and alpha bit planes. */
+GLenum CC3GLColorFormatFromBitPlanes(GLint colorCount, GLint alphaCount);
+
+/** Returns the GL depth format enum corresponding to the specified number of depth and stencil bit planes. */
+GLenum CC3GLDepthFormatFromBitPlanes(GLint depthCount, GLint stencilCount);
+

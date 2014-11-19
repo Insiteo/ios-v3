@@ -26,26 +26,7 @@
 /*!
  Class used to represent an itinerary request.
  */
-@interface ISItineraryRequest : ISItineraryBaseRequest {
-    
-@private
-    
-#pragma mark - Request variables
-    
-    //Itinerary start position array
-    NSMutableArray * m_startPositions;
-    //Itinerary end position array
-    NSMutableArray * m_endPositions;
-    
-#pragma mark - Internal
-    
-    //Timer used to check if a location is available
-    NSTimer * m_locationTimer;
-    //Boolean used to know if the request is from user location
-    Boolean m_isFromUserLocation;
-    //
-    Boolean m_fromOrToLocation;
-}
+@interface ISItineraryRequest : ISItineraryBaseRequest
 
 /*!
  Itinerary start position array.

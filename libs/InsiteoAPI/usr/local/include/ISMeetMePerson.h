@@ -30,32 +30,7 @@ typedef enum {
 /*!
  Class used to represent a MeetMe person.
  */
-@interface ISMeetMePerson : NSObject {
-    
-@private
-    
-#pragma mark - Structure
-    
-	//Person position
-    ISPosition * m_position;
-    //Person unique identifier
-	NSString * m_userId;
-	//Person external identifier
-	NSString * m_externalUserId;
-	//Person external name (nickname: could be nil)
-	NSString * m_externalName;
-    //Groups Id list
-    NSMutableIndexSet * m_groupIds;
-    
-#pragma mark - Rendering
-    
-    //Person rendering color
-	UIColor * m_color;
-    //Person picture URL
-    NSString * m_userPictureUrl;    //TODO : not used now
-}
-
-#pragma mark - Structure
+@interface ISMeetMePerson : NSObject
 
 /*!
  Person position.

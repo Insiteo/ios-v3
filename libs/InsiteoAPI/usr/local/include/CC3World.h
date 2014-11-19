@@ -1,9 +1,9 @@
 /*
  * CC3World.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -40,26 +40,23 @@
 /** Support for legacy. */
 #define kCC3DefaultLightColorAmbientWorld kCC3DefaultLightColorAmbientScene
 
-DEPRECATED_ATTRIBUTE
-/**
- * Deprecated and renamed to CC3Scene.
- * @deprecated CC3World renamed to CC3Scene.
- */
+__deprecated
+/** @deprecated CC3World renamed to CC3Scene. */
 @interface CC3World : CC3Scene
 
 /** @deprecated CC3World renamed to CC3Scene. Use CC3Scene scene instead. */
-+(id) world DEPRECATED_ATTRIBUTE;
++(id) world __deprecated;
 
 /** @deprecated Renamed to initializeScene. */
--(void) initializeWorld DEPRECATED_ATTRIBUTE;
+-(void) initializeWorld __deprecated;
 
 /** @deprecated Renamed to updateScene:. */
--(void) updateWorld: (ccTime)dt DEPRECATED_ATTRIBUTE;
+-(void) updateWorld: (CCTime)dt __deprecated;
 
 /** @deprecated Renamed to updateScene. */
--(void) updateWorld DEPRECATED_ATTRIBUTE;
+-(void) updateWorld __deprecated;
 
 /** @deprecated Renamed to drawScene. */
--(void) drawWorld DEPRECATED_ATTRIBUTE;
+-(void) drawWorld __deprecated;
 
 @end

@@ -13,7 +13,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ISItineraryStructures.h"
+#import "ISItinerary.h"
+#import "ISItinerarySection.h"
 #import "ISPosition.h"
 
 /*!
@@ -24,15 +25,15 @@
 /*!
  Method called when an Itinerary section was touched.
  @param itinerary The related ISItinerary.
- @param instructionIndex The related ISInstruction index.
- @param section The touched ISSection.
+ @param instructionIndex The related ISItineraryInstruction index.
+ @param section The touched ISItinerarySection.
  */
-- (void)onWaypointClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex andSection:(ISSection *)section;
+- (void)onWaypointClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex andSection:(ISItinerarySection *)section;
 
 /*!
  Method called when an Itinerary instruction was touched (edges).
  @param itinerary The related ISItinerary.
- @param instructionIndex The related ISInstruction index.
+ @param instructionIndex The related ISItineraryInstruction index.
  */
 - (void)onInstructionClickedWithItinerary:(ISItinerary *)itinerary andInstructionIndex:(int)instructionIndex;
 

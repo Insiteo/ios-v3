@@ -13,16 +13,12 @@
 
 #import <UIKit/UIKit.h>
 
-#define NON_TILT_DEFAULT_X 1
-#define NON_TILT_DEFAULT_Y 1
-#define NON_TILT_DEFAULT_Z 1
-
 #import "ISPRTO.h"
 #import "ISPRTOListener.h"
 #import "ISTouch.h"
 #import "ISMap.h"
 
-@class ISLayer;
+@class CCLayer;
 @class CC3Scene;
 
 /*!
@@ -108,7 +104,7 @@
  @param angle The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).
  @warning Cocos2d coordinates system is reversed.
  */
-- (void)invalidateWithLayer:(ISLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle;
+- (void)render2DWithLayer:(CCLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle;
 
 /*!
  Boolean used to know if the Renderer rendering is activated.
@@ -175,5 +171,12 @@
  @param angle Current angle.
  */
 - (void)render3DWithScene:(CC3Scene *)scene andRatio:(float)ratio andAngle:(float)angle;
+
+/*!
+ Method used to get all RTO from a given zone identifier.
+ @param zoneId Corresponding zone identifier.
+ @return An array of all linked RTO (could be nil).
+ */
+- (NSArray *)getRTOsWithZoneId:(int)zoneId;
 
 @end

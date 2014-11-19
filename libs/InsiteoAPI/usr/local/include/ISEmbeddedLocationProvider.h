@@ -8,22 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-//DLL
 #import "EmbeddedLocationProvider.h"
 
-@interface ISEmbeddedLocationProvider : NSObject {
-    
-@private
-    
-    Boolean m_isFakeLoc;
-    NSArray * m_knownAps;
-
-#pragma mark - DLL Provider
-    
-    //DLL Provider
-    EmbeddedLocationProvider * m_embeddedLocationProvider;
-    AvailableSensors * m_availableSensors;
-}
+@interface ISEmbeddedLocationProvider : NSObject
 
 @property (nonatomic, assign) EmbeddedLocationProvider * embeddedLocationProvider;
 
@@ -33,6 +20,6 @@
 
 - (id)initWithEmbeddedLocationListener:(IEmbeddedLocationListener *)embeddedLocationListener;
 
-- (int)initLocationWithLocationFlags:(int)locationFlags andAvailableSensors:(AvailableSensors *)sensors andDefaultMapId:(int)defaultMapId andForceDefaultMap:(Boolean)forceDefautlMap andLocationPath:(NSString *)locationPath;
+- (int)initLocationWithLocationFlags:(int)locationFlags andAvailableSensors:(AvailableSensors *)sensors andDefaultMapId:(int)defaultMapId andForceDefaultMap:(Boolean)forceDefautlMap andLocationPath:(NSString *)locationPath andLogsPath:(NSString *)logsPath;
 
 @end

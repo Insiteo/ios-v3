@@ -1,9 +1,9 @@
 /*
  * CC3Material.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@
 #import "CC3Texture.h"
 #import "CCProtocols.h"
 #import "CC3NodeVisitor.h"
-#import "CC3ShaderProgramContext.h"
+#import "CC3ShaderContext.h"
 
 
 /** Default material color under ambient lighting. */
@@ -78,7 +78,7 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  *     blending combinations, and can be used to simplify your management of blending opaque
  *     or transparent materials, while still providing fine control of the ambient, diffuse
  *     and specular coloring.
- *   - At a simpler level, CC3Material also supports the cocos2d <CCRGBAProtocol> protocol.
+ *   - At a simpler level, CC3Material also supports the Cocos2D <CCRGBAProtocol> protocol.
  *     You can use the color and opacity properties of this protocol to set the most commonly
  *     used coloring and blending characteristics simply and easily. Setting the color property
  *     changes both the ambient and diffuse colors of the material in tandem. Setting the
@@ -87,7 +87,7 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  *     you will not be able to achieve the complexity and realism that you can by using the
  *     more detailed properties, but you can achieve good effect with much less effort.
  *     And by supporting the <CCRGBAProtocol> protocol, the coloring and translucency of nodes
- *     with materials can be changed using standard cocos2d CCTint and CCFade actions, making
+ *     with materials can be changed using standard Cocos2D CCTint and CCFade actions, making
  *     it easier for you to add dynamic coloring effects to your nodes.
  * 
  * CC3Material also supports alpha testing, where the alpha value of each pixel can be
@@ -167,8 +167,7 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  */
 @interface CC3Material : CC3Identifiable <CCRGBAProtocol, CCBlendProtocol> {
 	CC3Texture* _texture;
-	CCArray* _textureOverlays;
-	CC3ShaderProgramContext* _shaderContext;
+	NSMutableArray* _textureOverlays;
 	ccColor4F _ambientColor;
 	ccColor4F _diffuseColor;
 	ccColor4F _specularColor;
@@ -177,23 +176,27 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
 	GLfloat _reflectivity;
 	GLenum _alphaTestFunction;
 	GLfloat _alphaTestReference;
-	ccBlendFunc _blendFunc;
+	ccBlendFunc _blendFuncRGB;
+	ccBlendFunc _blendFuncAlpha;
 	BOOL _shouldUseLighting : 1;
 	BOOL _shouldBlendAtFullOpacity : 1;
 }
 
 /**
- * If this value is set to YES, current lighting conditions will be taken into consideration
- * when drawing colors and textures, and the ambientColor, diffuseColor, specularColor,
- * emissionColor, and shininess properties will interact with lighting settings.
+ * If this value is set to YES, current lighting conditions (from either lights or light probes)
+ * will be taken into consideration when drawing colors and textures.
  *
  * If this value is set to NO, lighting conditions will be ignored when drawing colors and
- * textures, and the emissionColor will be applied to the mesh surface without regard to
+ * textures, and the emissionColor will be applied to the mesh surface, without regard to
  * lighting. Blending will still occur, but the other material aspects, including ambientColor,
  * diffuseColor, specularColor, and shininess will be ignored. This is useful for a cartoon
  * effect, where you want a pure color, or the natural colors of the texture, to be included
  * in blending calculations, without having to arrange lighting, or if you want those colors
  * to be displayed in their natural values despite current lighting conditions.
+ *
+ * Be aware that the initial value of the emissionColor property is normally black. If you
+ * find your node disappears or turns black when you set this property to NO, try changing
+ * the value of the emissionColor property.
  *
  * The initial value of this property is YES.
  */
@@ -332,6 +335,11 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  * performance. The performance improvement is small, but can add up if a large number of opaque
  * objects are rendered as if they were translucent.
  *
+ * Materials support different using blending functions for the RGB components and the alpha component.
+ * To set separate source blend values for RGB and alpha, use the sourceBlendRGB and sourceBlendAlpha
+ * properties instead. Setting this property sets the sourceBlendRGB and sourceBlendAlpha properties
+ * to the same value. Querying this property returns the value of the sourceBlendRGB property.
+ *
  * The initial value is determined by the value of the class-side property
  * defaultBlendFunc, which can be modified by the setDefaultBlendFunc: method.
  */
@@ -361,10 +369,64 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  * performance. The performance improvement is small, but can add up if a large number of opaque
  * objects are rendered as if they were translucent.
  *
+ * Materials support different using blending functions for the RGB components and the alpha component.
+ * To set separate destination blend values for RGB and alpha, use the destinationBlendRGB and 
+ * destinationBlendAlpha properties instead. Setting this property sets the destinationBlendRGB and
+ * destinationBlendAlpha properties to the same value. Querying this property returns the value of
+ * the destinationBlendRGB property.
+ *
  * The initial value is determined by the value of the class-side property
  * defaultBlendFunc, which can be modified by the setDefaultBlendFunc: method.
  */
 @property(nonatomic, assign) GLenum destinationBlend;
+
+/**
+ * The blending function to be applied to the RGB components of the source material (this material).
+ * This property must be set to one of the valid GL blending functions.
+ *
+ * In conjunction with the sourceBlendAlpha property, this property allows the RGB blending and
+ * alpha blending to be specified separately. Alternately, you can use the sourceBlend property
+ * to set both RGB and alpha blending functions to the same value.
+ *
+ * See the notes of the sourceBlend property for more information about material blending.
+ */
+@property(nonatomic, assign) GLenum sourceBlendRGB;
+
+/**
+ * The blending function to be applied to the RGB components of the destination material.
+ * This property must be set to one of the valid GL blending functions.
+ *
+ * In conjunction with the destinationBlendAlpha property, this property allows the RGB blending 
+ * and alpha blending to be specified separately. Alternately, you can use the destinationBlend
+ * property to set both RGB and alpha blending functions to the same value.
+ *
+ * See the notes of the destinationBlend property for more information about material blending.
+ */
+@property(nonatomic, assign) GLenum destinationBlendRGB;
+
+/**
+ * The blending function to be applied to the alpha components of the source material (this material).
+ * This property must be set to one of the valid GL blending functions.
+ *
+ * In conjunction with the sourceBlendRGB property, this property allows the RGB blending and
+ * alpha blending to be specified separately. Alternately, you can use the sourceBlend property
+ * to set both RGB and alpha blending functions to the same value.
+ *
+ * See the notes of the sourceBlend property for more information about material blending.
+ */
+@property(nonatomic, assign) GLenum sourceBlendAlpha;
+
+/**
+ * The blending function to be applied to the alpha components of the destination material.
+ * This property must be set to one of the valid GL blending functions.
+ *
+ * In conjunction with the destinationBlendRGB property, this property allows the RGB blending
+ * and alpha blending to be specified separately. Alternately, you can use the destinationBlend
+ * property to set both RGB and alpha blending functions to the same value.
+ *
+ * See the notes of the destinationBlend property for more information about material blending.
+ */
+@property(nonatomic, assign) GLenum destinationBlendAlpha;
 
 /**
  * Indicates whether this material is opaque.
@@ -386,12 +448,12 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  * Setting the value of this property does not change the alpha values of any of the material colors. 
  *
  * The state of this property is also affected by setting the opacity property. As a convenience,
- * setting the opacity property to a value less than 255 will automatically cause this isOpaque
- * property to be set to NO, which, as described above, will also affect the sourceBlend and
+ * setting the opacity property to a value less than kCCOpacityFull will automatically cause this
+ * isOpaque property to be set to NO, which, as described above, will also affect the sourceBlend and
  * destinationBlend properties, so that the translucency will be blended correctly.
  *
- * Setting the opacity property to 255 will automatically cause this isOpaque property to be set to
- * YES (affecting the sourceBlend and destinationBlend properties), unless the shouldBlendAtFullOpacity
+ * Setting the opacity property to kCCOpacityFull will automatically cause this isOpaque property to be set
+ * to YES (affecting the sourceBlend and destinationBlend properties), unless the shouldBlendAtFullOpacity 
  * property is set to YES, in which case the isOpaque property will be left set to NO.
  *
  * Setting this property can be thought of as a convenient way to switch between the two most
@@ -409,23 +471,26 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
 /**
  * Indicates whether blending should be applied even when the material is at full opacity.
  *
- * If this property is set to NO, when the opacity property of this material is set to full 
- * opacity (255), the isOpaque property will be set to YES, which in turn will set the
- * sourceBlend property to GL_ONE and the destinationBlend property to GL_ZERO, effectively 
+ * If this property is set to NO, when the opacity property of this material is set to full
+ * opacity (kCCOpacityFull), the isOpaque property will be set to YES, which in turn will set
+ * the sourceBlend property to GL_ONE and the destinationBlend property to GL_ZERO, effectively
  * turning blending off. This allows a node that is opaque to be faded, but when fading is
  * complete, and full opacity is restored, the node will be set fully opaque, which improves
  * performance and the affects the rendering order of the node relative to other nodes.
  *
  * If this property is set to YES, when the opacity property of this material is set to full
- * opacity (255), the isOpaque property will be set to NO, which will leave the sourceBlend
- * and destination properties at their current values, generally leaving blending enabled.
- * This is useful when using fading on a material that contains textures that in turn contain
- * transparency. When this material reaches full opacity, blending will be left enabled, and
- * the transparent sections of the textures will continue to be rendered correctly.
+ * opacity (kCCOpacityFull), the isOpaque property will be set to NO, which will leave the
+ * sourceBlend and destination properties at their current values, generally leaving blending 
+ * enabled. This is useful when using fading on a material that contains textures that in turn
+ * contain transparency. When this material reaches full opacity, blending will be left enabled, 
+ * and the transparent sections of the textures will continue to be rendered correctly.
  *
- * The default value of this property is NO. You should set this property to YES if this
- * material contains textures with transparent sections AND you intend to fade the node
- * out and in using the opacity property.
+ * The initial value of this property is NO. Whenever a texture is added to, or removed from,
+ * this material, the value is set to the value of the hasTextureAlpha property, reflecting
+ * whether any of the textures contain an alpha channel. If you know that the alpha channel
+ * in each texture does not contain transparency, and that this material will be displayed at
+ * full opacity, you can set this property back to NO to benefit from improved performance
+ * in sorting and rendering opaque materials.
  */
 @property(nonatomic, assign) BOOL shouldBlendAtFullOpacity;
 
@@ -515,89 +580,115 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
 #pragma mark CCRGBAProtocol and CCBlendProtocol support
 
 /**
- * Implementation of the CCRGBAProtocol color property.
+ * The color of this material, as a CCColorRef.
  *
- * Querying this property returns the RGB components of the material's diffuseColor property,
- * converted from the floating point range (0 to 1), to the byte range (0 to 255).
+ * The function of this property depends on the value of the shouldUseLighting property.
  *
- * When setting this property, the RGB values are each converted to a floating point number
- * between 0 and 1, and are set into both the ambientColor and diffuseColor properties.
- * The alpha of each of those properties remains the same.
+ * If the shouldUseLighting property is set to YES, querying this property returns a value 
+ * derived from the diffuseColor property, and setting this property modifies the value of
+ * both the ambientColor and diffuseColor properties.
+ *
+ * If the shouldUseLighting property is set to NO, querying this property returns a value
+ * derived from the emissionColor property, and setting this property modifies the value of
+ * the emissionColor properties.
+ *
+ * When setting this property, the alpha of each of the affected properties is not modified.
  */
-@property(nonatomic, assign) ccColor3B color;
+@property(nonatomic, assign) CCColorRef color;
 
 /**
- * Implementation of the CCRGBAProtocol opacity property.
+ * The opacity of this material.
  *
- * Querying this property returns the alpha component of the diffuseColor property, converted
- * from the floating point range (0 to 1) to the byte range (0 to 255).
+ * Querying this property returns the alpha component of either the diffuseColor property or 
+ * the emissionColor property, depending on whether the shouldUseLighting property is set to
+ * YES or NO, respectively.
  *
  * When setting this property, the value is converted to a floating point number between 0 and 1,
  * and is set into the alpha component of the ambientColor, diffuseColor, specularColor, and
- * emissionColor properties. The RGB components of each of those properties remains unchanged.
+ * emissionColor properties. The RGB components of each of those properties remain unchanged.
  *
- * Changing this property also affects the isOpaque property. As a convenience, setting this opacity
- * property to a value less than 255 will automatically cause the isOpaque property to be set to NO,
- * which will also affect the sourceBlend and destinationBlend properties, so that the translucency
- * will be blended correctly. See the notes of the isOpaque property for more information.
+ * Setting this property also affects the isOpaque property. As a convenience, setting this opacity
+ * property to a value less than kCCOpacityFull will automatically cause the isOpaque property to be 
+ * set to NO, which will also affect the sourceBlend and destinationBlend properties, so that the 
+ * translucency will be blended correctly. See the notes of the isOpaque property for more information.
  *
- * However, setting this opacity property to 255 will NOT automatically cause the isOpaque property
- * to be set to YES. Even if the opacity of the material is full, the texture may contain translucency,
- * which would be ignored if the isOpaque property were to be set to YES.
+ * However, setting this opacity property to kCCOpacityFull will NOT automatically cause the isOpaque 
+ * property to be set to YES. Even if the opacity of the material is full, the texture may contain 
+ * translucency, which would be ignored if the isOpaque property were to be set to YES.
  * 
- * Conversely, setting the value of this opacity property to 255 will automatically cause the isOpaque
- * property to be set to YES, which will affect the sourceBlen and destinationBlend properties so that
- * blending will be turned off. See the notes of the isOpaque property for more information.
+ * Conversely, setting the value of this opacity property to kCCOpacityFull will automatically cause the
+ * isOpaque property to be set to YES, which will affect the sourceBlen and destinationBlend properties
+ * so that blending will be turned off. See the notes of the isOpaque property for more information.
  *
  * Setting this property can be thought of as a convenient way to make simple changes to the opacity
  * of a material, using the most common types of blending combinations. For finer control of blending,
  * set the sourceBlend and destinationBlend properties, and the alpha values of the individual colors
  * directly, and avoid making changes to this property.
  */
-@property(nonatomic, assign) GLubyte opacity;
+@property(nonatomic, assign) CCOpacity opacity;
 
 /**
  * Implementation of the CCBlendProtocol blendFunc property.
  *
- * This is a convenience property that gets and sets both the sourceBlend and
- * destinationBlend properties using a single structure.
+ * This is a convenience property that gets and sets the sourceBlend and destinationBlend 
+ * properties using a single structure.
+ *
+ * Materials support different using blending functions for the RGB components and the alpha component.
+ * To set separate blend values for RGB and alpha, use the blendFuncRGB and blendFuncAlpha properties
+ * instead. Setting this property sets the blendFuncRGB and blendFuncAlpha properties to the same value.
+ * Querying this property returns the value of the blendFuncRGB property.
  */
 @property(nonatomic, assign) ccBlendFunc blendFunc;
 
 /**
+ * The blending function to be applied to the RGB components.
+ *
+ * This is a convenience property that gets and sets both the sourceBlendRGB and
+ * destinationBlendRGB properties using a single structure.
+ *
+ * In conjunction with the blendFuncAlpha property, this property allows the RGB blending and
+ * alpha blending to be specified separately. Alternately, you can use the blendFunc property
+ * to set both RGB and alpha blending functions to the same value.
+ *
+ * See the notes of the sourceBlend and destinationBlend properties for more information
+ * about material blending.
+ */
+@property(nonatomic, assign) ccBlendFunc blendFuncRGB;
+
+/**
+ * The blending function to be applied to the alpha component.
+ *
+ * This is a convenience property that gets and sets both the sourceBlendAlpha and
+ * destinationBlendAlpha properties using a single structure.
+ *
+ * In conjunction with the blendFuncRGB property, this property allows the RGB blending and
+ * alpha blending to be specified separately. Alternately, you can use the blendFunc property
+ * to set both RGB and alpha blending functions to the same value.
+ *
+ * See the notes of the sourceBlend and destinationBlend properties for more information 
+ * about material blending.
+ */
+@property(nonatomic, assign) ccBlendFunc blendFuncAlpha;
+
+/**
  * Returns the default GL material source and destination blend function used for new instances.
+ * This affects both the RGB and alpha blending components.
  *
  * The initial value is {GL_ONE, GL_ZERO}.
  */
 +(ccBlendFunc) defaultBlendFunc;
 
-/** Sets the default GL material source and destination blend function used for new instances. */
+/** 
+ * Sets the default GL material source and destination blend function used for new instances. 
+ * This affects both the RGB and alpha blending components.
+ */
 +(void) setDefaultBlendFunc: (ccBlendFunc) aBlendFunc;
 
+/** @deprecated Moved to CC3MeshNode. */
+@property(nonatomic, retain) CC3ShaderContext* shaderContext __deprecated;
 
-#pragma mark Shaders
-
-/**
- * The GLSL program context containing the GLSL program (vertex & fragment shaders) used to
- * decorate this material.
- *
- * This property is used only when running under OpenGL ES 2.
- */
-@property(nonatomic, retain) CC3ShaderProgramContext* shaderContext;
-
-/**
- * The GLSL program (vertex & fragment shaders) used to decorate this material.
- *
- * Within this material, the program is held in the program context in the shaderContext property.
- * This is a convenience method that allows the program within that context to be accessed or changed.
- *
- * Setting the value of this property will set the specified program into the context in the
- * shaderContext property, creating a new shader context if necessary. Setting this property
- * to nil will set the shaderContext property to nil as well.
- *
- * This property is used only when running under OpenGL ES 2.
- */
-@property(nonatomic, retain) CC3ShaderProgram* shaderProgram;
+/** @deprecated Moved to CC3MeshNode. */
+@property(nonatomic, retain) CC3ShaderProgram* shaderProgram __deprecated;
 
 
 #pragma mark Textures
@@ -629,6 +720,15 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  * property directly, in order to keep the mesh aligned with the orientation and
  * usable area of the textures. See the notes for the same property on CC3MeshNode
  * for more information.
+ *
+ * When building for iOS, raw PNG and TGA images are pre-processed by Xcode to pre-multiply
+ * alpha, and to reorder the pixel component byte order, to optimize the image for the iOS 
+ * platform. If you want to avoid this pre-processing for PNG or TGA files, for textures 
+ * such as normal maps or lighting maps, that you don't want to be modified, you can prepend
+ * a 'p' to the file extension ("ppng" or "ptga") to cause Xcode to skip this pre-processing
+ * and to use a loader that does not pre-multiply the alpha. You can also use this for other
+ * file types as well. See the notes for the CC3STBImage useForFileExtensions class-side
+ * property for more info.
  */
 @property(nonatomic, retain) CC3Texture* texture;
 
@@ -659,6 +759,15 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  * through the same method on the mesh node itself, instead of this method, in order
  * to keep the mesh aligned with the orientation and usable area of the textures.
  * See the notes for the same method on CC3MeshNode for more information.
+ *
+ * When building for iOS, raw PNG and TGA images are pre-processed by Xcode to pre-multiply
+ * alpha, and to reorder the pixel component byte order, to optimize the image for the iOS
+ * platform. If you want to avoid this pre-processing for PNG or TGA files, for textures
+ * such as normal maps or lighting maps, that you don't want to be modified, you can prepend
+ * a 'p' to the file extension ("ppng" or "ptga") to cause Xcode to skip this pre-processing
+ * and to use a loader that does not pre-multiply the alpha. You can also use this for other
+ * file types as well. See the notes for the CC3STBImage useForFileExtensions class-side
+ * property for more info.
  */
 -(void) addTexture: (CC3Texture*) aTexture;
 
@@ -706,21 +815,34 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
 -(void) setTexture: (CC3Texture*) aTexture forTextureUnit: (GLuint) texUnit;
 
 /**
+ * Returns whether any of the textures used by this material have an alpha channel, representing opacity.
+ *
+ * Returns YES if any of the textures contained in this instance has an alpha channel.
+ *
+ * See also the notes of the shouldBlendAtFullOpacity property for the effects of using a
+ * texture with an alpha channel.
+ */
+@property(nonatomic, readonly) BOOL hasTextureAlpha;
+
+/**
  * Returns whether the alpha channel has already been multiplied into each of the RGB
  * color channels, in any of the textures used by this material.
  *
  * Returns YES if any of the textures contained in this instance has pre-mulitiplied alpha.
- * 
+ *
  * See also the notes of the shouldApplyOpacityToColor property for the effects of using textures
  * with pre-multiplied alpha.
  */
-@property(nonatomic, readonly) BOOL hasPremultipliedAlpha;
+@property(nonatomic, readonly) BOOL hasTexturePremultipliedAlpha;
+
+/** @deprecated Renamed to hasTexturePremultipliedAlpha. */
+@property(nonatomic, readonly) BOOL hasPremultipliedAlpha __deprecated;
 
 /**
  * Returns whether the opacity of each of the material colors (ambient, diffuse, specular and emission)
  * should be blended (multiplied) by its alpha value prior to being submitted to the GL engine.
  *
- * This property returns YES if the sourceBlend property is set to GL_ONE and the hasPremultipliedAlpha
+ * This property returns YES if the sourceBlendRGB property is set to GL_ONE and the hasPremultipliedAlpha
  * property returns YES, otherwise this property returns NO. The combination of full source blending
  * and pre-multiplied texture alpha can be made translucent by blending each color with its alpha value.
  *
@@ -734,7 +856,7 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
  *
  * This is a convenience property that returns the first cube-map texture that was added.
  */
-@property(nonatomic, readonly) CC3Texture* textureCube;
+@property(nonatomic, retain, readonly) CC3Texture* textureCube;
 
 /** 
  * Returns whether this material contains a texture that is a six-sided cube-map texture.
@@ -844,19 +966,10 @@ static const GLfloat kCC3DefaultMaterialReflectivity = 0.0f;
 
 /**
  * Unbinds all materials from the GL engine.
- * 
- * This implementation simply delegates to the unbind class method.
- * Usually, the application never needs to invoke this method directly.
- */
--(void) unbindWithVisitor: (CC3NodeDrawingVisitor*) visitor;
-
-/**
- * Unbinds all materials from the GL engine.
  *
- * Disables material blending in the GL engine, and invokes the unbind class method
- * of CC3Texture to disable all texturing.
+ * Disables material blending in the GL engine.
  *
- * This method is invoked automatically from the CC3Node instance.
+ * This method is invoked automatically from the CC3MeshNode instance.
  * Usually, the application never needs to invoke this method directly.
  */
 +(void) unbindWithVisitor: (CC3NodeDrawingVisitor*) visitor;

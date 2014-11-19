@@ -1,9 +1,9 @@
 /*
  * CC3PFXResource.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,8 +33,16 @@
 #import "CC3Resource.h"
 #import "CC3PVRFoundation.h"
 #import "CC3MeshNode.h"
-#import "CC3ShaderProgram.h"
+#import "CC3Shaders.h"
 
+@class CC3PFXEffect;
+
+// Legacy naming support
+#define CC3PFXGLProgramSemantics	CC3PFXShaderSemantics.
+
+
+#pragma mark -
+#pragma mark CC3PFXResource
 
 /**
  * CC3PFXResource is a CC3Resource that wraps a PVR PFX data structure loaded from a file.
@@ -47,43 +55,40 @@
 	Class _semanticDelegateClass;
 }
 
-/** Populates the specfied material from the PFX effect with the specified name. */
--(void) populateMaterial: (CC3Material*) material fromEffectNamed: (NSString*) effectName;
+/** Returns the PFX effect with the specified name, or nil if it doesn't exist. */
+-(CC3PFXEffect*) getEffectNamed: (NSString*) name;
 
 /**
- * Populates the specfied material from the PFX effect with the specified name, found in the
- * cached CC3PFXResource with the specifed name. Raises an assertion error if a PFX resource
- * with the specified name cannot be found in the cache.
+ * Returns the PFX effect with the specified name, found in the cached CC3PFXResource with
+ * the specifed name. Returns nil if a PFX resource with the specified name cannot be found
+ * in the PFX resource cache, or if that PFX resource does not contain an effect with the
+ * specified effect name.
  */
-+(void) populateMaterial: (CC3Material*) material
-		 fromEffectNamed: (NSString*) effectName
-	  inPFXResourceNamed: (NSString*) rezName;
++(CC3PFXEffect*) getEffectNamed: (NSString*) effectName inPFXResourceNamed: (NSString*) rezName;
 
 /**
- * Populates the specfied material from the PFX effect with the specified name, found in the
- * CC3PFXResource loaded from the specfied file. Raises an assertion error if the PFX resource
- * file is not already in the resource cache and could not be loaded.
+ * Returns the PFX effect with the specified name, found in the CC3PFXResource loaded from
+ * the specfied file. Returns nil if the PFX resource file could not be loaded, or if that
+ * PFX resource does not contain an effect with the specified effect name.
  */
-+(void) populateMaterial: (CC3Material*) material
-		 fromEffectNamed: (NSString*) effectName
-	   inPFXResourceFile: (NSString*) aFilePath;
++(CC3PFXEffect*) getEffectNamed: (NSString*) effectName inPFXResourceFile: (NSString*) aFilePath;
 
 /** 
  * The class used to instantiate the semantic delegate for the GLSL programs created for
  * the PFX effects defined in this PFX resource. The returned class must be a subclass of
- * CC3PFXGLProgramSemantics.
+ * CC3PFXShaderSemantics.
  *
  * The initial value is set from the class-side defaultSemanticDelegateClass property.
  */
-@property(nonatomic, assign) Class semanticDelegateClass;
+@property(nonatomic, retain) Class semanticDelegateClass;
 
 /**
  * The default class used to instantiate the semantic delegate for the GLSL programs created
  * for the PFX effects defined in instances of this class. The value of this property determines
  * the initial value of the semanticDelegateClass property of any instances. The returned class
- * must be a subclass of CC3PFXGLProgramSemantics.
+ * must be a subclass of CC3PFXShaderSemantics.
  *
- * The initial value is the CC3PVRShamanGLProgramSemantics class.
+ * The initial value is the CC3PVRShamanShaderSemantics class.
  */
 +(Class) defaultSemanticDelegateClass;
 
@@ -91,9 +96,9 @@
  * The default class used to instantiate the semantic delegate for the GLSL programs created
  * for the PFX effects defined in instances of this class. The value of this property determines
  * the initial value of the semanticDelegateClass property of any instances. The class must be
- * a subclass of CC3PFXGLProgramSemantics.
+ * a subclass of CC3PFXShaderSemantics.
  *
- * The initial value is the CC3PVRShamanGLProgramSemantics class.
+ * The initial value is the CC3PVRShamanShaderSemantics class.
  */
 +(void) setDefaultSemanticDelegateClass: (Class) aClass;
 
@@ -104,14 +109,14 @@
 #pragma mark CC3PFXEffect
 
 /**
- * CC3PFXEffect represents a single effect within a PFX resource file. It combines the shader
- * code referenced by the effect into a CC3ShaderProgram, and the textures used by that program.
+ * CC3PFXEffect represents a single effect within a PFX resource file. It combines the shader code
+ * referenced by the effect into a CC3ShaderProgram, and the textures to apply to the material.
  */
 @interface CC3PFXEffect : NSObject {
 	NSString* _name;
 	CC3ShaderProgram* _shaderProgram;
-	CCArray* _textures;
-	CCArray* _variables;
+	NSMutableArray* _textures;
+	NSMutableArray* _variables;
 }
 
 /** Returns the name of this effect. */
@@ -124,13 +129,22 @@
  * The textures used in this effect. Each element of this array is an instance of CC3PFXEffectTexture
  * that contains the texture and the index of the texture unit to which the texture should be applied.
  */
-@property(nonatomic, retain, readonly) CCArray* textures;
+@property(nonatomic, retain, readonly) NSArray* textures;
 
 /**
  * This array contains a configuration spec for each attribute and uniform variable used in
  * the shaders. Each element of this array is an instance of CC3PFXGLSLVariableConfiguration.
  */
-@property(nonatomic, retain, readonly) CCArray* variables;
+@property(nonatomic, retain, readonly) NSArray* variables;
+
+/** Populates the specfied mesh node with the shader program in this effect. */
+-(void) populateMeshNode: (CC3MeshNode*) meshNode;
+
+/** Populates the specfied material with the textures in this effect. */
+-(void) populateMaterial: (CC3Material*) material;
+
+
+#pragma mark Allocation and initialization
 
 /**
  * Initializes this instance from the specified SPVRTPFXParserEffect C++ class, retrieved
@@ -140,8 +154,6 @@
 					 fromPFXParser: (PFXClassPtr) pCPVRTPFXParser
 					 inPFXResource: (CC3PFXResource*) pfxRez;
 
-/** Populates the specfied material with the GL program and textures. */
--(void) populateMaterial: (CC3Material*) material;
 
 @end
 
@@ -161,24 +173,24 @@
 
 
 #pragma mark -
-#pragma mark CC3PFXGLProgramSemantics
+#pragma mark CC3PFXShaderSemantics
 
 /**
- * CC3PFXGLProgramSemantics provides a mapping from the PFX semantic names declared in a PFX
+ * CC3PFXShaderSemantics provides a mapping from the PFX semantic names declared in a PFX
  * effect within a PFX effects file, and the standard semantics from the CC3Semantic enumeration.
  *
  * GLSL shader code loaded from a PFX effect can mix custom semantics defined within the PFX effect
  * with standard default semantics defined by the semantic delegate associated with the program matcher.
  * If a GLSL variable cannot be configured based on a semantic definition for its name within the
  * PFX effect, configuration of the variable is delegated to the standard semantic delegate at
- * CC3ShaderProgram.programMatcher.semanticDelegate. It is even possible to load shaders that use only
+ * CC3ShaderProgram.shaderMatcher.semanticDelegate. It is even possible to load shaders that use only
  * standard semantic naming, without having to define any semantics within the PFX effect.
  *
  * This is an abstract implementation. Subclasses can override the semanticForPFXSemanticName:
  * method for simple name-based mapping, or can override the resolveSemanticForVariableConfiguration:
  * for more complex mapping.
  */
-@interface CC3PFXGLProgramSemantics : CC3ShaderProgramSemanticsByVarName
+@interface CC3PFXShaderSemantics : CC3ShaderSemanticsByVarName
 
 /**
  * Populates this instance with the mappings between variable names and semantics defined
@@ -249,17 +261,25 @@
 
 /**
  * Applies the PFX effect with the specified name, found in the cached CC3PFXResource with the
- * specifed name, to this material. Raises an assertion error if a PFX resource with the specified
- * name cannot be found in the cache.
+ * specifed name, to this material.
+ *
+ * Sets the textures of this material to those defined by the retrieved PFX effect.
+ *
+ * Raises an assertion error if a PFX resource with the specified name cannot be found in the PFX
+ * resource cache, or if that PFX resource does not contain an effect with the specified effect name.
  */
 -(void) applyEffectNamed: (NSString*) effectName inPFXResourceNamed: (NSString*) rezName;
 
 /**
- * Applys the PFX effect with the specified name, found in the CC3PFXResource loaded from the
- * specfied file, to this material. Raises an assertion error if the PFX resource file is not
- * already in the resource cache and could not be loaded.
+ * Applies the PFX effect with the specified name, found in the CC3PFXResource loaded from the
+ * specfied file, to this material.
+ *
+ * Sets the textures of this material to those defined by the retrieved PFX effect.
+ *
+ * Raises an assertion error if the PFX resource file could not be loaded, or if that
+ * PFX resource does not contain an effect with the specified effect name.
  */
--(void) applyEffectNamed: (NSString*) effectName inPFXResourceFile: (NSString*) aFilePath;
+-(void) applyEffectNamed: (NSString*) effectName inPFXResourceFile: (NSString*) filePath;
 
 @end
 
@@ -272,17 +292,27 @@
 
 /**
  * Applies the PFX effect with the specified name, found in the cached CC3PFXResource with the
- * specifed name, to all descendant nodes. Raises an assertion error if a PFX resource with the
- * specified name cannot be found in the cache.
+ * specifed name, to all descendant mesh nodes.
+ *
+ * Sets the shader program to that defined by the retrieved PFX effect, and sets the textures
+ * of the material in each mesh node to those defined by the retrieved PFX effect
+ *
+ * Raises an assertion error if a PFX resource with the specified name cannot be found in the PFX
+ * resource cache, or if that PFX resource does not contain an effect with the specified effect name.
  */
 -(void) applyEffectNamed: (NSString*) effectName inPFXResourceNamed: (NSString*) rezName;
 
 /**
- * Applys the PFX effect with the specified name, found in the CC3PFXResource loaded from the
- * specfied file, to all descendant nodes. Raises an assertion error if the PFX resource file
- * is not already in the resource cache and could not be loaded.
+ * Applies the PFX effect with the specified name, found in the CC3PFXResource loaded from the
+ * specfied file, to all descendant mesh nodes. 
+ *
+ * Sets the shader program to that defined by the retrieved PFX effect, and sets the textures
+ * of the material in each mesh node to those defined by the retrieved PFX effect
+ *
+ * Raises an assertion error if the PFX resource file could not be loaded, or if that
+ * PFX resource does not contain an effect with the specified effect name.
  */
--(void) applyEffectNamed: (NSString*) effectName inPFXResourceFile: (NSString*) aFilePath;
+-(void) applyEffectNamed: (NSString*) effectName inPFXResourceFile: (NSString*) filePath;
 
 @end
 

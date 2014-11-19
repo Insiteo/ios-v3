@@ -1,9 +1,9 @@
 /*
  * CC3MeshParticleSamples.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,8 +46,8 @@
  * check the isAlive property before spending time making any further modifications.
  */
 @interface  CC3MortalMeshParticle  : CC3ScalableMeshParticle <CC3MortalParticleProtocol> {
-	ccTime _lifeSpan;
-	ccTime _timeToLive;
+	CCTime _lifeSpan;
+	CCTime _timeToLive;
 }
 
 /**
@@ -143,8 +143,8 @@
  * the template meshes added with the addParticleTemplateMesh: method, and the template mesh
  * assigned to the particleTemplateMesh property.
  */
- @interface CC3MultiTemplateMeshParticleEmitter : CC3MeshParticleEmitter {
-	CCArray* _particleTemplateMeshes;
+@interface CC3MultiTemplateMeshParticleEmitter : CC3MeshParticleEmitter {
+	NSMutableArray* _particleTemplateMeshes;
 }
 
 /**
@@ -163,7 +163,7 @@
  * See the notes for the CC3MeshParticleProtocol templateMesh and CC3MeshParticleEmitter
  * particleTemplateMesh for more information.
  */
-@property(nonatomic, retain, readonly) CCArray* particleTemplateMeshes;
+@property(nonatomic, retain, readonly) NSArray* particleTemplateMeshes;
 
 /**
  * Adds the specified mesh to the collection of meshes in the particleTemplateMeshes property.

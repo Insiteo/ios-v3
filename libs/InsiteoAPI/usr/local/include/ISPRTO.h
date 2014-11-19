@@ -13,17 +13,14 @@
 
 #import <UIKit/UIKit.h>
 
-#define SET_GLCOLOR_4       ccDrawColor4B
-#define SET_GLPOINT_SIZE    ccPointSize
-#define OPENGL_VIEW         view
-#define OPENGL_DEPTH        GL_DEPTH_COMPONENT16
-#define OPENGL_HWVIEW       CC3GLView
+#define SET_GLCOLOR_4 ccDrawColor4B
 
 #import "ISTouch.h"
 #import "ISMap.h"
 #import "ISZonePoi.h"
+#import "ISTypes.h"
 
-@class ISLayer;
+@class CCLayer;
 @class CC3Scene;
 @class CC3Node;
 
@@ -52,19 +49,9 @@ typedef enum {
 } ISETouchObjectResult;
 
 /*!
- Enum used to handle different map rendering mod.
- @constant ISERenderMode2D 2D rendering.
- @constant ISERenderMode3D 3D rendering.
- */
-typedef enum {
-	ISERenderMode2D,
-	ISERenderMode3D,
-} ISERenderMode;
-
-/*!
  Protocol used to represent the beahviour of an RTO (rendering and touch).
  @warning In order to create an RTO with bitmaps, Cocos2d needs to be initialized, otherwise the application will crash.
- @warning In order to use Cocos2d and your own RTO (add to the current ISLayer), you will need to give it a unique identifier which you can get by calling [ISLayer generateCocos2dUniqueId].
+ @warning In order to use Cocos2d and your own RTO (add to the current CCLayer), you will need to give it a unique identifier which you can get by calling [ISMapView generateCocos2dUniqueId].
  */
 @protocol ISPRTO <NSObject>
 
@@ -95,9 +82,16 @@ typedef enum {
  */
 - (id<ISPRTO>)cloneRTO;
 
-#pragma mark - Rendering
 /*!
- @name Rendering
+ Method called show or hide an RTO.
+ @param displayEnabled <b>YES</b> for a visible RTO, otherwise <b>NO</b>.
+ */
+- (void)setDisplayEnabled:(Boolean)displayEnabled;
+
+#pragma mark - Render 2D
+
+/*!
+ @name Render 2D
  */
 
 /*!
@@ -111,19 +105,19 @@ typedef enum {
  @param priority The renderer priority, used as Z by Cocos2d.
  @warning Cocos2d coordinates system is reversed.
  */
-- (void)invalidateWithLayer:(ISLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle andPriority:(int)priority;
-
-/*!
- Method called to initialize RTO resources such as images, labels etc...
- @warning This method will be called on the main thread (UI Thread).
-*/
-- (void)setResources;
+- (void)render2DWithLayer:(CCLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle andPriority:(int)priority;
 
 /*!
  Method called to remove an RTO from the Cocos2d layer.
  @param layer The current Cocos2d layer used.
  */
-- (void)removeFromLayer:(ISLayer *)layer;
+- (void)remove2DFromLayer:(CCLayer *)layer;
+
+/*!
+ Method called to initialize RTO resources such as images, labels etc...
+ @warning This method will be called on the main thread (UI Thread).
+ */
+- (void)setResources;
 
 #pragma mark - Touch
 
@@ -155,13 +149,13 @@ typedef enum {
  */
 - (ISETouchObjectResult)onTouchUp:(ISTouch *)touch;
 
-#pragma mark - 3D
+@optional
+
+#pragma mark - Render 3D
 
 /*!
- @name 3D
+ @name Render 3D
  */
-
-@optional
 
 /*!
  Current map render mode (2D or 3D).
@@ -185,7 +179,14 @@ typedef enum {
  @param map Current displayed map.
  @param ratio Current ratio (depending on the current zoom level).
  @param angle Current angle.
+ @param priority The renderer priority, used as Z by Cocos2d.
  */
-- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andAngle:(float)angle;
+- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andAngle:(float)angle andPriority:(int)priority;
+
+/*!
+ Method called to remove an RTO from the Cocos3d layer.
+ @param layer The current Cocos3d layer used.
+ */
+- (void)remove3DFromLayer:(CC3Node *)layer;
 
 @end

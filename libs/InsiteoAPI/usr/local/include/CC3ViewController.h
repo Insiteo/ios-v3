@@ -1,9 +1,9 @@
 /*
  * CC3ViewController.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,51 +29,54 @@
 
 /** @file */	// Doxygen marker
 
-#import "CC3GLView-GL.h"
-#import "CC3GLView-GLES2.h"
-#import "CC3GLView-GLES1.h"
+#import "CC3Environment.h"
+#import "CC3EAGLView.h"
 
-// The superclass of the CC3ViewController depends on the platform
+
+// CC3ViewController and its subclasses are not used for Cocos2D 3.1 and above.
+#if CC3_CC2_RENDER_QUEUE
+
+#if CC3_IOS
+#	define CC3ViewController	UIViewController
+#endif
+#if CC3_OSX
+#	define CC3ViewController	NSViewController
+#endif
+
+#else
+
+// For Cocos2D 3.0 and below, the superclass of the CC3ViewController depends on the platform.
 #if CC3_OGLES_2
-#	define CC3VCSuperclass CCDirectorDisplayLink
+#	define CC3VCSuperclass		CCDirectorDisplayLink
 #endif
 #if CC3_OGLES_1
-#	define CC3VCSuperclass UIViewController
+#	define CC3VCSuperclass		UIViewController
 #endif
 #if CC3_OGL
-#	define CC3VCSuperclass NSViewController
+#	define CC3VCSuperclass		NSViewController
 #endif
 
 
 #pragma mark -
 #pragma mark CC3ViewController interface
 
-/** An instance of CC3ViewController manages the CC3GLView to support the 3D environment. */
-@interface CC3ViewController : CC3VCSuperclass {
-	CCNode* _controlledNode;
-}
+/** An instance of CC3ViewController manages the CCGLView to support the 3D environment. */
+@interface CC3ViewController : CC3VCSuperclass
+
+/** The view of a CC3ViewController must be of type CCGLView. */
+@property(nonatomic, retain) CCGLView* view;
 
 /**
- * The CCNode that is being controlled by this controller. This is typically an instance of CCLayer.
+ * Starts the Cocos2D/3D animation.
  *
- * The application should keep this property synchronized with changes in the running scene of the
- * shared CCDirector.
- */
-@property(nonatomic, retain) CCNode* controlledNode;
-
-/**
- * Indicates whether this controller is overlaying the view of the device camera.
+ * You should invoke this method when the application enters the foreground.
  *
- * This base implementation always returns NO, indicating that the device camera is not being
- * displayed. Subclasses that support device camera overlay can override.
+ * Use the stopAnimation method to stop the animation.
  */
-@property(nonatomic, readonly) BOOL isOverlayingDeviceCamera;
-
-/** The view of a CC3ViewController must be of type CC3GLView. */
-@property(nonatomic, retain) CC3GLView* view;
+-(void) startAnimation;
 
 /**
- * Reduces cocos2d/3d animation to a minimum.
+ * Reduces Cocos2D/3D animation to a minimum.
  *
  * Invoke this method when you want to reliquish CPU to perform some other task, such as
  * displaying other views or windows. To ensure a responsive UI, you should invoke this
@@ -84,10 +87,32 @@
 -(void) pauseAnimation;
 
 /**
- * Restores cocos2d/3d animation to its original operating level, after having been
+ * Restores Cocos2D/3D animation to its original operating level, after having been
  * temporarily reduced by a prior invocation of the pauseAnimation method.
  */
 -(void) resumeAnimation;
 
+/** 
+ * Stops the Cocos2D/3D animation.
+ *
+ * You should invoke this method when the application will enter the background.
+ *
+ * Use the startAnimation method to start the animation again.
+ */
+-(void) stopAnimation;
+
+
+#pragma mark Deprecated
+
+/** @deprecated No longer used. */
+@property(nonatomic, retain) CCNode* controlledNode __deprecated;
+
+/**
+ * @deprecated No longer used by base class.
+ * See the CC3DeviceCameraOverlayUIViewController subclass for an implementation of this property.
+ */
+@property(nonatomic, assign) BOOL isOverlayingDeviceCamera __deprecated;
+
 @end
 
+#endif // CC3_CC2_RENDER_QUEUE

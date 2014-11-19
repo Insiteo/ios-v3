@@ -16,13 +16,19 @@
     
 @protected
 
-    NSLock * m_cancelLock;     //isCanceled semaphore
+    //Boolean isCanceled semaphore
+    NSLock * m_cancelLock;
+    //
     Boolean m_isCanceled;
+    //
     int m_requestId;
+    //
     NSString * m_userId;
+    //
     id<ISPMeetMeRequestListener> m_listener;
+    //
     ISMeetMeProvider * m_provider;
-    
+    //
     NSString * m_urlConnection;
 }
 

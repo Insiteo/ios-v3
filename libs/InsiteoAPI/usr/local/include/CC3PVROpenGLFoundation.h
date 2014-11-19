@@ -1,9 +1,9 @@
 /*
  * CC3PVROpenGLFoundation.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2011-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2011-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,12 +29,28 @@
 
 /** @file */	// Doxygen marker
 
-/** OS platform macros */
-# define CC3_IOS			defined(__IPHONE_OS_VERSION_MAX_ALLOWED)
-# define CC3_OSX			defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
+/** Running on an Apple OS. Required for Apportable. */
+#ifndef __APPLE__
+#	define __APPLE__		1
+#endif
+
+/** Running on iOS */
+#ifndef CC3_IOS
+#	define CC3_IOS			defined(__IPHONE_OS_VERSION_MAX_ALLOWED)
+#endif
+
+/** Running on OSX */
+#ifndef CC3_OSX
+#	define CC3_OSX			defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
+#endif
+
+/** Running on Android via Apportable. Explicitly set as a build setting. */
+#ifndef APPORTABLE
+#	define APPORTABLE		0
+#endif
 
 #if CC3_IOS
-#	define TARGET_OS_IPHONE 1
+#	define TARGET_OS_IPHONE		1
 #endif
 
 /** Running some form of OpenGL ES under iOS. */

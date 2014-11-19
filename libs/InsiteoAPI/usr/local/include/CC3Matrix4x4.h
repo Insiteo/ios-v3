@@ -1,9 +1,9 @@
 /*
  * CC3Matrix4x4.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,6 +64,18 @@ static inline GLfloat CC3Det3x3(GLfloat a1, GLfloat a2, GLfloat a3,
  *
  * CC3Matrix4x4 offers several ways to access the matrix content. Content can be accessed
  * by element array index, by element column and row number, or as column vectors.
+ *
+ * Although CC3Matrix4x4 has the same internal structure as GLKMatrix4, the structures may
+ * have different byte alignment requirements. Avoid casting directly between GLKMatrix4
+ * and CC3Matrix4x4, as this is not guaranteed to work reliably. Instead, use the functions
+ * CC3Matrix4x4PopulateFromGLKMatrix4 and GLKMatrix4PopulateFromCC3Matrix4x4 to convert
+ * between the two structures.
+ *
+ * You can, however, reliably copy an array of GLKMatrix4s to an array of CC3Matrix4x4s,
+ * and vice-versa, by simply using memcpy, or equivalent memory copying function. This is
+ * also true of single CC3Matrix4x4 and GLKMatrix4 structures. Copying is successful because
+ * the array or pointer declarations will ensure the respective byte-alignment requirements,
+ * and since the internal structures are identical, the contents of the copy will be identical.
  */
 typedef union {
 	/** The elements in array form. You can also simply cast the entire union to an array of GLfloats. */
@@ -106,7 +118,7 @@ typedef union {
 } CC3Matrix4x4;
 
 /** Returns a string description of the specified CC3Matrix4x4, including contents. */
-NSString* NSStringFromCC3Matrix4x4(CC3Matrix4x4* mtxPtr);
+NSString* NSStringFromCC3Matrix4x4(const CC3Matrix4x4* mtxPtr);
 
 
 #pragma mark Heterogeneous matrix population
@@ -182,6 +194,28 @@ static inline void CC3Matrix4x4PopulateIdentity(CC3Matrix4x4* mtx) {
 /** Populates the specified matrix from the specified source matrix. */
 static inline void CC3Matrix4x4PopulateFrom4x4(CC3Matrix4x4* mtx, const CC3Matrix4x4* mtxSrc) {
 	memcpy(mtx, mtxSrc, sizeof(CC3Matrix4x4));
+}
+
+/**
+ * Populates the specified matrix from the specified source GLKMatrix4.
+ *
+ * Although CC3Matrix4x4 has the same internal structure as GLKMatrix4, the structures may
+ * have different byte alignment requirements. Avoid casting directly between GLKMatrix4
+ * and CC3Matrix4x4, as this is not guaranteed to work reliably.
+ */
+static inline void CC3Matrix4x4PopulateFromGLKMatrix4(CC3Matrix4x4* mtx, const GLKMatrix4* mtxSrc) {
+	memcpy(mtx, mtxSrc, sizeof(CC3Matrix4x4));
+}
+
+/**
+ * Populates the specified GLKMatrix4 from the specified source matrix.
+ *
+ * Although GLKMatrix4 has the same internal structure as CC3Matrix4x4, the structures may
+ * have different byte alignment requirements. Avoid casting directly between CC3Matrix4x4
+ * and GLKMatrix3, as this is not guaranteed to work reliably.
+ */
+static inline void GLKMatrix4PopulateFromCC3Matrix4x4(GLKMatrix4* mtx, const CC3Matrix4x4* mtxSrc) {
+	memcpy(mtx, mtxSrc, sizeof(GLKMatrix4));
 }
 
 /**
@@ -320,7 +354,7 @@ void CC3Matrix4x4PopulateInfiniteOrthoFrustum(CC3Matrix4x4* mtx,
  * The first column of the matrix has an index of one.
  */
 static inline CC3Vector CC3VectorFromCC3Matrix4x4Col(const CC3Matrix4x4* mtx, NSUInteger colIdx) {
-	return CC3VectorFromTruncatedCC3Vector4(mtx->columns[--colIdx]);	// Convert to zero-based.
+	return mtx->columns[--colIdx].v;		// Convert to zero-based.
 }
 
 /**
@@ -382,7 +416,7 @@ static inline CC3Vector CC3Matrix4x4ExtractRotationZYX(const CC3Matrix4x4* mtx) 
 }
 
 /**
- * Extracts and returns the rotation quaternion from the specified matrix.
+ * Extracts and returns a unit rotation quaternion from the specified matrix.
  *
  * This algorithm uses the technique of finding the largest combination of the diagonal elements
  * to select which quaternion element (w,x,y,z) to solve for from the diagonal, and then using
@@ -405,23 +439,22 @@ static inline CC3Quaternion CC3Matrix4x4ExtractQuaternion(const CC3Matrix4x4* mt
 
 /** Extracts and returns the 'forward' direction vector from the rotation component of the specified matrix. */
 static inline CC3Vector CC3Matrix4x4ExtractForwardDirection(const CC3Matrix4x4* mtx) {
-	CC3Matrix3x3 mtx3;
-	CC3Matrix3x3PopulateFrom4x4(&mtx3, mtx);
-	return CC3Matrix3x3ExtractForwardDirection(&mtx3);
+	return CC3VectorNegate(mtx->col3.v);
 }
 
 /** Extracts and returns the 'up' direction vector from the rotation component of the specified matrix. */
 static inline CC3Vector CC3Matrix4x4ExtractUpDirection(const CC3Matrix4x4* mtx) {
-	CC3Matrix3x3 mtx3;
-	CC3Matrix3x3PopulateFrom4x4(&mtx3, mtx);
-	return CC3Matrix3x3ExtractUpDirection(&mtx3);
+	return mtx->col2.v;
 }
 
 /** Extracts and returns the 'right' direction vector from the rotation component of the specified matrix. */
 static inline CC3Vector CC3Matrix4x4ExtractRightDirection(const CC3Matrix4x4* mtx) {
-	CC3Matrix3x3 mtx3;
-	CC3Matrix3x3PopulateFrom4x4(&mtx3, mtx);
-	return CC3Matrix3x3ExtractRightDirection(&mtx3);
+	return mtx->col1.v;
+}
+
+/** Extracts and returns the translation vector from the specified matrix. */
+static inline CC3Vector CC3Matrix4x4ExtractTranslation(const CC3Matrix4x4* mtx) {
+	return mtx->col4.v;
 }
 
 

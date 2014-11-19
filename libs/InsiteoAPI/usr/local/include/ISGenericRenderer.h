@@ -14,7 +14,6 @@
 #import <Foundation/Foundation.h>
 
 #import "ISPRenderer.h"
-#import "ISPRTOListener.h"
 
 /*!
  Class used to represent the generic map renderer we will use.
@@ -72,7 +71,7 @@
 /*!
  Map view layer.
  */
-@property (assign) ISLayer * layer;
+@property (assign) CCLayer * layer;
 
 /*!
  Main constructor.

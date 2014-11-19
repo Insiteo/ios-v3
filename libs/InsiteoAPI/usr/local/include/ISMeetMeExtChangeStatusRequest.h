@@ -20,9 +20,9 @@
 @interface ISMeetMeExtChangeStatusRequest : ISAbstractMeetMeRequest 
 
 @property (readwrite) UserStatus newStatus;
+
 @property (retain) NSArray * changedGroupIds;
 
 - (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andUserId:(NSString *)aUserId andGroupIds:(NSArray *)aGroupIds andNewStatus:(UserStatus)aNewStatus;
-
 
 @end

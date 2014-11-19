@@ -1,9 +1,9 @@
 /*
  * CC3NodePODExtensions.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -76,12 +76,8 @@
  */
 @property(nonatomic, assign) GLint podTargetIndex;
 
-/** 
- * The size, in bytes, of the data held in the userData property, inherited from
- * CC3Identifiable, as loaded from the POD file. This property is not updated
- * automatically if you set or change the userData property directly.
- */
-@property(nonatomic, assign) GLuint podUserDataSize;
+/** @deprecated The user data loaded from the POD file is now held in the userData property as an NSData instance. */
+@property(nonatomic, assign) GLuint podUserDataSize __deprecated;
 
 /** Indicates whether this POD is a base node, meaning that it has no parent. */
 @property(nonatomic, readonly) BOOL isBasePODNode;
@@ -110,7 +106,7 @@
  * This implementation attaches this node to its parent as identified by the
  * podParentIndex property. Subclasses may override to perform other linking.
  */
--(void) linkToPODNodes: (CCArray*) nodeArray;
+-(void) linkToPODNodes: (NSArray*) nodeArray;
 
 @end
 

@@ -28,15 +28,7 @@ typedef enum CoordinatesMode {
 /*!
  Class used to represent INSITEO map settings. It contains Geomatrix, scale and map identifier.
  */
-@interface ISMapSettings : ISGeoMatrix {
-    
-@private
-    
-    //Relative map identifier
-    int m_mapId;
-    //Relative scale (used for coordinate conversion)
-    double m_scaleToMeter;
-}
+@interface ISMapSettings : ISGeoMatrix
 
 /*!
  Relative map identifier.

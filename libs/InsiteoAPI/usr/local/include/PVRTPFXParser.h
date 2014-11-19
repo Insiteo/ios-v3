@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTPFXParser.h
-
- @Title        PVRTPFXParser
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Declaration of PFX file parser
+ @file         PVRTPFXParser.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Declaration of PFX file parser
 
 ******************************************************************************/
 
@@ -39,8 +31,8 @@ void PVRTPFXCreateStringCopy(char** ppDst, const char* pSrc);
 ** Enumeration
 ****************************************************************************/
 /*!**************************************************************************
-@Enum	ESemanticDefaultDataType
-@Brief  Enum values for the various variable types supported
+@enum	ESemanticDefaultDataType
+@brief  Enum values for the various variable types supported
 ****************************************************************************/
 enum ESemanticDefaultDataType
 {
@@ -65,12 +57,12 @@ enum ESemanticDefaultDataType
 
 	// Conceptual data types
 	eDataTypeRGB,
-	eDataTypeRGBA,
+	eDataTypeRGBA
 };
 
 /*!**************************************************************************
-@Enum   EDefaultDataInternalType
-@Brief  Enum values for defining whether a variable is float, interger or bool
+@enum   EDefaultDataInternalType
+@brief  Enum values for defining whether a variable is float, interger or bool
 ****************************************************************************/
 enum EDefaultDataInternalType
 {
@@ -81,7 +73,7 @@ enum EDefaultDataInternalType
 
 /*!**************************************************************************
 @enum	EPVRTPFXPassType
-@Brief  Decribes the type of render required
+@brief  Decribes the type of render required
 ****************************************************************************/
 enum EPVRTPFXPassType
 {
@@ -94,7 +86,7 @@ enum EPVRTPFXPassType
 
 /*!**************************************************************************
 @enum	EPVRTPFXPassType
-@Brief  Decribes the type of render required
+@brief  Decribes the type of render required
 ****************************************************************************/
 enum EPVRTPFXPassView
 {
@@ -107,8 +99,8 @@ enum EPVRTPFXPassView
 ** Structures
 ****************************************************************************/
 /*!**************************************************************************
-@Struct SPVRTPFXParserHeader
-@Brief  Struct for storing PFX file header data
+@struct SPVRTPFXParserHeader
+@brief  Struct for storing PFX file header data
 ****************************************************************************/
 struct SPVRTPFXParserHeader
 {
@@ -118,8 +110,8 @@ struct SPVRTPFXParserHeader
 };
 
 /*!**************************************************************************
-@Struct SPVRTPFXParserTexture
-@Brief  Struct for storing PFX data from the texture block
+@struct SPVRTPFXParserTexture
+@brief  Struct for storing PFX data from the texture block
 ****************************************************************************/
 struct SPVRTPFXParserTexture
 {
@@ -133,8 +125,8 @@ struct SPVRTPFXParserTexture
 };
 
 /*!**************************************************************************
-@Struct SPVRTPFXParserEffectTexture
-@Brief  Stores effect texture information
+@struct SPVRTPFXParserEffectTexture
+@brief  Stores effect texture information
 ****************************************************************************/
 struct SPVRTPFXParserEffectTexture
 {
@@ -143,8 +135,8 @@ struct SPVRTPFXParserEffectTexture
 };
 
 /*!**************************************************************************
-@Struct SPVRTPFXParserShader
-@Brief  Struct for storing PFX data from the shader block
+@struct SPVRTPFXParserShader
+@brief  Struct for storing PFX data from the shader block
 ****************************************************************************/
 struct SPVRTPFXParserShader
 {
@@ -156,6 +148,7 @@ struct SPVRTPFXParserShader
 	char*					pbGLSLBinary;
 	unsigned int			nGLSLBinarySize;
 	unsigned int			nFirstLineNumber;	// Line number in the text file where this code began; use to correct line-numbers in compiler errors
+	unsigned int			nLastLineNumber;	// The final line number of the GLSL block.
 
 	SPVRTPFXParserShader();
 	~SPVRTPFXParserShader();
@@ -166,8 +159,8 @@ struct SPVRTPFXParserShader
 };
 
 /*!**************************************************************************
-@Struct SPVRTSemanticDefaultDataTypeInfo
-@Brief  Struct for storing default data types
+@struct SPVRTSemanticDefaultDataTypeInfo
+@brief  Struct for storing default data types
 ****************************************************************************/
 struct SPVRTSemanticDefaultDataTypeInfo
 {
@@ -178,8 +171,8 @@ struct SPVRTSemanticDefaultDataTypeInfo
 };
 
 /*!**************************************************************************
-@Struct SPVRTSemanticDefaultData
-@Brief  Stores a default value
+@struct SPVRTSemanticDefaultData
+@brief  Stores a default value
 ****************************************************************************/
 struct SPVRTSemanticDefaultData
 {
@@ -196,8 +189,8 @@ struct SPVRTSemanticDefaultData
 };
 
 /*!**************************************************************************
-@Struct SPVRTPFXParserSemantic
-@Brief  Stores semantic information
+@struct SPVRTPFXParserSemantic
+@brief  Stores semantic information
 ****************************************************************************/
 struct SPVRTPFXParserSemantic
 {
@@ -217,8 +210,8 @@ struct SPVRTPFXParserSemantic
 
 struct SPVRTPFXParserEffect;	// Forward declaration
 /*!**************************************************************************
-@Struct SPVRTPFXRenderPass
-@Brief  Stores render pass information
+@struct SPVRTPFXRenderPass
+@brief  Stores render pass information
 ****************************************************************************/
 struct SPVRTPFXRenderPass
 {
@@ -234,8 +227,8 @@ struct SPVRTPFXRenderPass
 };
 
 /*!**************************************************************************
-@Struct SPVRTTargetPair
-@Brief  Stores a buffer type and name for a render target.
+@struct SPVRTTargetPair
+@brief  Stores a buffer type and name for a render target.
 ****************************************************************************/
 struct SPVRTTargetPair
 {
@@ -244,8 +237,8 @@ struct SPVRTTargetPair
 };
 
 /*!**************************************************************************
-@Struct SPVRTPFXParserEffect
-@Brief  Stores effect information
+@struct SPVRTPFXParserEffect
+@brief  Stores effect information
 ****************************************************************************/
 struct SPVRTPFXParserEffect
 {
@@ -292,71 +285,71 @@ const static SPVRTSemanticDefaultDataTypeInfo c_psSemanticDefaultDataTypeInfo[] 
 class CPVRTPFXParserReadContext;
 
 /*!**************************************************************************
-@Class CPVRTPFXParser
-@Brief PFX parser
+@class CPVRTPFXParser
+@brief PFX parser
 ****************************************************************************/
 class CPVRTPFXParser
 {
 public:
 	/*!***************************************************************************
-	@Function			CPVRTPFXParser
-	@Description		Sets initial values.
+	@fn      			CPVRTPFXParser
+	@brief     		Sets initial values.
 	*****************************************************************************/
 	CPVRTPFXParser();
 
 	/*!***************************************************************************
-	@Function			~CPVRTPFXParser
-	@Description		Frees memory used.
+	@fn      			~CPVRTPFXParser
+	@brief     		Frees memory used.
 	*****************************************************************************/
 	~CPVRTPFXParser();
 
 	/*!***************************************************************************
-	@Function			ParseFromMemory
-	@Input				pszScript		PFX script
-	@Output				pReturnError	error string
-	@Return				PVR_SUCCESS for success parsing file
+	@fn      			ParseFromMemory
+	@param[in]				pszScript		PFX script
+	@param[out]				pReturnError	error string
+	@return				PVR_SUCCESS for success parsing file
 						PVR_FAIL if file doesn't exist or is invalid
-	@Description		Parses a PFX script from memory.
+	@brief     		Parses a PFX script from memory.
 	*****************************************************************************/
 	EPVRTError ParseFromMemory(const char * const pszScript, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ParseFromFile
-	@Input				pszFileName		PFX file name
-	@Output				pReturnError	error string
-	@Return				PVR_SUCCESS for success parsing file
+	@fn      			ParseFromFile
+	@param[in]				pszFileName		PFX file name
+	@param[out]				pReturnError	error string
+	@return				PVR_SUCCESS for success parsing file
 						PVR_FAIL if file doesn't exist or is invalid
-	@Description		Reads the PFX file and calls the parser.
+	@brief     		Reads the PFX file and calls the parser.
 	*****************************************************************************/
 	EPVRTError ParseFromFile(const char * const pszFileName, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	 @Function			SetViewportSize
-	 @Input				uiWidth				New viewport width
-	 @Input				uiHeight			New viewport height
-	 @Return			bool				True on success				
-	 @Description		Allows the current viewport size to be set. This value
+	 @fn      			SetViewportSize
+	 @param[in]				uiWidth				New viewport width
+	 @param[in]				uiHeight			New viewport height
+	 @return			bool				True on success				
+	 @brief     		Allows the current viewport size to be set. This value
 						is used for calculating relative texture resolutions						
 	*****************************************************************************/
 	bool SetViewportSize(unsigned int uiWidth, unsigned int uiHeight);
 
 	/*!***************************************************************************
-	@Function		FindTextureIndex
-	@Input			TextureName		The name of the texture to find
-	@Input			uiEffect		The effect block to look for the texture in
-	@Return			Index in to the effect.Texture array.
-	@Description	Returns the index in to the texture array within the effect 
+	@fn      		FindTextureIndex
+	@param[in]			TextureName		The name of the texture to find
+	@param[in]			uiEffect		The effect block to look for the texture in
+	@return			Index in to the effect.Texture array.
+	@brief     	Returns the index in to the texture array within the effect 
 					block where the given texture resides.
 	*****************************************************************************/
 	unsigned int FindTextureIndex(const CPVRTStringHash& TextureName, unsigned int uiEffect) const;
 	
 	/*!***************************************************************************
-	@Function			RetrieveRenderPassDependencies
-	@Output				aRequiredRenderPasses	Dynamic array of required render passes
-	@Input				aszActiveEffectStrings	Dynamic array containing names of active
+	@fn      			RetrieveRenderPassDependencies
+	@param[out]			aRequiredRenderPasses	Dynamic array of required render passes
+	@param[in]			aszActiveEffectStrings	Dynamic array containing names of active
 												effects in the application
-	@Return				success of failure
-	@Description		Takes an array of strings containing the names of active
+	@return				success of failure
+	@brief     		    Takes an array of strings containing the names of active
 						effects for this PFX in a given application and then outputs
 						an array of the render passes the application needs to perform that is sorted
 						into the order they need to be executed (where [0] is the first to be executed,
@@ -370,107 +363,105 @@ public:
 										CPVRTArray<CPVRTStringHash> &aszActiveEffectStrings);
 
 	/*!***************************************************************************
-	@Function		GetNumberRenderPasses
-	@Return			The number of render passes required
-	@Description	Returns the number of render passes within this PFX.
+	@brief     	    Returns the number of render passes within this PFX.
+	@return			The number of render passes required
 	*****************************************************************************/
 	unsigned int GetNumberRenderPasses() const;
 
 	/*!***************************************************************************
-	@Function		GetNumberRenderPasses
-	@Input			uiIndex				The render pass index.
-	@Return			A given render pass.
-	@Description	Returns the given render pass.
+	@brief     	    Returns the given render pass.
+	@param[in]		uiIndex				The render pass index.
+	@return			A given render pass.
 	*****************************************************************************/
 	const SPVRTPFXRenderPass& GetRenderPass(unsigned int uiIndex) const;
 
 	/*!***************************************************************************
-	@Function		GetNumberFragmentShaders
-	@Return			Number of fragment shaders.
-	@Description	Returns the number of fragment shaders referenced in the PFX.
+	@fn      		GetNumberFragmentShaders
+	@return			Number of fragment shaders.
+	@brief     	    Returns the number of fragment shaders referenced in the PFX.
 	*****************************************************************************/
 	unsigned int GetNumberFragmentShaders() const;
 
 	/*!***************************************************************************
-	@Function		GetFragmentShader
-	@Input			uiIndex		The index of this shader.
-	@Return			The PFX fragment shader.
-	@Description	Returns a given fragment shader.
+	@fn      		GetFragmentShader
+	@param[in]		uiIndex		The index of this shader.
+	@return			The PFX fragment shader.
+	@brief     	    Returns a given fragment shader.
 	*****************************************************************************/
 	SPVRTPFXParserShader& GetFragmentShader(unsigned int uiIndex);
 
 	/*!***************************************************************************
-	@Function		GetNumberVertexShaders
-	@Return			Number of vertex shaders.
-	@Description	Returns the number of vertex shaders referenced in the PFX.
+	@fn      		GetNumberVertexShaders
+	@return			Number of vertex shaders.
+	@brief     	    Returns the number of vertex shaders referenced in the PFX.
 	*****************************************************************************/
 	unsigned int GetNumberVertexShaders() const;
 
 	/*!***************************************************************************
-	@Function		GetVertexShader
-	@Input			uiIndex		The index of this shader.
-	@Return			The PFX vertex shader.
-	@Description	Returns a given vertex shader.
+	@fn      		GetVertexShader
+	@param[in]		uiIndex		The index of this shader.
+	@return			The PFX vertex shader.
+	@brief     	    Returns a given vertex shader.
 	*****************************************************************************/
 	SPVRTPFXParserShader& GetVertexShader(unsigned int uiIndex);
  
 	/*!***************************************************************************
-	@Function		GetNumberEffects
-	@Return			Number of effects.
-	@Description	Returns the number of effects referenced in the PFX.
+	@fn      		GetNumberEffects
+	@return			Number of effects.
+	@brief     	    Returns the number of effects referenced in the PFX.
 	*****************************************************************************/
 	unsigned int GetNumberEffects() const;
 
 	/*!***************************************************************************
-	@Function		GetEffect
-	@Input			uiIndex		The index of this effect.
-	@Return			The PFX effect.
-	@Description	Returns a given effect.
+	@fn      		GetEffect
+	@param[in]		uiIndex		The index of this effect.
+	@return			The PFX effect.
+	@brief     	    Returns a given effect.
 	*****************************************************************************/
 	const SPVRTPFXParserEffect& GetEffect(unsigned int uiIndex) const;
 
 	/*!***************************************************************************
-	@Function		FindEffectByName
-	@Input			Name		Name of the effect.
-	@Return			int	
-	@Description	Returns the index of the given string. Returns -1 on failure.
+	@fn      		FindEffectByName
+	@param[in]		Name		Name of the effect.
+	@return			int	
+	@brief     	    Returns the index of the given string. Returns -1 on failure.
 	*****************************************************************************/
 	int FindEffectByName(const CPVRTStringHash& Name) const;
 
 	/*!***************************************************************************
-	@Function		FindTextureByName
-	@Input			Name		Name of the texture.
-	@Return			int	
-	@Description	Returns the index of the given texture. Returns -1 on failure.
+	@fn      		FindTextureByName
+	@param[in]		Name		Name of the texture.
+	@return			int	
+	@brief     	    Returns the index of the given texture. Returns -1 on failure.
 	*****************************************************************************/
 	int FindTextureByName(const CPVRTStringHash& Name) const;
 
 	/*!***************************************************************************
-	@Function		GetNumberTextures
-	@Return			Number of effects.
-	@Description	Returns the number of textures referenced in the PFX.
+	@fn      		GetNumberTextures
+	@return			Number of effects.
+	@brief     	    Returns the number of textures referenced in the PFX.
 	*****************************************************************************/
 	unsigned int GetNumberTextures() const;
 
 	/*!***************************************************************************
-	@Function		GetTexture
-	@Input			uiIndex		The index of this texture
-	@Return			The PFX texture.
-	@Description	Returns a given texture.
+	@fn      		GetTexture
+	@param[in]		uiIndex		The index of this texture
+	@return			The PFX texture.
+	@brief     	    Returns a given texture.
 	*****************************************************************************/
 	const SPVRTPFXParserTexture* GetTexture(unsigned int uiIndex) const;
 
 	/*!***************************************************************************
-	@Function		GetPFXFileName
-	@Return			The filename for this PFX file
-	@Description	Returns the PFX file name associated with this object.
+	@fn      		GetPFXFileName
+	@return			The filename for this PFX file
+	@brief     	    eturns the PFX file name associated with this object.
 	*****************************************************************************/
 	const CPVRTString& GetPFXFileName() const;
 
 	/*!***************************************************************************
-	@Function		GetPostProcessNames
-	@Return			An array of post process names
-	@Description	Returns a list of prost process effect names.
+	@fn      		GetPostProcessNames
+	@return			An array of post process names
+	@brief     	    Returns a list of prost process effect names.
 	*****************************************************************************/
 	const CPVRTArray<CPVRTString>& GetPostProcessNames() const;
 
@@ -495,55 +486,53 @@ private:
 	CPVRTSkipGraphRoot<SPVRTPFXRenderPass*>				m_renderPassSkipGraph;
 
 	/*!***************************************************************************
-	@Function			Parse
-	@Output				pReturnError	error string
-	@Return				true for success parsing file
-	@Description		Parses a loaded PFX file.
+	@fn      			Parse
+	@param[out]			pReturnError	error string
+	@return				true for success parsing file
+	@brief     		    Parses a loaded PFX file.
 	*****************************************************************************/
 	bool Parse(	CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ReduceWhitespace
-	@Output				line		output text
-	@Description		Reduces all white space characters in the string to one
+	@fn      			ReduceWhitespace
+	@param[out]			line		output text
+	@brief     		    Reduces all white space characters in the string to one
 						blank space.
 	*****************************************************************************/
 	void ReduceWhitespace(char *line);
 
 	/*!***************************************************************************
-	@Function			GetEndTag
-	@Input				pszTagName		tag name
-	@Input				nStartLine		start line
-	@Output				pnEndLine		line end tag found
-	@Return				true if tag found
-	@Description		Searches for end tag pszTagName from line nStartLine.
+	@fn      			GetEndTag
+	@param[in]			pszTagName		tag name
+	@param[in]			nStartLine		start line
+	@param[out]			pnEndLine		line end tag found
+	@return				true if tag found
+	@brief     		    Searches for end tag pszTagName from line nStartLine.
 						Returns true and outputs the line number of the end tag if
 						found, otherwise returning false.
 	*****************************************************************************/
 	bool GetEndTag(const char *pszTagName, int nStartLine, int *pnEndLine);
 
 	/*!***************************************************************************
-	 @Function			ReturnParameter
-	 @Output			aszSourceString		The string to search
-	 @Input				parameterTag		The tag to find
-	 @Input				delimiter			Delimiters
-	 @Return			Found parameter or empty string
-	 @Description		Finds the parameter after the specified delimiting character and
+	 @brief     		Finds the parameter after the specified delimiting character and
 						returns the parameter as a string. An empty string is returned
 						if a parameter cannot be found
-						
+	 @param[out]		aszSourceString		The string to search
+	 @param[in]			parameterTag		The tag to find
+	 @param[in]			delimiter			Delimiters
+	 @return			Found parameter or empty string
 	*****************************************************************************/
 	CPVRTString FindParameter(char *aszSourceString, const CPVRTString &parameterTag, const CPVRTString &delimiter);
 
 	/*!***************************************************************************
-	 @Function			ReadStringToken
-	 @Input				pszSource			Parameter string to process
-	 @Output			output				Processed string
-	 @Output			ErrorStr			String containing errors
-	 @Input				iLine				The line to read
-	 @Input				pCaller				The caller's name or identifier
-	 @Return			Returns true on success
-	 @Description		Processes the null terminated char array as if it's a
+	 @fn      			ReadStringToken
+	 @param[in]			pszSource			Parameter string to process
+	 @param[out]		output				Processed string
+	 @param[out]		ErrorStr			String containing errors
+	 @param[in]			iLine				The line to read
+	 @param[in]			pCaller				The caller's name or identifier
+	 @return			Returns true on success
+	 @brief     		Processes the null terminated char array as if it's a
 						formatted string array. Quote marks are determined to be
 						start and end of strings. If no quote marks are found the
 						string is delimited by whitespace.
@@ -551,130 +540,127 @@ private:
 	bool ReadStringToken(char* pszSource, CPVRTString& output, CPVRTString &ErrorStr, int iLine, const char* pCaller);
 
 	/*!***************************************************************************
-	@Function			ParseHeader
-	@Input				nStartLine		start line number
-	@Input				nEndLine		end line number
-	@Output				pReturnError	error string
-	@Return				true if parse is successful
-	@Description		Parses the HEADER section of the PFX file.
+	@fn      			ParseHeader
+	@param[in]			nStartLine		start line number
+	@param[in]			nEndLine		end line number
+	@param[out]			pReturnError	error string
+	@return				true if parse is successful
+	@brief     		    Parses the HEADER section of the PFX file.
 	*****************************************************************************/
 	bool ParseHeader(int nStartLine, int nEndLine, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ParseTextures		** DEPRECATED **
-	@Input				nStartLine		start line number
-	@Input				nEndLine		end line number
-	@Output				pReturnError	error string
-	@Return				true if parse is successful
-	@Description		Parses the TEXTURES section of the PFX file.
+	@brief     		    Parses the TEXTURES section of the PFX file.
 						This style is deprecated but remains for backwards
-						compatibility.
+						compatibility. ** DEPRECATED **
+	@param[in]			nStartLine		Start line number
+	@param[in]			nEndLine		End line number
+	@param[out]			pReturnError	Error string
+	@return				true if parse is successful
 	*****************************************************************************/
 	bool ParseTextures(int nStartLine, int nEndLine, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ParseTexture
-	@Input				nStartLine		start line number
-	@Input				nEndLine		end line number
-	@Output				pReturnError	error string
-	@Return				true if parse is successful
-	@Description		Parses the TEXTURE section of the PFX file.
+	@fn      			ParseTexture
+	@param[in]			nStartLine		start line number
+	@param[in]			nEndLine		end line number
+	@param[out]			pReturnError	error string
+	@return				true if parse is successful
+	@brief     		    Parses the TEXTURE section of the PFX file.
 	*****************************************************************************/
 	bool ParseTexture(int nStartLine, int nEndLine, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ParseTarget
-	@Input				nStartLine		start line number
-	@Input				nEndLine		end line number
-	@Output				pReturnError	error string
-	@Return				true if parse is successful
-	@Description		Parses the TARGET section of the PFX file.
+	@fn      			ParseTarget
+	@param[in]			nStartLine		start line number
+	@param[in]			nEndLine		end line number
+	@param[out]			pReturnError	error string
+	@return				true if parse is successful
+	@brief     		    Parses the TARGET section of the PFX file.
 	*****************************************************************************/
 	bool ParseTarget(int nStartLine, int nEndLine, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ParseGenericSurface
-	@Input				nStartLine		start line number
-	@Input				nEndLine		end line number
-	@Output				Params			Structure containing PFXTexture parameters
-	@Output				KnownCmds		An array of unknown commands for the caller
+	@fn      			ParseGenericSurface
+	@param[in]			nStartLine		start line number
+	@param[in]			nEndLine		end line number
+	@param[out]			Params			Structure containing PFXTexture parameters
+	@param[out]			KnownCmds		An array of unknown commands for the caller
 										to check.
-	@Input				pCaller			The caller's description for error messages.
-	@Output				pReturnError	error string
-	@Return				true if parse is successful
-	@Description		Parses generic data from TARGET and TEXTURE blocks. Namely
+	@param[in]			pCaller			The caller's description for error messages.
+	@param[out]			pReturnError	error string
+	@return				true if parse is successful
+	@brief     		    Parses generic data from TARGET and TEXTURE blocks. Namely
 						wrapping and filter commands.
 	*****************************************************************************/
 	bool ParseGenericSurface(int nStartLine, int nEndLine, SPVRTPFXParserTexture& Params, CPVRTArray<CPVRTHash>& KnownCmds, 
 							 const char* pCaller, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ParseShader
-	@Input				nStartLine		start line number
-	@Input				nEndLine		end line number
-	@Output				pReturnError	error string
-	@Output				shader			shader data object
-	@Input				pszBlockName	name of block in PFX file
-	@Return				true if parse is successful
-	@Description		Parses the VERTEXSHADER or FRAGMENTSHADER section of the
+	@fn      			ParseShader
+	@param[in]			nStartLine		start line number
+	@param[in]			nEndLine		end line number
+	@param[out]			pReturnError	error string
+	@param[out]			shader			shader data object
+	@param[in]			pszBlockName	name of block in PFX file
+	@return				true if parse is successful
+	@brief     		    Parses the VERTEXSHADER or FRAGMENTSHADER section of the
 						PFX file.
 	*****************************************************************************/
 	bool ParseShader(int nStartLine, int nEndLine, CPVRTString *pReturnError, SPVRTPFXParserShader &shader, const char * const pszBlockName);
 
 	/*!***************************************************************************
-	@Function			ParseSemantic
-	@Output				semantic		semantic data object
-	@Input				nStartLine		start line number
-	@Output				pReturnError	error string
-	@Return				true if parse is successful
-	@Description		Parses a semantic.
+	@fn      			ParseSemantic
+	@param[out]			semantic		semantic data object
+	@param[in]			nStartLine		start line number
+	@param[out]			pReturnError	error string
+	@return				true if parse is successful
+	@brief     		    Parses a semantic.
 	*****************************************************************************/
 	bool ParseSemantic(SPVRTPFXParserSemantic &semantic, const int nStartLine, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function			ParseEffect
-	@Output				effect			effect data object
-	@Input				nStartLine		start line number
-	@Input				nEndLine		end line number
-	@Output				pReturnError	error string
-	@Return				true if parse is successful
-	@Description		Parses the EFFECT section of the PFX file.
+	@fn      			ParseEffect
+	@param[out]			effect			effect data object
+	@param[in]			nStartLine		start line number
+	@param[in]			nEndLine		end line number
+	@param[out]			pReturnError	error string
+	@return				true if parse is successful
+	@brief     		    Parses the EFFECT section of the PFX file.
 	*****************************************************************************/
 	bool ParseEffect(SPVRTPFXParserEffect &effect, const int nStartLine, const int nEndLine, CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	@Function		ParseTextureFlags
-	@Input			c_pszRemainingLine		Pointer to the remaining string
-	@Output			ppFlagsOut				Resultant flags set
-	@Input			uiNumFlags				Number of flags to set
-	@Input			c_ppszFlagNames			Flag names			
-	@Input			uiNumFlagNames			Number of flag names
-	@Input			pReturnError			Return error to set
-	@Input			iLineNum				The line number for error reporting
-	@Return			true if successful
-	@Description	Parses the texture flag sections.
+	@fn      		    ParseTextureFlags
+	@param[in]			c_pszRemainingLine		Pointer to the remaining string
+	@param[out]			ppFlagsOut				Resultant flags set
+	@param[in]			uiNumFlags				Number of flags to set
+	@param[in]			c_ppszFlagNames			Flag names			
+	@param[in]			uiNumFlagNames			Number of flag names
+	@param[in]			pReturnError			Return error to set
+	@param[in]			iLineNum				The line number for error reporting
+	@return			    true if successful
+	@brief     	        Parses the texture flag sections.
 	*****************************************************************************/
 	bool ParseTextureFlags(	const char* c_pszRemainingLine, unsigned int** ppFlagsOut, unsigned int uiNumFlags, const char** c_ppszFlagNames, unsigned int uiNumFlagNames, 
 							CPVRTString * const pReturnError, int iLineNum);
 	/*!***************************************************************************
-	 @Function		DetermineRenderPassDependencies
-	 @Output			pReturnError
-	 @Return		True if dependency tree is valid. False if there are errors
-					in the dependency tree (e.g. recursion)
-	 @Description	Looks through all of the effects in the .pfx and determines
+	 @brief     	Looks through all of the effects in the .pfx and determines
 					the order of render passes that have been declared with
 					the RENDER tag (found in [TEXTURES]. 
+	 @param[out]	pReturnError
+	 @return		True if dependency tree is valid. False if there are errors
+					in the dependency tree (e.g. recursion)
 	*****************************************************************************/
 	bool DetermineRenderPassDependencies(CPVRTString * const pReturnError);
 
 	/*!***************************************************************************
-	 @Function		AddRenderPassNodeDependancies
-	 @Input			aRequiredRenderPasses
-	 @Input			renderPassNode
-	 @Description	Recursively look through dependencies until leaf nodes are
+	 @brief     	Recursively look through dependencies until leaf nodes are
 					encountered. At this point, add a given leaf node to the
 					aRequiredRenderPasses array and return. Repeat this process
 					until all dependencies are added to the array.
+	 @param[in]		aRequiredRenderPasses
+	 @param[in]		renderPassNode
 	*****************************************************************************/
 	void AddRenderPassNodeDependencies(	CPVRTArray<SPVRTPFXRenderPass*> &aRequiredRenderPasses,
 										CPVRTSkipGraphNode<SPVRTPFXRenderPass*> &renderPassNode);

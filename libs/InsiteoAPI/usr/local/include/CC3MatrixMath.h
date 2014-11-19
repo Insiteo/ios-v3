@@ -1,17 +1,17 @@
 /*
  * CC3MatrixMath.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Kazmath functions copyright (c) 2008, Luke Benstead. All rights reserved.
  *
  * http://www.kazade.co.uk/kazmath/
  *
- * Augmented and modified for use with Objective-C in cocos3d by Bill Hollings.
- * Additions and modifications copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Augmented and modified for use with Objective-C in Cocos3D by Bill Hollings.
+ * Additions and modifications copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
@@ -53,7 +53,7 @@ static inline void CC3KMMat4RotationYXZ(GLfloat* m, CC3Vector aRotation) {
 	 
      where cA = cos(A), sA = sin(A) for A = x,y,z
  */
-	CC3Vector rotRads = CC3VectorScaleUniform(aRotation, DegreesToRadiansFactor);
+	CC3Vector rotRads = CC3VectorScaleUniform(aRotation, kCC3DegToRadFactor);
 	
 	GLfloat cx = cosf(rotRads.x);
 	GLfloat sx = sinf(rotRads.x);
@@ -97,7 +97,7 @@ static inline void CC3KMMat4RotationZYX(GLfloat* m, CC3Vector aRotation) {
 	 
      where cA = cos(A), sA = sin(A) for A = x,y,z
  */
-	CC3Vector rotRads = CC3VectorScaleUniform(aRotation, DegreesToRadiansFactor);
+	CC3Vector rotRads = CC3VectorScaleUniform(aRotation, kCC3DegToRadFactor);
 	
 	GLfloat cx = cosf(rotRads.x);
 	GLfloat sx = sinf(rotRads.x);
@@ -135,7 +135,7 @@ static inline void CC3KMMat4RotationX(GLfloat* m, const GLfloat degrees) {
      |  0  sin(A)  cos(A)  0 |
      |  0  0       0       1 |
  */
-	GLfloat radians = DegreesToRadians(degrees);
+	GLfloat radians = CC3DegToRad(degrees);
 	GLfloat c = cosf(radians);
 	GLfloat s = sinf(radians);
 	
@@ -168,7 +168,7 @@ static inline void CC3KMMat4RotationY(GLfloat* m, const GLfloat degrees) {
      | -sin(A)  0   cos(A)  0 |
      |  0       0   0       1 |
  */
-	GLfloat radians = DegreesToRadians(degrees);
+	GLfloat radians = CC3DegToRad(degrees);
 	GLfloat c = cosf(radians);
 	GLfloat s = sinf(radians);
 	
@@ -201,7 +201,7 @@ static inline void CC3KMMat4RotationZ(GLfloat* m, const GLfloat degrees) {
      |  0        0        1   0 |
      |  0        0        0   1 |
  */
-	GLfloat radians = DegreesToRadians(degrees);
+	GLfloat radians = CC3DegToRad(degrees);
 	GLfloat c = cosf(radians);
 	GLfloat s = sinf(radians);
 	

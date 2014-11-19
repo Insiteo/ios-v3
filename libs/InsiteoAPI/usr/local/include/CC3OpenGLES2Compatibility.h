@@ -1,9 +1,9 @@
 /*
  * CC3OpenGLES2Compatibility.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +31,7 @@
 
 /**
  * When compiling against OpenGL ES 2, this file adds compatiblity to declarations
- * and functionality provided by OpenGL or OpenGL ES 1 under cocos3d.
+ * and functionality provided by OpenGL or OpenGL ES 1 under Cocos3D.
  */
 
 #import "CC3Environment.h"
@@ -94,6 +94,14 @@
 #ifndef GL_DECR_WRAP_OES
 #define GL_DECR_WRAP_OES				GL_DECR_WRAP
 #endif
+
+#define GL_RGB4								0x804F
+#define GL_RGB5								0x8050
+#define GL_RGB16							0x8054
+#define GL_RGBA2							0x8055
+#define GL_RGB10_A2							0x8059
+#define GL_RGBA12							0x805A
+#define GL_RGBA16							0x805B
 
 
 // Texture unit symbolic constants
@@ -249,7 +257,6 @@
 #endif
 
 
-
 // Lighting and material symbolic constants
 
 #ifndef GL_LIGHT_MODEL_AMBIENT
@@ -314,5 +321,16 @@
 #ifndef GL_PROJECTION
 #define GL_PROJECTION                     0x1701
 #endif
+
+
+// Android compatibility
+
+#if APPORTABLE
+
+// GL_MAX_SAMPLES_APPLE is redefined to unusable value by Apportable. Set it back.
+#undef GL_MAX_SAMPLES_APPLE
+#define GL_MAX_SAMPLES_APPLE              0x8D57
+
+#endif	// APPORTABLE
 
 #endif	// CC3_OGLES_2

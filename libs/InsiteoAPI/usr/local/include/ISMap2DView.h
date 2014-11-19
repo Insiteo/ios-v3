@@ -16,27 +16,7 @@
 /*!
  Class used to handle 2D map rendering (using Cocos2d).
  */
-@interface ISMap2DView : ISMapView <UIGestureRecognizerDelegate> {
-    
-@private
-    
-#pragma mark - Cocos
-    
-    //Cocos rendering scene
-    CCScene * m_scene;
-    
-#pragma mark - Rendering
-    
-    //Last computed offset
-    CGPoint m_currentOffset;
-    //Intern last rotation angle
-    float m_lastRotationAngle;
-}
-
-/*!
- Last computed offset.
- */
-@property (nonatomic, readonly) CGPoint currentOffset;
+@interface ISMap2DView : ISMapView <UIGestureRecognizerDelegate>
 
 /*!
  Intern last rotation angle.
@@ -49,5 +29,18 @@
  @param mapListener Listener used to handle map events.
  */
 + (ISMap2DView *)map2DViewWithFrame:(CGRect)frame andMapListener:(id<ISPMapListener>)mapListener;
+
+#pragma mark - Extra
+
+/*!
+ @name Extra
+ */
+
+/*!
+ Method called to get all the current "visible" zones.
+ @return All "visible" zones.
+ @warning If a tile is 1px visible, it will return all its zones.
+ */
+- (NSArray *)getVisibleZones;
 
 @end

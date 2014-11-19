@@ -11,6 +11,7 @@
  ISPosition
  */
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 /*!
@@ -21,15 +22,7 @@ extern NSString * const INSITEO_UNKNOWN_MAP;
 /*!
  Class used to represent a position in our map api.
  */
-@interface ISPosition : NSObject {
-    
-@private
-    
-    //Position coordinates (in meters)
-    CGPoint m_coordinates;
-    //Relative map id
-    int m_mapId;
-}
+@interface ISPosition : NSObject
 
 /*!
  Position coordinates (in meters).

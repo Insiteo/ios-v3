@@ -1,9 +1,9 @@
 /*
  * CC3GLMatrix.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -451,7 +451,7 @@ typedef enum {
 
 #pragma mark Deprecated CC3GLMatrix
 
-DEPRECATED_ATTRIBUTE
+__deprecated
 /**
  * Deprecated and replaced by the CC3Matrix family of classes.
  * @deprecated Replaced by the CC3Matrix family of classes. Full functionality provided by CC3ProjectionMatrix.

@@ -13,7 +13,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ISGfxZone;
+@class ISZone;
 
 #import "ISZonePoi.h"
 #import "ISPosition.h"
@@ -22,32 +22,7 @@
  @class ISZonePoi
  Class used to represent the association between a Zone (MapAPI) and a Poi (CatalogAPI).
  */
-@interface ISZonePoi : NSObject {
-    
-@private
-    
-    //Relative zone identifier
-    int m_zoneId;
-    //Relative zone name
-    NSString * m_label;
-    
-    //Relative poiId
-    int m_poiId;
-    //External id
-    NSString * m_externalPoiId;
-    
-    //Zone position
-    ISPosition * m_position;
-    
-    //Extra value
-    NSString * m_extra1;
-    //Extra value
-    NSString * m_extra2;
-    //Extra value
-    NSString * m_extra3;
-    //Extra value
-    float m_fExtra1;
-}
+@interface ISZonePoi : NSObject
 
 /*!
  Related zone identifier.
@@ -100,8 +75,9 @@
 @property (nonatomic, readwrite) float fExtra1;
 
 /*!
- Related zone.
+ Method used to get the related ISZone.
+ @return Related ISZone.
  */
-@property (nonatomic, readonly) ISGfxZone * zone;
+- (ISZone *)getZone;
 
 @end

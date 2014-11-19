@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTModelPOD.h
-
- @Title        PVRTModelPOD
-
- @Version   
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Code to load POD files - models exported from MAX.
+ @file         PVRTModelPOD.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Code to load POD files - models exported from MAX.
 
 ******************************************************************************/
 #ifndef _PVRTMODELPOD_H_
@@ -33,8 +25,8 @@
 ** Enumerations
 ****************************************************************************/
 /*!****************************************************************************
- @Struct      EPODLightType
- @Brief       Enum for the POD format light types
+ @struct      EPODLightType
+ @brief       Enum for the POD format light types
 ******************************************************************************/
 enum EPODLightType
 {
@@ -45,8 +37,8 @@ enum EPODLightType
 };
 
 /*!****************************************************************************
- @Struct      EPODPrimitiveType
- @Brief       Enum for the POD format primitive types
+ @struct      EPODPrimitiveType
+ @brief       Enum for the POD format primitive types
 ******************************************************************************/
 enum EPODPrimitiveType
 {
@@ -55,8 +47,8 @@ enum EPODPrimitiveType
 };
 
 /*!****************************************************************************
- @Struct      EPODAnimationData
- @Brief       Enum for the POD format animation types
+ @struct      EPODAnimationData
+ @brief       Enum for the POD format animation types
 ******************************************************************************/
 enum EPODAnimationData
 {
@@ -67,8 +59,8 @@ enum EPODAnimationData
 };
 
 /*!****************************************************************************
- @Struct      EPODMaterialFlags
- @Brief       Enum for the material flag options
+ @struct      EPODMaterialFlags
+ @brief       Enum for the material flag options
 ******************************************************************************/
 enum EPODMaterialFlag
 {
@@ -76,8 +68,8 @@ enum EPODMaterialFlag
 };
 
 /*!****************************************************************************
- @Struct      EPODBlendFunc
- @Brief       Enum for the POD format blend functions
+ @struct      EPODBlendFunc
+ @brief       Enum for the POD format blend functions
 ******************************************************************************/
 enum EPODBlendFunc
 {
@@ -103,8 +95,8 @@ enum EPODBlendFunc
 };
 
 /*!****************************************************************************
- @Struct      EPODBlendOp
- @Brief       Enum for the POD format blend operation
+ @struct      EPODBlendOp
+ @brief       Enum for the POD format blend operation
 ******************************************************************************/
 enum EPODBlendOp
 {
@@ -119,14 +111,14 @@ enum EPODBlendOp
 ** Structures
 ****************************************************************************/
 /*!****************************************************************************
- @Class      CPODData
- @Brief      A class for representing POD data
+ @class      CPODData
+ @brief      A class for representing POD data
 ******************************************************************************/
 class CPODData {
 public:
 	/*!***************************************************************************
-	@Function			Reset
-	@Description		Resets the POD Data to NULL
+	@fn			Reset
+	@brief		Resets the POD Data to NULL
 	*****************************************************************************/
 	void Reset();
 
@@ -138,11 +130,11 @@ public:
 };
 
 /*!****************************************************************************
- @Struct      SPODCamera
- @Brief       Struct for storing POD camera data
+ @struct      SPODCamera
+ @brief       Struct for storing POD camera data
 ******************************************************************************/
 struct SPODCamera {
-	PVRTint32			nIdxTarget;			/*!< Index of the target object */
+	PVRTint32			nIdxTarget;	/*!< Index of the target object */
 	VERTTYPE	fFOV;				/*!< Field of view */
 	VERTTYPE	fFar;				/*!< Far clip plane */
 	VERTTYPE	fNear;				/*!< Near clip plane */
@@ -150,8 +142,8 @@ struct SPODCamera {
 };
 
 /*!****************************************************************************
- @Struct      SPODLight
- @Brief       Struct for storing POD light data
+ @struct      SPODLight
+ @brief       Struct for storing POD light data
 ******************************************************************************/
 struct SPODLight {
 	PVRTint32			nIdxTarget;		/*!< Index of the target object */
@@ -165,8 +157,8 @@ struct SPODLight {
 };
 
 /*!****************************************************************************
- @Struct      SPODMesh
- @Brief       Struct for storing POD mesh data
+ @struct      SPODMesh
+ @brief       Struct for storing POD mesh data
 ******************************************************************************/
 struct SPODMesh {
 	PVRTuint32			nNumVertex;		/*!< Number of vertices in the mesh */
@@ -194,8 +186,8 @@ struct SPODMesh {
 };
 
 /*!****************************************************************************
- @Struct      SPODNode
- @Brief       Struct for storing POD node data
+ @struct      SPODNode
+ @brief       Struct for storing POD node data
 ******************************************************************************/
 struct SPODNode {
 	PVRTint32			nIdx;				/*!< Index into mesh, light or camera array, depending on which object list contains this Node */
@@ -223,16 +215,16 @@ struct SPODNode {
 };
 
 /*!****************************************************************************
- @Struct      SPODTexture
- @Brief       Struct for storing POD texture data
+ @struct      SPODTexture
+ @brief       Struct for storing POD texture data
 ******************************************************************************/
 struct SPODTexture {
 	PVRTchar8	*pszName;			/*!< File-name of texture */
 };
 
 /*!****************************************************************************
- @Struct      SPODMaterial
- @Brief       Struct for storing POD material data
+ @struct      SPODMaterial
+ @brief       Struct for storing POD material data
 ******************************************************************************/
 struct SPODMaterial {
 	PVRTchar8		*pszName;				/*!< Name of material */
@@ -270,12 +262,13 @@ struct SPODMaterial {
 };
 
 /*!****************************************************************************
- @Struct      SPODScene
- @Brief       Struct for storing POD scene data
+ @struct      SPODScene
+ @brief       Struct for storing POD scene data
 ******************************************************************************/
 struct SPODScene {
-	VERTTYPE	pfColourBackground[3];		/*!< Background colour */
-	VERTTYPE	pfColourAmbient[3];			/*!< Ambient colour */
+	VERTTYPE		fUnits;					/*!< Distance in metres that a single unit of measurement represents */
+	VERTTYPE		pfColourBackground[3];	/*!< Background colour */
+	VERTTYPE		pfColourAmbient[3];		/*!< Ambient colour */
 
 	PVRTuint32		nNumCamera;				/*!< The length of the array pCamera */
 	SPODCamera		*pCamera;				/*!< Camera nodes array */
@@ -294,7 +287,7 @@ struct SPODScene {
 	SPODTexture		*pTexture;		/*!< Texture array */
 
 	PVRTuint32		nNumMaterial;	/*!< Number of materials in the array pMaterial */
-	SPODMaterial	*pMaterial;		/*!< Material array */
+	SPODMaterial		*pMaterial;		/*!< Material array */
 
 	PVRTuint32		nNumFrame;		/*!< Number of frames of animation */
 	PVRTuint32		nFPS;			/*!< The frames per second the animation should be played at */
@@ -308,32 +301,30 @@ struct SPODScene {
 struct SPVRTPODImpl;	// Internal implementation data
 
 /*!***************************************************************************
-@Class CPVRTModelPOD
-@Brief A class for loading and storing data from POD files/headers
+@class CPVRTModelPOD
+@brief A class for loading and storing data from POD files/headers
 *****************************************************************************/
 class CPVRTModelPOD : public SPODScene{
 public:
 	/*!***************************************************************************
-	 @Function		Constructor
-	 @Description	Constructor for CPVRTModelPOD class
+	 @brief     	Constructor for CPVRTModelPOD class
 	*****************************************************************************/
 	CPVRTModelPOD();
 
 	/*!***************************************************************************
-	 @Function		Destructor
-	 @Description	Destructor for CPVRTModelPOD class
+	 @brief     	Destructor for CPVRTModelPOD class
 	*****************************************************************************/
 	~CPVRTModelPOD();
 
 	/*!***************************************************************************
-	@Function			ReadFromFile
-	@Input				pszFileName		Filename to load
-	@Output			pszExpOpt		String in which to place exporter options
-	@Input				count			Maximum number of characters to store.
-	@Output			pszHistory		String in which to place the pod file history
-	@Input				historyCount	Maximum number of characters to store.
-	@Return			PVR_SUCCESS if successful, PVR_FAIL if not
-	@Description		Loads the specified ".POD" file; returns the scene in
+	@fn       			ReadFromFile
+	@param[in]			pszFileName		Filename to load
+	@param[out]			pszExpOpt		String in which to place exporter options
+	@param[in]			count			Maximum number of characters to store.
+	@param[out]			pszHistory		String in which to place the pod file history
+	@param[in]			historyCount	Maximum number of characters to store.
+	@return			    PVR_SUCCESS if successful, PVR_FAIL if not
+	@brief     		    Loads the specified ".POD" file; returns the scene in
 						pScene. This structure must later be destroyed with
 						PVRTModelPODDestroy() to prevent memory leaks.
 						".POD" files are exported using the PVRGeoPOD exporters.
@@ -349,43 +340,41 @@ public:
 		const size_t	historyCount = 0);
 
 	/*!***************************************************************************
-	@Function			ReadFromMemory
-	@Input				pData			Data to load
-	@Input				i32Size			Size of data
-	@Output			pszExpOpt		String in which to place exporter options
-	@Input				count			Maximum number of characters to store.
-	@Output			pszHistory		String in which to place the pod file history
-	@Input				historyCount	Maximum number of characters to store.
-	@Return			PVR_SUCCESS if successful, PVR_FAIL if not
-	@Description		Loads the supplied pod data. This data can be exported
+	@brief     		    Loads the supplied pod data. This data can be exported
 						directly to a header using one of the pod exporters.
 						If pszExpOpt is NULL, the scene is loaded; otherwise the
 						scene is not loaded and pszExpOpt is filled in. The same
 						is true for pszHistory.
+	@param[in]			pData			Data to load
+	@param[in]			i32Size			Size of data
+	@param[out]			pszExpOpt		String in which to place exporter options
+	@param[in]			count			Maximum number of characters to store.
+	@param[out]			pszHistory		String in which to place the pod file history
+	@param[in]			historyCount	Maximum number of characters to store.
+	@return	 		    PVR_SUCCESS if successful, PVR_FAIL if not
 	*****************************************************************************/
 	EPVRTError ReadFromMemory(
 		const char		* pData,
 		const size_t	i32Size,
 		char			* const pszExpOpt = NULL,
-		const size_t	count = NULL,
+		const size_t	count = 0,
 		char			* const pszHistory = NULL,
-		const size_t	historyCount = NULL);
+		const size_t	historyCount = 0);
 
 	/*!***************************************************************************
-	 @Function		ReadFromMemory
-	 @Input			scene			Scene data from the header file
-	 @Return		PVR_SUCCESS if successful, PVR_FAIL if not
-	 @Description	Sets the scene data from the supplied data structure. Use
+	 @brief     	Sets the scene data from the supplied data structure. Use
 					when loading from .H files.
+	 @param[in]		scene			Scene data from the header file
+	 @return		PVR_SUCCESS if successful, PVR_FAIL if not
 	*****************************************************************************/
 	EPVRTError ReadFromMemory(
 		const SPODScene &scene);
 
 	/*!***************************************************************************
-	 @Function		CopyFromMemory
-	 @Input			scene			Scene data from the header file
-	 @Return		PVR_SUCCESS if successful, PVR_FAIL if not
-	 @Description	Copies the scene data from the supplied data structure. Use
+	 @fn       		CopyFromMemory
+	 @param[in]			scene			Scene data from the header file
+	 @return		PVR_SUCCESS if successful, PVR_FAIL if not
+	 @brief     	Copies the scene data from the supplied data structure. Use
 					when loading from .H files where you want to modify the data.
 	*****************************************************************************/
 	EPVRTError CopyFromMemory(
@@ -393,10 +382,10 @@ public:
 
 #if defined(_WIN32)
 	/*!***************************************************************************
-	 @Function		ReadFromResource
-	 @Input			pszName			Name of the resource to load from
-	 @Return		PVR_SUCCESS if successful, PVR_FAIL if not
-	 @Description	Loads the specified ".POD" file; returns the scene in
+	 @fn       		ReadFromResource
+	 @param[in]		pszName			Name of the resource to load from
+	 @return		PVR_SUCCESS if successful, PVR_FAIL if not
+	 @brief     	Loads the specified ".POD" file; returns the scene in
 					pScene. This structure must later be destroyed with
 					PVRTModelPODDestroy() to prevent memory leaks.
 					".POD" files are exported from 3D Studio MAX using a
@@ -407,8 +396,8 @@ public:
 #endif
 
 	/*!***********************************************************************
-	 @Function		InitImpl
-	 @Description	Used by the Read*() fns to initialise implementation
+	 @fn       		InitImpl
+	 @brief     	Used by the Read*() fns to initialise implementation
 					details. Should also be called by applications which
 					manually build data in the POD structures for rendering;
 					in this case call it after the data has been created.
@@ -417,179 +406,165 @@ public:
 	EPVRTError InitImpl();
 
 	/*!***********************************************************************
-	 @Function		DestroyImpl
-	 @Description	Used to free memory allocated by the implementation.
+	 @fn       		DestroyImpl
+	 @brief     	Used to free memory allocated by the implementation.
 	*************************************************************************/
 	void DestroyImpl();
 
 	/*!***********************************************************************
-	 @Function		FlushCache
-	 @Description	Clears the matrix cache; use this if necessary when you
+	 @fn       		FlushCache
+	 @brief     	Clears the matrix cache; use this if necessary when you
 					edit the position or animation of a node.
 	*************************************************************************/
 	void FlushCache();
 
 	/*!***********************************************************************
-	@Function		IsLoaded
-	@Description	Boolean to check whether a POD file has been loaded.
+	@fn       		IsLoaded
+	@brief     	Boolean to check whether a POD file has been loaded.
 	*************************************************************************/
 	bool IsLoaded();
 
 	/*!***************************************************************************
-	 @Function		Destroy
-	 @Description	Frees the memory allocated to store the scene in pScene.
+	 @fn       		Destroy
+	 @brief     	Frees the memory allocated to store the scene in pScene.
 	*****************************************************************************/
 	void Destroy();
 
 	/*!***************************************************************************
-	 @Function		SetFrame
-	 @Input			fFrame			Frame number
-	 @Description	Set the animation frame for which subsequent Get*() calls
+	 @fn       		SetFrame
+	 @param[in]			fFrame			Frame number
+	 @brief     	Set the animation frame for which subsequent Get*() calls
 					should return data.
 	*****************************************************************************/
 	void SetFrame(
 		const VERTTYPE fFrame);
 
 	/*!***************************************************************************
-	 @Function		GetRotationMatrix
-	 @Output		mOut			Rotation matrix
-	 @Input			node			Node to get the rotation matrix from
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[out]	mOut			Rotation matrix
+	 @param[in]		node			Node to get the rotation matrix from
 	*****************************************************************************/
 	void GetRotationMatrix(
 		PVRTMATRIX		&mOut,
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetRotationMatrix
-	 @Input			node			Node to get the rotation matrix from
-	 @Returns		Rotation matrix
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[in]		node			Node to get the rotation matrix from
+	 @return		Rotation matrix
 	*****************************************************************************/
 	PVRTMat4 GetRotationMatrix(
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetScalingMatrix
-	 @Output		mOut			Scaling matrix
-	 @Input			node			Node to get the rotation matrix from
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[out]	mOut			Scaling matrix
+	 @param[in]		node			Node to get the rotation matrix from
 	*****************************************************************************/
 	void GetScalingMatrix(
 		PVRTMATRIX		&mOut,
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetScalingMatrix
-	 @Input			node			Node to get the rotation matrix from
-	 @Returns		Scaling matrix
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[in]		node			Node to get the rotation matrix from
+	 @return		Scaling matrix
 	*****************************************************************************/
 	PVRTMat4 GetScalingMatrix(
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetTranslation
-	 @Output		V				Translation vector
-	 @Input			node			Node to get the translation vector from
-	 @Description	Generates the translation vector for the given Mesh
+	 @brief     	Generates the translation vector for the given Mesh
 					Instance. Uses animation data.
+	 @param[out]	V				Translation vector
+	 @param[in]		node			Node to get the translation vector from
 	*****************************************************************************/
 	void GetTranslation(
 		PVRTVECTOR3		&V,
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetTranslation
-	 @Input			node			Node to get the translation vector from
-	  @Returns		Translation vector
-	 @Description	Generates the translation vector for the given Mesh
+	 @brief     	Generates the translation vector for the given Mesh
 					Instance. Uses animation data.
+	 @param[in]		node			Node to get the translation vector from
+	  @return		Translation vector
 	*****************************************************************************/
 	PVRTVec3 GetTranslation(
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetTranslationMatrix
-	 @Output		mOut			Translation matrix
-	 @Input			node			Node to get the translation matrix from
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[out]	mOut			Translation matrix
+	 @param[in]		node			Node to get the translation matrix from
 	*****************************************************************************/
 	void GetTranslationMatrix(
 		PVRTMATRIX		&mOut,
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetTranslationMatrix
-	 @Input			node			Node to get the translation matrix from
-	 @Returns		Translation matrix
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[in]		node			Node to get the translation matrix from
+	 @return		Translation matrix
 	*****************************************************************************/
 	PVRTMat4 GetTranslationMatrix(
 		const SPODNode	&node) const;
 
     /*!***************************************************************************
-	 @Function		GetTransformationMatrix
-	 @Output		mOut			Transformation matrix
-	 @Input			node			Node to get the transformation matrix from
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[out]	mOut			Transformation matrix
+	 @param[in]		node			Node to get the transformation matrix from
 	*****************************************************************************/
 	void GetTransformationMatrix(PVRTMATRIX &mOut, const SPODNode &node) const;
 
 	/*!***************************************************************************
-	 @Function		GetWorldMatrixNoCache
-	 @Output		mOut			World matrix
-	 @Input			node			Node to get the world matrix from
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[out]	mOut			World matrix
+	 @param[in]		node			Node to get the world matrix from
 	*****************************************************************************/
 	void GetWorldMatrixNoCache(
 		PVRTMATRIX		&mOut,
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	@Function		GetWorldMatrixNoCache
-	@Input			node			Node to get the world matrix from
-	@Returns		World matrix
-	@Description	Generates the world matrix for the given Mesh Instance;
+	@brief     	    Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	@param[in]		node			Node to get the world matrix from
+	@return		    World matrix
 	*****************************************************************************/
 	PVRTMat4 GetWorldMatrixNoCache(
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	 @Function		GetWorldMatrix
-	 @Output		mOut			World matrix
-	 @Input			node			Node to get the world matrix from
-	 @Description	Generates the world matrix for the given Mesh Instance;
+	 @brief     	Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	 @param[out]	mOut			World matrix
+	 @param[in]		node			Node to get the world matrix from
 	*****************************************************************************/
 	void GetWorldMatrix(
 		PVRTMATRIX		&mOut,
 		const SPODNode	&node) const;
 
 	/*!***************************************************************************
-	@Function		GetWorldMatrix
-	@Input			node			Node to get the world matrix from
-	@Returns		World matrix
-	@Description	Generates the world matrix for the given Mesh Instance;
+	@brief     	    Generates the world matrix for the given Mesh Instance;
 					applies the parent's transform too. Uses animation data.
+	@param[in]		node			Node to get the world matrix from
+	@return		    World matrix
 	*****************************************************************************/
 	PVRTMat4 GetWorldMatrix(const SPODNode& node) const;
 
 	/*!***************************************************************************
-	 @Function		GetBoneWorldMatrix
-	 @Output		mOut			Bone world matrix
-	 @Input			NodeMesh		Mesh to take the world matrix from
-	 @Input			NodeBone		Bone to take the matrix from
-	 @Description	Generates the world matrix for the given bone.
+	 @brief     	Generates the world matrix for the given bone.
+	 @param[out]	mOut			Bone world matrix
+	 @param[in]		NodeMesh		Mesh to take the world matrix from
+	 @param[in]		NodeBone		Bone to take the matrix from
 	*****************************************************************************/
 	void GetBoneWorldMatrix(
 		PVRTMATRIX		&mOut,
@@ -597,24 +572,23 @@ public:
 		const SPODNode	&NodeBone);
 
 	/*!***************************************************************************
-	@Function		GetBoneWorldMatrix
-	@Input			NodeMesh		Mesh to take the world matrix from
-	@Input			NodeBone		Bone to take the matrix from
-	@Returns		Bone world matrix
-	@Description	Generates the world matrix for the given bone.
+	@brief     	    Generates the world matrix for the given bone.
+	@param[in]		NodeMesh		Mesh to take the world matrix from
+	@param[in]		NodeBone		Bone to take the matrix from
+	@return		    Bone world matrix
 	*****************************************************************************/
 	PVRTMat4 GetBoneWorldMatrix(
 		const SPODNode	&NodeMesh,
 		const SPODNode	&NodeBone);
 
 	/*!***************************************************************************
-	 @Function		GetCamera
-	 @Output		vFrom			Position of the camera
-	 @Output		vTo				Target of the camera
-	 @Output		vUp				Up direction of the camera
-	 @Input			nIdx			Camera number
-	 @Return		Camera horizontal FOV
-	 @Description	Calculate the From, To and Up vectors for the given
+	 @fn       		GetCamera
+	 @param[out]	vFrom			Position of the camera
+	 @param[out]	vTo				Target of the camera
+	 @param[out]	vUp				Up direction of the camera
+	 @param[in]		nIdx			Camera number
+	 @return		Camera horizontal FOV
+	 @brief     	Calculate the From, To and Up vectors for the given
 					camera. Uses animation data.
 					Note that even if the camera has a target, *pvTo is not
 					the position of that target. *pvTo is a position in the
@@ -628,12 +602,12 @@ public:
 		const unsigned int	nIdx) const;
 
 	/*!***************************************************************************
-	 @Function		GetCameraPos
-	 @Output		vFrom			Position of the camera
-	 @Output		vTo				Target of the camera
-	 @Input			nIdx			Camera number
-	 @Return		Camera horizontal FOV
-	 @Description	Calculate the position of the camera and its target. Uses
+	 @fn       		GetCameraPos
+	 @param[out]	vFrom			Position of the camera
+	 @param[out]	vTo				Target of the camera
+	 @param[in]		nIdx			Camera number
+	 @return		Camera horizontal FOV
+	 @brief     	Calculate the position of the camera and its target. Uses
 					animation data.
 					If the queried camera does not have a target, *pvTo is
 					not changed.
@@ -644,11 +618,11 @@ public:
 		const unsigned int	nIdx) const;
 
 	/*!***************************************************************************
-	 @Function		GetLight
-	 @Output		vPos			Position of the light
-	 @Output		vDir			Direction of the light
-	 @Input			nIdx			Light number
-	 @Description	Calculate the position and direction of the given Light.
+	 @fn       		GetLight
+	 @param[out]	vPos			Position of the light
+	 @param[out]	vDir			Direction of the light
+	 @param[in]		nIdx			Light number
+	 @brief     	Calculate the position and direction of the given Light.
 					Uses animation data.
 	*****************************************************************************/
 	void GetLight(
@@ -657,29 +631,29 @@ public:
 		const unsigned int	nIdx) const;
 
 	/*!***************************************************************************
-	 @Function		GetLightPosition
-	 @Input			u32Idx			Light number
-	 @Return		PVRTVec4 position of light with w set correctly
-	 @Description	Calculate the position the given Light. Uses animation data.
+	 @fn       		GetLightPosition
+	 @param[in]		u32Idx			Light number
+	 @return		PVRTVec4 position of light with w set correctly
+	 @brief     	Calculate the position the given Light. Uses animation data.
 	*****************************************************************************/
 	PVRTVec4 GetLightPosition(const unsigned int u32Idx) const;
 
 	/*!***************************************************************************
-	@Function		GetLightDirection
-	@Input			u32Idx			Light number
-	@Return			PVRTVec4 direction of light with w set correctly
-	@Description	Calculate the direction of the given Light. Uses animation data.
+	@fn       		GetLightDirection
+	@param[in]		u32Idx			Light number
+	@return			PVRTVec4 direction of light with w set correctly
+	@brief     	Calculate the direction of the given Light. Uses animation data.
 	*****************************************************************************/
 	PVRTVec4 GetLightDirection(const unsigned int u32Idx) const;
 
 	/*!***************************************************************************
-	 @Function		CreateSkinIdxWeight
-	 @Output		pIdx				Four bytes containing matrix indices for vertex (0..255) (D3D: use UBYTE4)
-	 @Output		pWeight				Four bytes containing blend weights for vertex (0.0 .. 1.0) (D3D: use D3DCOLOR)
-	 @Input			nVertexBones		Number of bones this vertex uses
-	 @Input			pnBoneIdx			Pointer to 'nVertexBones' indices
-	 @Input			pfBoneWeight		Pointer to 'nVertexBones' blend weights
-	 @Description	Creates the matrix indices and blend weights for a boned
+	 @fn       		CreateSkinIdxWeight
+	 @param[out]	pIdx				Four bytes containing matrix indices for vertex (0..255) (D3D: use UBYTE4)
+	 @param[out]	pWeight				Four bytes containing blend weights for vertex (0.0 .. 1.0) (D3D: use D3DCOLOR)
+	 @param[in]		nVertexBones		Number of bones this vertex uses
+	 @param[in]		pnBoneIdx			Pointer to 'nVertexBones' indices
+	 @param[in]		pfBoneWeight		Pointer to 'nVertexBones' blend weights
+	 @brief     	Creates the matrix indices and blend weights for a boned
 					vertex. Call once per vertex of a boned mesh.
 	*****************************************************************************/
 	EPVRTError CreateSkinIdxWeight(
@@ -690,11 +664,11 @@ public:
 		const VERTTYPE	* const pfBoneWeight);
 
 	/*!***************************************************************************
-	 @Function		SavePOD
-	 @Input			pszFilename		Filename to save to
-	 @Input			pszExpOpt		A string containing the options used by the exporter
-	 @Input			pszHistory		A string containing the history of the exported pod file
-	 @Description	Save a binary POD file (.POD).
+	 @fn       		SavePOD
+	 @param[in]		pszFilename		Filename to save to
+	 @param[in]		pszExpOpt		A string containing the options used by the exporter
+	 @param[in]		pszHistory		A string containing the history of the exported pod file
+	 @brief     	Save a binary POD file (.POD).
 	*****************************************************************************/
 	EPVRTError SavePOD(const char * const pszFilename, const char * const pszExpOpt = 0, const char * const pszHistory = 0);
 
@@ -707,45 +681,45 @@ private:
 ****************************************************************************/
 
 /*!***************************************************************************
- @Function		PVRTModelPODDataTypeSize
- @Input			type		Type to get the size of
- @Return		Size of the data element
- @Description	Returns the size of each data element.
+ @fn       		PVRTModelPODDataTypeSize
+ @param[in]		type		Type to get the size of
+ @return		Size of the data element
+ @brief     	Returns the size of each data element.
 *****************************************************************************/
 PVRTuint32 PVRTModelPODDataTypeSize(const EPVRTDataType type);
 
 /*!***************************************************************************
- @Function		PVRTModelPODDataTypeComponentCount
- @Input			type		Type to get the number of components from
- @Return		number of components in the data element
- @Description	Returns the number of components in a data element.
+ @fn       		PVRTModelPODDataTypeComponentCount
+ @param[in]		type		Type to get the number of components from
+ @return		number of components in the data element
+ @brief     	Returns the number of components in a data element.
 *****************************************************************************/
 PVRTuint32 PVRTModelPODDataTypeComponentCount(const EPVRTDataType type);
 
 /*!***************************************************************************
- @Function		PVRTModelPODDataStride
- @Input			data		Data elements
- @Return		Size of the vector elements
- @Description	Returns the size of the vector of data elements.
+ @fn       		PVRTModelPODDataStride
+ @param[in]		data		Data elements
+ @return		Size of the vector elements
+ @brief     	Returns the size of the vector of data elements.
 *****************************************************************************/
 PVRTuint32 PVRTModelPODDataStride(const CPODData &data);
 
 /*!***************************************************************************
- @Function			PVRTModelPODGetAnimArraySize
- @Input				pAnimDataIdx
- @Input				ui32Frames
- @Input				ui32Components
- @Return			Size of the animation array
- @Description		Calculates the size of an animation array
+ @fn       			PVRTModelPODGetAnimArraySize
+ @param[in]			pAnimDataIdx
+ @param[in]			ui32Frames
+ @param[in]			ui32Components
+ @return			Size of the animation array
+ @brief     		Calculates the size of an animation array
 *****************************************************************************/
 PVRTuint32 PVRTModelPODGetAnimArraySize(PVRTuint32 *pAnimDataIdx, PVRTuint32 ui32Frames, PVRTuint32 ui32Components);
 
 /*!***************************************************************************
- @Function		PVRTModelPODScaleAndConvertVtxData
+ @fn       		PVRTModelPODScaleAndConvertVtxData
  @Modified		mesh		POD mesh to scale and convert the mesh data
- @Input			eNewType	The data type to scale and convert the vertex data to
- @Return		PVR_SUCCESS on success and PVR_FAIL on failure.
- @Description	Scales the vertex data to fit within the range of the requested
+ @param[in]		eNewType	The data type to scale and convert the vertex data to
+ @return		PVR_SUCCESS on success and PVR_FAIL on failure.
+ @brief     	Scales the vertex data to fit within the range of the requested
 				data type and then converts the data to that type. This function
 				isn't currently compiled in for fixed point builds of the tools.
 *****************************************************************************/
@@ -753,20 +727,20 @@ PVRTuint32 PVRTModelPODGetAnimArraySize(PVRTuint32 *pAnimDataIdx, PVRTuint32 ui3
 EPVRTError PVRTModelPODScaleAndConvertVtxData(SPODMesh &mesh, const EPVRTDataType eNewType);
 #endif
 /*!***************************************************************************
- @Function		PVRTModelPODDataConvert
+ @fn       		PVRTModelPODDataConvert
  @Modified		data		Data elements to convert
- @Input			eNewType	New type of elements
- @Input			nCnt		Number of elements
- @Description	Convert the format of the array of vectors.
+ @param[in]		eNewType	New type of elements
+ @param[in]		nCnt		Number of elements
+ @brief     	Convert the format of the array of vectors.
 *****************************************************************************/
 void PVRTModelPODDataConvert(CPODData &data, const unsigned int nCnt, const EPVRTDataType eNewType);
 
 /*!***************************************************************************
- @Function			PVRTModelPODDataShred
+ @fn       			PVRTModelPODDataShred
  @Modified			data		Data elements to modify
- @Input				nCnt		Number of elements
- @Input				pChannels	A list of the wanted channels, e.g. {'x', 'y', 0}
- @Description		Reduce the number of dimensions in 'data' using the requested
+ @param[in]			nCnt		Number of elements
+ @param[in]			pChannels	A list of the wanted channels, e.g. {'x', 'y', 0}
+ @brief     		Reduce the number of dimensions in 'data' using the requested
 					channel array. The array should have a maximum length of 4
 					or be null terminated if less channels are wanted. Supported
 					elements are 'x','y','z' and 'w'. They must be defined in lower
@@ -775,111 +749,111 @@ void PVRTModelPODDataConvert(CPODData &data, const unsigned int nCnt, const EPVR
 void PVRTModelPODDataShred(CPODData &data, const unsigned int nCnt, const int *pChannels);
 
 /*!***************************************************************************
- @Function			PVRTModelPODReorderFaces
+ @fn       			PVRTModelPODReorderFaces
  @Modified			mesh		The mesh to re-order the faces of
- @Input				i32El1		The first index to be written out
- @Input				i32El2		The second index to be written out
- @Input				i32El3		The third index to be written out
- @Description		Reorders the face indices of a mesh.
+ @param[in]			i32El1		The first index to be written out
+ @param[in]			i32El2		The second index to be written out
+ @param[in]			i32El3		The third index to be written out
+ @brief     		Reorders the face indices of a mesh.
 *****************************************************************************/
 void PVRTModelPODReorderFaces(SPODMesh &mesh, const int i32El1, const int i32El2, const int i32El3);
 
 /*!***************************************************************************
- @Function		PVRTModelPODToggleInterleaved
+ @fn       		PVRTModelPODToggleInterleaved
  @Modified		mesh		Mesh to modify
- @Input			ui32AlignToNBytes Align the interleaved data to this no. of bytes.
- @Description	Switches the supplied mesh to or from interleaved data format.
+ @param[in]		ui32AlignToNBytes Align the interleaved data to this no. of bytes.
+ @brief     	Switches the supplied mesh to or from interleaved data format.
 *****************************************************************************/
 void PVRTModelPODToggleInterleaved(SPODMesh &mesh, unsigned int ui32AlignToNBytes = 1);
 
 /*!***************************************************************************
- @Function		PVRTModelPODDeIndex
+ @fn       		PVRTModelPODDeIndex
  @Modified		mesh		Mesh to modify
- @Description	De-indexes the supplied mesh. The mesh must be
+ @brief     	De-indexes the supplied mesh. The mesh must be
 				Interleaved before calling this function.
 *****************************************************************************/
 void PVRTModelPODDeIndex(SPODMesh &mesh);
 
 /*!***************************************************************************
- @Function		PVRTModelPODToggleStrips
+ @fn       		PVRTModelPODToggleStrips
  @Modified		mesh		Mesh to modify
- @Description	Converts the supplied mesh to or from strips.
+ @brief     	Converts the supplied mesh to or from strips.
 *****************************************************************************/
 void PVRTModelPODToggleStrips(SPODMesh &mesh);
 
 /*!***************************************************************************
- @Function		PVRTModelPODCountIndices
- @Input			mesh		Mesh
- @Return		Number of indices used by mesh
- @Description	Counts the number of indices of a mesh
+ @fn       		PVRTModelPODCountIndices
+ @param[in]		mesh		Mesh
+ @return		Number of indices used by mesh
+ @brief     	Counts the number of indices of a mesh
 *****************************************************************************/
 unsigned int PVRTModelPODCountIndices(const SPODMesh &mesh);
 
 /*!***************************************************************************
- @Function			PVRTModelPODCopyCPODData
- @Input				in
- @Output			out
- @Input				ui32No
- @Input				bInterleaved
- @Description		Used to copy a CPODData of a mesh
+ @fn       			PVRTModelPODCopyCPODData
+ @param[in]			in
+ @param[out]		out
+ @param[in]			ui32No
+ @param[in]			bInterleaved
+ @brief     		Used to copy a CPODData of a mesh
 *****************************************************************************/
 void PVRTModelPODCopyCPODData(const CPODData &in, CPODData &out, unsigned int ui32No, bool bInterleaved);
 
 /*!***************************************************************************
- @Function			PVRTModelPODCopyNode
- @Input				in
- @Output			out
- @Input				nNumFrames The number of animation frames
- @Description		Used to copy a pod node
+ @fn       			PVRTModelPODCopyNode
+ @param[in]			in
+ @param[out]		out
+ @param[in]			nNumFrames The number of animation frames
+ @brief     		Used to copy a pod node
 *****************************************************************************/
 void PVRTModelPODCopyNode(const SPODNode &in, SPODNode &out, int nNumFrames);
 
 /*!***************************************************************************
- @Function			PVRTModelPODCopyMesh
- @Input				in
- @Output			out
- @Description		Used to copy a pod mesh
+ @fn       			PVRTModelPODCopyMesh
+ @param[in]			in
+ @param[out]		out
+ @brief     		Used to copy a pod mesh
 *****************************************************************************/
 void PVRTModelPODCopyMesh(const SPODMesh &in, SPODMesh &out);
 
 /*!***************************************************************************
- @Function			PVRTModelPODCopyTexture
- @Input				in
- @Output			out
- @Description		Used to copy a pod texture
+ @fn       			PVRTModelPODCopyTexture
+ @param[in]			in
+ @param[out]		out
+ @brief     		Used to copy a pod texture
 *****************************************************************************/
 void PVRTModelPODCopyTexture(const SPODTexture &in, SPODTexture &out);
 
 /*!***************************************************************************
- @Function			PVRTModelPODCopyMaterial
- @Input				in
- @Output			out
- @Description		Used to copy a pod material
+ @fn       			PVRTModelPODCopyMaterial
+ @param[in]			in
+ @param[out]		out
+ @brief     		Used to copy a pod material
 *****************************************************************************/
 void PVRTModelPODCopyMaterial(const SPODMaterial &in, SPODMaterial &out);
 
 /*!***************************************************************************
- @Function			PVRTModelPODCopyCamera
- @Input				in
- @Output			out
- @Input				nNumFrames The number of animation frames
- @Description		Used to copy a pod camera
+ @fn       			PVRTModelPODCopyCamera
+ @param[in]			in
+ @param[out]		out
+ @param[in]			nNumFrames The number of animation frames
+ @brief     		Used to copy a pod camera
 *****************************************************************************/
 void PVRTModelPODCopyCamera(const SPODCamera &in, SPODCamera &out, int nNumFrames);
 
 /*!***************************************************************************
- @Function			PVRTModelPODCopyLight
- @Input				in
- @Output			out
- @Description		Used to copy a pod light
+ @fn       			PVRTModelPODCopyLight
+ @param[in]			in
+ @param[out]		out
+ @brief     		Used to copy a pod light
 *****************************************************************************/
 void PVRTModelPODCopyLight(const SPODLight &in, SPODLight &out);
 
 /*!***************************************************************************
- @Function			PVRTModelPODFlattenToWorldSpace
- @Input				in - Source scene. All meshes must not be interleaved.
- @Output			out
- @Description		Used to flatten a pod scene to world space. All animation
+ @fn       			PVRTModelPODFlattenToWorldSpace
+ @param[in]			in - Source scene. All meshes must not be interleaved.
+ @param[out]		out
+ @brief     		Used to flatten a pod scene to world space. All animation
 					and skinning information will be removed. The returned
 					position, normal, binormals and tangent data if present
 					will be returned as floats regardless of the input data
@@ -889,10 +863,10 @@ EPVRTError PVRTModelPODFlattenToWorldSpace(CPVRTModelPOD &in, CPVRTModelPOD &out
 
 
 /*!***************************************************************************
- @Function			PVRTModelPODMergeMaterials
- @Input				src - Source scene
- @Output			dst - Destination scene
- @Description		This function takes two scenes and merges the textures,
+ @fn       			PVRTModelPODMergeMaterials
+ @param[in]			src - Source scene
+ @param[out]		dst - Destination scene
+ @brief     		This function takes two scenes and merges the textures,
 					PFX effects and blending parameters from the src materials
 					into the dst materials if they have the same material name.
 *****************************************************************************/

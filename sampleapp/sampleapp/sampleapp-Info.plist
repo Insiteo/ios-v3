@@ -5,15 +5,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Sample app</string>
+	<string>Sample App</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
-			<key>UIPrerenderedIcon</key>
-			<true/>
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string>AppIcon40x40</string>
@@ -21,6 +19,8 @@
 				<string>AppIcon60x60</string>
 				<string>AppIcon57x57</string>
 			</array>
+			<key>UIPrerenderedIcon</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>CFBundleIcons~ipad</key>
@@ -59,6 +59,8 @@
 	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Main_iPad</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -76,7 +78,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIPrerenderedIcon</key>
-	<true/>
 </dict>
 </plist>

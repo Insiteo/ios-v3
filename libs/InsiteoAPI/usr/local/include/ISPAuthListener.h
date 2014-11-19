@@ -13,8 +13,20 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ Enum used to handle INSITEO user roles.
+ @constant ISERoleClient Client.
+ @constant ISERoleAdmin Admin.
+ @constant ISERoleIntegrator Integrator.
+ */
+typedef enum {
+    ISERoleClient = 1,
+    ISERoleAdmin = 2,
+    ISERoleIntegrator = 3,
+    ISERoleUnknown
+} ISERole;
+
 #import "ISInsiteoError.h"
-#import "LoginResponseParser.h"
 
 /*!
  Protocol used to handle INSITEO authentication.
@@ -29,7 +41,7 @@
  @param roleId Logged user role identifier.
  @param remote Boolean used to know if login is local or remote.
  */
-- (void)onLoginDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ERoleID)roleId andRemote:(Boolean)remote;
+- (void)onLoginDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ISERole)roleId andRemote:(Boolean)remote;
 
 /*!
  Method called when a logout task is done.
@@ -47,6 +59,6 @@
  @param sites Refreshed available sites.
  @param roleId Refreshed user role identifier.
  */
-- (void)onRefreshSitesDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ERoleID)roleId;
+- (void)onRefreshSitesDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ISERole)roleId;
 
 @end

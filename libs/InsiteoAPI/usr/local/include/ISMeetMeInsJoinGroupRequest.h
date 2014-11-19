@@ -19,11 +19,14 @@
 @interface ISMeetMeInsJoinGroupRequest : ISAbstractMeetMeRequest
 
 @property (readwrite) int groupId;
+
 @property (retain) NSString * groupName;
+
 @property (retain) NSString * groupPassword;
+
 @property (readwrite) Boolean isExclusive;
 
-- (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andUserId:(NSString *)aUserId andGroupId:(int)aGroupId andGroupName:(NSString *)aGroupName andGroupPassword:(NSString *)aGroupPassword andExclu:(Boolean)aExclu;
 
+- (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andUserId:(NSString *)aUserId andGroupId:(int)aGroupId andGroupName:(NSString *)aGroupName andGroupPassword:(NSString *)aGroupPassword andExclu:(Boolean)aExclu;
 
 @end

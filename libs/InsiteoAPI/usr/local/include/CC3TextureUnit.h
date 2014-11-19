@@ -1,9 +1,9 @@
 /*
  * CC3TextureUnit.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2011-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2011-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,6 +31,7 @@
 
 #import "CC3NodeVisitor.h"
 #import "CCProtocols.h"
+#import	"CC3CC2Extensions.h"
 
 /**
  * In a bump-map configuration, indicates how the XYZ coordinates of each per-pixel
@@ -76,8 +77,8 @@ typedef enum {
  * configuration properties associated with the GL_COMBINE texture environment mode.
  */
 @interface CC3TextureUnit : NSObject <NSCopying, CCRGBAProtocol> {
-	GLenum _textureEnvironmentMode;
 	ccColor4F _constantColor;
+	GLenum _textureEnvironmentMode;
 	CC3DOT3RGB _rgbNormalMap : 4;
 }
 
@@ -165,28 +166,26 @@ typedef enum {
 #pragma mark CCRGBAProtocol support
 
 /**
- * Implementation of the CCRGBAProtocol color property.
+ * The constant color of this texture unit, returned as a CCColorRef.
  *
- * Querying this property returns the RGB components of the constantColor property,
- * converted from the floating point range (0 to 1), to the byte range (0 to 255).
+ * Querying this property returns the RGB components of the constantColor property.
  *
  * When setting this property, the RGB values are each converted to a floating point
  * number between 0 and 1, and are set into the constantColor property.
  * The alpha component of constantColor remains unchanged.
  */
-@property(nonatomic, assign) ccColor3B color;
+@property(nonatomic, assign) CCColorRef color;
 
 /**
- * Implementation of the CCRGBAProtocol opacity property.
+ * The opacity of this texture unit.
  *
- * Querying this property returns the alpha component of the constantColor property,
- * converted from the floating point range (0 to 1), to the byte range (0 to 255).
+ * Querying this property returns the alpha component of the constantColor property.
  *
  * When setting this property, the value is converted to a floating point number
  * between 0 and 1, and is set into the constantColor property.
  * The RGB components of constantColor remain unchanged.
  */
-@property(nonatomic, assign) GLubyte opacity;
+@property(nonatomic, assign) CCOpacity opacity;
 
 
 #pragma mark Allocation and Initialization

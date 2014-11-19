@@ -22,48 +22,12 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
 
 #import "ISPLbsModule.h"
 #import "ISPGeofenceListener.h"
-#import "ISMapSettings.h"
 #import "ISZonePoi.h"
 
 /*!
  This class handles the geofencing process. You can retrieve an instance of it by calling getModule:GEOFENCING on your location provider. It provides a way to be notified when location is detected in a certain area (see ISGeofenceZone), defined on Insiteo servers. To use this class, you just have to call setListener(ISPGeofenceListener), and start the location. The listener will then receive notification each time location enter/stay/leave an area.
  */
-@interface ISGeofenceProvider : NSObject <ISPLbsModule> {
-    
-@private
-    
-    //Coordinates mode to use
-    CoordinatesMode m_coordMode;
-    //If no location was received during this time, we notify that a reset of all zone's state have been done
-    NSTimeInterval m_timeToReset;
-    //Maps settings (geomatrix, map identifier, scale)
-    NSMutableDictionary * m_mapsSettings;
-    //All geofencing areas to consider
-    NSMutableDictionary * m_areas;
-    //Current active geofencing zones (state != UNDEFINED)
-    NSMutableArray * m_activeZones;
-    //Geofencing notifications listener
-    id<ISPGeofenceListener> m_listener;
-    
-    //Boolean use to know if the provider is initialized
-    volatile Boolean m_isInitialized;
-    //Internal boolean use to know if the provider is initializing
-    volatile Boolean m_isInitializing;
-    
-    //Internal timer use to handle reset time
-    NSTimer * m_resetTimer;
-    //Intenr last package version
-    int m_lastPackageVersion;
-    
-#pragma mark - GeoPush
-    
-    NSDictionary * m_geoPushMapSettings;
-    
-#pragma mark - Render
-    
-    //Geofence area Renderer
-    ISGeofenceAreaRenderer * m_geofenceAreaRenderer;
-}
+@interface ISGeofenceProvider : NSObject <ISPLbsModule>
 
 /*!
  Geofencing notifications listener.
@@ -116,24 +80,38 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
 #pragma mark - ISZone
 
 /*!
+ Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values polygon = nil, defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.
+ @param zoneId  zone identifier.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ */
+- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andLabel:(NSString *)label andMessage:(NSString *)message;
+
+/*!
  Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.
  @param zoneId  zone identifier.
- @param content The content for the created GeofenceArea.
+ @param polygon Wanted polygon (NSArray of ISPosition). If nil the used polygon will be set according to the geopush default area generation.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andContent:(NSString *)content;
+- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message;
 
 /*!
  Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.
  @param zoneId  zone identifier.
- @param content The content for the created GeofenceArea.
+ @param polygon Wanted polygon (NSArray of ISPosition). If nil the used polygon will be set according to the geopush default area generation.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param eventTime The time used to trigged the geofencing events.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andContent:(NSString *)content andEventTime:(float)eventTime;
+- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime;
 
 /*!
  Creates a new ISGeofenceArea for the given zone. The area will be constructed with the given parameters.
  @param zoneId  zone identifier.
- @param content The content for the created GeofenceArea.
+ @param polygon Wanted polygon (NSArray of ISPosition). If nil the used polygon will be set according to the geopush default area generation.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param enterEnabled True if entered event should be enabled.
  @param enterTime The threshold time to trigger the entered event.
  @param stayEnabled True if stayed event should be enabled.
@@ -142,29 +120,43 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
  @param leaveTime The threshold time to trigger the leave event.
  @param defaultGeoWidth The default geofence depth.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andContent:(NSString *)content andEnterEnabled:(Boolean)enterEnabled andEnterTime:(float)enterTime andStayEnabled:(Boolean)stayEnabled andStayTime:(float)stayTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andDefaultGeoWidth:(float)defaultGeoWidth;
+- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enterEnabled andEnterTime:(float)enterTime andStayEnabled:(Boolean)stayEnabled andStayTime:(float)stayTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andDefaultGeoWidth:(float)defaultGeoWidth;
 
 #pragma mark - ISZonePoi
 
 /*!
+ Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values polygon = nil, defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.
+ @param zonePoi Related Zone/Poi association (could be nil).
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ */
+- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andLabel:(NSString *)label andMessage:(NSString *)message;
+
+/*!
  Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.
  @param zonePoi Related Zone/Poi association (could be nil).
- @param content The content for the created GeofenceArea.
+ @param polygon Wanted polygon (NSArray of ISPosition). If nil the used polygon will be set according to the geopush default area generation.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification..
  */
-- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andContent:(NSString *)content;
+- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message;
 
 /*!
  Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.
  @param zonePoi Related Zone/Poi association (could be nil).
- @param content The content for the created GeofenceArea.
+ @param polygon Wanted polygon (NSArray of ISPosition). If nil the used polygon will be set according to the geopush default area generation.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param eventTime The time used to trigged the geofencing events.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andContent:(NSString *)content andEventTime:(float)eventTime;
+- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime;
 
 /*!
  Creates a new ISGeofenceArea for the given Zone/Poi association. The area will be constructed with the given parameters.
  @param zonePoi Related Zone/Poi association (could be nil).
- @param content The content for the created GeofenceArea.
+ @param polygon Wanted polygon (NSArray of ISPosition). If nil the used polygon will be set according to the geopush default area generation.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param enterEnabled True if entered event should be enabled.
  @param enterTime The threshold time to trigger the entered event.
  @param stayEnabled True if stayed event should be enabled.
@@ -173,7 +165,7 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
  @param leaveTime The threshold time to trigger the leave event.
  @param defaultGeoWidth The default geofence depth.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andContent:(NSString *)content andEnterEnabled:(Boolean)enterEnabled andEnterTime:(float)enterTime andStayEnabled:(Boolean)stayEnabled andStayTime:(float)stayTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andDefaultGeoWidth:(float)defaultGeoWidth;
+- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enterEnabled andEnterTime:(float)enterTime andStayEnabled:(Boolean)stayEnabled andStayTime:(float)stayTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andDefaultGeoWidth:(float)defaultGeoWidth;
 
 #pragma mark - Custom point
 
@@ -181,26 +173,29 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
  Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.
  @param guid The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!
  @param center The center of the ISGeofenceArea.
- @param content  The content for the created ISGeofenceArea.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @return The created ISGeofenceArea or null if it was not properly created.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andContent:(NSString *)content;
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message;
 
 /*!
  Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.
  @param guid The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!
  @param center The center of the ISGeofenceArea.
- @param content  The content for the created ISGeofenceArea.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param eventTime The time used to trigged the geofencing events.
  @return The created ISGeofenceArea or null if it was not properly created.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andContent:(NSString *)content andEventTime:(float)eventTime;
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime;
 
 /*!
  Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values size = 4 * IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH.
  @param guid The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!
  @param center The center of the ISGeofenceArea.
- @param content The content for the created ISGeofenceArea.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param enteredEnabled True if entered event should be enabled.
  @param enteredTime The threshold time to trigger the entered event.
  @param stayedEnabled True if stayed event should be enabled.
@@ -209,34 +204,37 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
  @param leaveTime The threshold time to trigger the leave event.
  @return The created ISGeofenceArea or null if it was not properly created.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andContent:(NSString *)content andEnterEnabled:(Boolean)enteredEnabled andEnteredTime:(float)enteredTime andStayedEnabled:(Boolean)stayedEnabled andStayedTime:(float)stayedTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime;
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enteredEnabled andEnteredTime:(float)enteredTime andStayedEnabled:(Boolean)stayedEnabled andStayedTime:(float)stayedTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime;
 
 /*!
  Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = IS_GEO_PUSH_DEFAULT_EVENT_TIME.
  @param guid The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!
  @param center The center of the ISGeofenceArea.
  @param size The size for the square.
- @param content The content for the created ISGeofenceArea or null if it was not properly created.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andContent:(NSString *)content andSize:(float)size;
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andSize:(float)size;
 
 /*!
  Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.
  @param guid The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!
  @param center The center of the ISGeofenceArea.
  @param size The size for the square.
- @param content The content for the created ISGeofenceArea.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param eventTime The time used to trigged the geofencing events.
  @return The created GeofenceArea or null if it was not properly created.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andContent:(NSString *)content andEventTime:(float)eventTime andSize:(float)size;
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime andSize:(float)size;
 
 /*!
  Creates a new ISGeofenceArea around the given Position. The area will be a square constructed with the given size.
  @param guid The guid that should be used for the new GeofenceArea. Guid can not be nil or empty!
  @param center The center of the GeofenceArea.
  @param size The size for the square.
- @param content The content for the created GeofenceArea.
+ @param label A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
+ @param message A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.
  @param enteredEnabled True if entered event should be enabled.
  @param enteredTime The threshold time to trigger the entered event.
  @param stayedEnabled True if stayed event should be enabled.
@@ -245,7 +243,7 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
  @param leaveTime The threshold time to trigger the leave event.
  @return The created GeofenceArea or nil if it was not properly created.
  */
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andContent:(NSString *)content andEnterEnabled:(Boolean)enteredEnabled andEnteredTime:(float)enteredTime andStayedEnabled:(Boolean)stayedEnabled andStayedTime:(float)stayedTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andSize:(float)size;
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enteredEnabled andEnteredTime:(float)enteredTime andStayedEnabled:(Boolean)stayedEnabled andStayedTime:(float)stayedTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andSize:(float)size;
 
 /*
  Intern method used to add a new ISGeofenceArea to the module.

@@ -1,9 +1,9 @@
 /*
  * CC3Matrix.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -51,6 +51,7 @@
 @interface CC3Matrix : NSObject <NSCopying> {
 	BOOL _isIdentity : 1;
 	BOOL _isRigid : 1;
+	BOOL _isDirty : 1;
 }
 
 /** 
@@ -88,6 +89,20 @@
  * those of an identity matrix by accident.
  */
 @property(nonatomic, readonly) BOOL isRigid;
+
+/**
+ * Indicates whether this matrix needs to be populated with transform data.
+ *
+ * Matrices are populated from transform data, such as translation, rotation & scale data.
+ * This property can be used to indicate that the transform data that populates this matrix
+ * has changed and this matrix needs to be re-populated in order to represent that data.
+ *
+ * This property is provided as a convenience, for managing the population of this matrix.
+ * This property is neither set, not used, by this matrix.
+ *
+ * The initial value of this property is NO.
+ */
+@property(nonatomic, assign) BOOL isDirty;
 
 
 #pragma mark Allocation and initialization
@@ -320,7 +335,7 @@
  */
 -(CC3Vector) extractRotation;
 
-/** Extracts the rotation component of this matrix and returns it as a quaternion. */
+/** Extracts the rotation component of this matrix and returns it as a unit quaternion. */
 -(CC3Quaternion) extractQuaternion;
 
 /** Extracts and returns the 'forward' direction vector from the rotation component of this matrix. */
@@ -331,6 +346,9 @@
 
 /** Extracts and returns the 'right' direction vector from the rotation component of this matrix. */
 -(CC3Vector) extractRightDirection;
+
+/** Extracts and returns the translation vector from this matrix. */
+-(CC3Vector) extractTranslation;
 
 
 #pragma mark Matrix transformations

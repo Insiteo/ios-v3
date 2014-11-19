@@ -1,9 +1,9 @@
 /*
  * CC3PODResourceNode.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,8 +35,17 @@
 #import "CC3Scene.h"
 
 
-/** A CC3ResourceNode that that wraps a CC3PODResource PVR POD resource. */
-@interface CC3PODResourceNode : CC3ResourceNode {}
+/** 
+ * A CC3ResourceNode that can be loaded from a PVR POD resource file. 
+ *
+ * An instance is loaded using an instance of CC3PODResource. The resourceClass property
+ * returns CC3PODResource, and the populateFromResource: method expects to be passed an
+ * instance of CC3PODResource.
+ */
+@interface CC3PODResourceNode : CC3ResourceNode {
+	GLuint _animationFrameCount;
+	GLfloat _animationFrameRate;
+}
 
 /** The number of frames of animation in the POD file. */
 @property(nonatomic, readonly) GLuint animationFrameCount;
@@ -110,13 +119,13 @@
  * @deprecated Use the addContentFromPODFile: method instead, which supports both
  * absolute file paths and file paths that are relative to the resources directory.
  */
--(void) addContentFromPODResourceFile: (NSString*) aRezPath DEPRECATED_ATTRIBUTE;
+-(void) addContentFromPODResourceFile: (NSString*) aRezPath __deprecated;
 
 /**
  * @deprecated Use the addContentFromPODFile:withName: method instead, which supports
  * both absolute file paths and file paths that are relative to the resources directory.
  */
--(void) addContentFromPODResourceFile: (NSString*) aRezPath withName: (NSString*) aName DEPRECATED_ATTRIBUTE;
+-(void) addContentFromPODResourceFile: (NSString*) aRezPath withName: (NSString*) aName __deprecated;
 
 @end
 

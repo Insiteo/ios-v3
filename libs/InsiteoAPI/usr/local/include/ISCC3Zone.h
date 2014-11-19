@@ -13,21 +13,12 @@
 
 #import "CC3MeshNode.h"
 
-#import "cocos2d.h"
-#import "ISMap.h"
-
 @class ISGfxZone;
 
 /*!
  3D zone representation.
  */
-@interface ISCC3Zone : CC3MeshNode {
-    
-@private
-    
-    //3D rendering color
-    ccColor3B m_zoneColor;
-}
+@interface ISCC3Zone : CC3MeshNode
 
 /*!
  ISGfxZone zone to use for geometry.
@@ -35,16 +26,10 @@
 @property (assign) ISGfxZone * zone;
 
 /*!
- 3D rendering color.
- */
-@property (nonatomic, readwrite) ccColor3B zoneColor;
-
-/*!
  Main constructor.
  @param zone ISGfxZone zone to use for geometry.
  @param tagName Cocos tag name to use.
- @param zoneColor 3D rendering color.
  */
-- (id)initWithZone:(ISGfxZone *)zone andTagName:(NSString *)tagName andColor:(ccColor3B)zoneColor;
+- (id)initWithZone:(ISGfxZone *)zone andTagName:(NSString *)tagName;
 
 @end

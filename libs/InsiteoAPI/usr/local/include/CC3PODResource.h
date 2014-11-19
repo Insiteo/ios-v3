@@ -1,9 +1,9 @@
 /*
  * CC3PODResource.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -79,13 +79,7 @@
  * did not create yourself, and cannot edit.
  *
  * When customizing a subclass to change the properties of the objects returned, you will
- * most likely override one or more of the following methods:
- *   - buildMeshNodeAtIndex:
- *   - buildLightAtIndex:
- *   - buildCameraAtIndex:
- *   - buildStructuralNodeAtIndex:
- *   - buildMaterialAtIndex:
- *   - buildTextureAtIndex:
+ * most likely override one or more of the ...Class properties or build...AtIndex: methods:
  *
  * In most cases, the overridden method can simply invoke the superclass implementation
  * on this class, and then change the properties of the extracted object. In other cases
@@ -93,18 +87,16 @@
  */
 @interface CC3PODResource : CC3NodesResource {
 	PODClassPtr _pvrtModel;
-	CCArray* _allNodes;
-	CCArray* _meshes;
-	CCArray* _materials;
-	CCArray* _textures;
-	Class _pfxResourceClass;
+	NSMutableArray* _allNodes;
+	NSMutableArray* _meshes;
+	NSMutableArray* _materials;
+	NSMutableArray* _textures;
 	ccTexParams _textureParameters;
 	ccColor4F _ambientLight;
 	ccColor4F _backgroundColor;
 	GLuint _animationFrameCount;
 	GLfloat _animationFrameRate;
 	BOOL _shouldAutoBuild : 1;
-	
 }
 
 /**
@@ -127,7 +119,7 @@
  * A collection of all of the nodes extracted from the POD file.
  * This is the equivalent of flattening the nodes array.
  */
-@property(nonatomic, readonly) CCArray* allNodes;
+@property(nonatomic, retain, readonly) NSArray* allNodes;
 
 /**
  * The number of mesh nodes in the POD file.
@@ -162,7 +154,7 @@
 @property(nonatomic, readonly) uint meshCount;
 
 /** A collection of the CC3Meshs extracted from  the POD file. */
-@property(nonatomic, readonly) CCArray* meshes;
+@property(nonatomic, retain, readonly) NSArray* meshes;
 
 /**
  * The number of materials in the POD file.
@@ -173,7 +165,7 @@
 @property(nonatomic, readonly) uint materialCount;
 
 /** A collection of the CC3Materials extracted from  the POD file. */
-@property(nonatomic, readonly) CCArray* materials;
+@property(nonatomic, retain, readonly) NSArray* materials;
 
 /**
  * The number of textures in the POD file.
@@ -184,10 +176,10 @@
 @property(nonatomic, readonly) uint textureCount;
 
 /** A collection of the CC3Textures extracted from  the POD file. */
-@property(nonatomic, readonly) CCArray* textures;
+@property(nonatomic, retain, readonly) NSArray* textures;
 
 /** @deprecated Use the CC3Texture class-side property defaultTextureParameters instead. */
-@property(nonatomic, assign) ccTexParams textureParameters DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) ccTexParams textureParameters __deprecated;
 
 /** The number of frames of animation in the POD file. */
 @property(nonatomic, readonly) GLuint animationFrameCount;
@@ -201,43 +193,8 @@
 /** The background color of the scene. */
 @property(nonatomic, readonly) ccColor4F backgroundColor;
 
-/**
- * The class used to instantiate CC3PFXResource instances used to read PFX files.
- * 
- * PFX effects found in PFX resource files can be used to define the GLSL shaders and textures
- * that are to be applied to a POD model under OpenGL ES 2.0. Each material in the POD file can
- * optionally specify a PFX effect and the PFX file in which it is to be found.
- *
- * The returned class must be a subclass of CC3PFXResource.
- *
- * The initial value is set from the class-side defaultPFXResourceClass property.
- */
-@property(nonatomic, assign) Class pfxResourceClass;
 
-/**
- * The default class used to instantiate CC3PFXResource instances used to read PFX files
- * from within instances of this class. When an instance of this class is created, the
- * value of the pfxResourceClass property is set from the value of this property.
- *
- * The returned class must be a subclass of CC3PFXResource.
- *
- * The initial value is the CC3PFXResource class.
- */
-+(Class) defaultPFXResourceClass;
-
-/**
- * The default class used to instantiate CC3PFXResource instances used to read PFX files
- * from within instances of this class. When an instance of this class is created, the
- * value of the pfxResourceClass property is set from the value of this property.
- *
- * The set class must be a subclass of CC3PFXResource.
- *
- * The initial value is the CC3PFXResource class.
- */
-+(void) setDefaultPFXResourceClass: (Class) aClass;
-
-
-#pragma mark Allocation and initialization
+#pragma mark Building
 
 /**
  * Indicates whether the build method should be invoked automatically when the file is loaded.
@@ -286,7 +243,7 @@
  * loadFromFile: method, make any changes, and invoke this method to save the content back to a file.
  * Once saved, the build method can then be invoked to extract the content into component objects.
  */
--(BOOL) saveToFile: (NSString*) aFilePath;
+-(BOOL) saveToFile: (NSString*) filePath;
 
 /**
  * Saves the animation content of this resource to the file at the specified file path and
@@ -310,7 +267,7 @@
  * loadFromFile: method, make any changes, and invoke this method to save the content back to a file.
  * Once saved, the build method can then be invoked to extract the content into component objects.
  */
--(BOOL) saveAnimationToFile: (NSString*) aFilePath;
+-(BOOL) saveAnimationToFile: (NSString*) filePath;
 
 
 #pragma mark Accessing node data and building nodes
@@ -437,7 +394,7 @@
 -(CC3Mesh*) meshAtIndex: (uint) meshIndex;
 
 /** @deprecated Renamed to meshAtIndex:. */
--(CC3Mesh*) meshModelAtIndex: (uint) meshIndex DEPRECATED_ATTRIBUTE;
+-(CC3Mesh*) meshModelAtIndex: (uint) meshIndex __deprecated;
 
 /**
  * Template method that extracts and builds the meshes from the underlying data.
@@ -626,9 +583,99 @@
  */
 -(PODStructPtr) texturePODStructAtIndex: (uint) textureIndex;
 
+
+#pragma mark Content classes
+
+/**
+ * The class used to instantiate a structural node.
+ *
+ * Structural nodes are used to group mesh nodes together.
+ *
+ * This implementation returns CC3PODNode. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODNode.
+ */
+@property(nonatomic, retain, readonly) Class structuralNodeClass;
+
+/**
+ * The class used to instantiate a mesh node.
+ *
+ * This implementation returns CC3PODMeshNode. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODMeshNode.
+ */
+@property(nonatomic, retain, readonly) Class meshNodeClass;
+
+/**
+ * The class used to instantiate a mesh.
+ *
+ * This implementation returns CC3PODMesh. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODMesh.
+ */
+@property(nonatomic, retain, readonly) Class meshClass;
+
+/**
+ * The class used to instantiate a material.
+ *
+ * This implementation returns CC3PODMaterial. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODMaterial.
+ */
+@property(nonatomic, retain, readonly) Class materialClass;
+
+/**
+ * The class used to instantiate a mesh node in a vertex-skinned character.
+ *
+ * This implementation returns CC3PODSkinMeshNode. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODSkinMeshNode.
+ */
+@property(nonatomic, retain, readonly) Class skinMeshNodeClass;
+
+/**
+ * The class used to instantiate a bone in a vertex-skinned character.
+ *
+ * This implementation returns CC3PODBone. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODBone.
+ */
+@property(nonatomic, retain, readonly) Class boneNodeClass;
+
+/**
+ * The class used to instantiate a wrapper node around a vertex-skinned character.
+ *
+ * This implementation returns CC3SoftBodyNode. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3SoftBodyNode.
+ */
+@property(nonatomic, retain, readonly) Class softBodyNodeClass;
+
+/**
+ * The class used to instantiate a light.
+ *
+ * This implementation returns CC3PODLight. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODLight.
+ */
+@property(nonatomic, retain, readonly) Class lightClass;
+
+/**
+ * The class used to instantiate a camera.
+ *
+ * This implementation returns CC3PODCamera. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PODCamera.
+ */
+@property(nonatomic, retain, readonly) Class cameraClass;
+
+/**
+ * The class used to create CC3PFXResource instances to read PFX files.
+ *
+ * PFX effects found in PFX resource files can be used to define the GLSL shaders and textures
+ * that are to be applied to a POD model under OpenGL ES 2.0. Each material in the POD file can
+ * optionally specify a PFX effect and the PFX file in which it is to be found.
+ *
+ * This implementation returns CC3PFXResource. To return a different class, create a subclass
+ * and override this method. The returned class must be a subclass of CC3PFXResource.
+ */
+@property(nonatomic, retain, readonly) Class pfxResourceClass;
+
 @end
 
 
+#pragma mark -
 #pragma mark Adding animation to nodes
 
 /** Extension category to provide support for POD animation. */

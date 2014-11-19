@@ -12,12 +12,12 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class ISZoomLevel;
 @class ISRect;
 @class ISRectF;
-
-#import "ISGeoMatrix.h"
+@class ISGeoMatrix;
 
 typedef enum {
     ISEMapStartViewModeFitToScreen = 1,
@@ -27,92 +27,7 @@ typedef enum {
 /*!
  Class used to represent an INSITEO map entity.
  */
-@interface ISMap : NSObject  {
-    
-@private
-    
-#pragma mark - Structure
-    
-    //Map identifier
-    int m_mapId;
-    //Map type identifier
-    int m_typeId;
-    //Map name
-    NSString * m_name;
-    //Floor identifier
-    int m_floor;
-    //Floor name
-    NSString * m_floorName;
-    
-    //Map scale
-	float m_scale;
-	//Map zoom levels
-	NSMutableArray * m_zoomLevels;
-    //Zoom min value
-    int m_zoomMin;
-    //Zoom max value
-    int m_zoomMax;
-    
-#pragma mark - Behaviour
-    
-    //Boolean used to know if the map is used only in debug mode (cf Constants.getDebugMode)
-    Boolean m_isDebugMap;
-    //Index used to sort maps
-    int m_sortIndex;
-    
-#pragma mark - Rendering
-    //When launching a map, do we fit to screen or use a certain position ?
-    //ISEMapStartViewMode m_startViewMode;
-    //Default zoom level
-    int m_defaultZoomLevel;
-    //Start center position (in meters)
-    CGPoint m_startCenterPosition;
-    //Map background color
-    UIColor * m_backgroundColor;
-    //Color for zones border
-    UIColor * m_zoneColor;
-    //Boolean used to know if we display a background tile to improve the rendering
-    Boolean m_displayBackgroundTile;
-    //Boolean used to know if we need to fit to screen on load
-    Boolean m_fitToScreen;
-    
-#pragma mark - Rendering Helper
-    
-    //Boolean used to know if the map is oriented
-    Boolean m_isOriented;
-    //Map azimuth
-	float m_azimuth;
-    
-    //Boolean used to know if the map is geo referenced
-    Boolean m_isGeoReferenced;
-    //Map geoMatrix
-    ISGeoMatrix * m_geoMatrix;
-    
-#pragma mark - Touch
-    
-    //Boolean used to activate auto-slide on the map (slide when flinging map)
-    Boolean m_isSlideActive;
-    
-#pragma mark - Extra
-    
-    //String extra parameter
-    NSString * m_extra1;
-    //String extra parameter
-    NSString * m_extra2;
-    //String extra parameter
-    NSString * m_extra3;
-    //Float extra parameter
-    float m_fExtra1;
-    
-    //String extra parameter
-    NSString * m_dispExtra1;
-    //String extra parameter
-    NSString * m_dispExtra2;
-    //String extra parameter
-    NSString * m_dispExtra3;
-    //Float extra parameter
-    float m_dispFExtra1;
-}
+@interface ISMap : NSObject
 
 /*!
  INSITEO map identifier.
@@ -296,5 +211,10 @@ typedef enum {
  @return Related map bounds.
  */
 - (ISRectF *)getMapBoundsWithZoomLevel:(int)level;
+
+/*
+ Intern method used to clear map zoom levels (use on resetMap).
+ */
+- (void)clearZoomLevelsIndexes;
 
 @end

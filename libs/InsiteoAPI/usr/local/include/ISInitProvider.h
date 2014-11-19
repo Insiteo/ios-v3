@@ -16,12 +16,36 @@
 
 extern int const DEFAULT_APPLICATION_VERSION;
 
-#import "ISPInitListener.h"
 #import "ISPCancelable.h"
 #import "ISRODBHelper.h"
 #import "ISZone.h"
-#import "ISPRTO.h"
+#import "ISMap.h"
 #import "ISTypes.h"
+#import "ISInsiteoError.h"
+#import "ISPackage.h"
+
+/*!
+ API initialization handler.
+ @param error Corresponding initialization error (nil if success).
+ @param newPackages All new available packages (nil if fail).
+ @return An array of all packages you want to update.
+ */
+typedef NSArray * (^ISInitProviderStartHandler)(ISInsiteoError * error, NSArray * newPackages);
+
+/*!
+ API update handler.
+ @param error Corresponding update error (nil if success).
+ */
+typedef void (^ISInitProviderUpdateHandler)(ISInsiteoError * error);
+
+/*!
+ API update progress handler.
+ @param packageType Current treated package type.
+ @param download Boolean used to know if the package is currently downloading or installing.
+ @param progress Current package task progress (size for download, files count for install).
+ @param total Total size of files count.
+ */
+typedef void (^ISInitProviderUpdateProgressHandler)(ISPackageType packageType, Boolean download, int progress, int total);
 
 @class PackageUpdater;
 @class InitInformation;
@@ -32,15 +56,7 @@ extern int const DEFAULT_APPLICATION_VERSION;
 /*! 
  Class used to represent an API initialization task. 
  */
-@interface ISInitTask : NSObject <ISPCancelable> {
-    
-@private
-    
-    //The initialization parameters to use
-    InitParameters * m_initParameters;
-    //Boolean used for cancel handling
-    volatile Boolean m_cancelBool;
-}
+@interface ISInitTask : NSObject <ISPCancelable>
 
 /*!
  Main constructor.
@@ -58,71 +74,7 @@ extern int const DEFAULT_APPLICATION_VERSION;
 /*!
  Class used to provide all generic INSITEO methods.
  */
-@interface ISInitProvider : NSObject {
-    
-@private
-    
-    //Boolean used to know if the online initialization succeeded
-    Boolean m_isInitialized;
-    //Last initialization date
-    NSDate * m_lastInitDate;
-    
-#pragma mark - Init parameters
-    
-    //Application site identifier
-	int m_siteId;
-	//Application server URL
-	NSString * m_serverUrl;
-	//Application language
-	NSString * m_language;
-    //INSITEO server type
-    ISEServerType m_serverType;
-    //Application version
-    int m_applicationVersion;
-    //INSITEO packages updater
-    PackageUpdater * m_packageUpdater;
-    //Boolean used to know if we can start analytics automatically
-    Boolean m_analyticsAutoStart;
-    //Initialization render mode
-    ISERenderMode m_renderMode;
-
-#pragma mark - Init data attributes
-    
-    //Init path
-	NSString * m_startPath;
-    //Site id resources RO path
-    NSString * m_dataPath;
-    //Site id resources RW path
-    NSString * m_rwDataPath;
-	//Init provider data
-	InitInformation * m_apiInformation;
-    //ISMap dictionary
-    NSDictionary * m_maps;
-    //Maps mutex
-    NSLock * m_mapsLock;
-    
-#pragma mark - Init events handling
-    
-    //Init events listener
-    id<ISPInitListener> m_listener;
-    
-#pragma mark - MapData
-    
-    //Map root identifier
-    int m_mapRootId;
-    //All Map zones
-    NSDictionary * m_zones;
-    
-#pragma mark - Database
-    
-    //All opened DB Helpers
-    NSMutableDictionary * m_dbHelpers;
-    
-#pragma mark - Debug
-    
-    //A debug listener reference (used to get debug event)
-    id<PDebugListener> m_debugListener;
-}
+@interface ISInitProvider : NSObject
 
 /*!
  Boolean used to know if the online initialization succeeded.
@@ -130,9 +82,19 @@ extern int const DEFAULT_APPLICATION_VERSION;
 @property (readwrite) Boolean isInitialized;
 
 /*!
- initialization events listener.
+ Init start handler.
  */
-@property (assign) id<ISPInitListener> initListener;
+@property (nonatomic, copy) ISInitProviderStartHandler startHandler;
+
+/*!
+ Init update handler.
+ */
+@property (nonatomic, copy) ISInitProviderUpdateHandler updateHandler;
+
+/*!
+ Init update progress handler.
+ */
+@property (nonatomic, copy) ISInitProviderUpdateProgressHandler updateProgressHandler;
 
 /*!
  The current root map.
@@ -273,6 +235,12 @@ extern int const DEFAULT_APPLICATION_VERSION;
  */
 + (NSString *)getBaseURL:(ISEServerType)server;
 
+/*!
+ Static method used to get the default INSITEO directory path.
+ @result The default INSITEO directory path.
+ */
++ (NSString *)getRootDirectoryPath;
+
 /*
  Internal method used to launch the analytics service automatically.
  */
@@ -294,92 +262,93 @@ extern int const DEFAULT_APPLICATION_VERSION;
  */
 - (ISInsiteoError *)loadInitContentOverHttpWithLanguage:(NSString *)language andForceDownload:(Boolean)forceDownload andServerType:(ISEServerType)serverType andRenderMode:(ISERenderMode)renderMode;
 
+#pragma mark - Start
+
 /*!
  Method used to initialize the API.
  @param serverType INSITEO server type.
  @param siteId The site identifier to use.
  @param language The language to use.
- @param listener The init listener to notify.
+ @param startHandler The API initialization handler to call.
+ @param updateHandler The API update handler to call.
+ @param updateProgressHandler The API update progress handler to call.
+ @param renderMode Wanted render mode.
  @param applicationVersion The application version to use.
  @param forceDownload Boolean used to know if we force the download of packages even if the application is up to date.
  @param analyticsAutoStart Boolean used to know if we can start analytics automatically.
- @param renderMode Wanted render mode.
  @param serverUrl Specific server URL to use.
  @return a task that can be cancelled.
  */
-- (id<ISPCancelable>)startAPIWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andListener:(id<ISPInitListener>)listener andApplicationVersion:(int)applicationVersion andForceDownload:(Boolean)forceDownload andAnalyticsAutoStart:(Boolean)analyticsAutoStart andRenderMode:(ISERenderMode)renderMode andServerUrl:(NSString *)serverUrl;
+- (id<ISPCancelable>)startWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andStartHandler:(ISInitProviderStartHandler)startHandler andUpdateHandler:(ISInitProviderUpdateHandler)updateHandler andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)updateProgressHandler andRenderMode:(ISERenderMode)renderMode andApplicationVersion:(int)applicationVersion andForceDownload:(Boolean)forceDownload andAnalyticsAutoStart:(Boolean)analyticsAutoStart andServerUrl:(NSString *)serverUrl;
 
 /*!
  Method used to initialize the API.
  @param serverType INSITEO server type.
  @param siteId The site identifier to use.
  @param language The language to use.
- @param listener The init listener to notify.
+ @param startHandler The API initialization handler to call.
+ @param updateHandler The API update handler to call.
+ @param updateProgressHandler The API update progress handler to call.
+ @param renderMode Wanted render mode.
  @param applicationVersion The application version to use.
- @param forceDownload Boolean used to know if we force the download of packages even if the application is up to date.
- @param analyticsAutoStart Boolean used to know if we can start analytics automatically.
+ @return a task that can be cancelled.
+ */
+- (id<ISPCancelable>)startWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andStartHandler:(ISInitProviderStartHandler)startHandler andUpdateHandler:(ISInitProviderUpdateHandler)updateHandler andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)updateProgressHandler andRenderMode:(ISERenderMode)renderMode andApplicationVersion:(int)applicationVersion;
+
+/*!
+ Method used to initialize the API.
+ @param serverType INSITEO server type.
+ @param siteId The site identifier to use.
+ @param language The language to use.
+ @param startHandler The API initialization handler to call.
+ @param updateHandler The API update handler to call.
+ @param updateProgressHandler The API update progress handler to call.
  @param renderMode Wanted render mode.
  @return a task that can be cancelled.
  */
-- (id<ISPCancelable>)startAPIWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andListener:(id<ISPInitListener>)listener andApplicationVersion:(int)applicationVersion andForceDownload:(Boolean)forceDownload andAnalyticsAutoStart:(Boolean)analyticsAutoStart andRenderMode:(ISERenderMode)renderMode;
+- (id<ISPCancelable>)startWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andStartHandler:(ISInitProviderStartHandler)startHandler andUpdateHandler:(ISInitProviderUpdateHandler)updateHandler andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)updateProgressHandler andRenderMode:(ISERenderMode)renderMode;
 
 /*!
  Method used to initialize the API.
  @param serverType INSITEO server type.
  @param siteId The site identifier to use.
  @param language The language to use.
- @param listener The init listener to notify.
- @param applicationVersion The application version to use.
- @param forceDownload Boolean used to know if we force the download of packages even if the application is up to date.
- @param analyticsAutoStart Boolean used to know if we can start analytics automatically.
+ @param startHandler The API initialization handler to call.
+ @param renderMode Wanted render mode.
  @return a task that can be cancelled.
  */
-- (id<ISPCancelable>)startAPIWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andListener:(id<ISPInitListener>)listener andApplicationVersion:(int)applicationVersion andForceDownload:(Boolean)forceDownload andAnalyticsAutoStart:(Boolean)analyticsAutoStart;
+- (id<ISPCancelable>)startWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andStartHandler:(ISInitProviderStartHandler)startHandler andRenderMode:(ISERenderMode)renderMode;
 
-/*!
- Method used to initialize the API.
- @param serverType INSITEO server type.
- @param siteId The site identifier to use.
- @param language The language to use.
- @param listener The init listener to notify.
- @param applicationVersion The application version to use.
- @return a task that can be cancelled.
- */
-- (id<ISPCancelable>)startAPIWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andListener:(id<ISPInitListener>)listener andApplicationVersion:(int)applicationVersion;
-
-/*!
- Method used to initialize the API.
- @param serverType INSITEO server type.
- @param siteId The site identifier to use.
- @param language The language to use.
- @param listener The init listener to notify.
- @return a task that can be cancelled.
- */
-- (id<ISPCancelable>)startAPIWithServerType:(ISEServerType)serverType andSiteId:(int)siteId andLanguage:(NSString *)language andListener:(id<ISPInitListener>)listener;
+#pragma mark - Update
 
 /*!
  Method used to update application packages.
- @param initListener The init listener to notify.
- @return a task that can be cancelled.
- */
-- (id<ISPCancelable>)updatePackagesWithInitListener:(id<ISPInitListener>)initListener;
-
-/*!
- Method used to update application packages.
- @param initListener The init listener to notify.
- @param wantedPackages An array of ISPackage that need to be updated.
- @return a task that can be cancelled.
- */
-- (id<ISPCancelable>)updatePackagesWithInitListener:(id<ISPInitListener>)initListener andWantedPackages:(NSArray *)wantedPackages;
-
-/*!
- Method used to update application packages.
- @param initListener The init listener to notify.
+ @param updateHandler The API update handler to call.
+ @param updateProgressHandler The API update progress handler to call.
  @param wantedPackages An array of ISPackage that need to be updated.
  @param force Boolean used to know if we force the download of all packages.
  @return a task that can be cancelled.
  */
-- (id<ISPCancelable>)updatePackagesWithInitListener:(id<ISPInitListener>)initListener andWantedPackages:(NSArray *)wantedPackages andForce:(Boolean)force;
+- (id<ISPCancelable>)updateWithUpdateHandler:(ISInitProviderUpdateHandler)updateHandler andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)updateProgressHandler andWantedPackages:(NSArray *)wantedPackages andForce:(Boolean)force;
+
+/*!
+ Method used to update application packages.
+ @param updateHandler The API update handler to call.
+ @param updateProgressHandler The API update progress handler to call.
+ @param wantedPackages An array of ISPackage that need to be updated.
+ @return a task that can be cancelled.
+ */
+- (id<ISPCancelable>)updateWithUpdateHandler:(ISInitProviderUpdateHandler)updateHandler andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)updateProgressHandler andWantedPackages:(NSArray *)wantedPackages;
+
+/*!
+ Method used to update application packages.
+ @param updateHandler The API update handler to call.
+ @param updateProgressHandler The API update progress handler to call.
+ @return a task that can be cancelled.
+ */
+- (id<ISPCancelable>)updateWithUpdateHandler:(ISInitProviderUpdateHandler)updateHandler andUpdateProgressHandler:(ISInitProviderUpdateProgressHandler)updateProgressHandler;
+
+#pragma mark - Package
 
 /*!
  Method used to know if the application has a specific package type stored.
@@ -479,11 +448,6 @@ extern int const DEFAULT_APPLICATION_VERSION;
 - (void)registerDbHelper:(ISRODBHelper *)dbHelper andPackageType:(NSString *)packageType;
 
 #pragma mark - Notify
-
-/*
- Intern.
- */
-- (void)notifyOnInitDoneWithResult:(ISEInitAPIResult)result andError:(ISInsiteoError *)error;
 
 /*
  Intern.

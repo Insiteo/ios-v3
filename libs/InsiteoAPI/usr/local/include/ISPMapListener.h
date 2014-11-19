@@ -13,7 +13,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ISGfxZone.h"
+#import "ISZone.h"
 
 /*!
  Protocol used to handle the ISMapViewController events.
@@ -22,11 +22,9 @@
 
 /*!
  Method called when an unsupported Zone is clicked.
- @param idZone Zone clicked id.
- @param actionType Related action type to execute.
- @param actionParameter Related action parameter to use.
+ @param zone Zone clicked.
  */
-- (void)onZoneClickedWithZone:(int)idZone andActionType:(int)actionType andActionParameter:(NSString *)actionParameter;
+- (void)onZoneClickedWithZone:(ISZone *)zone;
 
 /*!
  Method called when a new map was loaded.

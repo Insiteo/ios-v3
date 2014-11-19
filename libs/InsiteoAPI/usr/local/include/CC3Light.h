@@ -1,9 +1,9 @@
 /*
  * CC3Light.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -50,6 +50,7 @@ static const ccColor4F kCC3DefaultLightColorSpecular = { 1.0, 1.0, 1.0, 1.0 };
 /** Default light attenuation coefficients */
 static const CC3AttenuationCoefficients kCC3DefaultLightAttenuationCoefficients = {1.0, 0.0, 0.0};
 
+
 #pragma mark -
 #pragma mark CC3Light
 
@@ -83,7 +84,7 @@ static const CC3AttenuationCoefficients kCC3DefaultLightAttenuationCoefficients 
 	CC3ShadowCastingVolume* _shadowCastingVolume;
 	CC3CameraShadowVolume* _cameraShadowVolume;
 	CC3StencilledShadowPainterNode* _stencilledShadowPainter;
-	CCArray* _shadows;
+	NSMutableArray* _shadows;
 	ccColor4F _ambientColor;
 	ccColor4F _diffuseColor;
 	ccColor4F _specularColor;
@@ -188,7 +189,7 @@ static const CC3AttenuationCoefficients kCC3DefaultLightAttenuationCoefficients 
 @property(nonatomic, assign) CC3AttenuationCoefficients attenuation;
 
 /** @deprecated Property renamed to attenuation */
-@property(nonatomic, assign) CC3AttenuationCoefficients attenuationCoefficients DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3AttenuationCoefficients attenuationCoefficients __deprecated;
 
 /**
  * When a copy is made of this node, indicates whether this node should copy the value
@@ -442,7 +443,7 @@ static const CC3AttenuationCoefficients kCC3DefaultLightAttenuationCoefficients 
  *
  * If this light is casting no shadows, this property will be nil.
  */
-@property(nonatomic, readonly) CCArray* shadows;
+@property(nonatomic, retain, readonly) NSArray* shadows;
 
 /**
  * Adds a shadow to the shadows cast by this light.
@@ -773,9 +774,10 @@ static const CC3AttenuationCoefficients kCC3DefaultLightAttenuationCoefficients 
 #pragma mark -
 #pragma mark CC3Node extension for lights
 
-@interface CC3Node (Lighting)
+@interface CC3Node (CC3Light)
 
-/** Returns whether this node is a light.
+/** 
+ * Returns whether this node is a light.
  *
  * This implementation returns NO. Subclasses that are lights will override to return YES.
  */

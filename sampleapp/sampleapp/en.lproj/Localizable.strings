@@ -15,7 +15,9 @@
 "STR_NEW_DATA_MESSAGE" = "Would you like to download it?";
 "STR_NO" = "No";
 "STR_YES" = "Yes";
+"STR_UPDATING" = "Updating...";
 "STR_DOWNLOADING" = "Downloading...";
+"STR_INSTALLING" = "Installing...";
 "STR_INIT_FAILED" = "Initialization failed";
 "STR_INIT_SUCCEEDED" = "Initialization succeeded";
 "STR_UPDATE_FAILED" = "Update failed";
@@ -32,7 +34,7 @@
 "STR_CLEAR_ITINERARY" = "Clear itinerary";
 "STR_CLEAR_ALL" = "Clear everything";
 "STR_CHOOSE_MAP" = "Please choose a map";
-"STR_SAMPLE_APP_TITLE" = "Sample app";
+"STR_SAMPLE_APP_TITLE" = "Sample App";
 "STR_MAP_SWITCHER_CLICKED" = "Map switcher clicked";
 "STR_WAYPOINT_CLICKED" = "Waypoint clicked";
 "STR_INSTRUCTION_CLICKED" = "Instruction %d clicked";

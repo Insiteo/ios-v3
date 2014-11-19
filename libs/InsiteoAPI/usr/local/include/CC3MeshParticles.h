@@ -1,9 +1,9 @@
 /*
  * CC3MeshParticles.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -226,21 +226,17 @@
 @property(nonatomic, retain) CC3Mesh* particleTemplateMesh;
 
 /**
- * A write-only property that configures this emitter to emit particles as defined by the
- * specified template mesh node.
+ * Configures this emitter to emit particles as defined by the specified template mesh node.
  *
- * This is a convenience write-only property method that simply sets the particleTemplateMesh
- * and material properties (including the texture) of this emitter from the corresponding mesh
- * and material properties of the specified mesh node.
+ * This is a convenience method that simply sets the particleTemplateMesh and material 
+ * properties of this emitter (including the texture) from the corresponding properties
+ * of the specified mesh node.
  *
- * When these properties are set, the template mesh is simply retained, but the template material
- * is copied, so that the material of the emitter can be configured independently from that of
- * the template mesh node.
- *
- * Since this property is a convenience property for setting other properties, this is a
- * write-only property. Reading this property always returns nil.
+ * When these properties are set, the template mesh is simply retained, but the template 
+ * material is copied, so that the material of the emitter can be configured independently
+ * from that of the template mesh node.
  */
-@property(nonatomic, assign) CC3MeshNode* particleTemplate;
+-(void) setParticleTemplate: (CC3MeshNode*) aParticleTemplate;
 
 /**
  * Template method that sets the templateMesh property of the specified particle.
@@ -407,7 +403,7 @@
  *
  * For CC3MeshParticle, the emitter must be of type CC3MeshParticleEmitter.
  */
-@property(nonatomic, assign) CC3MeshParticleEmitter* emitter;
+@property(nonatomic, unsafe_unretained) CC3MeshParticleEmitter* emitter;
 
 /**
  * Returns the rotator that manages the local rotation of this particle.
@@ -524,7 +520,7 @@
  *
  * The incoming axis and angle specify the amount of change in rotation, not the final rotational state.
  *
- * Thanks to cocos3d user nt901 for contributing to the development of this feature
+ * Thanks to Cocos3D user nt901 for contributing to the development of this feature
  */
 -(void) rotateByAngle: (GLfloat) anAngle aroundAxis: (CC3Vector) anAxis;
 

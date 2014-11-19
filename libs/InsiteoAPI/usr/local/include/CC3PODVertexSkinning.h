@@ -1,10 +1,10 @@
 /*
  * CC3PODVertexSkinning.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Chris Myers, Bill Hollings
  * Copyright (c) 2011 Chris Myers. All rights reserved.
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,6 @@
 	GLint _podContentIndex;
 	GLint _podParentIndex;
 	GLint _podMaterialIndex;
-	GLuint _podUserDataSize;
 }
 @end
 
@@ -89,7 +88,7 @@
  * retrieves the CC3Bone node at each index in the specified node array, and
  * adds that bone node to this skin section using the addBone: method.
  */
--(void) linkToPODNodes: (CCArray*) nodeArray;
+-(void) linkToPODNodes: (NSArray*) nodeArray;
 
 @end
 
@@ -102,7 +101,6 @@
 	GLint _podIndex;
 	GLint _podContentIndex;
 	GLint _podParentIndex;
-	GLuint _podUserDataSize;
 }
 
 @end

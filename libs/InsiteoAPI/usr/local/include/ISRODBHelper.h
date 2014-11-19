@@ -81,6 +81,14 @@ extern NSString * const DATABASENAME;
 /*!
  Method used to execute an SQL SELECT query.
  @param request The NSString sqlite query.
+ @param lock Boolean used to know if we need to lock the database during the query.
+ @return The resulted sqlite statement (rows).
+ */
+- (sqlite3_stmt *)executeSelect:(NSString *)request andLock:(Boolean)lock;
+
+/*!
+ Method used to execute an SQL SELECT query.
+ @param request The NSString sqlite query.
  @return The resulted sqlite statement (rows).
  */
 - (sqlite3_stmt *)executeSelect:(NSString *)request;

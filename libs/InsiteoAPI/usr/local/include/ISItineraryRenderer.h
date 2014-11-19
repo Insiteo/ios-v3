@@ -20,51 +20,7 @@
 /*!
  Class used to handle itinerary rendering.
  */
-@interface ISItineraryRenderer : NSObject <ISPRenderer> {
-    
-@private
-    
-#pragma mark - General
-    
-    //Itinerary rendering priority
-    int m_priority;
-	
-#pragma mark - Render
-    
-    //Boolean used to know if the rendering is activated
-	Boolean m_displayEnabled;
-    //Current displayed map
-   	ISMap * m_currentMap;
-    	
-#pragma mark - Touch
-    
-    //Boolean used to know if the touch handling is activated
-	Boolean m_touchEnabled;
-    //RTO touch listener
-    id<ISPRTOListener> m_touchItineraryListener;
-    //Listener reference for ISGfxItinerary special touch events
-    id<ISPItineraryRenderListener> m_renderListener;
-    
-#pragma mark - Specific
-    
-    //Internal semaphore used to handle multithreading issues on itinerary updates
-    NSLock * m_itineraryLock;
-    //Default itinerary
-    ISGfxItinerary * m_itinerary;
-    //ISGfxItinerary arrray
-    NSMutableArray * m_itineraries;
-    //Current itinerary step identifier
-    int m_currentStepId;
-    //Internal boolean used to know if the layer was moved
-	Boolean m_hasMoved;
-    //Current rendering mode
-    ISERenderMode m_renderMode;
-    
-#pragma mark - 3D
-    
-    //3D rendering layer
-    CC3Node * m_itinerary3DLayer;
-}
+@interface ISItineraryRenderer : NSObject <ISPRenderer>
 
 /*!
  Current itinerary step identifier.
@@ -84,7 +40,7 @@
 /*!
  Map view layer.
  */
-@property (assign) ISLayer * layer;
+@property (assign) CCLayer * layer;
 
 /*!
  Method called to update the displayed itinerary.

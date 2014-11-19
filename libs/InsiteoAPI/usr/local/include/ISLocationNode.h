@@ -19,15 +19,7 @@
 /*!
  Class used to handle cocos2d rendering of an ISGfxLocation.
  */
-@interface ISLocationNode : CCNode {
-    
-@private
-    
-    //Dot sprite
-    CCSprite * m_dot;
-    //Compass sprite
-    CCSprite * m_compass;
-}
+@interface ISLocationNode : CCNode
 
 /*!
  Location dot cocos2d sprite.

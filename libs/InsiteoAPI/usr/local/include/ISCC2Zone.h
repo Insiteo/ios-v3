@@ -11,27 +11,14 @@
  ISCC2Zone
  */
 
-#import "CCNode.h"
-
-#import "CCDrawNode.h"
-#import "ISLayer.h"
+#import "cocos2d.h"
 
 @class ISGfxZone;
 
 /*!
  2D zone representation.
  */
-@interface ISCC2Zone : CCNode {
-    
-@private
-    
-    //Drawnode for lines and dots
-    CCDrawNode * m_backgroundNode;
-    //Zone line width
-    float m_zoneLineWidth;
-    //Zone circle width
-    float m_zoneCircleWidth;
-}
+@interface ISCC2Zone : CCNode
 
 /*!
  ISGfxZone zone to use for geometry.
@@ -47,6 +34,6 @@
 /*
  Intern method used to remove the node from its parent layer.
  */
-- (void)removeFromLayer:(ISLayer *)layer;
+- (void)remove2DFromLayer:(CCLayer *)layer;
 
 @end

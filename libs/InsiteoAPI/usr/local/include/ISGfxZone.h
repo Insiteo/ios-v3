@@ -25,50 +25,7 @@ extern float DEFAULT_ZONE_HEIGHT;
 /*!
  Class used to represent a Map Zone.
  */
-@interface ISGfxZone : NSObject <ISPRTO> {
-    
-@private
-    
-    //Related zone entitie
-    ISZone * m_zone;
-    
-#pragma mark - Rendering
-    
-    //Cocos2d node
-    ISCC2Zone * m_cocos2dNode;
-    
-    //Cocos3d node
-    ISCC3Zone * m_cocos3dNode;
-    //
-    CC3Node * m_shelfNode;
-    
-#pragma mark - Specific
-    
-    //Boolean used to know if the zone was touched
-    Boolean m_isTouched;
-    //Boolean used to know if the zone needs to be displayed
-    Boolean m_needToBeDisplayed;
-    //Internal touch reference point
-    CGPoint m_referencePoint;
-    
-    //Cocos2d unique identifier
-    int m_rtoId;
-    //Rendering last offset
-    CGPoint m_lastOffset;
-    //Rendering last ratio
-    float m_lastRatio;
-    //Zone rendering color
-    ccColor4B m_zoneColor;
-    
-#pragma mark - 3D
-    
-    //Current rendering mode
-    ISERenderMode m_renderMode;
-    //Intern 3D intersection used to get the real touched zone
-    CC3MeshIntersection m_3dIntersection;
-    //3D shelf count
-    int m_nbShelf;
-}
+@interface ISGfxZone : NSObject <ISPRTO>
 
 /*!
  Related zone entitie.
@@ -106,17 +63,16 @@ extern float DEFAULT_ZONE_HEIGHT;
 @property (nonatomic, readonly) CC3MeshIntersection intersection;
 
 /*!
- 3D shelf count.
+ Min zoom level from which zone shelves are visible.
  */
-@property (nonatomic, readwrite) int nbShelf;
+@property (nonatomic, readwrite) int shelvesMinZoom;
 
 /*!
  Main constructor.
  @param zone Related zone entitie.
- @param map Zone map entitie.
  @param renderMode Current render mode.
  */
-- (id)initWithZone:(ISZone *)zone andMap:(ISMap *)map andRenderMode:(ISERenderMode)renderMode;
+- (id)initWithZone:(ISZone *)zone andRenderMode:(ISERenderMode)renderMode;
 
 /*!
  Method used to know if a point is in the concerned Zone.
@@ -131,12 +87,5 @@ extern float DEFAULT_ZONE_HEIGHT;
  @param ratio Last ratio computed.
  */
 - (void)setOffset:(CGPoint)offset andRatio:(float)ratio;
-
-/*!
- Static method used to get an ISZone height.
- @param zone Concerned zone.
- @return Given zone height.
- */
-+ (float)zoneHeight:(ISZone *)zone;
 
 @end

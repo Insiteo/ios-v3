@@ -65,7 +65,12 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 #define IS_IOS_8_PLUS SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")
+
 #define IS_IOS_7_PLUS SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+
+#define IS_IOS_6_PLUS SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")
+
+#define IS_IOS_5_PLUS SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0")
 #define IS_IOS_5 (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"5.0") && SYSTEM_VERSION_LESS_THAN(@"6.0"))
 
 //How to declare:
@@ -175,6 +180,11 @@ extern double const COS_SQUARE_THETA[];
  28.98797
  */
 extern float const COS_SQUARE_THETA_SUM;
+
+/*!
+ @"logs"
+ */
+extern NSString * const LOCATION_LOGS_DIRECTORY_NAME;
 
 /*!
  Class used to provide general constants.

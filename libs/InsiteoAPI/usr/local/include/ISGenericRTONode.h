@@ -16,51 +16,7 @@
 /*!
  Class used to handle cocos2d rendering of an ISGenericRTO.
  */
-@interface ISGenericRTONode : CCNode {
-    
-@private
-    
-    //Window
-    CCNode * m_windowNode;
-    
-    //Annotation
-    UIColor * m_windowBackgroundColorNormal;
-    UIColor * m_windowBackgroundColorHighlighted;
-    CCLayerColor * m_annotationLayerColor;
-    
-    //Action
-    CCSprite * m_actionBackgroundSprite;
-    CCSprite * m_actionSprite;
-    
-    Boolean m_actionEnabled;
-    NSString * m_actionImagePath;
-    
-    UIColor * m_actionBackgroundColorNormal;
-    UIColor * m_actionBackgroundColorHighlighted;
-    
-    //Indicator
-    CCSprite * m_indicatorBackgroundSprite;
-    CCSprite * m_indicatorSprite;
-    
-    Boolean m_indicatorVisible;
-    NSString * m_indicatorImagePath;
-
-    //Anchor
-    CCSprite * m_windowAnchorSprite;
-    
-    NSString * m_windowAnchorImagePath;
-    
-    //Marker
-    NSString * m_markerImagePath;
-    CCSprite * m_markerSprite;
-    
-    //Name
-    CCLabelTTF * m_descriptionName;
-    
-    //Description label
-    CCLabelTTF * m_descriptionStrokeLabel;
-    CCLabelTTF * m_descriptionLabel;
-}
+@interface ISGenericRTONode : CCNode
 
 /*!
  RTO window cocos2d node.
@@ -174,6 +130,19 @@
  */
 - (id)initWithName:(NSString *)name andLabel:(NSString *)label;
 
+/*!
+ Main constructor.
+ @param name RTO name.
+ @param label RTO label.
+ @param windowBackgroundColorNormal RTO window background color (normal state).
+ @param windowBackgroundColorHighlighted RTO window background color (highlighted state).
+ @param actionImagePath RTO action image path.
+ @param actionBackgroundColorNormal RTO action image background color (normal state).
+ @param actionBackgroundColorHighlighted RTO action image background color (highlighted state).
+ @param indicatorImagePath RTO indicator image path.
+ @param windowAnchorImagePath RTO window anchor image path.
+ @param markerImagePath RTO marker image path.
+ */
 - (id)initWithName:(NSString *)name andLabel:(NSString *)label andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath;
 
 /*!

@@ -19,25 +19,7 @@
 /*!
  Class used to represent an analytics generic event.
  */
-@interface ISAnalyticsGenericEvent : ISAnalyticsAbstractEvent {
-    
-@private
-    
-    //Event type
-    NSString * m_eventType;
-    
-    //Parameters
-    int m_iParam1;
-    int m_iParam2;
-    
-    double m_dParam1;
-    double m_dParam2;
-    
-    NSString * m_sParam1;
-    NSString * m_sParam2;
-    
-    NSMutableArray * m_positions;
-}
+@interface ISAnalyticsGenericEvent : ISAnalyticsAbstractEvent
 
 /*!
  An NSString which identify the event.
@@ -146,10 +128,20 @@
  Constructor.
  @param eventType An NSString which identify the event.
  @param iParam1 First integer field.
- @param iParam2 Second integer field..
+ @param iParam2 Second integer field.
  @param sParam1 First NSString field.
  */
 - (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andSParam1:(NSString *)sParam1;
+
+/*!
+ Constructor.
+ @param eventType An NSString which identify the event.
+ @param iParam1 First integer field.
+ @param iParam2 Second integer field.
+ @param sParam1 First NSString field.
+ @param sParam2 Second NSString field.
+ */
+- (id)initWithEventType:(NSString *)eventType andIParam1:(int)iParam1 andIParam2:(int)iParam2 andSParam1:(NSString *)sParam1 andSParam2:(NSString *)sParam2;
 
 /*!
  Constructor.

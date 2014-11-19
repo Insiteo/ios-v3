@@ -18,25 +18,7 @@
 /*!
  Class used to represent a MeetMe group with its information and persons.
  */
-@interface ISMeetMeGroup : NSObject {
-    
-@private
-    
-	//Group identifier
-	int m_groupId;
-    //Group name
-    NSString * m_groupName;
-    //Group owner identifier
-    NSString * m_ownerId;
-    //Integer used to know how many people are linked to this group
-	int m_usersCount;
-    //External identifier
-	NSString * m_externalId;
-    //User status for this group
-	UserStatus m_userStatus;
-    //List of persons identifier for this group
-    NSMutableArray * m_personIds;
-}
+@interface ISMeetMeGroup : NSObject
 
 /*!
  Group identifier.

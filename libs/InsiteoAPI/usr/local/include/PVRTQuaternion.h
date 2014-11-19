@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTQuaternion.h
-
- @Title        PVRTQuaternion
-
- @Version       @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Quaternion functions for floating and fixed point math.
+ @file         PVRTQuaternion.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Quaternion functions for floating and fixed point math.
 
 ******************************************************************************/
 #ifndef _PVRTQUATERNION_H_
@@ -23,7 +15,7 @@
 ** Typedefs
 ****************************************************************************/
 /*!***************************************************************************
- Floating point Quaternion
+ @brief         Floating point Quaternion
 *****************************************************************************/
 typedef struct
 {
@@ -33,7 +25,7 @@ typedef struct
 	float w;	/*!< w coordinate */
 } PVRTQUATERNIONf;
 /*!***************************************************************************
- Fixed point Quaternion
+ @brief         Fixed point Quaternion
 *****************************************************************************/
 typedef struct
 {
@@ -71,27 +63,27 @@ typedef PVRTQUATERNIONf		PVRTQUATERNION;
 ****************************************************************************/
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionIdentityF
- @Output			qOut	Identity quaternion
- @Description		Sets the quaternion to (0, 0, 0, 1), the identity quaternion.
+ @fn       			PVRTMatrixQuaternionIdentityF
+ @param[out]		qOut	Identity quaternion
+ @brief      		Sets the quaternion to (0, 0, 0, 1), the identity quaternion.
 *****************************************************************************/
 void PVRTMatrixQuaternionIdentityF(
 	PVRTQUATERNIONf		&qOut);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionIdentityX
- @Output			qOut	Identity quaternion
- @Description		Sets the quaternion to (0, 0, 0, 1), the identity quaternion.
+ @fn       			PVRTMatrixQuaternionIdentityX
+ @param[out]		qOut	Identity quaternion
+ @brief      		Sets the quaternion to (0, 0, 0, 1), the identity quaternion.
 *****************************************************************************/
 void PVRTMatrixQuaternionIdentityX(
 	PVRTQUATERNIONx		&qOut);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionRotationAxisF
- @Output			qOut	Rotation quaternion
- @Input				vAxis	Axis to rotate around
- @Input				fAngle	Angle to rotate
- @Description		Create quaternion corresponding to a rotation of fAngle
+ @fn       			PVRTMatrixQuaternionRotationAxisF
+ @param[out]		qOut	Rotation quaternion
+ @param[in]			vAxis	Axis to rotate around
+ @param[in]			fAngle	Angle to rotate
+ @brief      		Create quaternion corresponding to a rotation of fAngle
 					radians around submitted vector.
 *****************************************************************************/
 void PVRTMatrixQuaternionRotationAxisF(
@@ -100,11 +92,11 @@ void PVRTMatrixQuaternionRotationAxisF(
 	const float			fAngle);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionRotationAxisX
- @Output			qOut	Rotation quaternion
- @Input				vAxis	Axis to rotate around
- @Input				fAngle	Angle to rotate
- @Description		Create quaternion corresponding to a rotation of fAngle
+ @fn       			PVRTMatrixQuaternionRotationAxisX
+ @param[out]		qOut	Rotation quaternion
+ @param[in]			vAxis	Axis to rotate around
+ @param[in]			fAngle	Angle to rotate
+ @brief      		Create quaternion corresponding to a rotation of fAngle
 					radians around submitted vector.
 *****************************************************************************/
 void PVRTMatrixQuaternionRotationAxisX(
@@ -114,11 +106,11 @@ void PVRTMatrixQuaternionRotationAxisX(
 
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionToAxisAngleF
- @Input				qIn		Quaternion to transform
- @Output			vAxis	Axis of rotation
- @Output			fAngle	Angle of rotation
- @Description		Convert a quaternion to an axis and angle. Expects a unit
+ @fn       			PVRTMatrixQuaternionToAxisAngleF
+ @param[in]			qIn		Quaternion to transform
+ @param[out]		vAxis	Axis of rotation
+ @param[out]		fAngle	Angle of rotation
+ @brief      		Convert a quaternion to an axis and angle. Expects a unit
 					quaternion.
 *****************************************************************************/
 void PVRTMatrixQuaternionToAxisAngleF(
@@ -127,11 +119,11 @@ void PVRTMatrixQuaternionToAxisAngleF(
 	float					&fAngle);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionToAxisAngleX
- @Input				qIn		Quaternion to transform
- @Output			vAxis	Axis of rotation
- @Output			fAngle	Angle of rotation
- @Description		Convert a quaternion to an axis and angle. Expects a unit
+ @fn       			PVRTMatrixQuaternionToAxisAngleX
+ @param[in]			qIn		Quaternion to transform
+ @param[out]		vAxis	Axis of rotation
+ @param[out]		fAngle	Angle of rotation
+ @brief      		Convert a quaternion to an axis and angle. Expects a unit
 					quaternion.
 *****************************************************************************/
 void PVRTMatrixQuaternionToAxisAngleX(
@@ -140,12 +132,12 @@ void PVRTMatrixQuaternionToAxisAngleX(
 	int						&fAngle);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionSlerpF
- @Output			qOut	Result of the interpolation
- @Input				qA		First quaternion to interpolate from
- @Input				qB		Second quaternion to interpolate from
- @Input				t		Coefficient of interpolation
- @Description		Perform a Spherical Linear intERPolation between quaternion A
+ @fn       			PVRTMatrixQuaternionSlerpF
+ @param[out]		qOut	Result of the interpolation
+ @param[in]			qA		First quaternion to interpolate from
+ @param[in]			qB		Second quaternion to interpolate from
+ @param[in]			t		Coefficient of interpolation
+ @brief      		Perform a Spherical Linear intERPolation between quaternion A
 					and quaternion B at time t. t must be between 0.0f and 1.0f
 *****************************************************************************/
 void PVRTMatrixQuaternionSlerpF(
@@ -155,12 +147,12 @@ void PVRTMatrixQuaternionSlerpF(
 	const float				t);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionSlerpX
- @Output			qOut	Result of the interpolation
- @Input				qA		First quaternion to interpolate from
- @Input				qB		Second quaternion to interpolate from
- @Input				t		Coefficient of interpolation
- @Description		Perform a Spherical Linear intERPolation between quaternion A
+ @fn       			PVRTMatrixQuaternionSlerpX
+ @param[out]		qOut	Result of the interpolation
+ @param[in]			qA		First quaternion to interpolate from
+ @param[in]			qB		Second quaternion to interpolate from
+ @param[in]			t		Coefficient of interpolation
+ @brief      		Perform a Spherical Linear intERPolation between quaternion A
 					and quaternion B at time t. t must be between 0.0f and 1.0f
 					Requires input quaternions to be normalized
 *****************************************************************************/
@@ -171,26 +163,26 @@ void PVRTMatrixQuaternionSlerpX(
 	const int				t);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionNormalizeF
- @Modified			quat	Vector to normalize
- @Description		Normalize quaternion.
+ @fn       			PVRTMatrixQuaternionNormalizeF
+ @param[in,out]		quat	Vector to normalize
+ @brief      		Normalize quaternion.
 *****************************************************************************/
 void PVRTMatrixQuaternionNormalizeF(PVRTQUATERNIONf &quat);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionNormalizeX
- @Modified			quat	Vector to normalize
- @Description		Normalize quaternion.
+ @fn       			PVRTMatrixQuaternionNormalizeX
+ @param[in,out]		quat	Vector to normalize
+ @brief      		Normalize quaternion.
 					Original quaternion is scaled down prior to be normalized in
 					order to avoid overflow issues.
 *****************************************************************************/
 void PVRTMatrixQuaternionNormalizeX(PVRTQUATERNIONx &quat);
 
 /*!***************************************************************************
- @Function			PVRTMatrixRotationQuaternionF
- @Output			mOut	Resulting rotation matrix
- @Input				quat	Quaternion to transform
- @Description		Create rotation matrix from submitted quaternion.
+ @fn       			PVRTMatrixRotationQuaternionF
+ @param[out]		mOut	Resulting rotation matrix
+ @param[in]			quat	Quaternion to transform
+ @brief      		Create rotation matrix from submitted quaternion.
 					Assuming the quaternion is of the form [X Y Z W]:
 
 						|       2     2									|
@@ -209,10 +201,10 @@ void PVRTMatrixRotationQuaternionF(
 	const PVRTQUATERNIONf	&quat);
 
 /*!***************************************************************************
- @Function			PVRTMatrixRotationQuaternionX
- @Output			mOut	Resulting rotation matrix
- @Input				quat	Quaternion to transform
- @Description		Create rotation matrix from submitted quaternion.
+ @fn       			PVRTMatrixRotationQuaternionX
+ @param[out]		mOut	Resulting rotation matrix
+ @param[in]			quat	Quaternion to transform
+ @brief      		Create rotation matrix from submitted quaternion.
 					Assuming the quaternion is of the form [X Y Z W]:
 
 						|       2     2									|
@@ -231,11 +223,11 @@ void PVRTMatrixRotationQuaternionX(
 	const PVRTQUATERNIONx	&quat);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionMultiplyF
- @Output			qOut	Resulting quaternion
- @Input				qA		First quaternion to multiply
- @Input				qB		Second quaternion to multiply
- @Description		Multiply quaternion A with quaternion B and return the
+ @fn       			PVRTMatrixQuaternionMultiplyF
+ @param[out]		qOut	Resulting quaternion
+ @param[in]			qA		First quaternion to multiply
+ @param[in]			qB		Second quaternion to multiply
+ @brief      		Multiply quaternion A with quaternion B and return the
 					result in qOut.
 *****************************************************************************/
 void PVRTMatrixQuaternionMultiplyF(
@@ -244,11 +236,11 @@ void PVRTMatrixQuaternionMultiplyF(
 	const PVRTQUATERNIONf	&qB);
 
 /*!***************************************************************************
- @Function			PVRTMatrixQuaternionMultiplyX
- @Output			qOut	Resulting quaternion
- @Input				qA		First quaternion to multiply
- @Input				qB		Second quaternion to multiply
- @Description		Multiply quaternion A with quaternion B and return the
+ @fn       			PVRTMatrixQuaternionMultiplyX
+ @param[out]		qOut	Resulting quaternion
+ @param[in]			qA		First quaternion to multiply
+ @param[in]			qB		Second quaternion to multiply
+ @brief      		Multiply quaternion A with quaternion B and return the
 					result in qOut.
 					Input quaternions must be normalized.
 *****************************************************************************/

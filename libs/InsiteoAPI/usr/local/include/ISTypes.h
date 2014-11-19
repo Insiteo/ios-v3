@@ -22,3 +22,13 @@ typedef enum {
     ISEServerTypeTest,
     ISEServerTypeDev
 } ISEServerType;
+
+/*!
+ Enum used to handle different map rendering mod.
+ @constant ISERenderMode2D 2D rendering.
+ @constant ISERenderMode3D 3D rendering.
+ */
+typedef enum {
+    ISERenderMode2D,
+    ISERenderMode3D,
+} ISERenderMode;

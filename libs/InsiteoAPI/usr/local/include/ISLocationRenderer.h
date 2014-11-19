@@ -22,47 +22,7 @@ extern int const LOCATION_RENDERER_PRIORITY;
 /*!
  Class used to render locations on the map.
  */
-@interface ISLocationRenderer : NSObject <ISPRenderer, ISPMotionListener> {
-    
-@private
-    
-#pragma mark - Structure
-    
-    //Current locations to render
-	NSMutableArray * m_locations;
-    
-#pragma mark - Rendering    
-
-	//Renderer priority
-	int m_priority;
-    //Current displayed map identifier
-    ISMap * m_currentMap;
-    //Boolean used to know if the rendering is activated
-	Boolean m_displayEnabled;
-    //Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).
-    ccColor4F m_accuracyColor;
-    //Current rendering mode
-    ISERenderMode m_renderMode;
-    
-#pragma mark - Touch
-	
-	//Boolean used to know if the renderer handle touch events
-	Boolean m_touchEnabled;
-	//Touch location listeners
-	id<ISPRTOListener> m_touchLocationListener;
-    
-#pragma mark - Specific
-    
-    //Internal semaphore
-    NSLock * m_locationsLock;
-    //Boolean used to know if the location was too degrade to be considered
-    Boolean m_locationLost;
-    
-#pragma mark - 3D
-    
-    //3D rendering layer
-    CC3Node * m_location3DLayer;
-}
+@interface ISLocationRenderer : NSObject <ISPRenderer, ISPMotionListener>
 
 /*!
  Current locations to render.
@@ -92,7 +52,7 @@ extern int const LOCATION_RENDERER_PRIORITY;
 /*!
  Map view layer.
  */
-@property (assign) ISLayer * layer;
+@property (assign) CCLayer * layer;
 
 /*!
  Method called to update existing location.

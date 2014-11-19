@@ -1,9 +1,9 @@
 /*
  * CC3NodeVisitor.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2011-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2011-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,10 +31,12 @@
 
 
 #import "CC3Matrix.h"
+#import "CC3DataArray.h"
 #import "CC3PerformanceStatistics.h"
 #import "CC3OpenGL.h"
 
-@class CC3Node, CC3MeshNode, CC3Camera, CC3Light, CC3Scene, CC3ShaderProgram;
+@class CC3Node, CC3MeshNode, CC3Camera, CC3Light, CC3LightProbe;
+@class CC3Scene, CC3ShaderProgram, CC3SceneDrawingSurfaceManager;
 @class CC3Material, CC3TextureUnit, CC3Mesh, CC3NodeSequencer, CC3SkinSection;
 @protocol CC3RenderSurface;
 
@@ -59,8 +61,8 @@
 @interface CC3NodeVisitor : NSObject {
 	CC3Node* _startingNode;
 	CC3Node* _currentNode;
-	CCArray* _pendingRemovals;
 	CC3Camera* _camera;
+	NSMutableArray* _pendingRemovals;
 	BOOL _shouldVisitChildren : 1;
 }
 
@@ -75,9 +77,18 @@
  * Visits the specified node, then if the shouldVisitChildren property is set to YES,
  * invokes this visit: method on each child node as well.
  *
+ * Returns whether the visitation run was stopped once a desired result was accomplished.
+ * Depending on the type of visitation, this might occur if a particular node was reached,
+ * or some other desired result has been accomplished. The purpose of the returned value
+ * is not to indicate whether all node have been visited, or even that the visitation was
+ * aborted. Instead, you should think of the returned value as a way of indicating that
+ * a desired result has been accomplished, and that there is no need to visit further nodes.
+ * For visitations that normally visit all nodes, such as drawing, or updating, the return
+ * value will generally be NO.
+ *
  * Subclasses will override several template methods to customize node visitation behaviour.
  */
--(void) visit: (CC3Node*) aNode;
+-(BOOL) visit: (CC3Node*) aNode;
 
 /**
  * Requests the removal of the specfied node.
@@ -129,7 +140,7 @@
  * This implementation returns the activeCamera property of the starting node.
  * Subclasses may override.
  */
-@property(nonatomic, readonly) CC3Camera* defaultCamera;
+@property(nonatomic, retain, readonly) CC3Camera* defaultCamera;
 
 /**
  * The CC3Node that is currently being visited.
@@ -162,6 +173,13 @@
 @property(nonatomic, readonly) CC3Mesh* currentMesh;
 
 /**
+ * Returns the number of textures in the current mesh node.
+ *
+ * It is up to the invoker to make sure that the current node actually is a CC3MeshNode.
+ */
+@property(nonatomic, readonly) GLuint textureCount;
+
+/**
  * Returns the material of the mesh node that is currently being visited, or returns nil
  * if that mesh node has no material.
  *
@@ -184,8 +202,19 @@
  */
 -(CC3TextureUnit*) currentTextureUnitAt: (GLuint) texUnit;
 
-/** The number of lights in the scene. */
-@property(nonatomic, readonly) NSUInteger lightCount;
+/**
+ * Under OpenGL ES 2.0 & OpenGL, returns the shader program of the mesh node that is currently being
+ * visited, or returns nil if that mesh node has no shader program, or when using OpenGL ES 1.1.
+ *
+ * It is up to the invoker to make sure that the current node actually is a CC3MeshNode.
+ *
+ * This property is only valid during the traversal of the node returned by the currentMeshNode
+ * property, and will be nil both before and after the visit: method is invoked on that node.
+ */
+@property(nonatomic, readonly) CC3ShaderProgram* currentShaderProgram;
+
+/** Number of lights in the scene. */
+@property(nonatomic, readonly) GLuint lightCount;
 
 /**
  * Returns the light indicated by the index, or nil if the specified index is greater than
@@ -195,6 +224,17 @@
  * the same as the lightIndex property of the CC3Light.
  */
 -(CC3Light*) lightAt: (GLuint) index;
+
+/** Min of number of light probes in the scene, and the number used by the shader program. */
+@property(nonatomic, readonly) GLuint lightProbeCount;
+
+/**
+ * Returns the light probe indicated by the index, or nil if the specified index is 
+ * greater than the number of light probes currently existing in the scene.
+ *
+ * The specified index is an index into the lightProbes array of the scene.
+ */
+-(CC3LightProbe*) lightProbeAt: (GLuint) index;
 
 /**
  * The performanceStatistics being accumulated during the visitation runs.
@@ -217,98 +257,6 @@
 
 
 #pragma mark -
-#pragma mark CC3NodeTransformingVisitor
-
-/**
- * CC3NodeTransformingVisitor is a CC3NodeVisitor that is passed to a node when it is
- * visited during transformation operations.
- *
- * This visitor encapsulates whether the transformation matrix needs to be recalculated.
- * The transformation matrix needs to be recalculated if any of the node's transform properties
- * (location, rotation, scale) have changed, or if those of an ancestor node were changed.
- *
- * The transforms can be calculated from the CC3Scene or from the startingNode, depending
- * on the value of the shouldLocalizeToStartingNode property. Normally, the transforms
- * are calculated from the CC3Scene, but localizing to the startingNode can be useful for
- * determining relative transforms between ancestors and descendants.
- */
-@interface CC3NodeTransformingVisitor : CC3NodeVisitor {
-	BOOL _isTransformDirty : 1;
-	BOOL _shouldLocalizeToStartingNode : 1;
-	BOOL _shouldRestoreTransforms : 1;
-}
-
-/**
- * Indicates whether all transforms should be localized to the local coordinate system
- * of the startingNode.
- *
- * If this property is set to NO, the transforms of all ancestors of each node, all the
- * way to CC3Scene, will be included when calculating the globalTransformMatrix and global
- * properties of that node. This is the normal situation.
- *
- * If this property is set to YES the transforms of the startingNode and its ancestors,
- * right up to the CC3Scene, will be ignored. The result is that the globalTransformMatrix
- * and all global properties (globalLocation, etc) will be relative to the startingNode.
- 
- * This can be useful when you want to coordinate node positioning within a particular
- * common ancestor, by using their global properties relative to that common ancestor
- * node.
- * 
- * It is also used when determine the boundingBox property of a node, by transforming
- * all descendant nodes by all transforms between the node and each descendant, but
- * ignoring the transforms of the ancestor nodes of the node whose local bounding box
- * is being calculated.
- *
- * Setting this property to YES will force the recalculation of the globalTransformMatrix of
- * each node visited, to ensure that they are relative to the startingNode. Further,
- * once the visitation run is complete, if this property is set to YES, the close
- * method will rebuild the transformMatrices of the startingNode and its descendants,
- * to leave the transformMatrices in their normal global form.
- * 
- * The initial value of this property is NO.
- */
-@property(nonatomic, assign) BOOL shouldLocalizeToStartingNode;
-
-/**
- * This property only has effect when the shouldLocalizeToStartingNode property is set to YES.
- *
- * Indicates whether the full global transforms should be restored afte the localized
- * transforms have been calculated and consumed. Setting this to YES is useful when
- * the localized transform is being temporarily calculated for a specialized purpose
- * such as determining a local bounding box, but then the full global transform should
- * be immediately restored for further use.
- *
- * The initial value of this property is NO. However, specialized subclasses may set
- * to YES initially as appropriate.
- */
-@property(nonatomic, assign) BOOL shouldRestoreTransforms;
-
-/**
- * Returns whether the transform matrix of the node currently being visited is dirty
- * and needs to be recalculated.
- *
- * The value of this property is consistent throughout the processing of a particular
- * node. It is set before each node is visited, and is not changed until after the
- * node has finished being processed, even if the node's transform matrix is recalculated
- * during processing. This allows any post-node-processing activities, either within the
- * visitor or within the node, to know that the transform matrix was changed.
- */
-@property(nonatomic, readonly) BOOL isTransformDirty;
-
-/**
- * Returns the transform matrix to use as the parent matrix when transforming the
- * specified node.
- * 
- * This usually returns the value of the parentGlobalTransformMatrix of the specified node.
- * However, if the shouldLocalizeToStartingNode property is set to YES and the
- * startingNode is either the specified node or its parent, this method returns nil.
- */
--(CC3Matrix*) parentTansformMatrixFor: (CC3Node*) aNode;
-
-@end
-
-
-#pragma mark -
 #pragma mark CC3NodeUpdatingVisitor
 
 /**
@@ -317,8 +265,8 @@
  *
  * This visitor encapsulates the time since the previous update.
  */
-@interface CC3NodeUpdatingVisitor : CC3NodeTransformingVisitor {
-	ccTime _deltaTime;
+@interface CC3NodeUpdatingVisitor : CC3NodeVisitor {
+	CCTime _deltaTime;
 }
 
 /**
@@ -328,44 +276,16 @@
  * of this property may be clamped to an upper limit. See the description of the CC3Scene
  * maxUpdateInterval property for more information about clamping the update interval.
  */
-@property(nonatomic, assign) ccTime deltaTime;
+@property(nonatomic, assign) CCTime deltaTime;
 
 @end
 
 
-#pragma mark -
-#pragma mark CC3NodeBoundingBoxVisitor
-
-/**
- * Specialized transforming visitor that measures the bounding box of a node and all
- * its descendants, by traversing each descendant node, ensuring each globalTransformMatrix
- * is up to date, and accumulating a bounding box that encompasses the local content
- * of the startingNode and all of its descendants.
- *
- * If the value of the shouldLocalizeToStartingNode property is YES, the bounding
- * box will be in the local coordinate system of the startingNode, otherwise it
- * will be in the global coordinate system of the 3D scene.
- */
-@interface CC3NodeBoundingBoxVisitor : CC3NodeTransformingVisitor {
-	CC3Box _boundingBox;
-}
-
-/**
- * Returns the bounding box accumulated during the visitation run.
- *
- * If the value of the shouldLocalizeToStartingNode property is YES, the bounding
- * box will be in the local coordinate system of the startingNode, otherwise it
- * will be in the global coordinate system of the 3D scene.
- *
- * If none of the startingNode or its descendants have any local content, this
- * property will return kCC3BoxNull.
- *
- * The initial value of this property will be kCC3BoxNull.
- */
-@property(nonatomic, readonly) CC3Box boundingBox;
-
-@end
-
+/** Enumeration of drawing visitor texture modes. */
+typedef enum {
+	kCC3TextureBindingModeModel,			/**< Binding model textures. */
+	kCC3TextureBindingModeLightProbe,		/**< Binding light probe textures. */
+} CC3TextureBindingMode;
 
 #pragma mark -
 #pragma mark CC3NodeDrawingVisitor
@@ -381,25 +301,35 @@
  * Drawing operations only visit drawable mesh nodes, so the node access properties defined on
  * the CC3NodeVisitor superclass that rely on the current node being a CC3MeshNode containing
  * a mesh and material will be valid.
+ *
+ * This visitor maintains access to a number of properties of the node being drawn, and
+ * other components in the scene, for access by rendering logic and shaders.
  */
 @interface CC3NodeDrawingVisitor : CC3NodeVisitor {
 	CC3NodeSequencer* _drawingSequencer;
 	CC3SkinSection* _currentSkinSection;
-	CC3ShaderProgram* _currentShaderProgram;
+	CC3SceneDrawingSurfaceManager* _surfaceManager;
 	id<CC3RenderSurface> _renderSurface;
 	CC3OpenGL* _gl;
+	CCRenderer* _ccRenderer;
+	CCRenderer* _billboardCCRenderer;
+	CC3DataArray* _boneMatricesGlobal;
+	CC3DataArray* _boneMatricesEyeSpace;
+	CC3DataArray* _boneMatricesModelSpace;
 	CC3Matrix4x4 _projMatrix;
 	CC3Matrix4x3 _viewMatrix;
 	CC3Matrix4x3 _modelMatrix;
 	CC3Matrix4x4 _viewProjMatrix;
 	CC3Matrix4x3 _modelViewMatrix;
 	CC3Matrix4x4 _modelViewProjMatrix;
-	CC3Viewport _onScreenViewport;
+	GLKMatrix4 _layerTransformMatrix;
 	ccColor4F _currentColor;
+	CC3TextureBindingMode _textureBindingMode;
 	GLuint _textureUnitCount;
-	GLuint _currentTextureUnitIndex;
-	GLuint _nextUnassignedTextureSampler;
-	ccTime _deltaTime;
+	GLuint _current2DTextureUnit;
+	GLuint _currentCubeTextureUnit;
+	GLuint _currentLightProbeTextureUnit;
+	CCTime _deltaTime;
 	BOOL _shouldDecorateNode : 1;
 	BOOL _isDrawingEnvironmentMap : 1;
 	BOOL _isVPMtxDirty : 1;
@@ -407,48 +337,115 @@
 	BOOL _isMVPMtxDirty : 1;
 }
 
+
+#pragma mark Drawing
+
 /** 
- * The OpenGL state. During drawing, all OpenGL commands are called through this instance.
+ * Returns the OpenGL engine context.
  *
- * If not set directly, this is lazily initialized to the CC3OpenGL.sharedGL singleton.
+ * During drawing, all OpenGL commands are invoked through this instance.
+ *
+ * The value of this property is lazily retrieved and set the first time it is accessed.
+ *
+ * The value of this property must be compatible with the GL context of the thread on
+ * which this visitor is used. If you want to use a single visitor instance on different
+ * threads, you can invoke the clearGL method to clear the GL engine reference so it can
+ * be lazily recreated when used on the next thread.
  */
-@property(nonatomic, retain) CC3OpenGL* gl;
+@property(nonatomic, readonly) CC3OpenGL* gl;
 
 /**
- * The index of the current texture unit being drawn.
- *
- * This value is set during drawing when the visitor is passed to the texture coordinates array.
+ * Clears the reference in the gl property, so that it can be retrieved automatically on
+ * the next access of the property. You can use this method before using this visitor on
+ * a thread that is different  (and therefore likely a different GL engine context) than
+ * the last thread on which this visitor was used.
  */
-@property(nonatomic, assign) GLuint currentTextureUnitIndex;
+-(void) clearGL;
+
+/** 
+ * The Cocos2D renderer. Available when using Cocos2D 3.1 and above. 
+ *
+ * If not set directly, this property will be lazily initialized on the first access to 
+ * either the renderer returned by the class-side CCRenderer currentRenderer property,
+ * if it exists, or to a new instance, if not.
+ */
+@property(nonatomic, retain) CCRenderer* ccRenderer;
+
+/** 
+ * The Cocos2D renderer for rendering 2D CCNodes embedded in the 3D scene when using
+ * Cocos2D 3.1 and above.
+ *
+ * CCNodes embedded in the 3D scene via CC3Billboard nodes must use a different renderer than
+ * the primary rendering loop, because the CC3Billboards are rendered as part of a single 
+ * rendering command for the entire 3D scene, and the CCNodes containedin the CC3Billboards
+ * cannot be added to the rendering queue, while the 3D scene is being drawn.
+ *
+ * If not set directly, this property will be lazily initialized on the first access to a 
+ * new instance, that matches the characteristics of the instance in the ccRenderer property.
+ */
+@property(nonatomic, retain) CCRenderer* billboardCCRenderer;
+
+/** Clears the ccRenderer and billboardCCRenderer properties. */
+-(void) clearCCRenderers;
 
 /**
- * Set the value of the textureUnitCount to that of the currentTextureUnitIndex property,
- * and disables all texture units whose index is at or above the current value of the
- * currentTextureUnitIndex property.
+ * The index of the current texture unit holding a 2D texture.
+ *
+ * This value is initialized to zero when starting to draw each material, and is incremented
+ * as each 2D texture in the material is drawn.
+ */
+@property(nonatomic, readonly) GLuint current2DTextureUnit;
+
+/** Increments the value fo the current2DTextureUnit property. */
+-(void) increment2DTextureUnit;
+
+/**
+ * The index of the current texture unit holding a cube-map texture.
+ *
+ * This value is initialized to zero when starting to draw each material, and is incremented
+ * as each cube-map texture in the material is drawn.
+ */
+@property(nonatomic, readonly) GLuint currentCubeTextureUnit;
+
+/** Increments the value fo the currentCubeTextureUnit property. */
+-(void) incrementCubeTextureUnit;
+
+/** 
+ * Sets the value of the current2DTextureUnit property to zero, and sets the value of the 
+ * currentCubeTextureUnit property to either the value of the textureCubeStart property of
+ * the currentShaderProgram (OpenGL ES 2.0 & OpenGL), or to the same as the textureCount
+ * property of this instance (OpenGL ES 1.1).
+ *
+ * The 2D texture are assigned to the lower texture units, and cube-map textures are assigned
+ * to texture units above all the 2D textures. This ensures that the same texture types are
+ * consistently assigned to the shader samplers, to avoid the shaders recompiling on the
+ * fly to adapt to changing texture types.
+ *
+ * Additional environmental textures, such as light probes, are assigned to the texture units
+ * beyond the model's cube textures.
+ *
+ * GL texture units of each type that were not used by the textures are disabled via the
+ * disabledTextureUnits method.
+ */
+-(void) resetTextureUnits;
+
+/** Binds environmental textures, such as light probes. */
+-(void) bindEnvironmentalTextures;
+
+/** 
+ * Disables all texture units that do not have an associated texture. 
+ *
+ * The 2D texture are assigned to the lower texture units, and cube-map textures are assigned
+ * to texture units above all the 2D textures. This ensures that the same texture types are
+ * consistently assigned to the shader samplers, to avoid the shaders recompiling on the
+ * fly to adapt to changing texture types.
+ *
+ * GL texture units of each type that were not used by the textures are disabled by this method.
+ * Since cube-map textures are assigned to texture units above all 2D textures, for nodes with
+ * fewer 2D textures than expected by the shader, one or more 2D texture units may be disabled
+ * in between the active 2D texture units and any cube-map texture units.
  */
 -(void) disableUnusedTextureUnits;
-
-/**
- * Returns the number of texture units being drawn.
- *
- * The value of this property is set by the disableUnusedTextureUnits method, which is invoked
- * by the node's material, and is then consumed by the mesh when binding texture coordinates.
- */
-@property(nonatomic, readonly) GLuint textureUnitCount;
-
-/**
- * Returns the value to use for the next texture sampler that does not have an corresponding
- * texture in the current material.
- *
- * This property is accessed whenever the current material has fewer textures than texture
- * samplers declared in the shader program, and is accessed once for each of the surplus shader
- * program texture samplers (both 2D and cube-map samplers), in order to assign them a value
- * that is not already consumed by a valid texture from the material.
- *
- * As each material is drawn, the value of this property starts at the value of the
- * textureUnitCount property, and then increments by one each time this property is accessed.
- */
-@property(nonatomic, readonly) GLuint nextUnassignedTextureSampler;
 
 /**
  * This property gives the interval, in seconds, since the previous frame.
@@ -456,7 +453,7 @@
  * See the description of the CC3Scene minUpdateInterval and maxUpdateInterval properties
  * for more information about clamping the update interval.
  */
-@property(nonatomic, assign) ccTime deltaTime;
+@property(nonatomic, assign) CCTime deltaTime;
 
 /**
  * Indicates whether nodes should decorate themselves with their configured material, textures,
@@ -471,12 +468,23 @@
  * Indicates whether this visitor is rendering an environment map to a texture.
  *
  * Environment maps typically do not require full detail. This property can be used during
- * drawing to make optimization decisions such as to avoid drawing certain more complex
- * content when creating an environment map.
+ * drawing to make optimization decisions such as to avoid drawing more complex content 
+ * when creating an environment map.
  *
  * The initial value of this property is NO.
  */
 @property(nonatomic, assign) BOOL isDrawingEnvironmentMap;
+
+/**
+ * Aligns this visitor to use the same camera and rendering surface as the specified visitor.
+ *
+ * The camera, surfaceManager, and renderSurface properties of this visitor are set to
+ * those of the specified visitor.
+ *
+ * You can use this method to ensure that a secondary visitor (such as a shadow visitor, 
+ * or picking visitor), makes use of the same camera and surface as the primary visitor.
+ */
+-(void) alignShotWith: (CC3NodeDrawingVisitor*) otherVisitor;
 
 /**
  * Draws the specified node. Invoked by the node itself when the node's local
@@ -495,12 +503,24 @@
 #pragma mark Accessing scene content
 
 /**
+ * The surface manager that manages the surfaces to which this visitor can render.
+ *
+ * Setting this property also clears the renderSurface property, so that, if not explicitly set
+ * to another surface, it will be initialized to a surface retrieved from the new surface manager.
+ *
+ * During normal rendering, this property is set by the CC3Layer prior to rendering a CC3Scene.
+ */
+@property(nonatomic, retain) CC3SceneDrawingSurfaceManager* surfaceManager;
+
+/**
  * The rendering surface to which this visitor is rendering.
  *
  * The surface will be activated at the beginning of each visitation run.
  *
- * If not set beforehand, this property will be initialized to the value of the 
- * defaultRenderSurface property the first time it is accessed.
+ * You can set this property at any time to direct rendering to any on-screen or off-screen surface. 
+ * If not set directly, this property will be set to the value of the defaultRenderSurface property
+ * the next time it is accessed. If you have set this property to an specific surface temporarily,
+ * you can automatically revert to the defaultRenderSurface by simply setting this property to nil.
  *
  * This property is is not cleared at the end of the visitation run. It is retained so that
  * this visitor can be used to render multiple node assemblies and complete multiple drawing
@@ -509,10 +529,12 @@
 @property(nonatomic, retain) id<CC3RenderSurface> renderSurface;
 
 /**
- * Template property that returns the initial value of the renderSurface property.
+ * Template property that returns the default value used to automatically
+ * set the value of the renderSurface property.
  *
- * This implementation returns the scene's viewSurface. Since it relies on the scene property
- * haveing a value, this property will be nil unless a visitation run is in progress.
+ * This implementation returns the value of the viewSurface property of the 
+ * CC3SceneDrawingSurfaceManager held in the surfaceManager property. This
+ * is a subsection of the on-screen view surface.
  *
  * Subclasses may override to return a different surface.
  */
@@ -528,13 +550,6 @@
 @property(nonatomic, assign) CC3SkinSection* currentSkinSection;
 
 /**
- * The currently active shader program.
- *
- * This property is set automatically by the program when it binds to the GL engine.
- */
-@property(nonatomic, assign) CC3ShaderProgram* currentShaderProgram;
-
-/**
  * The current color used during drawing if no materials or lighting are engaged.
  *
  * Each of the RGBA components of this color are floating point values between 0 and 1.
@@ -548,26 +563,35 @@
  */
 @property(nonatomic, assign) ccColor4B currentColor4B;
 
+/** Transforms the specified global location to the coordinate system of the camera (eye space). */
+-(CC3Vector) transformGlobalLocationToEyeSpace: (CC3Vector) globalLocation;
+
+/** Transforms the specified global location to the coordinate system of the current node. */
+-(CC3Vector) transformGlobalLocationToModelSpace: (CC3Vector) globalLocation;
+
 
 #pragma mark Environmental matrices
 
 /** Returns the current projection matrix. */
-@property(nonatomic, readonly) CC3Matrix4x4* projMatrix;
+@property(nonatomic, readonly) const CC3Matrix4x4* projMatrix;
 
 /** Returns the current view matrix. */
-@property(nonatomic, readonly) CC3Matrix4x3* viewMatrix;
+@property(nonatomic, readonly) const CC3Matrix4x3* viewMatrix;
 
 /** Returns the current model-to-global transform matrix. */
-@property(nonatomic, readonly) CC3Matrix4x3* modelMatrix;
+@property(nonatomic, readonly) const CC3Matrix4x3* modelMatrix;
 
 /** Returns the current view-projection matrix. */
-@property(nonatomic, readonly) CC3Matrix4x4* viewProjMatrix;
+@property(nonatomic, readonly) const CC3Matrix4x4* viewProjMatrix;
 
 /** Returns the current model-view matrix. */
-@property(nonatomic, readonly) CC3Matrix4x3* modelViewMatrix;
+@property(nonatomic, readonly) const CC3Matrix4x3* modelViewMatrix;
 
 /** Returns the current model-view-projection matrix. */
-@property(nonatomic, readonly) CC3Matrix4x4* modelViewProjMatrix;
+@property(nonatomic, readonly) const CC3Matrix4x4* modelViewProjMatrix;
+
+/** Returns the current CC3Layer GLKMatrix4 transform matrix. Available when using Cocos2D 3.1 and higher. */
+@property(nonatomic, readonly) const GLKMatrix4* layerTransformMatrix;
 
 /**
  * Populates the current projection matrix from the specified matrix.
@@ -585,6 +609,36 @@
 
 /** Populates the current model-to-global matrix from the specified matrix. */
 -(void) populateModelMatrixFrom: (CC3Matrix*) modelMtx;
+
+/** Populates the current CC3Layer transform matrix from the specified GLKMatrix4 matrix. */
+-(void) populateLayerTransformMatrixFrom: (const GLKMatrix4*) layerMtx;
+
+/**
+ * Returns a pointer to the bone matrix at the specified index, from the currentSkinSection,
+ * in the global coordinate system.
+ * 
+ * This method has meaning only during the drawing of the currentSkinSection. Attempting to
+ * access this method at any other time will produced undefined results.
+ */
+-(const CC3Matrix4x3*) globalBoneMatrixAt: (GLuint) index;
+
+/**
+ * Returns a pointer to the bone matrix at the specified index, from the currentSkinSection,
+ * in the coordinate system of the eye-space of the camera in the camera property.
+ *
+ * This method has meaning only during the drawing of the currentSkinSection. Attempting to
+ * access this method at any other time will produced undefined results.
+ */
+-(const CC3Matrix4x3*) eyeSpaceBoneMatrixAt: (GLuint) index;
+
+/**
+ * Returns a pointer to the bone matrix at the specified index, from the currentSkinSection,
+ * in the coordinate system of the mesh node in the currentMeshNode property.
+ *
+ * This method has meaning only during the drawing of the currentSkinSection. Attempting to
+ * access this method at any other time will produced undefined results.
+ */
+-(const CC3Matrix4x3*) modelSpaceBoneMatrixAt: (GLuint) index;
 
 @end
 
@@ -606,10 +660,53 @@
  */
 @interface CC3NodePickingVisitor : CC3NodeDrawingVisitor {
 	CC3Node* _pickedNode;
+	GLuint _tagColorShift;
 }
 
-/** The node that was most recently picked. */
+/** 
+ * Returns the node that was most recently picked.
+ *
+ * This picked node is valid at a point in time. The value of this property is cleared 
+ * immediately after it has been read. Subsequent queries of this property will return nil,
+ * so you should cache the returned value elsewhere if you need it to persist.
+ */
 @property(nonatomic, readonly) CC3Node* pickedNode;
+
+/** 
+ * Indicates the value to shift the bits of the value of the tag property of each node to
+ * determine the color to paint that node.
+ *
+ * The initial value of this property is zero, indicating that the node tag value will not
+ * be shifted when converting it to and from a color. Increasing the value will increase the
+ * color separation between different nodes, which can be helpful during development when 
+ * debugging node picking visually (ie- when the shouldDisplayPickingRender property of the
+ * CC3Scene is set to YES), However, increasing the shift value will also decrease the number
+ * of nodes that can be displayed and resolved on screen.
+ *
+ * This value is a shift value that operates on the bits of the tag value. A value of one
+ * will effectively double the tag value before it is converted to a color, a value of two
+ * will quadruple the tag value, etc.
+ */
+@property(nonatomic, assign) GLuint tagColorShift;
+
+/**
+ * Template property that returns the default value used to automatically
+ * set the value of the renderSurface property.
+ *
+ * Overridden to return the value of the pickingSurface property of the
+ * CC3SceneDrawingSurfaceManager held in the surfaceManager property.
+ */
+@property(nonatomic, readonly) id<CC3RenderSurface> defaultRenderSurface;
+
+/**
+ * Aligns this visitor to use the same camera as the specified visitor.
+ *
+ * The camera and surfaceManager properties of this visitor are set to those of the specified visitor.
+ *
+ * The renderSurface property is left cleared, so that the defaultRenderSurface property will set
+ * it to the pickingSurface of the surfaceManager, when the renderSurface property is next accessed.
+ */
+-(void) alignShotWith: (CC3NodeDrawingVisitor*) otherVisitor;
 
 @end
 
@@ -626,7 +723,7 @@
 }
 
 /** The punctured node. */
-@property(nonatomic, retain, readonly) CC3Node* node;
+@property(nonatomic, readonly) CC3Node* node;
 
 /** The location of the puncture, in the local coordinate system of the punctured node. */
 @property(nonatomic, readonly) CC3Vector punctureLocation;
@@ -686,7 +783,7 @@
  * over and over, through different invocations of the visit: method.
  */
 @interface CC3NodePuncturingVisitor : CC3NodeVisitor {
-	CCArray* _nodePunctures;
+	NSMutableArray* _nodePunctures;
 	CC3Ray _ray;
 	BOOL _shouldPunctureFromInside : 1;
 	BOOL _shouldPunctureInvisibleNodes : 1;
@@ -837,5 +934,46 @@
  * which is specified in the global coordinate system.
  */
 +(id) visitorWithRay: (CC3Ray) aRay;
+
+@end
+
+
+#pragma mark -
+#pragma mark Deprecated CC3NodeTransformingVisitor
+
+__deprecated
+/** @deprecated No longer needed. CC3Node transforms are calculated lazily, without using a visitor. */
+@interface CC3NodeTransformingVisitor : CC3NodeVisitor
+
+/** @deprecated */
+@property(nonatomic, assign) BOOL shouldLocalizeToStartingNode;
+
+/** @deprecated */
+@property(nonatomic, assign) BOOL shouldRestoreTransforms;
+
+/** @deprecated */
+@property(nonatomic, readonly) BOOL isTransformDirty;
+
+/** @deprecated */
+-(CC3Matrix*) parentTansformMatrixFor: (CC3Node*) aNode;
+
+@end
+
+
+#pragma mark -
+#pragma mark Deprecated CC3NodeBoundingBoxVisitor
+
+__deprecated
+/** @deprecated Use boundingBox or globalBoundingBox properties of CC3Node, instead. */
+@interface CC3NodeBoundingBoxVisitor : CC3NodeVisitor {
+	BOOL _shouldLocalizeToStartingNode : 1;
+	CC3Box _boundingBox;
+}
+
+/** @deprecated Use boundingBox or globalBoundingBox properties of CC3Node, instead. */
+@property(nonatomic, readonly) CC3Box boundingBox __deprecated;
+
+/** @deprecated */
+@property(nonatomic, assign) BOOL shouldLocalizeToStartingNode __deprecated;
 
 @end

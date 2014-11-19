@@ -1,30 +1,29 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         OGLES/PVRTglesExt.h
-
- @Title        OGLES/PVRTglesExt
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     Independant
-
- @Description  GLES extensions.
+ @file         OGLES/PVRTglesExt.h
+ @ingroup      API_OGLES
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        GLES extensions.
 
 ******************************************************************************/
+
 #ifndef _PVRTGLESEXT_H_
 #define _PVRTGLESEXT_H_
 
-#include "CC3PVROpenGLFoundation.h"		// patched for cocos3d by Bill Hollings
+#include "CC3PVROpenGLFoundation.h"		// patched for Cocos3D by Bill Hollings
 
-#if CC3_OGLES_1							// patched for cocos3d by Bill Hollings
+#if CC3_OGLES_1							// patched for Cocos3D by Bill Hollings
+
+/*!
+ @addtogroup   API_OGLES
+ @{
+*/
 
 /****************************************************************************
 ** Build options
 ****************************************************************************/
 #if defined(__APPLE__)
-#ifdef TARGET_OS_IPHONE
+#if defined(TARGET_OS_IPHONE) && TARGET_OS_IPHONE==1
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 #else
@@ -70,9 +69,10 @@
 /**************************************************************************
 ****************************** GL EXTENSIONS ******************************
 **************************************************************************/
+
 /*!************************************************************************
-@Class CPVRTglesExt
-@Brief A class for initialising and managing gles extensions
+ @class CPVRTglesExt
+ @brief A class for initialising and managing OGLES extensions
 **************************************************************************/
 class CPVRTglesExt
 {
@@ -394,18 +394,16 @@ public:
 
 public:
 	/*!***********************************************************************
-	@Function			LoadExtensions
-	@Description		Initialises IMG extensions
+	@brief		Initialises IMG extensions
 	*************************************************************************/
 	void LoadExtensions();
 
 	/*!***********************************************************************
-	@Function			IsGLExtensionSupported
-	@Input				extension extension to query for
-	@Returns			True if the extension is supported
-	@Description		Queries for support of an extension
+	@brief      		Queries for support of an extension
+	@param[in]			extension extension to query for
+	@return 			True if the extension is supported
 	*************************************************************************/
-	static bool IsGLExtensionSupported(const char * const extension);
+	static bool IsGLExtensionSupported(const char* extension);	// patched for Cocos3D by Bill Hollings
 	// The recommended technique for querying OpenGL extensions;
 	// from http://opengl.org/resources/features/OGLextensions/
 };
@@ -415,6 +413,7 @@ public:
 ** Functions
 ****************************************************************************/
 
+/*! @} */
 
 #endif /* _PVRTGLESEXT_H_ */
 
@@ -422,5 +421,5 @@ public:
 End of file (PVRTglesExt.h)
 *****************************************************************************/
 
-#endif	// CC3_OGLES_1					// patched for cocos3d by Bill Hollings
+#endif	// CC3_OGLES_1					// patched for Cocos3D by Bill Hollings
 

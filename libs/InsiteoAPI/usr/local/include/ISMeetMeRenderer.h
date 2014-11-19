@@ -18,44 +18,12 @@
 /*!
  Class used to handle ISGfxPerson rendering.
  */
-@interface ISMeetMeRenderer : NSObject <ISPRenderer> {
-    
-@private
-    
-#pragma mark - General
-    
-    //Renderer priority
-	int m_priority;
-    //Current displayed map
-    ISMap * m_currentMap;
-    
-    
-#pragma mark - Rendering
-    
-	//Boolean used to know if the rendering is activated
-	Boolean m_displayEnabled;
-    
-#pragma mark - Touch
-    
-	//Boolean used to know if the renderer handle touch events
-	Boolean m_touchEnabled;
-	//Touch person listeners
-	id<ISPRTOListener> m_touchMeetMeListener;
-    
-#pragma mark - Specific
-    
-    //Current persons to render
-	NSMutableDictionary * m_persons;
-    //Persons mutex
-    NSLock * m_personsLock;
-    
-    ISERenderMode m_renderMode;
-}
+@interface ISMeetMeRenderer : NSObject <ISPRenderer> 
 
 /*!
  Map view layer.
  */
-@property (assign) ISLayer * layer;
+@property (assign) CCLayer * layer;
 
 /*!
  Method used to update displayed ISGfxPersons.

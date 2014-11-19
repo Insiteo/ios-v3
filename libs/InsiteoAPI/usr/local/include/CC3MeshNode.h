@@ -1,9 +1,9 @@
 /*
  * CC3MeshNode.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,7 +29,7 @@
 
 /** @file */	// Doxygen marker
 
-#import "CC3Node.h"
+#import "CC3LocalContentNode.h"
 #import "CC3Mesh.h"
 #import "CC3Material.h"
 
@@ -44,34 +44,28 @@
  * CC3MeshNode is a type of CC3Node, and will often participate in a structural node assembly.
  * An instance can be the child of another node, and the mesh node itself can have child nodes.
  *
- * CC3MeshNodes encapsulate a CC3Mesh instance, and can also encapsulate either a CC3Material
- * instance, or a pure color. The CC3Mesh instance contains the mesh vertex content. The CC3Material
- * instance describes the material and texture properties covering the mesh, which are affected by
- * lighting conditions. Alternately, instead of a material, the mesh may be colored by a single
- * pure color via the pureColor property.
+ * CC3MeshNodes encapsulate a CC3Mesh instance, and a CC3Material instance. The CC3Mesh instance
+ * contains the mesh vertex content. The CC3Material instance describes the material and texture
+ * properties covering the mesh, which can be affected by lighting conditions.
  *
  * If it is not explicitly set beforehand, the material will automatically be created and assigned 
  * to the mesh node when a texture is added to the mesh node through the texture property or the
  * addTexture: method, or if any of the material properties of the mesh node are set or accessed,
  * including color, opacity, ambientColor, diffuseColor, specularColor, emissionColor, blendFunc,
- * or shouldDrawLowAlpha. The material will automatically be created if either the isOpaque or
- * shouldUseLighting property is set, but not if they are simply read.
+ * isOpaque, shouldUseLighting, or shouldDrawLowAlpha.
  *
  * There are a number of populateAs... parametric population methods available in the CC3MeshNode
  * (ParametricShapes) category extension. These methods can be used to populate the vertices of the
  * mesh contained in a new mesh node to create interesting and useful parametric shapes and surfaces.
  *
- * When this node is drawn, it delegates to the mesh instance to render the mesh vertices. If a
- * material is defined, before drawing the mesh, it delegates to the material to configure the
- * covering of the mesh. If no material is defined, the node establishes its pure color before
- * rendering the mesh. The pure color is only used if the node has no material attached. And the
- * pure color may in turn be overridden by the mesh data if vertex coloring is in use.
+ * When this node is drawn, it delegates to the mesh instance to render the mesh vertices. 
+ * Before drawing the mesh, it delegates to the material to configure the covering of the mesh.
  *
- * Each CC3MeshNode can have only one material or pure color. For large, complicated meshes that are
- * covered by more than one material, or colored with more than one color, the mesh must be broken
- * into smaller meshes, each of which are covered by a single material or color. These smaller
- * sub-meshes are sometimes referred to as "vertex groups". Each such sub-mesh is then wrapped in
- * its own CC3MeshNode instance, along with the material that covers that sub-mesh.
+ * Each CC3MeshNode can have only one material. For large, complicated meshes that are 
+ * covered by more than one material, the mesh must be broken into smaller meshes, each
+ * of which is covered by a single material. These smaller sub-meshes are sometimes 
+ * referred to as "vertex groups". Each such sub-mesh is then wrapped in its own CC3MeshNode
+ * instance, along with the material that covers that sub-mesh.
  *
  * These CC3MeshNode instances can then be added as child nodes to a single parent CC3Node instance.
  * This parent CC3Node can then be moved, rotated and scaled, and all of its child nodes will
@@ -98,22 +92,26 @@
 @interface CC3MeshNode : CC3LocalContentNode {
 	CC3Mesh* _mesh;
 	CC3Material* _material;
-	ccColor4F _pureColor;
+	CC3ShaderContext* _shaderContext;
+	char* _renderStreamGroupMarker;
 	GLenum _depthFunction;
 	GLfloat _decalOffsetFactor;
 	GLfloat _decalOffsetUnits;
 	GLfloat _lineWidth;
 	GLenum _lineSmoothingHint;
 	CC3NormalScaling _normalScalingMethod : 4;
+	BOOL _shouldUseLightProbes : 1;
 	BOOL _shouldSmoothLines : 1;
 	BOOL _shouldDisableDepthMask : 1;
 	BOOL _shouldDisableDepthTest : 1;
 	BOOL _shouldCullFrontFaces : 1;
 	BOOL _shouldCullBackFaces : 1;
+	BOOL _shouldDrawInClipSpace : 1;
 	BOOL _shouldUseClockwiseFrontFaceWinding : 1;
 	BOOL _shouldUseSmoothShading : 1;
 	BOOL _shouldCastShadowsWhenInvisible : 1;
 	BOOL _shouldApplyOpacityAndColorToMeshContent : 1;
+	BOOL _hasRigidSkeleton : 1;		// Used by skinned mesh node subclasses
 }
 
 /**
@@ -128,7 +126,7 @@
 @property(nonatomic, retain) CC3Mesh* mesh;
 
 /** @deprecated CC3MeshModel renamed to CC3Mesh. Use mesh property instead. */
-@property(nonatomic, retain) CC3Mesh* meshModel DEPRECATED_ATTRIBUTE;
+@property(nonatomic, retain) CC3Mesh* meshModel __deprecated;
 
 /**
  * If a mesh does not yet exist, this method invokes the makeMesh method to create
@@ -177,40 +175,29 @@
 /**
  * The material covering this mesh node.
  *
- * If it is not explicitly set beforehand, the material will automatically be created
- * and assigned to the mesh node when a texture is added to the mesh node through the
- * texture property or the addTexture: method, or if any of the material properties
- * of the mesh node are set or accessed, including color, opacity, ambientColor,
- * diffuseColor, specularColor, emissionColor, blendFunc, or shouldDrawLowAlpha.
- * The material will automatically be created if either the isOpaque or
- * shouldUseLighting property is set, but not if they are simply read.
+ * When querying this property, if a material does not yet exist, this method invokes the 
+ * makeMaterial method to create a suitable material, and sets it into this property. 
  */
 @property(nonatomic, retain) CC3Material* material;
 
-/**
- * The pure, solid color used to paint the mesh if no material is established for this node.
- * This color is not not be affected by the lighting conditions. The mesh will always appear
- * in the same pure, solid color, regardless of the lighting sources.
- *
- * If you do not want to use a material with this node, use this pureColor property to
- * set or access the color and opacity of this node. Setting or accessing any of the
- * other coloring properties (color, opacity, ambientColor, diffuseColor, specularColor,
- * or emissionColor) will create a material automatically.
- */
-@property(nonatomic, assign) ccColor4F pureColor;
+/** @deprecated Use the emissionColor property instead. */
+@property(nonatomic, assign) ccColor4F pureColor __deprecated;
 
 /**
- * If this value is set to YES, current lighting conditions will be taken into consideration
- * when drawing colors and textures, and the material ambientColor, diffuseColor, specularColor,
- * emissionColor, and shininess properties will have effect.
+ * If this value is set to YES, current lighting conditions (from either lights or light probes)
+ * will be taken into consideration when drawing colors and textures.
  *
  * If this value is set to NO, lighting conditions will be ignored when drawing colors and
- * textures, and the material emissionColor will be applied to the mesh surface without regard to
+ * textures, and the emissionColor will be applied to the mesh surface, without regard to
  * lighting. Blending will still occur, but the other material aspects, including ambientColor,
  * diffuseColor, specularColor, and shininess will be ignored. This is useful for a cartoon
  * effect, where you want a pure color, or the natural colors of the texture, to be included
  * in blending calculations, without having to arrange lighting, or if you want those colors
  * to be displayed in their natural values despite current lighting conditions.
+ *
+ * Be aware that the initial value of the emissionColor property is normally black. If you
+ * find your node disappears or turns black when you set this property to NO, try changing
+ * the value of the emissionColor property.
  *
  * Setting the value of this property sets the same property in the contained material.
  * Reading the value of this property returns the value of the same property in the contained material.
@@ -218,6 +205,19 @@
  * The initial value of this property is YES.
  */
 @property(nonatomic, assign) BOOL shouldUseLighting;
+
+/**
+ * If this value is set to YES, this mesh node will ignore the lights in the scene and will, instead,
+ * determine the lighting of the mesh node using textures held by light probes in the scene.
+ *
+ * This property only has effect if the shouldUseLighting property is set to YES.
+ *
+ * The initial value of this property is NO.
+ *
+ * See the notes of the CC3LightProbe class to learn more about using light probes to
+ * illuminate models within the scene.
+ */
+@property(nonatomic, assign) BOOL shouldUseLightProbes;
 
 /**
  * The ambient color of the material of this mesh node.
@@ -264,112 +264,164 @@
 @property(nonatomic, assign) ccColor4F emissionColor;
 
 /**
- * Selects an appropriate shader program for this mesh node.
+ * The shininess of the material of this mesh node.
  *
- * When running under a programmable rendering pipeline, such as OpenGL ES 2.0 or OpenGL,
- * all mesh nodes require a shader program to be assigned. This can be done directly using
- * the shaderProgram property. Or a shader program can be selected automatically based on
- * the characteristics of the mesh node by invoking this method.
+ * The value of this property is clamped to between zero and kCC3MaximumMaterialShininess.
+ * The initial value of this property is kCC3DefaultMaterialShininess (zero).
+ */
+@property(nonatomic, assign) GLfloat shininess;
+
+/**
+ * The reflectivity of the material of this mesh node.
  *
- * Since all mesh nodes require shader programs, if this method is not invoked, and a shader
- * program is not manually assigned via the shaderProgram property, a shader program will be
- * automatically assigned the first time this mesh node is drawn. The automatic selection is
- * the same, whether this method is invoked, or the selection is made lazily. However, if the
- * shader program must be loaded and compiled, there can be a noticable pause in drawing a
- * mesh node for the first time if lazy assignment is used.
+ * This property can be used when the material is covered by an environmental reflection cube-map
+ * texture to indicate the weighting that should be applied to the reflection texture, relative to
+ * any other textures on the material. A value of zero indicates that the surface should be
+ * completely unreflective, and a value of one indicates that the surface is entirely reflective.
  *
- * Shader selection is handled by an implementation of the CC3ShaderProgramMatcher 
- * held in the CC3ShaderProgram programMatcher class-side property. The application 
- * can therefore customize shader program selection by establishing a custom instance
- * in the CC3ShaderProgram programMatcher class-side property
+ * This property requires a programmable pipeline and has no effect when running OpenGL ES 1.1.
+ *
+ * The value of this property is clamped to between zero and one.
+ * The initial value of this property is kCC3DefaultMaterialReflectivity (zero).
+ */
+@property(nonatomic, assign) GLfloat reflectivity;
+
+/** @deprecated The material property now performs this functionality lazily. */
+-(CC3Material*) ensureMaterial __deprecated;
+
+/**
+ * Creates and returns a suitable material for this mesh node.
+ *
+ * This method is invoked automatically by the material property accessor method if a material
+ * is needed, but has not yet been established.
+ *
+ * This implementation returns an instance of CC3Material initialized with the default 
+ * initializer method. Subclasses may override to provide a different material.
+ */
+-(CC3Material*) makeMaterial;
+
+
+#pragma mark Shaders
+
+/**
+ * The GLSL shader program context containing the GLSL program (vertex & fragment shaders) 
+ * used to draw this node.
+ *
+ * A single CC3ShaderProgram object can be used by many nodes. The CC3ShaderContext
+ * instance in this property contains state and behaviour specific to the use of the shader
+ * program by this mesh node.
+ *
+ * Each shader program typically makes use of many uniform variables. In most, or many, cases,
+ * each uniform will have a semantic defined, and the content of the uniform will automatically
+ * be extracted from the environment, including from this mesh node itself. So, in most cases,
+ * once the semantic is defined, the application needs pay no further attention to the uniform.
+ *
+ * The shader context can be used to modify this standard semanitic-driven behaviour in two
+ * ways. This shader context can be used to assign a value to a specialized or custom shader
+ * uniform whose value is not derived semantically from the node or the environment, and it 
+ * can be used to override the value of an otherwise semantically-derived uniform, if needed.
+ *
+ * If this property is not set directly, it is automatically initialized to a new shader 
+ * context instance on first access (typically when the shaderProgram property is established,
+ * or a uniform override is added). Unless you have a need to set the value of this property
+ * directly, you can simply let it be managed automatically.
+ *
+ * This property is used only when running under OpenGL ES 2.
+ */
+@property(nonatomic, retain) CC3ShaderContext* shaderContext;
+
+/**
+ * The GLSL program (vertex & fragment shaders) used to draw this node.
+ *
+ * The program is held in the shader context in the shaderContext property. This is a 
+ * convenience property that allows the shader program to be accessed from the shaderContext.
+ *
+ * Setting the value of this property will set the specified program into the context in the
+ * shaderContext property, creating a new shader context if necessary.
+ *
+ * As an alternative to setting this property directly, you can either access this property,
+ * or invoke the selectShaderProgram method (or let it be invoked automatically during the 
+ * first draw), to have an appropriate shader program automatically selected for use by this
+ * node, and assigned to this property,
+ *
+ * This property is used only when running under OpenGL ES 2.
+ */
+@property(nonatomic, retain) CC3ShaderProgram* shaderProgram;
+
+/**
+ * Selects an appropriate shader program for this mesh node, and returns that shader program.
+ *
+ * When running under a programmable rendering pipeline, such as OpenGL ES 2.0 or OpenGL, all
+ * mesh nodes require shaders to be assigned. This can be done directly using the shaderProgram
+ * property. Or a shader program can be selected automatically based on the characteristics of
+ * the mesh node by invoking this method.
+ *
+ * Since all mesh nodes require shaders, if this method is not invoked, and a shader program 
+ * was not manually assigned via the shaderProgram property, a shaders will be automatically 
+ * assigned to each mesh node the first time it is rendered. The automatic selection is the 
+ * same, whether this method is invoked, or the selection is made lazily. However, if the 
+ * shaders must be loaded and compiled, there can be a noticable pause in drawing a mesh node
+ * for the first time if lazy assignment is used.
  *
  * Shader selection is driven by the characteristics of the mesh node and its material,
  * including the number of textures, whether alpha testing is used, etc. If you change
  * any of these characteristics that affect the shader selection, you can invoke the
- * clearShaderProgram method to cause a different shader program to be selected, based
+ * removeLocalShaders method to cause a different shader program to be selected, based
  * on the new mesh node and material characteristics.
  *
- * This method differs from the selectShaderPrograms method in that this method does not
+ * Shader selection is handled by an implementation of the CC3ShaderMatcher held in the
+ * CC3ShaderProgram shaderMatcher class-side property. The application can therefore 
+ * customize shader program selection by establishing a custom instance in the 
+ * CC3ShaderProgram shaderMatcher class-side property
+ *
+ * This method differs from the selectShaders method in that this method does not
  * propagate to any descendant nodes.
  */
--(void) selectShaderProgram;
+-(CC3ShaderProgram*) selectShaderProgram;
 
 /**
- * Clears the shader program from this mesh node, allowing a new shader to be selected, either
- * directly by subsequently invoking the selectShaderProgram method, or automatically the next
- * time this node is drawn.
+ * Removes the shaders from this mesh node, allowing new shaders to be selected, either directly
+ * by subsequently invoking the selectShaderProgram method, or automatically the next time this
+ * mesh node is drawn.
  *
  * Shader selection is driven by the characteristics of the mesh node and its material,
- * including the number of textures, whether alpha testing is used, etc. If you change 
+ * including the number of textures, whether alpha testing is used, etc. If you change
  * any of these characteristics that affect the shader selection, you can invoke the
- * clearShaderProgram method to cause a different shader program to be selected, based
+ * removeLocalShaders method to cause a different shader program to be selected, based
  * on the new mesh node and material characteristics.
  *
  * This method is equivalent to setting the shaderProgram property to nil.
  *
- * This method differs from the clearShaderPrograms method in that this method does not
+ * This method differs from the removeShaders method in that this method does not
  * propagate to any descendant nodes.
  */
--(void) clearShaderProgram;
+-(void) removeLocalShaders;
 
-/** 
- * If a material does not yet exist, this method invokes the makeMaterial method to create
- * a suitable material, and sets it into the material property. Does nothing if this mesh
- * node already has a material. Returns the material (existing or new).
- *
- * This method is invoked whenever a property is set that would affect the material.
- * Usually, you will never need to invoke this method.
- */
--(CC3Material*) ensureMaterial;
-
-/**
- * This template method creates a suitable material for this mesh node.
- *
- * The new material's initial diffuse and ambient colors are modulated by the value of the
- * pureColor property to propagate any color changes already made into the material. The
- * initial value of pureColor is pure white, so if it has not been changed, the ambient and
- * diffuse colors of the material will take on their default initial values.
- * Subclasses may override to provide a different material.
- *
- * This method is invoked automatically by the ensureMaterial method if a material is needed,
- * but has not yet been established. Usually, you will never need to invoke this method.
- */
--(CC3Material*) makeMaterial;
+/** @deprecated Renamed to removeLocalShaders. */
+-(void) clearShaderProgram __deprecated;
 
 
 #pragma mark CCRGBAProtocol and CCBlendProtocol support
 
 /**
- * Implementation of the CCRGBAProtocol color property.
+ * The color of this node, as described by the color of the material covering this node.
  *
- * Querying this property returns the RGB components of the material's diffuseColor
- * property, or of this node's pureColor property if this node has no material.
- * In either case, the RGB values are converted from the floating point range (0 to 1),
- * to the byte range (0 to 255).
+ * Querying this property returns the value of the same property of the enclosed material.
  *
- * When setting this property, the RGB values are each converted to a floating point
- * number between 0 and 1, and are set into both the ambientColor and diffuseColor
- * properties of this node's material, and the pureColor property of this node.
- * The alpha of each of those properties remains unchanged.
- *
- * Setting this property also sets the same property on all descendant nodes.
+ * Setting this property sets the same property on the enclosed material, and on the mesh,
+ * if the shouldApplyOpacityAndColorToMeshContent property is set to YES, and also sets the
+ * same property on all descendant nodes.
  */
-@property(nonatomic, assign) ccColor3B color;
+@property(nonatomic, assign) CCColorRef color;
 
 /**
- * Implementation of the CCRGBAProtocol opacity property.
+ * The opacity of this node, as described by the opacity of the material covering this mesh.
  *
- * Querying this property returns the alpha component of the material's diffuseColor
- * property, or of this node's pureColor property if this node has no material.
- * In either case, the RGB values are converted from the floating point range (0 to 1),
- * to the byte range (0 to 255).
+ * Querying this property returns the value of the same property of the enclosed material.
  *
- * When setting this property, the value is converted to a floating point number
- * between 0 and 1, and is set into all of the ambientColor, diffuseColor, specularColor,
- * and emissionColor properties of this node's material, and the pureColor property of
- * this node. The RGB components of each of those properties remains unchanged.
- *
- * Setting this property also sets the same property on all descendant nodes.
+ * Setting this property sets the same property on the enclosed material, and on the mesh,
+ * if the shouldApplyOpacityAndColorToMeshContent property is set to YES, and also sets the
+ * same property on all descendant nodes.
  *
  * See the notes for this property on CC3Material for more information on how this
  * property interacts with the other material properties.
@@ -379,7 +431,7 @@
  * specific blending properties on the CC3Material instance directly, and avoid making
  * changes to this property.
  */
-@property(nonatomic, assign) GLubyte opacity;
+@property(nonatomic, assign) CCOpacity opacity;
 
 /**
  * Indicates whether the material of this mesh node is opaque.
@@ -387,8 +439,7 @@
  * If this node has a material, returns the value of the same property on the material,
  * otherwise return YES.
  *
- * Setting this property sets the same property in the material and in all descendants,
- * and sets the alpha component of the pureColor property to 1.0.
+ * Setting this property sets the same property in the material and in all descendants.
  *
  * See the notes for this property on CC3Material for more information on how this
  * property interacts with the other material properties.
@@ -460,6 +511,15 @@
  * To compensate, when a texture is attached to a mesh node, the texture coordinates
  * of the mesh are automatically adjusted to correctly display the texture, taking
  * into consideration POT padding and vertical orientation.
+ *
+ * When building for iOS, raw PNG and TGA images are pre-processed by Xcode to pre-multiply
+ * alpha, and to reorder the pixel component byte order, to optimize the image for the iOS
+ * platform. If you want to avoid this pre-processing for PNG or TGA files, for textures
+ * such as normal maps or lighting maps, that you don't want to be modified, you can prepend
+ * a 'p' to the file extension ("ppng" or "ptga") to cause Xcode to skip this pre-processing
+ * and to use a loader that does not pre-multiply the alpha. You can also use this for other
+ * file types as well. See the notes for the CC3STBImage useForFileExtensions class-side
+ * property for more info.
  */
 @property(nonatomic, retain) CC3Texture* texture;
 
@@ -496,6 +556,15 @@
  * To compensate, when a texture is attached to a mesh node, the texture coordinates
  * of the mesh are automatically adjusted to correctly display the texture, taking
  * into consideration POT padding and vertical orientation.
+ *
+ * When building for iOS, raw PNG and TGA images are pre-processed by Xcode to pre-multiply
+ * alpha, and to reorder the pixel component byte order, to optimize the image for the iOS
+ * platform. If you want to avoid this pre-processing for PNG or TGA files, for textures
+ * such as normal maps or lighting maps, that you don't want to be modified, you can prepend
+ * a 'p' to the file extension ("ppng" or "ptga") to cause Xcode to skip this pre-processing
+ * and to use a loader that does not pre-multiply the alpha. You can also use this for other
+ * file types as well. See the notes for the CC3STBImage useForFileExtensions class-side
+ * property for more info.
  */
 -(void) addTexture: (CC3Texture*) aTexture;
 
@@ -798,15 +867,28 @@
 @property(nonatomic, readonly) BOOL isDrawingPointSprites;
 
 /**
+ * Returns whether any of the textures used by this material have an alpha channel, representing opacity.
+ *
+ * Returns YES if any of the textures contained in this instance has an alpha channel.
+ *
+ * See also the notes of the shouldBlendAtFullOpacity property for the effects of using a
+ * texture with an alpha channel.
+ */
+@property(nonatomic, readonly) BOOL hasTextureAlpha;
+
+/**
  * Returns whether the alpha channel has already been multiplied into each of the RGB
- * color channels, in any of the textures used by this node.
+ * color channels, in any of the textures used by this material.
  *
  * Returns YES if any of the textures contained in this instance has pre-mulitiplied alpha.
- * 
+ *
  * See also the notes of the shouldApplyOpacityToColor property for the effects of using textures
  * with pre-multiplied alpha.
  */
-@property(nonatomic, readonly) BOOL hasPremultipliedAlpha;
+@property(nonatomic, readonly) BOOL hasTexturePremultipliedAlpha;
+
+/** @deprecated Renamed to hasTexturePremultipliedAlpha. */
+@property(nonatomic, readonly) BOOL hasPremultipliedAlpha __deprecated;
 
 /**
  * Returns whether the opacity of each of the material colors (ambient, diffuse, specular and emission)
@@ -841,8 +923,8 @@
  *   - kCC3VertexContentBitangent
  *   - kCC3VertexContentColor
  *   - kCC3VertexContentTextureCoordinates
- *   - kCC3VertexContentWeights
- *   - kCC3VertexContentMatrixIndices
+ *   - kCC3VertexContentBoneWeights
+ *   - kCC3VertexContentBoneIndices
  *   - kCC3VertexContentPointSize
  *
  * To indicate that this mesh should contain particular vertex content, construct a
@@ -956,10 +1038,10 @@
 -(void) moveMeshOriginToCenterOfGeometry;
 
 /** @deprecated Renamed to moveMeshOriginTo:. */
--(void) movePivotTo: (CC3Vector) aLocation DEPRECATED_ATTRIBUTE;
+-(void) movePivotTo: (CC3Vector) aLocation __deprecated;
 
 /** @deprecated Renamed to moveMeshOriginToCenterOfGeometry. */
--(void) movePivotToCenterOfGeometry DEPRECATED_ATTRIBUTE;
+-(void) movePivotToCenterOfGeometry __deprecated;
 
 /**
  * Indicates the number of vertices in this mesh.
@@ -1228,193 +1310,182 @@
 -(void) setVertexColor4B: (ccColor4B) aColor at: (GLuint) index;
 
 /**
- * Returns the number of vertex units used by this mesh. This value indicates the number of
- * bones that influence each vertex, and corresponds to the number of weights and matrix
- * indices attached to each vertex.
+ * Returns the number of bones that influence each vertex in this mesh. This value defines
+ * the number of bone weights and bone indices that are attached to each vertex.
  */
-@property(nonatomic, readonly) GLuint vertexUnitCount;
+@property(nonatomic, readonly) GLuint vertexBoneCount;
 
 /**
- * Returns the weight element, for the specified vertex unit, at the specified index in
- * the underlying vertex content.
+ * Returns the weight value, for the specified influence index within the vertex, for the
+ * vertex at the specified index within the underlying vertex content.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * The weight indicates how much a particular bone influences the movement of the particular
+ * vertex. Several weights are stored for each vertex, one for each bone that influences the
+ * movement of that vertex. The specified influenceIndex parameter must be between zero, and
+ * the vertexBoneCount property (inclusive/exclusive respectively).
  *
- * Several weights are stored for each vertex, one per vertex unit, corresponding to
- * one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the vertexUnitCount property, exclusive.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(GLfloat) vertexWeightForVertexUnit: (GLuint) vertexUnit at: (GLuint) index;
+-(GLfloat) vertexWeightForBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
 
 /**
- * Sets the weight element, for the specified vertex unit, at the specified index in
- * the underlying vertex content, to the specified value.
+ * Sets the weight value, for the specified influence index within the vertex, for the
+ * vertex at the specified index within the underlying vertex content.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * The weight indicates how much a particular bone influences the movement of the particular
+ * vertex. Several weights are stored for each vertex, one for each bone that influences the
+ * movement of that vertex. The specified influenceIndex parameter must be between zero, and
+ * the vertexBoneCount property (inclusive/exclusive respectively).
  *
- * Several weights are stored for each vertex, one per vertex unit, corresponding to
- * one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the vertexUnitCount property, exclusive.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
- * When all vertex changes have been made, be sure to invoke the
- * updateVertexWeightsGLBuffer method to ensure that the GL VBO that
- * holds the vertex content is updated.
+ * When all vertex changes have been made, be sure to invoke the updateVertexBoneWeightsGLBuffer
+ * method to ensure that the GL VBO that holds the vertex content is updated.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setVertexWeight: (GLfloat) aWeight forVertexUnit: (GLuint) vertexUnit at: (GLuint) index;
+-(void) setVertexWeight: (GLfloat) weight forBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
 
 /**
- * Returns a pointer to an array of the weight elements at the specified vertex
- * index in the underlying vertex content.
+ * Returns the weights of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
  *
- * Several weights are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The number of
- * elements in the returned array is the same for all vertices in this mesh, and
- * can be retrieved from the vertexUnitCount property.
+ * Several weights are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the returned array is the same for each vertex
+ * in this vertex array, as defined by the vertexBoneCount property.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct elements.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(GLfloat*) vertexWeightsAt: (GLuint) index;
+-(GLfloat*) vertexBoneWeightsAt: (GLuint) vtxIndex;
 
 /**
- * Sets the weight elements at the specified vertex index in the underlying vertex content,
- * to the values in the specified array.
+ * Sets the weights of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * Several weights are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the specified input array must therefore be at
+ * least as large as the value of the vertexBoneCount property.
  *
- * Several weights are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The number of
- * weight elements is the same for all vertices in this mesh, and can be retrieved
- * from the vertexUnitCount property. The number of elements in the specified input
- * array must therefore be at least as large as the value of the vertexUnitCount property.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
- * When all vertex changes have been made, be sure to invoke the
- * updateVertexWeightsGLBuffer method to ensure that the GL VBO that
- * holds the vertex content is updated.
+ * When all vertex changes have been made, be sure to invoke the updateVertexBoneWeightsGLBuffer
+ * method to ensure that the GL VBO that holds the vertex content is updated.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setVertexWeights: (GLfloat*) weights at: (GLuint) index;
+-(void) setVertexBoneWeights: (GLfloat*) weights at: (GLuint) vtxIndex;
 
 /**
- * Returns the matrix index element, for the specified vertex unit, at the specified
- * index in the underlying vertex content.
+ * Returns the index of the bone, that provides the influence at the specified influence index
+ * within a vertex, for the vertex at the specified index within the underlying vertex content.
  *
- * Several matrix indices are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the vertexUnitCount property, exclusive.
+ * The bone index indicates which bone provides the particular influence for the movement of
+ * the particular vertex. Several bone indices are stored for each vertex, one for each bone
+ * that influences the movement of that vertex. The specified influenceIndex parameter must
+ * be between zero, and the vertexBoneCount property (inclusive/exclusive respectively).
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(GLuint) vertexMatrixIndexForVertexUnit: (GLuint) vertexUnit at: (GLuint) index;
+-(GLuint) vertexBoneIndexForBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
 
 /**
- * Sets the matrix index element, for the specified vertex unit, at the specified index
- * in the underlying vertex content, to the specified value.
+ * Sets the index of the bone, that provides the influence at the specified influence index
+ * within a vertex, for the vertex at the specified index within the underlying vertex content.
  *
- * Several matrix indices are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the vertexUnitCount property, exclusive.
+ * The bone index indicates which bone provides the particular influence for the movement of
+ * the particular vertex. Several bone indices are stored for each vertex, one for each bone
+ * that influences the movement of that vertex. The specified influenceIndex parameter must
+ * be between zero, and the vertexBoneCount property (inclusive/exclusive respectively).
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
- * When all vertex changes have been made, be sure to invoke the
- * updateVertexMatrixIndicesGLBuffer method to ensure that the GL VBO that
- * holds the vertex content is updated.
+ * When all vertex changes have been made, be sure to invoke the updateVertexBoneIndicesGLBuffer
+ * method to ensure that the GL VBO that holds the vertex content is updated.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setVertexMatrixIndex: (GLuint) aMatrixIndex
-			   forVertexUnit: (GLuint) vertexUnit
-						  at: (GLuint) index;
+-(void) setVertexBoneIndex: (GLuint) boneIndex forBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
 
 /**
- * Returns a pointer to an array of the matrix indices at the specified vertex
- * index in the underlying vertex content.
+ * Returns the indices of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
  *
- * Several matrix index values are stored for each vertex, one per vertex unit,
- * corresponding to one for each bone that influences the location of the vertex.
- * The number of elements in the returned array is the same for all vertices in
- * this mesh, and can be retrieved from the vertexUnitCount property.
+ * Several indices are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the returned array is the same for each vertex
+ * in this vertex array, as defined by the vertexBoneCount property.
  *
- * The matrix indices can be stored in this mesh as either type GLushort or type
- * GLubyte. The returned array will be of the type of index stored by this vertex
- * array, and it is up to the application to know which type will be returned,
- * and cast the returned array accordingly. The type can be determined by the
- * matrixIndexType property of this mesh, which will return one of GL_UNSIGNED_SHORT
- * or GL_UNSIGNED_BYTE, respectively.
+ * The bone indices can be stored in each vertex as either type GLushort or type GLubyte.
+ * The returned array will be of the type of index stored by the verties in this mesh, and it
+ * is up to the application to know which type will be returned, and cast the returned array
+ * accordingly. The type can be determined by the vertexBoneIndexType property of this mesh,
+ * which will return one of GL_UNSIGNED_SHORT or GL_UNSIGNED_BYTE, respectively.
  *
- * To avoid checking the matrixIndexType property altogether, you can use the
- * vertexMatrixIndexForVertexUnit:at: method, which retrieves the matrix index
- * values one at a time, and automatically converts the stored type to GLushort.
- *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct elements.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(GLvoid*) vertexMatrixIndicesAt: (GLuint) index;
+-(GLvoid*) vertexBoneIndicesAt: (GLuint) vtxIndex;
 
 /**
- * Sets the matrix index elements at the specified vertex index in the underlying
- * vertex content, to the values in the specified array.
+ * Sets the indices of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
  *
- * Several matrix index values are stored for each vertex, one per vertex unit,
- * corresponding to one for each bone that influences the location of the vertex.
- * The number of elements is the same for all vertices in this mesh, and can be
- * retrieved from the vertexUnitCount property. The number of elements in the specified input
- * array must therefore be at least as large as the value of the vertexUnitCount property.
+ * Several indices are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the specified input array must therefore be at
+ * least as large as the value of the vertexBoneCount property.
  *
- * The matrix indices can be stored in this mesh as either type GLushort or type GLubyte.
- * The specified array must be of the type of index stored by this mesh, and it is up to
- * the application to know which type is required, and provide that type of array accordingly.
- * The type can be determined by the matrixIndexType property of this mesh, which will return
- * one of GL_UNSIGNED_SHORT or GL_UNSIGNED_BYTE, respectively.
+ * The bone indices can be stored in each vertx as either type GLushort or type GLubyte.
+ * The specified array must be of the type of index stored by the verties in this mesh, and
+ * it is up to the application to know which type is required, and provide that type of array
+ * accordingly. The type can be determined by the vertexBoneIndexType property of this mesh,
+ * which will return one of GL_UNSIGNED_SHORT or GL_UNSIGNED_BYTE, respectively.
  *
- * To avoid checking the matrixIndexType property altogether, you can use the
- * setVertexMatrixIndex:forVertexUnit:at: method, which sets the matrix index values
- * one at a time, and automatically converts the input type to the correct stored type.
+ * To avoid checking the elementType altogether, you can use the setVertxBoneIndex:forBoneInfluence:at:
+ * method, which sets the bone index values one at a time, and automatically converts the input type to
+ * the correct stored type.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * whether the vertex content is interleaved to access the correct vertex content component.
  *
- * When all vertex changes have been made, be sure to invoke the
- * updateVertexMatrixIndicesGLBuffer method to ensure that the GL VBO that
- * holds the vertex content is updated.
+ * When all vertex changes have been made, be sure to invoke the updateVertexBoneIndicesGLBuffer
+ * method to ensure that the GL VBO that holds the vertex content is updated.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setVertexMatrixIndices: (GLvoid*) mtxIndices at: (GLuint) index;
+-(void) setVertexBoneIndices: (GLvoid*) boneIndices at: (GLuint) vtxIndex;
 
 /**
- * Returns the type of data stored for each bone matrix index.
+ * Returns the type of data element used to store each bone index.
  *
- * The value returned by this property will be either GL_UNSIGNED_SHORT or
- * GL_UNSIGNED_BYTE, corresponding to each matrix index being stored in either
- * a type GLushort or type GLubyte, respectively.
+ * The value returned by this property will be either GL_UNSIGNED_SHORT or GL_UNSIGNED_BYTE,
+ * corresponding to each bone index being stored in either a type GLushort or type GLubyte,
+ * respectively.
+ *
+ * You can use the value of this property to determine how to cast the data arrays used by
+ * the vertexBoneIndicesAt: and setVertexBoneIndices:at: methods.
  */
-@property(nonatomic, readonly) GLenum matrixIndexType;
+@property(nonatomic, readonly) GLenum vertexBoneIndexType;
 
 /**
  * Returns the texture coordinate element at the specified index from the vertex content
@@ -1479,10 +1550,10 @@
 -(void) setVertexTexCoord2F: (ccTex2F) aTex2F at: (GLuint) index;
 
 /** @deprecated Use the vertexTexCoord2FForTextureUnit:at: method instead, */
--(ccTex2F) vertexTexCoord2FAt: (GLuint) index forTextureUnit: (GLuint) texUnit DEPRECATED_ATTRIBUTE;
+-(ccTex2F) vertexTexCoord2FAt: (GLuint) index forTextureUnit: (GLuint) texUnit __deprecated;
 
 /** @deprecated Use the setVertexTexCoord2F:forTextureUnit:at: method instead, */
--(void) setVertexTexCoord2F: (ccTex2F) aTex2F at: (GLuint) index forTextureUnit: (GLuint) texUnit DEPRECATED_ATTRIBUTE;
+-(void) setVertexTexCoord2F: (ccTex2F) aTex2F at: (GLuint) index forTextureUnit: (GLuint) texUnit __deprecated;
 
 /**
  * Returns the index element at the specified index from the vertex content.
@@ -1525,11 +1596,11 @@
 /** Updates the GL engine buffer with the vertex color content in this mesh. */
 -(void) updateVertexColorsGLBuffer;
 
-/** Updates the GL engine buffer with the vertex weight content in this mesh. */
--(void) updateVertexMatrixIndicesGLBuffer;
+/** Updates the GL engine buffer with the vertex bone weight content in this mesh. */
+-(void) updateVertexBoneWeightsGLBuffer;
 
-/** Updates the GL engine buffer with the vertex weight content in this mesh. */
--(void) updateVertexWeightsGLBuffer;
+/** Updates the GL engine buffer with the vertex bone indices content in this mesh. */
+-(void) updateVertexBoneIndicesGLBuffer;
 
 /**
  * Updates the GL engine buffer with the vertex texture coord content from the
@@ -1607,10 +1678,10 @@
 -(GLuint) vertexIndexCountFromFaceCount: (GLuint) fc;
 
 /** @deprecated Renamed to faceCountFromVertexIndexCount:. */
--(GLuint) faceCountFromVertexCount: (GLuint) vc DEPRECATED_ATTRIBUTE;
+-(GLuint) faceCountFromVertexCount: (GLuint) vc __deprecated;
 
 /** @deprecated Renamed to vertexIndexCountFromFaceCount:. */
--(GLuint) vertexCountFromFaceCount: (GLuint) fc DEPRECATED_ATTRIBUTE;
+-(GLuint) vertexCountFromFaceCount: (GLuint) fc __deprecated;
 
 /**
  * Returns the face from the mesh at the specified index.
@@ -1784,6 +1855,47 @@ globalIntersections: (CC3MeshIntersection*) intersections
  * of this node. Usually, the application never needs to invoke this method directly.
  */
 -(void) drawWithVisitor: (CC3NodeDrawingVisitor*) visitor;
+
+
+#pragma mark Deprecated methods
+
+/** *@deprecated Renamed to vertexBoneCount. */
+@property(nonatomic, readonly) GLuint vertexUnitCount __deprecated;
+
+/** *@deprecated Renamed to vertexWeightForBoneInfluence:at:. */
+-(GLfloat) vertexWeightForVertexUnit: (GLuint) vertexUnit at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to setVertexWeight:forBoneInfluence:at:. */
+-(void) setVertexWeight: (GLfloat) aWeight forVertexUnit: (GLuint) vertexUnit at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to vertexBoneWeightsAt:. */
+-(GLfloat*) vertexWeightsAt: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to setVertexBoneWeights:at:. */
+-(void) setVertexWeights: (GLfloat*) weights at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to vertexBoneIndexForBoneInfluence:at:. */
+-(GLuint) vertexMatrixIndexForVertexUnit: (GLuint) vertexUnit at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to setVertexBoneIndex:forBoneInfluence:at:. */
+-(void) setVertexMatrixIndex: (GLuint) aMatrixIndex
+			   forVertexUnit: (GLuint) vertexUnit
+						  at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to vertexBoneIndicesAt:. */
+-(GLvoid*) vertexMatrixIndicesAt: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to setVertexBoneIndices:at:. */
+-(void) setVertexMatrixIndices: (GLvoid*) mtxIndices at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to vertexBoneIndexType. */
+@property(nonatomic, readonly) GLenum matrixIndexType __deprecated;
+
+/** *@deprecated Renamed to updateVertexBoneWeightsGLBuffer. */
+-(void) updateVertexWeightsGLBuffer __deprecated;
+
+/** *@deprecated Renamed to updateVertexBoneIndicesGLBuffer. */
+-(void) updateVertexMatrixIndicesGLBuffer __deprecated;
 
 @end
 

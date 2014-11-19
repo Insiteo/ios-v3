@@ -1,9 +1,9 @@
 /*
  * CC3Environment.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,16 +32,44 @@
 
 #import "cocos2d.h"
 
-/** OS platform macros */
-# define CC3_IOS			defined(__IPHONE_OS_VERSION_MAX_ALLOWED)
-# define CC3_OSX			defined(__MAC_OS_X_VERSION_MAX_ALLOWED)
+/** Running on iOS - use ifdef instead of defined() operator to allow CC3_IOS to be used in expansions */
+#ifndef CC3_IOS
+#	ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#		define CC3_IOS			1
+#	else
+#		define CC3_IOS			0
+#	endif
+#endif
 
-/** Create convenience tests for whether we are linking to cocos2d 1.x or 2.x. */
+/** Running on OSX - use ifdef instead of defined() operator to allow CC3_IOS to be used in expansions */
+#ifndef CC3_OSX
+#	ifdef __MAC_OS_X_VERSION_MAX_ALLOWED
+#		define CC3_OSX			1
+#	else
+#		define CC3_OSX			0
+#	endif
+#endif
+
+/** Running on Android via Apportable. Explicitly set as a build setting. */
+#ifndef APPORTABLE
+#	define APPORTABLE		0
+#endif
+
+/** Convenience tests for whether we are linking to specific Cocos2D versions or functionality. */
 #ifndef CC3_CC2_1
-#	define CC3_CC2_1		(COCOS2D_VERSION < 0x020000)
+#	define CC3_CC2_1				(COCOS2D_VERSION < 0x020000)
 #endif
 #ifndef CC3_CC2_2
-#	define CC3_CC2_2		!(CC3_CC2_1)
+#	define CC3_CC2_2				(COCOS2D_VERSION >= 0x020000 && COCOS2D_VERSION < 0x030000)
+#endif
+#ifndef CC3_CC2_CLASSIC
+#	define CC3_CC2_CLASSIC			(COCOS2D_VERSION < 0x030000)
+#endif
+#ifndef CC3_CC2_3
+#	define CC3_CC2_3				(COCOS2D_VERSION >= 0x030000)
+#endif
+#ifndef CC3_CC2_RENDER_QUEUE
+#	define CC3_CC2_RENDER_QUEUE		(COCOS2D_VERSION >= 0x030100)
 #endif
 
 /** Running some form of OpenGL ES under iOS. */
@@ -51,12 +79,12 @@
 
 /** Running OpenGL ES 1 under iOS. */
 #ifndef CC3_OGLES_1
-#	define CC3_OGLES_1		((CC3_CC2_1) && (CC3_OGLES))
+#	define CC3_OGLES_1		((CC3_OGLES) && (CC3_CC2_1))
 #endif
 
 /** Running OpenGL ES 2 under iOS. */
 #ifndef CC3_OGLES_2
-#	define CC3_OGLES_2		((CC3_CC2_2) && (CC3_OGLES))
+#	define CC3_OGLES_2		((CC3_OGLES) && !(CC3_CC2_1))
 #endif
 
 /** Running OpenGL under OSX on the Mac. */
@@ -64,7 +92,7 @@
 #	define CC3_OGL			(CC3_OSX)
 #endif
 
-/** Running an OpenGL version that supports GLSL (either OpenGL ES 2 or OpenGL). */
+/** Running an OpenGL version that supports GLSL (any but OpenGL ES 1.1). */
 #ifndef CC3_GLSL
-#	define CC3_GLSL			(CC3_CC2_2)
+#	define CC3_GLSL			!(CC3_OGLES_1)
 #endif

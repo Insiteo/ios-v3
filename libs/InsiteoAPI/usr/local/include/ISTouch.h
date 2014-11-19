@@ -14,29 +14,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define CC3RayZero CC3RayMake(0, 0, 0, 0, 0, 0)
-
-#import "ISLayer.h"
 #import "CC3Foundation.h"
 
 /*!
- Class used to store iOS touch information such as UIEvent and relative ISLayer.
+ Class used to store iOS touch information such as UIEvent and relative CCLayer.
  */
-@interface ISTouch : NSObject {
-    
-@private
-    
-    //An array which contains all touches
-    NSMutableArray * m_touches;
-    //Original touchs (with no rotation or tilt computation)
-    NSMutableArray * m_originalTouches;
-    //Relative UIEvent
-    UIEvent * m_event;
-    //CC3Ray array
-    NSMutableArray * m_touchRays;
-    //CC3Vector array
-    NSMutableArray * m_vectors;
-}
+@interface ISTouch : NSObject
 
 /*!
  An array which contains all touches.
@@ -96,9 +79,9 @@
 @property (nonatomic, readonly) NSValue * secondVector;
 
 /*!
- Relative touched ISLayer.
+ Relative touched CCLayer.
  */
-@property (assign) ISLayer * layer;
+@property (assign) CCLayer * layer;
 
 /*!
  All 3D touch rays.
@@ -114,20 +97,20 @@
  Main constructor.
  @param event Relative UIEvent.
  @param view Relative touched UIView.
- @param layer Relative touched ISLayer.
+ @param layer Relative touched CCLayer.
  */
-- (id)initWithEvent:(UIEvent *)event andView:(UIView *)view andLayer:(ISLayer *)layer;
+- (id)initWithEvent:(UIEvent *)event andView:(UIView *)view andLayer:(CCLayer *)layer;
 
 /*!
  Second constructor.
  @param event Relative UIEvent.
  @param touches An array which contains all touches (finger).
  @param originalTouches An array which contains all original touches (finger).
- @param layer Relative touched ISLayer.
+ @param layer Relative touched CCLayer.
  @param touchRays An array which contains all 3D touch rays.
  @param vectors An array which contains all 3D touch vectors.
  */
-- (id)initWithEvent:(UIEvent *)event andTouches:(NSMutableArray *)touches andOriginalTouches:(NSMutableArray *)originalTouches andLayer:(ISLayer *)layer andTouchRays:(NSMutableArray *)touchRays andVectors:(NSMutableArray *)vectors;
+- (id)initWithEvent:(UIEvent *)event andTouches:(NSMutableArray *)touches andOriginalTouches:(NSMutableArray *)originalTouches andLayer:(CCLayer *)layer andTouchRays:(NSMutableArray *)touchRays andVectors:(NSMutableArray *)vectors;
 
 /*!
  Static copy constructor.
@@ -141,21 +124,5 @@
  @param center Relative rotation center.
  */
 - (ISTouch *)rotateWithAngle:(float)angle andCenter:(CGPoint)center;
-
-/*!
- Static method used to convert a point in a tilt coordinates.
- @param layer Point related layer.
- @param point The point to convert.
- @return The tilted point
- */
-+ (CGPoint)tiltPointWithLayer:(ISLayer *)layer andPoint:(CGPoint)point;
-
-/*!
- Static method used to convert a tilted point in normal coordinates.
- @param layer Point related layer.
- @param point The point to convert.
- @return The untilted point
- */
-+ (CGPoint)untiltPointWithLayer:(ISLayer *)layer andPoint:(CGPoint)point;
 
 @end

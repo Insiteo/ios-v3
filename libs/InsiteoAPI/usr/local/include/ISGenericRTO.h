@@ -19,11 +19,10 @@ extern int const RTO_LABEL_MAX_LENGTH;
 //Intern value used to handle touch move on RTO
 extern int const CLICKABLE_RTO_SIZE;
 
-#import "CCNode.h"
+#import "cocos2d.h"
 #import "ISPRTO.h"
 #import "ISPosition.h"
 #import "ISGenericRTONode.h"
-#import "ISReverseRect.h"
 
 @class CC3Billboard;
 
@@ -190,6 +189,22 @@ extern int const CLICKABLE_RTO_SIZE;
  */
 - (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed;
 
+/*!
+ Main constructor
+ @param name RTO displayed name.
+ @param label RTO displayed label.
+ @param metersPosition RTO position in meters (could be nil in case of zone rendering).
+ @param windowDisplayed Boolean used to know if the RTO window has to be displayed.
+ @param labelDisplayed Boolean used to know if the RTO label has to be displayed.
+ @param windowBackgroundColorNormal RTO window background color (normal state).
+ @param windowBackgroundColorHighlighted RTO window background color (highlighted state).
+ @param actionImagePath RTO action image path.
+ @param actionBackgroundColorNormal RTO action image background color (normal state).
+ @param actionBackgroundColorHighlighted RTO action image background color (highlighted state).
+ @param indicatorImagePath RTO indicator image path.
+ @param windowAnchorImagePath RTO window anchor image path.
+ @param markerImagePath RTO marker image path.
+ */
 - (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath;
 
 /*!

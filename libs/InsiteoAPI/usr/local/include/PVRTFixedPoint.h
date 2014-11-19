@@ -1,24 +1,17 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTFixedPoint.h
-
- @Title        PVRTFixedPoint
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     Independant
-
- @Description  Set of macros and functions to make fixed-point easier to program.
+ @file         PVRTFixedPoint.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Set of macros and functions to make fixed-point easier to program.
 
 ******************************************************************************/
+
 #ifndef _PVRTFIXEDPOINT_H_
 #define _PVRTFIXEDPOINT_H_
 
 #include "PVRTGlobal.h"
 
-#if defined(BUILD_OGLES) || defined(BUILD_D3DM)
+#if defined(BUILD_OGLES)
 	#include "PVRTFixedPointAPI.h"
 #else
 	#define VERTTYPE PVRTfloat32
@@ -35,7 +28,7 @@
 #define PVRTABS(a)		((a) <= 0 ? -(a) : (a) )
 
 /* Define trig table macros */
-//#include "PVRTMathTable.h"				// patched for cocos3d by Bill Hollings
+//#include "PVRTMathTable.h"				// patched for Cocos3D by Bill Hollings
 
 /* Useful values */
 #define PVRT_PI_OVER_TWOf	(3.1415926535f / 2.0f)
@@ -122,8 +115,8 @@
 // Structure Definitions
 
 /*!***************************************************************************
- @Struct HeaderStruct_Mesh
- @Brief  Defines the format of a header-object as exported by the MAX plugin.
+ @struct HeaderStruct_Mesh
+ @brief  Defines the format of a header-object as exported by the MAX plugin.
 *****************************************************************************/
 typedef struct {
 	unsigned int      nNumVertex;
@@ -156,12 +149,8 @@ typedef struct {
 #ifdef PVRT_FIXED_POINT_ENABLE
 
 /*!***************************************************************************
- Defines the format of a header-object as when converted to
- fixed point.
-*****************************************************************************/
-/*!***************************************************************************
- @Struct HeaderStruct_Fixed_Mesh
- @Brief  Defines the format of a header-object as when converted to fixed point.
+ @struct HeaderStruct_Fixed_Mesh
+ @brief  Defines the format of a header-object as when converted to fixed point.
 *****************************************************************************/
 typedef struct {
 	unsigned int      nNumVertex;
@@ -198,19 +187,17 @@ typedef struct {
 // Function prototypes
 
 /*!***************************************************************************
- @Function		PVRTLoadHeaderObject
- @Input			headerObj			Pointer to object structure in the header file
- @Return		directly usable geometry in fixed or float format as appropriate
- @Description	Converts the data exported by MAX to fixed point when used in OpenGL
+ @brief         Converts the data exported by MAX to fixed point when used in OpenGL
 				ES common-lite profile.
+ @param[in]		headerObj			Pointer to object structure in the header file
+ @return		directly usable geometry in fixed or float format as appropriate
 *****************************************************************************/
 HeaderStruct_Mesh_Type* PVRTLoadHeaderObject(const void *headerObj);
 
 /*!***************************************************************************
- @Function		PVRTUnloadHeaderObject
- @Input			headerObj			Pointer returned by LoadHeaderObject
- @Description	Releases memory allocated by LoadHeaderObject when geometry no longer
+ @brief     	Releases memory allocated by LoadHeaderObject when geometry no longer
 				needed.
+ @param[in] 	headerObj			Pointer returned by LoadHeaderObject
 *****************************************************************************/
 void PVRTUnloadHeaderObject(HeaderStruct_Mesh_Type* headerObj);
 

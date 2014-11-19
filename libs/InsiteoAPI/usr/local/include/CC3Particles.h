@@ -1,9 +1,9 @@
 /*
  * CC3Particles.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -93,7 +93,7 @@
  * You can also set the isAlive property to NO in the initializeParticle method
  * to cause the emission of the particle to be aborted.
  */
-@protocol CC3ParticleProtocol <NSObject>
+@protocol CC3ParticleProtocol <CC3Object>
 
 /**
  * The emitter that emitted this particle.
@@ -241,7 +241,7 @@
  *
  * This can be used with the emissionDuration and emissionInterval properties.
  */
-static const ccTime kCC3ParticleInfiniteInterval = kCC3MaxGLfloat;
+static const CCTime kCC3ParticleInfiniteInterval = kCC3MaxGLfloat;
 
 /**
  * Constant representing an infinite rate of emission.
@@ -249,7 +249,7 @@ static const ccTime kCC3ParticleInfiniteInterval = kCC3MaxGLfloat;
  * This can be used with the emissionRate property, and indicates
  * that all particles should be emitted at once.
  */
-static const ccTime kCC3ParticleInfiniteEmissionRate = kCC3MaxGLfloat;
+static const CCTime kCC3ParticleInfiniteEmissionRate = kCC3MaxGLfloat;
 
 /**
  * Constant representing an unlimited number of particles.
@@ -257,7 +257,7 @@ static const ccTime kCC3ParticleInfiniteEmissionRate = kCC3MaxGLfloat;
  * This can be used with the maximumParticleCapacity property, and indicates that there
  * is no pre-defined maximum limit to the number of particles that will be emitted.
  */
-static const GLuint kCC3ParticlesNoMax = UINT_MAX;
+static const GLuint kCC3ParticlesNoMax = kCC3MaxGLuint;
 
 /**
  * A CC3MeshNode that emits 3D particles.
@@ -298,10 +298,10 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * texture assigned to the emitter, effectivly allowing each particle to be textured differently.
  *
  * Particles managed by a CC3ParticleEmitter live in the 3D scene, as distinct from the 2D
- * particles available through the cocos2d CCParticleSystem class.
+ * particles available through the Cocos2D CCParticleSystem class.
  * 
- * For many particle effects, 2D is sufficient, and can be quite effective. You can use a cocos2d
- * CCParticleSystem instance with a CC3Billboard, to embed 2D particle systems within a 3D cocos3d scene.
+ * For many particle effects, 2D is sufficient, and can be quite effective. You can use a Cocos2D
+ * CCParticleSystem instance with a CC3Billboard, to embed 2D particle systems within a 3D Cocos3D scene.
  *
  * However, for applications that need particles to move in three dimensions, you can use this class,
  * or one of its specialized subclasses. Each particle emitted by this emitter has a 3D location,
@@ -380,16 +380,17 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * emitter node, and is deallocated automatically when the emitter is released.
  */
 @interface CC3ParticleEmitter : CC3MeshNode {
-	CCArray* _particles;
+	NSMutableArray* _particles;
 	CC3ParticleNavigator* _particleNavigator;
 	Class _particleClass;
+	GLuint _currentParticleCapacity;
 	GLuint _maximumParticleCapacity;
 	GLuint _particleCapacityExpansionIncrement;
 	GLuint _particleCount;
-	ccTime _emissionDuration;
-	ccTime _elapsedTime;
-	ccTime _emissionInterval;
-	ccTime _timeSinceEmission;
+	CCTime _emissionDuration;
+	CCTime _elapsedTime;
+	CCTime _emissionInterval;
+	CCTime _timeSinceEmission;
 	BOOL _shouldRemoveOnFinish : 1;
 	BOOL _isEmitting : 1;
 	BOOL _wasStarted : 1;
@@ -416,7 +417,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * implements the protocols specified by the requiredParticleProtocol property of both this
  * emitter and the particle navigator
  */
-@property(nonatomic, assign) Class particleClass;
+@property(nonatomic, retain) Class particleClass;
 
 /**
  * The protocol required for particles emitted by this emitter.
@@ -437,7 +438,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * To encompass both requirements, you should create another custom protocol that wraps
  * (conforms to) both of those protocols, and assign it to this requiredParticleProtocol property.
  */
-@property(nonatomic, readonly) Protocol* requiredParticleProtocol;
+@property(nonatomic, retain, readonly) Protocol* requiredParticleProtocol;
 
 /**
  * For particles that follow a planned life-cycle and trajectory, the particle navigator configures that
@@ -470,7 +471,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  *
  * The initial value is kCC3ParticleInfiniteDuration.
  */
-@property(nonatomic, assign) ccTime emissionDuration;
+@property(nonatomic, assign) CCTime emissionDuration;
 
 /**
  * For emitters with a finite emissionDuration, indicates the length of time that this
@@ -479,7 +480,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * When the value of this property exceeds the value of the emissionDuration property,
  * the pause method is automatically invoked to cease the emission of particles.
  */
-@property(nonatomic, readonly) ccTime elapsedTime;
+@property(nonatomic, readonly) CCTime elapsedTime;
 
 /**
  * The rate that particles will be emitted, expressed in particles per second.
@@ -511,7 +512,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * determine that you want to emit a particle, or you may use the emitParticle: method to add
  * a particle that you have created outside the emitter.
  */
-@property(nonatomic, assign) ccTime emissionInterval;
+@property(nonatomic, assign) CCTime emissionInterval;
 
 /**
  * Indicates that this emitter should automatically be removed from its parent, and
@@ -846,7 +847,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  *
  * The application must not change the contents of this array directly.
  */
-@property(nonatomic, readonly) CCArray* particles;
+@property(nonatomic, retain, readonly) NSArray* particles;
 
 /**
  * The number of particles that are currently alive and being displayed by this emitter. The value of
@@ -975,7 +976,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * To encompass both requirements, you should create another custom protocol that wraps
  * (conforms to) both of those protocols, and assign it to this requiredParticleProtocol property.
  */
-@property(nonatomic, readonly) Protocol* requiredParticleProtocol;
+@property(nonatomic, retain, readonly) Protocol* requiredParticleProtocol;
 
 /**
  * Template method that initializes the particle. For particles that follow a planned life-cycle
@@ -1192,7 +1193,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
 #pragma mark CCRGBAProtocol support
 
 /**
- * Implementation of the CCRGBAProtocol color property.
+ * The color of this particle.
  *
  * If this particle has individual color content, (which can be checked with the hasColor
  * property), this property indicates the color in which this particle will appear.
@@ -1210,10 +1211,10 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * of the diffuseColor property of the emitter. In this condition, it is safe to set this property,
  * but changes will have no effect.
  */
-@property(nonatomic, assign) ccColor3B color;
+@property(nonatomic, assign) CCColorRef color;
 
 /**
- * Implementation of the CCRGBAProtocol opacity property.
+ * The opacity of this particle.
  *
  * If this particle has individual color content, (which can be checked with the hasColor
  * property), this property indicates the opacity in which this particle will appear.
@@ -1231,7 +1232,7 @@ static const GLuint kCC3ParticlesNoMax = UINT_MAX;
  * of the opacity of the diffuseColor property of the emitter. In this condition, it is safe to
  * set this property, but changes will have no effect.
  */
-@property(nonatomic, assign) GLubyte opacity;
+@property(nonatomic, assign) CCOpacity opacity;
 
 
 #pragma mark Allocation and initialization

@@ -1,9 +1,9 @@
 /*
  * CC3Node.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,10 +36,12 @@
 #import "CC3BoundingVolumes.h"
 #import "CCAction.h"
 #import "CCProtocols.h"
-#import "CC3ShaderProgramContext.h"
+#import "CC3ShaderContext.h"
+#import "CC3NodeListeners.h"
 
 @class CC3NodeDrawingVisitor, CC3Scene, CC3Camera, CC3Frustum, CC3Texture;
-@class CC3NodeAnimation, CC3NodeAnimationState, CC3NodeDescriptor, CC3WireframeBoundingBoxNode;
+@class CC3NodeDescriptor, CC3WireframeBoundingBoxNode;
+
 
 /**
  * Enumeration of options for scaling normals after they have been transformed during
@@ -51,51 +53,6 @@ typedef enum {
 	kCC3NormalScalingNormalize,		/**< Normalize each normal after tranformation. */
 	kCC3NormalScalingAutomatic,		/**< Automatically determine optimal normal scaling method. */
 } CC3NormalScaling;
-
-
-#pragma mark -
-#pragma mark CC3NodeListenerProtocol
-
-/**
- * This protocol defines the behaviour requirements for objects that wish to be
- * notified about the basic existence of a node.
- */
-@protocol CC3NodeListenerProtocol
-
-/**
- * Callback method that will be invoked when the node has been deallocated.
- *
- * Although the sending node is still alive when sending this message, its state is
- * unpredictable, because all subclass state will have been released or detroyed when
- * this message is sent. The receiver of this message should not attempt to send any
- * messages to the sender. Instead, it should simply clear any references to the node.
- */
--(void) nodeWasDestroyed: (CC3Node*) aNode;
-
-@end
-
-
-#pragma mark -
-#pragma mark CC3NodeTransformListenerProtocol
-
-/**
- * This protocol defines the behaviour requirements for objects that wish to be
- * notified whenever the transform of a node has changed.
- *
- * This occurs when one of the transform properties (location, rotation & scale)
- * of the node, or any of its structural ancestor nodes, has changed.
- *
- * A transform listener can be registered with a node via the addTransformListener: method.
- *
- * Each listener registered with a node will be sent the nodeWasTransformed: notification
- * message when the globalTransformMatrix of this node is recalculated, or is set directly.
- */
-@protocol CC3NodeTransformListenerProtocol <CC3NodeListenerProtocol>
-
-/** Callback method that will be invoked when the globalTransformMatrix of the specified node has changed. */
--(void) nodeWasTransformed: (CC3Node*) aNode;
-
-@end
 
 
 #pragma mark -
@@ -167,11 +124,11 @@ typedef enum {
  * the next frame are being handled by the CPU, and on some systems, permits frame drawing
  * and model updating to be perfomed on separate threads.
  *
- * CC3Nodes support the cocos2d CCAction class hierarchy. Nodes can be translated, rotated,
+ * CC3Nodes support the Cocos2D CCAction class hierarchy. Nodes can be translated, rotated,
  * and scaled in three dimensions, or made to point towards a direction (for cameras and
- * lights), all under control of cocos2d CCActions. As with other CCActions, these actions
- * can be combined into action sequences or repeating actions, or modified with cocos2d ease
- * actions. See the class CC3TransformTo and its subclasses for actions that operate on CC3Nodes.
+ * lights), all under control of Cocos2D CCActions. As with other CCActions, these actions
+ * can be combined into action sequences or repeating actions, or modified with Cocos2D ease
+ * actions. See the class CC3ActionTransformTo and its subclasses for actions that operate on CC3Nodes.
  *
  * When populating your scene, you can easily create hordes of similar nodes using the copy
  * and copyWithName: methods. Those methods effect deep copies to allow each copy to be
@@ -181,7 +138,7 @@ typedef enum {
  * You can animate this class with animation data held in a subclass of CC3NodeAnimation.
  * To animate this node using animation data, set the animation property to an instance
  * of a subclass of the abstract CC3NodeAnimation class, populated with animation content,
- * and then create an instance of a CC3Animate action, and run it on this node.
+ * and then create an instance of a CC3ActionAnimate action, and run it on this node.
  *
  * Nodes can respond to iOS touch events. The property touchEnabled can be set to YES
  * to allow a node to be selected by a touch event. If the shouldInheritTouchability
@@ -225,23 +182,21 @@ typedef enum {
  * debugging rendering problems.
  */
 @interface CC3Node : CC3Identifiable <CCRGBAProtocol, CCBlendProtocol, CC3NodeTransformListenerProtocol> {
-	CCArray* _children;
+	NSMutableArray* _children;
 	CC3Node* _parent;
+	CC3Matrix* _localTransformMatrix;
 	CC3Matrix* _globalTransformMatrix;
 	CC3Matrix* _globalTransformMatrixInverted;
-	CCArray* _transformListeners;
 	CC3Matrix* _globalRotationMatrix;
 	CC3Rotator* _rotator;
 	CC3NodeBoundingVolume* _boundingVolume;
-	CCArray* _animationStates;
+	CC3NodeTransformListeners* _transformListeners;
+	NSMutableArray* _animationStates;		// used by Animation category extension
 	CC3Vector _location;
 	CC3Vector _projectedLocation;
 	CC3Vector _scale;
 	GLfloat _boundingVolumePadding;
 	GLfloat _cameraDistanceProduct;
-	BOOL _isTransformDirty : 1;
-	BOOL _isTransformInvertedDirty : 1;
-	BOOL _isGlobalRotationDirty : 1;
 	BOOL _touchEnabled : 1;
 	BOOL _shouldInheritTouchability : 1;
 	BOOL _shouldAllowTouchableWhenInvisible : 1;
@@ -251,8 +206,10 @@ typedef enum {
 	BOOL _shouldUseFixedBoundingVolume : 1;
 	BOOL _shouldStopActionsWhenRemoved : 1;
 	BOOL _isAnimationDirty : 1;
-	BOOL _cascadeColorEnabled;
-	BOOL _cascadeOpacityEnabled;
+	BOOL _cascadeColorEnabled : 1;
+	BOOL _cascadeOpacityEnabled : 1;
+	BOOL _isBeingAdded : 1;
+	BOOL _shouldCastShadows : 1;	// Used by subclasses - held here for conciseness
 }
 
 /**
@@ -392,9 +349,20 @@ typedef enum {
  * The incoming axis and angle specify the amount of change in rotation,
  * not the final rotational state.
  *
- * Thanks to cocos3d user nt901 for contributing to the development of this feature
+ * Thanks to Cocos3D user nt901 for contributing to the development of this feature
  */
--(void) rotateByAngle: (GLfloat) anAngle aroundAxis: (CC3Vector) anAxis;
+-(void) rotateByAngle: (GLfloat) angle aroundAxis: (CC3Vector) axis;
+
+/**
+ * Rotates this node from its current rotational state by rotating around the specified axis
+ * by the specified angle in degrees, using the specified location as the rotational pivot point.
+ *
+ * The location is specified in the local coordinate system of this node. The incoming axis
+ * and angle specify the amount of change in rotation, not the final rotational state.
+ */
+-(void) rotateByAngle: (GLfloat) angle
+		   aroundAxis: (CC3Vector) axis
+		   atLocation: (CC3Vector) pivotLocation;
 
 /**
  * The direction in which this node is pointing.
@@ -462,10 +430,10 @@ typedef enum {
 @property(nonatomic, assign) CC3Vector referenceUpDirection;
 
 /** @deprecated Renamed to referenceUpDirection. */
-@property(nonatomic, assign) CC3Vector sceneUpDirection DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3Vector sceneUpDirection __deprecated;
 
 /** @deprecated Renamed to referenceUpDirection. */
-@property(nonatomic, assign) CC3Vector worldUpDirection DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3Vector worldUpDirection __deprecated;
 
 /**
  * The direction, in the node's coordinate system, that is considered to be 'up'.
@@ -583,25 +551,25 @@ typedef enum {
  * now tracked by the globalTransformMatrix itself. This property will always return zero. Setting
  * this property will have no effect.
  */
-@property(nonatomic, assign) GLfloat scaleTolerance DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) GLfloat scaleTolerance __deprecated;
 
 /**
  * @deprecated This property is no longer needed, since the rigidity of a node transform is
  * now tracked by the globalTransformMatrix itself. This property will always return zero.
  */
-+(GLfloat) defaultScaleTolerance DEPRECATED_ATTRIBUTE;
++(GLfloat) defaultScaleTolerance __deprecated;
 
 /**
  * @deprecated This property is no longer needed, since the rigidity of a node transform is
  * now tracked by the globalTransformMatrix itself. Setting this property will have no effect.
  */
-+(void) setDefaultScaleTolerance: (GLfloat) aTolerance DEPRECATED_ATTRIBUTE;
++(void) setDefaultScaleTolerance: (GLfloat) aTolerance __deprecated;
 
 /**
  * Returns the smallest axis-aligned bounding box that surrounds any local content
  * of this node, plus all descendants of this node.
  *
- * The returned bounding box is specfied in the local coordinate system of this node.
+ * The returned bounding box is specified in the local coordinate system of this node.
  *
  * Returns kCC3BoxNull if this node has no local content or descendants.
  *
@@ -620,7 +588,7 @@ typedef enum {
  * Returns the smallest axis-aligned bounding box that surrounds any local content
  * of this node, plus all descendants of this node.
  *
- * The returned bounding box is specfied in the global coordinate system of the 3D scene.
+ * The returned bounding box is specified in the global coordinate system of the 3D scene.
  *
  * Returns kCC3BoxNull if this node has no local content or descendants.
  *
@@ -629,6 +597,21 @@ typedef enum {
  * by traversing all descendant nodes. This is a computationally expensive method.
  */
 @property(nonatomic, readonly) CC3Box globalBoundingBox;
+
+/**
+ * Returns the smallest axis-aligned bounding box that surrounds any local content
+ * of this node, plus all descendants of this node.
+ *
+ * The returned bounding box is specified in the coordinate system of the specified node,
+ * or in the global coordinate system of the 3D scene if the ancestor is nil.
+ *
+ * Returns kCC3BoxNull if this node has no local content or descendants.
+ *
+ * Since the bounding box of a node can change based on the locations, rotations, or
+ * scales of any descendant node, this property is measured dynamically on each access,
+ * by traversing all descendant nodes. This is a computationally expensive method.
+ */
+-(CC3Box) boundingBoxRelativeTo: (CC3Node*) ancestor;
 
 /**
  * Returns the center of geometry of this node, including any local content of
@@ -681,16 +664,16 @@ typedef enum {
 @property(nonatomic, assign) GLfloat cameraDistanceProduct;
 
 /**
- * The current location of this node, as projected onto the 2D viewport coordinate space.
- * For most purposes, this is where this node will appear on the screen or window.
- * The 2D position can be read from the X and Y components of the returned 3D location.
+ * The current location of this node, as projected onto a 2D position in the display coordinate
+ * space, indicating where on the CC3Layer this 3D location will be seen. 
  *
- * The initial value of this property is kCC3VectorZero. To set this property, pass this
- * node as the argument to the projectNode: method of the active camera, which can be
- * retrieved from the activeCamera property of the CC3Scene. The application should usually
- * not set this property directly. For more information, see the notes for the projectNode:
- * method of CC3Camera.
+ * The initial value of this property is kCC3VectorZero. To set the value of this property, 
+ * pass this node as the argument to the projectNode: method of a CC3Camera. For more 
+ * information, see the notes for the projectNode: method of CC3Camera.
  *
+ * The 2D position can be read from the X and Y components of the returned 3D location, 
+ * and is measured in points in the coordinate system of the CC3Layer.
+ * 
  * The Z-component of the returned location indicates the distance from the camera to this
  * node, with a positive value indicating that this node is in front of the camera, and a
  * negative value indicating that it is behind the camera. If you are only interested in
@@ -700,27 +683,21 @@ typedef enum {
  * When several nodes overlap a 2D position on the screen, you can also use the Z-component
  * of the projectedLocation property of each of the nodes to determine which node is closest
  * the camera, and is therefore "on-top" visually. This can be useful when trying to select
- * a 3D node from an iOS touch event position.
- *
- * The returned value takes into account the orientation of the device (portrait, landscape). 
+ * a 3D node from a touch event position.
  */
-@property(nonatomic, assign) CC3Vector projectedLocation;
+@property(nonatomic, readonly) CC3Vector projectedLocation;
 
 /**
- * The current position of this node, as projected onto the 2D viewport coordinate space,
- * returned as a 2D point. For most purposes, this is where this node will appear on the
- * screen or window.
+ * The current position of this node, as projected onto a 2D position in the display coordinate
+ * space, indicating where on the CC3Layer this 3D location will be seen.
  *
- * This value is derived from the X and Y coordinates of the projectedLocation property.
- * If this node is behind the camera, both the X and Y coordinates of the returned point
- * will have the value -kCC3MaxGLfloat.
+ * This is a convenience property. The value of this property is derived from the X and Y 
+ * coordinates of the projectedLocation property. If this node is behind the camera, both 
+ * the X and Y coordinates of the returned point will have the value -kCC3MaxGLfloat.
  *
- * The initial value of this property is CGPointZero. To set this property, pass this
- * node as the argument to the projectNode: method of the active camera, which can be
- * retrieved from the activeCamera property of the CC3Scene. For more information, see
- * the notes for the projectNode: method of CC3Camera.
- *
- * The returned value takes into account the orientation of the device (portrait, landscape). 
+ * The initial value of this property is (-kCC3MaxGLfloat, -kCC3MaxGLfloat). To set the value
+ * of this property, pass this node as the argument to the projectNode: method of a CC3Camera. 
+ * For more information, see the notes for the projectNode: method of CC3Camera.
  */
 @property(nonatomic, readonly) CGPoint projectedPosition;
 
@@ -786,8 +763,9 @@ typedef enum {
  * is set to YES, this node will track the target so that it always points to the
  * target, regardless of how the target and this node move through the 3D scene.
  *
- * The target is not retained. If you destroy the target node, you must remove
- * it as the target of this node.
+ * The reference to the target is weak, allowing the target node to be removed from the scene
+ * if needed. This node will receive a nodeWasDestroyed: reference if the target node is removed
+ * and deallocated. The default implementation of that method is to set this target property to nil.
  */
 @property(nonatomic, assign) CC3Node* target;
 
@@ -909,10 +887,52 @@ typedef enum {
 @property(nonatomic, assign) CC3TargettingConstraint targettingConstraint;
 
 /** @deprecated Renamed to targettingConstraint. */
-@property(nonatomic, assign) CC3TargettingConstraint axisRestriction DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3TargettingConstraint axisRestriction __deprecated;
 
 
 #pragma mark Mesh configuration
+
+/**
+ * Indicates whether drawing should be performed in clip-space.
+ *
+ * The clip-space coordinate system is a transformation of the camera frustum, where the camera
+ * looks down the -Z axis, and entire coorinate system is normalized to cover the range +/-1.0
+ * in each of the X, Y & Z dimensions.
+ *
+ * When this property is set to YES, a simple square plane node, with X & Y sides of length 2.0,
+ * centered on the origin and facing the +Z axis will fill the entire view. This makes it very
+ * easy to create backdrops and post-processing effects.
+ *
+ * When this property is set to YES, all combinations of the projection, view, and model matrices
+ * will be set to identity matrices during rendering. The node is effectivly drawn with an
+ * orthographic projection, looking down the negative Z axis, with X & Y axis dimensions
+ * normalized to +/-1.0 each.
+ *
+ * To support this node being rendered in clip-space, setting this property to YES also
+ * makes the following configuration changes to this mesh node:
+ *  - The mesh is replaced with a simple 2D square mesh with sides of length 2.0.
+ *  - The shouldUseLighting property is set to NO.
+ *  - The shouldDisableDepthTest property is set to YES.
+ *  - The shouldDisableDepthMask property is set to YES.
+ *  - The boundingVolume property is set to nil.
+ *
+ * If you want to set the above properties and characteristics to other values, do so after
+ * setting this property.
+ *
+ * Normally, you want this node to completely cover the entire view, which it does by default,
+ * and you do not need to apply any transforms to this node. However, by applying location and
+ * scale transforms, you can configure this node so that it only covers a portion of the view.
+ * In doing so, keep in mind that clip-space, only the X & Y values of the location and scale
+ * properties are used, and that the coordinate system occupies a range between -1 and +1.
+ *
+ * Setting the value of this property sets the value of this property in all descendant nodes.
+ *
+ * Querying this property returns YES if any of the descendant mesh nodes have this property
+ * set to YES. Initially, and in most cases, all mesh nodes have this property set to NO.
+ *
+ * The initial value of this property is NO.
+ */
+@property(nonatomic, assign) BOOL shouldDrawInClipSpace;
 
 /**
  * Indicates whether the back faces should be culled on the meshes contained in
@@ -1364,7 +1384,7 @@ typedef enum {
  * The description of each node appears on a separate line and is indented
  * according to its depth in the structural hierarchy, starting at this node.
  */
-@property(nonatomic, readonly) NSString* structureDescription;
+@property(nonatomic, retain, readonly) NSString* structureDescription;
 
 /**
  * Appends the description of this node to the specified mutable string, on a new line
@@ -1378,23 +1398,42 @@ typedef enum {
 #pragma mark Matierial properties
 
 /**
- * If this value is set to YES, current lighting conditions will be taken into consideration
- * when drawing colors and textures, and the ambientColor, diffuseColor, specularColor,
- * emissionColor, and shininess properties will interact with lighting settings.
+ * If this value is set to YES, current lighting conditions (from either lights or light probes)
+ * will be taken into consideration when drawing colors and textures.
  *
  * If this value is set to NO, lighting conditions will be ignored when drawing colors and
- * textures, and the material emissionColor will be applied to the mesh surface without regard
- * to lighting. Blending will still occur, but the other material aspects, including ambientColor,
+ * textures, and the emissionColor will be applied to the mesh surface, without regard to
+ * lighting. Blending will still occur, but the other material aspects, including ambientColor,
  * diffuseColor, specularColor, and shininess will be ignored. This is useful for a cartoon
  * effect, where you want a pure color, or the natural colors of the texture, to be included
  * in blending calculations, without having to arrange lighting, or if you want those colors
  * to be displayed in their natural values despite current lighting conditions.
  *
- * Setting the value of this property sets the same property in the materials contained in all
- * descendant nodes. Reading the value of this property returns YES if any descendant node
- * returns YES, and returns NO otherwise.
+ * Be aware that the initial value of the emissionColor property is normally black. If you
+ * find your node disappears or turns black when you set this property to NO, try changing
+ * the value of the emissionColor property.
+ *
+ * Setting the value of this property sets the same property in all descendant nodes. 
+ * Reading the value of this property returns YES if any descendant node returns YES, 
+ * and returns NO otherwise.
  */
 @property(nonatomic, assign) BOOL shouldUseLighting;
+
+/**
+ * If this value is set to YES, any descendant mesh nodes will ignore the lights in the scene
+ * and will, instead, determine the lighting of the mesh node using textures held by light 
+ * probes in the scene.
+ *
+ * This property only has effect if the shouldUseLighting property is set to YES.
+ *
+ * Setting the value of this property sets the same property in all descendant nodes.
+ * Reading the value of this property returns YES if any descendant node returns YES,
+ * and returns NO otherwise.
+ *
+ * See the notes of the CC3LightProbe class to learn more about using light probes to
+ * illuminate models within the scene.
+ */
+@property(nonatomic, assign) BOOL shouldUseLightProbes;
 
 /**
  * The ambient color of the materials of this node.
@@ -1434,12 +1473,37 @@ typedef enum {
 @property(nonatomic, assign) ccColor4F emissionColor;
 
 /**
+ * The shininess of the materials of this node.
+ *
+ * Setting this property sets the same property on all child nodes.
+ * Querying this property returns the average value of querying this property on all child nodes.
+ * When querying this value on a large node assembly, be aware that this may be time-consuming.
+ */
+@property(nonatomic, assign) GLfloat shininess;
+
+/**
+ * The reflectivity of the materials of this node.
+ *
+ * Setting this property sets the same property on all child nodes.
+ * Querying this property returns the average value of querying this property on all child nodes.
+ * When querying this value on a large node assembly, be aware that this may be time-consuming.
+ */
+@property(nonatomic, assign) GLfloat reflectivity;
+
+/**
  * Convenience property for setting the texture covering all descendant mesh nodes.
  *
  * Setting the value of this property sets the same property in all descendant mesh nodes.
  * Querying the value of this property returns the first non-nil texture from a descendant mesh node.
  */
 @property(nonatomic, retain) CC3Texture* texture;
+
+/**
+ * Convenience method for adding a texture covering all descendant mesh nodes.
+ *
+ * Invoking this method invokes the same method on all descendant mesh nodes.
+ */
+-(void) addTexture: (CC3Texture*) aTexture;
 
 /**
  * When a mesh node is textured with a DOT3 bump-map (normal map) in object-space, this property
@@ -1469,11 +1533,13 @@ typedef enum {
 @property(nonatomic, assign) CC3Vector4 globalLightPosition;
 
 /** @deprecated Use globalLightPosition instead. */
-@property(nonatomic, assign) CC3Vector globalLightLocation DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) CC3Vector globalLightLocation __deprecated;
 
 /**
  * The GLSL program context containing the GLSL program (vertex & fragment shaders) used to
  * decorate the descendant nodes.
+ *
+ * See the notes about the same property in CC3MeshNode, for more info about the use of shader contexts.
  *
  * Setting this property causes each descendant to use the specified program context. Querying
  * this property returns the value of the same property from the first descendant node that has
@@ -1489,16 +1555,18 @@ typedef enum {
  *
  * This property is used only when running under OpenGL ES 2.
  */
-@property(nonatomic, retain) CC3ShaderProgramContext* shaderContext;
+@property(nonatomic, retain) CC3ShaderContext* shaderContext;
 
 /**
- * The GLSL program (vertex & fragment shaders) used to decorate the descendant nodes.
+ * The GLSL program (vertex & fragment shaders) used to decorate the descendant mesh nodes.
+ *
+ * See the notes about the same property in CC3MeshNode, for more info about the use of shader programs.
  *
  * Setting this property causes each descendant to use the specified program. Querying this
  * property returns the value of the same property from the first descendant node that has
  * a non-nil value in its shaderProgram property.
  *
- * Within each descendant node, the program is held in the program context in the shaderContext
+ * Within each descendant mesh node, the program is held in the program context in the shaderContext
  * property. When using this property to set the program into each descendant, a new unique context
  * will be created in each node that does not already have a context. In this way, each node may
  * have its own context, which can be customized separately. As an alternative, the shaderContext
@@ -1511,64 +1579,66 @@ typedef enum {
 @property(nonatomic, retain) CC3ShaderProgram* shaderProgram;
 
 /**
- * Selects an appropriate shader program for each descendant mesh node.
+ * Selects an appropriate shaders for each descendant mesh node.
  *
- * When running under a programmable rendering pipeline, such as OpenGL ES 2.0 or OpenGL,
- * all mesh nodes require a shader program to be assigned. This can be done directly using
- * the shaderProgram property. Or a shader program can be selected automatically based on
- * the characteristics of the mesh node.
+ * When running under a programmable rendering pipeline, such as OpenGL ES 2.0 or OpenGL, all
+ * mesh nodes require a shaders to be assigned. This can be done directly using the shaderProgram 
+ * property. Or shaders can be selected automatically based on the characteristics of the mesh node.
  *
- * You can use this method to cause a shader program to be automatically selected for each
- * descendant mesh node that does not already have a shader program assigned. You can assign
- * shader programs to some specific mesh nodes, and then invoke this method on the CC3Scene
- * to have shader programs assigned to the remaining mesh nodes.
+ * You can use this method to cause a shaders to be automatically selected for each descendant
+ * mesh node that does not already have shaders assigned. You can assign shader programs to some
+ * specific mesh nodes, and then invoke this method on the CC3Scene to have shaders assigned to
+ * the remaining mesh nodes.
  *
- * Since all mesh nodes require shader programs, if this method is not invoked, and a shader
- * program is not manually assigned via the shaderProgram property, a shader program will be
- * automatically assigned to each mesh node the first time it is rendered. The automatic
- * selection is the same, whether this method is invoked, or the selection is made lazily.
- * However, if the shader program must be loaded and compiled, there can be a noticable
- * pause in drawing a mesh node for the first time if lazy assignment is used.
+ * Since all mesh nodes require shaders, if this method is not invoked, and a shader program
+ * was not manually assigned via the shaderProgram property, a shaders will be automatically
+ * assigned to each mesh node the first time it is rendered. The automatic selection is the
+ * same, whether this method is invoked, or the selection is made lazily. However, if the
+ * shaders must be loaded and compiled, there can be a noticable pause in drawing a mesh node
+ * for the first time if lazy assignment is used.
  *
- * Shader selection is driven by the characteristics of each mesh node and its material,
- * including the number of textures, whether alpha testing is used, etc. If you change
- * any of these characteristics that affect the shader selection, you can invoke the
- * clearShaderPrograms method to cause a different shader program to be selected for each
- * mesh node, based on the new mesh node and material characteristics. You can also invoke
- * the clearShaderProgram on a specific mesh node to cause only the shader program of that
- * mesh node to be cleared.
+ * Shader selection is driven by the characteristics of each mesh node and its material, 
+ * including the number of textures, whether alpha testing is used, etc. If you change any
+ * of these characteristics that affect the shader selection, you can invoke the removeShaders 
+ * method to cause different shaders to be selected for each mesh node, based on the new mesh
+ * node and material characteristics. You can also invoke the removeLocalShaders on a specific
+ * mesh node to cause only the shader program of that mesh node to be cleared.
  *
- * Shader selection is handled by an implementation of the CC3ShaderProgramMatcher held in the
- * CC3ShaderProgram programMatcher class-side property. The application can therefore customize
- * shader program selection by establishing a custom instance in the CC3ShaderProgram programMatcher
- * class-side property
+ * Shader selection is handled by an implementation of the CC3ShaderMatcher held in the 
+ * CC3ShaderProgram shaderMatcher class-side property. The application can therefore customize
+ * shader program selection by establishing a custom instance in the CC3ShaderProgram 
+ * shaderMatcher class-side property
  */
--(void) selectShaderPrograms;
+-(void) selectShaders;
 
 /**
- * Clears the shader program from each descendant mesh node, allowing a new shader to be selected
- * for each mesh node, either directly by subsequently invoking the selectShaderPrograms method,
- * or automatically the next time each mesh node is drawn.
+ * Removes the shaders from each descendant mesh node, allowing new shaders to be selected for
+ * each mesh node, either directly by subsequently invoking the selectShaders method, or 
+ * automatically the next time each mesh node is drawn.
  *
  * Shader selection is driven by the characteristics of each mesh node and its material,
- * including the number of textures, whether alpha testing is used, etc. If you change
- * any of these characteristics that affect the shader selection, you can invoke the
- * clearShaderPrograms method to cause a different shader program to be selected for
- * each mesh node, based on the new mesh node and material characteristics. 
- *
- * You can also invoke the clearShaderProgram on a specific mesh node to cause only the
- * shader program of that mesh node to be cleared.
+ * including the number of textures, whether alpha testing is used, etc. If you change any
+ * of these characteristics that affect the shader selection, you can invoke the removeShaders
+ * method to cause different shaders to be selected for each mesh node, based on the new mesh
+ * node and material characteristics. You can also invoke the removeLocalShaders on a specific
+ * mesh node to cause only the shader program of that mesh node to be cleared.
  *
  * This method is equivalent to setting the shaderProgram property to nil on each descendant
  * mesh node.
  */
--(void) clearShaderPrograms;
+-(void) removeShaders;
+
+/** @deprecated Renamed to selectShaders. */
+-(void) selectShaderPrograms __deprecated;
+
+/** @deprecated Renamed to removeShaders. */
+-(void) clearShaderPrograms __deprecated;
 
 
 #pragma mark CCRGBAProtocol and CCBlendProtocol support
 
 /**
- * Implementation of the CCRGBAProtocol color property.
+ * The average color of this node.
  *
  * Setting this property sets the same property on all child nodes.
  *
@@ -1580,10 +1650,10 @@ typedef enum {
  * Querying this property returns the average value of querying this property on all child nodes.
  * When querying this value on a large node assembly, be aware that this may be time-consuming.
  */
-@property(nonatomic, assign) ccColor3B color;
+@property(nonatomic, assign) CCColorRef color;
 
 /**
- * Implementation of the CCRGBAProtocol opacity property.
+ * The average opacity of this node.
  *
  * Querying this property returns the average value of querying this property on all child nodes.
  * When querying this value on a large node assembly, be aware that this may be time-consuming.
@@ -1602,7 +1672,7 @@ typedef enum {
  * specific blending properties on the CC3Material instance directly, and avoid making
  * changes to this property.
  */
-@property(nonatomic, assign) GLubyte opacity;
+@property(nonatomic, assign) CCOpacity opacity;
 
 /**
  * Implementation of the CCBlendProtocol blendFunc property.
@@ -1819,8 +1889,8 @@ typedef enum {
  *   - retainVertexBitangents
  *   - retainVertexColors
  *   - retainVertexTextureCoordinates
- *   - retainVertexMatrixIndices
- *   - retainVertexWeights
+ *   - retainVertexBoneWeights
+ *   - retainVertexBoneIndices
  *   - retainVertexPointSizes
  *   - retainVertexIndices
  *
@@ -1834,7 +1904,7 @@ typedef enum {
 -(void) releaseRedundantContent;
 
 /** @deprecated Renamed to releaseRedundantContent. */
--(void) releaseRedundantData DEPRECATED_ATTRIBUTE;
+-(void) releaseRedundantData __deprecated;
 
 /**
  * Convenience method to cause all vertex content to be retained in application
@@ -1919,26 +1989,26 @@ typedef enum {
 -(void) retainVertexColors;
 
 /**
- * Convenience method to cause the vertex matrix index content of this node and all descendant
- * nodes to be retained in application memory when releaseRedundantContent is invoked, even if
- * it has been buffered to a GL VBO.
- *
- * Only the vertex matrix index will be retained. Any other vertex content, such as locations,
- * or texture coordinates, that has been buffered to GL VBO's, will be released from
- * application memory when releaseRedundantContent is invoked.
- */
--(void) retainVertexMatrixIndices;
-
-/**
- * Convenience method to cause the vertex weight content of this node and all descendant
+ * Convenience method to cause the vertex bone weight content of this node and all descendant
  * nodes  to be retained in application memory when releaseRedundantContent is invoked,
  * even if it has been buffered to a GL VBO.
  *
- * Only the vertex weight will be retained. Any other vertex content, such as locations,
+ * Only the vertex bone weight will be retained. Any other vertex content, such as locations,
  * or texture coordinates, that has been buffered to GL VBO's, will be released from
  * application memory when releaseRedundantContent is invoked.
  */
--(void) retainVertexWeights;
+-(void) retainVertexBoneWeights;
+
+/**
+ * Convenience method to cause the vertex bone index content of this node and all descendant
+ * nodes to be retained in application memory when releaseRedundantContent is invoked, even if
+ * it has been buffered to a GL VBO.
+ *
+ * Only the vertex bone index will be retained. Any other vertex content, such as locations,
+ * or texture coordinates, that has been buffered to GL VBO's, will be released from
+ * application memory when releaseRedundantContent is invoked.
+ */
+-(void) retainVertexBoneIndices;
 
 /**
  * Convenience method to cause the vertex point size content to be retained in application
@@ -2073,34 +2143,34 @@ typedef enum {
 -(void) doNotBufferVertexColors;
 
 /**
- * Convenience method to cause the vertex matrix index content of this node and all
- * descendant nodes to be skipped when createGLBuffers is invoked. The vertex content
- * is not buffered to a GL VBO, is retained in application memory, and is submitted
- * to the GL engine on each frame render.
- *
- * Only the vertex matrix index will not be buffered to a GL VBO. Any other vertex content,
- * such as locations, or texture coordinates, will be buffered to a GL VBO when
- * createGLBuffers is invoked.
- *
- * This method causes the vertex content to be retained in application memory, so, if you have
- * invoked this method, you do NOT also need to invoke the retainVertexMatrixIndices method.
- */
--(void) doNotBufferVertexMatrixIndices;
-
-/**
- * Convenience method to cause the vertex weight content of this node and all descendant
+ * Convenience method to cause the vertex bone weight content of this node and all descendant
  * nodes to be skipped when createGLBuffers is invoked. The vertex content is not buffered
  * to a GL VBO, is retained in application memory, and is submitted to the GL engine on
  * each frame render.
  *
- * Only the vertex weight will not be buffered to a GL VBO. Any other vertex content, such
+ * Only the vertex bone weights will not be buffered to a GL VBO. Any other vertex content, such
  * as locations, or texture coordinates, will be buffered to a GL VBO when createGLBuffers
  * is invoked.
  *
  * This method causes the vertex content to be retained in application memory, so, if you have
- * invoked this method, you do NOT also need to invoke the retainVertexWeights method.
+ * invoked this method, you do NOT also need to invoke the retainVertexBoneWeights method.
  */
--(void) doNotBufferVertexWeights;
+-(void) doNotBufferVertexBoneWeights;
+
+/**
+ * Convenience method to cause the vertex bone index content of this node and all
+ * descendant nodes to be skipped when createGLBuffers is invoked. The vertex content
+ * is not buffered to a GL VBO, is retained in application memory, and is submitted
+ * to the GL engine on each frame render.
+ *
+ * Only the vertex bone indices will not be buffered to a GL VBO. Any other vertex content,
+ * such as locations, or texture coordinates, will be buffered to a GL VBO when
+ * createGLBuffers is invoked.
+ *
+ * This method causes the vertex content to be retained in application memory, so, if you have
+ * invoked this method, you do NOT also need to invoke the retainVertexBoneIndices method.
+ */
+-(void) doNotBufferVertexBoneIndices;
 
 /**
  * Convenience method to cause the vertex point size content to be skipped when createGLBuffers
@@ -2147,6 +2217,18 @@ typedef enum {
  * retainVertexColors method.
  */
 -(void) doNotBufferVertexIndices;
+
+/** *@deprecated Renamed to retainVertexBoneWeights. */
+-(void) retainVertexWeights __deprecated;
+
+/** *@deprecated Renamed to retainVertexBoneIndices. */
+-(void) retainVertexMatrixIndices __deprecated;
+
+/** *@deprecated Renamed to doNotBufferVertexBoneWeights. */
+-(void) doNotBufferVertexWeights __deprecated;
+
+/** *@deprecated Renamed to doNotBufferVertexBoneIndices. */
+-(void) doNotBufferVertexMatrixIndices __deprecated;
 
 
 #pragma mark Texture and normal alignment
@@ -2330,15 +2412,8 @@ typedef enum {
  */
 -(void) updateAfterTransform: (CC3NodeUpdatingVisitor*) visitor;
 
-/**
- * If the shouldTrackTarget property is set to YES, orients this node to point towards
- * its target, otherwise does nothing. The transform visitor is used to transform
- * this node and all its children if this node re-orients.
- *
- * This method is invoked automatically if either the target node or this node moves.
- * Usually, the application should never need to invoke this method directly.
- */
--(void) trackTargetWithVisitor: (CC3NodeTransformingVisitor*) visitor;
+/** @deprecated No longer needed. Does nothing. */
+-(void) trackTargetWithVisitor: (id) visitor __deprecated;
 
 /**
  * If the shouldUseFixedBoundingVolume property is set to NO, this method marks the bounding
@@ -2355,35 +2430,35 @@ typedef enum {
 -(void) markBoundingVolumeDirty;
 
 /** @deprecated Renamed to markBoundingVolumeDirty. */
--(void) rebuildBoundingVolume DEPRECATED_ATTRIBUTE;
+-(void) rebuildBoundingVolume __deprecated;
 
 
 #pragma mark Transformations
 
 /**
- * A list of objects that have requested that they be notified whenever the
- * transform of this node has changed.
+ * Returns a copy of the collection of objects that have requested that they be notified 
+ * whenever the transform of this node has changed, which occurs when one of the transform 
+ * properties (location, rotation & scale) of this node, or any of its structural ancestor
+ * nodes, changes.
  *
- * This occurs when one of the transform properties (location, rotation & scale)
- * of this node, or any of its structural ancestor nodes has changed.
+ * Each object in the returned collection implements the CC3NodeTransformListenerProtocol,
+ * and will be sent the nodeWasTransformed: notification message when the transform of this
+ * node changes.
  *
- * Each listener in this list will be sent the nodeWasTransformed: notification
- * message when the globalTransformMatrix of this node is recalculated, or is set directly.
+ * Objects can be added to this collection by using the addTransformListener: method, and
+ * removed using the removeTransformListener: method. This property returns a copy of the
+ * collection stored in this node. You can safely invoke the addTransformListener: or 
+ * removeTransformListener: methods while iterating the returned collection.
  *
- * Objects can be added to this list by using the addTransformListener: method.
- *
- * This property will be nil if no objects have been added via addTransformListener:
- * method, or if they have all been subsequently removed.
- *
- * Transform listeners are not retained. Each listener should know who it has subscribed
- * to, and must remove itself as a listener (using the removeTransformListener: method)
- * when appropriate, such as when being deallocated.
+ * Transform listeners are weakly referenced. Each listener should know who it has subscribed
+ * to, and must remove itself as a listener (using the removeTransformListener: method) when
+ * appropriate, such as when being deallocated.
  *
  * For the same reason, transform listeners are not automatically copied when a node is
  * copied. If you copy a node and want its listeners to also listen to the copied node,
  * you must deliberately add them to the new node.
  */
-@property(nonatomic, readonly) CCArray* transformListeners;
+@property(nonatomic, retain, readonly) NSSet* transformListeners;
 
 /**
  * Indicates that the specified listener object wishes to be notified whenever
@@ -2403,9 +2478,9 @@ typedef enum {
  * It is safe to invoke this method more than once for the same listener, or
  * with a nil listener. In either case, this method simply ignores the request.
  *
- * Transform listeners are not retained. Each listener should know who it has subscribed
- * to, and must remove itself as a listener (using the removeTransformListener: method)
- * when appropriate, such as when being deallocated.
+ * Transform listeners are weakly referenced. Each listener should know who it has subscribed
+ * to, and must remove itself as a listener (using the removeTransformListener: method) when
+ * appropriate, such as when being deallocated.
  *
  * For the same reason, transform listeners are not automatically copied when a node is
  * copied. If you copy a node and want its listeners to also listen to the copied node,
@@ -2450,26 +2525,35 @@ typedef enum {
 -(void) nodeWasDestroyed: (CC3Node*) aNode;
 
 /**
+ * The local transformation matrix derived from the location, rotation and scale transform
+ * properties of this node, relative to the parent of this node. This matrix determines the 
+ * transformation between this node and its parent.
+ *
+ * If not set directly, this property will be lazily created on first access. Thenceforth,
+ * it is updated automatically whenever any of the transform properties (location, rotation,
+ * or scale) of this node is changed.
+ *
+ * You can set this property directly as an alternative to setting the individual transform
+ * properties (location, rotation, and scale). This can sometimes be quite useful for certain
+ * complex transformation combinations, especially when sourced from animation data. However, 
+ * be aware subsequent change to any of the individual tranform properties (location, rotation,
+ * or scale) will change the composition of this matrix.
+ */
+@property(nonatomic, retain) CC3Matrix* localTransformMatrix;
+
+/**
  * The global transformation matrix derived from the location, rotation and scale transform
  * properties of this node and all ancestor nodes.
  *
- * This matrix is recalculated automatically when the node is updated.
+ * This matrix is updated automatically whenever any of the transform properties (location, 
+ * rotation, or scale) of this node, or any of its ancestors, is changed.
  *
  * This transform matrix includes the transforms of all ancestors to the node. This streamlines
  * rendering in that it allows the transform of each drawable node to be applied directly, and
  * allows the order in which drawable nodes are drawn to be independent of the node structural
  * hierarchy.
  */
-@property(nonatomic, retain) CC3Matrix* globalTransformMatrix;
-
-/** 
- * @deprecated Renamed to globalTransformMatrix.
- *
- * This property will be redefined in a future release of cocos3d, and will result in incorrect
- * behaviour in any legacy code that depends on the older functionality provided by this property.
- * Convert your code now.
- */
-@property(nonatomic, retain) CC3Matrix* transformMatrix DEPRECATED_ATTRIBUTE;
+@property(nonatomic, retain, readonly) CC3Matrix* globalTransformMatrix;
 
 /**
  * Returns the matrix inversion of the globalTransformMatrix.
@@ -2477,48 +2561,52 @@ typedef enum {
  * This can be useful for converting global transform properties, such as global
  * location, rotation and scale to the local coordinate system of the node.
  */
-@property(nonatomic, readonly) CC3Matrix* globalTransformMatrixInverted;
+@property(nonatomic, retain, readonly) CC3Matrix* globalTransformMatrixInverted;
+
+/**
+ * @deprecated Renamed to globalTransformMatrix.
+ *
+ * This property will be redefined in a future release of Cocos3D, and will result in incorrect
+ * behaviour in any legacy code that depends on the older functionality provided by this property.
+ * Convert your code now.
+ */
+@property(nonatomic, retain, readonly) CC3Matrix* transformMatrix __deprecated;
 
 /**
  * @deprecated Renamed to globalTransformMatrixInverted.
  *
- * This property will be redefined in a future release of cocos3d, and will result in incorrect
+ * This property will be redefined in a future release of Cocos3D, and will result in incorrect
  * behaviour in any legacy code that depends on the older functionality provided by this property.
  * Convert your code now.
  */
-@property(nonatomic, readonly) CC3Matrix* transformMatrixInverted DEPRECATED_ATTRIBUTE;
+@property(nonatomic, retain, readonly) CC3Matrix* transformMatrixInverted __deprecated;
+
+/** Returns a matrix representing all of the rotations that make up this node, including ancestor nodes. */
+-(CC3Matrix*) globalRotationMatrix;
 
 /**
- * Returns the global transform matrix of the parent node, or nil if this node has no parent.
- * 
- * This template property is used by this class to base the transform of this node on
- * the transform of its parent. A subclass may override to return nil if it determines
- * that it wants to ignore the parent transform when calculating its own transform.
- */
-@property(nonatomic, readonly) CC3Matrix* parentGlobalTransformMatrix;
-
-/**
- * @deprecated Renamed to parentGlobalTransformMatrix.
- *
- * This property will be redefined in a future release of cocos3d, and will result in incorrect
- * behaviour in any legacy code that depends on the older functionality provided by this property.
- * Convert your code now.
- */
-@property(nonatomic, readonly) CC3Matrix* parentTransformMatrix DEPRECATED_ATTRIBUTE;
-
-/**
- * Indicates whether any of the transform properties, location, rotation, or scale
- * have been changed, and so the globalTransformMatrix of this node needs to be recalculated.
+ * Indicates whether any of the transform properties, location, rotation, or scale have 
+ * been changed, and so the globalTransformMatrix of this node needs to be recalculated.
  *
  * This property is automatically set to YES when one of those properties have been
  * changed, and is reset to NO once the globalTransformMatrix has been recalculated.
+ * The value of this property is not affected by the state of the localTransformMatrix.
  *
- * Recalculation of the globalTransformMatrix occurs automatically when the node is updated.
+ * Recalculation of the globalTransformMatrix occurs automatically when that property is accessed.
  */
 @property(nonatomic, readonly) BOOL isTransformDirty;
 
 /**
- * Indicates that the transformation matrix is dirty and needs to be recalculated.
+ * Marks that the globalTransformMatrix of this node is dirty and requires recalculation.
+ *
+ * In a hierarchical structure of nodes, the transform of each node affects the transforms of
+ * all descendant nodes. Therefore, in addition to marking the transform of this node as dirty,
+ * this method also propagates to all descendant nodes, to also mark their transforms as dirty.
+ *
+ * This design assumes that if the transform of this node has already been marked as dirty, that
+ * all descendant nodes also have already been marked as dirty. Therefore, as an optimization,
+ * if the globalTransformMatrix of this node is already dirty when this method is invoked, no
+ * action is taken to mark the transforms of any descendant nodes as dirty.
  *
  * This method is invoked automatically as needed. Usually the application never needs
  * to invoke this method directly.
@@ -2526,78 +2614,39 @@ typedef enum {
 -(void) markTransformDirty;
 
 /**
- * Applies the transform properties (location, rotation, scale) to the globalTransformMatrix
- * of this node, and all descendant nodes.
+ * Template method that applies the local location, rotation, and scale properties to
+ * the specified matrix. Subclasses may override to enhance or modify this behaviour.
  *
- * To ensure that the transforms are accurately applied, this method also automatically
- * ensures that the transform matrices of any ancestor nodes are also updated, if needed,
- * before updating this node and its descendants.
+ * This method makes no assumptions about the current contents of the specified matrix, and
+ * does not replace any of that content through population. Instead, the local tranforms of
+ * this node will be applied to the current state of the matrix to transform it accordingly.
  *
- * Equivalent behaviour is invoked automatically during scheduled update processing
- * between the invocations of the updateBeforeTransform: and updateAfterTransform: methods.
- *
- * Changes that you make to the transform properties within the updateBeforeTransform:
- * method will automatically be applied to the globalTransformMatrix of the node. Because of this,
- * it's best to make any changes to the transform properties in that method.
- *
- * However, if you need to make changes to the transform properties in the
- * updateAfterTransform: method of a node, after you have made all your changes to the
- * node properties, you should then invoke this method on the node, in order to have
- * those changes applied to the globalTransformMatrix.
- *
- * Similarly, if you have updated the transform properties of this node asynchronously
- * through an event callback, and want those changes to be immediately reflected in
- * the transform matrices, you can use this method to do so.
+ * This method is invoked automatically to populate the globalTransformMatrix, which is
+ * used to transform this node for rendering. You can also invoke this method to apply 
+ * the transform properties of this node to any other matrix, for other calculations.
  */
--(void) updateTransformMatrices;
+-(void) applyLocalTransformsTo: (CC3Matrix*) matrix;
 
-/**
- * Applies the transform properties (location, rotation, scale) to the globalTransformMatrix
- * of this node, but NOT to any descendant nodes.
- *
- * To ensure that the transforms are accurately applied, this method also automatically
- * ensures that the transform matrices of any ancestor nodes are also updated, if needed,
- * before updating this node and its descendants.
- *
- * Use this method only when you know that you only need the globalTransformMatrix of the
- * specific node updated, and not the matrices of the decendants of that node, or if
- * you will manually update the transformMatrices of the descendant nodes. If in doubt,
- * use the updateTransformMatrices method instead.
- */
--(void) updateTransformMatrix;
+/** @deprecated No longer needed. */
+-(void) updateTransformMatrices __deprecated;
 
-/**
- * Returns the heighest node in my ancestor hierarchy, including myself, that
- * is dirty. Returns nil if neither myself nor any of my ancestors are dirty.
- *
- * This method can be useful when deciding at what level to update a hierarchy.
- *
- * This method is invoked automatically by the updateTransformMatrices and
- * updateTransformMatrix, so in most cases, you do not need to use this method
- * directly. However, there may be special cases where you want to determine
- * beforehand whether this node or its ancestors are dirty or not before running
- * either of those methods.
- */
-@property(nonatomic, readonly) CC3Node* dirtiestAncestor;
+/** @deprecated No longer needed. */
+-(void) updateTransformMatrix __deprecated;
 
-/**
- * Template method that recalculates the transform matrix of this node from the
- * location, rotation and scale transformation properties, using the specified visitor.
- *
- * This method is invoked automatically by the visitor. Usually the application
- * never needs to invoke this method.
- */
--(void) buildTransformMatrixWithVisitor: (CC3NodeTransformingVisitor*) visitor;
+/** @deprecated No longer needed. */
+@property(nonatomic, retain, readonly) CC3Node* dirtiestAncestor __deprecated;
 
-/**
- * Returns the class of visitor that will automatically be instantiated when visiting
- * this node to transform, without updating.
- *
- * The returned class must be a subclass of CC3NodeTransformingVisitor. This implementation
- * returns CC3NodeTransformingVisitor. Subclasses may override to customize the behaviour
- * of the updating visits.
- */
--(id) transformVisitorClass;
+/** @deprecated No longer needed. */
+@property(nonatomic, retain, readonly) CC3Matrix* parentGlobalTransformMatrix __deprecated;
+
+/** @deprecated Renamed to parentGlobalTransformMatrix. No longer needed. */
+@property(nonatomic, retain, readonly) CC3Matrix* parentTransformMatrix __deprecated;
+
+/** @deprecated No longer needed. Does nothing. */
+-(void) buildTransformMatrixWithVisitor: (id) visitor;
+
+/** @deprecated No longer used. Always returns nil. */
+-(id) transformVisitorClass __deprecated;
 
 
 #pragma mark Bounding volumes
@@ -2640,6 +2689,10 @@ typedef enum {
  * If this node has no bounding volume, sets the boundingVolume property
  * to the value returned by the defaultBoundingVolume property.
  *
+ * The automatic creation of a bounding volume relies on having the vertex locations in memory.
+ * Therefore, on mesh nodes, make sure that you invoke this method before invoking the
+ * releaseRedundantContent method, otherwise a bounding volume will not be created.
+ *
  * It is safe to invoke this method more than once. Each node that creates a
  * bounding volume will do so only if it does not already have a bounding volume.
  */
@@ -2650,6 +2703,10 @@ typedef enum {
  * returned by the defaultBoundingVolume property, and then propagates this same method to
  * all descendant nodes, to create bounding volumes for all all descendant nodes, as defined
  * by the defaultBoundingVolume property of each descendant.
+ *
+ * The automatic creation of a bounding volume relies on having the vertex locations in memory.
+ * Therefore, make sure that you invoke this method before invoking the releaseRedundantContent
+ * method, otherwise a bounding volume will not be created.
  *
  * This method does not automatically create a bounding volume for skinned mesh node descendants.
  * To do so, you must also invoke the createSkinnedBoundingVolumes method. See the notes of
@@ -2773,24 +2830,16 @@ typedef enum {
 -(void) checkDrawingOrder;
 
 /**
- * Returns whether drawing should be performed in clip-space.
+ * Indicates whether this node should cast shadows, if shadows are applied to the node
+ * hierarchy to which this node belongs.
  *
- * The clip-space coordinate system is a transformation of the camera frustum, where the camera
- * looks down the -Z axis, and entire coorinate system is normalized to cover the range +/-1.0
- * in each of the X, Y & Z dimensions.
+ * Setting the value of this property sets the value of this property in all descendant nodes.
  *
- * When this property returns YES, a simple square plane node, with X & Y sides of length 2.0,
- * centered on the origin and facing the +Z axis will fill the entire view. This makes it very
- * easy to create backdrops and post-processing effects.
- *
- * When this property returns YES, all combinations of the projection, view, and model matrices
- * will be set to identity matrices during rendering. The scene is effectivly drawn with an
- * orthographic projection, looking down the negative Z axis, with X & Y axis dimensions
- * normalized to +/-1.0 each.
- *
- * This implementation returns NO. Subclasses that are designed to render in clip-space will return YES.
+ * The initial value of this property is YES. You can set the value of this property to NO
+ * on specific nodes that you do not want to cast shadows when shadows are applied to a
+ * hierarchy of nodes.
  */
-@property(nonatomic, readonly) BOOL shouldDrawInClipSpace;
+@property(nonatomic, assign) BOOL shouldCastShadows;
 
 
 #pragma mark Node structural hierarchy
@@ -2803,14 +2852,14 @@ typedef enum {
  * To change the contents of this array, use the addChild: and removeChild:
  * methods of this class. Do not manipulate the contents of this array directly.
  */
-@property(nonatomic, readonly) CCArray* children;
+@property(nonatomic, retain, readonly) NSArray* children;
 
 /**
  * The parent node of this node, in a node structural hierarchy.
  *
  * This property will be nil if this node has not been added as a child to a parent node.
  */
-@property(nonatomic, readonly) CC3Node* parent;
+@property(nonatomic, assign, readonly) CC3Node* parent;
 
 /**
  * Returns the root ancestor of this node, in the node structural hierarchy,
@@ -2823,7 +2872,7 @@ typedef enum {
  * Reading this property traverses up the node hierarchy. If this property
  * is accessed frequently, it is recommended that it be cached.
  */
-@property(nonatomic, readonly) CC3Node* rootAncestor;
+@property(nonatomic, assign, readonly) CC3Node* rootAncestor;
 
 /**
  * If this node has been added to the 3D scene, either directly, or as part
@@ -2833,10 +2882,10 @@ typedef enum {
  * Reading this property traverses up the node hierarchy. If this property
  * is accessed frequently, it is recommended that it be cached.
  */
-@property(nonatomic, readonly) CC3Scene* scene;
+@property(nonatomic, assign, readonly) CC3Scene* scene;
 
 /** @deprecated Renamed to scene. */
-@property(nonatomic, readonly) CC3Scene* world DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign, readonly) CC3Scene* world __deprecated;
 
 /**
  * If this node has been added to the 3D scene, either directly, or as part
@@ -2977,10 +3026,10 @@ typedef enum {
  * set to NO, it is up to you to clean up any running CCActions when you are done with the node.
  * You can do this using either the stopAllActions or cleanupActions method.
  *
- * If the shouldAutoremoveWhenEmpty property is YES, and the last child node is
- * being removed, this node will invoke its own remove method to remove itself from
- * the node hierarchy as well. See the notes for the shouldAutoremoveWhenEmpty
- * property for more info on autoremoving when all child nodes have been removed.
+ * If the shouldAutoremoveWhenEmpty property is YES, and the last child node is removed, this 
+ * node will invoke its own remove method to remove itself from the node hierarchy as well. 
+ * See the notes for the shouldAutoremoveWhenEmpty property for more info on autoremoving when
+ * all child nodes have been removed.
  */
 -(void) removeChild: (CC3Node*) aNode;
 
@@ -3044,13 +3093,13 @@ typedef enum {
  * Returns an autoreleased array containing this node and all its descendants.
  * This is done by invoking flattenInto: with a newly-created array, and returning the array. 
  */
--(CCArray*) flatten;
+-(NSArray*) flatten;
 
 /**
  * Adds this node to the specified array, and then invokes this method on each child node.
  * The effect is to populate the array with this node and all its descendants.
  */
--(void) flattenInto: (CCArray*) anArray;
+-(void) flattenInto: (NSMutableArray*) anArray;
 
 /**
  * Wraps this node in a new autoreleased instance of CC3Node, and returns the new
@@ -3139,15 +3188,9 @@ typedef enum {
  * when this node is removed from its parent. If you have reason to want the actions to be paused but
  * not removed when removing this node from its parent, set this property to NO.
  *
- * One example of such a situation is when you use the addChild: method to move a node from one
- * parent to another. As part of the processing of the addChild: method, if the node already has
- * a parent, it is automatically removed from its current parent. The addChild: method temporarily
- * sets this property to NO so that the actions are not destroyed during the move.
- *
- * If you have some other reason for setting this property to NO, be sure to set it back to YES before
- * this node, or the ancestor node assembly that this node belongs to is removed for good, otherwise
- * this node will continue to be retained by any actions running on this node, and this node will not
- * be deallocated.
+ * If you set this property to NO, be sure to set it back to YES before this node, or the ancestor
+ * node assembly that this node belongs to is removed for good, otherwise this node will continue
+ * to be retained by any actions running on this node, and this node will not be deallocated.
  *
  * Alternately, if you have this property set to NO, you can manually stop and remove all actions
  * using the cleanupActions method.
@@ -3155,10 +3198,10 @@ typedef enum {
 @property(nonatomic, assign) BOOL shouldStopActionsWhenRemoved;
 
 /** @deprecated Renamed to shouldStopActionsWhenRemoved. */
-@property(nonatomic, assign) BOOL shouldCleanupActionsWhenRemoved DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) BOOL shouldCleanupActionsWhenRemoved __deprecated;
 
 /** @deprecated Renamed to shouldStopActionsWhenRemoved. */
-@property(nonatomic, assign) BOOL shouldCleanupWhenRemoved DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) BOOL shouldCleanupWhenRemoved __deprecated;
 
 /** Starts the specified action, and returns that action. This node becomes the action's target. */
 -(CCAction*) runAction: (CCAction*) action;
@@ -3217,7 +3260,7 @@ typedef enum {
 -(void) cleanupActions;
 
 /** @deprecated Renamed to cleanupActions. */
--(void) cleanup DEPRECATED_ATTRIBUTE;
+-(void) cleanup __deprecated;
 
 
 #pragma mark Touch handling
@@ -3245,8 +3288,7 @@ typedef enum {
 @property(nonatomic, assign, getter=isTouchEnabled) BOOL touchEnabled;
 
 /** @deprecated Property renamed to touchEnabled, with getter isTouchEnabled. */
--(void) setIsTouchEnabled: (BOOL) canTouch;
-//-(void) setIsTouchEnabled: (BOOL) canTouch DEPRECATED_ATTRIBUTE;
+//-(void) setIsTouchEnabled: (BOOL) canTouch __deprecated;
 
 /**
  * Indicates whether this node will respond to UI touch events.
@@ -3291,7 +3333,7 @@ typedef enum {
  * property of the car structural node, or each wheel node. This allows the user to
  * touch a wheel, but still have the car identified as the object of interest.
  */
-@property(nonatomic, readonly) CC3Node* touchableNode;
+@property(nonatomic, assign, readonly) CC3Node* touchableNode;
 
 /**
  * Indicates whether this node should automatically be considered touchable if this
@@ -3523,670 +3565,6 @@ typedef enum {
 -(CC3Node*) closestNodeIntersectedByGlobalRay: (CC3Ray) aRay;
 
 
-#pragma mark Animation
-
-/** 
- * Returns the animation state wrapper on the specified animation track, or nil if no
- * animation has been defined for this node on that animation track.
- */
--(CC3NodeAnimationState*) getAnimationStateOnTrack: (GLuint) trackID;
-
-/**
- * Adds the specified animation state wrapper, containing animation and track information.
- *
- * A node may contain only one animation per animation track. If an animation already exists
- * for the track represented in the specified animation state, it is replaced with the animation
- * in the specified animation state.
- *
- * Typically, to add animation to a node, the application would use the addAnimation:asTrack:
- * method, rather than this method.
- */
--(void) addAnimationState: (CC3NodeAnimationState*) animationState;
-
-/**
- * Removes the specified animation state wrapper from this node.
- *
- * Typically, to remove animation from a node, the application would use the removeAnimation:
- * or removeAnimationTrack: methods, rather than this method.
- */
--(void) removeAnimationState: (CC3NodeAnimationState*) animationState;
-
-/**
- * The animation state wrapper for animation track zero. This is a convenience property
- * for accessing the animation when only a single animation track is used.
- *
- * This wrapper is created automatically when the animation property is set.
- */
-@property(nonatomic, retain, readonly) CC3NodeAnimationState* animationState;
-
-/**
- * Returns the animation for the specified animation track, or nil if no animation
- * has been defined for this node on that animation track.
- */
--(CC3NodeAnimation*) getAnimationOnTrack: (GLuint) trackID;
-
-/**
- * Adds the specified animation as the specified animation track.
- *
- * A node may contain only one animation per animation track. If an animation already
- * exists on the specified track, it is replaced with the specified animation.
- *
- * To animate this node, use this method to add one or more instances of a subclass of the
- * abstract CC3NodeAnimation class, populated with animation content, and then create an
- * instance of a CC3Animate action for each track, and selectively run them on this node.
- */
--(void) addAnimation: (CC3NodeAnimation*) animation asTrack: (GLuint) trackID;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation in track zero, which is the default track used during animation loading. A new
- * animation track ID is assigned, the new animation is added to this node on that animation
- * track, and the track ID is returned.
- *
- * The start and end times of the animation segment are defined by startTime and endTime,
- * each of which are specified as a fraction of the total animation contained in the base
- * animation track. Each of startTime and endTime must therefore be between zero and one.
- *
- * For example, if you wish to create a new animation track that plays the middle third of
- * an existing animation track, you would pass 0.3333 and 0.6667 as the startTime and endTime
- * parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(GLuint) addAnimationFrom: (ccTime) startTime
-						to: (ccTime) endTime;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation track specified by baseTrackID. A new animation track ID is assigned, the new animation
- * is added to this node on that animation track, and the track ID is returned.
- *
- * The start and end times of the animation segment are defined by startTime and endTime,
- * each of which are specified as a fraction of the total animation contained in the base
- * animation track. Each of startTime and endTime must therefore be between zero and one.
- *
- * For example, if you wish to create a new animation track that plays the middle third of
- * an existing animation track, you would pass 0.3333 and 0.6667 as the startTime and endTime
- * parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(GLuint) addAnimationFrom: (ccTime) startTime
-						to: (ccTime) endTime
-			   ofBaseTrack: (GLuint) baseTrackID;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation in track zero, which is the default track used during animation loading. The new
- * animation is added to this node on the animation track specified by trackID.
- *
- * The start and end times of the animation segment are defined by startTime and endTime,
- * each of which are specified as a fraction of the total animation contained in the base
- * animation track. Each of startTime and endTime must therefore be between zero and one.
- *
- * For example, if you wish to create a new animation track that plays the middle third of
- * an existing animation track, you would pass 0.3333 and 0.6667 as the startTime and endTime
- * parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(void) addAnimationFrom: (ccTime) startTime
-					  to: (ccTime) endTime
-				 asTrack: (GLuint) trackID;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation track specified by baseTrackID. The new animation is added to this node on the
- * animation track specified by trackID.
- *
- * The start and end times of the animation segment are defined by startTime and endTime, 
- * each of which are specified as a fraction of the total animation contained in the base
- * animation track. Each of startTime and endTime must therefore be between zero and one.
- *
- * For example, if you wish to create a new animation track that plays the middle third of
- * an existing animation track, you would pass 0.3333 and 0.6667 as the startTime and endTime
- * parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(void) addAnimationFrom: (ccTime) startTime
-					  to: (ccTime) endTime
-			 ofBaseTrack: (GLuint) baseTrackID
-				 asTrack: (GLuint) trackID;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation in track zero, which is the default track used during animation loading. A new
- * animation track ID is assigned, the new animation is added to this node on that animation
- * track, and the track ID is returned.
- *
- * The start and end frames of the animation segment are defined by startFrameIndex and
- * endFrameIndex, each of which identify a frame in the base animation track, inclusively.
- * Frame indexing is zero-based, so the first frame is identified as frame index zero.
- *
- * For example, if you wish to create a new animation track that plays frames 10 through 20,
- * inclusively, of an existing animation track, you would pass 10 and 20 as the startFrameIndex
- * and endFrameIndex parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(GLuint) addAnimationFromFrame: (GLuint) startFrameIndex
-						toFrame: (GLuint) endFrameIndex;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation track specified by baseTrackID. A new animation track ID is assigned, the new animation
- * is added to this node on that animation track, and the track ID is returned.
- *
- * The start and end frames of the animation segment are defined by startFrameIndex and
- * endFrameIndex, each of which identify a frame in the base animation track, inclusively.
- * Frame indexing is zero-based, so the first frame is identified as frame index zero.
- *
- * For example, if you wish to create a new animation track that plays frames 10 through 20,
- * inclusively, of an existing animation track, you would pass 10 and 20 as the startFrameIndex
- * and endFrameIndex parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(GLuint) addAnimationFromFrame: (GLuint) startFrameIndex
-						toFrame: (GLuint) endFrameIndex
-					ofBaseTrack: (GLuint) baseTrackID;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation in track zero, which is the default track used during animation loading. The new
- * animation is added to this node on the animation track specified by trackID.
- *
- * The start and end frames of the animation segment are defined by startFrameIndex and
- * endFrameIndex, each of which identify a frame in the base animation track, inclusively.
- * Frame indexing is zero-based, so the first frame is identified as frame index zero.
- *
- * For example, if you wish to create a new animation track that plays frames 10 through 20,
- * inclusively, of an existing animation track, you would pass 10 and 20 as the startFrameIndex
- * and endFrameIndex parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(void) addAnimationFromFrame: (GLuint) startFrameIndex
-					  toFrame: (GLuint) endFrameIndex
-					  asTrack: (GLuint) trackID;
-
-/**
- * Many animated characters require the animation of multiple distinct movements. For example, a
- * bird character might have distinct flapping, landing, and pecking movements. A human character
- * might have distinct running, crouching and shooting movements.
- *
- * It is often useful to provide all of these movements as one long animation, and to play the
- * animation segments for specific movements as required by the application. Our human character
- * might run for a while, then crouch, take a few shots, and then start running again, all under
- * control of the application, by extracting and playing the animation segment for each movement,
- * in turn, from the single long animation that contains all the movements.
- *
- * To support this behaviour, you can load the entire long animation into one track of animation,
- * and then use this method to create a separate animation track that contains only the animation
- * for a single movement. You can then animate only that movement, or repeat only that movement
- * in a loop (such as running or flying), or blend that movement with other animation tracks to
- * allow your human character to run and shoot at the same time, or smoothly transition your bird
- * from the flapping movement to the landing movement.
- *
- * This method creates and adds a new animation track that plays only a segment of the existing
- * animation track specified by baseTrackID. The new animation is added to this node on the
- * animation track specified by trackID.
- *
- * The start and end frames of the animation segment are defined by startFrameIndex and
- * endFrameIndex, each of which identify a frame in the base animation track, inclusively.
- * Frame indexing is zero-based, so the first frame is identified as frame index zero.
- *
- * For example, if you wish to create a new animation track that plays frames 10 through 20,
- * inclusively, of an existing animation track, you would pass 10 and 20 as the startFrameIndex
- * and endFrameIndex parameters, respectively.
- *
- * This method is automatically propagated to all descendant nodes, so you only need to invoke
- * this method on a single ancestor node (eg- the root node of your character).
- */
--(void) addAnimationFromFrame: (GLuint) startFrameIndex
-					  toFrame: (GLuint) endFrameIndex
-				  ofBaseTrack: (GLuint) baseTrackID
-					  asTrack: (GLuint) trackID;
-
-/** Removes the specified animation from this node. */
--(void) removeAnimation: (CC3NodeAnimation*) animation;
-
-/** Removes the animation on the specified animation track from this node and all descendant nodes. */
--(void) removeAnimationTrack: (GLuint) trackID;
-
-/**
- * The animation content of animation track zero of this node.
- *
- * Setting this property is the same as invoking addAnimation:asTrack: and specifying track zero.
- * Querying this property is the same as invoking getAnimationOnTrack: and specifying track zero.
- *
- * To animate this node, set this property to an instance of a subclass of the abstract
- * CC3NodeAnimation class, populated with animation content, and then create an instance
- * of a CC3Animate action, and run it on this node.
- */
-@property(nonatomic, retain) CC3NodeAnimation* animation;
-
-/** Indicates whether this node, or any of its descendants, contains animation on the specified animation track. */
--(BOOL) containsAnimationOnTrack: (GLuint) trackID;
-
-/** Indicates whether this node, or any of its descendants, contains animation on any tracks. */
-@property(nonatomic, readonly) BOOL containsAnimation;
-
-/**
- * Returns the current elapsed animation time for the animation on the specified track,
- * as a value between zero and one.
- *
- * If this node does not contain animation, returns the animation time from the first descendant
- * node that contains animation and has a non-zero animation time. Returns zero if no descendant
- * nodes contain animation, or all descendant animation times are zero.
- */
--(ccTime) animationTimeOnTrack: (GLuint) trackID;
-
-/**
- * Returns the animation blending weight for the animation on the specified track.
- *
- * If this node does not contain animation, returns the blending weight from the first descendant
- * node that contains animation and has a non-zero blending weight. Returns zero if no descendant
- * nodes contain animation, or all descendant blending weights are zero.
- */
--(GLfloat) animationBlendingWeightOnTrack: (GLuint) trackID;
-
-/**
- * Sets the animation blending weight for the animation on the specified track, and sets the
- * same weight into all descendants.
- *
- * When multiple animation tracks are active, the blending weight of a track determines the
- * relative influence the animation track has on the properties of this node. Animation tracks
- * with larger weights relative to the other tracks will have a proportionally larger influence
- * on the transform properties of the node. An animation track with a blending weight of zero
- * will have no influence on the properties of the node.
- *
- * The absolute value of the weights does not matter, nor do the weights across all animation
- * tracks have to add up to unity. Therefore, a blending weight of 0.2 on one track and a blending
- * weight of 0.1 on a second track will have exactly the same affect as a weight of 1.2 on the
- * first track and a weight of 0.6 on the second track. In both cases, the first animation track
- * will have twice the influence as the second animation track.
- *
- * When only one animation track is active, the blending weight has no effect unless it is zero.
- */
--(void) setAnimationBlendingWeight: (GLfloat) blendWeight onTrack: (GLuint) trackID;
-
-/**
- * Enables the animation on the specified track of this node.
- *
- * This will not enable animation of child nodes.
- */
--(void) enableAnimationOnTrack: (GLuint) trackID;
-
-/**
- * Disables the animation on the specified track of this node.
- *
- * This will not disable animation of child nodes.
- */
--(void) disableAnimationOnTrack: (GLuint) trackID;
-
-/**
- * Indicates whether the animation on the specified animation track is enabled.
- *
- * The value returned by this method applies only to this node, not its child nodes. Child nodes
- * that return YES to this method will be animated even if this node returns NO, and vice-versa.
- *
- * The initial value of this property is YES.
- */
--(BOOL) isAnimationEnabledOnTrack: (GLuint) trackID;
-
-/**
- * Enables the animation on all animation tracks of this node.
- *
- * This will not enable animation of child nodes.
- */
--(void) enableAnimation;
-
-/**
- * Disables the animation on all animation tracks of this node.
- *
- * This will not disable animation of child nodes.
- */
--(void) disableAnimation;
-
-/**
- * Indicates whether the animation on any animation track in this node is enabled.
- *
- * The value of this property applies only to this node, not the descendant nodes. Descendant nodes
- * that return YES to this method will be animated even if this node returns NO, and vice-versa.
- *
- * The initial value of this property is YES.
- */
-@property(nonatomic, assign) BOOL isAnimationEnabled;
-
-/** Enables the animation on the specified track of this node, and all descendant nodes. */
--(void) enableAllAnimationOnTrack: (GLuint) trackID;
-
-/** Disables the animation on the specified track of this node, and all descendant nodes. */
--(void) disableAllAnimationOnTrack: (GLuint) trackID;
-
-/** Enables all animation tracks of this node, and all descendant nodes. */
--(void) enableAllAnimation;
-
-/** Disables all animation tracks of this node, and all descendant nodes. */
--(void) disableAllAnimation;
-
-/**
- * Enables the animation of the location property, without affecting the animation of the
- * other properties.
- *
- * This method works together with the enable/disableAnimation methods. For the location
- * property to be animated, both location animation and node animation must be enabled.
- * Both are enabled by default.
- *
- * This will not affect the animation of the location property of child nodes.
- */
--(void) enableLocationAnimation;
-
-/**
- * Disables the animation of the location property, without affecting the animation of the
- * other properties.
- *
- * This method works together with the enable/disableAnimation methods. For the location
- * property to be animated, both location animation and node animation must be enabled.
- * Both are enabled by default.
- *
- * This will not affect the animation of the location property of child nodes.
- */
--(void) disableLocationAnimation;
-
-/**
- * Enables the animation of the quaternion property, without affecting the animation of the
- * other properties.
- *
- * This method works together with the enable/disableAnimation methods. For the quaternion
- * property to be animated, both quaternion animation and node animation must be enabled.
- * Both are enabled by default.
- *
- * This will not affect the animation of the quaternion property of child nodes.
- */
--(void) enableQuaternionAnimation;
-
-/**
- * Disables the animation of the quaternion property, without affecting the animation of the
- * other properties.
- *
- * This method works together with the enable/disableAnimation methods. For the quaternion
- * property to be animated, both quaternion animation and node animation must be enabled.
- * Both are enabled by default.
- *
- * This will not affect the animation of the quaternion property of child nodes.
- */
--(void) disableQuaternionAnimation;
-
-/**
- * Enables the animation of the scale property, without affecting the animation of the
- * other properties.
- *
- * This method works together with the enable/disableAnimation methods. For the scale
- * property to be animated, both scale animation and node animation must be enabled.
- * Both are enabled by default.
- *
- * This will not affect the animation of the scale property of child nodes.
- */
--(void) enableScaleAnimation;
-
-/**
- * Disables the animation of the scale property, without affecting the animation of the
- * other properties.
- *
- * This method works together with the enable/disableAnimation methods. For the scale
- * property to be animated, both scale animation and node animation must be enabled.
- * Both are enabled by default.
- *
- * This will not affect the animation of the scale property of child nodes.
- */
--(void) disableScaleAnimation;
-
-/**
- * Enables the animation of the location property, without affecting the animation of the
- * other properties, on this node and all descendant nodes.
- *
- * This method works together with the enable/disableAnimation methods. For the location
- * property to be animated, both location animation and node animation must be enabled.
- * Both are enabled by default.
- */
--(void) enableAllLocationAnimation;
-
-/**
- * Disables the animation of the location property, without affecting the animation of the
- * other properties, on this node and all descendant nodes.
- *
- * This method works together with the enable/disableAnimation methods. For the location
- * property to be animated, both location animation and node animation must be enabled.
- * Both are enabled by default.
- */
--(void) disableAllLocationAnimation;
-
-/**
- * Enables the animation of the quaternion property, without affecting the animation of the
- * other properties, on this node and all descendant nodes.
- *
- * This method works together with the enable/disableAnimation methods. For the quaternion
- * property to be animated, both quaternion animation and node animation must be enabled.
- * Both are enabled by default.
- */
--(void) enableAllQuaternionAnimation;
-
-/**
- * Disables the animation of the quaternion property, without affecting the animation of the
- * other properties, on this node and all descendant nodes.
- *
- * This method works together with the enable/disableAnimation methods. For the quaternion
- * property to be animated, both quaternion animation and node animation must be enabled.
- * Both are enabled by default.
- */
--(void) disableAllQuaternionAnimation;
-
-/**
- * Enables the animation of the scale property, without affecting the animation of the
- * other properties, on this node and all descendant nodes.
- *
- * This method works together with the enable/disableAnimation methods. For the scale
- * property to be animated, both scale animation and node animation must be enabled.
- * Both are enabled by default.
- */
--(void) enableAllScaleAnimation;
-
-/**
- * Disables the animation of the scale property, without affecting the animation of the
- * other properties, on this node and all descendant nodes.
- *
- * This method works together with the enable/disableAnimation methods. For the scale
- * property to be animated, both scale animation and node animation must be enabled.
- * Both are enabled by default.
- */
--(void) disableAllScaleAnimation;
-
-/**
- * Marks the animation state of this node as dirty, indicating that the animated properties
- * of this node should be updated on the next update cycle.
- *
- * This method is invoked automatically if a animated property has been changed on any
- * animation track as a result of the invocation of the establishAnimationFrameAt:onTrack:
- * method. Normally, the application never needs to invoke this method.
- */
--(void) markAnimationDirty;
-
-/**
- * Updates the location, quaternion and scale properties on the animation state wrapper associated
- * with the animation on the specified track, based on the animation frame located at the specified
- * time, which should be a value between zero and one, with zero indicating the first animation frame,
- * and one indicating the last animation frame. Only those transform properties for which there
- * is animation content will be changed.
- *
- * This method is usually invoked automatically from an active CC3Animate action during each update
- * cycle. Once all animation tracks have been updated accordingly, the node automatically blends
- * the weighted animation from each track to determine the corresponding values of the location,
- * quaternion and scale properties of this node.
- *
- * This implementation delegates to the CC3NodeAnimationState instance that is managing the animation
- * for the specified track, then passes this notification along to child nodes to align them with the
- * same animation time. Linear interpolation of the frame content may be performed, based on the
- * number of frames and the specified time.
- *
- * If disableAnimation or disableAllAnimation has been invoked on this node, it will be excluded
- * from animation, and this method will not have any affect on this node. However, this method will
- * be propagated to child nodes.
- *
- * This method is invoked automatically from an instance of CC3Animate that is animating
- * this node. Usually, the application never needs to invoke this method directly.
- */
--(void) establishAnimationFrameAt: (ccTime) t onTrack: (GLuint) trackID;
-
-/** Returns a description of the current animation state, including time and animated location, quaternion and scale. */
--(NSString*) describeCurrentAnimationState;
-
-/** Returns a description of the state at each of frameCount animation frames over the entire animation. */
--(NSString*) describeAnimationStateForFrames: (GLuint) frameCount;
-
-/**
- * Returns a description of the state at each of frameCount animation frames between the
- * specified start and end times, which should each be in the range between zero and one.
- */
--(NSString*) describeAnimationStateForFrames: (GLuint) frameCount fromTime: (ccTime) startTime toTime: (ccTime) endTime;
-
-/** @deprecated Replaced with establishAnimationFrameAt:onTrack:. */
--(void) establishAnimationFrameAt: (ccTime) t DEPRECATED_ATTRIBUTE;
-
-/** @deprecated Instead of accessing this property, retrieve the appropriate animation using the
- * animation property or the getAnimationOnTrack: method, and access the frameCount property.
- */
-@property(nonatomic, readonly) GLuint animationFrameCount DEPRECATED_ATTRIBUTE;
-
-
 #pragma mark Developer support
 
 /**
@@ -4222,7 +3600,7 @@ typedef enum {
  * If the shouldDrawDescriptor is set to YES, returns the child node
  * that draws the descriptor text on this node. Otherwise, returns nil.
  */
-@property(nonatomic, readonly) CC3NodeDescriptor* descriptorNode;
+@property(nonatomic, retain, readonly) CC3NodeDescriptor* descriptorNode;
 
 /**
  * Indicates the state of the shouldDrawDescriptor property of this node and all
@@ -4286,7 +3664,7 @@ typedef enum {
  * If the shouldDrawWireframeBox is set to YES, returns the child node
  * that draws the wireframe box around this node. Otherwise, returns nil.
  */
-@property(nonatomic, readonly) CC3WireframeBoundingBoxNode* wireframeBoxNode;
+@property(nonatomic, retain, readonly) CC3WireframeBoundingBoxNode* wireframeBoxNode;
 
 /**
  * Returns the color that wireframe bounding boxes will be drawn in when created
@@ -4426,7 +3804,7 @@ typedef enum {
  * Returns an array of all the direction marker child nodes that were previously added
  * using the addDirectionMarkerColored:inDirection: and addDirectionMarker methods.
  */
-@property(nonatomic, readonly) CCArray* directionMarkers;
+@property(nonatomic, retain, readonly) NSArray* directionMarkers;
 
 /**
  * Returns the color that direction marker lines will be drawn in when created
@@ -4532,154 +3910,14 @@ typedef enum {
  */
 @property(nonatomic, assign) BOOL shouldLogIntersectionMisses;
 
-@end
-
-
-#pragma mark -
-#pragma mark CC3LocalContentNode
-
 /**
- * CC3LocalContentNode is an abstract class that forms the basis for nodes
- * that have local content to draw.
+ * Returns a marker string that is pushed onto the GL render stream prior to rendering
+ * this node. The group is popped from the GL render stream after this node is rendered.
  *
- * You can cause a wireframe box to be drawn around the local content of
- * the node by setting the shouldDrawLocalContentWireframeBox property to YES.
- * This can be particularly useful during development to locate the boundaries
- * of a node, or to locate a node that is not drawing properly.
- * You can set the default color of this wireframe using the class-side
- * defaultLocalContentWireframeBoxColor property.
+ * This property returns a NULL pointer. Subclasses that contain renderable content can 
+ * override to provide a meaningful string. Subclasses should avoid dynamically generating 
+ * this property on each access, since this property is accessed each time the node is rendered.
  */
-@interface CC3LocalContentNode : CC3Node {
-	CC3Box _globalLocalContentBoundingBox;
-	GLint _zOrder;
-}
-
-/**
- * Returns the center of geometry of the local content of this node,
- * in the local coordinate system of this node.
- *
- * If this node has no local content, returns the zero vector.
- */
-@property(nonatomic, readonly) CC3Vector localContentCenterOfGeometry;
-
-/**
- * Returns the smallest axis-aligned bounding box that surrounds the local
- * content of this node, in the local coordinate system of this node.
- *
- * If this node has no local content, returns kCC3BoxNull.
- */
-@property(nonatomic, readonly) CC3Box localContentBoundingBox;
-
-/**
- * Returns the center of geometry of the local content of this node,
- * in the global coordinate system of the 3D scene.
- *
- * If this node has no local content, returns the value of the globalLocation property.
- *
- * The value of this property is calculated by transforming the value of the
- * localContentCenterOfGeometry property, using the globalTransformMatrix of this node.
- */
-@property(nonatomic, readonly) CC3Vector globalLocalContentCenterOfGeometry;
-
-/**
- * Returns the smallest axis-aligned bounding box that surrounds the local
- * content of this node, in the global coordinate system of the 3D scene.
- *
- * If this node has no local content, returns kCC3BoxNull.
- *
- * The value of this property is calculated by transforming the eight vertices derived
- * from the localContentBoundingBox property, using the globalTransformMatrix of this node,
- * and constructing another bounding box that surrounds all eight transformed vertices.
- *
- * Since all bounding boxes are axis-aligned (AABB), if this node is rotated, the
- * globalLocalContentBoundingBox will generally be significantly larger than the
- * localContentBoundingBox. 
- */
-@property(nonatomic, readonly) CC3Box globalLocalContentBoundingBox;
-
-/**
- * Checks that this node is in the correct drawing order relative to other nodes.
- * This implementation forwards this notification up the ancestor chain to the CC3Scene,
- * which checks if the node is correctly positioned in the drawing sequence, and
- * repositions the node if needed.
- *
- * By default, nodes are automatically repositioned on each drawing frame to optimize
- * the drawing order, so you should usually have no need to use this method.
- * 
- * However, in order to eliminate the overhead of checking each node during each drawing
- * frame, you can disable this automatic behaviour by setting the allowSequenceUpdates
- * property of specific drawing sequencers to NO.
- *
- * In that case, if you modify the properties of a node or its content, such as mesh or material
- * opacity, and your CC3Scene drawing sequencer uses that criteria to sort nodes, you can invoke
- * this method to force the node to be repositioned in the correct drawing order.
- *
- * You don't need to invoke this method when initially setting the properties.
- * You only need to invoke this method if you modify the properties after the node has
- * been added to the CC3Scene, either by itself, or as part of a node assembly.
- */
--(void) checkDrawingOrder;
-
-
-#pragma mark Developer support
-
-/**
- * Indicates whether the node should display a wireframe box around the local content
- * of this node.
- *
- * This property is distinct from the inherited shouldDrawWireframeBox property.
- * The shouldDrawWireframeBox property draws a wireframe that encompasses this node
- * and any child nodes, where this property draws a wireframe that encompasses just
- * the local content for this node alone. If this node has no children, then the two
- * wireframes will surround the same volume.
- *
- * The wireframe box is drawn by creating and adding a CC3WireframeBoundingBoxNode as a child node
- * to this node. The dimensions of the child node are set from the localContentBoundingBox
- * property of this node. Setting this property to YES adds the wireframe child node, and
- * setting this property to NO removes the wireframe child node.
- *
- * Setting this property to YES can be useful during development in determining the
- * boundaries of the local drawn content of a node.
- *
- * The color of the wireframe box will be the value of the class-side
- * defaultLocalContentWireframeBoxColor property, or the value of the color
- * property of this node if defaultLocalContentWireframeBoxColor is equal
- * to kCCC4FBlackTransparent.
- */
-@property(nonatomic, assign) BOOL shouldDrawLocalContentWireframeBox;
-
-/**
- * If the shouldDrawLocalContentWireframeBox is set to YES, returns the child node that
- * draws the wireframe around the local content of this node. Otherwise, returns nil.
- */
-@property(nonatomic, readonly) CC3WireframeBoundingBoxNode* localContentWireframeBoxNode;
-
-/**
- * Returns the color that local content wireframe bounding boxes will be drawn
- * in when created using the shouldDrawLocalContentWireframeBox property.
- *
- * Setting this property to kCCC4FBlackTransparent will cause the color
- * of any new local content wireframe bounding boxes to be set to the value
- * of the color property of the node instead.
- * 
- * The initial value of this class property is kCCC4FMagenta.
- */
-+(ccColor4F) localContentWireframeBoxColor;
-
-/**
- * Sets the color that local content wireframes will be drawn in when created
- * using the shouldDrawWireframeBox property.
- *
- * Changing this property will affect the color of any new local content wireframe
- * bounding boxes created. It does not affect any instances that already have a
- * wireframe bounding box established.
- *
- * Setting this property to kCCC4FBlackTransparent will cause the color
- * of any new local content wireframe bounding boxes to be set to the value
- * of the color property of the node instead.
- * 
- * The initial value of this class property is kCCC4FMagenta.
- */
-+(void) setLocalContentWireframeBoxColor: (ccColor4F) aColor;
+@property(nonatomic, readonly) const char* renderStreamGroupMarker;
 
 @end

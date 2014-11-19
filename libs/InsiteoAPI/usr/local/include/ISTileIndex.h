@@ -11,19 +11,7 @@
 /*!
  Class used to represent a Tile index (mapId, zoomLevel, x, y).
  */
-@interface ISTileIndex : NSObject {
-    
-@private
-    
-    //Tile map identifier
-    int m_mapId;
-    //Tile zoom level
-    int m_zoomLevel;
-    //Tile X coodinate
-    int m_x;
-    //Tile Y coordinate
-    int m_y;
-}
+@interface ISTileIndex : NSObject
 
 /*!
  Tile map identifier.

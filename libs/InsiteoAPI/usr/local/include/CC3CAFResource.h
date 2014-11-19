@@ -1,9 +1,9 @@
 /*
  * CC3CAFResource.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -42,7 +42,7 @@
  */
 @interface CC3CAFResource : CC3NodesResource {
 	int _nodeCount;
-	ccTime _animationDuration;
+	CCTime _animationDuration;
 	int _fileVersion;
 	int _flags;
 	BOOL _isCompressed : 1;
@@ -60,7 +60,7 @@
 @property(nonatomic, readonly) int flags;
 
 /** Returns the animation duration in seconds. */
-@property(nonatomic, readonly) ccTime animationDuration;
+@property(nonatomic, readonly) CCTime animationDuration;
 
 /**
  * Indicates whether the Y & Z elements of animated locations and quaternions loaded by this
@@ -70,7 +70,7 @@
  * from the negated Y value of the loaded quaternion, and the Y value will be set from the Z value.
  *
  * This setting can be used to correct possible coordinate system orientation discrepancies
- * between the CAF exporters and cocos3d.
+ * between the CAF exporters and Cocos3D.
  *
  * The initial value of this property is set from the value of the class-side
  * defaultShouldSwapYZ property.

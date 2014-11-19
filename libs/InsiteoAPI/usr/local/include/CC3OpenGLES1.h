@@ -1,9 +1,9 @@
 /*
  * CC3OpenGLES1.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,8 +33,34 @@
 
 #if CC3_OGLES_1
 
+#if APPORTABLE
+#	define CC3OpenGLClass		CC3OpenGLES1Android
+#else
+#	define CC3OpenGLClass		CC3OpenGLES1IOS
+#endif	// APPORTABLE
+
+
+#pragma mark CC3OpenGLES1
+
 /** Manages the OpenGLES 1.1 state for a single GL context. */
 @interface CC3OpenGLES1 : CC3OpenGLFixedPipeline {}
 @end
+
+
+#pragma mark CC3OpenGLES1IOS
+
+/** Manages the OpenGLES 1.1 state for a single GL context under iOS. */
+@interface CC3OpenGLES1IOS : CC3OpenGLES1
+
+@end
+
+
+#pragma mark CC3OpenGLES1Android
+
+/** Manages the OpenGLES 1.1 state for a single GL context under Android. */
+@interface CC3OpenGLES1Android : CC3OpenGLES1
+
+@end
+
 
 #endif	// CC3_OGLES_1

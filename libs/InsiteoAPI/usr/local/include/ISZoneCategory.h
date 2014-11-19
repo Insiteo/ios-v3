@@ -17,39 +17,7 @@
  @class ISZoneCategory
  Class used to represent the association between a Zone (MapAPI) and a Category (CatalogAPI).
  */
-@interface ISZoneCategory : NSObject {
-    
-@private
-    
-    //Relative zone identifier
-    int m_zoneId;
-    //Relative zone name
-    NSString * m_zoneName;
-    
-    //Relative categoryId
-    NSString * m_categoryId;
-    //Poi x offset from zone center
-    float m_offsetX;
-    //Poi y offset from zone center
-    float m_offsetY;
-    
-    //Relative mapId
-    int m_mapId;
-    
-    //Y zone coordinate (in meters)
-    float m_zonePosX;
-    //X zone coordinate (in meters)
-    float m_zonePosY;
-    
-    //Extra value
-    NSString * m_extra1;
-    //Extra value
-    NSString * m_extra2;
-    //Extra value
-    NSString * m_extra3;
-    //Extra value
-    float m_fExtra1;
-}
+@interface ISZoneCategory : NSObject
 
 /*!
  Related zone identifier.

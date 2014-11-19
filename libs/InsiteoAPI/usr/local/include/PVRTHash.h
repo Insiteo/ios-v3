@@ -1,17 +1,9 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTHash.h
-
- @Title        PVRTHash
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     All
-
- @Description  A simple hash class which uses TEA to hash a string or given  data
-               in to a 32-bit unsigned int.
+ @file         PVRTHash.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        A simple hash class which uses TEA to hash a string or given data
+               into a 32-bit unsigned int.
 
 ******************************************************************************/
 
@@ -22,28 +14,27 @@
 #include "PVRTGlobal.h"
 
 /*!****************************************************************************
-Class CPVRTHash
+ @class         CPVRTHash
+ @brief         A simple hash class which uses TEA to hash a string or other given 
+                data into a 32-bit unsigned int.
 ******************************************************************************/
 class CPVRTHash
 {
 public:
 	/*!***************************************************************************
-	@Function		CPVRTHash
-	@Description	Constructor
+	@brief      	Constructor
 	*****************************************************************************/
 	CPVRTHash() : m_uiHash(0) {}
 
 	/*!***************************************************************************
-	@Function		CPVRTHash
-	@Input			rhs
-	@Description	Copy Constructor
+	@brief      	Copy Constructor
+	@param[in]		rhs         CPVRTHash to copy.
 	*****************************************************************************/
 	CPVRTHash(const CPVRTHash& rhs) : m_uiHash(rhs.m_uiHash) {}
 
 	/*!***************************************************************************
-	@Function		CPVRTHash
-	@Input			String
-	@Description	Overloaded constructor
+	@brief      	Overloaded constructor
+	@param[in]		String      CPVRTString to create the CPVRTHash with.
 	*****************************************************************************/
 	CPVRTHash(const CPVRTString& String) : m_uiHash(0)
 	{
@@ -54,9 +45,8 @@ public:
 	}
 
 	/*!***************************************************************************
-	@Function		CPVRTHash
-	@Input			c_pszString
-	@Description	Overloaded constructor
+	@brief      	Overloaded constructor
+	@param[in]		c_pszString String to create the CPVRTHash with.
 	*****************************************************************************/
 	CPVRTHash(const char* c_pszString) : m_uiHash(0)
 	{
@@ -68,11 +58,10 @@ public:
 	}
 
 	/*!***************************************************************************
-	@Function		CPVRTHash
-	@Input			pData
-	@Input			dataSize
-	@Input			dataCount
-	@Description	Overloaded constructor
+	@brief      	Overloaded constructor
+	@param[in]		pData
+	@param[in]		dataSize
+	@param[in]		dataCount
 	*****************************************************************************/
 	CPVRTHash(const void* pData, unsigned int dataSize, unsigned int dataCount) : m_uiHash(0)
 	{
@@ -86,10 +75,9 @@ public:
 	}
 
 	/*!***************************************************************************
-	@Function		operator=
-	@Input			rhs
-	@Return			CPVRTHash &	
-	@Description	Overloaded assignment.
+	@brief      	Overloaded assignment.
+	@param[in]		rhs
+	@return			CPVRTHash &	
 	*****************************************************************************/
 	CPVRTHash& operator=(const CPVRTHash& rhs)
 	{
@@ -102,9 +90,8 @@ public:
 	}
 
 	/*!***************************************************************************
-	@Function		operator unsigned int
-	@Return			int	
-	@Description	Converts to unsigned int.
+	@brief      	Converts to unsigned int.
+	@return			int	
 	*****************************************************************************/
 	operator unsigned int() const
 	{
@@ -112,10 +99,9 @@ public:
 	}
 
 	/*!***************************************************************************
-	@Function		MakeHash
-	@Input			String
-	@Return			unsigned int			The hash.
-	@Description	Generates a hash from a CPVRTString.
+	@brief      	Generates a hash from a CPVRTString.
+	@param[in]		String
+	@return			The hash.
 	*****************************************************************************/
 	static CPVRTHash MakeHash(const CPVRTString& String)
 	{
@@ -126,10 +112,9 @@ public:
 	}
 
 	/*!***************************************************************************
-	@Function		MakeHash
-	@Input			c_pszString
-	@Return			unsigned int			The hash.
-	@Description	Generates a hash from a null terminated char array.
+	@brief      	Generates a hash from a null terminated char array.
+	@param[in]		c_pszString
+	@return         The hash.
 	*****************************************************************************/
 	static CPVRTHash MakeHash(const char* c_pszString)
 	{
@@ -144,16 +129,15 @@ public:
 	}
 		
 	/*!***************************************************************************
-	@Function		MakeHash
-	@Input			pData
-	@Input			dataSize
-	@Input			dataCount
-	@Return			unsigned int			The hash.
-	@Description	Generates a hash from generic data. This function uses the
+	@brief      	Generates a hash from generic data. This function uses the
 					32-bit Fowler/Noll/Vo algorithm which trades efficiency for
 					slightly increased risk of collisions. This algorithm is
 					public domain. More information can be found at:
 					http://www.isthe.com/chongo/tech/comp/fnv/.
+	@param[in]		pData
+	@param[in]		dataSize
+	@param[in]		dataCount
+	@return			unsigned int			The hash.
 	*****************************************************************************/
 	static CPVRTHash MakeHash(const void* pData, unsigned int dataSize, unsigned int dataCount)
 	{

@@ -42,30 +42,7 @@
 /*!
  Class used to manage MeetMe methods.
  */
-@interface ISMeetMeProvider : NSObject <ISPLbsModule> {
-    
-@protected
-    
-	//Boolean used to know if the user is connected
-	Boolean m_isConnected;
-    
-    //MeetMe listener
-    id<ISPMeetMeListener> m_listener;
-    
-    //Groups list
-	NSMutableDictionary * m_groups;
-	//Persons list
-	NSMutableDictionary * m_persons;
-    //User id
-	NSString * m_userId;
-	//User nickname
-	NSString * m_userName;
-    
-#pragma mark - Render
-    
-    //ISMeetMeRenderer
-    ISMeetMeRenderer * m_renderer;
-}
+@interface ISMeetMeProvider : NSObject <ISPLbsModule>
 
 #pragma mark - Accessors
 

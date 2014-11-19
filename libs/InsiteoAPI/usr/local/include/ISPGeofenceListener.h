@@ -20,11 +20,11 @@
 
 /*!
  Method called when geofencing module has new data available.
- @param enteredZones All zones detected as entered.
- @param stayedZones All zones detected as stayed.
- @param leftZones All zones detected as left.
+ @param enteredAreas All areas detected as entered.
+ @param stayedAreas All areas detected as stayed.
+ @param leftAreas All areas detected as left.
  */
-- (void)onGeofenceDataUpdateWithEnteredZones:(NSArray *)enteredZones andStayedZones:(NSArray *)stayedZones andLeftZones:(NSArray *)leftZones;
+- (void)onGeofenceDataUpdateWithEnteredAreas:(NSArray *)enteredAreas andStayedAreas:(NSArray *)stayedAreas andLeftAreas:(NSArray *)leftAreas;
 
 /*!
  Method called when geofencing data is reset. This happens when no location was received for a long duration, thus zone detection is not valid anymore.

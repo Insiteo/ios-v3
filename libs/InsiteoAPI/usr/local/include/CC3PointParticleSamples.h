@@ -1,9 +1,9 @@
 /*
  * CC3PointParticleSamples.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,8 +46,8 @@
  * check the isAlive property before spending time making any further modifications.
  */
 @interface  CC3MortalPointParticle  : CC3PointParticle <CC3MortalParticleProtocol> {
-	ccTime _lifeSpan;
-	ccTime _timeToLive;
+	CCTime _lifeSpan;
+	CCTime _timeToLive;
 }
 
 /**
@@ -69,7 +69,7 @@
  * Override the updateBeforeTransform: method, invoke the superclass implementation, and then
  * test the isAlive property of this particle before any further modifications.
  */
--(void) updateLife: (ccTime) dt DEPRECATED_ATTRIBUTE;
+-(void) updateLife: (CCTime) dt __deprecated;
 
 @end
 
@@ -82,26 +82,26 @@
  * strictly to permit the library to maintain the deprecated CC3MortalPointParticleEmitter
  * as a parent class of other deprecated classes in this library.
  */
-@interface CC3MortalPointParticleEmitterDeprecated : CC3PointParticleEmitter {}
+@interface CC3MortalPointParticleEmitterDeprecated : CC3PointParticleEmitter
 
 /** @deprecated Replaced by minParticleLifeSpan property on the CC3RandomMortalParticleNavigator attached to this instance. */
-@property(nonatomic, assign) ccTime minParticleLifeSpan;
+@property(nonatomic, assign) CCTime minParticleLifeSpan;
 
 /** @deprecated Replaced by maxParticleLifeSpan property on the CC3RandomMortalParticleNavigator attached to this instance. */
-@property(nonatomic, assign) ccTime maxParticleLifeSpan;
+@property(nonatomic, assign) CCTime maxParticleLifeSpan;
 
 /** @deprecated Life-span and trajectory now initialized by the CC3RandomMortalParticleNavigator attached to this instance. */
 -(void) initializeMortalParticle: (CC3MortalPointParticle*) aParticle;
 
 @end
 
-DEPRECATED_ATTRIBUTE
+__deprecated
 /**
  * @deprecated This functionality has been separated into several more general classes. Use a
  * CC3PointParticleEmitter configured with a CC3RandomMortalParticleNavigator to emit particles
  * that support the CC3MortalParticleProtocol, such as particles of type CC3MortalPointParticle.
  */
-@interface CC3MortalPointParticleEmitter : CC3MortalPointParticleEmitterDeprecated {}
+@interface CC3MortalPointParticleEmitter : CC3MortalPointParticleEmitterDeprecated
 @end
 
 
@@ -131,7 +131,7 @@ DEPRECATED_ATTRIBUTE
 
 @end
 
-DEPRECATED_ATTRIBUTE
+__deprecated
 /**
  * Deprecated and renamed to CC3SprayPointParticle.
  * @deprecated Renamed to CC3SprayPointParticle to clarify its type.
@@ -210,7 +210,7 @@ DEPRECATED_ATTRIBUTE
 
 @end
 
-DEPRECATED_ATTRIBUTE
+__deprecated
 /** 
  * Deprecated and renamed to CC3UniformlyEvolvingPointParticle.
  * @deprecated Renamed to CC3UniformlyEvolvingPointParticle to clarify its type.
@@ -245,7 +245,7 @@ DEPRECATED_ATTRIBUTE
  * It supports the CC3VariegatedPointParticleProtocol and allows the emitter to configure the
  * particle with a steadily changing color and size, based on the lifespan of the particle.
  */
-@interface CC3VariegatedPointParticle : CC3UniformlyEvolvingPointParticle <CC3VariegatedPointParticleProtocol> {}
+@interface CC3VariegatedPointParticle : CC3UniformlyEvolvingPointParticle <CC3VariegatedPointParticleProtocol>
 @end
 
 
@@ -424,18 +424,17 @@ static const ccColor4F kCC3ParticleFadeOut = { kCC3ParticleConstantComponent,
 #pragma mark CC3PointParticleHoseEmitter
 
 /**
- * Deprecated.
  * @deprecated Do not use this class. This class has been introduced into the hierarchy
  * strictly to permit the library to maintain the deprecated CC3PointParticleHoseEmitter
  * as a parent class of other deprecated classes in this library.
  */
-@interface CC3PointParticleHoseEmitterDeprecated : CC3MortalPointParticleEmitterDeprecated {}
+@interface CC3PointParticleHoseEmitterDeprecated : CC3MortalPointParticleEmitterDeprecated
 
 /** @deprecated This property is now on the contained CC3HoseParticleNavigator. */
 @property(nonatomic, retain) CC3Node* nozzle;
 
 /** @deprecated This property is now on the contained CC3HoseParticleNavigator. */
-@property(nonatomic, readonly) CC3Matrix* nozzleMatrix;
+@property(nonatomic, retain, readonly) CC3Matrix* nozzleMatrix;
 
 /** @deprecated This property is now on the contained CC3HoseParticleNavigator. */
 @property(nonatomic, assign) CGSize dispersionAngle;
@@ -451,7 +450,7 @@ static const ccColor4F kCC3ParticleFadeOut = { kCC3ParticleConstantComponent,
 
 @end
 
-DEPRECATED_ATTRIBUTE
+__deprecated
 /**
  * Deprecated.
  * @deprecated This functionality has been separated into several more general classes.
@@ -459,7 +458,7 @@ DEPRECATED_ATTRIBUTE
  * particles that support the CC3UniformlyMovingParticleProtocol, such as particles of
  * type CC3SprayPointParticle.
  */
-@interface CC3PointParticleHoseEmitter : CC3PointParticleHoseEmitterDeprecated {}
+@interface CC3PointParticleHoseEmitter : CC3PointParticleHoseEmitterDeprecated
 @end
 
 

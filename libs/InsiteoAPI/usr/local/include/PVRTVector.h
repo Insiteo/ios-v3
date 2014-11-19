@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTVector.h
-
- @Title        PVRTVector
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Vector and matrix mathematics library
+ @file         PVRTVector.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Vector and matrix mathematics library
 
 ******************************************************************************/
 #ifndef __PVRTVECTOR_H__
@@ -32,12 +24,12 @@ struct PVRTMat3;
 struct PVRTMat4;
 
 /*!***************************************************************************
- @Function			PVRTLinearEqSolve
- @Input				pSrc	2D array of floats. 4 Eq linear problem is 5x4
+ @fn       			PVRTLinearEqSolve
+ @param[in]			pSrc	2D array of floats. 4 Eq linear problem is 5x4
 							matrix, constants in first column
- @Input				nCnt	Number of equations to solve
- @Output			pRes	Result
- @Description		Solves 'nCnt' simultaneous equations of 'nCnt' variables.
+ @param[in]			nCnt	Number of equations to solve
+ @param[out]		pRes	Result
+ @brief      		Solves 'nCnt' simultaneous equations of 'nCnt' variables.
 					pRes should be an array large enough to contain the
 					results: the values of the 'nCnt' variables.
 					This fn recursively uses Gaussian Elimination.
@@ -45,8 +37,9 @@ struct PVRTMat4;
 void PVRTLinearEqSolve(VERTTYPE * const pRes, VERTTYPE ** const pSrc, const int nCnt);
 
 /*!***************************************************************************
-	** PVRTVec2 2 component vector
-	****************************************************************************/
+ @struct            PVRTVec2 
+ @brief             2 component vector
+*****************************************************************************/
 struct PVRTVec2
 {
 	VERTTYPE x, y;
@@ -54,43 +47,37 @@ struct PVRTVec2
 		** Constructors
 		****************************************************************************/
 	/*!***************************************************************************
-		@Function			PVRTVec2
-		@Description		Blank constructor.
+		@brief      		Blank constructor.
 		*****************************************************************************/
 	PVRTVec2() : x(0), y(0) {}
 	/*!***************************************************************************
-		@Function			PVRTVec2
-		@Input				fX	X component of vector
-		@Input				fY	Y component of vector
-		@Description		Simple constructor from 2 values.
+		@brief      		Simple constructor from 2 values.
+		@param[in]			fX	X component of vector
+		@param[in]			fY	Y component of vector
 		*****************************************************************************/
 	PVRTVec2(VERTTYPE fX, VERTTYPE fY) : x(fX), y(fY) {}
 	/*!***************************************************************************
-		@Function			PVRTVec2
-		@Input				fValue	a component value
-		@Description		Constructor from a single value.
+		@brief      		Constructor from a single value.
+		@param[in]			fValue	    A component value
 		*****************************************************************************/
 	PVRTVec2(VERTTYPE fValue) : x(fValue), y(fValue) {}
 	/*!***************************************************************************
-		@Function			PVRTVec2
-		@Input				pVec	an array
-		@Description		Constructor from an array
+		@brief      		Constructor from an array
+		@param[in]			pVec	An array
 		*****************************************************************************/
 	PVRTVec2(const VERTTYPE* pVec) : x(pVec[0]), y(pVec[1]) {}
 	/*!***************************************************************************
-		@Function			PVRTVec2
-		@Input				v3Vec a Vec3
-		@Description		Constructor from a Vec3
+		@brief      		Constructor from a Vec3
+		@param[in]			v3Vec   A Vec3
 		*****************************************************************************/
 	PVRTVec2(const PVRTVec3& v3Vec);
 	/*!***************************************************************************
 		** Operators
 		****************************************************************************/
 	/*!***************************************************************************
-		@Function			+
-		@Input				rhs another Vec2
-		@Returns			result of addition
-		@Description		componentwise addition operator for two Vec2s
+		@brief      		componentwise addition operator for two Vec2s
+		@param[in]			rhs     Another Vec2
+		@return 			result of addition
 		*****************************************************************************/
 	PVRTVec2 operator+(const PVRTVec2& rhs) const
 	{
@@ -98,10 +85,9 @@ struct PVRTVec2
 		return out += rhs;
 	}
 	/*!***************************************************************************
-		@Function			-
-		@Input				rhs another Vec2
-		@Returns			result of subtraction
-		@Description		componentwise subtraction operator for two Vec2s
+		@brief      		componentwise subtraction operator for two Vec2s
+		@param[in]			rhs    Another vec2
+		@return 			result of subtraction
 		****************************************************************************/
 	PVRTVec2 operator-(const PVRTVec2& rhs) const
 	{
@@ -110,10 +96,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			+=
-		@Input				rhs another Vec2
-		@Returns			result of addition
-		@Description		componentwise addition and assignment operator for two Vec2s
+		@brief      		Componentwise addition and assignment operator for two Vec2s
+		@param[in]			rhs    Another vec2
+		@return 			result of addition
 		****************************************************************************/
 	PVRTVec2& operator+=(const PVRTVec2& rhs)
 	{
@@ -123,10 +108,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			-=
-		@Input				rhs another Vec2
-		@Returns			result of subtraction
-		@Description		componentwise subtraction and assignment operator for two Vec2s
+		@brief      		Componentwise subtraction and assignment operator for two Vec2s
+		@param[in]			rhs    Another vec2
+		@return 			Result of subtraction
 		****************************************************************************/
 	PVRTVec2& operator-=(const PVRTVec2& rhs)
 	{
@@ -136,19 +120,17 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			-
-		@Input				rhs another Vec2
-		@Returns			result of negation
-		@Description		negation operator for a Vec2
+		@brief      		Negation operator for a Vec2
+		@param[in]			rhs    Another vec2
+		@return 			Result of negation
 		****************************************************************************/
 	friend PVRTVec2 operator- (const PVRTVec2& rhs) { return PVRTVec2(-rhs.x, -rhs.y); }
 
 	/*!***************************************************************************
-		@Function			*
-		@Input				lhs scalar
-		@Input				rhs a Vec2
-		@Returns			result of multiplication
-		@Description		multiplication operator for a Vec2
+		@brief      		Multiplication operator for a Vec2
+		@param[in]			lhs     Scalar
+		@param[in]			rhs     A Vec2
+		@return 			result of multiplication
 		****************************************************************************/
 	friend PVRTVec2 operator*(const VERTTYPE lhs, const PVRTVec2&  rhs)
 	{
@@ -157,11 +139,10 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			/
-		@Input				lhs scalar
-		@Input				rhs a Vec2
-		@Returns			result of division
-		@Description		division operator for scalar and Vec2
+		@brief      		Division operator for scalar and Vec2
+		@param[in]			lhs scalar
+		@param[in]			rhs a Vec2
+		@return 			Result of division
 		****************************************************************************/
 	friend PVRTVec2 operator/(const VERTTYPE lhs, const PVRTVec2&  rhs)
 	{
@@ -169,11 +150,10 @@ struct PVRTVec2
 		return out /= rhs;
 	}
 
-	/*!***************************************************************************
-		@Function			*
-		@Input				rhs a scalar
-		@Returns			result of multiplication
-		@Description		componentwise multiplication by scalar for Vec2
+	/*!**************************************************************************
+		@brief      		Componentwise multiplication by scalar for Vec2*
+		@param[in]			rhs     A scalar
+		@return 			Result of multiplication
 		****************************************************************************/
 	PVRTVec2 operator*(const VERTTYPE& rhs) const
 	{
@@ -182,10 +162,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			*=
-		@Input				rhs a scalar
-		@Returns			result of multiplication and assignment
-		@Description		componentwise multiplication and assignment by scalar for Vec2
+		@brief      		Componentwise multiplication and assignment by scalar for Vec2
+		@param[in]			rhs     A scalar
+		@return 			Result of multiplication and assignment
 		****************************************************************************/
 	PVRTVec2& operator*=(const VERTTYPE& rhs)
 	{
@@ -195,10 +174,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			*=
-		@Input				rhs a Vec2
-		@Returns			result of multiplication and assignment
-		@Description		componentwise multiplication and assignment by Vec2 for Vec2
+		@brief      		Componentwise multiplication and assignment by Vec2 for Vec2
+		@param[in]			rhs     A Vec2
+		@return 			Result of multiplication and assignment
 		****************************************************************************/
 	PVRTVec2& operator*=(const PVRTVec2& rhs)
 	{
@@ -208,10 +186,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			/
-		@Input				rhs a scalar
-		@Returns			result of division
-		@Description		componentwise division by scalar for Vec2
+		@brief      		componentwise division by scalar for Vec2
+		@param[in]			rhs a scalar
+		@return 			result of division
 		****************************************************************************/
 	PVRTVec2 operator/(const VERTTYPE& rhs) const
 	{
@@ -220,10 +197,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			/=
-		@Input				rhs a scalar
-		@Returns			result of division and assignment
-		@Description		componentwise division and assignment by scalar for Vec2
+		@brief      		componentwise division and assignment by scalar for Vec2
+		@param[in]			rhs a scalar
+		@return 			result of division and assignment
 		****************************************************************************/
 	PVRTVec2& operator/=(const VERTTYPE& rhs)
 	{
@@ -233,10 +209,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			/=
-		@Input				rhs a Vec2
-		@Returns			result of division and assignment
-		@Description		componentwise division and assignment by Vec2 for Vec2
+		@brief      		componentwise division and assignment by Vec2 for Vec2
+		@param[in]			rhs a Vec2
+		@return 			result of division and assignment
 		****************************************************************************/
 	PVRTVec2& operator/=(const PVRTVec2& rhs)
 	{
@@ -246,10 +221,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-	@Function			==
-	@Input				rhs a single value
-	@Returns			true if the two vectors are equal
-	@Description		PVRTVec2 equality operator
+        @brief      		PVRTVec2 equality operator
+        @param[in]			rhs     A single value
+        @return 			true if the two vectors are equal
 	****************************************************************************/
 	bool operator==(const PVRTVec2& rhs) const
 	{
@@ -257,10 +231,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-	@Function			!=
-	@Input				rhs a single value
-	@Returns			true if the two vectors are not equal
-	@Description		PVRTVec2 inequality operator
+        @brief      		PVRTVec2 inequality operator
+        @param[in]			rhs     A single value
+        @return 			true if the two vectors are not equal
 	****************************************************************************/
 	bool operator!=(const PVRTVec2& rhs) const
 	{
@@ -269,9 +242,8 @@ struct PVRTVec2
 
 	// FUNCTIONS
 	/*!***************************************************************************
-		@Function			lenSqr
-		@Returns			the square of the magnitude of the vector
-		@Description		calculates the square of the magnitude of the vector
+		@brief      		calculates the square of the magnitude of the vector
+		@return 			The square of the magnitude of the vector
 		****************************************************************************/
 	VERTTYPE lenSqr() const
 	{
@@ -279,9 +251,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			length
-		@Returns			the of the magnitude of the vector
-		@Description		calculates the magnitude of the vector
+		@fn       			length
+		@return 			the of the magnitude of the vector
+		@brief      		calculates the magnitude of the vector
 		****************************************************************************/
 	VERTTYPE length() const
 	{
@@ -289,9 +261,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			normalize
-		@Returns			the normalized value of the vector
-		@Description		normalizes the vector
+		@fn       			normalize
+		@return 			the normalized value of the vector
+		@brief      		normalizes the vector
 		****************************************************************************/
 	PVRTVec2 normalize()
 	{
@@ -299,9 +271,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			normalized
-		@Returns			returns the normalized value of the vector
-		@Description		returns a normalized vector of the same direction as this
+		@fn       			normalized
+		@return 			returns the normalized value of the vector
+		@brief      		returns a normalized vector of the same direction as this
 		vector
 		****************************************************************************/
 	PVRTVec2 normalized() const
@@ -311,9 +283,9 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			rotated90
-		@Returns			returns the vector rotated 90°
-		@Description		returns the vector rotated 90°
+		@fn       			rotated90
+		@return 			returns the vector rotated 90°
+		@brief      		returns the vector rotated 90°
 		****************************************************************************/
 	PVRTVec2 rotated90() const
 	{
@@ -321,10 +293,10 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			dot
-		@Input				rhs a single value
-		@Returns			scalar product
-		@Description		calculate the scalar product of two Vec3s
+		@fn       			dot
+		@param[in]			rhs    A single value
+		@return 			scalar product
+		@brief      		calculate the scalar product of two Vec3s
 		****************************************************************************/
 	VERTTYPE dot(const PVRTVec2& rhs) const
 	{
@@ -332,16 +304,17 @@ struct PVRTVec2
 	}
 
 	/*!***************************************************************************
-		@Function			ptr
-		@Returns			pointer
-		@Description		returns a pointer to memory containing the values of the
+		@fn       			ptr
+		@return 			pointer
+		@brief      		returns a pointer to memory containing the values of the
 		Vec3
 		****************************************************************************/
 	VERTTYPE *ptr() { return (VERTTYPE*)this; }
 };
 
 /*!***************************************************************************
-** PVRTVec3 3 component vector
+ @struct            PVRTVec3 
+ @brief             3 component vector
 ****************************************************************************/
 struct PVRTVec3 : public PVRTVECTOR3
 {
@@ -349,56 +322,50 @@ struct PVRTVec3 : public PVRTVECTOR3
 ** Constructors
 ****************************************************************************/
 /*!***************************************************************************
- @Function			PVRTVec3
- @Description		Blank constructor.
+ @brief      		Blank constructor.
 *****************************************************************************/
 	PVRTVec3()
 	{
 		x = y = z = 0;
 	}
 /*!***************************************************************************
- @Function			PVRTVec3
- @Input				fX	X component of vector
- @Input				fY	Y component of vector
- @Input				fZ	Z component of vector
- @Description		Simple constructor from 3 values.
+ @brief      		Simple constructor from 3 values.
+ @param[in]			fX	X component of vector
+ @param[in]			fY	Y component of vector
+ @param[in]			fZ	Z component of vector
 *****************************************************************************/
 	PVRTVec3(VERTTYPE fX, VERTTYPE fY, VERTTYPE fZ)
 	{
 		x = fX;	y = fY;	z = fZ;
 	}
 /*!***************************************************************************
- @Function			PVRTVec3
- @Input				fValue	a component value
- @Description		Constructor from a single value.
+ @brief      		Constructor from a single value.
+ @param[in]			fValue	 A component value
 *****************************************************************************/
 	PVRTVec3(const VERTTYPE fValue)
 	{
 		x = fValue; y = fValue; z = fValue;
 	}
 /*!***************************************************************************
- @Function			PVRTVec3
- @Input				pVec	an array
- @Description		Constructor from an array
+ @brief      		Constructor from an array
+ @param[in]			pVec	An array
 *****************************************************************************/
 	PVRTVec3(const VERTTYPE* pVec)
 	{
 		x = (*pVec++); y = (*pVec++); z = *pVec;
 	}
 /*!***************************************************************************
- @Function			PVRTVec3
- @Input				v4Vec a PVRTVec4
- @Description		Constructor from a PVRTVec4
+ @brief      		Constructor from a PVRTVec4
+ @param[in]			v4Vec   A PVRTVec4
 *****************************************************************************/
 	PVRTVec3(const PVRTVec4& v4Vec);
 /*!***************************************************************************
 ** Operators
 ****************************************************************************/
 /*!***************************************************************************
- @Function			+
- @Input				rhs another PVRTVec3
- @Returns			result of addition
- @Description		componentwise addition operator for two PVRTVec3s
+ @brief      		componentwise addition operator for two PVRTVec3s
+ @param[in]			rhs     Another PVRTVec3
+ @return 			result of addition
 *****************************************************************************/
 	PVRTVec3 operator+(const PVRTVec3& rhs) const
 	{
@@ -409,10 +376,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 		return out;
 	}
 /*!***************************************************************************
- @Function			-
- @Input				rhs another PVRTVec3
- @Returns			result of subtraction
- @Description		componentwise subtraction operator for two PVRTVec3s
+ @brief      		Componentwise subtraction operator for two PVRTVec3s
+ @param[in]			rhs    Another PVRTVec3
+ @return 			result of subtraction
 ****************************************************************************/
 	PVRTVec3 operator-(const PVRTVec3& rhs) const
 	{
@@ -424,10 +390,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			+=
- @Input				rhs another PVRTVec3
- @Returns			result of addition
- @Description		componentwise addition and assignement operator for two PVRTVec3s
+ @brief      		Componentwise addition and assignement operator for two PVRTVec3s
+ @param[in]			rhs    Another PVRTVec3
+ @return 			Result of addition
 ****************************************************************************/
 	PVRTVec3& operator+=(const PVRTVec3& rhs)
 	{
@@ -438,10 +403,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			-=
- @Input				rhs another PVRTVec3
- @Returns			result of subtraction
- @Description		componentwise subtraction and assignement operator for two PVRTVec3s
+ @brief      		Componentwise subtraction and assignement operator for two PVRTVec3s
+ @param[in]			rhs    Another PVRTVec3
+ @return 			Result of subtraction
 ****************************************************************************/
 	PVRTVec3& operator-=(const PVRTVec3& rhs)
 	{
@@ -452,19 +416,17 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			-
- @Input				rhs another PVRTVec3
- @Returns			result of negation
- @Description		negation operator for a PVRTVec3
+ @brief      		Negation operator for a PVRTVec3
+ @param[in]			rhs    Another PVRTVec3
+ @return 			Result of negation
 ****************************************************************************/
 	friend PVRTVec3 operator - (const PVRTVec3& rhs) { return PVRTVec3(rhs) *= f2vt(-1); }
 
 /*!***************************************************************************
- @Function			*
- @Input				lhs single value
- @Input				rhs a PVRTVec3
- @Returns			result of multiplication
- @Description		multiplication operator for a PVRTVec3
+ @brief      		multiplication operator for a PVRTVec3
+ @param[in]			lhs     Single value
+ @param[in]			rhs     A PVRTVec3
+ @return 			Result of multiplication
 ****************************************************************************/
 	friend PVRTVec3 operator*(const VERTTYPE lhs, const PVRTVec3&  rhs)
 	{
@@ -476,11 +438,10 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				lhs single value
- @Input				rhs a PVRTVec3
- @Returns			result of negation
- @Description		negation operator for a PVRTVec3
+ @brief      		Negation operator for a PVRTVec3
+ @param[in]			lhs     Single value
+ @param[in]			rhs     A PVRTVec3
+ @return 			result of negation
 ****************************************************************************/
 	friend PVRTVec3 operator/(const VERTTYPE lhs, const PVRTVec3&  rhs)
 	{
@@ -492,26 +453,23 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs a PVRTMat3
- @Returns			result of multiplication
- @Description		matrix multiplication operator PVRTVec3 and PVRTMat3
+ @brief      		Matrix multiplication operator PVRTVec3 and PVRTMat3
+ @param[in]			rhs     A PVRTMat3
+ @return 			Result of multiplication
 ****************************************************************************/
 	PVRTVec3 operator*(const PVRTMat3& rhs) const;
 
 /*!***************************************************************************
- @Function			*=
- @Input				rhs a PVRTMat3
- @Returns			result of multiplication and assignment
- @Description		matrix multiplication and assignment operator for PVRTVec3 and PVRTMat3
+ @brief      		Matrix multiplication and assignment operator for PVRTVec3 and PVRTMat3
+ @param[in]			rhs     A PVRTMat3
+ @return 			Result of multiplication and assignment
 ****************************************************************************/
 	PVRTVec3& operator*=(const PVRTMat3& rhs);
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs a single value
- @Returns			result of multiplication
- @Description		componentwise multiplication by single dimension value for PVRTVec3
+ @brief      		Componentwise multiplication by single dimension value for PVRTVec3
+ @param[in]			rhs     A single value
+ @return 			Result of multiplication
 ****************************************************************************/
 	PVRTVec3 operator*(const VERTTYPE& rhs) const
 	{
@@ -523,11 +481,10 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs a single value
- @Returns			result of multiplication and assignment
- @Description		componentwise multiplication and assignement by single
+ @brief      		Componentwise multiplication and assignement by single
 					dimension value	for PVRTVec3
+ @param[in]			rhs    A single value
+ @return 			Result of multiplication and assignment
 ****************************************************************************/
 	PVRTVec3& operator*=(const VERTTYPE& rhs)
 	{
@@ -538,11 +495,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			/
- @Input				rhs a single value
- @Returns			result of division
- @Description		componentwise division by single
-					dimension value	for PVRTVec3
+ @brief      		Componentwise division by single dimension value for PVRTVec3
+ @param[in]			rhs    A single value
+ @return 			Result of division
 ****************************************************************************/
 	PVRTVec3 operator/(const VERTTYPE& rhs) const
 	{
@@ -554,11 +509,10 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			/=
- @Input				rhs a single value
- @Returns			result of division and assignment
- @Description		componentwise division and assignement by single
+ @brief      		Componentwise division and assignement by single
 					dimension value	for PVRTVec3
+ @param[in]			rhs    A single value
+ @return 			Result of division and assignment
 ****************************************************************************/
 	PVRTVec3& operator/=(const VERTTYPE& rhs)
 	{
@@ -569,10 +523,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			==
- @Input				rhs a single value
- @Returns			true if the two vectors are equal
- @Description		PVRTVec3 equality operator
+ @brief      		PVRTVec3 equality operator
+ @param[in]			rhs    A single value
+ @return 			true if the two vectors are equal
 ****************************************************************************/
 	bool operator==(const PVRTVec3& rhs) const
 	{
@@ -580,10 +533,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
-@Function			!=
-@Input				rhs a single value
-@Returns			true if the two vectors are not equal
-@Description		PVRTVec3 inequality operator
+ @brief      		PVRTVec3 inequality operator
+ @param[in]			rhs    A single value
+ @return 			true if the two vectors are not equal
 	****************************************************************************/
 	bool operator!=(const PVRTVec3& rhs) const
 	{
@@ -591,9 +543,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 	// FUNCTIONS
 /*!***************************************************************************
- @Function			lenSqr
- @Returns			the square of the magnitude of the vector
- @Description		calculates the square of the magnitude of the vector
+ @fn       			lenSqr
+ @return 			the square of the magnitude of the vector
+ @brief      		calculates the square of the magnitude of the vector
 ****************************************************************************/
 	VERTTYPE lenSqr() const
 	{
@@ -601,9 +553,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			length
- @Returns			the of the magnitude of the vector
- @Description		calculates the magnitude of the vector
+ @fn       			length
+ @return 			the of the magnitude of the vector
+ @brief      		calculates the magnitude of the vector
 ****************************************************************************/
 	VERTTYPE length() const
 	{
@@ -611,9 +563,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			normalize
- @Returns			the normalized value of the vector
- @Description		normalizes the vector
+ @fn       			normalize
+ @return 			the normalized value of the vector
+ @brief      		normalizes the vector
 ****************************************************************************/
 	PVRTVec3 normalize()
 	{
@@ -642,9 +594,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			normalized
- @Returns			returns the normalized value of the vector
- @Description		returns a normalized vector of the same direction as this
+ @fn       			normalized
+ @return 			returns the normalized value of the vector
+ @brief      		returns a normalized vector of the same direction as this
 					vector
 ****************************************************************************/
 	PVRTVec3 normalized() const
@@ -675,10 +627,10 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			dot
- @Input				rhs a single value
- @Returns			scalar product
- @Description		calculate the scalar product of two PVRTVec3s
+ @fn       			dot
+ @param[in]			rhs    A single value
+ @return 			scalar product
+ @brief      		calculate the scalar product of two PVRTVec3s
 ****************************************************************************/
 	VERTTYPE dot(const PVRTVec3& rhs) const
 	{
@@ -686,9 +638,9 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			cross
- @Returns			returns three-dimensional vector
- @Description		calculate the cross product of two PVRTVec3s
+ @fn       			cross
+ @return 			returns three-dimensional vector
+ @brief      		calculate the cross product of two PVRTVec3s
 ****************************************************************************/
 	PVRTVec3 cross(const PVRTVec3& rhs) const
 	{
@@ -700,16 +652,17 @@ struct PVRTVec3 : public PVRTVECTOR3
 	}
 
 /*!***************************************************************************
- @Function			ptr
- @Returns			pointer
- @Description		returns a pointer to memory containing the values of the
+ @fn       			ptr
+ @return 			pointer
+ @brief      		returns a pointer to memory containing the values of the
 					PVRTVec3
 ****************************************************************************/
 	VERTTYPE *ptr() { return (VERTTYPE*)this; }
 };
 
 /*!***************************************************************************
-** PVRTVec4 4 component vector
+ @struct            PVRTVec4 
+ @brief             4 component vector
 ****************************************************************************/
 struct PVRTVec4 : public PVRTVECTOR4
 {
@@ -717,14 +670,12 @@ struct PVRTVec4 : public PVRTVECTOR4
 ** Constructors
 ****************************************************************************/
 /*!***************************************************************************
- @Function			PVRTVec4
- @Description		Blank constructor.
+ @brief      	Blank constructor.
 *****************************************************************************/
 	PVRTVec4(){}
 
 /*!***************************************************************************
- @Function			PVRTVec3
- @Description		Blank constructor.
+ @brief      	Blank constructor.
 *****************************************************************************/
 	PVRTVec4(const VERTTYPE vec)
 	{
@@ -732,12 +683,11 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			multiple value constructor
- @Input				fX value of x component
- @Input				fY value of y component
- @Input				fZ value of z component
- @Input				fW value of w component
- @Description		Constructs a PVRTVec4 from 4 separate values
+ @brief      	Constructs a PVRTVec4 from 4 separate values
+ @param[in]		fX      Value of x component
+ @param[in]		fY      Value of y component
+ @param[in]		fZ      Value of z component
+ @param[in]		fW      Value of w component
 ****************************************************************************/
 	PVRTVec4(VERTTYPE fX, VERTTYPE fY, VERTTYPE fZ, VERTTYPE fW)
 	{
@@ -745,10 +695,9 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			constructor from PVRTVec3
- @Input				vec3 a PVRTVec3
- @Input				fW value of w component
- @Description		Constructs a PVRTVec4 from a vec3 and a w component
+ @param[in]			vec3 a PVRTVec3
+ @param[in]			fW     Value of w component
+ @brief      		Constructs a PVRTVec4 from a vec3 and a w component
 ****************************************************************************/
 	PVRTVec4(const PVRTVec3& vec3, VERTTYPE fW)
 	{
@@ -756,10 +705,9 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			constructor from PVRTVec3
- @Input				fX value of x component
- @Input				vec3 a PVRTVec3
- @Description		Constructs a vec4 from a vec3 and a w component
+ @brief      		Constructs a vec4 from a vec3 and a w component
+ @param[in]			fX value of x component
+ @param[in]			vec3 a PVRTVec3
 ****************************************************************************/
 	PVRTVec4(VERTTYPE fX, const PVRTVec3& vec3)
 	{
@@ -767,9 +715,8 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			constructor from array
- @Input				pVec a pointer to an array of four values
- @Description		Constructs a PVRTVec4 from a pointer to an array of four values
+ @brief      		Constructs a PVRTVec4 from a pointer to an array of four values
+ @param[in]			pVec a pointer to an array of four values
 ****************************************************************************/
 	PVRTVec4(const VERTTYPE* pVec)
 	{
@@ -780,10 +727,9 @@ struct PVRTVec4 : public PVRTVECTOR4
 ** PVRTVec4 Operators
 ****************************************************************************/
 /*!***************************************************************************
- @Function			+
- @Input				rhs another PVRTVec4
- @Returns			result of addition
- @Description		Addition operator for PVRTVec4
+ @brief      		Addition operator for PVRTVec4
+ @param[in]			rhs    Another PVRTVec4
+ @return 			result of addition
 ****************************************************************************/
 	PVRTVec4 operator+(const PVRTVec4& rhs) const
 	{
@@ -796,10 +742,9 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			-
- @Input				rhs another PVRTVec4
- @Returns			result of subtraction
- @Description		Subtraction operator for PVRTVec4
+ @brief      		Subtraction operator for PVRTVec4
+ @param[in]			rhs    Another PVRTVec4
+ @return 			result of subtraction
 ****************************************************************************/
 	PVRTVec4 operator-(const PVRTVec4& rhs) const
 	{
@@ -812,10 +757,9 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			+=
- @Input				rhs another PVRTVec4
- @Returns			result of addition and assignment
- @Description		Addition and assignment operator for PVRTVec4
+ @brief      		Addition and assignment operator for PVRTVec4
+ @param[in]			rhs    Another PVRTVec4
+ @return 			result of addition and assignment
 ****************************************************************************/
 	PVRTVec4& operator+=(const PVRTVec4& rhs)
 	{
@@ -827,10 +771,9 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			-=
- @Input				rhs another PVRTVec4
- @Returns			result of subtraction and assignment
- @Description		Subtraction and assignment operator for PVRTVec4
+ @brief      		Subtraction and assignment operator for PVRTVec4
+ @param[in]			rhs    Another PVRTVec4
+ @return 			result of subtraction and assignment
 ****************************************************************************/
 	PVRTVec4& operator-=(const PVRTVec4& rhs)
 	{
@@ -842,26 +785,23 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs a PVRTMat4
- @Returns			result of multiplication
- @Description		matrix multiplication for PVRTVec4 and PVRTMat4
+ @brief      		Matrix multiplication for PVRTVec4 and PVRTMat4
+ @param[in]			rhs    A PVRTMat4
+ @return 			result of multiplication
 ****************************************************************************/
 	PVRTVec4 operator*(const PVRTMat4& rhs) const;
 
 /*!***************************************************************************
- @Function			*=
- @Input				rhs a PVRTMat4
- @Returns			result of multiplication and assignement
- @Description		matrix multiplication and assignment for PVRTVec4 and PVRTMat4
+ @brief      		Matrix multiplication and assignment for PVRTVec4 and PVRTMat4
+ @param[in]			rhs    A PVRTMat4
+ @return 			result of multiplication and assignement
 ****************************************************************************/
 	PVRTVec4& operator*=(const PVRTMat4& rhs);
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs a single dimension value
- @Returns			result of multiplication
- @Description		componentwise multiplication of a PVRTVec4 by a single value
+ @brief      		Componentwise multiplication of a PVRTVec4 by a single value
+ @param[in]			rhs  A single dimension value
+ @return 			result of multiplication
 ****************************************************************************/
 	PVRTVec4 operator*(const VERTTYPE& rhs) const
 	{
@@ -874,11 +814,10 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			*=
- @Input				rhs a single dimension value
- @Returns			result of multiplication and assignment
- @Description		componentwise multiplication and assignment of a PVRTVec4 by
-				a single value
+ @brief      		componentwise multiplication and assignment of a PVRTVec4 by
+                    a single value
+ @param[in]			rhs     A single dimension value
+ @return 			result of multiplication and assignment
 ****************************************************************************/
 	PVRTVec4& operator*=(const VERTTYPE& rhs)
 	{
@@ -890,10 +829,9 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			/
- @Input				rhs a single dimension value
- @Returns			result of division
- @Description		componentwise division of a PVRTVec4 by a single value
+ @brief      		componentwise division of a PVRTVec4 by a single value
+ @param[in]			rhs     A single dimension value
+ @return 			result of division
 ****************************************************************************/
 	PVRTVec4 operator/(const VERTTYPE& rhs) const
 	{
@@ -906,11 +844,10 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			/=
- @Input				rhs a single dimension value
- @Returns			result of division and assignment
- @Description		componentwise division and assignment of a PVRTVec4 by
+ @brief      		componentwise division and assignment of a PVRTVec4 by
 					a single value
+ @param[in]				rhs a single dimension value
+ @return 			result of division and assignment
 ****************************************************************************/
 	PVRTVec4& operator/=(const VERTTYPE& rhs)
 	{
@@ -922,12 +859,11 @@ struct PVRTVec4 : public PVRTVECTOR4
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				lhs a single dimension value
- @Input				rhs a PVRTVec4
- @Returns			result of muliplication
- @Description		componentwise multiplication of a PVRTVec4 by
+ @brief      		componentwise multiplication of a PVRTVec4 by
 					a single value
+ @param[in]				lhs a single dimension value
+ @param[in]				rhs a PVRTVec4
+ @return 			result of muliplication
 ****************************************************************************/
 friend PVRTVec4 operator*(const VERTTYPE lhs, const PVRTVec4&  rhs)
 {
@@ -940,10 +876,9 @@ friend PVRTVec4 operator*(const VERTTYPE lhs, const PVRTVec4&  rhs)
 }
 
 /*!***************************************************************************
- @Function			==
- @Input				rhs a single value
- @Returns			true if the two vectors are equal
- @Description		PVRTVec4 equality operator
+ @brief      		PVRTVec4 equality operator
+ @param[in]			rhs    A single value
+ @return 			true if the two vectors are equal
 ****************************************************************************/
 bool operator==(const PVRTVec4& rhs) const
 {
@@ -951,10 +886,9 @@ bool operator==(const PVRTVec4& rhs) const
 }
 
 /*!***************************************************************************
-@Function			!=
-@Input				rhs a single value
-@Returns			true if the two vectors are not equal
-@Description		PVRTVec4 inequality operator
+@brief      		PVRTVec4 inequality operator
+@param[in]			rhs    A single value
+@return 			true if the two vectors are not equal
 	****************************************************************************/
 bool operator!=(const PVRTVec4& rhs) const
 {
@@ -964,9 +898,9 @@ bool operator!=(const PVRTVec4& rhs) const
 ** Functions
 ****************************************************************************/
 /*!***************************************************************************
- @Function			lenSqr
- @Returns			square of the magnitude of the vector
- @Description		calculates the square of the magnitude of the vector
+ @fn       			lenSqr
+ @return 			square of the magnitude of the vector
+ @brief      		calculates the square of the magnitude of the vector
 ****************************************************************************/
 	VERTTYPE lenSqr() const
 	{
@@ -974,9 +908,9 @@ bool operator!=(const PVRTVec4& rhs) const
 	}
 
 /*!***************************************************************************
- @Function			length
- @Returns			the magnitude of the vector
- @Description		calculates the magnitude of the vector
+ @fn       			length
+ @return 			the magnitude of the vector
+ @brief      		calculates the magnitude of the vector
 ****************************************************************************/
 	VERTTYPE length() const
 	{
@@ -984,9 +918,9 @@ bool operator!=(const PVRTVec4& rhs) const
 	}
 
 /*!***************************************************************************
- @Function			normalize
- @Returns			normalized vector
- @Description		calculates the normalized value of a PVRTVec4
+ @fn       			normalize
+ @return 			normalized vector
+ @brief      		calculates the normalized value of a PVRTVec4
 ****************************************************************************/
 	PVRTVec4 normalize()
 	{
@@ -998,9 +932,9 @@ bool operator!=(const PVRTVec4& rhs) const
 		return *this;
 	}
 /*!***************************************************************************
- @Function			normalized
- @Returns			normalized vector
- @Description		returns a normalized vector of the same direction as this
+ @fn       			normalized
+ @return 			normalized vector
+ @brief      		returns a normalized vector of the same direction as this
 					vector
 ****************************************************************************/
 	PVRTVec4 normalized() const
@@ -1015,9 +949,9 @@ bool operator!=(const PVRTVec4& rhs) const
 	}
 
 /*!***************************************************************************
- @Function			dot
- @Returns			scalar product
- @Description		returns a normalized vector of the same direction as this
+ @fn       			dot
+ @return 			scalar product
+ @brief      		returns a normalized vector of the same direction as this
 					vector
 ****************************************************************************/
 	VERTTYPE dot(const PVRTVec4& rhs) const
@@ -1026,16 +960,17 @@ bool operator!=(const PVRTVec4& rhs) const
 	}
 
 /*!***************************************************************************
- @Function			ptr
- @Returns			pointer to vector values
- @Description		returns a pointer to memory containing the values of the
+ @fn       			ptr
+ @return 			pointer to vector values
+ @brief      		returns a pointer to memory containing the values of the
 					PVRTVec3
 ****************************************************************************/
 	VERTTYPE *ptr() { return (VERTTYPE*)this; }
 };
 
 /*!***************************************************************************
-** PVRTMat3 3x3 Matrix
+ @struct            PVRTMat3
+ @brief             3x3 Matrix
 ****************************************************************************/
 struct PVRTMat3 : public PVRTMATRIX3
 {
@@ -1043,14 +978,12 @@ struct PVRTMat3 : public PVRTMATRIX3
 ** Constructors
 ****************************************************************************/
 /*!***************************************************************************
- @Function			PVRTMat3
- @Description		Blank constructor.
+ @brief      		Blank constructor.
 *****************************************************************************/
 	PVRTMat3(){}
 /*!***************************************************************************
- @Function			PVRTMat3
- @Input				pMat an array of values for the matrix
- @Description		Constructor from array.
+ @brief      		Constructor from array.
+ @param[in]			pMat    An array of values for the matrix
 *****************************************************************************/
 	PVRTMat3(const VERTTYPE* pMat)
 	{
@@ -1062,17 +995,16 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			PVRTMat3
- @Input				m0 matrix value
- @Input				m1 matrix value
- @Input				m2 matrix value
- @Input				m3 matrix value
- @Input				m4 matrix value
- @Input				m5 matrix value
- @Input				m6 matrix value
- @Input				m7 matrix value
- @Input				m8 matrix value
- @Description		Constructor from distinct values.
+ @brief      	    Constructor from distinct values.
+ @param[in]	    	m0	m0 matrix value
+ @param[in]	    	m1	m1 matrix value
+ @param[in]	    	m2	m2 matrix value
+ @param[in]	    	m3	m3 matrix value
+ @param[in]	    	m4	m4 matrix value
+ @param[in]	    	m5	m5 matrix value
+ @param[in]	    	m6	m6 matrix value
+ @param[in]	    	m7	m7 matrix value
+ @param[in]	    	m8	m8 matrix value
 *****************************************************************************/
 	PVRTMat3(VERTTYPE m0,VERTTYPE m1,VERTTYPE m2,
 		VERTTYPE m3,VERTTYPE m4,VERTTYPE m5,
@@ -1084,9 +1016,8 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			PVRTMat3
- @Input				mat - a PVRTMat4
- @Description		Constructor from 4x4 matrix - uses top left values
+ @brief      		Constructor from 4x4 matrix - uses top left values
+ @param[in]			mat - a PVRTMat4
 *****************************************************************************/
 	PVRTMat3(const PVRTMat4& mat);
 
@@ -1094,24 +1025,22 @@ struct PVRTMat3 : public PVRTMATRIX3
 ** PVRTMat3 OPERATORS
 ****************************************************************************/
 /*!***************************************************************************
- @Function			()
- @Input				row			row of matrix
- @Input				column		column of matrix
- @Returns			value of element
- @Description		Returns the value of the element at the specified row and column
+ @brief      		Returns the value of the element at the specified row and column
 					of the PVRTMat3
+ @param[in]			row			row of matrix
+ @param[in]			column		column of matrix
+ @return 			value of element
 *****************************************************************************/
 	VERTTYPE& operator()(const int row, const int column)
 	{
 		return f[column*3+row];
 	}
 /*!***************************************************************************
- @Function			()
- @Input				row			row of matrix
- @Input				column		column of matrix
- @Returns			value of element
- @Description		Returns the value of the element at the specified row and column
+ @brief      		Returns the value of the element at the specified row and column
 					of the PVRTMat3
+ @param[in]			row			row of matrix
+ @param[in]			column		column of matrix
+ @return 			value of element
 *****************************************************************************/
 	const VERTTYPE& operator()(const int row, const int column) const
 	{
@@ -1119,10 +1048,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs another PVRTMat3
- @Returns			result of multiplication
- @Description		Matrix multiplication of two 3x3 matrices.
+ @brief      		Matrix multiplication of two 3x3 matrices.
+ @param[in]			rhs     Another PVRTMat3
+ @return 			result of multiplication
 *****************************************************************************/
 	PVRTMat3 operator*(const PVRTMat3& rhs) const
 	{
@@ -1145,10 +1073,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			+
- @Input				rhs another PVRTMat3
- @Returns			result of addition
- @Description		element by element addition operator.
+ @brief      		element by element addition operator.
+ @param[in]			rhs     Another PVRTMat3
+ @return 			result of addition
 *****************************************************************************/
 	PVRTMat3 operator+(const PVRTMat3& rhs) const
 	{
@@ -1163,10 +1090,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			-
- @Input				rhs another PVRTMat3
- @Returns			result of subtraction
- @Description		element by element subtraction operator.
+ @brief      		element by element subtraction operator.
+ @param[in]			rhs     Another PVRTMat3
+ @return 			result of subtraction
 *****************************************************************************/
 	PVRTMat3 operator-(const PVRTMat3& rhs) const
 	{
@@ -1181,10 +1107,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			+=
- @Input				rhs another PVRTMat3
- @Returns			result of addition and assignment
- @Description		element by element addition and assignment operator.
+ @brief      		Element by element addition and assignment operator.
+ @param[in]			rhs     Another PVRTMat3
+ @return 			Result of addition and assignment
 *****************************************************************************/
 	PVRTMat3& operator+=(const PVRTMat3& rhs)
 	{
@@ -1198,10 +1123,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			-=
- @Input				rhs another PVRTMat3
- @Returns			result of subtraction and assignment
- @Description		element by element subtraction and assignment operator.
+ @brief      		element by element subtraction and assignment operator.
+ @param[in]			rhs     Another PVRTMat3
+ @return 			result of subtraction and assignment
 *****************************************************************************/
 	PVRTMat3& operator-=(const PVRTMat3& rhs)
 	{
@@ -1215,10 +1139,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			*=
- @Input				rhs another PVRTMat3
- @Returns			result of multiplication and assignment
- @Description		Matrix multiplication and assignment of two 3x3 matrices.
+ @brief      		Matrix multiplication and assignment of two 3x3 matrices.
+ @param[in]			rhs     Another PVRTMat3
+ @return 			result of multiplication and assignment
 *****************************************************************************/
 	PVRTMat3& operator*=(const PVRTMat3& rhs)
 	{
@@ -1242,10 +1165,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs a single value
- @Returns			result of multiplication and assignment
- @Description		element multiplication by a single value.
+ @brief      		Element multiplication by a single value.
+ @param[in]			rhs    A single value
+ @return 			Result of multiplication and assignment
 *****************************************************************************/
 	PVRTMat3& operator*(const VERTTYPE rhs)
 	{
@@ -1256,10 +1178,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 		return *this;
 	}
 /*!***************************************************************************
- @Function			*=
- @Input				rhs a single value
- @Returns			result of multiplication and assignment
- @Description		element multiplication and assignment by a single value.
+ @brief      		Element multiplication and assignment by a single value.
+ @param[in]			rhs    A single value
+ @return 			result of multiplication and assignment
 *****************************************************************************/
 	PVRTMat3& operator*=(const VERTTYPE rhs)
 	{
@@ -1271,10 +1192,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs another PVRTVec3
- @Returns			result of multiplication
- @Description		Matrix multiplication of 3x3 matrix and vec3
+ @brief      		Matrix multiplication of 3x3 matrix and vec3
+ @param[in]			rhs    Another PVRTVec3
+ @return 			result of multiplication
 *****************************************************************************/
 	PVRTVec3 operator*(const PVRTVec3& rhs) const
 	{
@@ -1292,9 +1212,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 ** Functions
 *****************************************************************************/
 /*!***************************************************************************
- @Function			determinant
- @Returns			result of multiplication
- @Description		Matrix multiplication and assignment of 3x3 matrix and vec3
+ @fn       			determinant
+ @return 			result of multiplication
+ @brief      		Matrix multiplication and assignment of 3x3 matrix and vec3
 *****************************************************************************/
 	VERTTYPE determinant() const
 	{
@@ -1304,9 +1224,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			inverse
- @Returns			inverse mat3
- @Description		Calculates multiplicative inverse of this matrix
+ @fn       			inverse
+ @return 			inverse mat3
+ @brief      		Calculates multiplicative inverse of this matrix
 *****************************************************************************/
 	PVRTMat3 inverse() const
 	{
@@ -1342,9 +1262,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			transpose
- @Returns			transpose 3x3 matrix
- @Description		Calculates the transpose of this matrix
+ @fn       			transpose
+ @return 			transpose 3x3 matrix
+ @brief      		Calculates the transpose of this matrix
 *****************************************************************************/
 	PVRTMat3 transpose() const
 	{
@@ -1356,9 +1276,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			ptr
- @Returns			pointer to an array of the elements of this PVRTMat3
- @Description		Calculates transpose of this matrix
+ @fn       			ptr
+ @return 			pointer to an array of the elements of this PVRTMat3
+ @brief      		Calculates transpose of this matrix
 *****************************************************************************/
 	VERTTYPE *ptr() { return (VERTTYPE*)&f; }
 
@@ -1366,9 +1286,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 ** Static factory functions
 *****************************************************************************/
 /*!***************************************************************************
- @Function			Identity
- @Returns			a PVRTMat3 representation of the 3x3 identity matrix
- @Description		Generates an identity matrix
+ @fn       			Identity
+ @return 			a PVRTMat3 representation of the 3x3 identity matrix
+ @brief      		Generates an identity matrix
 *****************************************************************************/
 	static PVRTMat3 Identity()
 	{
@@ -1380,33 +1300,33 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			RotationX
- @Returns			a PVRTMat3 corresponding to the requested rotation
- @Description		Calculates a matrix corresponding to a rotation of angle
+ @fn       			RotationX
+ @return 			a PVRTMat3 corresponding to the requested rotation
+ @brief      		Calculates a matrix corresponding to a rotation of angle
 					degrees about the X axis
 *****************************************************************************/
 	static PVRTMat3 RotationX(VERTTYPE angle);
 
 /*!***************************************************************************
- @Function			RotationY
- @Returns			a PVRTMat3 corresponding to the requested rotation
- @Description		Calculates a matrix corresponding to a rotation of angle
+ @fn       			RotationY
+ @return 			a PVRTMat3 corresponding to the requested rotation
+ @brief      		Calculates a matrix corresponding to a rotation of angle
 					degrees about the Y axis
 *****************************************************************************/
 	static PVRTMat3 RotationY(VERTTYPE angle);
 
 /*!***************************************************************************
- @Function			RotationZ
- @Returns			a PVRTMat3 corresponding to the requested rotation
- @Description		Calculates a matrix corresponding to a rotation of angle
+ @fn       			RotationZ
+ @return 			a PVRTMat3 corresponding to the requested rotation
+ @brief      		Calculates a matrix corresponding to a rotation of angle
 					degrees about the Z axis
 *****************************************************************************/
 	static PVRTMat3 RotationZ(VERTTYPE angle);
 
 /*!***************************************************************************
- @Function			Rotation2D
- @Returns			a PVRTMat3 corresponding to the requested rotation
- @Description		Calculates a matrix corresponding to a rotation of angle
+ @fn       			Rotation2D
+ @return 			a PVRTMat3 corresponding to the requested rotation
+ @brief      		Calculates a matrix corresponding to a rotation of angle
 					degrees about the Z axis
 *****************************************************************************/
 	static PVRTMat3 Rotation2D(VERTTYPE angle)
@@ -1415,9 +1335,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			Scale
- @Returns			a PVRTMat3 corresponding to the requested scaling transformation
- @Description		Calculates a matrix corresponding to scaling of fx, fy and fz
+ @fn       			Scale
+ @return 			a PVRTMat3 corresponding to the requested scaling transformation
+ @brief      		Calculates a matrix corresponding to scaling of fx, fy and fz
 					times in each axis.
 *****************************************************************************/
 	static PVRTMat3 Scale(const VERTTYPE fx,const VERTTYPE fy,const VERTTYPE fz)
@@ -1428,9 +1348,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			Scale2D
- @Returns			a PVRTMat3 corresponding to the requested scaling transformation
- @Description		Calculates a matrix corresponding to scaling of fx, fy and fz
+ @fn       			Scale2D
+ @return 			a PVRTMat3 corresponding to the requested scaling transformation
+ @brief      		Calculates a matrix corresponding to scaling of fx, fy and fz
 					times in each axis.
 *****************************************************************************/
 	static PVRTMat3 Scale2D(const VERTTYPE fx,const VERTTYPE fy)
@@ -1441,9 +1361,9 @@ struct PVRTMat3 : public PVRTMATRIX3
 	}
 
 /*!***************************************************************************
- @Function			Translation2D
- @Returns			a PVRTMat3 corresponding to the requested translation
- @Description		Calculates a matrix corresponding to a transformation
+ @fn       			Translation2D
+ @return 			a PVRTMat3 corresponding to the requested translation
+ @brief      		Calculates a matrix corresponding to a transformation
 					of tx and ty times in each axis.
 *****************************************************************************/
 	static PVRTMat3 Translation2D(const VERTTYPE tx, const VERTTYPE ty)
@@ -1456,7 +1376,8 @@ struct PVRTMat3 : public PVRTMATRIX3
 };
 
 /*!***************************************************************************
-** PVRTMat4 4x4 Matrix
+ @struct            PVRTMat4
+ @brief             4x4 Matrix
 ****************************************************************************/
 struct PVRTMat4 : public PVRTMATRIX
 {
@@ -1464,29 +1385,27 @@ struct PVRTMat4 : public PVRTMATRIX
 ** Constructors
 ****************************************************************************/
 /*!***************************************************************************
- @Function			PVRTMat4
- @Description		Blank constructor.
+ @brief      		Blank constructor.
 *****************************************************************************/
 	PVRTMat4(){}
 /*!***************************************************************************
- @Function			PVRTMat4
- @Input				m0 matrix value
- @Input				m1 matrix value
- @Input				m2 matrix value
- @Input				m3 matrix value
- @Input				m4 matrix value
- @Input				m5 matrix value
- @Input				m6 matrix value
- @Input				m7 matrix value
- @Input				m8 matrix value
- @Input				m9 matrix value
- @Input				m10 matrix value
- @Input				m11 matrix value
- @Input				m12 matrix value
- @Input				m13 matrix value
- @Input				m14 matrix value
- @Input				m15 matrix value
- @Description		Constructor from array.
+ @brief      		Constructor from array.
+ @param[in]			m0	m0 matrix value
+ @param[in]			m1	m1 matrix value
+ @param[in]			m2	m2 matrix value
+ @param[in]			m3	m3 matrix value
+ @param[in]			m4	m4 matrix value
+ @param[in]			m5	m5 matrix value
+ @param[in]			m6	m6 matrix value
+ @param[in]			m7	m7 matrix value
+ @param[in]			m8	m8 matrix value
+ @param[in]			m9	m9 matrix value
+ @param[in]			m10	m10 matrix value
+ @param[in]			m11	m11 matrix value
+ @param[in]			m12	m12 matrix value
+ @param[in]			m13	m13 matrix value
+ @param[in]			m14	m14 matrix value
+ @param[in]			m15	m15 matrix value
 *****************************************************************************/
 	PVRTMat4(VERTTYPE m0,VERTTYPE m1,VERTTYPE m2,VERTTYPE m3,
 		VERTTYPE m4,VERTTYPE m5,VERTTYPE m6,VERTTYPE m7,
@@ -1499,9 +1418,8 @@ struct PVRTMat4 : public PVRTMATRIX
 		f[12]=m12;f[13]=m13;f[14]=m14;f[15]=m15;
 	}
 /*!***************************************************************************
- @Function			PVRTMat4
- @Input				mat A pointer to an array of 16 VERTTYPEs
- @Description		Constructor from distinct values.
+ @brief      		Constructor from distinct values.
+ @param[in]			mat     A pointer to an array of 16 VERTTYPEs
 *****************************************************************************/
 	PVRTMat4(const VERTTYPE* mat)
 	{
@@ -1516,12 +1434,11 @@ struct PVRTMat4 : public PVRTMATRIX
 ** PVRTMat4 OPERATORS
 ****************************************************************************/
 /*!***************************************************************************
- @Function			()
- @Input				r - row of matrix
- @Input				c - column of matrix
- @Returns			value of element
- @Description		Returns value of the element at row r and colun c of the
+ @brief      		Returns value of the element at row r and colun c of the
 					PVRTMat4
+ @param[in]				r - row of matrix
+ @param[in]				c - column of matrix
+ @return 			value of element
 *****************************************************************************/
 	VERTTYPE& operator()(const int r, const int c)
 	{
@@ -1529,12 +1446,11 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			()
- @Input				r - row of matrix
- @Input				c - column of matrix
- @Returns			value of element
- @Description		Returns value of the element at row r and colun c of the
+ @brief      		Returns value of the element at row r and colun c of the
 					PVRTMat4
+ @param[in]				r - row of matrix
+ @param[in]				c - column of matrix
+ @return 			value of element
 *****************************************************************************/
 	const VERTTYPE& operator()(const int r, const int c) const
 	{
@@ -1542,18 +1458,16 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs another PVRTMat4
- @Returns			result of multiplication
- @Description		Matrix multiplication of two 4x4 matrices.
+ @brief      		Matrix multiplication of two 4x4 matrices.
+ @param[in]				rhs another PVRTMat4
+ @return 			result of multiplication
 *****************************************************************************/
 	PVRTMat4 operator*(const PVRTMat4& rhs) const;
 
 /*!***************************************************************************
- @Function			+
- @Input				rhs another PVRTMat4
- @Returns			result of addition
- @Description		element by element addition operator.
+ @brief      		element by element addition operator.
+ @param[in]				rhs another PVRTMat4
+ @return 			result of addition
 *****************************************************************************/
 	PVRTMat4 operator+(const PVRTMat4& rhs) const
 	{
@@ -1568,10 +1482,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			-
- @Input				rhs another PVRTMat4
- @Returns			result of subtraction
- @Description		element by element subtraction operator.
+ @brief      		element by element subtraction operator.
+ @param[in]				rhs another PVRTMat4
+ @return 			result of subtraction
 *****************************************************************************/
 	PVRTMat4 operator-(const PVRTMat4& rhs) const
 	{
@@ -1584,10 +1497,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			+=
- @Input				rhs another PVRTMat4
- @Returns			result of addition and assignment
- @Description		element by element addition and assignment operator.
+ @brief      		element by element addition and assignment operator.
+ @param[in]				rhs another PVRTMat4
+ @return 			result of addition and assignment
 *****************************************************************************/
 	PVRTMat4& operator+=(const PVRTMat4& rhs)
 	{
@@ -1601,10 +1513,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			-=
- @Input				rhs another PVRTMat4
- @Returns			result of subtraction and assignment
- @Description		element by element subtraction and assignment operator.
+ @brief      		element by element subtraction and assignment operator.
+ @param[in]				rhs another PVRTMat4
+ @return 			result of subtraction and assignment
 *****************************************************************************/
 	PVRTMat4& operator-=(const PVRTMat4& rhs)
 	{
@@ -1619,10 +1530,9 @@ struct PVRTMat4 : public PVRTMATRIX
 
 
 /*!***************************************************************************
- @Function			*=
- @Input				rhs another PVRTMat4
- @Returns			result of multiplication and assignment
- @Description		Matrix multiplication and assignment of two 4x4 matrices.
+ @brief      		Matrix multiplication and assignment of two 4x4 matrices.
+ @param[in]				rhs another PVRTMat4
+ @return 			result of multiplication and assignment
 *****************************************************************************/
 	PVRTMat4& operator*=(const PVRTMat4& rhs)
 	{
@@ -1656,10 +1566,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			*
- @Input				rhs a single value
- @Returns			result of multiplication and assignment
- @Description		element multiplication by a single value.
+ @brief      		element multiplication by a single value.
+ @param[in]			rhs    A single value
+ @return 			result of multiplication and assignment
 *****************************************************************************/
 	PVRTMat4& operator*(const VERTTYPE rhs)
 	{
@@ -1670,10 +1579,9 @@ struct PVRTMat4 : public PVRTMATRIX
 		return *this;
 	}
 /*!***************************************************************************
- @Function			*=
- @Input				rhs a single value
- @Returns			result of multiplication and assignment
- @Description		element multiplication and assignment by a single value.
+ @brief      		element multiplication and assignment by a single value.
+ @param[in]			rhs    A single value
+ @return 			result of multiplication and assignment
 *****************************************************************************/
 	PVRTMat4& operator*=(const VERTTYPE rhs)
 	{
@@ -1685,10 +1593,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			=
- @Input				rhs another PVRTMat4
- @Returns			result of assignment
- @Description		element assignment operator.
+ @brief      		element assignment operator.
+ @param[in]				rhs another PVRTMat4
+ @return 			result of assignment
 *****************************************************************************/
 	PVRTMat4& operator=(const PVRTMat4& rhs)
 	{
@@ -1699,10 +1606,9 @@ struct PVRTMat4 : public PVRTMATRIX
 		return *this;
 	}
 /*!***************************************************************************
- @Function			*
- @Input				rhs a PVRTVec4
- @Returns			result of multiplication
- @Description		Matrix multiplication of 4x4 matrix and vec3
+ @brief      		Matrix multiplication of 4x4 matrix and vec3
+ @param[in]				rhs a PVRTVec4
+ @return 			result of multiplication
 *****************************************************************************/
 	PVRTVec4 operator*(const PVRTVec4& rhs) const
 	{
@@ -1716,10 +1622,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			*=
- @Input				rhs a PVRTVec4
- @Returns			result of multiplication and assignment
- @Description		Matrix multiplication and assignment of 4x4 matrix and vec3
+ @brief      		Matrix multiplication and assignment of 4x4 matrix and vec3
+ @param[in]				rhs a PVRTVec4
+ @return 			result of multiplication and assignment
 *****************************************************************************/
 	PVRTVec4 operator*=(const PVRTVec4& rhs) const
 	{
@@ -1733,20 +1638,19 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			inverse
- @Returns			inverse mat4
- @Description		Calculates multiplicative inverse of this matrix
+ @brief      		Calculates multiplicative inverse of this matrix
 					The matrix must be of the form :
 					A 0
 					C 1
 					Where A is a 3x3 matrix and C is a 1x3 matrix.
+ @return 			inverse mat4
 *****************************************************************************/
 	PVRTMat4 inverse() const;
 
 /*!***************************************************************************
- @Function			inverseEx
- @Returns			inverse mat4
- @Description		Calculates multiplicative inverse of this matrix
+ @fn       			inverseEx
+ @return 			inverse mat4
+ @brief      		Calculates multiplicative inverse of this matrix
 					Uses a linear equation solver and the knowledge that M.M^-1=I.
 					Use this fn to calculate the inverse of matrices that
 					inverse() cannot.
@@ -1783,9 +1687,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			transpose
- @Returns			transpose mat4
- @Description		Calculates transpose of this matrix
+ @fn       			transpose
+ @return 			transpose mat4
+ @brief      		Calculates transpose of this matrix
 *****************************************************************************/
 	PVRTMat4 transpose() const
 	{
@@ -1798,12 +1702,11 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			postTranslate
- @Input				tx distance of translation in x axis
- @Input				ty distance of translation in y axis
- @Input				tz distance of translation in z axis
- @Returns			Returns this
- @Description		Alters the translation component of the transformation matrix.
+ @brief      		Alters the translation component of the transformation matrix.
+ @param[in]			tx      Distance of translation in x axis
+ @param[in]			ty      Distance of translation in y axis
+ @param[in]			tz      Distance of translation in z axis
+ @return 			Returns this
 *****************************************************************************/
 	PVRTMat4& postTranslate(VERTTYPE tx, VERTTYPE ty, VERTTYPE tz)
 	{
@@ -1817,10 +1720,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			postTranslate
- @Input				tvec translation vector
- @Returns			Returns this
- @Description		Alters the translation component of the transformation matrix.
+ @brief      		Alters the translation component of the transformation matrix.
+ @param[in]			tvec    Translation vector
+ @return 			Returns this
 *****************************************************************************/
 	PVRTMat4& postTranslate(const PVRTVec3& tvec)
 	{
@@ -1828,12 +1730,11 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			postTranslate
- @Input				tx distance of translation in x axis
- @Input				ty distance of translation in y axis
- @Input				tz distance of translation in z axis
- @Returns			Returns this
- @Description		Translates the matrix from the passed parameters
+ @brief      		Translates the matrix from the passed parameters
+ @param[in]			tx      Distance of translation in x axis
+ @param[in]			ty      Distance of translation in y axis
+ @param[in]			tz      Distance of translation in z axis
+ @return 			Returns this
 *****************************************************************************/
 	PVRTMat4& preTranslate(VERTTYPE tx, VERTTYPE ty, VERTTYPE tz)
 	{
@@ -1848,19 +1749,17 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			postTranslate
- @Input				tvec translation vector
- @Returns			Returns the translation defined by the passed parameters
- @Description		Translates the matrix from the passed parameters
+ @brief      		Translates the matrix from the passed parameters
+ @param[in]			tvec    Translation vector
+ @return 			Returns the translation defined by the passed parameters
 *****************************************************************************/
 	PVRTMat4& preTranslate(const PVRTVec3& tvec)
 	{
 		return preTranslate(tvec.x, tvec.y, tvec.z);
 	}
 /*!***************************************************************************
- @Function			ptr
- @Returns			pointer to an array of the elements of this PVRTMat4
- @Description		Calculates transpose of this matrix
+ @brief      		Calculates transpose of this matrix
+ @return 			pointer to an array of the elements of this PVRTMat4
 *****************************************************************************/
 	VERTTYPE *ptr() { return (VERTTYPE*)&f; }
 
@@ -1868,9 +1767,8 @@ struct PVRTMat4 : public PVRTMATRIX
 ** Static factory functions
 *****************************************************************************/
 /*!***************************************************************************
- @Function			Identity
- @Returns			a PVRTMat4 representation of the 4x4 identity matrix
- @Description		Generates an identity matrix
+ @brief      		Generates an identity matrix
+ @return 			a PVRTMat4 representation of the 4x4 identity matrix
 *****************************************************************************/
 	static PVRTMat4 Identity()
 	{
@@ -1883,32 +1781,31 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			RotationX
- @Returns			a PVRTMat3 corresponding to the requested rotation
- @Description		Calculates a matrix corresponding to a rotation of angle
+ @fn       			RotationX
+ @return 			a PVRTMat3 corresponding to the requested rotation
+ @brief      		Calculates a matrix corresponding to a rotation of angle
 					degrees about the X axis
 *****************************************************************************/
 	static PVRTMat4 RotationX(VERTTYPE angle);
 /*!***************************************************************************
- @Function			RotationY
- @Returns			a PVRTMat3 corresponding to the requested rotation
- @Description		Calculates a matrix corresponding to a rotation of angle
+ @fn       			RotationY
+ @return 			a PVRTMat3 corresponding to the requested rotation
+ @brief      		Calculates a matrix corresponding to a rotation of angle
 					degrees about the Y axis
 *****************************************************************************/
 	static PVRTMat4 RotationY(VERTTYPE angle);
 /*!***************************************************************************
- @Function			RotationZ
- @Returns			a PVRTMat3 corresponding to the requested rotation
- @Description		Calculates a matrix corresponding to a rotation of angle
+ @fn       			RotationZ
+ @return 			a PVRTMat3 corresponding to the requested rotation
+ @brief      		Calculates a matrix corresponding to a rotation of angle
 					degrees about the Z axis
 *****************************************************************************/
 	static PVRTMat4 RotationZ(VERTTYPE angle);
 
 /*!***************************************************************************
- @Function			Scale
- @Returns			a PVRTMat3 corresponding to the requested scaling transformation
- @Description		Calculates a matrix corresponding to scaling of fx, fy and fz
+ @brief      		Calculates a matrix corresponding to scaling of fx, fy and fz
 					times in each axis.
+ @return 			a PVRTMat3 corresponding to the requested scaling transformation
 *****************************************************************************/
 	static PVRTMat4 Scale(const VERTTYPE fx,const VERTTYPE fy,const VERTTYPE fz)
 	{
@@ -1919,9 +1816,8 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			Scale
- @Returns			a PVRTMat3 corresponding to the requested scaling transformation
- @Description		Calculates a matrix corresponding to scaling of the given vector.
+ @brief      		Calculates a matrix corresponding to scaling of the given vector.
+ @return 			a PVRTMat3 corresponding to the requested scaling transformation
 *****************************************************************************/
 	static PVRTMat4 Scale(const PVRTVec3& vec)
 	{
@@ -1929,10 +1825,9 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			Translation
- @Returns			a PVRTMat4 corresponding to the requested translation
- @Description		Calculates a 4x4 matrix corresponding to a transformation
+ @brief      		Calculates a 4x4 matrix corresponding to a transformation
 					of tx, ty and tz distance in each axis.
+ @return 			a PVRTMat4 corresponding to the requested translation
 *****************************************************************************/
 	static PVRTMat4 Translation(const VERTTYPE tx, const VERTTYPE ty, const VERTTYPE tz)
 	{
@@ -1943,11 +1838,10 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			Translation
- @Returns			a PVRTMat4 corresponding to the requested translation
- @Description		Calculates a 4x4 matrix corresponding to a transformation
+ @brief      		Calculates a 4x4 matrix corresponding to a transformation
 					of tx, ty and tz distance in each axis as taken from the
 					given vector.
+ @return 			a PVRTMat4 corresponding to the requested translation
 *****************************************************************************/
 
 	static PVRTMat4 Translation(const PVRTVec3& vec)
@@ -1962,17 +1856,16 @@ struct PVRTMat4 : public PVRTMATRIX
 	enum eClipspace { OGL, D3D };
 
 /*!***************************************************************************
- @Function			Ortho
- @Input				left view plane
- @Input				top view plane
- @Input				right view plane
- @Input				bottom view plane
- @Input				nearPlane the near rendering plane
- @Input				farPlane the far rendering plane
- @Input				cs which clipspace convention is being used
- @Input				bRotate is the viewport in portrait or landscape mode
- @Returns			Returns the orthogonal projection matrix defined by the passed parameters
- @Description		Translates the matrix from the passed parameters
+ @brief      		Translates the matrix from the passed parameters
+ @param[in]			left        Left view plane
+ @param[in]			top         Top view plane
+ @param[in]			right       Right view plane
+ @param[in]			bottom      Bottom view plane
+ @param[in]			nearPlane   The near rendering plane
+ @param[in]			farPlane    The far rendering plane
+ @param[in]			cs          Which clipspace convention is being used
+ @param[in]			bRotate     Is the viewport in portrait or landscape mode
+ @return 			Returns the orthogonal projection matrix defined by the passed parameters
 *****************************************************************************/
 	static PVRTMat4 Ortho(VERTTYPE left, VERTTYPE top, VERTTYPE right,
 		VERTTYPE bottom, VERTTYPE nearPlane, VERTTYPE farPlane, const eClipspace cs, bool bRotate = false)
@@ -2007,151 +1900,142 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function			LookAtRH
- @Input				vEye position of 'camera'
- @Input				vAt target that camera points at
- @Input				vUp up vector for camera
- @Returns			Returns the view matrix defined by the passed parameters
- @Description		Create a look-at view matrix for a right hand coordinate
+ @fn       			LookAtRH
+ @param[in]				vEye position of 'camera'
+ @param[in]				vAt target that camera points at
+ @param[in]				vUp up vector for camera
+ @return 			Returns the view matrix defined by the passed parameters
+ @brief      		Create a look-at view matrix for a right hand coordinate
 					system
 *****************************************************************************/
 	static PVRTMat4 LookAtRH(const PVRTVec3& vEye, const PVRTVec3& vAt, const PVRTVec3& vUp)
 		{ return LookAt(vEye, vAt, vUp, true); }
 /*!***************************************************************************
- @Function			LookAtLH
- @Input				vEye position of 'camera'
- @Input				vAt target that camera points at
- @Input				vUp up vector for camera
- @Returns			Returns the view matrix defined by the passed parameters
- @Description		Create a look-at view matrix for a left hand coordinate
+ @fn       			LookAtLH
+ @param[in]				vEye position of 'camera'
+ @param[in]				vAt target that camera points at
+ @param[in]				vUp up vector for camera
+ @return 			Returns the view matrix defined by the passed parameters
+ @brief      		Create a look-at view matrix for a left hand coordinate
 					system
 *****************************************************************************/
 	static PVRTMat4 LookAtLH(const PVRTVec3& vEye, const PVRTVec3& vAt, const PVRTVec3& vUp)
 		{ return LookAt(vEye, vAt, vUp, false);	}
 
 /*!***************************************************************************
- @Function		PerspectiveRH
- @Input			width		width of viewplane
- @Input			height		height of viewplane
- @Input			nearPlane	near clipping distance
- @Input			farPlane	far clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a right hand coordinate
+ @brief      	Create a perspective matrix for a right hand coordinate
 				system
+ @param[in]			width		width of viewplane
+ @param[in]			height		height of viewplane
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			farPlane	far clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveRH(VERTTYPE width, VERTTYPE height, VERTTYPE nearPlane,
 		VERTTYPE farPlane, const eClipspace cs, bool bRotate = false)
 		{ return Perspective(width, height, nearPlane, farPlane, cs, true, bRotate); }
 
 /*!***************************************************************************
- @Function		PerspectiveLH
- @Input			width		width of viewplane
- @Input			height		height of viewplane
- @Input			nearPlane	near clipping distance
- @Input			farPlane	far clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a left hand coordinate
+ @brief      	Create a perspective matrix for a left hand coordinate
 				system
+ @param[in]			width		width of viewplane
+ @param[in]			height		height of viewplane
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			farPlane	far clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveLH(VERTTYPE width, VERTTYPE height, VERTTYPE nearPlane, VERTTYPE farPlane, const eClipspace cs, bool bRotate = false)
 		{ return Perspective(width, height, nearPlane, farPlane, cs, false, bRotate); }
 
 /*!***************************************************************************
- @Function		PerspectiveFloatDepthRH
- @Input			width		width of viewplane
- @Input			height		height of viewplane
- @Input			nearPlane	near clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a right hand coordinate
+ @brief      	Create a perspective matrix for a right hand coordinate
 				system
+ @param[in]			width		width of viewplane
+ @param[in]			height		height of viewplane
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFloatDepthRH(VERTTYPE width, VERTTYPE height, VERTTYPE nearPlane, const eClipspace cs, bool bRotate = false)
 		{ return PerspectiveFloatDepth(width, height, nearPlane, cs, true, bRotate); }
 
 /*!***************************************************************************
- @Function		PerspectiveFloatDepthLH
- @Input			width		width of viewplane
- @Input			height		height of viewplane
- @Input			nearPlane	near clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a left hand coordinate
+ @brief      	Create a perspective matrix for a left hand coordinate
 				system
+ @param[in]			width		width of viewplane
+ @param[in]			height		height of viewplane
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFloatDepthLH(VERTTYPE width, VERTTYPE height, VERTTYPE nearPlane, const eClipspace cs, bool bRotate = false)
 		{ return PerspectiveFloatDepth(width, height, nearPlane, cs, false, bRotate); }
 
 /*!***************************************************************************
- @Function		PerspectiveFovRH
- @Input			fovy		angle of view (vertical)
- @Input			aspect		aspect ratio of view
- @Input			nearPlane	near clipping distance
- @Input			farPlane	far clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a right hand coordinate
+ @brief      	Create a perspective matrix for a right hand coordinate
 				system
+ @param[in]			fovy		angle of view (vertical)
+ @param[in]			aspect		aspect ratio of view
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			farPlane	far clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFovRH(VERTTYPE fovy, VERTTYPE aspect, VERTTYPE nearPlane, VERTTYPE farPlane, const eClipspace cs, bool bRotate = false)
 		{ return PerspectiveFov(fovy, aspect, nearPlane, farPlane, cs, true, bRotate); }
 /*!***************************************************************************
- @Function		PerspectiveFovLH
- @Input			fovy		angle of view (vertical)
- @Input			aspect		aspect ratio of view
- @Input			nearPlane	near clipping distance
- @Input			farPlane	far clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a left hand coordinate
+ @brief      	Create a perspective matrix for a left hand coordinate
 				system
+ @param[in]			fovy		angle of view (vertical)
+ @param[in]			aspect		aspect ratio of view
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			farPlane	far clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFovLH(VERTTYPE fovy, VERTTYPE aspect, VERTTYPE nearPlane, VERTTYPE farPlane, const eClipspace cs, bool bRotate = false)
 		{ return PerspectiveFov(fovy, aspect, nearPlane, farPlane, cs, false, bRotate); }
 
 /*!***************************************************************************
- @Function		PerspectiveFovRH
- @Input			fovy		angle of view (vertical)
- @Input			aspect		aspect ratio of view
- @Input			nearPlane	near clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a right hand coordinate
+ @brief      	Create a perspective matrix for a right hand coordinate
 				system
+ @param[in]			fovy		angle of view (vertical)
+ @param[in]			aspect		aspect ratio of view
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFovFloatDepthRH(VERTTYPE fovy, VERTTYPE aspect, VERTTYPE nearPlane, const eClipspace cs, bool bRotate = false)
 		{ return PerspectiveFovFloatDepth(fovy, aspect, nearPlane, cs, true, bRotate); }
 /*!***************************************************************************
- @Function		PerspectiveFovLH
- @Input			fovy		angle of view (vertical)
- @Input			aspect		aspect ratio of view
- @Input			nearPlane	near clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRotate is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix for a left hand coordinate
+ @brief      	Create a perspective matrix for a left hand coordinate
 				system
+ @param[in]			fovy		angle of view (vertical)
+ @param[in]			aspect		aspect ratio of view
+ @param[in]			nearPlane	near clipping distance
+ @param[in]			cs			cs which clipspace convention is being used
+ @param[in]			bRotate is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFovFloatDepthLH(VERTTYPE fovy, VERTTYPE aspect, VERTTYPE nearPlane, const eClipspace cs, bool bRotate = false)
 		{ return PerspectiveFovFloatDepth(fovy, aspect, nearPlane, cs, false, bRotate); }
 
 /*!***************************************************************************
- @Function			LookAt
- @Input				vEye position of 'camera'
- @Input				vAt target that camera points at
- @Input				vUp up vector for camera
- @Input				bRightHanded handedness of coordinate system
- @Returns			Returns the view matrix defined by the passed parameters
- @Description		Create a look-at view matrix
+ @brief      		Create a look-at view matrix
+ @param[in]			vEye            Position of 'camera'
+ @param[in]			vAt             Target that camera points at
+ @param[in]			vUp             Up vector for camera
+ @param[in]			bRightHanded    Handedness of coordinate system
+ @return 			Returns the view matrix defined by the passed parameters
 *****************************************************************************/
 	static PVRTMat4 LookAt(const PVRTVec3& vEye, const PVRTVec3& vAt, const PVRTVec3& vUp, bool bRightHanded)
 	{
@@ -2177,16 +2061,15 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function		Perspective
- @Input			width		width of viewplane
- @Input			height		height of viewplane
- @Input			nearPlane	near clipping distance
- @Input			farPlane	far clipping distance
- @Input			cs			which clipspace convention is being used
- @Input			bRightHanded	handedness of coordinate system
- @Input			bRotate		is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	Create a perspective matrix
+ @brief      	Create a perspective matrix
+ @param[in]		width		Width of viewplane
+ @param[in]		height		Height of viewplane
+ @param[in]		nearPlane	Near clipping distance
+ @param[in]		farPlane	Far clipping distance
+ @param[in]		cs			Which clipspace convention is being used
+ @param[in]		bRightHanded	Handedness of coordinate system
+ @param[in]		bRotate		Is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 Perspective(
 		VERTTYPE width, VERTTYPE height,
@@ -2229,16 +2112,15 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function		Perspective
- @Input			width		width of viewplane
- @Input			height		height of viewplane
- @Input			nearPlane	near clipping distance
- @Input			cs			which clipspace convention is being used
- @Input			bRightHanded	handedness of coordinate system
- @Input			bRotate		is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	perspective calculation where far plane is assumed to be at an infinite distance and the screen
+ @brief      	Perspective calculation where far plane is assumed to be at an infinite distance and the screen
 				space Z is inverted
+ @param[in]		width		Width of viewplane
+ @param[in]		height		Height of viewplane
+ @param[in]		nearPlane	Near clipping distance
+ @param[in]		cs			Which clipspace convention is being used
+ @param[in]		bRightHanded	Handedness of coordinate system
+ @param[in]		bRotate		Is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFloatDepth(
 		VERTTYPE width, VERTTYPE height,
@@ -2274,16 +2156,15 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function		Perspective
- @Input			fovy		angle of view (vertical)
- @Input			aspect		aspect ratio of view
- @Input			nearPlane	near clipping distance
- @Input			farPlane	far clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRightHanded	handedness of coordinate system
- @Input			bRotate		is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	perspective calculation where field of view is used instead of near plane dimensions
+ @brief      	Perspective calculation where field of view is used instead of near plane dimensions
+ @param[in]		fovy		Angle of view (vertical)
+ @param[in]		aspect		Aspect ratio of view
+ @param[in]		nearPlane	Near clipping distance
+ @param[in]		farPlane	Far clipping distance
+ @param[in]		cs			Which clipspace convention is being used
+ @param[in]		bRightHanded	Handedness of coordinate system
+ @param[in]		bRotate		Is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFov(
 		VERTTYPE fovy, VERTTYPE aspect,
@@ -2298,16 +2179,15 @@ struct PVRTMat4 : public PVRTMATRIX
 	}
 
 /*!***************************************************************************
- @Function		Perspective
- @Input			fovy		angle of view (vertical)
- @Input			aspect		aspect ratio of view
- @Input			nearPlane	near clipping distance
- @Input			cs			cs which clipspace convention is being used
- @Input			bRightHanded	handedness of coordinate system
- @Input			bRotate		is the viewport in portrait or landscape mode
- @Returns		Perspective matrix
- @Description	perspective calculation where field of view is used instead of near plane dimensions
+ @brief      	Perspective calculation where field of view is used instead of near plane dimensions
 				and far plane is assumed to be at an infinite distance with inverted Z range
+ @param[in]		fovy		Angle of view (vertical)
+ @param[in]		aspect		Aspect ratio of view
+ @param[in]		nearPlane	Near clipping distance
+ @param[in]		cs			Which clipspace convention is being used
+ @param[in]		bRightHanded	Handedness of coordinate system
+ @param[in]		bRotate		Is the viewport in portrait or landscape mode
+ @return 		Perspective matrix
 *****************************************************************************/
 	static PVRTMat4 PerspectiveFovFloatDepth(
 		VERTTYPE fovy, VERTTYPE aspect,

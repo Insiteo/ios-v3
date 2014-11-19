@@ -19,9 +19,13 @@
 @interface ISMeetMeInsCreateGroupRequest : ISAbstractMeetMeRequest
 
 @property (retain) NSString * groupName;
+
 @property (retain) NSString * groupPassword;
+
 @property (readwrite) NSTimeInterval endDate;
+
 @property (readwrite) NSTimeInterval closeDate;
+
 @property (readwrite) Boolean isExclusive;
 
 - (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andUserId:(NSString *)aUserId andGroupName:(NSString *)aGroupName andGroupPassword:(NSString *)aGroupPassword andEndDate:(NSTimeInterval)aEndDate andCloseDate:(NSTimeInterval)aCloseDate andExclu:(Boolean)aExclu;

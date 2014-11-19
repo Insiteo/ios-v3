@@ -65,15 +65,7 @@ extern NSString * const IS_UPDATE_CANCEL_ERROR_CODE;
 /*!
  Class used to represent an Insiteo error.
  */
-@interface ISInsiteoError : NSObject {
-
-@private
-    
-    //Error code
-    NSString * m_errorCode;
-    //Error message
-    NSString * m_errorMessage;
-}
+@interface ISInsiteoError : NSObject
 
 /*!
  Error code.

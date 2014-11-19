@@ -14,7 +14,7 @@
 #import <Foundation/Foundation.h>
 
 #import "ISPCancelable.h"
-#import "ISItineraryStructures.h"
+#import "ISItinerary.h"
 #import "ISPItineraryRequestListener.h"
 
 @class ISItineraryProvider;
@@ -40,6 +40,8 @@
     ISItineraryProvider * m_itineraryProvider;
     //
     Boolean m_isFinished;
+    //Boolean used to know if the request was at least one time recomputed
+    Boolean m_isRecomputed;
     
 #pragma mark - ISPCancelable
     

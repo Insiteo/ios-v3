@@ -1,9 +1,9 @@
 /*
  * CC3NodesResource.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -94,15 +94,16 @@
  * successful completion of the processFile: method.
  */
 @interface CC3NodesResource : CC3Resource {
-	CCArray* _nodes;
+	NSMutableArray* _nodes;
 	BOOL _expectsVerticallyFlippedTextures : 1;
+	BOOL _shouldFreezeInanimateNodes : 1;
 }
 
 /**
  * A collection of the root nodes of the node assembly extracted from the file.
  * Each of these nodes will usually contain child nodes.
  */
-@property(nonatomic, readonly) CCArray* nodes;
+@property(nonatomic, retain, readonly) NSArray* nodes;
 
 /**
  * Returns a node from the hierarchy under the nodes in the nodes array, that matches the
@@ -115,6 +116,32 @@
  * efficient searching and matching algorithms.
  */
 -(CC3Node*) getNodeMatching: (CC3Node*) node;
+
+/**
+ * Adds the specified node to the collection of nodes loaded by this resource.
+ *
+ * This method is used by subclasses during loading to add a node to the nodes collection.
+ *
+ * The application may also use this method to add a node manually, if appropriate. However,
+ * be aware that the nodes collection of a resource object is generally only accessed once
+ * to populate the descendants of a CC3ResourceNode that wraps this resource. In most cases,
+ * it may be more appropriate for the application to add any manually-generated nodes to the
+ * CC3ResourceNode, instead of this resource.
+ */
+-(void) addNode: (CC3Node*) node;
+
+/**
+ * Removes the specified node from the collection of nodes loaded by this resource.
+ *
+ * This method is used by subclasses during loading to remove a node from the nodes collection.
+ *
+ * The application may also use this method to remove a node manually, if appropriate. However,
+ * be aware that the nodes collection of a resource object is generally only accessed once
+ * to populate the descendants of a CC3ResourceNode that wraps this resource. In most cases,
+ * it may be more appropriate for the application to remove any unwanted nodes from the
+ * CC3ResourceNode, instead of this resource.
+ */
+-(void) removeNode: (CC3Node*) node;
 
 
 #pragma mark Allocation and initialization
@@ -194,6 +221,38 @@
  * The initial value of this class-side property is NO.
  */
 +(void) setDefaultExpectsVerticallyFlippedTextures: (BOOL) expectsFlipped;
+
+
+#pragma mark Animation
+
+/**
+ * Indicates whether any nodes that do not contain animation should be frozen to their initial
+ * location, quaternion, and scale properties when animation is run.
+ *
+ * Setting this property to YES has the same effect as invoking freezeIfInanimateOnTrack:
+ * on each node, immediately after loading the node. See the notes for that method to learn
+ * more about freezing inanimate nodes during animation.
+ *
+ * The initial value of this property is determined by the value of the class-side
+ * defaultShouldFreezeInanimateNodes property at the time of instantiation.
+ */
+@property(nonatomic, assign) BOOL shouldFreezeInanimateNodes;
+
+/**
+ * Indicates the initial value to which the shouldFreezeInanimateNodes property will be set
+ * for each new instance of this class.
+ *
+ * The initial value of this class-side property is NO.
+ */
++(BOOL) defaultShouldFreezeInanimateNodes;
+
+/**
+ * Indicates the initial value to which the shouldFreezeInanimateNodes property will be set
+ * for each new instance of this class.
+ *
+ * The initial value of this class-side property is NO.
+ */
++(void) setDefaultShouldFreezeInanimateNodes: (BOOL) shouldFreeze;
 
 @end
 

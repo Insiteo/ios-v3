@@ -18,19 +18,7 @@
 /*!
  Class used to represent an analytics location event.
  */
-@interface ISAnalyticsLocationEvent : ISAnalyticsAbstractEvent {
-    
-@private
-    
-    //ISPosition field
-    ISPosition * m_position;
-    //Location accuracy
-    float m_accuracy;
-    //Location azimuth
-    float m_azimuth;
-    //Location flags
-    int m_flags;
-}
+@interface ISAnalyticsLocationEvent : ISAnalyticsAbstractEvent
 
 /*!
  ISPosition field.

@@ -13,34 +13,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import "CCNode.h"
+#import "cocos2d.h"
+
 #import "ISPRTO.h"
 #import "ISGeofenceArea.h"
 
 /*!
  Class used to display a GeofenceArea.
  */
-@interface ISGfxGeofenceArea : CCNode <ISPRTO> {
-    
-@private
-    
-    //Related geofence area
-    ISGeofenceArea * m_area;
-    
-#pragma mark - ISPRTO
-    
-    //Render identifier
-    int m_rtoId;
-    //Current render ratio
-    double m_currentRatio;
-	//Renderer current offset
-	CGPoint m_currentOffset;
-    
-#pragma mark - Render
-    
-    //Intern draw node
-    CCDrawNode * m_drawNode;
-}
+@interface ISGfxGeofenceArea : CCNode <ISPRTO>
 
 /*!
  Related geofence area.

@@ -1,9 +1,9 @@
 /*
  * CC3ModelSampleFactory.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2011-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2011-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,41 +33,36 @@
 
 
 /**
- * CC3ModelSampleFactory is a convenience utility for creating sample 3D models
- * for experimentation.
+ * CC3ModelSampleFactory is a convenience utility for creating sample 3D models for experimentation.
  * 
- * The design pattern is a singleton factory object, with methods for creating
- * instances of various 3D models.
+ * The design pattern is a singleton factory object, with methods for creating instances
+ * of various 3D models. Access to the factory instance is through the factory class method.
  *
- * Access to the factory instance is through the factory class method.
- *
- * This class should be considered for testing and experimental use only.
- * Unless you really need teapots in your application, there is no need to include
- * this class, or the teapot.h data header file, in any finished application.
- * Doing so will just bloat the size of the application unnecessarily.
+ * This class should be considered for testing and experimental use only. Unless you really
+ * need teapots in your application, there is no need to include this class, or the teapot.h
+ * data header file, in any finished application. Doing so will just bloat the size of the
+ * application unnecessarily.
  */
 @interface CC3ModelSampleFactory : NSObject {
-	CC3VertexLocations* teapotVertexLocations;
-	CC3VertexNormals* teapotVertexNormals;
-	CC3VertexIndices* teapotVertexIndices;
-	CC3VertexTextureCoordinates* teapotVertexTextureCoordinates;
-	CC3VertexColors* teapotVertexColors;
-	CC3Mesh* texturedTeapotMesh;
-	CC3Mesh* multicoloredTeapotMesh;
-	CC3Mesh* unicoloredTeapotMesh;
+	CC3VertexLocations* _teapotVertexLocations;
+	CC3VertexNormals* _teapotVertexNormals;
+	CC3VertexIndices* _teapotVertexIndices;
+	CC3VertexTextureCoordinates* _teapotVertexTextureCoordinates;
+	CC3VertexColors* _teapotVertexColors;
+	CC3Mesh* _texturedTeapotMesh;
+	CC3Mesh* _multicoloredTeapotMesh;
+	CC3Mesh* _unicoloredTeapotMesh;
 }
 
-/** Returns the singleton instance. */
-+(CC3ModelSampleFactory*) factory;
-
 /** An instance of a teapot mesh that includes a texture coordinate map. */
-@property(nonatomic, readonly) CC3Mesh* texturedTeapotMesh;
+@property(nonatomic, retain, readonly) CC3Mesh* texturedTeapotMesh;
 
 /** An instance of a teapot mesh that will be covered in a single color. */
-@property(nonatomic, readonly) CC3Mesh* unicoloredTeapotMesh;
+@property(nonatomic, retain, readonly) CC3Mesh* unicoloredTeapotMesh;
 
 /** An instance of a teapot mesh that includes a vertex color array. */
-@property(nonatomic, readonly) CC3Mesh* multicoloredTeapotMesh;
+@property(nonatomic, retain, readonly) CC3Mesh* multicoloredTeapotMesh;
+
 
 #pragma mark Factory methods
 
@@ -79,5 +74,14 @@
 
 /** Returns an allocated, initialized, autoreleased instance of a teapot suitable for covering with a texture. */
 -(CC3MeshNode*) makeTexturableTeapotNamed: (NSString*) aName;
+
+
+#pragma mark Allocation and initialization
+
+/** Returns the singleton instance. */
++(CC3ModelSampleFactory*) factory;
+
+/** Deletes the factory singleton, to clear items from memory. */
++(void) deleteFactory;
 
 @end

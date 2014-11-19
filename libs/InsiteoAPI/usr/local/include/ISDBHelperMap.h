@@ -20,9 +20,7 @@
 /*!
  Static class used to handle map SQL requests.
  */
-@interface ISDBHelperMap : ISRODBHelper {
-    
-}
+@interface ISDBHelperMap : ISRODBHelper
 
 /*!
  Static method used to get the unique instance of the ISDBHelperMap.

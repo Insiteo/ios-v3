@@ -1,9 +1,9 @@
 /*
  * CC3MeshModel.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,10 +35,7 @@
 #pragma mark -
 #pragma mark Deprecated CC3MeshModel
 
-DEPRECATED_ATTRIBUTE
-/**
- * Deprecated.
- * @deprecated CC3MeshModel renamed to CC3Mesh.
- */
+__deprecated
+/** @deprecated CC3MeshModel renamed to CC3Mesh. */
 @interface CC3MeshModel : CC3Mesh
 @end

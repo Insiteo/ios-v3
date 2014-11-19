@@ -1,9 +1,9 @@
 /*
  * CC3CSFResource.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@
 
 /** CC3CSFResource is a CC3NodesResource that loads a node hierarchy from a Cal3D-compatible CSF file. */
 @interface CC3CSFResource : CC3NodesResource {
-	CCArray* _allNodes;
+	NSMutableArray* _allNodes;
 	int _nodeCount;
 	int _fileVersion;
 	ccColor4F _ambientLight;
@@ -52,7 +52,7 @@
  * A collection of all of the nodes extracted from the CSF file.
  * This is the equivalent of flattening the nodes array.
  */
-@property(nonatomic, readonly) CCArray* allNodes;
+@property(nonatomic, retain, readonly) NSArray* allNodes;
 
 /**
  * Retrieves the first node found with the specified calIndex, anywhere in the nodes contained

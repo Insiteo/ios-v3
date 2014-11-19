@@ -1,9 +1,9 @@
 /*
  * CC3OSXExtensions.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@
 /** @file */	// Doxygen marker
 
 
-/* Base library of extensions to iOS frameworks to support cocos3d. */
+/* Base library of extensions to iOS frameworks to support Cocos3D. */
 
 #import "CC3Environment.h"
 
@@ -86,8 +86,6 @@ typedef enum {
 #define UIInterfaceOrientationIsPortrait(orientation)  ((orientation) == UIInterfaceOrientationPortrait || (orientation) == UIInterfaceOrientationPortraitUpsideDown)
 #define UIInterfaceOrientationIsLandscape(orientation) ((orientation) == UIInterfaceOrientationLandscapeLeft || (orientation) == UIInterfaceOrientationLandscapeRight)
 
-//@class CCGLView;
-
 
 #pragma mark -
 #pragma mark Open GL Context
@@ -95,7 +93,7 @@ typedef enum {
 /** GL context under iOS */
 #define CC3GLContext	NSOpenGLContext
 
-/** Extension category to support cocos3d functionality. */
+/** Extension category to support Cocos3D functionality. */
 @interface NSOpenGLContext (CC3)
 
 /** Ensures this GL context is the GL context for the currently running thread. */

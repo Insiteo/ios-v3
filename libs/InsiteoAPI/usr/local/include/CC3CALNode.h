@@ -1,9 +1,9 @@
 /*
  * CC3CALNode.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -68,7 +68,7 @@
  * Links this node to its parent by retrieving the node at the position in the array
  * specified by the calParentIndex of this node.
  */
--(void) linkToCALNodes: (CCArray*) nodeArray;
+-(void) linkToCALNodes: (NSArray*) nodeArray;
 
 /**
  * Retrieves the first node found with the specified calIndex, anywhere in the structural hierarchy

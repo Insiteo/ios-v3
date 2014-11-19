@@ -1,9 +1,9 @@
 /*
  * CC3PODMaterial.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,11 +33,17 @@
 #import "CC3Material.h"
 #import "CC3IdentifiablePODExtensions.h"
 
+@class CC3PFXEffect;
+
 
 /** A CC3Material whose content originates from POD resource data. */
 @interface CC3PODMaterial : CC3Material {
+	CC3PFXEffect* _pfxEffect;
 	GLint _podIndex;
 }
+
+/** Returns the PFX effect used by this material. */
+@property(nonatomic, strong, readonly) CC3PFXEffect* pfxEffect;
 
 /**
  * Allocates and initializes an autoreleased instance from the data of

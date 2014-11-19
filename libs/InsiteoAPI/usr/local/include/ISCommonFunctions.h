@@ -21,9 +21,7 @@
 /*!
  Static class used to provide general help functions.
  */
-@interface ISCommonFunctions : NSObject {
-    
-}
+@interface ISCommonFunctions : NSObject
 
 /*!
  Method called to compare two bytes array.

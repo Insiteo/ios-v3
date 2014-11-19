@@ -21,7 +21,9 @@
 @interface ISMeetMeExtConnectRequest : ISAbstractMeetMeRequest
 
 @property (retain) NSString * userExtID;
+
 @property (retain) NSString * userName;
+
 @property (retain) NSArray * groupExtIDs;
 
 - (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andUserExtID:(NSString *)aUserExtID andUserName:(NSString *)aUserName andGroupExtIDs:(NSArray *)aGroupExtIDs;

@@ -1,9 +1,9 @@
 /*
  * CC3Matrix4x3.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -90,7 +90,7 @@ typedef union {
 } CC3Matrix4x3;
 
 /** Returns a string description of the specified CC3Matrix4x3, including contents. */
-NSString* NSStringFromCC3Matrix4x3(CC3Matrix4x3* mtxPtr);
+NSString* NSStringFromCC3Matrix4x3(const CC3Matrix4x3* mtxPtr);
 
 
 #pragma mark Heterogeneous matrix population
@@ -315,7 +315,7 @@ static inline CC3Vector CC3Matrix4x3ExtractRotationZYX(const CC3Matrix4x3* mtx) 
 }
 
 /**
- * Extracts and returns the rotation quaternion from the specified matrix.
+ * Extracts and returns a unit rotation quaternion from the specified matrix.
  *
  * This algorithm uses the technique of finding the largest combination of the diagonal elements
  * to select which quaternion element (w,x,y,z) to solve for from the diagonal, and then using
@@ -336,18 +336,17 @@ static inline CC3Quaternion CC3Matrix4x3ExtractQuaternion(const CC3Matrix4x3* mt
 
 /** Extracts and returns the 'forward' direction vector from the rotation component of the specified matrix. */
 static inline CC3Vector CC3Matrix4x3ExtractForwardDirection(const CC3Matrix4x3* mtx) {
-	return CC3Matrix3x3ExtractForwardDirection((CC3Matrix3x3*) mtx);
+	return CC3VectorNegate(mtx->col3);
 }
 
 /** Extracts and returns the 'up' direction vector from the rotation component of the specified matrix. */
-static inline CC3Vector CC3Matrix4x3ExtractUpDirection(const CC3Matrix4x3* mtx) {
-	return CC3Matrix3x3ExtractUpDirection((CC3Matrix3x3*) mtx);
-}
+static inline CC3Vector CC3Matrix4x3ExtractUpDirection(const CC3Matrix4x3* mtx) { return mtx->col2; }
 
 /** Extracts and returns the 'right' direction vector from the rotation component of the specified matrix. */
-static inline CC3Vector CC3Matrix4x3ExtractRightDirection(const CC3Matrix4x3* mtx) {
-	return CC3Matrix3x3ExtractRightDirection((CC3Matrix3x3*) mtx);
-}
+static inline CC3Vector CC3Matrix4x3ExtractRightDirection(const CC3Matrix4x3* mtx) { return mtx->col1; }
+
+/** Extracts and returns the translation vector from the specified matrix. */
+static inline CC3Vector CC3Matrix4x3ExtractTranslation(const CC3Matrix4x3* mtx) { return mtx->col4; }
 
 
 #pragma mark Matrix transformations

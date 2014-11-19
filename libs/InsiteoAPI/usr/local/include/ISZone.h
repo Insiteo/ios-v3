@@ -18,87 +18,7 @@
 /*!
  Class used to represent an INSITEO zone entity.
  */
-@interface ISZone : NSObject {
-    
-#pragma mark - Structure
-	
-    //Zone identifier
-	int m_idZone;
-    //Zone GUID
-    NSString * m_guid;
-    //Zone type identifier
-    int m_typeId;
-    //Zone label
-    NSString * m_label;
-    
-#pragma mark - Positionning
-    
-	//Zone position (x, y and map Id)
-    ISPosition * m_center;
-    //Z value (to order rendering/touch)
-    int m_z;
-    //ZoomLevel min where the zone appears
-    int m_zoomMin;
-    //ZoomLevel max where the zone appears
-    int m_zoomMax;
-    
-    //Zone node points
-    NSMutableArray * m_points;
-    //Zone tiles references
-    NSMutableArray * m_tiles;
-
-#pragma mark - Action
-    
-    //Zone action type (ZoomIn, ZoomOut etc...)
-	int m_actionType;
-    //Zone action parameter
-	NSString * m_actionParameter;
-    
-#pragma mark - Behaviour
-    
-    //Sort index
-    int m_sortIndex;
-    //Zone comments (if needed)
-    NSString * m_comments;
-    
-#pragma mark - Extra
-    
-    //String extra parameter
-    NSString * m_extra1;
-    //String extra parameter
-    NSString * m_extra2;
-    //String extra parameter
-    NSString * m_extra3;
-    //String extra parameter
-    NSString * m_extra4;
-    //String extra parameter
-    NSString * m_extra5;
-    //Float extra parameter
-    float m_fExtra1;
-    
-    //String extra parameter
-    NSString * m_dispExtra1;
-    //String extra parameter
-    NSString * m_dispExtra2;
-    //String extra parameter
-    NSString * m_dispExtra3;
-    //Float extra parameter
-    float m_dispFExtra1;
-    
-    //Boolean used to know if the zone handle touch event and if it's displayed
-    Boolean m_isHidden;
-    
-#pragma mark - 3D/GeoPush
-    
-    //3D first front point
-    ISPosition * m_p1;
-    //3D second front point
-    ISPosition * m_p2;
-    //Custom geofence width. Used to create custom geofence zones on the fly
-    float m_customGeoWidth;
-    //Boolean used to know if the zone is a display shelving
-    Boolean m_isDisplayShelving;
-}
+@interface ISZone : NSObject
 
 /*!
  Zone identifier.
@@ -249,5 +169,20 @@
  Boolean used to know if the zone is a display shelving.
  */
 @property (nonatomic, readwrite) Boolean isDisplayShelving;
+
+/*!
+ 3D zone height (in meters).
+ */
+@property (nonatomic, readwrite) float zoneHeight;
+
+/*!
+ Global zone position max index.
+ */
+@property (nonatomic, readwrite) int pMax;
+
+/*!
+ 3D shelves count.
+ */
+@property (nonatomic, readwrite) int nbShelves;
 
 @end

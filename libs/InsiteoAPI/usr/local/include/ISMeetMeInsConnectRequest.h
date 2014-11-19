@@ -19,6 +19,7 @@
 @interface ISMeetMeInsConnectRequest : ISAbstractMeetMeRequest
 
 @property (retain) NSString * login;
+
 @property (retain) NSString * password;
 
 - (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andLogin:(NSString *)aLogin andPassword:(NSString *)aPassword;

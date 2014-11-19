@@ -1,9 +1,9 @@
 /*
  * CC3PVRTTexture.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,11 +36,11 @@
 #import "PVRTTexture.h"
 
 #if CC3_OGLES_1
-#import "PVRT 3.1/OGLES/PVRTTextureAPI.h"
+#import "PVRT/OGLES/PVRTTextureAPI.h"
 #endif
 
 #if CC3_OGLES_2
-#import "PVRT 3.1/OGLES2/PVRTTextureAPI.h"
+#import "PVRT/OGLES2/PVRTTextureAPI.h"
 #endif
 
 #undef BOOL						// resolve conflict with PVRT C++ definition of BOOL

@@ -16,7 +16,6 @@ extern NSString * const BASE_SERVICE_PATH;
 /*!
  Class used to manage common client/server url.
  */
-
 @interface ISConfig : NSObject
 
 /*

@@ -1,17 +1,9 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTMatrix.h
-
- @Title        PVRTMatrix
-
- @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     ANSI compatible
-
- @Description  Vector and Matrix functions for floating and fixed point math. The
-               general matrix format used is directly compatible with, for
+ @file         PVRTMatrix.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Vector and Matrix functions for floating and fixed point math. 
+ @details      The general matrix format used is directly compatible with, for
                example, both DirectX and OpenGL.
 
 ******************************************************************************/
@@ -43,7 +35,7 @@
 ** Typedefs
 ****************************************************************************/
 /*!***************************************************************************
- 2D floating point vector
+ @brief     2D floating point vector
 *****************************************************************************/
 typedef struct
 {
@@ -52,7 +44,7 @@ typedef struct
 } PVRTVECTOR2f;
 
 /*!***************************************************************************
- 2D fixed point vector
+ @brief     2D fixed point vector
 *****************************************************************************/
 typedef struct
 {
@@ -61,7 +53,7 @@ typedef struct
 } PVRTVECTOR2x;
 
 /*!***************************************************************************
- 3D floating point vector
+ @brief     3D floating point vector
 *****************************************************************************/
 typedef struct
 {
@@ -71,7 +63,7 @@ typedef struct
 } PVRTVECTOR3f;
 
 /*!***************************************************************************
- 3D fixed point vector
+ @brief     3D fixed point vector
 *****************************************************************************/
 typedef struct
 {
@@ -81,7 +73,7 @@ typedef struct
 } PVRTVECTOR3x;
 
 /*!***************************************************************************
- 4D floating point vector
+ @brief     4D floating point vector
 *****************************************************************************/
 typedef struct
 {
@@ -92,7 +84,7 @@ typedef struct
 } PVRTVECTOR4f;
 
 /*!***************************************************************************
- 4D fixed point vector
+ @brief     4D fixed point vector
 *****************************************************************************/
 typedef struct
 {
@@ -103,9 +95,9 @@ typedef struct
 } PVRTVECTOR4x;
 
 /*!***************************************************************************
- 4x4 floating point matrix
+ @class     PVRTMATRIXf
+ @brief     4x4 floating point matrix
 *****************************************************************************/
-
 class PVRTMATRIXf
 {
 public:
@@ -117,7 +109,8 @@ public:
 };
 
 /*!***************************************************************************
- 4x4 fixed point matrix
+ @class     PVRTMATRIXx
+ @brief     4x4 fixed point matrix
 *****************************************************************************/
 class PVRTMATRIXx
 {
@@ -130,7 +123,8 @@ public:
 };
 
 /*!***************************************************************************
- 3x3 floating point matrix
+ @class     PVRTMATRIX3f
+ @brief     3x3 floating point matrix
 *****************************************************************************/
 
 class PVRTMATRIX3f
@@ -144,7 +138,8 @@ public:
 };
 
 /*!***************************************************************************
- 3x3 fixed point matrix
+ @class     PVRTMATRIX3x
+ @brief     3x3 fixed point matrix
 *****************************************************************************/
 class PVRTMATRIX3x
 {
@@ -223,25 +218,25 @@ public:
 ****************************************************************************/
 
 /*!***************************************************************************
- @Function			PVRTMatrixIdentityF
- @Output			mOut	Set to identity
- @Description		Reset matrix to identity matrix.
+ @fn      			PVRTMatrixIdentityF
+ @param[out]			mOut	Set to identity
+ @brief      		Reset matrix to identity matrix.
 *****************************************************************************/
 void PVRTMatrixIdentityF(PVRTMATRIXf &mOut);
 
 /*!***************************************************************************
- @Function			PVRTMatrixIdentityX
- @Output			mOut	Set to identity
- @Description		Reset matrix to identity matrix.
+ @fn      			PVRTMatrixIdentityX
+ @param[out]			mOut	Set to identity
+ @brief      		Reset matrix to identity matrix.
 *****************************************************************************/
 void PVRTMatrixIdentityX(PVRTMATRIXx &mOut);
 
 /*!***************************************************************************
- @Function			PVRTMatrixMultiplyF
- @Output			mOut	Result of mA x mB
- @Input				mA		First operand
- @Input				mB		Second operand
- @Description		Multiply mA by mB and assign the result to mOut
+ @fn      			PVRTMatrixMultiplyF
+ @param[out]			mOut	Result of mA x mB
+ @param[in]				mA		First operand
+ @param[in]				mB		Second operand
+ @brief      		Multiply mA by mB and assign the result to mOut
 					(mOut = p1 * p2). A copy of the result matrix is done in
 					the function because mOut can be a parameter mA or mB.
 *****************************************************************************/
@@ -250,11 +245,11 @@ void PVRTMatrixMultiplyF(
 	const PVRTMATRIXf	&mA,
 	const PVRTMATRIXf	&mB);
 /*!***************************************************************************
- @Function			PVRTMatrixMultiplyX
- @Output			mOut	Result of mA x mB
- @Input				mA		First operand
- @Input				mB		Second operand
- @Description		Multiply mA by mB and assign the result to mOut
+ @fn      			PVRTMatrixMultiplyX
+ @param[out]			mOut	Result of mA x mB
+ @param[in]				mA		First operand
+ @param[in]				mB		Second operand
+ @brief      		Multiply mA by mB and assign the result to mOut
 					(mOut = p1 * p2). A copy of the result matrix is done in
 					the function because mOut can be a parameter mA or mB.
 					The fixed-point shift could be performed after adding
@@ -267,12 +262,12 @@ void PVRTMatrixMultiplyX(
 	const PVRTMATRIXx	&mB);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixTranslationF
- @Output			mOut	Translation matrix
- @Input				fX		X component of the translation
- @Input				fY		Y component of the translation
- @Input				fZ		Z component of the translation
- @Description		Build a transaltion matrix mOut using fX, fY and fZ.
+ @fn           		PVRTMatrixTranslationF
+ @param[out]			mOut	Translation matrix
+ @param[in]				fX		X component of the translation
+ @param[in]				fY		Y component of the translation
+ @param[in]				fZ		Z component of the translation
+ @brief      		Build a transaltion matrix mOut using fX, fY and fZ.
 *****************************************************************************/
 void PVRTMatrixTranslationF(
 	PVRTMATRIXf	&mOut,
@@ -280,12 +275,12 @@ void PVRTMatrixTranslationF(
 	const float	fY,
 	const float	fZ);
 /*!***************************************************************************
- @Function Name		PVRTMatrixTranslationX
- @Output			mOut	Translation matrix
- @Input				fX		X component of the translation
- @Input				fY		Y component of the translation
- @Input				fZ		Z component of the translation
- @Description		Build a transaltion matrix mOut using fX, fY and fZ.
+ @fn        		PVRTMatrixTranslationX
+ @param[out]			mOut	Translation matrix
+ @param[in]				fX		X component of the translation
+ @param[in]				fY		Y component of the translation
+ @param[in]				fZ		Z component of the translation
+ @brief      		Build a transaltion matrix mOut using fX, fY and fZ.
 *****************************************************************************/
 void PVRTMatrixTranslationX(
 	PVRTMATRIXx	&mOut,
@@ -294,12 +289,12 @@ void PVRTMatrixTranslationX(
 	const int	fZ);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixScalingF
- @Output			mOut	Scale matrix
- @Input				fX		X component of the scaling
- @Input				fY		Y component of the scaling
- @Input				fZ		Z component of the scaling
- @Description		Build a scale matrix mOut using fX, fY and fZ.
+ @fn           		PVRTMatrixScalingF
+ @param[out]			mOut	Scale matrix
+ @param[in]				fX		X component of the scaling
+ @param[in]				fY		Y component of the scaling
+ @param[in]				fZ		Z component of the scaling
+ @brief      		Build a scale matrix mOut using fX, fY and fZ.
 *****************************************************************************/
 void PVRTMatrixScalingF(
 	PVRTMATRIXf	&mOut,
@@ -308,12 +303,12 @@ void PVRTMatrixScalingF(
 	const float fZ);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixScalingX
- @Output			mOut	Scale matrix
- @Input				fX		X component of the scaling
- @Input				fY		Y component of the scaling
- @Input				fZ		Z component of the scaling
- @Description		Build a scale matrix mOut using fX, fY and fZ.
+ @fn           		PVRTMatrixScalingX
+ @param[out]			mOut	Scale matrix
+ @param[in]				fX		X component of the scaling
+ @param[in]				fY		Y component of the scaling
+ @param[in]				fZ		Z component of the scaling
+ @brief      		Build a scale matrix mOut using fX, fY and fZ.
 *****************************************************************************/
 void PVRTMatrixScalingX(
 	PVRTMATRIXx	&mOut,
@@ -322,88 +317,88 @@ void PVRTMatrixScalingX(
 	const int	fZ);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixRotationXF
- @Output			mOut	Rotation matrix
- @Input				fAngle	Angle of the rotation
- @Description		Create an X rotation matrix mOut.
+ @fn           		PVRTMatrixRotationXF
+ @param[out]			mOut	Rotation matrix
+ @param[in]				fAngle	Angle of the rotation
+ @brief      		Create an X rotation matrix mOut.
 *****************************************************************************/
 void PVRTMatrixRotationXF(
 	PVRTMATRIXf	&mOut,
 	const float fAngle);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixRotationXX
- @Output			mOut	Rotation matrix
- @Input				fAngle	Angle of the rotation
- @Description		Create an X rotation matrix mOut.
+ @fn           		PVRTMatrixRotationXX
+ @param[out]			mOut	Rotation matrix
+ @param[in]				fAngle	Angle of the rotation
+ @brief      		Create an X rotation matrix mOut.
 *****************************************************************************/
 void PVRTMatrixRotationXX(
 	PVRTMATRIXx	&mOut,
 	const int	fAngle);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixRotationYF
- @Output			mOut	Rotation matrix
- @Input				fAngle	Angle of the rotation
- @Description		Create an Y rotation matrix mOut.
+ @fn           		PVRTMatrixRotationYF
+ @param[out]			mOut	Rotation matrix
+ @param[in]				fAngle	Angle of the rotation
+ @brief      		Create an Y rotation matrix mOut.
 *****************************************************************************/
 void PVRTMatrixRotationYF(
 	PVRTMATRIXf	&mOut,
 	const float fAngle);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixRotationYX
- @Output			mOut	Rotation matrix
- @Input				fAngle	Angle of the rotation
- @Description		Create an Y rotation matrix mOut.
+ @fn           		PVRTMatrixRotationYX
+ @param[out]			mOut	Rotation matrix
+ @param[in]				fAngle	Angle of the rotation
+ @brief      		Create an Y rotation matrix mOut.
 *****************************************************************************/
 void PVRTMatrixRotationYX(
 	PVRTMATRIXx	&mOut,
 	const int	fAngle);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixRotationZF
- @Output			mOut	Rotation matrix
- @Input				fAngle	Angle of the rotation
- @Description		Create an Z rotation matrix mOut.
+ @fn           		PVRTMatrixRotationZF
+ @param[out]			mOut	Rotation matrix
+ @param[in]				fAngle	Angle of the rotation
+ @brief      		Create an Z rotation matrix mOut.
 *****************************************************************************/
 void PVRTMatrixRotationZF(
 	PVRTMATRIXf	&mOut,
 	const float fAngle);
 /*!***************************************************************************
- @Function Name		PVRTMatrixRotationZX
- @Output			mOut	Rotation matrix
- @Input				fAngle	Angle of the rotation
- @Description		Create an Z rotation matrix mOut.
+ @fn           		PVRTMatrixRotationZX
+ @param[out]			mOut	Rotation matrix
+ @param[in]				fAngle	Angle of the rotation
+ @brief      		Create an Z rotation matrix mOut.
 *****************************************************************************/
 void PVRTMatrixRotationZX(
 	PVRTMATRIXx	&mOut,
 	const int	fAngle);
 
 /*!***************************************************************************
- @Function Name		PVRTMatrixTransposeF
- @Output			mOut	Transposed matrix
- @Input				mIn		Original matrix
- @Description		Compute the transpose matrix of mIn.
+ @fn           		PVRTMatrixTransposeF
+ @param[out]			mOut	Transposed matrix
+ @param[in]				mIn		Original matrix
+ @brief      		Compute the transpose matrix of mIn.
 *****************************************************************************/
 void PVRTMatrixTransposeF(
 	PVRTMATRIXf			&mOut,
 	const PVRTMATRIXf	&mIn);
 /*!***************************************************************************
- @Function Name		PVRTMatrixTransposeX
- @Output			mOut	Transposed matrix
- @Input				mIn		Original matrix
- @Description		Compute the transpose matrix of mIn.
+ @fn           		PVRTMatrixTransposeX
+ @param[out]			mOut	Transposed matrix
+ @param[in]				mIn		Original matrix
+ @brief      		Compute the transpose matrix of mIn.
 *****************************************************************************/
 void PVRTMatrixTransposeX(
 	PVRTMATRIXx			&mOut,
 	const PVRTMATRIXx	&mIn);
 
 /*!***************************************************************************
- @Function			PVRTMatrixInverseF
- @Output			mOut	Inversed matrix
- @Input				mIn		Original matrix
- @Description		Compute the inverse matrix of mIn.
+ @fn      			PVRTMatrixInverseF
+ @param[out]			mOut	Inversed matrix
+ @param[in]				mIn		Original matrix
+ @brief      		Compute the inverse matrix of mIn.
 					The matrix must be of the form :
 					A 0
 					C 1
@@ -413,10 +408,10 @@ void PVRTMatrixInverseF(
 	PVRTMATRIXf			&mOut,
 	const PVRTMATRIXf	&mIn);
 /*!***************************************************************************
- @Function			PVRTMatrixInverseX
- @Output			mOut	Inversed matrix
- @Input				mIn		Original matrix
- @Description		Compute the inverse matrix of mIn.
+ @fn      			PVRTMatrixInverseX
+ @param[out]			mOut	Inversed matrix
+ @param[in]				mIn		Original matrix
+ @brief      		Compute the inverse matrix of mIn.
 					The matrix must be of the form :
 					A 0
 					C 1
@@ -427,10 +422,10 @@ void PVRTMatrixInverseX(
 	const PVRTMATRIXx	&mIn);
 
 /*!***************************************************************************
- @Function			PVRTMatrixInverseExF
- @Output			mOut	Inversed matrix
- @Input				mIn		Original matrix
- @Description		Compute the inverse matrix of mIn.
+ @fn      			PVRTMatrixInverseExF
+ @param[out]			mOut	Inversed matrix
+ @param[in]				mIn		Original matrix
+ @brief      		Compute the inverse matrix of mIn.
 					Uses a linear equation solver and the knowledge that M.M^-1=I.
 					Use this fn to calculate the inverse of matrices that
 					PVRTMatrixInverse() cannot.
@@ -439,10 +434,10 @@ void PVRTMatrixInverseExF(
 	PVRTMATRIXf			&mOut,
 	const PVRTMATRIXf	&mIn);
 /*!***************************************************************************
- @Function			PVRTMatrixInverseExX
- @Output			mOut	Inversed matrix
- @Input				mIn		Original matrix
- @Description		Compute the inverse matrix of mIn.
+ @fn      			PVRTMatrixInverseExX
+ @param[out]			mOut	Inversed matrix
+ @param[in]				mIn		Original matrix
+ @brief      		Compute the inverse matrix of mIn.
 					Uses a linear equation solver and the knowledge that M.M^-1=I.
 					Use this fn to calculate the inverse of matrices that
 					PVRTMatrixInverse() cannot.
@@ -452,12 +447,12 @@ void PVRTMatrixInverseExX(
 	const PVRTMATRIXx	&mIn);
 
 /*!***************************************************************************
- @Function			PVRTMatrixLookAtLHF
- @Output			mOut	Look-at view matrix
- @Input				vEye	Position of the camera
- @Input				vAt		Point the camera is looking at
- @Input				vUp		Up direction for the camera
- @Description		Create a look-at view matrix.
+ @fn      			PVRTMatrixLookAtLHF
+ @param[out]			mOut	Look-at view matrix
+ @param[in]				vEye	Position of the camera
+ @param[in]				vAt		Point the camera is looking at
+ @param[in]				vUp		Up direction for the camera
+ @brief      		Create a look-at view matrix.
 *****************************************************************************/
 void PVRTMatrixLookAtLHF(
 	PVRTMATRIXf			&mOut,
@@ -465,12 +460,12 @@ void PVRTMatrixLookAtLHF(
 	const PVRTVECTOR3f	&vAt,
 	const PVRTVECTOR3f	&vUp);
 /*!***************************************************************************
- @Function			PVRTMatrixLookAtLHX
- @Output			mOut	Look-at view matrix
- @Input				vEye	Position of the camera
- @Input				vAt		Point the camera is looking at
- @Input				vUp		Up direction for the camera
- @Description		Create a look-at view matrix.
+ @fn      			PVRTMatrixLookAtLHX
+ @param[out]			mOut	Look-at view matrix
+ @param[in]				vEye	Position of the camera
+ @param[in]				vAt		Point the camera is looking at
+ @param[in]				vUp		Up direction for the camera
+ @brief      		Create a look-at view matrix.
 *****************************************************************************/
 void PVRTMatrixLookAtLHX(
 	PVRTMATRIXx			&mOut,
@@ -479,12 +474,12 @@ void PVRTMatrixLookAtLHX(
 	const PVRTVECTOR3x	&vUp);
 
 /*!***************************************************************************
- @Function			PVRTMatrixLookAtRHF
- @Output			mOut	Look-at view matrix
- @Input				vEye	Position of the camera
- @Input				vAt		Point the camera is looking at
- @Input				vUp		Up direction for the camera
- @Description		Create a look-at view matrix.
+ @fn      			PVRTMatrixLookAtRHF
+ @param[out]			mOut	Look-at view matrix
+ @param[in]				vEye	Position of the camera
+ @param[in]				vAt		Point the camera is looking at
+ @param[in]				vUp		Up direction for the camera
+ @brief      		Create a look-at view matrix.
 *****************************************************************************/
 void PVRTMatrixLookAtRHF(
 	PVRTMATRIXf			&mOut,
@@ -492,12 +487,12 @@ void PVRTMatrixLookAtRHF(
 	const PVRTVECTOR3f	&vAt,
 	const PVRTVECTOR3f	&vUp);
 /*!***************************************************************************
- @Function			PVRTMatrixLookAtRHX
- @Output			mOut	Look-at view matrix
- @Input				vEye	Position of the camera
- @Input				vAt		Point the camera is looking at
- @Input				vUp		Up direction for the camera
- @Description		Create a look-at view matrix.
+ @fn      			PVRTMatrixLookAtRHX
+ @param[out]			mOut	Look-at view matrix
+ @param[in]				vEye	Position of the camera
+ @param[in]				vAt		Point the camera is looking at
+ @param[in]				vUp		Up direction for the camera
+ @brief      		Create a look-at view matrix.
 *****************************************************************************/
 void PVRTMatrixLookAtRHX(
 	PVRTMATRIXx			&mOut,
@@ -506,14 +501,14 @@ void PVRTMatrixLookAtRHX(
 	const PVRTVECTOR3x	&vUp);
 
 /*!***************************************************************************
- @Function		PVRTMatrixPerspectiveFovLHF
- @Output		mOut		Perspective matrix
- @Input			fFOVy		Field of view
- @Input			fAspect		Aspect ratio
- @Input			fNear		Near clipping distance
- @Input			fFar		Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create a perspective matrix.
+ @fn      		PVRTMatrixPerspectiveFovLHF
+ @param[out]		mOut		Perspective matrix
+ @param[in]			fFOVy		Field of view
+ @param[in]			fAspect		Aspect ratio
+ @param[in]			fNear		Near clipping distance
+ @param[in]			fFar		Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create a perspective matrix.
 *****************************************************************************/
 void PVRTMatrixPerspectiveFovLHF(
 	PVRTMATRIXf	&mOut,
@@ -523,14 +518,14 @@ void PVRTMatrixPerspectiveFovLHF(
 	const float	fFar,
 	const bool  bRotate = false);
 /*!***************************************************************************
- @Function		PVRTMatrixPerspectiveFovLHX
- @Output		mOut		Perspective matrix
- @Input			fFOVy		Field of view
- @Input			fAspect		Aspect ratio
- @Input			fNear		Near clipping distance
- @Input			fFar		Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create a perspective matrix.
+ @fn      		PVRTMatrixPerspectiveFovLHX
+ @param[out]		mOut		Perspective matrix
+ @param[in]			fFOVy		Field of view
+ @param[in]			fAspect		Aspect ratio
+ @param[in]			fNear		Near clipping distance
+ @param[in]			fFar		Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create a perspective matrix.
 *****************************************************************************/
 void PVRTMatrixPerspectiveFovLHX(
 	PVRTMATRIXx	&mOut,
@@ -541,14 +536,14 @@ void PVRTMatrixPerspectiveFovLHX(
 	const bool  bRotate = false);
 
 /*!***************************************************************************
- @Function		PVRTMatrixPerspectiveFovRHF
- @Output		mOut		Perspective matrix
- @Input			fFOVy		Field of view
- @Input			fAspect		Aspect ratio
- @Input			fNear		Near clipping distance
- @Input			fFar		Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create a perspective matrix.
+ @fn      		PVRTMatrixPerspectiveFovRHF
+ @param[out]		mOut		Perspective matrix
+ @param[in]			fFOVy		Field of view
+ @param[in]			fAspect		Aspect ratio
+ @param[in]			fNear		Near clipping distance
+ @param[in]			fFar		Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create a perspective matrix.
 *****************************************************************************/
 void PVRTMatrixPerspectiveFovRHF(
 	PVRTMATRIXf	&mOut,
@@ -558,14 +553,14 @@ void PVRTMatrixPerspectiveFovRHF(
 	const float	fFar,
 	const bool  bRotate = false);
 /*!***************************************************************************
- @Function		PVRTMatrixPerspectiveFovRHX
- @Output		mOut		Perspective matrix
- @Input			fFOVy		Field of view
- @Input			fAspect		Aspect ratio
- @Input			fNear		Near clipping distance
- @Input			fFar		Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create a perspective matrix.
+ @fn      		PVRTMatrixPerspectiveFovRHX
+ @param[out]		mOut		Perspective matrix
+ @param[in]			fFOVy		Field of view
+ @param[in]			fAspect		Aspect ratio
+ @param[in]			fNear		Near clipping distance
+ @param[in]			fFar		Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create a perspective matrix.
 *****************************************************************************/
 void PVRTMatrixPerspectiveFovRHX(
 	PVRTMATRIXx	&mOut,
@@ -576,14 +571,14 @@ void PVRTMatrixPerspectiveFovRHX(
 	const bool  bRotate = false);
 
 /*!***************************************************************************
- @Function		PVRTMatrixOrthoLHF
- @Output		mOut		Orthographic matrix
- @Input			w			Width of the screen
- @Input			h			Height of the screen
- @Input			zn			Near clipping distance
- @Input			zf			Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create an orthographic matrix.
+ @fn      		PVRTMatrixOrthoLHF
+ @param[out]		mOut		Orthographic matrix
+ @param[in]			w			Width of the screen
+ @param[in]			h			Height of the screen
+ @param[in]			zn			Near clipping distance
+ @param[in]			zf			Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create an orthographic matrix.
 *****************************************************************************/
 void PVRTMatrixOrthoLHF(
 	PVRTMATRIXf	&mOut,
@@ -593,14 +588,14 @@ void PVRTMatrixOrthoLHF(
 	const float zf,
 	const bool  bRotate = false);
 /*!***************************************************************************
- @Function		PVRTMatrixOrthoLHX
- @Output		mOut		Orthographic matrix
- @Input			w			Width of the screen
- @Input			h			Height of the screen
- @Input			zn			Near clipping distance
- @Input			zf			Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create an orthographic matrix.
+ @fn      		PVRTMatrixOrthoLHX
+ @param[out]		mOut		Orthographic matrix
+ @param[in]			w			Width of the screen
+ @param[in]			h			Height of the screen
+ @param[in]			zn			Near clipping distance
+ @param[in]			zf			Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create an orthographic matrix.
 *****************************************************************************/
 void PVRTMatrixOrthoLHX(
 	PVRTMATRIXx	&mOut,
@@ -611,14 +606,14 @@ void PVRTMatrixOrthoLHX(
 	const bool  bRotate = false);
 
 /*!***************************************************************************
- @Function		PVRTMatrixOrthoRHF
- @Output		mOut		Orthographic matrix
- @Input			w			Width of the screen
- @Input			h			Height of the screen
- @Input			zn			Near clipping distance
- @Input			zf			Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create an orthographic matrix.
+ @fn      		PVRTMatrixOrthoRHF
+ @param[out]		mOut		Orthographic matrix
+ @param[in]			w			Width of the screen
+ @param[in]			h			Height of the screen
+ @param[in]			zn			Near clipping distance
+ @param[in]			zf			Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create an orthographic matrix.
 *****************************************************************************/
 void PVRTMatrixOrthoRHF(
 	PVRTMATRIXf	&mOut,
@@ -628,14 +623,14 @@ void PVRTMatrixOrthoRHF(
 	const float zf,
 	const bool  bRotate = false);
 /*!***************************************************************************
- @Function		PVRTMatrixOrthoRHX
- @Output		mOut		Orthographic matrix
- @Input			w			Width of the screen
- @Input			h			Height of the screen
- @Input			zn			Near clipping distance
- @Input			zf			Far clipping distance
- @Input			bRotate		Should we rotate it ? (for upright screens)
- @Description	Create an orthographic matrix.
+ @fn      		PVRTMatrixOrthoRHX
+ @param[out]		mOut		Orthographic matrix
+ @param[in]			w			Width of the screen
+ @param[in]			h			Height of the screen
+ @param[in]			zn			Near clipping distance
+ @param[in]			zf			Far clipping distance
+ @param[in]			bRotate		Should we rotate it ? (for upright screens)
+ @brief      	Create an orthographic matrix.
 *****************************************************************************/
 void PVRTMatrixOrthoRHX(
 	PVRTMATRIXx	&mOut,
@@ -646,12 +641,12 @@ void PVRTMatrixOrthoRHX(
 	const bool  bRotate = false);
 
 /*!***************************************************************************
- @Function			PVRTMatrixVec3LerpF
- @Output			vOut	Result of the interpolation
- @Input				v1		First vector to interpolate from
- @Input				v2		Second vector to interpolate form
- @Input				s		Coefficient of interpolation
- @Description		This function performs the linear interpolation based on
+ @fn      			PVRTMatrixVec3LerpF
+ @param[out]			vOut	Result of the interpolation
+ @param[in]				v1		First vector to interpolate from
+ @param[in]				v2		Second vector to interpolate form
+ @param[in]				s		Coefficient of interpolation
+ @brief      		This function performs the linear interpolation based on
 					the following formula: V1 + s(V2-V1).
 *****************************************************************************/
 void PVRTMatrixVec3LerpF(
@@ -660,12 +655,12 @@ void PVRTMatrixVec3LerpF(
 	const PVRTVECTOR3f	&v2,
 	const float			s);
 /*!***************************************************************************
- @Function			PVRTMatrixVec3LerpX
- @Output			vOut	Result of the interpolation
- @Input				v1		First vector to interpolate from
- @Input				v2		Second vector to interpolate form
- @Input				s		Coefficient of interpolation
- @Description		This function performs the linear interpolation based on
+ @fn      			PVRTMatrixVec3LerpX
+ @param[out]			vOut	Result of the interpolation
+ @param[in]				v1		First vector to interpolate from
+ @param[in]				v2		Second vector to interpolate form
+ @param[in]				s		Coefficient of interpolation
+ @brief      		This function performs the linear interpolation based on
 					the following formula: V1 + s(V2-V1).
 *****************************************************************************/
 void PVRTMatrixVec3LerpX(
@@ -675,22 +670,22 @@ void PVRTMatrixVec3LerpX(
 	const int			s);
 
 /*!***************************************************************************
- @Function			PVRTMatrixVec3DotProductF
- @Input				v1		First vector
- @Input				v2		Second vector
- @Return			Dot product of the two vectors.
- @Description		This function performs the dot product of the two
+ @fn      			PVRTMatrixVec3DotProductF
+ @param[in]				v1		First vector
+ @param[in]				v2		Second vector
+ @return			Dot product of the two vectors.
+ @brief      		This function performs the dot product of the two
 					supplied vectors.
 *****************************************************************************/
 float PVRTMatrixVec3DotProductF(
 	const PVRTVECTOR3f	&v1,
 	const PVRTVECTOR3f	&v2);
 /*!***************************************************************************
- @Function			PVRTMatrixVec3DotProductX
- @Input				v1		First vector
- @Input				v2		Second vector
- @Return			Dot product of the two vectors.
- @Description		This function performs the dot product of the two
+ @fn      			PVRTMatrixVec3DotProductX
+ @param[in]				v1		First vector
+ @param[in]				v2		Second vector
+ @return			Dot product of the two vectors.
+ @brief      		This function performs the dot product of the two
 					supplied vectors.
 					A single >> 16 shift could be applied to the final accumulated
 					result however this runs the risk of overflow between the
@@ -701,11 +696,11 @@ int PVRTMatrixVec3DotProductX(
 	const PVRTVECTOR3x	&v2);
 
 /*!***************************************************************************
- @Function			PVRTMatrixVec3CrossProductF
- @Output			vOut	Cross product of the two vectors
- @Input				v1		First vector
- @Input				v2		Second vector
- @Description		This function performs the cross product of the two
+ @fn      			PVRTMatrixVec3CrossProductF
+ @param[out]			vOut	Cross product of the two vectors
+ @param[in]				v1		First vector
+ @param[in]				v2		Second vector
+ @brief      		This function performs the cross product of the two
 					supplied vectors.
 *****************************************************************************/
 void PVRTMatrixVec3CrossProductF(
@@ -713,11 +708,11 @@ void PVRTMatrixVec3CrossProductF(
 	const PVRTVECTOR3f	&v1,
 	const PVRTVECTOR3f	&v2);
 /*!***************************************************************************
- @Function			PVRTMatrixVec3CrossProductX
- @Output			vOut	Cross product of the two vectors
- @Input				v1		First vector
- @Input				v2		Second vector
- @Description		This function performs the cross product of the two
+ @fn      			PVRTMatrixVec3CrossProductX
+ @param[out]			vOut	Cross product of the two vectors
+ @param[in]				v1		First vector
+ @param[in]				v2		Second vector
+ @brief      		This function performs the cross product of the two
 					supplied vectors.
 *****************************************************************************/
 void PVRTMatrixVec3CrossProductX(
@@ -726,19 +721,19 @@ void PVRTMatrixVec3CrossProductX(
 	const PVRTVECTOR3x	&v2);
 
 /*!***************************************************************************
- @Function			PVRTMatrixVec3NormalizeF
- @Output			vOut	Normalized vector
- @Input				vIn		Vector to normalize
- @Description		Normalizes the supplied vector.
+ @fn      			PVRTMatrixVec3NormalizeF
+ @param[out]			vOut	Normalized vector
+ @param[in]				vIn		Vector to normalize
+ @brief      		Normalizes the supplied vector.
 *****************************************************************************/
 void PVRTMatrixVec3NormalizeF(
 	PVRTVECTOR3f		&vOut,
 	const PVRTVECTOR3f	&vIn);
 /*!***************************************************************************
- @Function			PVRTMatrixVec3NormalizeX
- @Output			vOut	Normalized vector
- @Input				vIn		Vector to normalize
- @Description		Normalizes the supplied vector.
+ @fn      			PVRTMatrixVec3NormalizeX
+ @param[out]			vOut	Normalized vector
+ @param[in]				vIn		Vector to normalize
+ @brief      		Normalizes the supplied vector.
 					The square root function is currently still performed
 					in floating-point.
 					Original vector is scaled down prior to be normalized in
@@ -748,28 +743,28 @@ void PVRTMatrixVec3NormalizeX(
 	PVRTVECTOR3x		&vOut,
 	const PVRTVECTOR3x	&vIn);
 /*!***************************************************************************
- @Function			PVRTMatrixVec3LengthF
- @Input				vIn		Vector to get the length of
- @Return			The length of the vector
-  @Description		Gets the length of the supplied vector.
+ @fn      			PVRTMatrixVec3LengthF
+ @param[in]				vIn		Vector to get the length of
+ @return			The length of the vector
+  @brief      		Gets the length of the supplied vector.
 *****************************************************************************/
 float PVRTMatrixVec3LengthF(
 	const PVRTVECTOR3f	&vIn);
 /*!***************************************************************************
- @Function			PVRTMatrixVec3LengthX
- @Input				vIn		Vector to get the length of
- @Return			The length of the vector
- @Description		Gets the length of the supplied vector
+ @fn      			PVRTMatrixVec3LengthX
+ @param[in]				vIn		Vector to get the length of
+ @return			The length of the vector
+ @brief      		Gets the length of the supplied vector
 *****************************************************************************/
 int PVRTMatrixVec3LengthX(
 	const PVRTVECTOR3x	&vIn);
 /*!***************************************************************************
- @Function			PVRTMatrixLinearEqSolveF
- @Input				pSrc	2D array of floats. 4 Eq linear problem is 5x4
+ @fn      			PVRTMatrixLinearEqSolveF
+ @param[in]				pSrc	2D array of floats. 4 Eq linear problem is 5x4
 							matrix, constants in first column
- @Input				nCnt	Number of equations to solve
- @Output			pRes	Result
- @Description		Solves 'nCnt' simultaneous equations of 'nCnt' variables.
+ @param[in]				nCnt	Number of equations to solve
+ @param[out]			pRes	Result
+ @brief      		Solves 'nCnt' simultaneous equations of 'nCnt' variables.
 					pRes should be an array large enough to contain the
 					results: the values of the 'nCnt' variables.
 					This fn recursively uses Gaussian Elimination.
@@ -780,12 +775,12 @@ void PVRTMatrixLinearEqSolveF(
 	float		** const pSrc,
 	const int	nCnt);
 /*!***************************************************************************
- @Function			PVRTMatrixLinearEqSolveX
- @Input				pSrc	2D array of floats. 4 Eq linear problem is 5x4
+ @fn      			PVRTMatrixLinearEqSolveX
+ @param[in]				pSrc	2D array of floats. 4 Eq linear problem is 5x4
 							matrix, constants in first column
- @Input				nCnt	Number of equations to solve
- @Output			pRes	Result
- @Description		Solves 'nCnt' simultaneous equations of 'nCnt' variables.
+ @param[in]				nCnt	Number of equations to solve
+ @param[out]			pRes	Result
+ @brief      		Solves 'nCnt' simultaneous equations of 'nCnt' variables.
 					pRes should be an array large enough to contain the
 					results: the values of the 'nCnt' variables.
 					This fn recursively uses Gaussian Elimination.

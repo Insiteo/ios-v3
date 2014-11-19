@@ -19,10 +19,11 @@
 @interface ISMeetMeInsCreateUserRequest : ISAbstractMeetMeRequest
 
 @property (retain) NSString * name;
+
 @property (retain) NSString * login;
+
 @property (retain) NSString * password;
 
 - (id)initWithProvider:(ISMeetMeProvider *)aProvider andListener:(id<ISPMeetMeRequestListener>)aListener andLogin:(NSString *)aLogin andName:(NSString *)aName andPassword:(NSString *)aPassword ;
-
 
 @end

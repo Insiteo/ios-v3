@@ -1,9 +1,9 @@
 /*
  * CC3OpenGLProgPipeline.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,15 +37,15 @@
  * Maximum number of lights under when using GLSL.
  *
  * Although under GLSL, there is no explicit maximum number of lights available, this setting
- * defines the number of possible lights that will be allocated and tracked within cocos3d, and can
+ * defines the number of possible lights that will be allocated and tracked within Cocos3D, and can
  * be set by the application to confirm the maximum number of lights programmed into the shaders.
  *
- * The default value is 8. This can be changed by either setting the value of this compiler
+ * The default value is 32. This can be changed by either setting the value of this compiler
  * build setting, or by setting the value of the value_GL_MAX_LIGHTS public instance variable
  * of the CC3OpenGL instance.
  */
 #ifndef kCC3MaxGLSLLights
-#	define kCC3MaxGLSLLights				8
+#	define kCC3MaxGLSLLights				32
 #endif
 
 /**
@@ -53,42 +53,45 @@
  *
  * Although under GLSL, there is no explicit maximum number of clip planes available, this
  * setting defines the number of possible user clip planes that will be allocated and tracked
- * within cocos3d, and can be set by the application to confirm the maximum number of user clip
+ * within Cocos3D, and can be set by the application to confirm the maximum number of user clip
  * planes programmed into the shaders.
  *
- * The default value is 6. This can be changed by either setting the value of this compiler
+ * The default value is 0, indicating that under a programmable rendering pipeline, the platform
+ * does not impose a limit. This can be changed by either setting the value of this compiler
  * build setting, or by setting the value of the value_GL_MAX_CLIP_PLANES public instance
  * variable of the CC3OpenGL instance.
  */
 #ifndef kCC3MaxGLSLClipPlanes
-#	define kCC3MaxGLSLClipPlanes			6
+#	define kCC3MaxGLSLClipPlanes			0
 #endif
 
 /**
  * Maximum number of palette matrices used for vertex skinning when using GLSL.
  *
- * Although under GLSL, there is no explicit maximum number of palette matrices available,
- * this setting defines the number of possible matrices that will be allocated and tracked within
- * cocos3d, and can be set by the application to confirm the maximum number of palettes programmed
+ * Although under GLSL, there is no explicit maximum number of palette matrices available, this
+ * setting defines the number of possible matrices that will be allocated and tracked within
+ * Cocos3D, and can be set by the application to confirm the maximum number of palettes programmed
  * into the shaders.
  *
- * The default value is 12. This can be changed by either setting the value of this compiler
+ * The default value is 0, indicating that under a programmable rendering pipeline, the platform
+ * does not impose a limit. This can be changed by either setting the value of this compiler
  * build setting, or by setting the value of the value_GL_MAX_PALETTE_MATRICES public instance
  * variable of the CC3OpenGL instance.
  */
 #ifndef kCC3MaxGLSLPaletteMatrices
-#	define kCC3MaxGLSLPaletteMatrices		12
+#	define kCC3MaxGLSLPaletteMatrices		0
 #endif
 
 /** 
- * Maximum number of vertex units used for vertex skinning when using GLSL. 
+ * Maximum number of bones that can be applied to a single vertex during vertex skinning with GLSL.
  *
- * The default value is 4. This can be changed by either setting the value of this compiler
- * build setting, or by setting the value of the value_GL_MAX_VERTEX_UNITS public instance
+ * The default value is 0, indicating that under a programmable rendering pipeline, the platform
+ * does not impose a limit. This can be changed by either setting the value of this compiler
+ * build setting, or by setting the value of the valueMaxBoneInfluencesPerVertex public instance
  * variable of the CC3OpenGL instance.
  */
-#ifndef kCC3MaxGLSLVertexUnits
-#	define kCC3MaxGLSLVertexUnits			4
+#ifndef kCC3MaxGLSLBoneInfluencesPerVertex
+#	define kCC3MaxGLSLBoneInfluencesPerVertex			0
 #endif
 
 /** 
@@ -97,7 +100,7 @@
  */
 @interface CC3OpenGLProgPipeline : CC3OpenGL {
 	NSString* value_GL_SHADING_LANGUAGE_VERSION;
-	CC3ShaderProgramPrewarmer* _shaderProgramPrewarmer;
+	CC3ShaderPrewarmer* _shaderProgramPrewarmer;
 	
 @public
 	GLint value_GL_MAX_VARYING_VECTORS;

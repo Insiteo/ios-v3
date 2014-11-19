@@ -1,9 +1,9 @@
 /*
  * CC3PODCamera.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,14 +37,16 @@
 /**
  * A CC3Camera whose content originates from POD resource data.
  *
- * This is a concrete implementation of the CC3Node category PVRPOD. 
+ * This is a concrete implementation of the CC3Node category PVRPOD.
+ *
+ * In this implementation, the fieldOfViewOrientation is set to CC3FieldOfViewOrientationHorizontal
+ * since the fieldOfView value in a POD file is always specified as the horizontal field of view.
  */
 @interface CC3PODCamera : CC3Camera {
 	GLint _podIndex;
 	GLint _podContentIndex;
 	GLint _podParentIndex;
 	GLint _podTargetIndex;
-	GLuint _podUserDataSize;
 }
 
 @end

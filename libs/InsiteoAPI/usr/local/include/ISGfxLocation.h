@@ -15,54 +15,17 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
-#import "ISLocation.h"
-#import "ISPRTO.h"
 #import "cocos2d.h"
 #import "CC3ShadowVolumes.h"
+
+#import "ISLocation.h"
+#import "ISPRTO.h"
 #import "ISLocationNode.h"
 
 /*!
  Class used to represent a location result.
  */
-@interface ISGfxLocation : CCNode <ISPRTO> {
-    
-@private
-    
-#pragma mark - Structure
-    
-    //Related location
-    ISLocation * m_location;
-    
-#pragma mark - Rendering
-    
-    //RTO unique identifier
-    int m_rtoId;
-    //Renderer current ratio
-	double m_currentRatio;
-	//Renderer current offset
-	CGPoint m_currentOffset;
-    //Current displayed map identifier
-    int m_currentMapId;
-    //Motion rendering intensity
-    double m_motionColorIntensity;
-    //Slide wanted new position
-    ISPosition * m_wantedPosition;
-    //
-    ISLocationNode * m_locationNode;
-    //
-    CCDrawNode * m_drawNode;
-    //Location current azimuth
-    NSNumber * m_azimuth;
-    //Boolean used to store the last device orientation angle
-    float m_lastDeviceOrientationAngle;
-    //Current rendering mode
-    ISERenderMode m_renderMode;
-    
-#pragma mark - 3D
-    
-    //3D sphere representation
-    CC3Node * m_cocos3dNode;
-}
+@interface ISGfxLocation : CCNode <ISPRTO>
 
 /*!
  Related location.

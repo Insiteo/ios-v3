@@ -50,8 +50,6 @@ typedef enum {
 
 @class InitParameters;
 
-#pragma mark - MAP
-
 /*!
  @"mapdata"
  */
@@ -62,28 +60,20 @@ extern NSString * const PACK_MAP_DATA_DIRECTORY_NAME;
  */
 extern NSString * const PACK_TILES_DIRECTORY_NAME;
 
-#pragma mark - LOCATION
-
 /*!
  @"loc"
  */
 extern NSString * const PACK_LOCATION_DIRECTORY_NAME;
-
-#pragma mark - ITINERARY
 
 /*!
  @"iti"
  */
 extern NSString * const PACK_ITINERARY_DIRECTORY_NAME;
 
-#pragma mark - GEOFENCING
-
 /*!
  @"geofence"
  */
 extern NSString * const PACK_GEOFENCING_DIRECTORY_NAME;
-
-#pragma mark - CONTENT
 
 /*!
  @"lrrcontent"
@@ -94,8 +84,6 @@ extern NSString * const PACK_LRR_CONTENT_DIRECTORY_NAME;
  @"hrrcontent"
  */
 extern NSString * const PACK_HRR_CONTENT_DIRECTORY_NAME;
-
-#pragma mark - FINGERPRINT
 
 /*!
  @"fingerprint"
@@ -125,31 +113,7 @@ extern NSString * const PACK_EXTRAS_DIRECTORY_NAME;
 /*!
  Class used to represent an INSITEO data package.
  */
-@interface ISPackage : NSObject {
-    
-@private
-    
-    //Package type
-    ISPackageType m_packageType;
-    //URL to download it
-    NSString * m_fileUrl;
-    //Package version
-    int m_version;
-    //Package zip MD5
-    NSString * m_zipMd5;
-    //Package size
-    int m_size;
-    //Package related site identifier
-    int m_siteId;
-    //Package related application version
-    int m_applicationVersion;
-    //Package related language
-    NSString * m_language;
-    //INSITEO server type
-    ISEServerType m_serverType;
-    //Package temporary zip path
-    NSString * m_zipPath;
-}
+@interface ISPackage : NSObject
 
 /*!
  Package type.

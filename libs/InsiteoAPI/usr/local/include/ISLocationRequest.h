@@ -19,17 +19,7 @@
 /*!
  Class used to compute one unique location.
  */
-@interface ISLocationRequest : NSObject {
-    
-@private
-    
-    //Location request listener
-    id<ISPLocationRequestListener> m_locationRequestListener;
-    //Computed location
-    ISLocation * m_location;
-    //Timer used to handle location time out
-    NSTimer * m_timer;
-}
+@interface ISLocationRequest : NSObject
 
 /*!
  Listener to notify of location events.

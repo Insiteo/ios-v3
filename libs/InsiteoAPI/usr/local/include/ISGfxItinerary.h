@@ -11,82 +11,19 @@
  ISGfxItinerary
  */
 
-#import "ISItineraryStructures.h"
-#import "ISPRTO.h"
-#import "ISPItineraryRenderListener.h"
-
 #import "cocos2d.h"
 #import "CC3UtilityMeshNodes.h"
+
+@class ISItineraryProvider;
+
+#import "ISItinerary.h"
+#import "ISPRTO.h"
+#import "ISPItineraryRenderListener.h"
 
 /*!
  Class used to represent an itinerary that could be displayed with our map engine.
  */
-@interface ISGfxItinerary : CCNode <ISPRTO> {
-    
-@private
-    
-#pragma mark - Structure
-    
-    //Related itinerary data
-    ISItinerary * m_itinerary;
-    
-#pragma mark - Render
-    // set to NO to see itinerary immediately
-    BOOL m_progressiveDrawing;
-    //Current displayed map identifier
-    int m_currentMapId;
-    //Current rendering ratio
-    double m_currentRatio;
-    //Current rendering offset
-    CGPoint m_currentOffset;
-    //Unique RTO identifier
-    int m_rtoId;
-    //Current step identifier
-    int m_currentStepId;
-    //Count used to reveal the itinerary
-    int m_revealCount;
-    //Second count used to reveal the itinerary
-    int m_nodeRevealCount;
-    //A CCSPrite array that contains all node's pictures
-    NSMutableArray * m_pictures;
-    //Mutex
-    NSLock * m_itineraryLock;
-    
-#pragma mark - Touch
-    
-    //Internal point used to handle touch events
-    CGPoint m_referencePoint;
-    //Last section touched (could be nil)
-    ISSection * m_vertexTouched;
-    //Listener reference for ISGfxItinerary special touch events
-    id<ISPItineraryRenderListener> m_listener;
-    //Index of the last instruction touched (could be -1)
-    int m_instructionTouched;
-    //Touched vertex related instruction index (could be -1)
-    int m_vertexTouchedInstruction;
-    //Potentionnaly next map position
-    ISPosition * m_nextMapPos;
-    //Current rendering mode
-    ISERenderMode m_renderMode;
-
-#pragma mark - 2D
-
-    //Background node (background fill color)
-    CCDrawNode * m_backgroundNode;
-    //Foreground node (front fill color)
-    CCDrawNode * m_foregroundNode;
-    
-#pragma mark - 3D
-    
-    //3D rendering node
-    CC3Node * m_cocos3dNode;
-    //Start 3D sphere
-    CC3SphereNode * m_startSphere;
-    //End 3D sphere
-    CC3SphereNode * m_endSphere;
-    //Current 3D scene (for 3D rendering only)
-    CC3Scene * m_scene;
-}
+@interface ISGfxItinerary : CCNode <ISPRTO>
 
 /*!
  Related itinerary data.
@@ -141,7 +78,7 @@
 /*!
  Map view layer.
  */
-@property (assign) ISLayer * layer;
+@property (assign) CCLayer * layer;
 
 /*!
  Current 3D scene (for 3D rendering only).

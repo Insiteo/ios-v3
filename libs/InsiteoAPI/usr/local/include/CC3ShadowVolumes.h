@@ -1,9 +1,9 @@
 /*
  * CC3ShadowVolumes.h
  *
- * cocos3d 0.6.3
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2011-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2011-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -64,9 +64,9 @@ static const GLfloat kCC3DefaultShadowVolumeVertexOffsetFactor = 0.001f;
  * but are also the most computationally intensive.
  *
  * Shadow volumes use a stencil buffer to determine the areas that require shading. The stencil
- * buffer must be allocated within the EAGLView when the view is created and initialized.
- * On the iOS, the sencil buffer is combined with the depth buffer. You create a stencil buffer by
- * passing the value GL_DEPTH24_STENCIL8 as the depth format argument in the CC3GLView method
+ * buffer must be allocated within the EAGLView when the view is created and initialized. Under
+ * iOS, the sencil buffer is combined with the depth buffer, and you create a stencil buffer by
+ * passing the value GL_DEPTH24_STENCIL8 as the depth format argument in the CCGLView method
  * viewWithFrame:pixelFormat:depthFormat:preserveBackbuffer:sharegroup:multiSampling:numberOfSamples:.
  */
 @interface CC3ShadowVolumeMeshNode : CC3MeshNode <CC3ShadowProtocol> {
@@ -104,6 +104,28 @@ static const GLfloat kCC3DefaultShadowVolumeVertexOffsetFactor = 0.001f;
  * this method will change as additional shadow-casting techniques are introduced.
  */
 -(void) drawToStencilWithVisitor: (CC3NodeDrawingVisitor*) visitor;
+
+/**
+ * Returns the default value to which the visible property will be set when an instance is
+ * created and initialized.
+ *
+ * The initial value of this property is NO. Normally, shadow volumes affect the contents of
+ * the stencil buffer, but are not directly visible themselves. However, during development
+ * debugging, you can set this property to YES to make the shadow volumes visible within the
+ * scene, to help visualize how the shadow volumes are interacting with the scene.
+ */
++(BOOL) defaultVisible;
+
+/**
+ * Sets the default value to which the visible property will be set when an instance is 
+ * created and initialized.
+ *
+ * The initial value of this property is NO. Normally, shadow volumes affect the contents of
+ * the stencil buffer, but are not directly visible themselves. However, during development
+ * debugging, you can set this property to YES to make the shadow volumes visible within the
+ * scene, to help visualize how the shadow volumes are interacting with the scene.
+ */
++(void) setDefaultVisible: (BOOL) defaultVisible;
 
 @end
 
@@ -186,8 +208,8 @@ static const GLfloat kCC3DefaultShadowVolumeVertexOffsetFactor = 0.001f;
  *
  * Shadow volumes use a stencil buffer to determine the areas that require shading. The stencil
  * buffer must be allocated within the EAGLView when the view is created and initialized.
- * On the iOS, the sencil buffer is combined with the depth buffer. You create a stencil buffer by
- * passing the value GL_DEPTH24_STENCIL8 as the depth format argument in the CC3GLView method
+ * On the iOS, the sencil buffer is combined with the depth buffer. You create a stencil buffer
+ * by passing the value GL_DEPTH24_STENCIL8 as the depth format argument in the CCGLView method
  * viewWithFrame:pixelFormat:depthFormat:preserveBackbuffer:sharegroup:multiSampling:numberOfSamples:.
  *
  * It is safe to invoke this method more than once with the same, or a different light. Only one
@@ -279,7 +301,7 @@ static const GLfloat kCC3DefaultShadowVolumeVertexOffsetFactor = 0.001f;
  * and does not recurse below this level. As such, this method only has meaning
  * when invoked on a mesh node.
  */
-@property(nonatomic, readonly) CCArray* shadowVolumes;
+@property(nonatomic, readonly) NSArray* shadowVolumes;
 
 /**
  * Returns the shadow volume that was added to this node for the specified light,
@@ -636,6 +658,23 @@ static const GLfloat kCC3DefaultShadowVolumeVertexOffsetFactor = 0.001f;
  * the descendants of this node.
  */
 @property(nonatomic, assign) BOOL shouldShadowBackFaces;
+
+/** 
+ * Prewarms the meshes of all descendant mesh nodes to prepare for shadow volumes.
+ *
+ * Shadow volumes make very heavy use of many mesh face characteristics. This method
+ * ensures that the faces have been populated for each descendant mesh node.
+ *
+ * This method is invoked automatically when a shadow volume is added to a mesh node.
+ * Usually, the application should never need to invoke this method directly.
+ */
+-(void) prewarmForShadowVolumes;
+
+/**
+ * If this node is a shadow volume, returns whether the shadow cast by the shadow
+ * volume will be visible. Returns NO if this node is not a shadow volume node.
+ */
+-(BOOL) isShadowVisible;
 
 @end
 

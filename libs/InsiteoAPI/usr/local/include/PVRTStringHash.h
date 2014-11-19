@@ -1,16 +1,8 @@
-/******************************************************************************
+/*!****************************************************************************
 
- @File         PVRTStringHash.h
-
- @Title        String Hash
-
- @Version       @Version      
-
- @Copyright    Copyright (c) Imagination Technologies Limited.
-
- @Platform     All
-
- @Description  Inherits from PVRTString to include PVRTHash functionality for
+ @file         PVRTStringHash.h
+ @copyright    Copyright (c) Imagination Technologies Limited.
+ @brief        Inherits from PVRTString to include PVRTHash functionality for
                quick string compares.
 
 ******************************************************************************/
@@ -20,135 +12,127 @@
 #include "PVRTString.h"
 #include "PVRTHash.h"
 
+/*!***********************************************************************
+ @class        CPVRTStringHash
+ @brief        Inherits from PVRTString to include PVRTHash functionality for
+               quick string compares.
+*************************************************************************/
 class CPVRTStringHash
 {
 public:
 	/*!***********************************************************************
-	@Function			CPVRTString
-	@Input				_Ptr	A string
-	@Input				_Count	Length of _Ptr
-	@Description		Constructor
+	@brief      		Constructor
+	@param[in]			_Ptr	A string
+	@param[in]			_Count	Length of _Ptr
 	************************************************************************/
 	explicit CPVRTStringHash(const char* _Ptr, size_t _Count = CPVRTString::npos);
 
 	/*!***********************************************************************
-	@Function			CPVRTString
-	@Input				_Right	A string
-	@Description		Constructor
+	@brief      		Constructor
+	@param[in]			_Right	A string
 	************************************************************************/
 	explicit CPVRTStringHash(const CPVRTString& _Right);
 
 	/*!***********************************************************************
-	@Function			CPVRTString
-	@Description		Constructor
+	@brief      		Constructor
 	************************************************************************/
 	CPVRTStringHash();
 
 	/*!***********************************************************************
-	@Function			append
-	@Input				_Ptr	A string
-	@Returns			Updated string
-	@Description		Appends a string
+	@brief      		Appends a string
+	@param[in]			_Ptr	A string
+	@return 			Updated string
 	*************************************************************************/
 	CPVRTStringHash& append(const char* _Ptr);
 
 	/*!***********************************************************************
-	@Function			append
-	@Input				_Str	A string
-	@Returns			Updated string
-	@Description		Appends a string
+	@brief      		Appends a string
+	@param[in]			_Str	A string
+	@return 			Updated string
 	*************************************************************************/
 	CPVRTStringHash& append(const CPVRTString& _Str);
 
 	/*!***********************************************************************
-	@Function			assign
-	@Input				_Ptr A string
-	@Returns			Updated string
-	@Description		Assigns the string to the string _Ptr
+	@brief      		Assigns the string to the string _Ptr
+	@param[in]			_Ptr A string
+	@return 			Updated string
 	*************************************************************************/
 	CPVRTStringHash& assign(const char* _Ptr);
 
 	/*!***********************************************************************
-	@Function			assign
-	@Input				_Str A string
-	@Returns			Updated string
-	@Description		Assigns the string to the string _Str
+	@brief      		Assigns the string to the string _Str
+	@param[in]			_Str A string
+	@return 			Updated string
 	*************************************************************************/
 	CPVRTStringHash& assign(const CPVRTString& _Str);
 
 	/*!***********************************************************************
-	@Function		==
-	@Input			_Str 	A hashed string to compare with
-	@Returns		True if they match
-	@Description	== Operator. This function compares the hash values of
+	@brief      	== Operator. This function compares the hash values of
 					the string.
+	@param[in]		_Str 	A hashed string to compare with
+	@return 		True if they match
 	*************************************************************************/
 	bool operator==(const CPVRTStringHash& _Str) const;
 
 	/*!***********************************************************************
-	@Function		==
-	@Input			_Str 	A string to compare with
-	@Returns		True if they match
-	@Description	== Operator. This function performs a strcmp()
+	@brief      	== Operator. This function performs a strcmp()
 					as it's more efficient to strcmp than to hash the string
 					for every comparison.
+	@param[in]		_Str 	A string to compare with
+	@return 		True if they match
 	*************************************************************************/
 	bool operator==(const char* _Str) const;
 
 	/*!***********************************************************************
-	@Function		==
-	@Input			_Str 	A string to compare with
-	@Returns		True if they match
-	@Description	== Operator. This function performs a strcmp()
+	@brief      	== Operator. This function performs a strcmp()
 					as it's more efficient to strcmp than to hash the string
 					for every comparison.
+	@param[in]		_Str 	A string to compare with
+	@return 		True if they match
 	*************************************************************************/
 	bool operator==(const CPVRTString& _Str) const;
 
 	/*!***********************************************************************
-	@Function		==
-	@Input			Hash 	A Hash to compare with
-	@Returns		True if they match
-	@Description	== Operator. This function compares the hash values of
+	@brief      	== Operator. This function compares the hash values of
 					the string.
+	@param[in]		Hash 	A Hash to compare with
+	@return 		True if they match
 	*************************************************************************/
 	bool operator==(const CPVRTHash& Hash) const;
 
 	/*!***********************************************************************
-	@Function			!=
-	@Input				_Str 	A string to compare with
-	@Returns			True if they don't match
-	@Description		!= Operator
+	@brief      	!= Operator
+	@param[in]		_Str 	A string to compare with
+	@return 		True if they don't match
 	*************************************************************************/
 	bool operator!=(const CPVRTStringHash& _Str) const;
 
 	/*!***********************************************************************
-	@Function		!=
-	@Input			Hash 	A Hash to compare with
-	@Returns		True if they match
-	@Description	!= Operator. This function compares the hash values of
+	@brief      	!= Operator. This function compares the hash values of
 					the string.
+	@param[in]		Hash 	A Hash to compare with
+	@return 		True if they match
 	*************************************************************************/
 	bool operator!=(const CPVRTHash& Hash) const;
 
 	/*!***********************************************************************
-	@Function			String
-	@Returns			The original string
-	@Description		Returns the original, base string.
+	@fn       		String
+	@return 		The original string
+	@brief      	Returns the original, base string.
 	*************************************************************************/
 	const CPVRTString& String() const;
 
 	/*!***********************************************************************
-	@Function			Hash
-	@Returns			The hash
-	@Description		Returns the hash of the base string
+	@brief      	Returns the hash of the base string
+	@fn       		Hash
+	@return 		The hash
 	*************************************************************************/
 	const CPVRTHash& Hash() const;
 
 	/*!***************************************************************************
-	@Function		c_str
-	@Return			The original string.
-	@Description	Returns the base string as a const char*.
+	@fn       		c_str
+	@return			The original string.
+	@brief      	Returns the base string as a const char*.
 	*****************************************************************************/
 	const char* c_str() const;
 

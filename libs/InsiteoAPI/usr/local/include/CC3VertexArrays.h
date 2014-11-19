@@ -1,9 +1,9 @@
 /*
  * CC3VertexArrays.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@
 #import "CC3Identifiable.h"
 #import "CC3Material.h"
 #import "CC3NodeVisitor.h"
-#import "CC3ShaderProgramSemantics.h"
+#import "CC3ShaderSemantics.h"
 
 
 #pragma mark -
@@ -203,7 +203,7 @@
 @property(nonatomic, assign) GLvoid* vertices;
 
 /** @deprecated Renamed to vertices. */
-@property(nonatomic, assign) GLvoid* elements DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) GLvoid* elements __deprecated;
 
 /**
  * The number of vertices in the underlying content referenced by the vertices property.
@@ -220,7 +220,7 @@
 @property(nonatomic, assign) GLuint vertexCount;
 
 /** @deprecated Renamed to vertexCount. */
-@property(nonatomic, assign) GLuint elementCount DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) GLuint elementCount __deprecated;
 
 /**
  * When using interleaved content, this property indicates the offset, within the content for a
@@ -300,7 +300,7 @@
 @property(nonatomic, assign) GLuint vertexStride;
 
 /** @deprecated Renamed to vertexStride. */
-@property(nonatomic, assign) GLuint elementStride DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) GLuint elementStride __deprecated;
 
 /**
  * Indicates whether the vertex content should be normalized during drawing.
@@ -461,19 +461,19 @@
 #pragma mark Binding GL artifacts
 
 /** @deprecated This functionality has been replaced by the allocatedVertexCapacity property. */
--(GLvoid*) allocateElements: (GLuint) vtxCount DEPRECATED_ATTRIBUTE;
+-(GLvoid*) allocateElements: (GLuint) vtxCount __deprecated;
 
 /** @deprecated This functionality has been replaced by the allocatedVertexCapacity property. */
--(GLvoid*) reallocateElements: (GLuint) vtxCount DEPRECATED_ATTRIBUTE;
+-(GLvoid*) reallocateElements: (GLuint) vtxCount __deprecated;
 
 /** @deprecated This functionality has been replaced by the allocatedVertexCapacity property. */
--(void) deallocateElements DEPRECATED_ATTRIBUTE;
+-(void) deallocateElements __deprecated;
 
 /** @deprecated This functionality is now managed by the mesh. */
--(BOOL) ensureCapacity: (GLuint) vtxCount DEPRECATED_ATTRIBUTE;
+-(BOOL) ensureCapacity: (GLuint) vtxCount __deprecated;
 
 /** @deprecated This property is no longer used, and is fixed at 1.25. */
-@property(nonatomic, assign) GLfloat capacityExpansionFactor DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) GLfloat capacityExpansionFactor __deprecated;
 
 /**
  * Indicates whether this instance should allow the vertex content to be copied to a vertex
@@ -567,7 +567,7 @@
 @property(nonatomic, assign) BOOL shouldReleaseRedundantContent;
 
 /** @deprecated Renamed to shouldReleaseRedundantContent. */
-@property(nonatomic, assign) BOOL shouldReleaseRedundantData DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) BOOL shouldReleaseRedundantData __deprecated;
 
 /**
  * Once the vertices content has been buffered into a GL vertex buffer object (VBO)
@@ -590,7 +590,7 @@
 -(void) releaseRedundantContent;
 
 /** @deprecated Renamed to releaseRedundantContent. */
--(void) releaseRedundantData DEPRECATED_ATTRIBUTE;
+-(void) releaseRedundantData __deprecated;
 
 /**
  * Binds the vertex content to the vertex attribute at the specified index in the GL engine.
@@ -700,13 +700,13 @@
 -(NSString*) describeVertices: (GLuint) vtxCount startingAt: (GLuint) startElem;
 
 /** @deprecated Renamed to describeVertices. */
--(NSString*) describeElements DEPRECATED_ATTRIBUTE;
+-(NSString*) describeElements __deprecated;
 
 /** @deprecated Renamed to describeVertices:. */
--(NSString*) describeElements: (GLuint) vtxCount DEPRECATED_ATTRIBUTE;
+-(NSString*) describeElements: (GLuint) vtxCount __deprecated;
 
 /** @deprecated Renamed to describeVertices:startingAt:. */
--(NSString*) describeElements: (GLuint) vtxCount startingAt: (GLuint) startElem DEPRECATED_ATTRIBUTE;
+-(NSString*) describeElements: (GLuint) vtxCount startingAt: (GLuint) startElem __deprecated;
 
 @end
 
@@ -764,7 +764,7 @@
 @property(nonatomic, assign) GLuint* stripLengths;
 
 /** @deprecated Renamed to firstVertex on CC3VertexLocations. */
-@property(nonatomic, readonly) GLuint firstElement DEPRECATED_ATTRIBUTE;
+@property(nonatomic, readonly) GLuint firstElement __deprecated;
 
 /**
  * Draws the vertices, either in strips, or in a single call, depending on the value
@@ -836,10 +836,10 @@
 -(GLuint) vertexIndexCountFromFaceCount: (GLuint) fc;
 
 /** @deprecated Renamed to faceCountFromVertexIndexCount:. */
--(GLuint) faceCountFromVertexCount: (GLuint) vc DEPRECATED_ATTRIBUTE;
+-(GLuint) faceCountFromVertexCount: (GLuint) vc __deprecated;
 
 /** @deprecated Renamed to vertexIndexCountFromFaceCount:. */
--(GLuint) vertexCountFromFaceCount: (GLuint) fc DEPRECATED_ATTRIBUTE;
+-(GLuint) vertexCountFromFaceCount: (GLuint) fc __deprecated;
 
 
 /**
@@ -897,7 +897,7 @@
 @property(nonatomic, assign) GLuint firstVertex;
 
 /** @deprecated Renamed to firstVertex. */
-@property(nonatomic, assign) GLuint firstElement DEPRECATED_ATTRIBUTE;
+@property(nonatomic, assign) GLuint firstElement __deprecated;
 
 /** Returns the axially-aligned bounding box of this mesh. */
 @property(nonatomic, readonly) CC3Box boundingBox;
@@ -1042,10 +1042,10 @@
 -(void) moveMeshOriginToCenterOfGeometry;
 
 /** @deprecated Renamed to moveMeshOriginTo:. */
--(void) movePivotTo: (CC3Vector) aLocation DEPRECATED_ATTRIBUTE;
+-(void) movePivotTo: (CC3Vector) aLocation __deprecated;
 
 /** @deprecated Renamed to moveMeshOriginToCenterOfGeometry. */
--(void) movePivotToCenterOfGeometry DEPRECATED_ATTRIBUTE;
+-(void) movePivotToCenterOfGeometry __deprecated;
 
 /**
  * Returns the face from the mesh at the specified index.
@@ -1087,7 +1087,7 @@
 #pragma mark CC3VertexNormals
 
 /** A CC3VertexArray that manages the normal aspect of an array of vertices. */
-@interface CC3VertexNormals : CC3VertexArray {}
+@interface CC3VertexNormals : CC3VertexArray
 
 /**
  * Returns the normal element at the specified index in the underlying vertex content.
@@ -1122,7 +1122,7 @@
 #pragma mark CC3VertexTangents
 
 /** A CC3VertexArray that manages the tangent or bitangent aspect of an array of vertices. */
-@interface CC3VertexTangents : CC3VertexArray {}
+@interface CC3VertexTangents : CC3VertexArray
 
 /**
  * Returns the tangent element at the specified index in the underlying vertex content.
@@ -1154,7 +1154,7 @@
 #pragma mark CC3VertexColors
 
 /** A CC3VertexArray that manages the per-vertex color aspect of an array of vertices. */
-@interface CC3VertexColors : CC3VertexArray {}
+@interface CC3VertexColors : CC3VertexArray
 
 /**
  * Returns the color element at the specified index in the underlying vertex content.
@@ -1220,7 +1220,7 @@
 #pragma mark CCRGBAProtocol and CCBlendProtocol support
 
 /**
- * Implementation of the CCRGBAProtocol color property.
+ * The color of the vertices of this mesh.
  *
  * Querying this property returns the RGB components of the first vertex.
  *
@@ -1228,10 +1228,10 @@
  * without affecting the opacity value of each individual vertex. If the content of this vertex
  * array has been copied to a GL buffer, that buffer is automatically updated.
  */
-@property(nonatomic, assign) ccColor3B color;
+@property(nonatomic, assign) CCColorRef color;
 
 /**
- * Implementation of the CCRGBAProtocol opacity property.
+ * The opacity of the vertices in this mesh.
  *
  * Querying this property returns the alpha component of the first vertex.
  *
@@ -1239,7 +1239,7 @@
  * opacity, without affecting the RGB color value of each individual vertex. If the content
  * of this vertex array has been copied to a GL buffer, that buffer is automatically updated. 
  */
-@property(nonatomic, assign) GLubyte opacity;
+@property(nonatomic, assign) CCOpacity opacity;
 
 @end
 
@@ -1330,7 +1330,7 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  *
  * The value of this property does not affect the behaviour of, nor
  * is affected by, the flipVertically , alignWithInvertedTexture:,
- * alignWithTextureMapSize:, or alignWithInvertedTextureMapSize: methods.
+ * alignWithTextureCoverage:, or alignWithInvertedTextureCoverage: methods.
  * 
  * The initial value of this property is determined by the value of the class-side
  * defaultExpectsVerticallyFlippedTextures property at the time an instance of
@@ -1375,12 +1375,12 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  * The texture map size indicates the usable size of the texture, and invoking
  * this method will align these texture coordinates with that usable size.
  *
- * For the sake of efficiency, if the specified texMapSize is the same as the
+ * For the sake of efficiency, if the specified texCoverage is the same as the
  * value submitted in the previous invocation (or is equal to (1, 1) on the
  * first invocation), this method does nothing, to avoid updating the texture
  * coordinates when no change has occurred.
  *
- * For subsequent invocations, if the specified texMapSize is the same as the
+ * For subsequent invocations, if the specified texCoverage is the same as the
  * value submitted in the previous invocation, this method does nothing, to
  * avoid updating all the texture coordinates to the value they currently have.
  *
@@ -1388,7 +1388,10 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  * This may cause mapping conflicts if the same vertex content is shared by other
  * CC3MeshNodes that use different textures.
  */
--(void) alignWithTextureMapSize: (CGSize) texMapSize;
+-(void) alignWithTextureCoverage: (CGSize) texCoverage;
+
+/** @deprecated Renamed to alignWithTextureCoverage:. */
+-(void) alignWithTextureMapSize: (CGSize) texCoverage __deprecated;
 
 /**
  * Aligns the texture coordinate array with the specfied texture map size,
@@ -1406,15 +1409,18 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  * and this method can be used to compensate.
  *
  * This method vertically flips the texture coordinates on each invocation. As a
- * result, unlike the alignWithTextureMapSize: method, this method updates all the
+ * result, unlike the alignWithTextureCoverage: method, this method updates all the
  * texture coordinates on each invocation, regardless of whether the specified
- * texMapSize is the same as on the previous invocation.
+ * texCoverage is the same as on the previous invocation.
  *
  * Care should be taken when using this method, as it changes the actual vertex content.
  * This may cause mapping conflicts if the same vertex content is shared by other
  * CC3MeshNodes that use different textures.
  */
--(void) alignWithInvertedTextureMapSize: (CGSize) texMapSize;
+-(void) alignWithInvertedTextureCoverage: (CGSize) texCoverage;
+
+/** @deprecated Renamed to alignWithInvertedTextureCoverage:. */
+-(void) alignWithInvertedTextureMapSize: (CGSize) texCoverage __deprecated;
 
 /**
  * Aligns the texture coordinate array with the specfied texture.
@@ -1430,14 +1436,14 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  * If the value of the expectsVerticallyFlippedTextures property is different
  * than the value of the isUpsideDown property of the specified texture, the
  * texture coordinates are not oriented vertically for the texture. To align them,
- * this method delegates to the alignWithInvertedTextureMapSize:, passing the mapSize
+ * this method delegates to the alignWithInvertedTextureCoverage:, passing the mapSize
  * of the specified texture, to both align the texture coordinates to the usable size
  * of the texture, and to flip the texture coordinates to align with the texture.
  *
  * If the value of the expectsVerticallyFlippedTextures property is the same
  * as the value of the isUpsideDown property of the specified texture, the
  * texture coordinates are correctly oriented vertically for the texture. This
- * method delegates to the alignWithTextureMapSize:, passing the mapSize of the
+ * method delegates to the alignWithTextureCoverage:, passing the mapSize of the
  * specified texture, to align the texture coordinates to the usable size of
  * the texture, but does not flip the texture coordinates.
  *
@@ -1474,7 +1480,7 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  *
  * This method vertically flips the texture coordinates on each invocation. As a
  * result, unlike the alignWithTexture: method, this method updates all texture
- * coordinates on each invocation, regardless of whether the specified texMapSize
+ * coordinates on each invocation, regardless of whether the specified texCoverage
  * is the same as on the previous invocation.
  *
  * Care should be taken when using this method, as it changes the actual vertex content.
@@ -1525,14 +1531,14 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  * and top-right corners must lie between zero and one in both the X and Y directions.
  *
  * The dimensions of the rectangle in this property are independent of the size specified in
- * the  alignWithTextureMapSize: and alignWithInvertedTextureMapSize: methods. A unit rectangle
+ * the  alignWithTextureCoverage: and alignWithInvertedTextureCoverage: methods. A unit rectangle
  * value for this property will automatically take into consideration the adjustment made to
  * the mesh by those methods, and will display only the part of the texture defined by them.
  * Rectangular values for this property that are smaller than the unit rectangle will be
- * relative to the displayable area defined by alignWithTextureMapSize: and
- * alignWithInvertedTextureMapSize:.
+ * relative to the displayable area defined by alignWithTextureCoverage: and
+ * alignWithInvertedTextureCoverage:.
  *
- * As an example, if the alignWithTextureMapSize: method was used to limit the mesh to using
+ * As an example, if the alignWithTextureCoverage: method was used to limit the mesh to using
  * only 80% of the texture (perhaps when using a non-POT texture), and this property was set
  * to a rectangle with origin at (0.5, 0.0) and size (0.5, 0.5), the mesh will be covered by
  * the bottom-right quarter of the usable 80% of the overall texture.
@@ -1582,7 +1588,7 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  * corresponding texture dimension.
  *
  * The dimensions of the repeatFactor are independent of the size specified in the
- * alignWithTextureMapSize: and alignWithInvertedTextureMapSize: methods, or derived
+ * alignWithTextureCoverage: and alignWithInvertedTextureCoverage: methods, or derived
  * from the texture by the alignWithTexture or alignWithInvertedTexture methods.
  * A value of 1.0 for an element in the specified repeatFactor will automatically
  * take into consideration the adjustment made to the mesh by those methods, and will
@@ -1616,7 +1622,7 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
  * the content underlying a CC3VertexIndices is never interleaved and shared with the content
  * underlying the other vertex arrays in a mesh.
  */
-@interface CC3VertexIndices : CC3DrawableVertexArray {}
+@interface CC3VertexIndices : CC3DrawableVertexArray
 
 /** @deprecated Use allocatedVertexCapacity property instead. */
 -(GLuint*) allocateTriangles: (GLuint) triangleCount;
@@ -1763,7 +1769,7 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
 #pragma mark CC3VertexPointSizes
 
 /** A CC3VertexArray that manages the point sizes aspect of an array of point sprite vertices. */
-@interface CC3VertexPointSizes : CC3VertexArray {}
+@interface CC3VertexPointSizes : CC3VertexArray
 
 /**
  * Returns the point size element at the specified index in the underlying vertex content.
@@ -1792,192 +1798,229 @@ static const CGRect kCC3UnitTextureRectangle = { {0.0, 0.0}, {1.0, 1.0} };
 
 
 #pragma mark -
-#pragma mark CC3VertexWeights
+#pragma mark CC3VertexBoneWeights
 
 /**
- * A CC3VertexArray that manages a collection of weights used by each vertex during
- * vertex skinning, which is the manipulation of a soft-body mesh under control of
- * a skeleton of bone nodes.
- * 
- * This vertex array works together with an instace of a CC3VertexMatrixIndices vertex
- * array, and the elementSize property of the two vertex arrays must be equal, and must
- * not be larger than the maximum number of available vertex units for the platform,
- * which can be retreived from the CC3OpenGL.sharedGL.maxNumberOfVertexUnits property.
- */
-@interface CC3VertexWeights : CC3VertexArray
-
-/**
- * Returns the weight element, for the specified vertex unit, at the specified index in
- * the underlying vertex content.
+ * A CC3VertexArray that manages a collection of bone weights for each vertex. Each bone weight
+ * indicates how much that particular bone influences the movement of the vertex for a mesh that
+ * uses vertex skinning. Vertex skinning is the manipulation of a soft-body mesh under control
+ * of a skeleton of bone nodes.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
+ * For each vertex, the bone to which the weight should be applied is identified by the bone
+ * index specified in the corresponding entry in the CC3VertexBoneIndices vertex array.
+ *
+ * This vertex array works together with an instace of a CC3VertexBoneIndices vertex array.
+ * The elementSize property of the two vertex arrays must be equal, and under OpenGL ES 1.1,
+ * must not be larger than the maximum number of available bone influences allowed by the 
+ * platform, which can be retreived from CC3OpenGL.sharedGL.maxNumberOfBoneInfluencesPerVertex.
+*/
+@interface CC3VertexBoneWeights : CC3VertexArray
+
+/**
+ * Returns the weight value, for the specified influence index within the vertex, for the
+ * vertex at the specified index within the underlying vertex content.
+ *
+ * The weight indicates how much a particular bone influences the movement of the particular 
+ * vertex. Several weights are stored for each vertex, one for each bone that influences the 
+ * movement of that vertex. The specified influenceIndex parameter must be between zero, and
+ * the elementSize property (inclusive/exclusive respectively).
+ *
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
  * the vertexStride and elementOffset properties to access the correct element.
- *
- * Several weights are stored for each vertex, one per vertex unit, corresponding to
- * one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the elementSize property, exclusive.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(GLfloat) weightForVertexUnit: (GLuint) vertexUnit at: (GLuint) index;
+-(GLfloat) weightForBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
 
 /**
- * Sets the weight element, for the specified vertex unit, at the specified index in
- * the underlying vertex content, to the specified value.
+ * Sets the weight value, for the specified influence index within the vertex, for the
+ * vertex at the specified index within the underlying vertex content.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
+ * The weight indicates how much a particular bone influences the movement of the particular
+ * vertex. Several weights are stored for each vertex, one for each bone that influences the
+ * movement of that vertex. The specified influenceIndex parameter must be between zero, and
+ * the elementSize property (inclusive/exclusive respectively).
+ *
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
  * the vertexStride and elementOffset properties to access the correct element.
- *
- * Several weights are stored for each vertex, one per vertex unit, corresponding to
- * one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the elementSize property, exclusive.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setWeight: (GLfloat) aWeight forVertexUnit: (GLuint) vertexUnit at: (GLuint) index;
+-(void) setWeight: (GLfloat) weight forBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
 
 /**
- * Returns a pointer to an array of the weight elements at the specified vertex
- * index in the underlying vertex content.
+ * Returns the weights of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
  *
- * Several weights are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The number of
- * elements in the returned array is the same for all vertices in this array, and
- * can be retrieved from the elementSize property.
+ * Several weights are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the returned array is the same for each vertex
+ * in this vertex array, as defined by the elementSize property.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
  * the vertexStride and elementOffset properties to access the correct vertices.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(GLfloat*) weightsAt: (GLuint) index;
+-(GLfloat*) boneWeightsAt: (GLuint) vtxIndex;
 
 /**
- * Sets the weight elements at the specified vertex index in the underlying vertex content,
- * to the values in the specified array.
+ * Sets the weights of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * Several weights are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the specified input array must therefore be at 
+ * least as large as the value of the elementSize property.
  *
- * Several weights are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The number of
- * weight elements is the same for all vertices in this array, and can be retrieved
- * from the elementSize property. The number of elements in the specified input
- * array must therefore be at least as large as the value of the elementSize property.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * the vertexStride and elementOffset properties to access the correct vertices.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setWeights: (GLfloat*) weights at: (GLuint) index;
+-(void) setBoneWeights: (GLfloat*) weights at: (GLuint) vtxIndex;
+
+
+#pragma mark Deprecated methods
+
+/** *@deprecated Renamed to weightForBoneInfluence:at:. */
+-(GLfloat) weightForVertexUnit: (GLuint) vertexUnit at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to setWeight:forBoneInfluence:at:. */
+-(void) setWeight: (GLfloat) aWeight forVertexUnit: (GLuint) vertexUnit at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to boneWeightsAt:. */
+-(GLfloat*) weightsAt: (GLuint) vtxIndex __deprecated;
+
+/** *@deprecated Renamed to setBoneWeights:at:. */
+-(void) setWeights: (GLfloat*) weights at: (GLuint) vtxIndex __deprecated;
 
 @end
 
 
 #pragma mark -
-#pragma mark CC3VertexMatrixIndices
+#pragma mark CC3VertexBoneIndices
 
 /**
- * A CC3VertexArray that manages a collection of indices used by each vertex to point
- * to a collection of distinct matrices during vertex skinning. Vertex skinning is
- * the manipulation of a soft-body mesh under control of a skeleton of bone nodes.
- * 
- * This vertex array works together with an instace of a CC3VertexWeights vertex array,
- * and the elementSize property of the two vertex arrays must be equal, and must
- * not be larger than the maximum number of available vertex units for the platform,
- * which can be retreived from the CC3OpenGL.sharedGL.maxNumberOfVertexUnits property
+ * A CC3VertexArray that manages a collection of bone indices for each vertex. Each bone index
+ * indicates one of several bones that influence the location of the vertex for a mesh that
+ * uses vertex skinning. Vertex skinning is the manipulation of a soft-body mesh under control
+ * of a skeleton of bone nodes.
+ *
+ * For each vertex, the amount each bone should influence the vertex movement is identified 
+ * by the weight specified in the corresponding entry in the CC3VertexBoneWeights vertex array.
+ *
+ * This vertex array works together with an instace of a CC3VertexBoneWeights vertex array.
+ * The elementSize property of the two vertex arrays must be equal, and under OpenGL ES 1.1,
+ * must not be larger than the maximum number of available bone influences allowed by the
+ * platform, which can be retreived from CC3OpenGL.sharedGL.maxNumberOfBoneInfluencesPerVertex.
  */
-@interface CC3VertexMatrixIndices : CC3VertexArray
+@interface CC3VertexBoneIndices : CC3VertexArray
 
 /**
- * Returns the matrix index element, for the specified vertex unit, at the specified
- * index in the underlying vertex content.
+ * Returns the index of the bone, that provides the influence at the specified influence index
+ * within a vertex, for the vertex at the specified index within the underlying vertex content.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * The bone index indicates which bone provides the particular influence for the movement of
+ * the particular vertex. Several bone indices are stored for each vertex, one for each bone
+ * that influences the movement of that vertex. The specified influenceIndex parameter must
+ * be between zero, and the elementSize property (inclusive/exclusive respectively).
  *
- * Several matrix indices are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the elementSize property, exclusive.
- *
- * If the releaseRedundantContent method has been invoked and the underlying
- * vertex content has been released, this method will raise an assertion exception.
- */
--(GLuint) matrixIndexForVertexUnit: (GLuint) vertexUnit at: (GLuint) index;
-
-/**
- * Sets the matrix index element, for the specified vertex unit, at the specified index
- * in the underlying vertex content, to the specified value.
- *
- * Several matrix indices are stored for each vertex, one per vertex unit, corresponding
- * to one for each bone that influences the location of the vertex. The specified vertexUnit
- * parameter must be between zero inclusive, and the elementSize property, exclusive.
- *
- * The index refers to vertices, not bytes. The implementation takes into consideration
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
  * the vertexStride and elementOffset properties to access the correct element.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setMatrixIndex: (GLuint) aMatrixIndex forVertexUnit: (GLuint) vertexUnit at: (GLuint) index;
+-(GLuint) boneIndexForBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
 
 /**
- * Returns a pointer to an array of the matrix indices at the specified vertex
- * index in the underlying vertex content.
+ * Sets the index of the bone, that provides the influence at the specified influence index
+ * within a vertex, for the vertex at the specified index within the underlying vertex content.
  *
- * Several matrix index values are stored for each vertex, one per vertex unit,
- * corresponding to one for each bone that influences the location of the vertex.
- * The number of elements in the returned array is the same for all vertices in
- * this array, and can be retrieved from the elementSize property.
- * 
- * The matrix indices can be stored in this array as either type GLushort or type
- * GLubyte. The returned array will be of the type of index stored by this vertex
- * array, and it is up to the application to know which type will be returned,
- * and cast the returned array accordingly. The type can be determined by the
- * elementType property of this array, which will return one of GL_UNSIGNED_SHORT
- * or GL_UNSIGNED_BYTE, respectively.
+ * The bone index indicates which bone provides the particular influence for the movement of
+ * the particular vertex. Several bone indices are stored for each vertex, one for each bone
+ * that influences the movement of that vertex. The specified influenceIndex parameter must
+ * be between zero, and the elementSize property (inclusive/exclusive respectively).
  *
- * To avoid checking the elementType altogether, you can use the matrixIndexForVertexUnit:at:
- * method, which retrieves the matrix index values one at a time, and automatically converts
- * the stored type to GLushort.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * the vertexStride and elementOffset properties to access the correct element.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
+ * If the releaseRedundantContent method has been invoked and the underlying
+ * vertex content has been released, this method will raise an assertion exception.
+ */
+-(void) setBoneIndex: (GLuint) boneIndex forBoneInfluence: (GLuint) influenceIndex at: (GLuint) vtxIndex;
+
+/**
+ * Returns the indices of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
+ *
+ * Several indices are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the returned array is the same for each vertex
+ * in this vertex array, as defined by the elementSize property.
+ *
+ * The bone indices can be stored in this array as either type GLushort or type GLubyte.
+ * The returned array will be of the type of index stored by this vertex array, and it is
+ * up to the application to know which type will be returned, and cast the returned array
+ * accordingly. The type can be determined by the elementType property of this array, 
+ * which will return one of GL_UNSIGNED_SHORT or GL_UNSIGNED_BYTE, respectively.
+ *
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
  * the vertexStride and elementOffset properties to access the correct vertices.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(GLvoid*) matrixIndicesAt: (GLuint) index;
+-(GLvoid*) boneIndicesAt: (GLuint) vtxIndex;
 
 /**
- * Sets the matrix index elements at the specified vertex index in the underlying
- * vertex content, to the values in the specified array.
+ * Sets the indices of all of the bones that influence the movement of the vertex at the
+ * specified index within the underlying vertex content.
  *
- * Several matrix index values are stored for each vertex, one per vertex unit,
- * corresponding to one for each bone that influences the location of the vertex.
- * The number of elements is the same for all vertices in this array, and can be
- * retrieved from the elementSize property. The number of elements in the specified input
- * array must therefore be at least as large as the value of the elementSize property.
- * 
- * The matrix indices can be stored in this array as either type GLushort or type GLubyte.
+ * Several indices are stored for each vertex, one for each bone that influences the movement
+ * of the vertex. The number of elements in the specified input array must therefore be at
+ * least as large as the value of the elementSize property.
+ *
+ * The bone indices can be stored in this array as either type GLushort or type GLubyte.
  * The specified array must be of the type of index stored by this vertex array, and it
  * is up to the application to know which type is required, and provide that type of
  * array accordingly. The type can be determined by the elementType property of this
  * array, which will return one of GL_UNSIGNED_SHORT or GL_UNSIGNED_BYTE, respectively.
  *
- * To avoid checking the elementType altogether, you can use the setMatrixIndex:forVertexUnit:at:
- * method, which sets the matrix index values one at a time, and automatically converts the
- * input type to the correct stored type.
+ * To avoid checking the elementType altogether, you can use the setBoneIndex:forBoneInfluence:at:
+ * method, which sets the bone index values one at a time, and automatically converts the input 
+ * type to the correct stored type.
  *
- * The index refers to vertices, not bytes. The implementation takes into consideration
- * the vertexStride and elementOffset properties to access the correct element.
+ * The vertex index refers to vertices, not bytes. The implementation takes into consideration
+ * the vertexStride and elementOffset properties to access the correct vertices.
  *
  * If the releaseRedundantContent method has been invoked and the underlying
  * vertex content has been released, this method will raise an assertion exception.
  */
--(void) setMatrixIndices: (GLvoid*) mtxIndices at: (GLuint) index;
+-(void) setBoneIndices: (GLvoid*) boneIndices at: (GLuint) vtxIndex;
+
+
+#pragma mark Deprecated methods
+
+/** *@deprecated Renamed to boneIndexForBoneInfluence:at:. */
+-(GLuint) matrixIndexForVertexUnit: (GLuint) vertexUnit at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to setBoneIndex:forBoneInfluence:at:. */
+-(void) setMatrixIndex: (GLuint) aMatrixIndex forVertexUnit: (GLuint) vertexUnit at: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to boneIndicesAt:. */
+-(GLvoid*) matrixIndicesAt: (GLuint) index __deprecated;
+
+/** *@deprecated Renamed to setBoneIndices:at:. */
+-(void) setMatrixIndices: (GLvoid*) mtxIndices at: (GLuint) index __deprecated;
 
 @end
+
+
+#pragma mark Deprecated vertex array classes
+
+#define CC3VertexWeights CC3VertexBoneWeights
+#define CC3VertexMatrixIndices CC3VertexBoneIndices
 

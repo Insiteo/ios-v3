@@ -1,9 +1,9 @@
 /*
  * CC3ParametricMeshNodes.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -334,7 +334,7 @@
  * For higher fidelity in applying textures to non-cube boxes, so that the texture
  * will not be stretched to fit, use the populateAsSolidBox:withCorner: method.
  *
- * Thanks to cocos3d user andyman for contributing the prototype code and texture
+ * Thanks to Cocos3D user andyman for contributing the prototype code and texture
  * template file for this method.
  */
 -(void) populateAsSolidBox: (CC3Box) box;
@@ -376,7 +376,7 @@
  * populateAsSolidBox:withCorner: methods, with a texture whose layout is compatible
  * with the aspect ratio of the box.
  *
- * Thanks to cocos3d user andyman for contributing the prototype code and texture
+ * Thanks to Cocos3D user andyman for contributing the prototype code and texture
  * template file for this method.
  */
 -(void) populateAsCubeMappedSolidBox: (CC3Box) box;
@@ -435,19 +435,13 @@
  * depth of the box, the texture will appear stretched on one or two sides relative
  * to the others.
  *
- * Thanks to cocos3d user andyman for contributing the prototype code and texture
+ * Thanks to Cocos3D user andyman for contributing the prototype code and texture
  * template file for this method.
  */
 -(void) populateAsSolidBox: (CC3Box) box withCorner: (CGPoint) corner;
 
 /**
  * Populates this instance as a wire-frame box with the specified dimensions.
- *
- * You can add a material or pureColor as desired to establish the color of the lines
- * of the wire-frame. If a material is used, the appearance of the lines will be affected
- * by the lighting conditions. If a pureColor is used, the appearance of the lines will
- * not be affected by the lighting conditions, and the wire-frame box will always appear
- * in the same pure, solid color, regardless of the lighting sources.
  *
  * As this node is translated, rotate and scaled, the wire-frame box will be re-oriented
  * in 3D space.
@@ -574,12 +568,6 @@
  * set this flag to YES to have this instance copy and manage the data. If the vertices
  * array is a static array, you can set this flag to NO.
  *
- * You can add a material or pureColor as desired to establish the color of the lines.
- * If a material is used, the appearance of the lines will be affected by the lighting
- * conditions. If a pureColor is used, the appearance of the lines will not be affected
- * by the lighting conditions, and the wire-frame box will always appear in the same pure,
- * solid color, regardless of the lighting sources.
- *
  * This is a convenience method for creating a simple, but useful, shape.
  */
 -(void) populateAsLineStripWith: (GLuint) vertexCount
@@ -595,31 +583,31 @@
 @interface CC3MeshNode (DeprecatedParametricShapes)
 
 /** @deprecated Renamed to populateAsRectangleWithSize:andRelativeOrigin:. */
--(void) populateAsRectangleWithSize: (CGSize) rectSize andPivot: (CGPoint) pivot DEPRECATED_ATTRIBUTE;
+-(void) populateAsRectangleWithSize: (CGSize) rectSize andPivot: (CGPoint) pivot __deprecated;
 
 /** @deprecated Renamed to populateAsRectangleWithSize:andRelativeOrigin:andTessellation. */
 -(void) populateAsRectangleWithSize: (CGSize) rectSize
 						   andPivot: (CGPoint) pivot
-					andTessellation: (CC3Tessellation) divsPerAxis DEPRECATED_ATTRIBUTE;
+					andTessellation: (CC3Tessellation) divsPerAxis __deprecated;
 
 /**
  * @deprecated Use populateAsCenteredRectangleWithSize:, as it creates a
  * rectangular mesh that can be covered with either a texture or a solid color.
  */
--(void) populateAsCenteredTexturedRectangleWithSize: (CGSize) rectSize DEPRECATED_ATTRIBUTE;
+-(void) populateAsCenteredTexturedRectangleWithSize: (CGSize) rectSize __deprecated;
 
 /**
  * @deprecated Use populateAsCenteredRectangleWithSize:andTessellation:, as it creates
  * a rectangular mesh that can be covered with either a texture or a solid color.
  */
 -(void) populateAsCenteredTexturedRectangleWithSize: (CGSize) rectSize
-									andTessellation: (CC3Tessellation) divsPerAxis DEPRECATED_ATTRIBUTE;
+									andTessellation: (CC3Tessellation) divsPerAxis __deprecated;
 
 /**
  * @deprecated Use populateAsRectangleWithSize:andRelativeOrigin:, as it creates a
  * rectangular mesh that can be covered with either a texture or a solid color.
  */
--(void) populateAsTexturedRectangleWithSize: (CGSize) rectSize andPivot: (CGPoint) pivot DEPRECATED_ATTRIBUTE;
+-(void) populateAsTexturedRectangleWithSize: (CGSize) rectSize andPivot: (CGPoint) pivot __deprecated;
 
 /**
  * @deprecated Use populateAsRectangleWithSize:andRelativeOrigin:andTessellation:, as it creates
@@ -627,7 +615,7 @@
  */
 -(void) populateAsTexturedRectangleWithSize: (CGSize) rectSize
 								   andPivot: (CGPoint) pivot
-							andTessellation: (CC3Tessellation) divsPerAxis DEPRECATED_ATTRIBUTE;
+							andTessellation: (CC3Tessellation) divsPerAxis __deprecated;
 
 /**
  * @deprecated Use the populateAsCenteredRectangleWithSize: method instead,
@@ -635,7 +623,7 @@
  */
 -(void) populateAsCenteredRectangleWithSize: (CGSize) rectSize
 								withTexture: (CC3Texture*) texture
-							  invertTexture: (BOOL) shouldInvert DEPRECATED_ATTRIBUTE;
+							  invertTexture: (BOOL) shouldInvert __deprecated;
 
 /**
  * @deprecated Use the populateAsCenteredRectangleWithSize:andTessellation:
@@ -644,7 +632,7 @@
 -(void) populateAsCenteredRectangleWithSize: (CGSize) rectSize
 							andTessellation: (CC3Tessellation) divsPerAxis
 								withTexture: (CC3Texture*) texture
-							  invertTexture: (BOOL) shouldInvert DEPRECATED_ATTRIBUTE;
+							  invertTexture: (BOOL) shouldInvert __deprecated;
 
 /**
  * @deprecated Use the populateAsRectangleWithSize:andRelativeOrigin: method instead,
@@ -653,7 +641,7 @@
 -(void) populateAsRectangleWithSize: (CGSize) rectSize
 						   andPivot: (CGPoint) pivot
 						withTexture: (CC3Texture*) texture
-					  invertTexture: (BOOL) shouldInvert DEPRECATED_ATTRIBUTE;
+					  invertTexture: (BOOL) shouldInvert __deprecated;
 
 /**
  * @deprecated Use the populateAsCenteredRectangleWithSize:andRelativeOrigin:andTessellation:
@@ -663,16 +651,16 @@
 						   andPivot: (CGPoint) pivot
 					andTessellation: (CC3Tessellation) divsPerAxis
 						withTexture: (CC3Texture*) texture
-					  invertTexture: (BOOL) shouldInvert DEPRECATED_ATTRIBUTE;
+					  invertTexture: (BOOL) shouldInvert __deprecated;
 
 /**
  * @deprecated Use populateAsSolidBox:, as it creates a box mesh
  * that can be covered with either a texture or a solid color.
  */
--(void) populateAsTexturedBox: (CC3Box) box DEPRECATED_ATTRIBUTE;
+-(void) populateAsTexturedBox: (CC3Box) box __deprecated;
 
 /** @deprecated Renamed to populateAsSolidBox:withCorner:. */
--(void) populateAsTexturedBox: (CC3Box) box withCorner: (CGPoint) corner DEPRECATED_ATTRIBUTE;
+-(void) populateAsTexturedBox: (CC3Box) box withCorner: (CGPoint) corner __deprecated;
 
 @end
 

@@ -17,22 +17,7 @@
 /*!
  Class used to represent a rectangle defined by 4 float values (left, top, right, bottom) (ex: 0.5/0.5/50.0/150.5).
  */
-@interface ISRectF : NSObject {
-    
-@private
-    
-    //Left value
-    float m_left;
-    //Top value
-    float m_top;
-    //Right value
-    float m_right;
-    //Bottom value
-    float m_bottom;
-    
-    //Center of the rectangle
-    CGPoint m_center;
-}
+@interface ISRectF : NSObject
 
 /*!
  Left value.

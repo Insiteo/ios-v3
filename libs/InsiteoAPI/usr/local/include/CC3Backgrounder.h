@@ -1,9 +1,9 @@
 /*
  * CC3Backgrounder.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2010-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2010-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,17 +30,25 @@
 /** @file */	// Doxygen marker
 
 #import "CC3Foundation.h"
-#import "CC3OSExtensions.h"
 
 
 #pragma mark CC3Backgrounder
 
 /**
- * An instance of CC3Backgrounder performs activity on a background thread by submitting
- * tasks to a Grand Central Dispatch (GCD) queue.
+ * CC3Backgrounder performs activity on a background thread by submitting tasks to 
+ * a Grand Central Dispatch (GCD) queue. In order to ensure that the GL engine is
+ * presented activity in an defined order, CC3Backgrounder is a singleton.
+ *
+ * This core behaviour can be nulified by setting the shouldRunOnRequestingThread property
+ * to YES, which forces tasks submitted to this backgrounder to be run on the same thread
+ * from which the tasks are queued. This behaviour can be useful when loading OpenGL objects
+ * that need to be subsequently deleted. It is important that OpenGL objects are deleted
+ * from the same thread on which they are loaded.
  */
 @interface CC3Backgrounder : NSObject {
+	dispatch_queue_t _taskQueue;
 	long _queuePriority;
+	BOOL _shouldRunTasksOnRequestingThread : 1;
 }
 
 /**
@@ -63,79 +71,41 @@
 #pragma mark Backgrounding tasks
 
 /** 
- * Runs the specified block of code by dispatching it to the global GCD queue identified
- * by the value of the queuePriority property.
+ * If the value of the shouldRunOnRequestingThread property is NO (the default), the specified
+ * block of code is dispatched to the global GCD queue identified by the value of the queuePriority
+ * property, and the current thread continues without waiting for the dispatched code to complete.
  *
- * You should use this method instead of dispatching to a GCD queue directly, because subclasses
- * may override this method to perform additional activities around the queuing of the block.
+ * If the value of the shouldRunOnRequestingThread property is YES, the specified block of code
+ * is run immediately on the current thread, and further thread activity waits until the specified
+ * block has completed.
  */
 -(void) runBlock: (void (^)(void))block;
 
-
-#pragma mark Allocation and initialization
-
-/** Allocates and initializes an autoreleased instance. */
-+(id) backgrounder;
-
-@end
-
-
-#pragma mark CC3GLBackgrounder
+/**
+ * Waits the specified number of seconds, then executes the specified block of code 
+ * either on a background thread, or the current thread, depending on the value of 
+ * the shouldRunOnRequestingThread property.
+ 
+ * If the value of the shouldRunOnRequestingThread property is NO (the default), the specified
+ * block of code is dispatched to the global GCD queue identified by the value of the queuePriority
+ * property. If the value of the shouldRunOnRequestingThread property is YES, the specified block
+ * of code is run on the current thread.
+ */
+-(void) runBlock: (void (^)(void))block after: (NSTimeInterval) seconds;
 
 /**
- * CC3GLBackgrounder is a type of CC3Backgrounder specialized to perform OpenGL 
- * operations on a background thread.
+ * Indicates that tasks should be run on the same thread as the invocator of the task requests.
  *
- * An instance of CC3GLBackgrounder manages a GL context that is distinct from the GL context
- * that is used for rendering, but shares content with the rendering context.
- *
- * No explicit synchronization is provided between the GL context managed by this instance
- * and the GL context used for rendering. For operations such as loading new content on a
- * background thread, this should not cause a problem, as the rendering context will not
- * encounter the new content until it is added to the scene.
- *
- * When using the CC3Node addChild: method to add new nodes (including the corresponding
- * meshes, textures and shaders), to an active scene, the addChild: method will automatically
- * ensure the actual addition to the scene will occur on the rendering thread, to ensure that
- * content is not added during the middle of actual rendering.
- *
- * However, if you use an instance of this class to modify existing GL content that is
- * actively being used by the rendering GL context, you must provide explicit sychronization.
+ * The initial value of this property is NO, indicating that tasks will be dispatched to a 
+ * background thread for running. Set this property to YES to force tasks to run on the same
+ * thread as the request is made.
  */
-@interface CC3GLBackgrounder : CC3Backgrounder {
-	CC3GLContext* _glContext;
-}
-
-/** 
- * The GL context used during GL operations on the thread used by this instance.
- *
- * The initial value is set during instance initialization.
- */
-@property(nonatomic, retain) CC3GLContext* glContext;
+@property(nonatomic, assign) BOOL shouldRunTasksOnRequestingThread;
 
 
 #pragma mark Allocation and initialization
 
-/**
- * Initializes this instance, and sets the value of the glContext property
- * to the specified GL context.
- *
- * In most cases, the specified GL context should share GL content with the
- * GL context used for rendering.
- */
--(id) initWithGLContext: (CC3GLContext*) glContext;
-
-/**
- * Allocates and initializes an autoreleased instance, and sets the value of
- * the glContext property to the specified GL context.
- *
- * In most cases, the specified GL context should share GL content with the
- * GL context used for rendering.
- */
-+(id) backgrounderWithGLContext: (CC3GLContext*) glContext;
+/** Returns the singleton backgrounder instance. */
++(CC3Backgrounder*) sharedBackgrounder;
 
 @end
-
-
-
-

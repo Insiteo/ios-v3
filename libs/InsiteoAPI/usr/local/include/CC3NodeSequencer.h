@@ -1,9 +1,9 @@
 /*
  * CC3NodeSequencer.h
  *
- * cocos3d 2.0.0
+ * Cocos3D 2.0.1
  * Author: Bill Hollings
- * Copyright (c) 2011-2013 The Brenwill Workshop Ltd. All rights reserved.
+ * Copyright (c) 2011-2014 The Brenwill Workshop Ltd. All rights reserved.
  * http://www.brenwill.com
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,6 +33,7 @@
 
 @class CC3Scene, CC3NodeSequencerVisitor;
 
+
 #pragma mark -
 #pragma mark CC3NodeEvaluator
 
@@ -44,7 +45,7 @@
  * The central evaluation method evaluate: returns YES or NO, indicating whether the
  * evaluator accepts or rejects the node.
  */
-@interface CC3NodeEvaluator : NSObject <NSCopying> {}
+@interface CC3NodeEvaluator : NSObject <NSCopying>
 
 /**
  * Performs the evaluation defined by this class on the specified node and returns
@@ -182,7 +183,7 @@
  * The returned array is a copy of the any internal arrays.
  * Changing the contents will not change the internal node seqeunce.
  */
-@property(nonatomic, readonly) CCArray* nodes;
+@property(nonatomic, retain, readonly) NSArray* nodes;
 
 /**
  * Indicates that the sequencer will run the algorithm to relocate misplaced nodes
@@ -343,11 +344,11 @@
  * Reading that property returns YES if any child sequencer returns YES, otherwise it returns NO.
  */
 @interface CC3BTreeNodeSequencer : CC3NodeSequencer {
-	CCArray* _sequencers;
+	NSMutableArray* _sequencers;
 }
 
 /** The array of child sequencers. */
-@property(nonatomic, readonly) CCArray* sequencers;
+@property(nonatomic, retain, readonly) NSArray* sequencers;
 
 /** Adds the specified sequencer as a child sequencer. */
 -(void) addSequencer: (CC3NodeSequencer*) aNodeSequencer;
@@ -408,7 +409,7 @@
  * The contents of the nodes array are not copied when this sequencer is copied.
  */
 @interface CC3NodeArraySequencer : CC3NodeSequencer {
-	CCArray* _nodes;
+	NSMutableArray* _nodes;
 }
 
 /**
@@ -558,7 +559,7 @@
  */
 @interface CC3NodeSequencerVisitor : NSObject {
 	CC3Scene* _scene;
-	CCArray* _misplacedNodes;
+	NSMutableArray* _misplacedNodes;
 }
 
 /**
@@ -574,13 +575,13 @@
 +(id) visitorWithScene: (CC3Scene*) aCC3Scene;
 
 /** @deprecated Renamed to scene. */
-@property(nonatomic, assign) CC3Scene* world DEPRECATED_ATTRIBUTE;
+@property(nonatomic, retain) CC3Scene* world __deprecated;
 
 /** @deprecated Renamed to initWithScene:. */
--(id) initWithWorld: (CC3Scene*) aCC3Scene DEPRECATED_ATTRIBUTE;
+-(id) initWithWorld: (CC3Scene*) aCC3Scene __deprecated;
 
 /** @deprecated Renamed to visitorWithScene:. */
-+(id) visitorWithWorld: (CC3Scene*) aCC3Scene DEPRECATED_ATTRIBUTE;
++(id) visitorWithWorld: (CC3Scene*) aCC3Scene __deprecated;
 
 /** Indicates whether the misplacedNodes property contains nodes. */
 @property(nonatomic, readonly) BOOL hasMisplacedNodes;
@@ -591,7 +592,7 @@
  *
  * The returned array may be nil.
  */
-@property(nonatomic, readonly) CCArray* misplacedNodes;
+@property(nonatomic, retain, readonly) NSArray* misplacedNodes;
 
 /** Adds the specified node to the array of nodes held in the misplacedNodes property */
 -(void) addMisplacedNode: (CC3Node*) aNode;

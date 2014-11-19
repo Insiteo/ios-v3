@@ -13,21 +13,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ISInitProvider.h"
+#import "ISTypes.h"
 #import "ISPAuthListener.h"
 
 /*!
  Class used to manage INSITEO authentication.
  */
-@interface ISAuthManager : NSObject {
-    
-@private
-    
-    //Intern boolean used to know if we are connected
-    Boolean m_isConnected;
-    //Current user mail (could be nil
-    NSString * m_currentUserMail;
-}
+@interface ISAuthManager : NSObject;
 
 /*!
  Intern boolean used to know if we are connected.
