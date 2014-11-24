@@ -40,6 +40,8 @@ extern float const IS_GEO_PUSH_DEFAULT_CUSTOM_GEO_WIDTH;    //2.0
     NSMutableDictionary * m_mapsSettings;
     //All geofencing areas to consider
     NSMutableDictionary * m_areas;
+    //Areas mutex
+    NSLock * m_lock;
     //Current active geofencing zones (state != UNDEFINED)
     NSMutableArray * m_activeZones;
     //Geofencing notifications listener

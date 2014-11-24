@@ -390,7 +390,7 @@
 			<Abstract type="html">Static main constructor.</Abstract>
 			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
 			
-			<Declaration>+ (id)ISGeofenceAreaWithPBZone:(Zone *)pbzone</Declaration>
+			<Declaration>+ (id)ISGeofenceAreaWithPBZone:(PBGeofenceZone *)pbzone</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>pbzone</Name>
@@ -406,7 +406,7 @@
 			<Abstract type="html">Main constructor.</Abstract>
 			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithPBZone:(Zone *)pbZone</Declaration>
+			<Declaration>- (id)initWithPBZone:(PBGeofenceZone *)pbZone</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>pbZone</Name>

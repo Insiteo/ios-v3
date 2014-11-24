@@ -15,7 +15,7 @@
 
 #import "ISPosition.h"
 
-@class Zone;
+@class PBGeofenceZone;
 @class ISZone;
 @class ISZonePoi;
 
@@ -151,13 +151,13 @@
  Static main constructor.
  @param pbzone Zone used to create the area.
  */
-+ (id)ISGeofenceAreaWithPBZone:(Zone *)pbzone;
++ (id)ISGeofenceAreaWithPBZone:(PBGeofenceZone *)pbzone;
 
 /*!
  Main constructor.
  @param pbZone Zone used to create the area.
  */
-- (id)initWithPBZone:(Zone *)pbZone;
+- (id)initWithPBZone:(PBGeofenceZone *)pbZone;
 
 /*!
  Second constructor.
