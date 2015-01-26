@@ -482,6 +482,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithPosition:andZoomLevel:andAnimated:</TokenIdentifier>
+			<Abstract type="html">Method used to center the map on a specific position (in meters).</Abstract>
+			<DeclaredIn>ISMapView.h</DeclaredIn>			
+			
+			<Declaration>- (void)centerMapWithPosition:(ISPosition *)position andZoomLevel:(float)zoomLevel andAnimated:(Boolean)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">The position (in meters) to center on (x, y, mapId).</Abstract>
+				</Parameter><Parameter>
+					<Name>zoomLevel</Name>
+					<Abstract type="html">Wanted zoom level.</Abstract>
+				</Parameter><Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Boolean used to know if an animation needs to be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/centerMapWithPosition:andZoomLevel:andAnimated:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISMapView/centerMapWithPosition:andRotationAngle:andAnimated:</TokenIdentifier>
 			<Abstract type="html">Method used to center the map on a specific position (in meters).</Abstract>
 			<DeclaredIn>ISMapView.h</DeclaredIn>			
@@ -732,7 +754,7 @@
 					<Abstract type="html">Boolean used to know if we keep the current rotation angle when changing map.</Abstract>
 				</Parameter>
 			</Parameters>
-			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the map effectively changed, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
 			<Anchor>//api/name/changeMapWithMapId:andKeepPosition:andKeepZoomLevel:andKeepRotationAngle:</Anchor>
 		</Token>
 		

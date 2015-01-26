@@ -56,17 +56,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/addRegion:">&nbsp;&nbsp;&nbsp;&nbsp;- addRegion:</option>
-	
-	<option value="//api/name/addRegion:andNotifyEntryStateOnDisplay:">&nbsp;&nbsp;&nbsp;&nbsp;- addRegion:andNotifyEntryStateOnDisplay:</option>
-	
 	<option value="//api/name/refreshBeacons">&nbsp;&nbsp;&nbsp;&nbsp;- refreshBeacons</option>
 	
-	<option value="//api/name/removeRegion:">&nbsp;&nbsp;&nbsp;&nbsp;- removeRegion:</option>
-	
-	<option value="//api/name/start">&nbsp;&nbsp;&nbsp;&nbsp;- start</option>
-	
-	<option value="//api/name/stop">&nbsp;&nbsp;&nbsp;&nbsp;- stop</option>
+	<option value="//api/name/startWithListener:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithListener:</option>
 	
 	
 	
@@ -110,17 +102,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRegion:">addRegion:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRegion:andNotifyEntryStateOnDisplay:">addRegion:andNotifyEntryStateOnDisplay:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/refreshBeacons">refreshBeacons</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeRegion:">removeRegion:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start">start</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stop">stop</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithListener:">startWithListener:</a></span></li>
 	
 </ul></li>
 
@@ -205,36 +189,8 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
+		<code><a href="#//api/name/startWithListener:">&ndash;&nbsp;startWithListener:</a></code>
 		<span class="tooltip"><p>Method used to start monitoring Beacon Regions.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/addRegion:">&ndash;&nbsp;addRegion:</a></code>
-		<span class="tooltip"><p>Method used to add a Beacon Region to monitor.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/addRegion:andNotifyEntryStateOnDisplay:">&ndash;&nbsp;addRegion:andNotifyEntryStateOnDisplay:</a></code>
-		<span class="tooltip"><p>Method used to add a Beacon Region to monitor.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/stop">&ndash;&nbsp;stop</a></code>
-		<span class="tooltip"><p>Method used to stop monitoring regions.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/removeRegion:">&ndash;&nbsp;removeRegion:</a></code>
-		<span class="tooltip"><p>Method used to manually remove a Beacon Region.</p></span>
 	</span>
 	
 	
@@ -263,7 +219,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSArray *beaconRegions</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *beaconRegions</code></div>
 
     
 	
@@ -304,7 +260,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) id&lt;ISPBeaconListener&gt; listener</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;ISPBeaconListener&gt; listener</code></div>
 
     
 	
@@ -391,113 +347,6 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/addRegion:" title="addRegion:"></a>
-	<h3 class="subsubtitle method-title">addRegion:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to add a Beacon Region to monitor.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)addRegion:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>beaconRegion</em></dt>
-			<dd><p>Beacon Region to monitor.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to add a Beacon Region to monitor.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/addRegion:andNotifyEntryStateOnDisplay:" title="addRegion:andNotifyEntryStateOnDisplay:"></a>
-	<h3 class="subsubtitle method-title">addRegion:andNotifyEntryStateOnDisplay:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to add a Beacon Region to monitor.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)addRegion:(ISBeaconRegion *)<em>beaconRegion</em> andNotifyEntryStateOnDisplay:(BOOL)<em>shouldDisplay</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>beaconRegion</em></dt>
-			<dd><p>Beacon Region to monitor.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>shouldDisplay</em></dt>
-			<dd><p>Boolean used to know if app will <a href="#//api/name/start">start</a> and delegate will be notified when user turn on the screen (cf. notifyEntryStateOnDisplay in CLBeaconRegion).</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to add a Beacon Region to monitor.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/refreshBeacons" title="refreshBeacons"></a>
 	<h3 class="subsubtitle method-title">refreshBeacons</h3>
 	
@@ -539,18 +388,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/removeRegion:" title="removeRegion:"></a>
-	<h3 class="subsubtitle method-title">removeRegion:</h3>
+	<a name="//api/name/startWithListener:" title="startWithListener:"></a>
+	<h3 class="subsubtitle method-title">startWithListener:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method used to manually remove a Beacon Region.</p>
+		<p>Method used to start monitoring Beacon Regions.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)removeRegion:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)startWithListener:(id&lt;ISPBeaconListener&gt;)<em>listener</em></code></div>
 
     
 	
@@ -558,8 +407,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>beaconRegion</em></dt>
-			<dd><p>Beacon Region to remove (i.e. <a href="#//api/name/stop">stop</a> monitoring).</p></dd>
+			<dt><em>listener</em></dt>
+			<dd><p>Listener to notify of beacon events (mnonitoring and ranging).</p></dd>
 		</dl>
 		
 	</div>
@@ -572,89 +421,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to manually remove a Beacon Region.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/start" title="start"></a>
-	<h3 class="subsubtitle method-title">start</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
 		<p>Method used to start monitoring Beacon Regions.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)start</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to start monitoring Beacon Regions.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/stop" title="stop"></a>
-	<h3 class="subsubtitle method-title">stop</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to stop monitoring regions.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)stop</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to stop monitoring regions.</p>
 	</div>
 	
 	
@@ -684,7 +451,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 INSITEO. All rights reserved. (Last updated: 2014-11-19)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

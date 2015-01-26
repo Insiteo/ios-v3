@@ -1,6 +1,7 @@
 # Insiteo iOS sample application
 =======
 
+> Please unzip the lib/InsiteoAPI.zip archive before using the sampleApp project.
 
 Insiteo is a provider of indoor location based services such as :
 

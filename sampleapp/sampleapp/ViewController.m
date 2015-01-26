@@ -270,7 +270,7 @@ int const ACTIONSHEET_ACTIONS = 1;
                 for (ISZonePoi * zonePoi in zonesPois) {
                     //And add a new one
                     ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalPoiId andLabel:@"My label" andMetersPosition:nil andWindowDisplayed:YES andLabelDisplayed:YES];
-                    [m_mapView addRTO:rto inZone:zonePoi.zoneId];
+                    [m_mapView addRTO:rto inZone:zonePoi.zoneId withOffset:cc3v(zonePoi.offset.x, zonePoi.offset.y, 0)];
                     [rto release];
                 }
                 
@@ -336,7 +336,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 
 - (void)onLocationReceived:(ISLocation *)location {
     NSLog(@"%@", NSLocalizedString(@"STR_LOC_RECEIVED", nil));
-    [m_mapView centerMapWithPosition:location.position andAnimated:YES];
+//    [m_mapView centerMapWithPosition:location.position andAnimated:YES];
 }
 
 - (void)onAzimuthReceived:(float)azimuth {

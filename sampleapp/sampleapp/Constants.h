@@ -13,7 +13,7 @@
 #define VERSION 1
 #define LANGUAGE @"fr"
 #define SERVER ISEServerTypeTest
-#define RENDER_MODE ISERenderMode3D
+#define RENDER_MODE ISERenderMode2D
 
 #ifndef ASK_FOR_UPDATE
 #define ASK_FOR_UPDATE 0

@@ -127,38 +127,22 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/executeSelect:andLock:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/executeSelect:andHandler:</TokenIdentifier>
 			<Abstract type="html">Method used to execute an SQL SELECT query.</Abstract>
 			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
 			
-			<Declaration>- (sqlite3_stmt *)executeSelect:(NSString *)request andLock:(Boolean)lock</Declaration>
+			<Declaration>- (void)executeSelect:(NSString *)request andHandler:(ISRODBHelperSelectHandler)handler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>request</Name>
 					<Abstract type="html">The NSString sqlite query.</Abstract>
 				</Parameter><Parameter>
-					<Name>lock</Name>
-					<Abstract type="html">Boolean used to know if we need to lock the database during the query.</Abstract>
+					<Name>handler</Name>
+					<Abstract type="html">SQL statement handler.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The resulted sqlite statement (rows).</Abstract></ReturnValue>
-			<Anchor>//api/name/executeSelect:andLock:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISRODBHelper/executeSelect:</TokenIdentifier>
-			<Abstract type="html">Method used to execute an SQL SELECT query.</Abstract>
-			<DeclaredIn>ISRODBHelper.h</DeclaredIn>			
 			
-			<Declaration>- (sqlite3_stmt *)executeSelect:(NSString *)request</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>request</Name>
-					<Abstract type="html">The NSString sqlite query.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The resulted sqlite statement (rows).</Abstract></ReturnValue>
-			<Anchor>//api/name/executeSelect:</Anchor>
+			<Anchor>//api/name/executeSelect:andHandler:</Anchor>
 		</Token>
 		
 		<Token>

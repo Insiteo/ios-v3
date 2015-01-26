@@ -74,5 +74,21 @@
 			<Anchor>//api/name/map3DViewWithFrame:andMapListener:</Anchor>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMap3DView/getGfxZoneWithZoneId:</TokenIdentifier>
+			<Abstract type="html">Method used to get an ISGfxZone according to its ISZone entity identifier.</Abstract>
+			<DeclaredIn>ISMap3DView.h</DeclaredIn>			
+			
+			<Declaration>- (ISGfxZone *)getGfxZoneWithZoneId:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">ISZone entity identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The corresponding ISGfxZone if exists, otherwise nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/getGfxZoneWithZoneId:</Anchor>
+		</Token>
+		
 	</File>
 </Tokens>

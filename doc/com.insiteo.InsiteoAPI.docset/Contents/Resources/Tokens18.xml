@@ -452,6 +452,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceArea/setEventType:</TokenIdentifier>
+			<Abstract type="html">Current geofencing zone state.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEGeofenceEventType eventType</Declaration>
+			
+			
+			<Anchor>//api/name/eventType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceArea/eventType</TokenIdentifier>
+			<Abstract type="html">Current geofencing zone state.</Abstract>
+			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEGeofenceEventType eventType</Declaration>
+			
+			
+			<Anchor>//api/name/eventType</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/ISGeofenceArea/ISGeofenceAreaWithPBZone:</TokenIdentifier>
 			<Abstract type="html">Static main constructor.</Abstract>
 			<DeclaredIn>ISGeofenceArea.h</DeclaredIn>			
