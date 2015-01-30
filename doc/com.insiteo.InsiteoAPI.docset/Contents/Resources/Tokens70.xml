@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISSite.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISSite</TokenIdentifier>
+			<Abstract type="html">Class used to represent an INSITEO launched site.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>
+			
+			<NodeRef refid="70"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setUserSite:</TokenIdentifier>
+			<Abstract type="html">Related user site.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISUserSite *userSite</Declaration>
+			
+			
+			<Anchor>//api/name/userSite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/userSite</TokenIdentifier>
+			<Abstract type="html">Related user site.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISUserSite *userSite</Declaration>
+			
+			
+			<Anchor>//api/name/userSite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setLastStartDate:</TokenIdentifier>
+			<Abstract type="html">Last start date.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDate *lastStartDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastStartDate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/lastStartDate</TokenIdentifier>
+			<Abstract type="html">Last start date.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDate *lastStartDate</Declaration>
+			
+			
+			<Anchor>//api/name/lastStartDate</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setMapRoot:</TokenIdentifier>
+			<Abstract type="html">The current root map.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISMap *mapRoot</Declaration>
+			
+			
+			<Anchor>//api/name/mapRoot</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/mapRoot</TokenIdentifier>
+			<Abstract type="html">The current root map.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISMap *mapRoot</Declaration>
+			
+			
+			<Anchor>//api/name/mapRoot</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setMaps:</TokenIdentifier>
+			<Abstract type="html">All the maps stored in an NSDictionnary (key &lt;=&gt; map identifier : NSNumber).</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *maps</Declaration>
+			
+			
+			<Anchor>//api/name/maps</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/maps</TokenIdentifier>
+			<Abstract type="html">All the maps stored in an NSDictionnary (key &lt;=&gt; map identifier : NSNumber).</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *maps</Declaration>
+			
+			
+			<Anchor>//api/name/maps</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setZones:</TokenIdentifier>
+			<Abstract type="html">All maps zones.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *zones</Declaration>
+			
+			
+			<Anchor>//api/name/zones</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/zones</TokenIdentifier>
+			<Abstract type="html">All maps zones.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSDictionary *zones</Declaration>
+			
+			
+			<Anchor>//api/name/zones</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setSiteId:</TokenIdentifier>
+			<Abstract type="html">Application site identifier.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/siteId</TokenIdentifier>
+			<Abstract type="html">Application site identifier.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setLanguage:</TokenIdentifier>
+			<Abstract type="html">Application language.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/language</TokenIdentifier>
+			<Abstract type="html">Application language.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setApplicationVersion:</TokenIdentifier>
+			<Abstract type="html">Application version.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/applicationVersion</TokenIdentifier>
+			<Abstract type="html">Application version.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
+			
+			
+			<Anchor>//api/name/applicationVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setMapServer:</TokenIdentifier>
+			<Abstract type="html">Maps resources path.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *mapServer</Declaration>
+			
+			
+			<Anchor>//api/name/mapServer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/mapServer</TokenIdentifier>
+			<Abstract type="html">Maps resources path.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *mapServer</Declaration>
+			
+			
+			<Anchor>//api/name/mapServer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/setIsStarted:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the online initialization succeeded.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite) Boolean isStarted</Declaration>
+			
+			
+			<Anchor>//api/name/isStarted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISSite/isStarted</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the online initialization succeeded.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>@property (readwrite) Boolean isStarted</Declaration>
+			
+			
+			<Anchor>//api/name/isStarted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/siteVersionString</TokenIdentifier>
+			<Abstract type="html">Method called to get an NSString representing the site version.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)siteVersionString</Declaration>
+			
+			<ReturnValue><Abstract type="html">Related NSString (ex: @&quot;56/1/fr&quot;).</Abstract></ReturnValue>
+			<Anchor>//api/name/siteVersionString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getRODataPath</TokenIdentifier>
+			<Abstract type="html">Method used to get the site readonly data path.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)getRODataPath</Declaration>
+			
+			
+			<Anchor>//api/name/getRODataPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getRWDataPath</TokenIdentifier>
+			<Abstract type="html">Method used to get the site readwrite data path.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)getRWDataPath</Declaration>
+			
+			
+			<Anchor>//api/name/getRWDataPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getPathWithPackageType:</TokenIdentifier>
+			<Abstract type="html">Method used to get the absolute path of a package.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)getPathWithPackageType:(ISEPackageType)packageType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Absolute package path.</Abstract></ReturnValue>
+			<Anchor>//api/name/getPathWithPackageType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getCurrentPackageVersionWithPackageType:</TokenIdentifier>
+			<Abstract type="html">Method used to get current version of a package.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (int)getCurrentPackageVersionWithPackageType:(ISEPackageType)packageType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The current package version.</Abstract></ReturnValue>
+			<Anchor>//api/name/getCurrentPackageVersionWithPackageType:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getMapWithMapId:</TokenIdentifier>
+			<Abstract type="html">Method called to get a specific map with its identifier.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (ISMap *)getMapWithMapId:(int)mapId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">Wanted map identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related ISMap.</Abstract></ReturnValue>
+			<Anchor>//api/name/getMapWithMapId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getZoneWithId:</TokenIdentifier>
+			<Abstract type="html">Method called to get a specific zone with its identifier.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (ISZone *)getZoneWithId:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Wanted zone identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The related ISZone.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZoneWithId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getZonesWithMapId:</TokenIdentifier>
+			<Abstract type="html">Method called to get all the zones into a given map.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)getZonesWithMapId:(int)mapId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mapId</Name>
+					<Abstract type="html">Wanted map identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of ISZone.</Abstract></ReturnValue>
+			<Anchor>//api/name/getZonesWithMapId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/getSortedMaps</TokenIdentifier>
+			<Abstract type="html">Method used to get all site sorted maps.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)getSortedMaps</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array of sorted ISMap.</Abstract></ReturnValue>
+			<Anchor>//api/name/getSortedMaps</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISSite/hasPackage:</TokenIdentifier>
+			<Abstract type="html">Method used to check if a package of the given type is already installed.</Abstract>
+			<DeclaredIn>ISSite.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasPackage:(ISEPackageType)packageType</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>packageType</Name>
+					<Abstract type="html">Package type to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if it exists, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPackage:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

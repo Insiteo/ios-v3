@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/ISGeofenceAreaRenderer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGeofenceAreaRenderer</TokenIdentifier>
+			<Abstract type="html">Renderer used to display ISGeofenceArea (only for debug and in 2D).</Abstract>
+			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceAreaRenderer/setLayer:</TokenIdentifier>
+			<Abstract type="html">Current displayed layer.</Abstract>
+			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) CCLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceAreaRenderer/layer</TokenIdentifier>
+			<Abstract type="html">Current displayed layer.</Abstract>
+			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (assign) CCLayer *layer</Declaration>
+			
+			
+			<Anchor>//api/name/layer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceAreaRenderer/setGfxGeofenceAreas:</TokenIdentifier>
+			<Abstract type="html">All ISGfxGeofenceArea displayed.</Abstract>
+			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *gfxGeofenceAreas</Declaration>
+			
+			
+			<Anchor>//api/name/gfxGeofenceAreas</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceAreaRenderer/gfxGeofenceAreas</TokenIdentifier>
+			<Abstract type="html">All ISGfxGeofenceArea displayed.</Abstract>
+			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *gfxGeofenceAreas</Declaration>
+			
+			
+			<Anchor>//api/name/gfxGeofenceAreas</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
