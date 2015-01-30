@@ -1,325 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPRTO.html">
+	<File path="Protocols/ISPRTOListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPRTO</TokenIdentifier>
-			<Abstract type="html">Protocol used to represent the beahviour of an RTO (rendering and touch).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPRTOListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to specify the behaviour of an RTO touch listener.</Abstract>
+			<DeclaredIn>ISPRTOListener.h</DeclaredIn>
 			
 			<NodeRef refid="95"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setRtoId:</TokenIdentifier>
-			<Abstract type="html">A RTO unique identifier for the current class.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTOListener/onRTOSelected:andZone:</TokenIdentifier>
+			<Abstract type="html">Method called when an RTO is selected.</Abstract>
+			<DeclaredIn>ISPRTOListener.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) int rtoId</Declaration>
-			
-			
-			<Anchor>//api/name/rtoId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPRTO/rtoId</TokenIdentifier>
-			<Abstract type="html">A RTO unique identifier for the current class.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) int rtoId</Declaration>
-			
-			
-			<Anchor>//api/name/rtoId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setZonePoi:</TokenIdentifier>
-			<Abstract type="html">Related zone association (could be nil).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISZonePoi *zonePoi</Declaration>
-			
-			
-			<Anchor>//api/name/zonePoi</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPRTO/zonePoi</TokenIdentifier>
-			<Abstract type="html">Related zone association (could be nil).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISZonePoi *zonePoi</Declaration>
-			
-			
-			<Anchor>//api/name/zonePoi</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setMapId:</TokenIdentifier>
-			<Abstract type="html">RTO related map identifier (@see ISERTOMapId for general).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) int mapId</Declaration>
-			
-			
-			<Anchor>//api/name/mapId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPRTO/mapId</TokenIdentifier>
-			<Abstract type="html">RTO related map identifier (@see ISERTOMapId for general).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) int mapId</Declaration>
-			
-			
-			<Anchor>//api/name/mapId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/cloneRTO</TokenIdentifier>
-			<Abstract type="html">Method called to clone an RTO (used when adding an RTO in several zones).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>- (id&lt;ISPRTO&gt;)cloneRTO</Declaration>
-			
-			<ReturnValue><Abstract type="html">The result cloned RTO.</Abstract></ReturnValue>
-			<Anchor>//api/name/cloneRTO</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setDisplayEnabled:</TokenIdentifier>
-			<Abstract type="html">Method called show or hide an RTO.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>- (void)setDisplayEnabled:(Boolean)displayEnabled</Declaration>
+			<Declaration>- (void)onRTOSelected:(id&lt;ISPRTO&gt;)rto andZone:(ISZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>displayEnabled</Name>
-					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; for a visible RTO, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
+					<Name>rto</Name>
+					<Abstract type="html">The related RTO.</Abstract>
+				</Parameter><Parameter>
+					<Name>zone</Name>
+					<Abstract type="html">The related zone (could be nil).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setDisplayEnabled:</Anchor>
+			<Anchor>//api/name/onRTOSelected:andZone:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</TokenIdentifier>
-			<Abstract type="html">Method called to draw an RTO with a ratio and an offset.
-To obtain object position on screen, do (objectpositioninmeter.x  aRatio + aOffset.x &lt;b&gt;AND&lt;/b&gt; aOffset.y - objectpositioninmeter.x  aRatio).
-If this object has no position (ie: ISPRTO is put in a zone), simply draw it at aOffset.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTOListener/onRTOReleased:andZone:</TokenIdentifier>
+			<Abstract type="html">Method called when an RTO is released.</Abstract>
+			<DeclaredIn>ISPRTOListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)render2DWithLayer:(CCLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle andPriority:(int)priority</Declaration>
+			<Declaration>- (void)onRTOReleased:(id&lt;ISPRTO&gt;)rto andZone:(ISZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">The destination Cocos2d layer where this object should be added to.</Abstract>
+					<Name>rto</Name>
+					<Abstract type="html">The related RTO.</Abstract>
 				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">The real/screen coord ratio, this is used to transform the object&apos;s real coords into screen coords.</Abstract>
-				</Parameter><Parameter>
-					<Name>offset</Name>
-					<Abstract type="html">In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</Abstract>
-				</Parameter><Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</Abstract>
-				</Parameter><Parameter>
-					<Name>priority</Name>
-					<Abstract type="html">The renderer priority, used as Z by Cocos2d.</Abstract>
+					<Name>zone</Name>
+					<Abstract type="html">The related zone (could be nil).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</Anchor>
+			<Anchor>//api/name/onRTOReleased:andZone:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/remove2DFromLayer:</TokenIdentifier>
-			<Abstract type="html">Method called to remove an RTO from the Cocos2d layer.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTOListener/onRTOClicked:andZone:</TokenIdentifier>
+			<Abstract type="html">Method called when an RTO is clicked.</Abstract>
+			<DeclaredIn>ISPRTOListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)remove2DFromLayer:(CCLayer *)layer</Declaration>
+			<Declaration>- (void)onRTOClicked:(id&lt;ISPRTO&gt;)rto andZone:(ISZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">The current Cocos2d layer used.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/remove2DFromLayer:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setResources</TokenIdentifier>
-			<Abstract type="html">Method called to initialize RTO resources such as images, labels etc...</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>- (void)setResources</Declaration>
-			
-			
-			<Anchor>//api/name/setResources</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/onTouchDown:</TokenIdentifier>
-			<Abstract type="html">Method called when an RTO was touched down.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>- (ISETouchObjectResult)onTouchDown:(ISTouch *)touch</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>touch</Name>
-					<Abstract type="html">Object that contains iOS touch information.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Touch event handling result.</Abstract></ReturnValue>
-			<Anchor>//api/name/onTouchDown:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/onTouchMove:</TokenIdentifier>
-			<Abstract type="html">Method called when an RTO was touch-moved.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>- (ISETouchObjectResult)onTouchMove:(ISTouch *)touch</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>touch</Name>
-					<Abstract type="html">Object that contains iOS touch information.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Touch event handling result.</Abstract></ReturnValue>
-			<Anchor>//api/name/onTouchMove:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/onTouchUp:</TokenIdentifier>
-			<Abstract type="html">Method called when an RTO was touched up.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>- (ISETouchObjectResult)onTouchUp:(ISTouch *)touch</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>touch</Name>
-					<Abstract type="html">Object that contains iOS touch information.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Touch event handling result.</Abstract></ReturnValue>
-			<Anchor>//api/name/onTouchUp:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setRenderMode:</TokenIdentifier>
-			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign) ISERenderMode renderMode</Declaration>
-			
-			
-			<Anchor>//api/name/renderMode</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPRTO/renderMode</TokenIdentifier>
-			<Abstract type="html">Current map render mode (2D or 3D).</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign) ISERenderMode renderMode</Declaration>
-			
-			
-			<Anchor>//api/name/renderMode</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setZoneOffset:</TokenIdentifier>
-			<Abstract type="html">Zone offset in meters</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CC3Vector zoneOffset</Declaration>
-			
-			
-			<Anchor>//api/name/zoneOffset</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPRTO/zoneOffset</TokenIdentifier>
-			<Abstract type="html">Zone offset in meters</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CC3Vector zoneOffset</Declaration>
-			
-			
-			<Anchor>//api/name/zoneOffset</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/setObject3d:</TokenIdentifier>
-			<Abstract type="html">3D Object to handle in case of 3D rendering.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) CC3Node *object3d</Declaration>
-			
-			
-			<Anchor>//api/name/object3d</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/ISPRTO/object3d</TokenIdentifier>
-			<Abstract type="html">3D Object to handle in case of 3D rendering.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) CC3Node *object3d</Declaration>
-			
-			
-			<Anchor>//api/name/object3d</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</TokenIdentifier>
-			<Abstract type="html">Method called to handle 3D rendering stuff.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
-			
-			<Declaration>- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andAngle:(float)angle andPriority:(int)priority</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scene</Name>
-					<Abstract type="html">Current 3D scene.</Abstract>
+					<Name>rto</Name>
+					<Abstract type="html">The related RTO.</Abstract>
 				</Parameter><Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">Layer where the RTO is.</Abstract>
-				</Parameter><Parameter>
-					<Name>map</Name>
-					<Abstract type="html">Current displayed map.</Abstract>
-				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Current ratio (depending on the current zoom level).</Abstract>
-				</Parameter><Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">Current angle.</Abstract>
-				</Parameter><Parameter>
-					<Name>priority</Name>
-					<Abstract type="html">The renderer priority, used as Z by Cocos2d.</Abstract>
+					<Name>zone</Name>
+					<Abstract type="html">The related zone (could be nil).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</Anchor>
+			<Anchor>//api/name/onRTOClicked:andZone:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTO/remove3DFromLayer:</TokenIdentifier>
-			<Abstract type="html">Method called to remove an RTO from the Cocos3d layer.</Abstract>
-			<DeclaredIn>ISPRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPRTOListener/onRTOMoved:andZone:</TokenIdentifier>
+			<Abstract type="html">Method called when an RTO is moved.</Abstract>
+			<DeclaredIn>ISPRTOListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)remove3DFromLayer:(CC3Node *)layer</Declaration>
+			<Declaration>- (void)onRTOMoved:(id&lt;ISPRTO&gt;)rto andZone:(ISZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">The current Cocos3d layer used.</Abstract>
+					<Name>rto</Name>
+					<Abstract type="html">The related RTO.</Abstract>
+				</Parameter><Parameter>
+					<Name>zone</Name>
+					<Abstract type="html">The related zone (could be nil).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/remove3DFromLayer:</Anchor>
+			<Anchor>//api/name/onRTOMoved:andZone:</Anchor>
 		</Token>
 		
 	</File>

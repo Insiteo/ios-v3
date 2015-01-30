@@ -1,58 +1,651 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGeofenceAreaRenderer.html">
+	<File path="Classes/ISGeofenceProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGeofenceAreaRenderer</TokenIdentifier>
-			<Abstract type="html">Renderer used to display ISGeofenceArea (only for debug and in 2D).</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGeofenceProvider</TokenIdentifier>
+			<Abstract type="html">This class handles the geofencing process. You can retrieve an instance of it by calling getModule:GEOFENCING on your location provider. It provides a way to be notified when location is detected in a certain area (see ISGeofenceZone), defined on Insiteo servers. To use this class, you just have to call setListener(ISPGeofenceListener, and start the location. The listener will then receive notification each time location enter/stay/leave an area.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>
 			
 			<NodeRef refid="19"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceAreaRenderer/setLayer:</TokenIdentifier>
-			<Abstract type="html">Current displayed layer.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/setListener:</TokenIdentifier>
+			<Abstract type="html">Geofencing notifications listener.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) CCLayer *layer</Declaration>
+			<Declaration>@property (assign) id&lt;ISPGeofenceListener&gt; listener</Declaration>
 			
 			
-			<Anchor>//api/name/layer</Anchor>
+			<Anchor>//api/name/listener</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceAreaRenderer/layer</TokenIdentifier>
-			<Abstract type="html">Current displayed layer.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceProvider/listener</TokenIdentifier>
+			<Abstract type="html">Geofencing notifications listener.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) CCLayer *layer</Declaration>
+			<Declaration>@property (assign) id&lt;ISPGeofenceListener&gt; listener</Declaration>
 			
 			
-			<Anchor>//api/name/layer</Anchor>
+			<Anchor>//api/name/listener</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceAreaRenderer/setGfxGeofenceAreas:</TokenIdentifier>
-			<Abstract type="html">All ISGfxGeofenceArea displayed.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/setIsInitialized:</TokenIdentifier>
+			<Abstract type="html">Boolean use to know if the provider is initialized.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableDictionary *gfxGeofenceAreas</Declaration>
+			<Declaration>@property (nonatomic, readonly) Boolean isInitialized</Declaration>
 			
 			
-			<Anchor>//api/name/gfxGeofenceAreas</Anchor>
+			<Anchor>//api/name/isInitialized</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceAreaRenderer/gfxGeofenceAreas</TokenIdentifier>
-			<Abstract type="html">All ISGfxGeofenceArea displayed.</Abstract>
-			<DeclaredIn>ISGeofenceAreaRenderer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceProvider/isInitialized</TokenIdentifier>
+			<Abstract type="html">Boolean use to know if the provider is initialized.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableDictionary *gfxGeofenceAreas</Declaration>
+			<Declaration>@property (nonatomic, readonly) Boolean isInitialized</Declaration>
 			
 			
-			<Anchor>//api/name/gfxGeofenceAreas</Anchor>
+			<Anchor>//api/name/isInitialized</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/setRenderer:</TokenIdentifier>
+			<Abstract type="html">Geofence area Renderer.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISGeofenceAreaRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGeofenceProvider/renderer</TokenIdentifier>
+			<Abstract type="html">Geofence area Renderer.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISGeofenceAreaRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/geofenceAreaExistsWithGuid:</TokenIdentifier>
+			<Abstract type="html">Method used to know if a ISGeofenceArea exists with a specified guid.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)geofenceAreaExistsWithGuid:(NSString *)guid</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">Corresponding area guid.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the area already exists; otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/geofenceAreaExistsWithGuid:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/geofenceAreaExistsWithZoneId:</TokenIdentifier>
+			<Abstract type="html">Method used to know if a ISGeofenceArea exists with a specified zone identifier.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)geofenceAreaExistsWithZoneId:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Corresponding area zone identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the area already exists; otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/geofenceAreaExistsWithZoneId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/geofenceAreaExistsWithZonePoi:</TokenIdentifier>
+			<Abstract type="html">Method used to know if a ISGeofenceArea exists with a specified Zone/Poi association.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)geofenceAreaExistsWithZonePoi:(ISZonePoi *)zonePoi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Zone/Poi association.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the area already exists; otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/geofenceAreaExistsWithZonePoi:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/geofenceAreaExistsWithArea:</TokenIdentifier>
+			<Abstract type="html">Method used to know if a ISGeofenceArea exists.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)geofenceAreaExistsWithArea:(ISGeofenceArea *)area</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>area</Name>
+					<Abstract type="html">Corresponding area.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the area already exists; otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/geofenceAreaExistsWithArea:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZoneId:andLabel:andMessage:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values polygon = nil, defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andLabel:(NSString *)label andMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">zone identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZoneId:andLabel:andMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZoneId:andPolygon:andLabel:andMessage:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">zone identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>polygon</Name>
+					<Abstract type="html">Wanted polygon (NSArray of ISPosition. If nil the used polygon will be set according to the geopush default area generation.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZoneId:andPolygon:andLabel:andMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZoneId:andPolygon:andLabel:andMessage:andEventTime:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithZoneId:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">zone identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>polygon</Name>
+					<Abstract type="html">Wanted polygon (NSArray of ISPosition. If nil the used polygon will be set according to the geopush default area generation.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventTime</Name>
+					<Abstract type="html">The time used to trigged the geofencing events.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZoneId:andPolygon:andLabel:andMessage:andEventTime:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZoneId:andPolygon:andLabel:andMessage:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</TokenIdentifier>
+			<Abstract type="html">Creates a new ISGeofenceArea for the given zone. The area will be constructed with the given parameters.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enterEnabled andEnterTime:(float)enterTime andStayEnabled:(Boolean)stayEnabled andStayTime:(float)stayTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andDefaultGeoWidth:(float)defaultGeoWidth</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">zone identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>polygon</Name>
+					<Abstract type="html">Wanted polygon (NSArray of ISPosition. If nil the used polygon will be set according to the geopush default area generation.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>enterEnabled</Name>
+					<Abstract type="html">True if entered event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>enterTime</Name>
+					<Abstract type="html">The threshold time to trigger the entered event.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayEnabled</Name>
+					<Abstract type="html">True if stayed event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayTime</Name>
+					<Abstract type="html">The threshold time to trigger the stayed event.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveEnabled</Name>
+					<Abstract type="html">True if leave event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveTime</Name>
+					<Abstract type="html">The threshold time to trigger the leave event.</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultGeoWidth</Name>
+					<Abstract type="html">The default geofence depth.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZoneId:andPolygon:andLabel:andMessage:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZonePoi:andLabel:andMessage:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values polygon = nil, defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andLabel:(NSString *)label andMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Related Zone/Poi association (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZonePoi:andLabel:andMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZonePoi:andPolygon:andLabel:andMessage:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv, enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv and enteredTime = stayedTime = leaveTime = value defined in geoPush.csv.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Related Zone/Poi association (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>polygon</Name>
+					<Abstract type="html">Wanted polygon (NSArray of ISPosition. If nil the used polygon will be set according to the geopush default area generation.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification..</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZonePoi:andPolygon:andLabel:andMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZonePoi:andPolygon:andLabel:andMessage:andEventTime:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithZonePoi:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth: with the following values defaultGeoWidth = value defined in geoPush.csv and enteredEnabled = stayedEnabled = leaveEnabled = value defined in geoPush.csv.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Related Zone/Poi association (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>polygon</Name>
+					<Abstract type="html">Wanted polygon (NSArray of ISPosition. If nil the used polygon will be set according to the geopush default area generation.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventTime</Name>
+					<Abstract type="html">The time used to trigged the geofencing events.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZonePoi:andPolygon:andLabel:andMessage:andEventTime:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithZonePoi:andPolygon:andLabel:andMessage:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</TokenIdentifier>
+			<Abstract type="html">Creates a new ISGeofenceArea for the given Zone/Poi association. The area will be constructed with the given parameters.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enterEnabled andEnterTime:(float)enterTime andStayEnabled:(Boolean)stayEnabled andStayTime:(float)stayTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andDefaultGeoWidth:(float)defaultGeoWidth</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Related Zone/Poi association (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>polygon</Name>
+					<Abstract type="html">Wanted polygon (NSArray of ISPosition. If nil the used polygon will be set according to the geopush default area generation.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>enterEnabled</Name>
+					<Abstract type="html">True if entered event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>enterTime</Name>
+					<Abstract type="html">The threshold time to trigger the entered event.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayEnabled</Name>
+					<Abstract type="html">True if stayed event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayTime</Name>
+					<Abstract type="html">The threshold time to trigger the stayed event.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveEnabled</Name>
+					<Abstract type="html">True if leave event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveTime</Name>
+					<Abstract type="html">The threshold time to trigger the leave event.</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultGeoWidth</Name>
+					<Abstract type="html">The default geofence depth.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithZonePoi:andPolygon:andLabel:andMessage:andEnterEnabled:andEnterTime:andStayEnabled:andStayTime:andLeaveEnabled:andLeaveTime:andDefaultGeoWidth:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values size = 4 * ISGEOPUSHDEFAULTCUSTOMGEOWIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = ISGEOPUSHDEFAULTEVENT_TIME.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!</Abstract>
+				</Parameter><Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The center of the ISGeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The created ISGeofenceArea or null if it was not properly created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEventTime:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values size = 4 * ISGEOPUSHDEFAULTCUSTOMGEOWIDTH, enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!</Abstract>
+				</Parameter><Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The center of the ISGeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventTime</Name>
+					<Abstract type="html">The time used to trigged the geofencing events.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The created ISGeofenceArea or null if it was not properly created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEventTime:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values size = 4 * ISGEOPUSHDEFAULTCUSTOMGEOWIDTH.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enteredEnabled andEnteredTime:(float)enteredTime andStayedEnabled:(Boolean)stayedEnabled andStayedTime:(float)stayedTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!</Abstract>
+				</Parameter><Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The center of the ISGeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>enteredEnabled</Name>
+					<Abstract type="html">True if entered event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>enteredTime</Name>
+					<Abstract type="html">The threshold time to trigger the entered event.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayedEnabled</Name>
+					<Abstract type="html">True if stayed event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayedTime</Name>
+					<Abstract type="html">The threshold time to trigger the stayed event.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveEnabled</Name>
+					<Abstract type="html">True if leave event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveTime</Name>
+					<Abstract type="html">The threshold time to trigger the leave event.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The created ISGeofenceArea or null if it was not properly created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andSize:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = ISGEOPUSHDEFAULTEVENT_TIME.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andSize:(float)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!</Abstract>
+				</Parameter><Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The center of the ISGeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size for the square.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andSize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEventTime:andSize:</TokenIdentifier>
+			<Abstract type="html">Equivalent to addGeofenceAreaWithGUID:andCenter:andContent:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize: with the following values enteredEnabled = stayedEnabled = leaveEnabled = true and enteredTime = stayedTime = leaveTime = eventTime.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime andSize:(float)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">The guid that should be used for the new ISGeofenceArea. Guid can not be null or empty!</Abstract>
+				</Parameter><Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The center of the ISGeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventTime</Name>
+					<Abstract type="html">The time used to trigged the geofencing events.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size for the square.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The created GeofenceArea or null if it was not properly created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEventTime:andSize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</TokenIdentifier>
+			<Abstract type="html">Creates a new ISGeofenceArea around the given Position. The area will be a square constructed with the given size.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEnterEnabled:(Boolean)enteredEnabled andEnteredTime:(float)enteredTime andStayedEnabled:(Boolean)stayedEnabled andStayedTime:(float)stayedTime andLeaveEnabled:(Boolean)leaveEnabled andLeaveTime:(float)leaveTime andSize:(float)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">The guid that should be used for the new GeofenceArea. Guid can not be nil or empty!</Abstract>
+				</Parameter><Parameter>
+					<Name>center</Name>
+					<Abstract type="html">The center of the GeofenceArea.</Abstract>
+				</Parameter><Parameter>
+					<Name>label</Name>
+					<Abstract type="html">A label that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">A message that can be retrieved when the corresponding ISGeofenceArea fires and that can be used for your custom notification.</Abstract>
+				</Parameter><Parameter>
+					<Name>enteredEnabled</Name>
+					<Abstract type="html">True if entered event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>enteredTime</Name>
+					<Abstract type="html">The threshold time to trigger the entered event.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayedEnabled</Name>
+					<Abstract type="html">True if stayed event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>stayedTime</Name>
+					<Abstract type="html">The threshold time to trigger the stayed event.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveEnabled</Name>
+					<Abstract type="html">True if leave event should be enabled.</Abstract>
+				</Parameter><Parameter>
+					<Name>leaveTime</Name>
+					<Abstract type="html">The threshold time to trigger the leave event.</Abstract>
+				</Parameter><Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size for the square.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The created GeofenceArea or nil if it was not properly created.</Abstract></ReturnValue>
+			<Anchor>//api/name/addGeofenceAreaWithGUID:andCenter:andLabel:andMessage:andEnterEnabled:andEnteredTime:andStayedEnabled:andStayedTime:andLeaveEnabled:andLeaveTime:andSize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/removeGeofenceAreaWithGuid:</TokenIdentifier>
+			<Abstract type="html">Method used to remove a ISGeofenceArea according to its guid.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeGeofenceAreaWithGuid:(NSString *)guid</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>guid</Name>
+					<Abstract type="html">Corresponding area guid to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeGeofenceAreaWithGuid:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/removeGeofenceAreaWithZoneId:</TokenIdentifier>
+			<Abstract type="html">Method used to remove a ISGeofenceArea according to a zone identifier.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeGeofenceAreaWithZoneId:(int)zoneId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zoneId</Name>
+					<Abstract type="html">Corresponding zone identifier to remove from.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeGeofenceAreaWithZoneId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/removeGeofenceAreaWithZonePoi:</TokenIdentifier>
+			<Abstract type="html">Method used to remove a ISGeofenceArea according to a Zone/Poi association.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zonePoi</Name>
+					<Abstract type="html">Corresponding Zone/Poi association to remove from.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeGeofenceAreaWithZonePoi:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGeofenceProvider/removeGeofenceAreaWithArea:</TokenIdentifier>
+			<Abstract type="html">Method used to remove a ISGeofenceArea.</Abstract>
+			<DeclaredIn>ISGeofenceProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeGeofenceAreaWithArea:(ISGeofenceArea *)area</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>area</Name>
+					<Abstract type="html">Area to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeGeofenceAreaWithArea:</Anchor>
 		</Token>
 		
 	</File>

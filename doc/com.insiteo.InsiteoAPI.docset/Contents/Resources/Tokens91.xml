@@ -1,49 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPMeetMeListener.html">
+	<File path="Protocols/ISPMeetMeRequestListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPMeetMeListener</TokenIdentifier>
-			<Abstract type="html">Protocol used to handle general MeetMe events.</Abstract>
-			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPMeetMeRequestListener</TokenIdentifier>
+			<Abstract type="html">Procotol used to handle MeetMe request events.</Abstract>
+			<DeclaredIn>ISPMeetMeRequestListener.h</DeclaredIn>
 			
 			<NodeRef refid="91"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onPersonsReceived:andGroups:</TokenIdentifier>
-			<Abstract type="html">Method called when new persons and new groups are available.</Abstract>
-			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeRequestListener/onMeetMeRequestDoneWithSuccess:andRequest:andError:</TokenIdentifier>
+			<Abstract type="html">Method called when a MeetMe request succeeded.</Abstract>
+			<DeclaredIn>ISPMeetMeRequestListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onPersonsReceived:(NSDictionary *)persons andGroups:(NSDictionary *)groups</Declaration>
+			<Declaration>- (void)onMeetMeRequestDoneWithSuccess:(Boolean)success andRequest:(ISAbstractMeetMeRequest *)request andError:(ISInsiteoError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>persons</Name>
-					<Abstract type="html">The new available persons.</Abstract>
+					<Name>success</Name>
+					<Abstract type="html">Boolean used to know if the request succeeded.</Abstract>
 				</Parameter><Parameter>
-					<Name>groups</Name>
-					<Abstract type="html">The new available groups.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onPersonsReceived:andGroups:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPMeetMeListener/onMeetMeError:</TokenIdentifier>
-			<Abstract type="html">Method called when a MeetMe error occured.</Abstract>
-			<DeclaredIn>ISPMeetMeListener.h</DeclaredIn>			
-			
-			<Declaration>- (void)onMeetMeError:(ISInsiteoError *)error</Declaration>
-			<Parameters>
-				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">The related request.</Abstract>
+				</Parameter><Parameter>
 					<Name>error</Name>
-					<Abstract type="html">The related ISInsiteoError (code, message).</Abstract>
+					<Abstract type="html">The related error if success == false.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onMeetMeError:</Anchor>
+			<Anchor>//api/name/onMeetMeRequestDoneWithSuccess:andRequest:andError:</Anchor>
 		</Token>
 		
 	</File>

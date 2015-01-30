@@ -12,11 +12,121 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setLabel:</TokenIdentifier>
-			<Abstract type="html">Custom Beacon Region label.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setGuid:</TokenIdentifier>
+			<Abstract type="html">Beacon Region unique identifier.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain, readonly) NSString *label</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/guid</TokenIdentifier>
+			<Abstract type="html">Beacon Region unique identifier.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			
+			
+			<Anchor>//api/name/guid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setSiteId:</TokenIdentifier>
+			<Abstract type="html">Beacon Region related site identifier.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/siteId</TokenIdentifier>
+			<Abstract type="html">Beacon Region related site identifier.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setServerType:</TokenIdentifier>
+			<Abstract type="html">Beacon Region related server type.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/serverType</TokenIdentifier>
+			<Abstract type="html">Beacon Region related server type.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setExternalId:</TokenIdentifier>
+			<Abstract type="html">Beacon Region external id (custom attribute).</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalId</Declaration>
+			
+			
+			<Anchor>//api/name/externalId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/externalId</TokenIdentifier>
+			<Abstract type="html">Beacon Region external id (custom attribute).</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalId</Declaration>
+			
+			
+			<Anchor>//api/name/externalId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setUuid:</TokenIdentifier>
+			<Abstract type="html">Beacon Region UUID.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/uuid</TokenIdentifier>
+			<Abstract type="html">Beacon Region UUID.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *uuid</Declaration>
+			
+			
+			<Anchor>//api/name/uuid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setLabel:</TokenIdentifier>
+			<Abstract type="html">Beacon Region label.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
 			
 			
 			<Anchor>//api/name/label</Anchor>
@@ -24,10 +134,10 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/label</TokenIdentifier>
-			<Abstract type="html">Custom Beacon Region label.</Abstract>
+			<Abstract type="html">Beacon Region label.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain, readonly) NSString *label</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
 			
 			
 			<Anchor>//api/name/label</Anchor>
@@ -35,7 +145,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setMessage:</TokenIdentifier>
-			<Abstract type="html">Custom Beacon Region message.</Abstract>
+			<Abstract type="html">Beacon Region message.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *message</Declaration>
@@ -46,7 +156,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/message</TokenIdentifier>
-			<Abstract type="html">Custom Beacon Region message.</Abstract>
+			<Abstract type="html">Beacon Region message.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *message</Declaration>
@@ -56,149 +166,179 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setSiteId:</TokenIdentifier>
-			<Abstract type="html">Beacon Region site ID.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setNonRepetitionTimer:</TokenIdentifier>
+			<Abstract type="html">Beacon Region timer before next notification on entry.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readonly) int siteId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float nonRepetitionTimer</Declaration>
 			
 			
-			<Anchor>//api/name/siteId</Anchor>
+			<Anchor>//api/name/nonRepetitionTimer</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/siteId</TokenIdentifier>
-			<Abstract type="html">Beacon Region site ID.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/nonRepetitionTimer</TokenIdentifier>
+			<Abstract type="html">Beacon Region timer before next notification on entry.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readonly) int siteId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float nonRepetitionTimer</Declaration>
 			
 			
-			<Anchor>//api/name/siteId</Anchor>
+			<Anchor>//api/name/nonRepetitionTimer</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setTimer:</TokenIdentifier>
-			<Abstract type="html">Beacon Region time before next entry notification.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setBeacons:</TokenIdentifier>
+			<Abstract type="html">Beacon Region related beacons.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readonly) float timer</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *beacons</Declaration>
 			
 			
-			<Anchor>//api/name/timer</Anchor>
+			<Anchor>//api/name/beacons</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/timer</TokenIdentifier>
-			<Abstract type="html">Beacon Region time before next entry notification.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/beacons</TokenIdentifier>
+			<Abstract type="html">Beacon Region related beacons.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, assign, readonly) float timer</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableArray *beacons</Declaration>
 			
 			
-			<Anchor>//api/name/timer</Anchor>
+			<Anchor>//api/name/beacons</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/initWithProximityUUID:identifier:label:message:timer:siteId:</TokenIdentifier>
-			<Abstract type="html">Initialize a Beacon Region identified by an proximityUUID, an identifier, a label, a message and a timer.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setProximity:</TokenIdentifier>
+			<Abstract type="html">Beacon Region proximity.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithProximityUUID:(NSUUID *)proximityUUID identifier:(NSString *)identifier label:(NSString *)label message:(NSString *)message timer:(float)timer siteId:(int)siteId</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>proximityUUID</Name>
-					<Abstract type="html">The unique ID of the beacon being targeted. This value must not be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">A unique identifier to associate with the returned region object. You use this identifier to differentiate regions within your application. This value must not be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>label</Name>
-					<Abstract type="html">Custom Beacon Region label.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">Custom Beacon Region message.</Abstract>
-				</Parameter><Parameter>
-					<Name>timer</Name>
-					<Abstract type="html">Timer used to limit on beacon region entry notification if user is in the same beacon region.</Abstract>
-				</Parameter><Parameter>
-					<Name>siteId</Name>
-					<Abstract type="html">The site ID associated with the beacon region.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readwrite) CLProximity proximity</Declaration>
 			
-			<Anchor>//api/name/initWithProximityUUID:identifier:label:message:timer:siteId:</Anchor>
+			
+			<Anchor>//api/name/proximity</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/initWithProximityUUID:major:identifier:label:message:timer:siteId:</TokenIdentifier>
-			<Abstract type="html">Initialize a Beacon Region identified by an proximityUUID, an identifier, a major value, a label, a message and a timer.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/proximity</TokenIdentifier>
+			<Abstract type="html">Beacon Region proximity.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithProximityUUID:(NSUUID *)proximityUUID major:(CLBeaconMajorValue)major identifier:(NSString *)identifier label:(NSString *)label message:(NSString *)message timer:(float)timer siteId:(int)siteId</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>proximityUUID</Name>
-					<Abstract type="html">The unique ID of the beacon being targeted. This value must not be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>major</Name>
-					<Abstract type="html">The major value that you use to identify one or more beacons.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">A unique identifier to associate with the returned region object. You use this identifier to differentiate regions within your application. This value must not be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>label</Name>
-					<Abstract type="html">Custom Beacon Region label.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">Custom Beacon Region message.</Abstract>
-				</Parameter><Parameter>
-					<Name>timer</Name>
-					<Abstract type="html">Timer used to limit on beacon region entry notification if user is in the same beacon region.</Abstract>
-				</Parameter><Parameter>
-					<Name>siteId</Name>
-					<Abstract type="html">The site ID associated with the beacon region.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readwrite) CLProximity proximity</Declaration>
 			
-			<Anchor>//api/name/initWithProximityUUID:major:identifier:label:message:timer:siteId:</Anchor>
+			
+			<Anchor>//api/name/proximity</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/initWithProximityUUID:major:minor:identifier:label:message:timer:siteId:</TokenIdentifier>
-			<Abstract type="html">Initialize a Beacon Region identified by an proximityUUID, an identifier, a major value, a minor value, a label, a message and a timer.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setForceNotification:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if Insiteo SDK should present a UILocalNotification on entry.</Abstract>
 			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithProximityUUID:(NSUUID *)proximityUUID major:(CLBeaconMajorValue)major minor:(CLBeaconMinorValue)minor identifier:(NSString *)identifier label:(NSString *)label message:(NSString *)message timer:(float)timer siteId:(int)siteId</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>proximityUUID</Name>
-					<Abstract type="html">The unique ID of the beacon being targeted. This value must not be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>major</Name>
-					<Abstract type="html">The major value that you use to identify one or more beacons.</Abstract>
-				</Parameter><Parameter>
-					<Name>minor</Name>
-					<Abstract type="html">The minor value that you use to identify a specific beacon.</Abstract>
-				</Parameter><Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">A unique identifier to associate with the returned region object. You use this identifier to differentiate regions within your application. This value must not be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>label</Name>
-					<Abstract type="html">Custom Beacon Region label.</Abstract>
-				</Parameter><Parameter>
-					<Name>message</Name>
-					<Abstract type="html">Custom Beacon Region message.</Abstract>
-				</Parameter><Parameter>
-					<Name>timer</Name>
-					<Abstract type="html">Timer used to limit on beacon region entry notification if user is in the same beacon region.</Abstract>
-				</Parameter><Parameter>
-					<Name>siteId</Name>
-					<Abstract type="html">The site ID associated with the beacon region.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readwrite) Boolean forceNotification</Declaration>
 			
-			<Anchor>//api/name/initWithProximityUUID:major:minor:identifier:label:message:timer:siteId:</Anchor>
+			
+			<Anchor>//api/name/forceNotification</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/forceNotification</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if Insiteo SDK should present a UILocalNotification on entry.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean forceNotification</Declaration>
+			
+			
+			<Anchor>//api/name/forceNotification</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setFExtra1:</TokenIdentifier>
+			<Abstract type="html">Beacon Region float extra 1.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/fExtra1</TokenIdentifier>
+			<Abstract type="html">Beacon Region float extra 1.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
+			
+			
+			<Anchor>//api/name/fExtra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setExtra1:</TokenIdentifier>
+			<Abstract type="html">Beacon Region String extra 1.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/extra1</TokenIdentifier>
+			<Abstract type="html">Beacon Region String extra 1.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
+			
+			
+			<Anchor>//api/name/extra1</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setExtra2:</TokenIdentifier>
+			<Abstract type="html">Beacon Region String extra 2.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/extra2</TokenIdentifier>
+			<Abstract type="html">Beacon Region String extra 2.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
+			
+			
+			<Anchor>//api/name/extra2</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconRegion/setExtra3:</TokenIdentifier>
+			<Abstract type="html">Beacon Region String extra 3.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconRegion/extra3</TokenIdentifier>
+			<Abstract type="html">Beacon Region String extra 3.</Abstract>
+			<DeclaredIn>ISBeaconRegion.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
+			
+			
+			<Anchor>//api/name/extra3</Anchor>
 		</Token>
 		
 	</File>

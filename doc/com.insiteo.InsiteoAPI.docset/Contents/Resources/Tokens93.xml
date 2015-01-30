@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPMotionListener.html">
+	<File path="Protocols/ISPProtoEventBuilder.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPMotionListener</TokenIdentifier>
-			<Abstract type="html">Protocol used to handle accelerometer events.</Abstract>
-			<DeclaredIn>ISPMotionListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPProtoEventBuilder</TokenIdentifier>
+			<Abstract type="html">Protocol used to handles analytics protobuf events.</Abstract>
+			<DeclaredIn>ISPProtoEventBuilder.h</DeclaredIn>
 			
 			<NodeRef refid="93"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPMotionListener/onMotionAvailable:</TokenIdentifier>
-			<Abstract type="html">Method called when a new motion result is available.</Abstract>
-			<DeclaredIn>ISPMotionListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPProtoEventBuilder/getProtoEvent</TokenIdentifier>
+			<Abstract type="html">Method called to get an abstract event for each analytics event type.</Abstract>
+			<DeclaredIn>ISPProtoEventBuilder.h</DeclaredIn>			
 			
-			<Declaration>- (void)onMotionAvailable:(int)motion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>motion</Name>
-					<Abstract type="html">New motion available.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (PBAnalyticsAbstractEvent *)getProtoEvent</Declaration>
 			
-			<Anchor>//api/name/onMotionAvailable:</Anchor>
+			
+			<Anchor>//api/name/getProtoEvent</Anchor>
 		</Token>
 		
 	</File>

@@ -44,13 +44,9 @@
 	
 	<option value="//api/name/backStrokeThickness">&nbsp;&nbsp;&nbsp;&nbsp;backStrokeThickness</option>
 	
-	<option value="//api/name/embeddedItineraryProvider">&nbsp;&nbsp;&nbsp;&nbsp;embeddedItineraryProvider</option>
-	
 	<option value="//api/name/frontFillColor">&nbsp;&nbsp;&nbsp;&nbsp;frontFillColor</option>
 	
 	<option value="//api/name/frontStrokeThickness">&nbsp;&nbsp;&nbsp;&nbsp;frontStrokeThickness</option>
-	
-	<option value="//api/name/instructionsUpdateNotifyEnabled">&nbsp;&nbsp;&nbsp;&nbsp;instructionsUpdateNotifyEnabled</option>
 	
 	<option value="//api/name/lastItinerary">&nbsp;&nbsp;&nbsp;&nbsp;lastItinerary</option>
 	
@@ -66,9 +62,12 @@
 	
 	<option value="//api/name/selectedFillColor">&nbsp;&nbsp;&nbsp;&nbsp;selectedFillColor</option>
 	
-	<option value="//api/name/sessionId">&nbsp;&nbsp;&nbsp;&nbsp;sessionId</option>
 	
 	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/getVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getVersion</option>
 	
 	
 	
@@ -119,13 +118,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/backStrokeThickness">backStrokeThickness</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/embeddedItineraryProvider">embeddedItineraryProvider</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/frontFillColor">frontFillColor</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/frontStrokeThickness">frontStrokeThickness</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instructionsUpdateNotifyEnabled">instructionsUpdateNotifyEnabled</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastItinerary">lastItinerary</a></span></li>
 	
@@ -141,11 +136,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectedFillColor">selectedFillColor</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sessionId">sessionId</a></span></li>
-	
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getVersion">getVersion</a></span></li>
+	
+</ul></li>
 
 
 
@@ -225,20 +224,6 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/instructionsUpdateNotifyEnabled">&nbsp;&nbsp;instructionsUpdateNotifyEnabled</a></code>
-		<span class="tooltip"><p>Boolean used to know if we have to notify on instructions update event.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/embeddedItineraryProvider">&nbsp;&nbsp;embeddedItineraryProvider</a></code>
-		<span class="tooltip"><p>Embedded itinerary provider.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/lastLocation">&nbsp;&nbsp;lastLocation</a></code>
 		<span class="tooltip"><p>Last location received.</p></span>
 	</span>
@@ -248,13 +233,6 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/lastItinerary">&nbsp;&nbsp;lastItinerary</a></code>
 		<span class="tooltip"><p>Last itinerary computed.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/sessionId">&nbsp;&nbsp;sessionId</a></code>
-		<span class="tooltip"><p>Intern session identifier (used to combine location and itinerary information).</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -320,6 +298,13 @@
 		<span class="tooltip"><p>Last Itinerary request (could be use to cancel last request before asking another one).</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getVersion">+&nbsp;getVersion</a></code>
+		<span class="tooltip"><p>Static method used to know the current itinerary library version.</p></span>
+	</span>
+	
 	
 </li><li>
 	<span class="tooltip">
@@ -473,47 +458,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/embeddedItineraryProvider" title="embeddedItineraryProvider"></a>
-	<h3 class="subsubtitle method-title">embeddedItineraryProvider</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Embedded itinerary provider.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) EmbeddedItineraryProvider *embeddedItineraryProvider</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Embedded itinerary provider.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/frontFillColor" title="frontFillColor"></a>
 	<h3 class="subsubtitle method-title">frontFillColor</h3>
 	
@@ -579,47 +523,6 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Thickness of the itinerary route foreground.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/instructionsUpdateNotifyEnabled" title="instructionsUpdateNotifyEnabled"></a>
-	<h3 class="subsubtitle method-title">instructionsUpdateNotifyEnabled</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Boolean used to know if we have to notify on instructions update event.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) Boolean instructionsUpdateNotifyEnabled</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Boolean used to know if we have to notify on instructions update event.</p>
 	</div>
 	
 	
@@ -923,23 +826,36 @@
 	
 </div>
 						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
 						<div class="section-method">
-	<a name="//api/name/sessionId" title="sessionId"></a>
-	<h3 class="subsubtitle method-title">sessionId</h3>
+	<a name="//api/name/getVersion" title="getVersion"></a>
+	<h3 class="subsubtitle method-title">getVersion</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Intern session identifier (used to combine location and itinerary information).</p>
+		<p>Static method used to know the current itinerary library version.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSNumber *sessionId</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getVersion</code></div>
 
     
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Current itinerary library version.</p>
+	</div>
 	
 	
 	
@@ -947,7 +863,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Intern session identifier (used to combine location and itinerary information).</p>
+		<p>Static method used to know the current itinerary library version.</p>
 	</div>
 	
 	
@@ -965,8 +881,6 @@
 </div>
 						
 					</div>
-					
-					
 					
 					
 					
@@ -1545,7 +1459,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

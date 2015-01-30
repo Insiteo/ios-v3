@@ -1,283 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISMeetMePerson.html">
+	<File path="Classes/ISPackage.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMePerson</TokenIdentifier>
-			<Abstract type="html">Class used to represent a MeetMe person.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISPackage</TokenIdentifier>
+			<Abstract type="html">Class used to represent an INSITEO data package.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>
 			
 			<NodeRef refid="63"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setPosition:</TokenIdentifier>
-			<Abstract type="html">Person position.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setPackageType:</TokenIdentifier>
+			<Abstract type="html">Package type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEPackageType packageType</Declaration>
 			
 			
-			<Anchor>//api/name/position</Anchor>
+			<Anchor>//api/name/packageType</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/position</TokenIdentifier>
-			<Abstract type="html">Person position.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/packageType</TokenIdentifier>
+			<Abstract type="html">Package type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEPackageType packageType</Declaration>
 			
 			
-			<Anchor>//api/name/position</Anchor>
+			<Anchor>//api/name/packageType</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setUserId:</TokenIdentifier>
-			<Abstract type="html">Person unique identifier.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setFileUrl:</TokenIdentifier>
+			<Abstract type="html">URL to download it.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *userId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *fileUrl</Declaration>
 			
 			
-			<Anchor>//api/name/userId</Anchor>
+			<Anchor>//api/name/fileUrl</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/userId</TokenIdentifier>
-			<Abstract type="html">Person unique identifier.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/fileUrl</TokenIdentifier>
+			<Abstract type="html">URL to download it.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *userId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *fileUrl</Declaration>
 			
 			
-			<Anchor>//api/name/userId</Anchor>
+			<Anchor>//api/name/fileUrl</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setExternalUserId:</TokenIdentifier>
-			<Abstract type="html">Person external identifier (could be nil).</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setVersion:</TokenIdentifier>
+			<Abstract type="html">Package version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *externalUserId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int version</Declaration>
 			
 			
-			<Anchor>//api/name/externalUserId</Anchor>
+			<Anchor>//api/name/version</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/externalUserId</TokenIdentifier>
-			<Abstract type="html">Person external identifier (could be nil).</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/version</TokenIdentifier>
+			<Abstract type="html">Package version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *externalUserId</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int version</Declaration>
 			
 			
-			<Anchor>//api/name/externalUserId</Anchor>
+			<Anchor>//api/name/version</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setExternalName:</TokenIdentifier>
-			<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setZipMd5:</TokenIdentifier>
+			<Abstract type="html">Package zip MD5.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *externalName</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *zipMd5</Declaration>
 			
 			
-			<Anchor>//api/name/externalName</Anchor>
+			<Anchor>//api/name/zipMd5</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/externalName</TokenIdentifier>
-			<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/zipMd5</TokenIdentifier>
+			<Abstract type="html">Package zip MD5.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *externalName</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *zipMd5</Declaration>
 			
 			
-			<Anchor>//api/name/externalName</Anchor>
+			<Anchor>//api/name/zipMd5</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setGroupIds:</TokenIdentifier>
-			<Abstract type="html">Groups Id list.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setSize:</TokenIdentifier>
+			<Abstract type="html">Package size.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableIndexSet *groupIds</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int size</Declaration>
 			
 			
-			<Anchor>//api/name/groupIds</Anchor>
+			<Anchor>//api/name/size</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/groupIds</TokenIdentifier>
-			<Abstract type="html">Groups Id list.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/size</TokenIdentifier>
+			<Abstract type="html">Package size.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableIndexSet *groupIds</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int size</Declaration>
 			
 			
-			<Anchor>//api/name/groupIds</Anchor>
+			<Anchor>//api/name/size</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setColor:</TokenIdentifier>
-			<Abstract type="html">Person rendering color.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setSiteId:</TokenIdentifier>
+			<Abstract type="html">Package related site identifier.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) UIColor *color</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
 			
 			
-			<Anchor>//api/name/color</Anchor>
+			<Anchor>//api/name/siteId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/color</TokenIdentifier>
-			<Abstract type="html">Person rendering color.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/siteId</TokenIdentifier>
+			<Abstract type="html">Package related site identifier.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) UIColor *color</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
 			
 			
-			<Anchor>//api/name/color</Anchor>
+			<Anchor>//api/name/siteId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setUserPictureUrl:</TokenIdentifier>
-			<Abstract type="html">Person picture URL.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setApplicationVersion:</TokenIdentifier>
+			<Abstract type="html">Package related application version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *userPictureUrl</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
 			
 			
-			<Anchor>//api/name/userPictureUrl</Anchor>
+			<Anchor>//api/name/applicationVersion</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/userPictureUrl</TokenIdentifier>
-			<Abstract type="html">Person picture URL.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/applicationVersion</TokenIdentifier>
+			<Abstract type="html">Package related application version.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *userPictureUrl</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int applicationVersion</Declaration>
 			
 			
-			<Anchor>//api/name/userPictureUrl</Anchor>
+			<Anchor>//api/name/applicationVersion</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/initWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setLanguage:</TokenIdentifier>
+			<Abstract type="html">Package related language.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/language</TokenIdentifier>
+			<Abstract type="html">Package related language.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *language</Declaration>
+			
+			
+			<Anchor>//api/name/language</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setServerType:</TokenIdentifier>
+			<Abstract type="html">Package related INSITEO server type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/serverType</TokenIdentifier>
+			<Abstract type="html">Package related INSITEO server type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/setZipPath:</TokenIdentifier>
+			<Abstract type="html">Package temporary zip path.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipPath</Declaration>
+			
+			
+			<Anchor>//api/name/zipPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISPackage/zipPath</TokenIdentifier>
+			<Abstract type="html">Package temporary zip path.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *zipPath</Declaration>
+			
+			
+			<Anchor>//api/name/zipPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISPackage/initWithSiteId:andApplicationVersion:andLanguage:andZipPath:andServerType:</TokenIdentifier>
 			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithPosition:(ISPosition *)position andUserId:(NSString *)userId andExternalUserId:(NSString *)externalUserId andExternalName:(NSString *)externalName andColor:(UIColor *)color</Declaration>
+			<Declaration>- (id)initWithSiteId:(int)siteId andApplicationVersion:(int)applicationVersion andLanguage:(NSString *)language andZipPath:(NSString *)zipPath andServerType:(ISEServerType)serverType</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>position</Name>
-					<Abstract type="html">Person position.</Abstract>
+					<Name>siteId</Name>
+					<Abstract type="html">Package related site identifier.</Abstract>
 				</Parameter><Parameter>
-					<Name>userId</Name>
-					<Abstract type="html">Person unique identifier.</Abstract>
+					<Name>applicationVersion</Name>
+					<Abstract type="html">Package related application version.</Abstract>
 				</Parameter><Parameter>
-					<Name>externalUserId</Name>
-					<Abstract type="html">Person external identifier (could be nil).</Abstract>
+					<Name>language</Name>
+					<Abstract type="html">Package related language.</Abstract>
 				</Parameter><Parameter>
-					<Name>externalName</Name>
-					<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
+					<Name>zipPath</Name>
+					<Abstract type="html">Temporary package zipPath. (Could be nil).</Abstract>
 				</Parameter><Parameter>
-					<Name>color</Name>
-					<Abstract type="html">Person rendering color.</Abstract>
+					<Name>serverType</Name>
+					<Abstract type="html">INSITEO server type.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</Anchor>
+			<Anchor>//api/name/initWithSiteId:andApplicationVersion:andLanguage:andZipPath:andServerType:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISMeetMePerson/ISMeetMePersonWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</TokenIdentifier>
-			<Abstract type="html">Static main constructor.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISPackage/getPackageType:</TokenIdentifier>
+			<Abstract type="html">Static method used to know if the filename parameter corresponds to a known INSITEO package.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>+ (id)ISMeetMePersonWithPosition:(ISPosition *)position andUserId:(NSString *)userId andExternalUserId:(NSString *)externalUserId andExternalName:(NSString *)externalName andColor:(UIColor *)color</Declaration>
+			<Declaration>+ (ISEPackageType)getPackageType:(NSString *)filename</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>position</Name>
-					<Abstract type="html">Person position.</Abstract>
-				</Parameter><Parameter>
-					<Name>userId</Name>
-					<Abstract type="html">Person unique identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>externalUserId</Name>
-					<Abstract type="html">Person external identifier (could be nil).</Abstract>
-				</Parameter><Parameter>
-					<Name>externalName</Name>
-					<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
-				</Parameter><Parameter>
-					<Name>color</Name>
-					<Abstract type="html">Person rendering color.</Abstract>
+					<Name>filename</Name>
+					<Abstract type="html">The filename to test.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/ISMeetMePersonWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</Anchor>
+			<ReturnValue><Abstract type="html">The related ISEPackageType. Could be UNKNOWN_PACKAGE.</Abstract></ReturnValue>
+			<Anchor>//api/name/getPackageType:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/hasLocation</TokenIdentifier>
-			<Abstract type="html">Method used to know if the person has a currrent position.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISPackage/getPackageTypeWithDirectoryName:</TokenIdentifier>
+			<Abstract type="html">Static method used to know if the directoryName parameter corresponds to a known INSITEO package.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>- (Boolean)hasLocation</Declaration>
-			
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the person has a position, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/hasLocation</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/updateWithPerson:</TokenIdentifier>
-			<Abstract type="html">Method used to update the person with another one.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
-			
-			<Declaration>- (void)updateWithPerson:(ISMeetMePerson *)person</Declaration>
+			<Declaration>+ (ISEPackageType)getPackageTypeWithDirectoryName:(NSString *)directoryName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>person</Name>
-					<Abstract type="html">ISMeetMePerson to use for update.</Abstract>
+					<Name>directoryName</Name>
+					<Abstract type="html">The wanted package directory name.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/updateWithPerson:</Anchor>
+			<ReturnValue><Abstract type="html">The related ISEPackageType. Could be UNKNOWN_PACKAGE.</Abstract></ReturnValue>
+			<Anchor>//api/name/getPackageTypeWithDirectoryName:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/addGroupId:</TokenIdentifier>
-			<Abstract type="html">Method used to add a new group identifier for this person.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISPackage/getDirectoryNameWithType:</TokenIdentifier>
+			<Abstract type="html">Static method used to get the application directory related to a specific package type.</Abstract>
+			<DeclaredIn>ISPackage.h</DeclaredIn>			
 			
-			<Declaration>- (int)addGroupId:(int)groupId</Declaration>
+			<Declaration>+ (NSString *)getDirectoryNameWithType:(ISEPackageType)type</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>groupId</Name>
-					<Abstract type="html">Group identifier to add.</Abstract>
+					<Name>type</Name>
+					<Abstract type="html">Package type to consider.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Return how many groups the person is linked to.</Abstract></ReturnValue>
-			<Anchor>//api/name/addGroupId:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/removeGroupId:</TokenIdentifier>
-			<Abstract type="html">Method used to remove a group identifier for this person.</Abstract>
-			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
-			
-			<Declaration>- (int)removeGroupId:(int)groupId</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>groupId</Name>
-					<Abstract type="html">Group identifier to remove.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return how many groups the person is linked to.</Abstract></ReturnValue>
-			<Anchor>//api/name/removeGroupId:</Anchor>
+			<ReturnValue><Abstract type="html">The related directory path. Could be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDirectoryNameWithType:</Anchor>
 		</Token>
 		
 	</File>

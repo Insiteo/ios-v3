@@ -1,49 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPLocationRequestListener.html">
+	<File path="Protocols/ISPMapListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPLocationRequestListener</TokenIdentifier>
-			<Abstract type="html">Protocol used to handle one shot location events.</Abstract>
-			<DeclaredIn>ISPLocationRequestListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPMapListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle the ISMapViewController events.</Abstract>
+			<DeclaredIn>ISPMapListener.h</DeclaredIn>
 			
 			<NodeRef refid="89"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationRequestListener/onUniqueLocationReceivedWithRequest:</TokenIdentifier>
-			<Abstract type="html">Method called when a one shot location was computed.</Abstract>
-			<DeclaredIn>ISPLocationRequestListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapListener/onZoneClickedWithZone:</TokenIdentifier>
+			<Abstract type="html">Method called when an unsupported Zone is clicked.</Abstract>
+			<DeclaredIn>ISPMapListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onUniqueLocationReceivedWithRequest:(ISLocationRequest *)locationRequest</Declaration>
+			<Declaration>- (void)onZoneClickedWithZone:(ISZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locationRequest</Name>
-					<Abstract type="html">Related location request (used to identify callers).</Abstract>
+					<Name>zone</Name>
+					<Abstract type="html">Zone clicked.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onUniqueLocationReceivedWithRequest:</Anchor>
+			<Anchor>//api/name/onZoneClickedWithZone:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPLocationRequestListener/onUniqueLocationFailedWithRequest:andError:</TokenIdentifier>
-			<Abstract type="html">Method called when a one shot location request failed.</Abstract>
-			<DeclaredIn>ISPLocationRequestListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapListener/onMapChangeWithNewMapId:andMapName:</TokenIdentifier>
+			<Abstract type="html">Method called when a new map was loaded.</Abstract>
+			<DeclaredIn>ISPMapListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onUniqueLocationFailedWithRequest:(ISLocationRequest *)locationRequest andError:(ISInsiteoError *)error</Declaration>
+			<Declaration>- (void)onMapChangeWithNewMapId:(int)newMapId andMapName:(NSString *)mapName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locationRequest</Name>
-					<Abstract type="html">Related location request (used to identify callers).</Abstract>
+					<Name>newMapId</Name>
+					<Abstract type="html">New map id.</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">Related Insiteo error.</Abstract>
+					<Name>mapName</Name>
+					<Abstract type="html">New map name.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onUniqueLocationFailedWithRequest:andError:</Anchor>
+			<Anchor>//api/name/onMapChangeWithNewMapId:andMapName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapListener/onMapMoved</TokenIdentifier>
+			<Abstract type="html">Method called when the map moved.</Abstract>
+			<DeclaredIn>ISPMapListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onMapMoved</Declaration>
+			
+			
+			<Anchor>//api/name/onMapMoved</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapListener/onMapClicked:</TokenIdentifier>
+			<Abstract type="html">Method called when the map was clicked.</Abstract>
+			<DeclaredIn>ISPMapListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onMapClicked:(ISPosition *)touchPosition</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>touchPosition</Name>
+					<Abstract type="html">Corresponding touched position (in meters).</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onMapClicked:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapListener/onZoomEnd:</TokenIdentifier>
+			<Abstract type="html">Method called when a new zoomLevel is reached.</Abstract>
+			<DeclaredIn>ISPMapListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onZoomEnd:(double)newZoom</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>newZoom</Name>
+					<Abstract type="html">New zoom level reached.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onZoomEnd:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPMapListener/onMapReleased</TokenIdentifier>
+			<Abstract type="html">Method called when the map was released.</Abstract>
+			<DeclaredIn>ISPMapListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onMapReleased</Declaration>
+			
+			
+			<Anchor>//api/name/onMapReleased</Anchor>
 		</Token>
 		
 	</File>

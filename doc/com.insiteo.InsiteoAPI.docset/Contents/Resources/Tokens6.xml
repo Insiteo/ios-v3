@@ -23,8 +23,24 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/startWithListener:</TokenIdentifier>
+			<Abstract type="html">Method used to start the iBeacon Management.</Abstract>
+			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)startWithListener:(id&lt;ISPBeaconListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">iBeacon events listener.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startWithListener:</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/setBeaconRegions:</TokenIdentifier>
-			<Abstract type="html">Beacon Regions to monitor.</Abstract>
+			<Abstract type="html">Current monitored beaconRegions.</Abstract>
 			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSArray *beaconRegions</Declaration>
@@ -35,7 +51,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/ISBeaconProvider/beaconRegions</TokenIdentifier>
-			<Abstract type="html">Beacon Regions to monitor.</Abstract>
+			<Abstract type="html">Current monitored beaconRegions.</Abstract>
 			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, readonly) NSArray *beaconRegions</Declaration>
@@ -64,33 +80,6 @@
 			
 			
 			<Anchor>//api/name/listener</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/refreshBeacons</TokenIdentifier>
-			<Abstract type="html">Method used to load Beacon Regions from new configuration file.</Abstract>
-			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
-			
-			<Declaration>- (void)refreshBeacons</Declaration>
-			
-			
-			<Anchor>//api/name/refreshBeacons</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISBeaconProvider/startWithListener:</TokenIdentifier>
-			<Abstract type="html">Method used to start monitoring Beacon Regions.</Abstract>
-			<DeclaredIn>ISBeaconProvider.h</DeclaredIn>			
-			
-			<Declaration>- (void)startWithListener:(id&lt;ISPBeaconListener&gt;)listener</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>listener</Name>
-					<Abstract type="html">Listener to notify of beacon events (mnonitoring and ranging).</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startWithListener:</Anchor>
 		</Token>
 		
 	</File>

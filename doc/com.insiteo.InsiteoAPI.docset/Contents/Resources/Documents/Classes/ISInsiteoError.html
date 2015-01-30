@@ -40,23 +40,35 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/errorCode">&nbsp;&nbsp;&nbsp;&nbsp;errorCode</option>
+	<option value="//api/name/code">&nbsp;&nbsp;&nbsp;&nbsp;code</option>
 	
-	<option value="//api/name/errorMessage">&nbsp;&nbsp;&nbsp;&nbsp;errorMessage</option>
+	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
+	
+	<option value="//api/name/reason">&nbsp;&nbsp;&nbsp;&nbsp;reason</option>
 	
 	
 	
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/ISInsiteoErrorWithErrorCode:andErrorMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ ISInsiteoErrorWithErrorCode:andErrorMessage:</option>
+	<option value="//api/name/ISInsiteoErrorWithCode:andReason:">&nbsp;&nbsp;&nbsp;&nbsp;+ ISInsiteoErrorWithCode:andReason:</option>
+	
+	<option value="//api/name/ISInsiteoErrorWithCode:andReason:andMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ ISInsiteoErrorWithCode:andReason:andMessage:</option>
+	
+	<option value="//api/name/getErrorCodeToString:">&nbsp;&nbsp;&nbsp;&nbsp;+ getErrorCodeToString:</option>
+	
+	<option value="//api/name/getErrorReasonFromStatusCode:">&nbsp;&nbsp;&nbsp;&nbsp;+ getErrorReasonFromStatusCode:</option>
+	
+	<option value="//api/name/getErrorReasonToString:">&nbsp;&nbsp;&nbsp;&nbsp;+ getErrorReasonToString:</option>
 	
 	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/initWithErrorCode:andErrorMessage:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithErrorCode:andErrorMessage:</option>
+	<option value="//api/name/initWithCode:andReason:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithCode:andReason:</option>
+	
+	<option value="//api/name/initWithCode:andReason:andMessage:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithCode:andReason:andMessage:</option>
 	
 	
 	
@@ -82,9 +94,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorCode">errorCode</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/code">code</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorMessage">errorMessage</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reason">reason</a></span></li>
 	
 </ul></li>
 
@@ -92,7 +106,15 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ISInsiteoErrorWithErrorCode:andErrorMessage:">ISInsiteoErrorWithErrorCode:andErrorMessage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ISInsiteoErrorWithCode:andReason:">ISInsiteoErrorWithCode:andReason:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ISInsiteoErrorWithCode:andReason:andMessage:">ISInsiteoErrorWithCode:andReason:andMessage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getErrorCodeToString:">getErrorCodeToString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getErrorReasonFromStatusCode:">getErrorReasonFromStatusCode:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getErrorReasonToString:">getErrorReasonToString:</a></span></li>
 	
 </ul></li>
 
@@ -100,7 +122,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithErrorCode:andErrorMessage:">initWithErrorCode:andErrorMessage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithCode:andReason:">initWithCode:andReason:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithCode:andReason:andMessage:">initWithCode:andReason:andMessage:</a></span></li>
 	
 </ul></li>
 
@@ -139,7 +163,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Class used to represent an Insiteo error.</p>
+						<p>Class used to represent an <a href="../Classes/Insiteo.html">Insiteo</a> error.</p>
 					</div>
 					
 					
@@ -157,29 +181,71 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/errorCode">&nbsp;&nbsp;errorCode</a></code>
-		<span class="tooltip"><p>Error code.</p></span>
+		<code><a href="#//api/name/code">&nbsp;&nbsp;code</a></code>
+		<span class="tooltip"><p>Error enum code.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/errorMessage">&nbsp;&nbsp;errorMessage</a></code>
+		<code><a href="#//api/name/reason">&nbsp;&nbsp;reason</a></code>
+		<span class="tooltip"><p>Error enum reason.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
 		<span class="tooltip"><p>Error message.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/initWithErrorCode:andErrorMessage:">&ndash;&nbsp;initWithErrorCode:andErrorMessage:</a></code>
+		<code><a href="#//api/name/initWithCode:andReason:">&ndash;&nbsp;initWithCode:andReason:</a></code>
 		<span class="tooltip"><p>Main constructor.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/ISInsiteoErrorWithErrorCode:andErrorMessage:">+&nbsp;ISInsiteoErrorWithErrorCode:andErrorMessage:</a></code>
-		<span class="tooltip"><p>Static constructor.</p></span>
+		<code><a href="#//api/name/initWithCode:andReason:andMessage:">&ndash;&nbsp;initWithCode:andReason:andMessage:</a></code>
+		<span class="tooltip"><p>Secondary constructor.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ISInsiteoErrorWithCode:andReason:">+&nbsp;ISInsiteoErrorWithCode:andReason:</a></code>
+		<span class="tooltip"><p>Static main constructor.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ISInsiteoErrorWithCode:andReason:andMessage:">+&nbsp;ISInsiteoErrorWithCode:andReason:andMessage:</a></code>
+		<span class="tooltip"><p>Static main constructor.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getErrorCodeToString:">+&nbsp;getErrorCodeToString:</a></code>
+		<span class="tooltip"><p>Static method used to get the error <a href="#//api/name/code">code</a> NSString representation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getErrorReasonToString:">+&nbsp;getErrorReasonToString:</a></code>
+		<span class="tooltip"><p>Static method used to get the error <a href="#//api/name/reason">reason</a> NSString representation.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getErrorReasonFromStatusCode:">+&nbsp;getErrorReasonFromStatusCode:</a></code>
+		<span class="tooltip"><p>Static method used to get an error <a href="#//api/name/reason">reason</a> from a given HTTP status <a href="#//api/name/code">code</a>.</p></span>
 	</span>
 	
 	
@@ -197,18 +263,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/errorCode" title="errorCode"></a>
-	<h3 class="subsubtitle method-title">errorCode</h3>
+	<a name="//api/name/code" title="code"></a>
+	<h3 class="subsubtitle method-title">code</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Error code.</p>
+		<p>Error enum code.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *errorCode</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) ISEInsiteoErrorCode code</code></div>
 
     
 	
@@ -220,7 +286,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Error code.</p>
+		<p>Error enum code.</p>
 	</div>
 	
 	
@@ -238,8 +304,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/errorMessage" title="errorMessage"></a>
-	<h3 class="subsubtitle method-title">errorMessage</h3>
+	<a name="//api/name/message" title="message"></a>
+	<h3 class="subsubtitle method-title">message</h3>
 	
 	
 	
@@ -249,7 +315,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *errorMessage</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *message</code></div>
 
     
 	
@@ -262,6 +328,47 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Error message.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInsiteoError.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reason" title="reason"></a>
+	<h3 class="subsubtitle method-title">reason</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Error enum reason.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) ISEInsiteoErrorReason reason</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Error enum reason.</p>
 	</div>
 	
 	
@@ -287,18 +394,18 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/ISInsiteoErrorWithErrorCode:andErrorMessage:" title="ISInsiteoErrorWithErrorCode:andErrorMessage:"></a>
-	<h3 class="subsubtitle method-title">ISInsiteoErrorWithErrorCode:andErrorMessage:</h3>
+	<a name="//api/name/ISInsiteoErrorWithCode:andReason:" title="ISInsiteoErrorWithCode:andReason:"></a>
+	<h3 class="subsubtitle method-title">ISInsiteoErrorWithCode:andReason:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Static constructor.</p>
+		<p>Static main constructor.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)ISInsiteoErrorWithErrorCode:(NSString *)<em>errorCode</em> andErrorMessage:(NSString *)<em>errorMessage</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)ISInsiteoErrorWithCode:(ISEInsiteoErrorCode)<em>code</em> andReason:(ISEInsiteoErrorReason)<em>reason</em></code></div>
 
     
 	
@@ -306,13 +413,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>errorCode</em></dt>
-			<dd><p>Error code.</p></dd>
+			<dt><em>code</em></dt>
+			<dd><p>Error <a href="#//api/name/code">code</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>errorMessage</em></dt>
-			<dd><p>Error message.</p></dd>
+			<dt><em>reason</em></dt>
+			<dd><p>Error <a href="#//api/name/reason">reason</a>.</p></dd>
 		</dl>
 		
 	</div>
@@ -325,7 +432,236 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Static constructor.</p>
+		<p>Static main constructor.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInsiteoError.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/ISInsiteoErrorWithCode:andReason:andMessage:" title="ISInsiteoErrorWithCode:andReason:andMessage:"></a>
+	<h3 class="subsubtitle method-title">ISInsiteoErrorWithCode:andReason:andMessage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static main constructor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)ISInsiteoErrorWithCode:(ISEInsiteoErrorCode)<em>code</em> andReason:(ISEInsiteoErrorReason)<em>reason</em> andMessage:(NSString *)<em>message</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>code</em></dt>
+			<dd><p>Error <a href="#//api/name/code">code</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reason</em></dt>
+			<dd><p>Error <a href="#//api/name/reason">reason</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>Error <a href="#//api/name/message">message</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static main constructor.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInsiteoError.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getErrorCodeToString:" title="getErrorCodeToString:"></a>
+	<h3 class="subsubtitle method-title">getErrorCodeToString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to get the error <a href="#//api/name/code">code</a> NSString representation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getErrorCodeToString:(ISEInsiteoErrorCode)<em>code</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>code</em></dt>
+			<dd><p>Error <a href="#//api/name/code">code</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Error <a href="#//api/name/code">code</a> NSString representation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to get the error <a href="#//api/name/code">code</a> NSString representation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInsiteoError.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getErrorReasonFromStatusCode:" title="getErrorReasonFromStatusCode:"></a>
+	<h3 class="subsubtitle method-title">getErrorReasonFromStatusCode:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to get an error <a href="#//api/name/reason">reason</a> from a given HTTP status <a href="#//api/name/code">code</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (ISEInsiteoErrorReason)getErrorReasonFromStatusCode:(NSInteger)<em>statusCode</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>statusCode</em></dt>
+			<dd><p>HTTP status <a href="#//api/name/code">code</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An error <a href="#//api/name/reason">reason</a> (default: ISEInsiteoErrorReasonUnknown).</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to get an error <a href="#//api/name/reason">reason</a> from a given HTTP status <a href="#//api/name/code">code</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInsiteoError.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getErrorReasonToString:" title="getErrorReasonToString:"></a>
+	<h3 class="subsubtitle method-title">getErrorReasonToString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to get the error <a href="#//api/name/reason">reason</a> NSString representation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getErrorReasonToString:(ISEInsiteoErrorReason)<em>reason</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reason</em></dt>
+			<dd><p>Error <a href="#//api/name/reason">reason</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Error <a href="#//api/name/reason">reason</a> NSString representation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to get the error <a href="#//api/name/reason">reason</a> NSString representation.</p>
 	</div>
 	
 	
@@ -351,8 +687,8 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/initWithErrorCode:andErrorMessage:" title="initWithErrorCode:andErrorMessage:"></a>
-	<h3 class="subsubtitle method-title">initWithErrorCode:andErrorMessage:</h3>
+	<a name="//api/name/initWithCode:andReason:" title="initWithCode:andReason:"></a>
+	<h3 class="subsubtitle method-title">initWithCode:andReason:</h3>
 	
 	
 	
@@ -362,7 +698,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithErrorCode:(NSString *)<em>errorCode</em> andErrorMessage:(NSString *)<em>errorMessage</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithCode:(ISEInsiteoErrorCode)<em>code</em> andReason:(ISEInsiteoErrorReason)<em>reason</em></code></div>
 
     
 	
@@ -370,13 +706,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>errorCode</em></dt>
-			<dd><p>Error code.</p></dd>
+			<dt><em>code</em></dt>
+			<dd><p>Error <a href="#//api/name/code">code</a>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>errorMessage</em></dt>
-			<dd><p>Error message.</p></dd>
+			<dt><em>reason</em></dt>
+			<dd><p>Error <a href="#//api/name/reason">reason</a>.</p></dd>
 		</dl>
 		
 	</div>
@@ -390,6 +726,67 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Main constructor.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISInsiteoError.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithCode:andReason:andMessage:" title="initWithCode:andReason:andMessage:"></a>
+	<h3 class="subsubtitle method-title">initWithCode:andReason:andMessage:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Secondary constructor.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithCode:(ISEInsiteoErrorCode)<em>code</em> andReason:(ISEInsiteoErrorReason)<em>reason</em> andMessage:(NSString *)<em>message</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>code</em></dt>
+			<dd><p>Error <a href="#//api/name/code">code</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reason</em></dt>
+			<dd><p>Error <a href="#//api/name/reason">reason</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>message</em></dt>
+			<dd><p>Error <a href="#//api/name/message">message</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Secondary constructor.</p>
 	</div>
 	
 	
@@ -419,7 +816,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

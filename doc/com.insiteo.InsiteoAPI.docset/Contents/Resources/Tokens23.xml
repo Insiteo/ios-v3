@@ -1,172 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGfxLocation.html">
+	<File path="Classes/ISGfxMeetMePerson.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGfxLocation</TokenIdentifier>
-			<Abstract type="html">Class used to represent a location result.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGfxMeetMePerson</TokenIdentifier>
+			<Abstract type="html">Class used to render an ISMeetMePerson on the map.</Abstract>
+			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>
 			
 			<NodeRef refid="23"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/setLocation:</TokenIdentifier>
-			<Abstract type="html">Related location.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISLocation *location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxLocation/location</TokenIdentifier>
-			<Abstract type="html">Related location.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISLocation *location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/setCurrentMapId:</TokenIdentifier>
-			<Abstract type="html">Current displayed map identifier.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int currentMapId</Declaration>
-			
-			
-			<Anchor>//api/name/currentMapId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxLocation/currentMapId</TokenIdentifier>
-			<Abstract type="html">Current displayed map identifier.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int currentMapId</Declaration>
-			
-			
-			<Anchor>//api/name/currentMapId</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/setMotionColorIntensity:</TokenIdentifier>
-			<Abstract type="html">Motion rendering intensity.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) double motionColorIntensity</Declaration>
-			
-			
-			<Anchor>//api/name/motionColorIntensity</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxLocation/motionColorIntensity</TokenIdentifier>
-			<Abstract type="html">Motion rendering intensity.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) double motionColorIntensity</Declaration>
-			
-			
-			<Anchor>//api/name/motionColorIntensity</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/setAzimuth:</TokenIdentifier>
-			<Abstract type="html">Location current azimuth.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSNumber *azimuth</Declaration>
-			
-			
-			<Anchor>//api/name/azimuth</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxLocation/azimuth</TokenIdentifier>
-			<Abstract type="html">Location current azimuth.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) NSNumber *azimuth</Declaration>
-			
-			
-			<Anchor>//api/name/azimuth</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/setAccuracyColor:</TokenIdentifier>
-			<Abstract type="html">Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4F accuracyColor</Declaration>
-			
-			
-			<Anchor>//api/name/accuracyColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxLocation/accuracyColor</TokenIdentifier>
-			<Abstract type="html">Accuracy rendering color (default: ccc4f(0.0, 0.0, 255.0, 255.0/6.0), none: ccc4f(255.0, 255.0, 255.0, 0.0)).</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4F accuracyColor</Declaration>
-			
-			
-			<Anchor>//api/name/accuracyColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/initWithLocation:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/initWithPerson:</TokenIdentifier>
 			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
+			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithLocation:(ISLocation *)location</Declaration>
+			<Declaration>- (id)initWithPerson:(ISMeetMePerson *)person</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">ISLocation to use.</Abstract>
+					<Name>person</Name>
+					<Abstract type="html">Person used for rendering (position, color, etc...).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithLocation:</Anchor>
+			<Anchor>//api/name/initWithPerson:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/updateWithLocation:</TokenIdentifier>
-			<Abstract type="html">Method called to update the current location.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGfxMeetMePerson/updatePerson:</TokenIdentifier>
+			<Abstract type="html">Method called to update related person information.</Abstract>
+			<DeclaredIn>ISGfxMeetMePerson.h</DeclaredIn>			
 			
-			<Declaration>- (void)updateWithLocation:(ISLocation *)location</Declaration>
+			<Declaration>- (void)updatePerson:(ISMeetMePerson *)person</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">ISLocation to use for update.</Abstract>
+					<Name>person</Name>
+					<Abstract type="html">Person to update from.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/updateWithLocation:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxLocation/setCompassDisplayEnabled:</TokenIdentifier>
-			<Abstract type="html">Method called to set compass visible or not.</Abstract>
-			<DeclaredIn>ISGfxLocation.h</DeclaredIn>			
-			
-			<Declaration>- (void)setCompassDisplayEnabled:(Boolean)displayEnabled</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>displayEnabled</Name>
-					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the compass is visible, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCompassDisplayEnabled:</Anchor>
+			<Anchor>//api/name/updatePerson:</Anchor>
 		</Token>
 		
 	</File>

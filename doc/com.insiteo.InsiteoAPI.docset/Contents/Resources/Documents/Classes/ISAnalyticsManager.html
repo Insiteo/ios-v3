@@ -40,8 +40,6 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/config">&nbsp;&nbsp;&nbsp;&nbsp;config</option>
-	
 	<option value="//api/name/isStarted">&nbsp;&nbsp;&nbsp;&nbsp;isStarted</option>
 	
 	<option value="//api/name/listener">&nbsp;&nbsp;&nbsp;&nbsp;listener</option>
@@ -51,7 +49,7 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/instance">&nbsp;&nbsp;&nbsp;&nbsp;+ instance</option>
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
 	
 	
 	
@@ -61,6 +59,10 @@
 	<option value="//api/name/addGenericEvent:">&nbsp;&nbsp;&nbsp;&nbsp;- addGenericEvent:</option>
 	
 	<option value="//api/name/addLocationEvent:">&nbsp;&nbsp;&nbsp;&nbsp;- addLocationEvent:</option>
+	
+	<option value="//api/name/startAnalytics">&nbsp;&nbsp;&nbsp;&nbsp;- startAnalytics</option>
+	
+	<option value="//api/name/stopAnalytics">&nbsp;&nbsp;&nbsp;&nbsp;- stopAnalytics</option>
 	
 	
 	
@@ -86,8 +88,6 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/config">config</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isStarted">isStarted</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listener">listener</a></span></li>
@@ -98,7 +98,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instance">instance</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
 	
 </ul></li>
 
@@ -109,6 +109,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addGenericEvent:">addGenericEvent:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addLocationEvent:">addLocationEvent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startAnalytics">startAnalytics</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopAnalytics">stopAnalytics</a></span></li>
 	
 </ul></li>
 
@@ -165,13 +169,6 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/config">&nbsp;&nbsp;config</a></code>
-		<span class="tooltip"><p>Analytics configuration.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/listener">&nbsp;&nbsp;listener</a></code>
 		<span class="tooltip"><p>Analytics listener.</p></span>
 	</span>
@@ -186,8 +183,22 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/instance">+&nbsp;instance</a></code>
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
 		<span class="tooltip"><p>Static method called to get the ISAnalyticsManager unique instance.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startAnalytics">&ndash;&nbsp;startAnalytics</a></code>
+		<span class="tooltip"><p>Method called to start the ISAnalyticsManager.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopAnalytics">&ndash;&nbsp;stopAnalytics</a></code>
+		<span class="tooltip"><p>Method called to stop the ISAnalyticsManager.</p></span>
 	</span>
 	
 	
@@ -217,47 +228,6 @@
 					<div class="section section-methods">
 						<a title="Properties" name="properties"></a>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/config" title="config"></a>
-	<h3 class="subsubtitle method-title">config</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Analytics configuration.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) AnalyticsConfig *config</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Analytics configuration.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISAnalyticsManager.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/isStarted" title="isStarted"></a>
@@ -350,8 +320,8 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/instance" title="instance"></a>
-	<h3 class="subsubtitle method-title">instance</h3>
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
 	
 	
 	
@@ -361,7 +331,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (ISAnalyticsManager *)instance</code></div>
+	<div class="method-subsection method-declaration"><code>+ (ISAnalyticsManager *)sharedInstance</code></div>
 
     
 	
@@ -515,6 +485,93 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/startAnalytics" title="startAnalytics"></a>
+	<h3 class="subsubtitle method-title">startAnalytics</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to start the ISAnalyticsManager.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startAnalytics</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Return <b>YES</b> if the ISAnalyticsManager is started, otherwise <b>NO</b>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to start the ISAnalyticsManager.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISAnalyticsManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopAnalytics" title="stopAnalytics"></a>
+	<h3 class="subsubtitle method-title">stopAnalytics</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called to stop the ISAnalyticsManager.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)stopAnalytics</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called to stop the ISAnalyticsManager.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISAnalyticsManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -528,7 +585,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

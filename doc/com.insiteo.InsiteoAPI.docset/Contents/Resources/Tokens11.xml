@@ -280,5 +280,16 @@
 			<Anchor>//api/name/vector4Value:</Anchor>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISCommonFunctions/getDeviceLanguage</TokenIdentifier>
+			<Abstract type="html">Static method used to get the current device language.</Abstract>
+			<DeclaredIn>ISCommonFunctions.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getDeviceLanguage</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current device language.</Abstract></ReturnValue>
+			<Anchor>//api/name/getDeviceLanguage</Anchor>
+		</Token>
+		
 	</File>
 </Tokens>

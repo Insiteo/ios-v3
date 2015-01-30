@@ -59,9 +59,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/getLocationCodeVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getLocationCodeVersion</option>
-	
 	<option value="//api/name/getLocationPackageVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getLocationPackageVersion</option>
+	
+	<option value="//api/name/getVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getVersion</option>
 	
 	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
 	
@@ -78,13 +78,15 @@
 	
 	<option value="//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:">&nbsp;&nbsp;&nbsp;&nbsp;- requestUniqueLocationWithLocationRequestListener:andLocationFlags:</option>
 	
-	<option value="//api/name/startLocation:andLocationListener:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:</option>
+	<option value="//api/name/startWithFlags:andListener:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithFlags:andListener:</option>
 	
-	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:</option>
+	<option value="//api/name/startWithFlags:andListener:andScanFrequency:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithFlags:andListener:andScanFrequency:</option>
 	
-	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</option>
+	<option value="//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</option>
 	
-	<option value="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">&nbsp;&nbsp;&nbsp;&nbsp;- startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</option>
+	<option value="//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</option>
+	
+	<option value="//api/name/startWithListener:">&nbsp;&nbsp;&nbsp;&nbsp;- startWithListener:</option>
 	
 	<option value="//api/name/stopLocation">&nbsp;&nbsp;&nbsp;&nbsp;- stopLocation</option>
 	
@@ -132,9 +134,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLocationCodeVersion">getLocationCodeVersion</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLocationPackageVersion">getLocationPackageVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getVersion">getVersion</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
 	
@@ -152,13 +154,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:">requestUniqueLocationWithLocationRequestListener:andLocationFlags:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:">startLocation:andLocationListener:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithFlags:andListener:">startWithFlags:andListener:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:">startLocation:andLocationListener:andScanFrequency:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithFlags:andListener:andScanFrequency:">startWithFlags:andListener:andScanFrequency:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startWithListener:">startWithListener:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopLocation">stopLocation</a></span></li>
 	
@@ -273,7 +277,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getLocationCodeVersion">+&nbsp;getLocationCodeVersion</a></code>
+		<code><a href="#//api/name/getVersion">+&nbsp;getVersion</a></code>
 		<span class="tooltip"><p>Static method used to know the current location library version.</p></span>
 	</span>
 	
@@ -294,29 +298,36 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</a></code>
+		<code><a href="#//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:">&ndash;&nbsp;startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</a></code>
 		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</a></code>
+		<code><a href="#//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:">&ndash;&nbsp;startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</a></code>
 		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startLocation:andLocationListener:andScanFrequency:">&ndash;&nbsp;startLocation:andLocationListener:andScanFrequency:</a></code>
+		<code><a href="#//api/name/startWithFlags:andListener:andScanFrequency:">&ndash;&nbsp;startWithFlags:andListener:andScanFrequency:</a></code>
 		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/startLocation:andLocationListener:">&ndash;&nbsp;startLocation:andLocationListener:</a></code>
+		<code><a href="#//api/name/startWithFlags:andListener:">&ndash;&nbsp;startWithFlags:andListener:</a></code>
 		<span class="tooltip"><p>Method used to start the location with specific configuration.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startWithListener:">&ndash;&nbsp;startWithListener:</a></code>
+		<span class="tooltip"><p>Method used to start the location using a default configuration and flags specified in a .plist file.</p></span>
 	</span>
 	
 	
@@ -657,52 +668,6 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/getLocationCodeVersion" title="getLocationCodeVersion"></a>
-	<h3 class="subsubtitle method-title">getLocationCodeVersion</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Static method used to know the current location library version.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSString *)getLocationCodeVersion</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Current location library version.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Static method used to know the current location library version.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISLocationProvider.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/getLocationPackageVersion" title="getLocationPackageVersion"></a>
 	<h3 class="subsubtitle method-title">getLocationPackageVersion</h3>
 	
@@ -732,6 +697,52 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Static method used to know the current location package version.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getVersion" title="getVersion"></a>
+	<h3 class="subsubtitle method-title">getVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Static method used to know the current location library version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Current location library version.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Static method used to know the current location library version.</p>
 	</div>
 	
 	
@@ -911,7 +922,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id&lt;ISPLbsModule&gt;)getLbsModule:(LbsModuleType)<em>lbsModuleType</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id&lt;ISPLbsModule&gt;)getLbsModule:(ISELbsModuleType)<em>lbsModuleType</em></code></div>
 
     
 	
@@ -1012,8 +1023,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startLocation:andLocationListener:" title="startLocation:andLocationListener:"></a>
-	<h3 class="subsubtitle method-title">startLocation:andLocationListener:</h3>
+	<a name="//api/name/startWithFlags:andListener:" title="startWithFlags:andListener:"></a>
+	<h3 class="subsubtitle method-title">startWithFlags:andListener:</h3>
 	
 	
 	
@@ -1023,7 +1034,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (Boolean)startWithFlags:(int)<em>locationFlags</em> andListener:(id&lt;ISPLocationListener&gt;)<em>listener</em></code></div>
 
     
 	
@@ -1036,13 +1047,18 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>locationListener</em></dt>
+			<dt><em>listener</em></dt>
 			<dd><p>Location events listener.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the given parameters are correct and a location package was found, otherwise <b>NO</b>.</p>
+	</div>
 	
 	
 	
@@ -1068,8 +1084,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:" title="startLocation:andLocationListener:andScanFrequency:"></a>
-	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:</h3>
+	<a name="//api/name/startWithFlags:andListener:andScanFrequency:" title="startWithFlags:andListener:andScanFrequency:"></a>
+	<h3 class="subsubtitle method-title">startWithFlags:andListener:andScanFrequency:</h3>
 	
 	
 	
@@ -1079,7 +1095,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (Boolean)startWithFlags:(int)<em>locationFlags</em> andListener:(id&lt;ISPLocationListener&gt;)<em>listener</em> andScanFrequency:(int)<em>scanFrequency</em></code></div>
 
     
 	
@@ -1092,7 +1108,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>locationListener</em></dt>
+			<dt><em>listener</em></dt>
 			<dd><p>Location events listener.</p></dd>
 		</dl>
 		
@@ -1105,6 +1121,11 @@
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the given parameters are correct and a location package was found, otherwise <b>NO</b>.</p>
+	</div>
+	
 	
 	
 	
@@ -1129,8 +1150,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:" title="startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:"></a>
-	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</h3>
+	<a name="//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:" title="startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:"></a>
+	<h3 class="subsubtitle method-title">startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</h3>
 	
 	
 	
@@ -1140,7 +1161,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (Boolean)startWithFlags:(int)<em>locationFlags</em> andListener:(id&lt;ISPLocationListener&gt;)<em>listener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em></code></div>
 
     
 	
@@ -1153,7 +1174,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>locationListener</em></dt>
+			<dt><em>listener</em></dt>
 			<dd><p>Location events listener.</p></dd>
 		</dl>
 		
@@ -1176,6 +1197,11 @@
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the given parameters are correct and a location package was found, otherwise <b>NO</b>.</p>
+	</div>
+	
 	
 	
 	
@@ -1200,8 +1226,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:" title="startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:"></a>
-	<h3 class="subsubtitle method-title">startLocation:andLocationListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</h3>
+	<a name="//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:" title="startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:"></a>
+	<h3 class="subsubtitle method-title">startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</h3>
 	
 	
 	
@@ -1211,7 +1237,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (Boolean)startLocation:(int)<em>locationFlags</em> andLocationListener:(id&lt;ISPLocationListener&gt;)<em>locationListener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em> andLocationPath:(NSString *)<em>locationPath</em> andUUIDService:(NSString *)<em>uuidService</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (Boolean)startWithFlags:(int)<em>locationFlags</em> andListener:(id&lt;ISPLocationListener&gt;)<em>listener</em> andScanFrequency:(int)<em>scanFrequency</em> andDefaultMapId:(int)<em>defaultMapId</em> andForceDefaultMap:(Boolean)<em>forceDefaultMap</em> andLocationPath:(NSString *)<em>locationPath</em> andUUIDService:(NSString *)<em>uuidService</em></code></div>
 
     
 	
@@ -1224,7 +1250,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>locationListener</em></dt>
+			<dt><em>listener</em></dt>
 			<dd><p>Location events listener.</p></dd>
 		</dl>
 		
@@ -1257,6 +1283,11 @@
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the given parameters are correct and a location package was found, otherwise <b>NO</b>.</p>
+	</div>
+	
 	
 	
 	
@@ -1264,6 +1295,62 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Method used to start the location with specific configuration.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISLocationProvider.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startWithListener:" title="startWithListener:"></a>
+	<h3 class="subsubtitle method-title">startWithListener:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to start the location using a default configuration and flags specified in a .plist file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Boolean)startWithListener:(id&lt;ISPLocationListener&gt;)<em>listener</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listener</em></dt>
+			<dd><p>Location events listener.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><b>YES</b> if the given parameters are correct and a location package was found, otherwise <b>NO</b>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to start the location using a default configuration and flags specified in a .plist file.</p>
 	</div>
 	
 	
@@ -1334,7 +1421,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

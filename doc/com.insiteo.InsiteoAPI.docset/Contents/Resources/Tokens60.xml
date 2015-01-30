@@ -1,15 +1,284 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISMeetMeInsJoinGroupRequest.html">
+	<File path="Classes/ISMeetMePerson.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMeInsJoinGroupRequest</TokenIdentifier>
-			<Abstract type="html">ISMeetMeInsJoinGroupRequest</Abstract>
-			<DeclaredIn>ISMeetMeInsJoinGroupRequest.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISMeetMePerson</TokenIdentifier>
+			<Abstract type="html">Class used to represent a MeetMe person.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>
 			
 			<NodeRef refid="60"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setPosition:</TokenIdentifier>
+			<Abstract type="html">Person position.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			
+			
+			<Anchor>//api/name/position</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/position</TokenIdentifier>
+			<Abstract type="html">Person position.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			
+			
+			<Anchor>//api/name/position</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setUserId:</TokenIdentifier>
+			<Abstract type="html">Person unique identifier.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *userId</Declaration>
+			
+			
+			<Anchor>//api/name/userId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/userId</TokenIdentifier>
+			<Abstract type="html">Person unique identifier.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *userId</Declaration>
+			
+			
+			<Anchor>//api/name/userId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setExternalUserId:</TokenIdentifier>
+			<Abstract type="html">Person external identifier (could be nil).</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalUserId</Declaration>
+			
+			
+			<Anchor>//api/name/externalUserId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/externalUserId</TokenIdentifier>
+			<Abstract type="html">Person external identifier (could be nil).</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalUserId</Declaration>
+			
+			
+			<Anchor>//api/name/externalUserId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setExternalName:</TokenIdentifier>
+			<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalName</Declaration>
+			
+			
+			<Anchor>//api/name/externalName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/externalName</TokenIdentifier>
+			<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *externalName</Declaration>
+			
+			
+			<Anchor>//api/name/externalName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setGroupIds:</TokenIdentifier>
+			<Abstract type="html">Groups Id list.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableIndexSet *groupIds</Declaration>
+			
+			
+			<Anchor>//api/name/groupIds</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/groupIds</TokenIdentifier>
+			<Abstract type="html">Groups Id list.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableIndexSet *groupIds</Declaration>
+			
+			
+			<Anchor>//api/name/groupIds</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setColor:</TokenIdentifier>
+			<Abstract type="html">Person rendering color.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/color</TokenIdentifier>
+			<Abstract type="html">Person rendering color.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIColor *color</Declaration>
+			
+			
+			<Anchor>//api/name/color</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/setUserPictureUrl:</TokenIdentifier>
+			<Abstract type="html">Person picture URL.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *userPictureUrl</Declaration>
+			
+			
+			<Anchor>//api/name/userPictureUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISMeetMePerson/userPictureUrl</TokenIdentifier>
+			<Abstract type="html">Person picture URL.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *userPictureUrl</Declaration>
+			
+			
+			<Anchor>//api/name/userPictureUrl</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/initWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithPosition:(ISPosition *)position andUserId:(NSString *)userId andExternalUserId:(NSString *)externalUserId andExternalName:(NSString *)externalName andColor:(UIColor *)color</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">Person position.</Abstract>
+				</Parameter><Parameter>
+					<Name>userId</Name>
+					<Abstract type="html">Person unique identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>externalUserId</Name>
+					<Abstract type="html">Person external identifier (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>externalName</Name>
+					<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>color</Name>
+					<Abstract type="html">Person rendering color.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISMeetMePerson/ISMeetMePersonWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISMeetMePersonWithPosition:(ISPosition *)position andUserId:(NSString *)userId andExternalUserId:(NSString *)externalUserId andExternalName:(NSString *)externalName andColor:(UIColor *)color</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">Person position.</Abstract>
+				</Parameter><Parameter>
+					<Name>userId</Name>
+					<Abstract type="html">Person unique identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>externalUserId</Name>
+					<Abstract type="html">Person external identifier (could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>externalName</Name>
+					<Abstract type="html">Person external name (nickname: could be nil).</Abstract>
+				</Parameter><Parameter>
+					<Name>color</Name>
+					<Abstract type="html">Person rendering color.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISMeetMePersonWithPosition:andUserId:andExternalUserId:andExternalName:andColor:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/hasLocation</TokenIdentifier>
+			<Abstract type="html">Method used to know if the person has a currrent position.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hasLocation</Declaration>
+			
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the person has a position, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasLocation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/updateWithPerson:</TokenIdentifier>
+			<Abstract type="html">Method used to update the person with another one.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateWithPerson:(ISMeetMePerson *)person</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>person</Name>
+					<Abstract type="html">ISMeetMePerson to use for update.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateWithPerson:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/addGroupId:</TokenIdentifier>
+			<Abstract type="html">Method used to add a new group identifier for this person.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>- (int)addGroupId:(int)groupId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">Group identifier to add.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return how many groups the person is linked to.</Abstract></ReturnValue>
+			<Anchor>//api/name/addGroupId:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISMeetMePerson/removeGroupId:</TokenIdentifier>
+			<Abstract type="html">Method used to remove a group identifier for this person.</Abstract>
+			<DeclaredIn>ISMeetMePerson.h</DeclaredIn>			
+			
+			<Declaration>- (int)removeGroupId:(int)groupId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>groupId</Name>
+					<Abstract type="html">Group identifier to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Return how many groups the person is linked to.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeGroupId:</Anchor>
+		</Token>
 		
 	</File>
 </Tokens>

@@ -1,152 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGenericRTO.html">
+	<File path="Classes/ISGenericRTONode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGenericRTO</TokenIdentifier>
-			<Abstract type="html">Class which represent a basic RTO object (name + pin image).</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISGenericRTONode</TokenIdentifier>
+			<Abstract type="html">Class used to handle cocos2d rendering of an ISGenericRTO.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>
 			
 			<NodeRef refid="14"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setMetersPosition:</TokenIdentifier>
-			<Abstract type="html">RTO position in meters.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setWindowNode:</TokenIdentifier>
+			<Abstract type="html">RTO window cocos2d node.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *metersPosition</Declaration>
+			<Declaration>@property (nonatomic, retain) CCNode *windowNode</Declaration>
 			
 			
-			<Anchor>//api/name/metersPosition</Anchor>
+			<Anchor>//api/name/windowNode</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/metersPosition</TokenIdentifier>
-			<Abstract type="html">RTO position in meters.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/windowNode</TokenIdentifier>
+			<Abstract type="html">RTO window cocos2d node.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *metersPosition</Declaration>
+			<Declaration>@property (nonatomic, retain) CCNode *windowNode</Declaration>
 			
 			
-			<Anchor>//api/name/metersPosition</Anchor>
+			<Anchor>//api/name/windowNode</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setCurrentMap:</TokenIdentifier>
-			<Abstract type="html">Current rendering map.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISMap *currentMap</Declaration>
-			
-			
-			<Anchor>//api/name/currentMap</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/currentMap</TokenIdentifier>
-			<Abstract type="html">Current rendering map.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISMap *currentMap</Declaration>
-			
-			
-			<Anchor>//api/name/currentMap</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setDraggable:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the RTO is draggable.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean draggable</Declaration>
-			
-			
-			<Anchor>//api/name/draggable</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/draggable</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the RTO is draggable.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) Boolean draggable</Declaration>
-			
-			
-			<Anchor>//api/name/draggable</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionButtonClicked:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the action button was clicked.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) Boolean actionButtonClicked</Declaration>
-			
-			
-			<Anchor>//api/name/actionButtonClicked</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionButtonClicked</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the action button was clicked.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readonly) Boolean actionButtonClicked</Declaration>
-			
-			
-			<Anchor>//api/name/actionButtonClicked</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setRtoNode:</TokenIdentifier>
-			<Abstract type="html">Related 2D render node.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISGenericRTONode *rtoNode</Declaration>
-			
-			
-			<Anchor>//api/name/rtoNode</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/rtoNode</TokenIdentifier>
-			<Abstract type="html">Related 2D render node.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) ISGenericRTONode *rtoNode</Declaration>
-			
-			
-			<Anchor>//api/name/rtoNode</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setCurrentScene:</TokenIdentifier>
-			<Abstract type="html">Current 3D scene (for 3D rendering only).</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign) CC3Scene *currentScene</Declaration>
-			
-			
-			<Anchor>//api/name/currentScene</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/currentScene</TokenIdentifier>
-			<Abstract type="html">Current 3D scene (for 3D rendering only).</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, assign) CC3Scene *currentScene</Declaration>
-			
-			
-			<Anchor>//api/name/currentScene</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setWindowBackgroundColorNormal:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setWindowBackgroundColorNormal:</TokenIdentifier>
 			<Abstract type="html">RTO window background color for normal state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorNormal</Declaration>
 			
@@ -155,9 +45,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/windowBackgroundColorNormal</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/windowBackgroundColorNormal</TokenIdentifier>
 			<Abstract type="html">RTO window background color for normal state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorNormal</Declaration>
 			
@@ -166,9 +56,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setWindowBackgroundColorHighlighted:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setWindowBackgroundColorHighlighted:</TokenIdentifier>
 			<Abstract type="html">RTO window background color for highlighted state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorHighlighted</Declaration>
 			
@@ -177,9 +67,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/windowBackgroundColorHighlighted</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/windowBackgroundColorHighlighted</TokenIdentifier>
 			<Abstract type="html">RTO window background color for highlighted state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *windowBackgroundColorHighlighted</Declaration>
 			
@@ -188,9 +78,97 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionImagePath:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setAnnotationLayerColor:</TokenIdentifier>
+			<Abstract type="html">RTO annotation cocos2d layer color.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLayerColor *annotationLayerColor</Declaration>
+			
+			
+			<Anchor>//api/name/annotationLayerColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/annotationLayerColor</TokenIdentifier>
+			<Abstract type="html">RTO annotation cocos2d layer color.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLayerColor *annotationLayerColor</Declaration>
+			
+			
+			<Anchor>//api/name/annotationLayerColor</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setActionBackgroundSprite:</TokenIdentifier>
+			<Abstract type="html">RTO action button background cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *actionBackgroundSprite</Declaration>
+			
+			
+			<Anchor>//api/name/actionBackgroundSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/actionBackgroundSprite</TokenIdentifier>
+			<Abstract type="html">RTO action button background cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *actionBackgroundSprite</Declaration>
+			
+			
+			<Anchor>//api/name/actionBackgroundSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setActionSprite:</TokenIdentifier>
+			<Abstract type="html">RTO action button cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *actionSprite</Declaration>
+			
+			
+			<Anchor>//api/name/actionSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/actionSprite</TokenIdentifier>
+			<Abstract type="html">RTO action button cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *actionSprite</Declaration>
+			
+			
+			<Anchor>//api/name/actionSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setActionEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if an action is enabled.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean actionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/actionEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/actionEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if an action is enabled.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean actionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/actionEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setActionImagePath:</TokenIdentifier>
 			<Abstract type="html">RTO action button sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *actionImagePath</Declaration>
 			
@@ -199,9 +177,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionImagePath</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/actionImagePath</TokenIdentifier>
 			<Abstract type="html">RTO action button sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *actionImagePath</Declaration>
 			
@@ -210,9 +188,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionBackgroundColorNormal:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setActionBackgroundColorNormal:</TokenIdentifier>
 			<Abstract type="html">RTO action button background color for normal state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorNormal</Declaration>
 			
@@ -221,9 +199,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionBackgroundColorNormal</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/actionBackgroundColorNormal</TokenIdentifier>
 			<Abstract type="html">RTO action button background color for normal state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorNormal</Declaration>
 			
@@ -232,9 +210,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionBackgroundColorHighlighted:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setActionBackgroundColorHighlighted:</TokenIdentifier>
 			<Abstract type="html">RTO action button background color for highlighted state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorHighlighted</Declaration>
 			
@@ -243,9 +221,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionBackgroundColorHighlighted</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/actionBackgroundColorHighlighted</TokenIdentifier>
 			<Abstract type="html">RTO action button background color for highlighted state.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) UIColor *actionBackgroundColorHighlighted</Declaration>
 			
@@ -254,9 +232,75 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setIndicatorImagePath:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setIndicatorBackgroundSprite:</TokenIdentifier>
+			<Abstract type="html">RTO indicator background cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *indicatorBackgroundSprite</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorBackgroundSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/indicatorBackgroundSprite</TokenIdentifier>
+			<Abstract type="html">RTO indicator background cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *indicatorBackgroundSprite</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorBackgroundSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setIndicatorSprite:</TokenIdentifier>
+			<Abstract type="html">RTO indicator cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *indicatorSprite</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/indicatorSprite</TokenIdentifier>
+			<Abstract type="html">RTO indicator cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *indicatorSprite</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setIndicatorVisible:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if an indicator is visible.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean indicatorVisible</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorVisible</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/indicatorVisible</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if an indicator is visible.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean indicatorVisible</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorVisible</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setIndicatorImagePath:</TokenIdentifier>
 			<Abstract type="html">RTO indicator sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *indicatorImagePath</Declaration>
 			
@@ -265,9 +309,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/indicatorImagePath</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/indicatorImagePath</TokenIdentifier>
 			<Abstract type="html">RTO indicator sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *indicatorImagePath</Declaration>
 			
@@ -276,9 +320,31 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setWindowAnchorImagePath:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setWindowAnchorSprite:</TokenIdentifier>
+			<Abstract type="html">RTO window anchor cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *windowAnchorSprite</Declaration>
+			
+			
+			<Anchor>//api/name/windowAnchorSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/windowAnchorSprite</TokenIdentifier>
+			<Abstract type="html">RTO window anchor cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *windowAnchorSprite</Declaration>
+			
+			
+			<Anchor>//api/name/windowAnchorSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setWindowAnchorImagePath:</TokenIdentifier>
 			<Abstract type="html">RTO window anchor sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *windowAnchorImagePath</Declaration>
 			
@@ -287,9 +353,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/windowAnchorImagePath</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/windowAnchorImagePath</TokenIdentifier>
 			<Abstract type="html">RTO window anchor sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *windowAnchorImagePath</Declaration>
 			
@@ -298,9 +364,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setMarkerImagePath:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setMarkerImagePath:</TokenIdentifier>
 			<Abstract type="html">RTO marker sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *markerImagePath</Declaration>
 			
@@ -309,9 +375,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/markerImagePath</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/markerImagePath</TokenIdentifier>
 			<Abstract type="html">RTO marker sprite image path.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>@property (nonatomic, retain) NSString *markerImagePath</Declaration>
 			
@@ -320,55 +386,125 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:</TokenIdentifier>
-			<Abstract type="html">Main constructor</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setMarkerSprite:</TokenIdentifier>
+			<Abstract type="html">RTO marker cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed</Declaration>
+			<Declaration>@property (nonatomic, retain) CCSprite *markerSprite</Declaration>
+			
+			
+			<Anchor>//api/name/markerSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/markerSprite</TokenIdentifier>
+			<Abstract type="html">RTO marker cocos2d sprite.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCSprite *markerSprite</Declaration>
+			
+			
+			<Anchor>//api/name/markerSprite</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setDescriptionName:</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d name.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionName</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/descriptionName</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d name.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionName</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setDescriptionStrokeLabel:</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d stroke label.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionStrokeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionStrokeLabel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/descriptionStrokeLabel</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d stroke label.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionStrokeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionStrokeLabel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setDescriptionLabel:</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d label.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionLabel</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionLabel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTONode/descriptionLabel</TokenIdentifier>
+			<Abstract type="html">RTO description cocos2d label.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) CCLabelTTF *descriptionLabel</Declaration>
+			
+			
+			<Anchor>//api/name/descriptionLabel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/initWithName:andLabel:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
-					<Abstract type="html">RTO displayed name.</Abstract>
+					<Abstract type="html">RTO name.</Abstract>
 				</Parameter><Parameter>
 					<Name>label</Name>
-					<Abstract type="html">RTO displayed label.</Abstract>
-				</Parameter><Parameter>
-					<Name>metersPosition</Name>
-					<Abstract type="html">RTO position in meters (could be nil in case of zone rendering).</Abstract>
-				</Parameter><Parameter>
-					<Name>windowDisplayed</Name>
-					<Abstract type="html">Boolean used to know if the RTO window has to be displayed.</Abstract>
-				</Parameter><Parameter>
-					<Name>labelDisplayed</Name>
-					<Abstract type="html">Boolean used to know if the RTO label has to be displayed.</Abstract>
+					<Abstract type="html">RTO label.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:</Anchor>
+			<Anchor>//api/name/initWithName:andLabel:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</TokenIdentifier>
-			<Abstract type="html">Main constructor</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/initWithName:andLabel:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</TokenIdentifier>
+			<Abstract type="html">Main constructor.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath</Declaration>
+			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
-					<Abstract type="html">RTO displayed name.</Abstract>
+					<Abstract type="html">RTO name.</Abstract>
 				</Parameter><Parameter>
 					<Name>label</Name>
-					<Abstract type="html">RTO displayed label.</Abstract>
-				</Parameter><Parameter>
-					<Name>metersPosition</Name>
-					<Abstract type="html">RTO position in meters (could be nil in case of zone rendering).</Abstract>
-				</Parameter><Parameter>
-					<Name>windowDisplayed</Name>
-					<Abstract type="html">Boolean used to know if the RTO window has to be displayed.</Abstract>
-				</Parameter><Parameter>
-					<Name>labelDisplayed</Name>
-					<Abstract type="html">Boolean used to know if the RTO label has to be displayed.</Abstract>
+					<Abstract type="html">RTO label.</Abstract>
 				</Parameter><Parameter>
 					<Name>windowBackgroundColorNormal</Name>
 					<Abstract type="html">RTO window background color (normal state).</Abstract>
@@ -396,73 +532,24 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</Anchor>
+			<Anchor>//api/name/initWithName:andLabel:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setLabelDisplayed:</TokenIdentifier>
-			<Abstract type="html">Method used to set the RTO label as displayed or not.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/updateResources</TokenIdentifier>
+			<Abstract type="html">Method called to update RTO resources.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
-			<Declaration>- (void)setLabelDisplayed:(Boolean)displayed</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>displayed</Name>
-					<Abstract type="html">Boolean used to set the label display state.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)updateResources</Declaration>
 			
-			<Anchor>//api/name/setLabelDisplayed:</Anchor>
+			
+			<Anchor>//api/name/updateResources</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/shouldToggleWindowOnMarkerClicked</TokenIdentifier>
-			<Abstract type="html">Method used to knwo if the RTO toggle its window when the marker was clicked.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>- (Boolean)shouldToggleWindowOnMarkerClicked</Declaration>
-			
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if you want a toggle action, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/shouldToggleWindowOnMarkerClicked</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/hideWindow</TokenIdentifier>
-			<Abstract type="html">Method called to hide the window.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>- (void)hideWindow</Declaration>
-			
-			
-			<Anchor>//api/name/hideWindow</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/showWindow</TokenIdentifier>
-			<Abstract type="html">Method called to show the window.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>- (void)showWindow</Declaration>
-			
-			
-			<Anchor>//api/name/showWindow</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/toggleWindow</TokenIdentifier>
-			<Abstract type="html">Method called to toggle RTO appearance.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
-			
-			<Declaration>- (void)toggleWindow</Declaration>
-			
-			
-			<Anchor>//api/name/toggleWindow</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setOver:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setOver:</TokenIdentifier>
 			<Abstract type="html">Method called to render the annotation as touched or not.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>- (void)setOver:(Boolean)over</Declaration>
 			<Parameters>
@@ -476,9 +563,9 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setOverAction:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/setOverAction:</TokenIdentifier>
 			<Abstract type="html">Method called to render the action button as touched or not.</Abstract>
-			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
 			
 			<Declaration>- (void)setOverAction:(Boolean)over</Declaration>
 			<Parameters>
@@ -489,6 +576,39 @@
 			</Parameters>
 			
 			<Anchor>//api/name/setOverAction:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/hideWindow</TokenIdentifier>
+			<Abstract type="html">Method called to hide the window.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)hideWindow</Declaration>
+			
+			
+			<Anchor>//api/name/hideWindow</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/showWindow</TokenIdentifier>
+			<Abstract type="html">Method called to show the window.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)showWindow</Declaration>
+			
+			
+			<Anchor>//api/name/showWindow</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTONode/toggleWindow</TokenIdentifier>
+			<Abstract type="html">Method called to toggle RTO appearance.</Abstract>
+			<DeclaredIn>ISGenericRTONode.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)toggleWindow</Declaration>
+			
+			
+			<Anchor>//api/name/toggleWindow</Anchor>
 		</Token>
 		
 	</File>

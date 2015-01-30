@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>ISBeaconRegion Class Reference</title>
+		<title>ISUser Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">ISBeaconRegion Class Reference</h1>
+				<h1 class="hideInXcode">ISUser Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,10 +40,6 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/beacons">&nbsp;&nbsp;&nbsp;&nbsp;beacons</option>
-	
-	<option value="//api/name/externalId">&nbsp;&nbsp;&nbsp;&nbsp;externalId</option>
-	
 	<option value="//api/name/extra1">&nbsp;&nbsp;&nbsp;&nbsp;extra1</option>
 	
 	<option value="//api/name/extra2">&nbsp;&nbsp;&nbsp;&nbsp;extra2</option>
@@ -52,27 +48,30 @@
 	
 	<option value="//api/name/fExtra1">&nbsp;&nbsp;&nbsp;&nbsp;fExtra1</option>
 	
-	<option value="//api/name/forceNotification">&nbsp;&nbsp;&nbsp;&nbsp;forceNotification</option>
-	
 	<option value="//api/name/guid">&nbsp;&nbsp;&nbsp;&nbsp;guid</option>
 	
-	<option value="//api/name/label">&nbsp;&nbsp;&nbsp;&nbsp;label</option>
+	<option value="//api/name/initializationLanguage">&nbsp;&nbsp;&nbsp;&nbsp;initializationLanguage</option>
 	
-	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
+	<option value="//api/name/lastInitializationDate">&nbsp;&nbsp;&nbsp;&nbsp;lastInitializationDate</option>
 	
-	<option value="//api/name/nonRepetitionTimer">&nbsp;&nbsp;&nbsp;&nbsp;nonRepetitionTimer</option>
+	<option value="//api/name/mail">&nbsp;&nbsp;&nbsp;&nbsp;mail</option>
 	
-	<option value="//api/name/proximity">&nbsp;&nbsp;&nbsp;&nbsp;proximity</option>
+	<option value="//api/name/renderMode">&nbsp;&nbsp;&nbsp;&nbsp;renderMode</option>
 	
 	<option value="//api/name/serverType">&nbsp;&nbsp;&nbsp;&nbsp;serverType</option>
 	
-	<option value="//api/name/siteId">&nbsp;&nbsp;&nbsp;&nbsp;siteId</option>
-	
-	<option value="//api/name/uuid">&nbsp;&nbsp;&nbsp;&nbsp;uuid</option>
+	<option value="//api/name/serverUrl">&nbsp;&nbsp;&nbsp;&nbsp;serverUrl</option>
 	
 	
 	
 	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/getSiteWithSiteId:">&nbsp;&nbsp;&nbsp;&nbsp;- getSiteWithSiteId:</option>
+	
+	<option value="//api/name/getSites">&nbsp;&nbsp;&nbsp;&nbsp;- getSites</option>
 	
 	
 	
@@ -98,10 +97,6 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/beacons">beacons</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/externalId">externalId</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/extra1">extra1</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/extra2">extra2</a></span></li>
@@ -110,23 +105,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fExtra1">fExtra1</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/forceNotification">forceNotification</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/guid">guid</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/label">label</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initializationLanguage">initializationLanguage</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastInitializationDate">lastInitializationDate</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/nonRepetitionTimer">nonRepetitionTimer</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mail">mail</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/proximity">proximity</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/renderMode">renderMode</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverType">serverType</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/siteId">siteId</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uuid">uuid</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverUrl">serverUrl</a></span></li>
 	
 </ul></li>
 
@@ -134,12 +125,20 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSiteWithSiteId:">getSiteWithSiteId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSites">getSites</a></span></li>
+	
+</ul></li>
+
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="ISBeaconRegion Class Reference" name="top"></a>
+				<a title="ISUser Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -148,7 +147,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">ISBeaconRegion Class Reference</h1>
+						<h1 class="title title-header">ISUser Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -156,10 +155,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">CLBeaconRegion</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">ISBeaconRegion.h</td>
+	<td class="specification-value">ISUser.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -169,7 +168,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Class used to represent a Beacon Region.</p>
+						<p>Class used to represent an INSITEO user.</p>
 					</div>
 					
 					
@@ -188,107 +187,93 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/guid">&nbsp;&nbsp;guid</a></code>
-		<span class="tooltip"><p>Beacon Region unique identifier.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/siteId">&nbsp;&nbsp;siteId</a></code>
-		<span class="tooltip"><p>Beacon Region related site identifier.</p></span>
+		<span class="tooltip"><p>User external unique identifier.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/serverType">&nbsp;&nbsp;serverType</a></code>
-		<span class="tooltip"><p>Beacon Region related server type.</p></span>
+		<span class="tooltip"><p>User related server type.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/externalId">&nbsp;&nbsp;externalId</a></code>
-		<span class="tooltip"><p>Beacon Region external id (custom attribute).</p></span>
+		<code><a href="#//api/name/initializationLanguage">&nbsp;&nbsp;initializationLanguage</a></code>
+		<span class="tooltip"><p>User initialization language (language used during the SDK initialization process).</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/uuid">&nbsp;&nbsp;uuid</a></code>
-		<span class="tooltip"><p>Beacon Region UUID.</p></span>
+		<code><a href="#//api/name/lastInitializationDate">&nbsp;&nbsp;lastInitializationDate</a></code>
+		<span class="tooltip"><p>Last API initialization date.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/label">&nbsp;&nbsp;label</a></code>
-		<span class="tooltip"><p>Beacon Region label.</p></span>
+		<code><a href="#//api/name/mail">&nbsp;&nbsp;mail</a></code>
+		<span class="tooltip"><p>User mail.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
-		<span class="tooltip"><p>Beacon Region message.</p></span>
+		<code><a href="#//api/name/serverUrl">&nbsp;&nbsp;serverUrl</a></code>
+		<span class="tooltip"><p>Application server URL.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/nonRepetitionTimer">&nbsp;&nbsp;nonRepetitionTimer</a></code>
-		<span class="tooltip"><p>Beacon Region timer before next notification on entry.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/beacons">&nbsp;&nbsp;beacons</a></code>
-		<span class="tooltip"><p>Beacon Region related beacons.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/proximity">&nbsp;&nbsp;proximity</a></code>
-		<span class="tooltip"><p>Beacon Region proximity.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/forceNotification">&nbsp;&nbsp;forceNotification</a></code>
-		<span class="tooltip"><p>Boolean used to know if <a href="../Classes/Insiteo.html">Insiteo</a> SDK should present a UILocalNotification on entry.</p></span>
+		<code><a href="#//api/name/renderMode">&nbsp;&nbsp;renderMode</a></code>
+		<span class="tooltip"><p>Current map render mode (2D or 3D).</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fExtra1">&nbsp;&nbsp;fExtra1</a></code>
-		<span class="tooltip"><p>Beacon Region float extra 1.</p></span>
+		<span class="tooltip"><p>User float extra.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/extra1">&nbsp;&nbsp;extra1</a></code>
-		<span class="tooltip"><p>Beacon Region String extra 1.</p></span>
+		<span class="tooltip"><p>User NSString extra1.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/extra2">&nbsp;&nbsp;extra2</a></code>
-		<span class="tooltip"><p>Beacon Region String extra 2.</p></span>
+		<span class="tooltip"><p>User NSString extra2.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/extra3">&nbsp;&nbsp;extra3</a></code>
-		<span class="tooltip"><p>Beacon Region String extra 3.</p></span>
+		<span class="tooltip"><p>User NSString extra3.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSiteWithSiteId:">&ndash;&nbsp;getSiteWithSiteId:</a></code>
+		<span class="tooltip"><p>Method used to get a user site with its identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSites">&ndash;&nbsp;getSites</a></code>
+		<span class="tooltip"><p>Method used to get all user sites.</p></span>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -304,95 +289,13 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/beacons" title="beacons"></a>
-	<h3 class="subsubtitle method-title">beacons</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Beacon Region related beacons.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSMutableArray *beacons</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region related beacons.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/externalId" title="externalId"></a>
-	<h3 class="subsubtitle method-title">externalId</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Beacon Region external id (custom attribute).</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *externalId</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region external id (custom attribute).</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/extra1" title="extra1"></a>
 	<h3 class="subsubtitle method-title">extra1</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region String extra 1.</p>
+		<p>User NSString extra1.</p>
 	</div>		
 	
     
@@ -409,7 +312,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region String extra 1.</p>
+		<p>User NSString extra1.</p>
 	</div>
 	
 	
@@ -420,7 +323,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
@@ -433,7 +336,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region String extra 2.</p>
+		<p>User NSString extra2.</p>
 	</div>		
 	
     
@@ -450,7 +353,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region String extra 2.</p>
+		<p>User NSString extra2.</p>
 	</div>
 	
 	
@@ -461,7 +364,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
@@ -474,7 +377,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region String extra 3.</p>
+		<p>User NSString extra3.</p>
 	</div>		
 	
     
@@ -491,7 +394,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region String extra 3.</p>
+		<p>User NSString extra3.</p>
 	</div>
 	
 	
@@ -502,7 +405,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
@@ -515,7 +418,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region float extra 1.</p>
+		<p>User float extra.</p>
 	</div>		
 	
     
@@ -532,7 +435,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region float extra 1.</p>
+		<p>User float extra.</p>
 	</div>
 	
 	
@@ -543,48 +446,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/forceNotification" title="forceNotification"></a>
-	<h3 class="subsubtitle method-title">forceNotification</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Boolean used to know if <a href="../Classes/Insiteo.html">Insiteo</a> SDK should present a UILocalNotification on entry.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) Boolean forceNotification</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Boolean used to know if <a href="../Classes/Insiteo.html">Insiteo</a> SDK should present a UILocalNotification on entry.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
@@ -597,7 +459,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region unique identifier.</p>
+		<p>User external unique identifier.</p>
 	</div>		
 	
     
@@ -614,7 +476,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region unique identifier.</p>
+		<p>User external unique identifier.</p>
 	</div>
 	
 	
@@ -625,25 +487,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/label" title="label"></a>
-	<h3 class="subsubtitle method-title">label</h3>
+	<a name="//api/name/initializationLanguage" title="initializationLanguage"></a>
+	<h3 class="subsubtitle method-title">initializationLanguage</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region label.</p>
+		<p>User initialization language (language used during the SDK initialization process).</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *label</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *initializationLanguage</code></div>
 
     
 	
@@ -655,7 +517,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region label.</p>
+		<p>User initialization language (language used during the SDK initialization process).</p>
 	</div>
 	
 	
@@ -666,25 +528,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/message" title="message"></a>
-	<h3 class="subsubtitle method-title">message</h3>
+	<a name="//api/name/lastInitializationDate" title="lastInitializationDate"></a>
+	<h3 class="subsubtitle method-title">lastInitializationDate</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region message.</p>
+		<p>Last API initialization date.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *message</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSDate *lastInitializationDate</code></div>
 
     
 	
@@ -696,7 +558,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region message.</p>
+		<p>Last API initialization date.</p>
 	</div>
 	
 	
@@ -707,25 +569,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/nonRepetitionTimer" title="nonRepetitionTimer"></a>
-	<h3 class="subsubtitle method-title">nonRepetitionTimer</h3>
+	<a name="//api/name/mail" title="mail"></a>
+	<h3 class="subsubtitle method-title">mail</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region timer before next notification on entry.</p>
+		<p>User mail.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) float nonRepetitionTimer</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *mail</code></div>
 
     
 	
@@ -737,7 +599,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region timer before next notification on entry.</p>
+		<p>User mail.</p>
 	</div>
 	
 	
@@ -748,25 +610,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/proximity" title="proximity"></a>
-	<h3 class="subsubtitle method-title">proximity</h3>
+	<a name="//api/name/renderMode" title="renderMode"></a>
+	<h3 class="subsubtitle method-title">renderMode</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region proximity.</p>
+		<p>Current map render mode (2D or 3D).</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) CLProximity proximity</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) ISERenderMode renderMode</code></div>
 
     
 	
@@ -778,7 +640,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region proximity.</p>
+		<p>Current map render mode (2D or 3D).</p>
 	</div>
 	
 	
@@ -789,7 +651,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
@@ -802,7 +664,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region related server type.</p>
+		<p>User related server type.</p>
 	</div>		
 	
     
@@ -819,7 +681,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region related server type.</p>
+		<p>User related server type.</p>
 	</div>
 	
 	
@@ -830,25 +692,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/siteId" title="siteId"></a>
-	<h3 class="subsubtitle method-title">siteId</h3>
+	<a name="//api/name/serverUrl" title="serverUrl"></a>
+	<h3 class="subsubtitle method-title">serverUrl</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Beacon Region related site identifier.</p>
+		<p>Application server URL.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int siteId</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *serverUrl</code></div>
 
     
 	
@@ -860,7 +722,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region related site identifier.</p>
+		<p>Application server URL.</p>
 	</div>
 	
 	
@@ -871,48 +733,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/uuid" title="uuid"></a>
-	<h3 class="subsubtitle method-title">uuid</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Beacon Region UUID.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *uuid</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Beacon Region UUID.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISBeaconRegion.h</code><br />
+		<code class="declared-in-ref">ISUser.h</code><br />
 	</div>				
 	
 	
@@ -923,6 +744,114 @@
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getSiteWithSiteId:" title="getSiteWithSiteId:"></a>
+	<h3 class="subsubtitle method-title">getSiteWithSiteId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to get a user site with its identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (ISUserSite *)getSiteWithSiteId:(int)<em>siteId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>siteId</em></dt>
+			<dd><p>Wanted site identifier.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Return the wanted site (could be nil if not found).</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to get a user site with its identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSites" title="getSites"></a>
+	<h3 class="subsubtitle method-title">getSites</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to get all user sites.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)getSites</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Return an NSDictionary (key = site identifier) of all user sites (could be nil).</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to get all user sites.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISUser.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 				</div>

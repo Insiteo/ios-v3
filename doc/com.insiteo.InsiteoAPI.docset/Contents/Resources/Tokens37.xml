@@ -1,189 +1,393 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISLocation.html">
+	<File path="Classes/ISLocationProvider.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISLocation</TokenIdentifier>
-			<Abstract type="html">Class used to represent a location result.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISLocationProvider</TokenIdentifier>
+			<Abstract type="html">Class used to provide and get user locations.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>
 			
 			<NodeRef refid="37"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/setPosition:</TokenIdentifier>
-			<Abstract type="html">Location position (x, y, mapId.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/setLastLocation:</TokenIdentifier>
+			<Abstract type="html">Last computed location.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			<Declaration>@property (nonatomic, retain) ISLocation *lastLocation</Declaration>
 			
 			
-			<Anchor>//api/name/position</Anchor>
+			<Anchor>//api/name/lastLocation</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocation/position</TokenIdentifier>
-			<Abstract type="html">Location position (x, y, mapId.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationProvider/lastLocation</TokenIdentifier>
+			<Abstract type="html">Last computed location.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISPosition *position</Declaration>
+			<Declaration>@property (nonatomic, retain) ISLocation *lastLocation</Declaration>
 			
 			
-			<Anchor>//api/name/position</Anchor>
+			<Anchor>//api/name/lastLocation</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/setAccuracy:</TokenIdentifier>
-			<Abstract type="html">Location accuracy.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/setLocationListener:</TokenIdentifier>
+			<Abstract type="html">Location listener.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) double accuracy</Declaration>
+			<Declaration>@property (nonatomic, assign) id&lt;ISPLocationListener&gt; locationListener</Declaration>
 			
 			
-			<Anchor>//api/name/accuracy</Anchor>
+			<Anchor>//api/name/locationListener</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocation/accuracy</TokenIdentifier>
-			<Abstract type="html">Location accuracy.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationProvider/locationListener</TokenIdentifier>
+			<Abstract type="html">Location listener.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) double accuracy</Declaration>
+			<Declaration>@property (nonatomic, assign) id&lt;ISPLocationListener&gt; locationListener</Declaration>
 			
 			
-			<Anchor>//api/name/accuracy</Anchor>
+			<Anchor>//api/name/locationListener</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/setLocationType:</TokenIdentifier>
-			<Abstract type="html">Location type (0 WIFI, 1 BLE, 2 GPS, 3 STEP, 4 FAKE).</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/setIsStarted:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the location provider is started.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int locationType</Declaration>
+			<Declaration>@property (nonatomic, readonly) Boolean isStarted</Declaration>
 			
 			
-			<Anchor>//api/name/locationType</Anchor>
+			<Anchor>//api/name/isStarted</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISLocation/locationType</TokenIdentifier>
-			<Abstract type="html">Location type (0 WIFI, 1 BLE, 2 GPS, 3 STEP, 4 FAKE).</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationProvider/isStarted</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the location provider is started.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int locationType</Declaration>
+			<Declaration>@property (nonatomic, readonly) Boolean isStarted</Declaration>
 			
 			
-			<Anchor>//api/name/locationType</Anchor>
+			<Anchor>//api/name/isStarted</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/initWithLocationType:andMapId:andX:andY:andAccuracy:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/setLocationServices:</TokenIdentifier>
+			<Abstract type="html">Location services list.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithLocationType:(int)locationType andMapId:(int)mapId andX:(double)x andY:(double)y andAccuracy:(double)accuracy</Declaration>
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *locationServices</Declaration>
+			
+			
+			<Anchor>//api/name/locationServices</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationProvider/locationServices</TokenIdentifier>
+			<Abstract type="html">Location services list.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSMutableDictionary *locationServices</Declaration>
+			
+			
+			<Anchor>//api/name/locationServices</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/setSessionId:</TokenIdentifier>
+			<Abstract type="html">Last location session identifier (-1 if failed, 0 if fake, &gt;0 otherwise).</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sessionId</Declaration>
+			
+			
+			<Anchor>//api/name/sessionId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationProvider/sessionId</TokenIdentifier>
+			<Abstract type="html">Last location session identifier (-1 if failed, 0 if fake, &gt;0 otherwise).</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int sessionId</Declaration>
+			
+			
+			<Anchor>//api/name/sessionId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/setLocationFlags:</TokenIdentifier>
+			<Abstract type="html">Current location flags</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int locationFlags</Declaration>
+			
+			
+			<Anchor>//api/name/locationFlags</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationProvider/locationFlags</TokenIdentifier>
+			<Abstract type="html">Current location flags</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) int locationFlags</Declaration>
+			
+			
+			<Anchor>//api/name/locationFlags</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/setRenderer:</TokenIdentifier>
+			<Abstract type="html">Location Renderer.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISLocationRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISLocationProvider/renderer</TokenIdentifier>
+			<Abstract type="html">Location Renderer.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) ISLocationRenderer *renderer</Declaration>
+			
+			
+			<Anchor>//api/name/renderer</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISLocationProvider/getLocationPackageVersion</TokenIdentifier>
+			<Abstract type="html">Static method used to know the current location package version.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (int)getLocationPackageVersion</Declaration>
+			
+			<ReturnValue><Abstract type="html">Current location package version.</Abstract></ReturnValue>
+			<Anchor>//api/name/getLocationPackageVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISLocationProvider/getVersion</TokenIdentifier>
+			<Abstract type="html">Static method used to know the current location library version.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getVersion</Declaration>
+			
+			<ReturnValue><Abstract type="html">Current location library version.</Abstract></ReturnValue>
+			<Anchor>//api/name/getVersion</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISLocationProvider/sharedInstance</TokenIdentifier>
+			<Abstract type="html">Static method used to get the ISLocationProvider shared instance.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>+ (ISLocationProvider *)sharedInstance</Declaration>
+			
+			<ReturnValue><Abstract type="html">The ISLocationProvider shared instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/sharedInstance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/getLbsModule:</TokenIdentifier>
+			<Abstract type="html">Method used to get a lbs module with a specifi type.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>- (id&lt;ISPLbsModule&gt;)getLbsModule:(ISELbsModuleType)lbsModuleType</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>locationType</Name>
-					<Abstract type="html">Location type (used modules).</Abstract>
-				</Parameter><Parameter>
-					<Name>mapId</Name>
-					<Abstract type="html">Location map id.</Abstract>
-				</Parameter><Parameter>
-					<Name>x</Name>
-					<Abstract type="html">X coordinate (in meters).</Abstract>
-				</Parameter><Parameter>
-					<Name>y</Name>
-					<Abstract type="html">Y coordinate (in meters).</Abstract>
-				</Parameter><Parameter>
-					<Name>accuracy</Name>
-					<Abstract type="html">Location accuracy.</Abstract>
+					<Name>lbsModuleType</Name>
+					<Abstract type="html">Lbs module type.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithLocationType:andMapId:andX:andY:andAccuracy:</Anchor>
+			<Anchor>//api/name/getLbsModule:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/initWithLocation:</TokenIdentifier>
-			<Abstract type="html">Second constructor.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</TokenIdentifier>
+			<Abstract type="html">Method used to start the location with specific configuration.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithLocation:(ISLocation *)location</Declaration>
+			<Declaration>- (Boolean)startWithFlags:(int)locationFlags andListener:(id&lt;ISPLocationListener&gt;)listener andScanFrequency:(int)scanFrequency andDefaultMapId:(int)defaultMapId andForceDefaultMap:(Boolean)forceDefaultMap andLocationPath:(NSString *)locationPath andUUIDService:(NSString *)uuidService</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">Location to copy.</Abstract>
+					<Name>locationFlags</Name>
+					<Abstract type="html">Location flags.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Location events listener.</Abstract>
+				</Parameter><Parameter>
+					<Name>scanFrequency</Name>
+					<Abstract type="html">Location scan frequency.</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultMapId</Name>
+					<Abstract type="html">Default map identifier to use</Abstract>
+				</Parameter><Parameter>
+					<Name>forceDefaultMap</Name>
+					<Abstract type="html">Boolean used to know if we force the default map.</Abstract>
+				</Parameter><Parameter>
+					<Name>locationPath</Name>
+					<Abstract type="html">The location package directory.</Abstract>
+				</Parameter><Parameter>
+					<Name>uuidService</Name>
+					<Abstract type="html">UUID service to scan for (could be nil).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the given parameters are correct and a location package was found, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:andLocationPath:andUUIDService:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</TokenIdentifier>
+			<Abstract type="html">Method used to start the location with specific configuration.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)startWithFlags:(int)locationFlags andListener:(id&lt;ISPLocationListener&gt;)listener andScanFrequency:(int)scanFrequency andDefaultMapId:(int)defaultMapId andForceDefaultMap:(Boolean)forceDefaultMap</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationFlags</Name>
+					<Abstract type="html">Location flags.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Location events listener.</Abstract>
+				</Parameter><Parameter>
+					<Name>scanFrequency</Name>
+					<Abstract type="html">Location scan frequency.</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultMapId</Name>
+					<Abstract type="html">Default map identifier to use</Abstract>
+				</Parameter><Parameter>
+					<Name>forceDefaultMap</Name>
+					<Abstract type="html">Boolean used to know if we force the default map.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the given parameters are correct and a location package was found, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/startWithFlags:andListener:andScanFrequency:andDefaultMapId:andForceDefaultMap:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/startWithFlags:andListener:andScanFrequency:</TokenIdentifier>
+			<Abstract type="html">Method used to start the location with specific configuration.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)startWithFlags:(int)locationFlags andListener:(id&lt;ISPLocationListener&gt;)listener andScanFrequency:(int)scanFrequency</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationFlags</Name>
+					<Abstract type="html">Location flags.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Location events listener.</Abstract>
+				</Parameter><Parameter>
+					<Name>scanFrequency</Name>
+					<Abstract type="html">Location scan frequency.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the given parameters are correct and a location package was found, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/startWithFlags:andListener:andScanFrequency:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/startWithFlags:andListener:</TokenIdentifier>
+			<Abstract type="html">Method used to start the location with specific configuration.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)startWithFlags:(int)locationFlags andListener:(id&lt;ISPLocationListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>locationFlags</Name>
+					<Abstract type="html">Location flags.</Abstract>
+				</Parameter><Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Location events listener.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the given parameters are correct and a location package was found, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/startWithFlags:andListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/startWithListener:</TokenIdentifier>
+			<Abstract type="html">Method used to start the location using a default configuration and flags specified in a .plist file.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)startWithListener:(id&lt;ISPLocationListener&gt;)listener</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>listener</Name>
+					<Abstract type="html">Location events listener.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the given parameters are correct and a location package was found, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/startWithListener:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/stopLocation</TokenIdentifier>
+			<Abstract type="html">Method used to stop the location.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)stopLocation</Declaration>
+			
+			
+			<Anchor>//api/name/stopLocation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/changeLocationWithFlags:</TokenIdentifier>
+			<Abstract type="html">Method used to change the location flags.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
+			
+			<Declaration>- (void)changeLocationWithFlags:(int)flags</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>flags</Name>
+					<Abstract type="html">New location flags.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithLocation:</Anchor>
+			<Anchor>//api/name/changeLocationWithFlags:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISLocation/getLocationTypeName:</TokenIdentifier>
-			<Abstract type="html">Static method used to get an NSString which describes the location type.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/requestUniqueLocationWithLocationRequestListener:andLocationFlags:</TokenIdentifier>
+			<Abstract type="html">Method called to get a one shot location (After a timeout of 10 seconds with no computed location, fail callback is called).</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>+ (NSString *)getLocationTypeName:(ISLocation *)location</Declaration>
+			<Declaration>- (ISLocationRequest *)requestUniqueLocationWithLocationRequestListener:(id&lt;ISPLocationRequestListener&gt;)locationRequestListener andLocationFlags:(int)locationFlags</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">Corresponding location object.</Abstract>
+					<Name>locationRequestListener</Name>
+					<Abstract type="html">Listener to notify when a location is computed.</Abstract>
+				</Parameter><Parameter>
+					<Name>locationFlags</Name>
+					<Abstract type="html">Location flags to used.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">WIFI, BLE, GPS, STEP, FAKE or UNKNOWN.</Abstract></ReturnValue>
-			<Anchor>//api/name/getLocationTypeName:</Anchor>
+			<ReturnValue><Abstract type="html">The related location request to identify callers.</Abstract></ReturnValue>
+			<Anchor>//api/name/requestUniqueLocationWithLocationRequestListener:andLocationFlags:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/updateWithLocation:</TokenIdentifier>
-			<Abstract type="html">Method used to update the location with another location.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISLocationProvider/deleteLogs</TokenIdentifier>
+			<Abstract type="html">Method used to delete the location logs directory.</Abstract>
+			<DeclaredIn>ISLocationProvider.h</DeclaredIn>			
 			
-			<Declaration>- (void)updateWithLocation:(ISLocation *)location</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">Location to use.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (Boolean)deleteLogs</Declaration>
 			
-			<Anchor>//api/name/updateWithLocation:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/x</TokenIdentifier>
-			<Abstract type="html">Accessor used to get the x coordinate.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
-			
-			<Declaration>- (double)x</Declaration>
-			
-			
-			<Anchor>//api/name/x</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/y</TokenIdentifier>
-			<Abstract type="html">Accessor used to get the y coordinate.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
-			
-			<Declaration>- (double)y</Declaration>
-			
-			
-			<Anchor>//api/name/y</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISLocation/mapId</TokenIdentifier>
-			<Abstract type="html">Accessor used to get the map identifier.</Abstract>
-			<DeclaredIn>ISLocation.h</DeclaredIn>			
-			
-			<Declaration>- (int)mapId</Declaration>
-			
-			
-			<Anchor>//api/name/mapId</Anchor>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the directory was successfuly deleted, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteLogs</Anchor>
 		</Token>
 		
 	</File>

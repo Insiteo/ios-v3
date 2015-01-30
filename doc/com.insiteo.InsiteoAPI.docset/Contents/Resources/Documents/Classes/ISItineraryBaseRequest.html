@@ -42,8 +42,6 @@
 	
 	<option value="//api/name/itinerary">&nbsp;&nbsp;&nbsp;&nbsp;itinerary</option>
 	
-	<option value="//api/name/itineraryProvider">&nbsp;&nbsp;&nbsp;&nbsp;itineraryProvider</option>
-	
 	<option value="//api/name/listener">&nbsp;&nbsp;&nbsp;&nbsp;listener</option>
 	
 	<option value="//api/name/pmr">&nbsp;&nbsp;&nbsp;&nbsp;pmr</option>
@@ -54,10 +52,6 @@
 	
 	
 	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/getRoute">&nbsp;&nbsp;&nbsp;&nbsp;- getRoute</option>
-	
-	<option value="//api/name/initWithItineraryProvider:andListener:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithItineraryProvider:andListener:</option>
 	
 	<option value="//api/name/recompute">&nbsp;&nbsp;&nbsp;&nbsp;- recompute</option>
 	
@@ -87,8 +81,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itinerary">itinerary</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/itineraryProvider">itineraryProvider</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listener">listener</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pmr">pmr</a></span></li>
@@ -100,10 +92,6 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRoute">getRoute</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithItineraryProvider:andListener:">initWithItineraryProvider:andListener:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recompute">recompute</a></span></li>
 	
@@ -179,31 +167,10 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/itineraryProvider">&nbsp;&nbsp;itineraryProvider</a></code>
-		<span class="tooltip"><p>Itinerary provider reference.</p></span>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/pmr">&nbsp;&nbsp;pmr</a></code>
 		<span class="tooltip"><p>Boolean used to know if we compute the route for disabled people.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithItineraryProvider:andListener:">&ndash;&nbsp;initWithItineraryProvider:andListener:</a></code>
-		<span class="tooltip"><p>Main constructor.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getRoute">&ndash;&nbsp;getRoute</a></code>
-		<span class="tooltip"><p>Method called to execute the Itinerary request.</p></span>
-	</span>
-	
 	
 </li><li>
 	<span class="tooltip">
@@ -250,47 +217,6 @@
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Request itinerary (will be filled by the <a href="../Classes/ISItineraryProvider.html">ISItineraryProvider</a>).</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryBaseRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/itineraryProvider" title="itineraryProvider"></a>
-	<h3 class="subsubtitle method-title">itineraryProvider</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Itinerary provider reference.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (assign) ISItineraryProvider *itineraryProvider</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Itinerary provider reference.</p>
 	</div>
 	
 	
@@ -400,108 +326,6 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/getRoute" title="getRoute"></a>
-	<h3 class="subsubtitle method-title">getRoute</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method called to execute the Itinerary request.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (Boolean)getRoute</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A boolean used to know if the request succeeded.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called to execute the Itinerary request.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryBaseRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithItineraryProvider:andListener:" title="initWithItineraryProvider:andListener:"></a>
-	<h3 class="subsubtitle method-title">initWithItineraryProvider:andListener:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Main constructor.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)initWithItineraryProvider:(ISItineraryProvider *)<em>itineraryProvider</em> andListener:(id&lt;ISPItineraryRequestListener&gt;)<em>listener</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>itineraryProvider</em></dt>
-			<dd><p>Itinerary provider reference.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>listener</em></dt>
-			<dd><p>Object to notify when the request succeeded or failed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Main constructor.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISItineraryBaseRequest.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/recompute" title="recompute"></a>
 	<h3 class="subsubtitle method-title">recompute</h3>
 	
@@ -555,7 +379,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

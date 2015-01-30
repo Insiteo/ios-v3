@@ -40,11 +40,17 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/eventId">&nbsp;&nbsp;&nbsp;&nbsp;eventId</option>
+	<option value="//api/name/bundleIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;bundleIdentifier</option>
 	
-	<option value="//api/name/guid">&nbsp;&nbsp;&nbsp;&nbsp;guid</option>
+	<option value="//api/name/deviceGuid">&nbsp;&nbsp;&nbsp;&nbsp;deviceGuid</option>
+	
+	<option value="//api/name/serverType">&nbsp;&nbsp;&nbsp;&nbsp;serverType</option>
+	
+	<option value="//api/name/siteId">&nbsp;&nbsp;&nbsp;&nbsp;siteId</option>
 	
 	<option value="//api/name/timeStamp">&nbsp;&nbsp;&nbsp;&nbsp;timeStamp</option>
+	
+	<option value="//api/name/userGuid">&nbsp;&nbsp;&nbsp;&nbsp;userGuid</option>
 	
 	
 	
@@ -74,11 +80,17 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/eventId">eventId</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bundleIdentifier">bundleIdentifier</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/guid">guid</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deviceGuid">deviceGuid</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/serverType">serverType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/siteId">siteId</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeStamp">timeStamp</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/userGuid">userGuid</a></span></li>
 	
 </ul></li>
 
@@ -149,15 +161,36 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/guid">&nbsp;&nbsp;guid</a></code>
+		<code><a href="#//api/name/userGuid">&nbsp;&nbsp;userGuid</a></code>
 		<span class="tooltip"><p>Event related GUID.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/eventId">&nbsp;&nbsp;eventId</a></code>
-		<span class="tooltip"><p>Event database identifier.</p></span>
+		<code><a href="#//api/name/deviceGuid">&nbsp;&nbsp;deviceGuid</a></code>
+		<span class="tooltip"><p>Event related device GUID.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/bundleIdentifier">&nbsp;&nbsp;bundleIdentifier</a></code>
+		<span class="tooltip"><p>Application bundle identifier.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/serverType">&nbsp;&nbsp;serverType</a></code>
+		<span class="tooltip"><p>Event related server type.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/siteId">&nbsp;&nbsp;siteId</a></code>
+		<span class="tooltip"><p>Event related site identifier.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -175,18 +208,18 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/eventId" title="eventId"></a>
-	<h3 class="subsubtitle method-title">eventId</h3>
+	<a name="//api/name/bundleIdentifier" title="bundleIdentifier"></a>
+	<h3 class="subsubtitle method-title">bundleIdentifier</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Event database identifier.</p>
+		<p>Application bundle identifier.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int eventId</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *bundleIdentifier</code></div>
 
     
 	
@@ -198,7 +231,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Event database identifier.</p>
+		<p>Application bundle identifier.</p>
 	</div>
 	
 	
@@ -216,18 +249,18 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/guid" title="guid"></a>
-	<h3 class="subsubtitle method-title">guid</h3>
+	<a name="//api/name/deviceGuid" title="deviceGuid"></a>
+	<h3 class="subsubtitle method-title">deviceGuid</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Event related GUID.</p>
+		<p>Event related device GUID.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *guid</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *deviceGuid</code></div>
 
     
 	
@@ -239,7 +272,89 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Event related GUID.</p>
+		<p>Event related device GUID.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISAnalyticsAbstractEvent.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/serverType" title="serverType"></a>
+	<h3 class="subsubtitle method-title">serverType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Event related server type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) ISEServerType serverType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Event related server type.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISAnalyticsAbstractEvent.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/siteId" title="siteId"></a>
+	<h3 class="subsubtitle method-title">siteId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Event related site identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) int siteId</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Event related site identifier.</p>
 	</div>
 	
 	
@@ -297,6 +412,47 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/userGuid" title="userGuid"></a>
+	<h3 class="subsubtitle method-title">userGuid</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Event related GUID.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *userGuid</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Event related GUID.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISAnalyticsAbstractEvent.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -314,7 +470,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

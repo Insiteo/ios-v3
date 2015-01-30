@@ -1,86 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPAuthListener.html">
+	<File path="Protocols/ISPBeaconListener.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPAuthListener</TokenIdentifier>
-			<Abstract type="html">Protocol used to handle INSITEO authentication.</Abstract>
-			<DeclaredIn>ISPAuthListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPBeaconListener</TokenIdentifier>
+			<Abstract type="html">Protocol used to handle Beacon events.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>
 			
 			<NodeRef refid="81"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPAuthListener/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</TokenIdentifier>
-			<Abstract type="html">Method called when a login task is done.</Abstract>
-			<DeclaredIn>ISPAuthListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/onEnterBeaconRegion:</TokenIdentifier>
+			<Abstract type="html">Method called when the user enters in a monitored beaconRegion.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onLoginDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ISERole)roleId andRemote:(Boolean)remote</Declaration>
+			<Declaration>- (void)onEnterBeaconRegion:(ISBeaconRegion *)beaconRegion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>success</Name>
-					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the login succeeded, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">Related error if no success.</Abstract>
-				</Parameter><Parameter>
-					<Name>sites</Name>
-					<Abstract type="html">Logged user available sites.</Abstract>
-				</Parameter><Parameter>
-					<Name>roleId</Name>
-					<Abstract type="html">Logged user role identifier.</Abstract>
-				</Parameter><Parameter>
-					<Name>remote</Name>
-					<Abstract type="html">Boolean used to know if login is local or remote.</Abstract>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">The beacon region the user enters in.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onLoginDoneWithSuccess:andError:andSites:andRoleId:andRemote:</Anchor>
+			<Anchor>//api/name/onEnterBeaconRegion:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPAuthListener/onLogoutDoneWithSuccess:andError:</TokenIdentifier>
-			<Abstract type="html">Method called when a logout task is done.</Abstract>
-			<DeclaredIn>ISPAuthListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/onExitBeaconRegion:</TokenIdentifier>
+			<Abstract type="html">Method called when the user exits a monitored beaconRegion.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onLogoutDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error</Declaration>
+			<Declaration>- (void)onExitBeaconRegion:(ISBeaconRegion *)beaconRegion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>success</Name>
-					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the logout succeeded, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">Related error if no success.</Abstract>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">The ISBeaconRegion the user exits.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onLogoutDoneWithSuccess:andError:</Anchor>
+			<Anchor>//api/name/onExitBeaconRegion:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPAuthListener/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</TokenIdentifier>
-			<Abstract type="html">Method called to refresh user available sites.</Abstract>
-			<DeclaredIn>ISPAuthListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/onEnterBeacon:forRegion:andProximity:</TokenIdentifier>
+			<Abstract type="html">Method called when the beacon proximity is reached for an entered beaconRegion.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onRefreshSitesDoneWithSuccess:(Boolean)success andError:(ISInsiteoError *)error andSites:(NSArray *)sites andRoleId:(ISERole)roleId</Declaration>
+			<Declaration>- (void)onEnterBeacon:(ISBeacon *)beacon forRegion:(ISBeaconRegion *)beaconRegion andProximity:(CLProximity)proximity</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>success</Name>
-					<Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the refresh succeeded, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon with reached proximity.</Abstract>
 				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">Related error if no success.</Abstract>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">The beaconRegion associated to the beacon with reached proximity.</Abstract>
 				</Parameter><Parameter>
-					<Name>sites</Name>
-					<Abstract type="html">Refreshed available sites.</Abstract>
-				</Parameter><Parameter>
-					<Name>roleId</Name>
-					<Abstract type="html">Refreshed user role identifier.</Abstract>
+					<Name>proximity</Name>
+					<Abstract type="html">The proximity reached.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onRefreshSitesDoneWithSuccess:andError:andSites:andRoleId:</Anchor>
+			<Anchor>//api/name/onEnterBeacon:forRegion:andProximity:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/onExitBeacon:forRegion:andProximity:</TokenIdentifier>
+			<Abstract type="html">Method called when the beacon proximity is not reached anymore for an entered beaconRegion.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)onExitBeacon:(ISBeacon *)beacon forRegion:(ISBeaconRegion *)beaconRegion andProximity:(CLProximity)proximity</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon with proximity CLProximityFar or CLProximityUnknown.</Abstract>
+				</Parameter><Parameter>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">The beaconRegion associated to the beacon with the no more reached proximity.</Abstract>
+				</Parameter><Parameter>
+					<Name>proximity</Name>
+					<Abstract type="html">The new proximity.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/onExitBeacon:forRegion:andProximity:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/shouldPresentLocalNotificationOnBeaconRegionEntry:</TokenIdentifier>
+			<Abstract type="html">Method used to let the ISBeaconProvider managing the UILocalNotification presentation on a beaconRegion entry.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)shouldPresentLocalNotificationOnBeaconRegionEntry:(ISBeaconRegion *)beaconRegion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">The beacon region the user enters in.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If the ISBeaconProvider should manage the UILocalNotification presentation. YES, by default.</Abstract></ReturnValue>
+			<Anchor>//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/firstRangedISBeacon:onEntryforRegion:withError:</TokenIdentifier>
+			<Abstract type="html">Method used to get the first ranged beacon on a beaconRegion entry.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)firstRangedISBeacon:(ISBeacon *)beacon onEntryforRegion:(ISBeaconRegion *)beaconRegion withError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The first ranged ISBeacon in region.</Abstract>
+				</Parameter><Parameter>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">The ranged beaconRegion.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If ranging has failed for region, else nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/firstRangedISBeacon:onEntryforRegion:withError:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/rangedISBeacons:andReachedProximityBeacons:inRegion:withError:</TokenIdentifier>
+			<Abstract type="html">Method used to get all ranged beacons in an entered beaconRegion and all beacons which have reached the region proximity.</Abstract>
+			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
+			
+			<Declaration>- (void)rangedISBeacons:(NSArray *)beacons andReachedProximityBeacons:(NSArray *)reachedProximityBeacons inRegion:(ISBeaconRegion *)beaconRegion withError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>beacons</Name>
+					<Abstract type="html">All ranged beacons, nil if an error occured.</Abstract>
+				</Parameter><Parameter>
+					<Name>reachedProximityBeacons</Name>
+					<Abstract type="html">beacons which have reached the region proximity, nil if an error occured.</Abstract>
+				</Parameter><Parameter>
+					<Name>beaconRegion</Name>
+					<Abstract type="html">The ranged beaconRegion.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">If ranging for the region has failed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/rangedISBeacons:andReachedProximityBeacons:inRegion:withError:</Anchor>
 		</Token>
 		
 	</File>

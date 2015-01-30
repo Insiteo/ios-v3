@@ -34,47 +34,113 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setGuid:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setUserGuid:</TokenIdentifier>
 			<Abstract type="html">Event related GUID.</Abstract>
 			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *userGuid</Declaration>
 			
 			
-			<Anchor>//api/name/guid</Anchor>
+			<Anchor>//api/name/userGuid</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/guid</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/userGuid</TokenIdentifier>
 			<Abstract type="html">Event related GUID.</Abstract>
 			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSString *guid</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *userGuid</Declaration>
 			
 			
-			<Anchor>//api/name/guid</Anchor>
+			<Anchor>//api/name/userGuid</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setEventId:</TokenIdentifier>
-			<Abstract type="html">Event database identifier.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setDeviceGuid:</TokenIdentifier>
+			<Abstract type="html">Event related device GUID.</Abstract>
 			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int eventId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *deviceGuid</Declaration>
 			
 			
-			<Anchor>//api/name/eventId</Anchor>
+			<Anchor>//api/name/deviceGuid</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/eventId</TokenIdentifier>
-			<Abstract type="html">Event database identifier.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/deviceGuid</TokenIdentifier>
+			<Abstract type="html">Event related device GUID.</Abstract>
 			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) int eventId</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *deviceGuid</Declaration>
 			
 			
-			<Anchor>//api/name/eventId</Anchor>
+			<Anchor>//api/name/deviceGuid</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setBundleIdentifier:</TokenIdentifier>
+			<Abstract type="html">Application bundle identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *bundleIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/bundleIdentifier</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/bundleIdentifier</TokenIdentifier>
+			<Abstract type="html">Application bundle identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) NSString *bundleIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/bundleIdentifier</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setServerType:</TokenIdentifier>
+			<Abstract type="html">Event related server type.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/serverType</TokenIdentifier>
+			<Abstract type="html">Event related server type.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
+			
+			
+			<Anchor>//api/name/serverType</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsAbstractEvent/setSiteId:</TokenIdentifier>
+			<Abstract type="html">Event related site identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsAbstractEvent/siteId</TokenIdentifier>
+			<Abstract type="html">Event related site identifier.</Abstract>
+			<DeclaredIn>ISAnalyticsAbstractEvent.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
+			
+			
+			<Anchor>//api/name/siteId</Anchor>
 		</Token>
 		
 	</File>

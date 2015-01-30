@@ -1,100 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/ISPBeaconListener.html">
+	<File path="Protocols/ISPCancelable.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/ISPBeaconListener</TokenIdentifier>
-			<Abstract type="html">Protocol used to handle Beacon events.</Abstract>
-			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/ISPCancelable</TokenIdentifier>
+			<Abstract type="html">Protocol used to allow users to cancel intern task (init, update etc...).</Abstract>
+			<DeclaredIn>ISPCancelable.h</DeclaredIn>
 			
 			<NodeRef refid="82"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/onEnterBeaconRegion:</TokenIdentifier>
-			<Abstract type="html">Method called when the user enter in a monitored beacon region.</Abstract>
-			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/ISPCancelable/cancel</TokenIdentifier>
+			<Abstract type="html">Method called to cancel the related task.</Abstract>
+			<DeclaredIn>ISPCancelable.h</DeclaredIn>			
 			
-			<Declaration>- (void)onEnterBeaconRegion:(ISBeaconRegion *)beaconRegion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>beaconRegion</Name>
-					<Abstract type="html">The beacon region the user enters in.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)cancel</Declaration>
 			
-			<Anchor>//api/name/onEnterBeaconRegion:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/onExitBeaconRegion:</TokenIdentifier>
-			<Abstract type="html">Method called when the user quit a monitored beacon region.</Abstract>
-			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
 			
-			<Declaration>- (void)onExitBeaconRegion:(ISBeaconRegion *)beaconRegion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>beaconRegion</Name>
-					<Abstract type="html">The beacon region the user exits.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/onExitBeaconRegion:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/shouldPresentLocalNotificationOnBeaconRegionEntry:</TokenIdentifier>
-			<Abstract type="html">Method used to inform BeaconProvider to notify or not on beacon region entry.</Abstract>
-			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
-			
-			<Declaration>- (BOOL)shouldPresentLocalNotificationOnBeaconRegionEntry:(ISBeaconRegion *)beaconRegion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>beaconRegion</Name>
-					<Abstract type="html">The beacon region the user enters in.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">If BeaconProvider should or not notify on entry. Return YES if not implemented, by default.</Abstract></ReturnValue>
-			<Anchor>//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/customizeNotificationOnBeaconRegionEntry:</TokenIdentifier>
-			<Abstract type="html">Method used to customize the notification on beacon region entry.</Abstract>
-			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
-			
-			<Declaration>- (void)customizeNotificationOnBeaconRegionEntry:(ISBeaconRegion *)beaconRegion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>beaconRegion</Name>
-					<Abstract type="html">The beacon region the user enters in.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/customizeNotificationOnBeaconRegionEntry:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/ISPBeaconListener/firstRangedCLBeacon:onEntryforRegion:withError:</TokenIdentifier>
-			<Abstract type="html">Method used to get the nearest CLBeacon in BeaconRegion on region entry.</Abstract>
-			<DeclaredIn>ISPBeaconListener.h</DeclaredIn>			
-			
-			<Declaration>- (void)firstRangedCLBeacon:(CLBeacon *)clBeacon onEntryforRegion:(ISBeaconRegion *)beaconRegion withError:(NSError *)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>clBeacon</Name>
-					<Abstract type="html">The nearest beacon in region, if not error.</Abstract>
-				</Parameter><Parameter>
-					<Name>beaconRegion</Name>
-					<Abstract type="html">The beacon region the user enters in.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">If ranging has failed for region, else nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/firstRangedCLBeacon:onEntryforRegion:withError:</Anchor>
+			<Anchor>//api/name/cancel</Anchor>
 		</Token>
 		
 	</File>

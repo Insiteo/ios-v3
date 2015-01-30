@@ -1,410 +1,382 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISTouch.html">
+	<File path="Classes/ISUserSite.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISTouch</TokenIdentifier>
-			<Abstract type="html">Class used to store iOS touch information such as UIEvent and relative CCLayer.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISUserSite</TokenIdentifier>
+			<Abstract type="html">Class used to represent a user INSITEO site.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>
 			
 			<NodeRef refid="74"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setTouches:</TokenIdentifier>
-			<Abstract type="html">An array which contains all touches.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setSiteId:</TokenIdentifier>
+			<Abstract type="html">External site identifier.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *touches</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
 			
 			
-			<Anchor>//api/name/touches</Anchor>
+			<Anchor>//api/name/siteId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/touches</TokenIdentifier>
-			<Abstract type="html">An array which contains all touches.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/siteId</TokenIdentifier>
+			<Abstract type="html">External site identifier.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *touches</Declaration>
+			<Declaration>@property (nonatomic, readwrite) int siteId</Declaration>
 			
 			
-			<Anchor>//api/name/touches</Anchor>
+			<Anchor>//api/name/siteId</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setOriginalTouches:</TokenIdentifier>
-			<Abstract type="html">An array which contains all original touches (whithout transformation like rotation or tilt).</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setServerType:</TokenIdentifier>
+			<Abstract type="html">Server type.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *originalTouches</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
 			
 			
-			<Anchor>//api/name/originalTouches</Anchor>
+			<Anchor>//api/name/serverType</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/originalTouches</TokenIdentifier>
-			<Abstract type="html">An array which contains all original touches (whithout transformation like rotation or tilt).</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/serverType</TokenIdentifier>
+			<Abstract type="html">Server type.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *originalTouches</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEServerType serverType</Declaration>
 			
 			
-			<Anchor>//api/name/originalTouches</Anchor>
+			<Anchor>//api/name/serverType</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setEvent:</TokenIdentifier>
-			<Abstract type="html">Relative UIEvent.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setLabel:</TokenIdentifier>
+			<Abstract type="html">Site label (its name).</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) UIEvent *event</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
 			
 			
-			<Anchor>//api/name/event</Anchor>
+			<Anchor>//api/name/label</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/event</TokenIdentifier>
-			<Abstract type="html">Relative UIEvent.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/label</TokenIdentifier>
+			<Abstract type="html">Site label (its name).</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) UIEvent *event</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *label</Declaration>
 			
 			
-			<Anchor>//api/name/event</Anchor>
+			<Anchor>//api/name/label</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setFirstPoint:</TokenIdentifier>
-			<Abstract type="html">First (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setLanguages:</TokenIdentifier>
+			<Abstract type="html">Site available languages.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint firstPoint</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *languages</Declaration>
 			
 			
-			<Anchor>//api/name/firstPoint</Anchor>
+			<Anchor>//api/name/languages</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/firstPoint</TokenIdentifier>
-			<Abstract type="html">First (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/languages</TokenIdentifier>
+			<Abstract type="html">Site available languages.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint firstPoint</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *languages</Declaration>
 			
 			
-			<Anchor>//api/name/firstPoint</Anchor>
+			<Anchor>//api/name/languages</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setSecondPoint:</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setVersions:</TokenIdentifier>
+			<Abstract type="html">Site available versions.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint secondPoint</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *versions</Declaration>
 			
 			
-			<Anchor>//api/name/secondPoint</Anchor>
+			<Anchor>//api/name/versions</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/secondPoint</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/versions</TokenIdentifier>
+			<Abstract type="html">Site available versions.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint secondPoint</Declaration>
+			<Declaration>@property (nonatomic, retain) NSArray *versions</Declaration>
 			
 			
-			<Anchor>//api/name/secondPoint</Anchor>
+			<Anchor>//api/name/versions</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setFirstOriginalPoint:</TokenIdentifier>
-			<Abstract type="html">First (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setMapServer:</TokenIdentifier>
+			<Abstract type="html">Site map server URL.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint firstOriginalPoint</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *mapServer</Declaration>
 			
 			
-			<Anchor>//api/name/firstOriginalPoint</Anchor>
+			<Anchor>//api/name/mapServer</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/firstOriginalPoint</TokenIdentifier>
-			<Abstract type="html">First (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/mapServer</TokenIdentifier>
+			<Abstract type="html">Site map server URL.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint firstOriginalPoint</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *mapServer</Declaration>
 			
 			
-			<Anchor>//api/name/firstOriginalPoint</Anchor>
+			<Anchor>//api/name/mapServer</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setSecondOriginalPoint:</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setTopLeftLatitude:</TokenIdentifier>
+			<Abstract type="html">Site bounding rect top left latitude.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint secondOriginalPoint</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double topLeftLatitude</Declaration>
 			
 			
-			<Anchor>//api/name/secondOriginalPoint</Anchor>
+			<Anchor>//api/name/topLeftLatitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/secondOriginalPoint</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch point.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/topLeftLatitude</TokenIdentifier>
+			<Abstract type="html">Site bounding rect top left latitude.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) CGPoint secondOriginalPoint</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double topLeftLatitude</Declaration>
 			
 			
-			<Anchor>//api/name/secondOriginalPoint</Anchor>
+			<Anchor>//api/name/topLeftLatitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setFirstRay:</TokenIdentifier>
-			<Abstract type="html">First (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setTopLeftLongitude:</TokenIdentifier>
+			<Abstract type="html">Site bounding rect top left longitudes.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *firstRay</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double topLeftLongitude</Declaration>
 			
 			
-			<Anchor>//api/name/firstRay</Anchor>
+			<Anchor>//api/name/topLeftLongitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/firstRay</TokenIdentifier>
-			<Abstract type="html">First (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/topLeftLongitude</TokenIdentifier>
+			<Abstract type="html">Site bounding rect top left longitudes.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *firstRay</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double topLeftLongitude</Declaration>
 			
 			
-			<Anchor>//api/name/firstRay</Anchor>
+			<Anchor>//api/name/topLeftLongitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setSecondRay:</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setBottomRightLatitude:</TokenIdentifier>
+			<Abstract type="html">Site bounding rect bottom right latitude.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *secondRay</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double bottomRightLatitude</Declaration>
 			
 			
-			<Anchor>//api/name/secondRay</Anchor>
+			<Anchor>//api/name/bottomRightLatitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/secondRay</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/bottomRightLatitude</TokenIdentifier>
+			<Abstract type="html">Site bounding rect bottom right latitude.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *secondRay</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double bottomRightLatitude</Declaration>
 			
 			
-			<Anchor>//api/name/secondRay</Anchor>
+			<Anchor>//api/name/bottomRightLatitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setFirstVector:</TokenIdentifier>
-			<Abstract type="html">First (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setBottomRightLongitude:</TokenIdentifier>
+			<Abstract type="html">Site bounding rect bottom right longitude.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *firstVector</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double bottomRightLongitude</Declaration>
 			
 			
-			<Anchor>//api/name/firstVector</Anchor>
+			<Anchor>//api/name/bottomRightLongitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/firstVector</TokenIdentifier>
-			<Abstract type="html">First (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/bottomRightLongitude</TokenIdentifier>
+			<Abstract type="html">Site bounding rect bottom right longitude.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *firstVector</Declaration>
+			<Declaration>@property (nonatomic, readwrite) double bottomRightLongitude</Declaration>
 			
 			
-			<Anchor>//api/name/firstVector</Anchor>
+			<Anchor>//api/name/bottomRightLongitude</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setSecondVector:</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setFExtra1:</TokenIdentifier>
+			<Abstract type="html">Site float extra.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *secondVector</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
 			
 			
-			<Anchor>//api/name/secondVector</Anchor>
+			<Anchor>//api/name/fExtra1</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/secondVector</TokenIdentifier>
-			<Abstract type="html">Second (finger) touch ray.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/fExtra1</TokenIdentifier>
+			<Abstract type="html">Site float extra.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readonly) NSValue *secondVector</Declaration>
+			<Declaration>@property (nonatomic, readwrite) float fExtra1</Declaration>
 			
 			
-			<Anchor>//api/name/secondVector</Anchor>
+			<Anchor>//api/name/fExtra1</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setLayer:</TokenIdentifier>
-			<Abstract type="html">Relative touched CCLayer.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setExtra1:</TokenIdentifier>
+			<Abstract type="html">Site NSString extra 1.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) CCLayer *layer</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
 			
 			
-			<Anchor>//api/name/layer</Anchor>
+			<Anchor>//api/name/extra1</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/layer</TokenIdentifier>
-			<Abstract type="html">Relative touched CCLayer.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/extra1</TokenIdentifier>
+			<Abstract type="html">Site NSString extra 1.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (assign) CCLayer *layer</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra1</Declaration>
 			
 			
-			<Anchor>//api/name/layer</Anchor>
+			<Anchor>//api/name/extra1</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setTouchRays:</TokenIdentifier>
-			<Abstract type="html">All 3D touch rays.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setExtra2:</TokenIdentifier>
+			<Abstract type="html">Site NSString extra 2.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *touchRays</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
 			
 			
-			<Anchor>//api/name/touchRays</Anchor>
+			<Anchor>//api/name/extra2</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/touchRays</TokenIdentifier>
-			<Abstract type="html">All 3D touch rays.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/extra2</TokenIdentifier>
+			<Abstract type="html">Site NSString extra 2.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *touchRays</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra2</Declaration>
 			
 			
-			<Anchor>//api/name/touchRays</Anchor>
+			<Anchor>//api/name/extra2</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/setVectors:</TokenIdentifier>
-			<Abstract type="html">All 3D touch vectors.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/setExtra3:</TokenIdentifier>
+			<Abstract type="html">Site NSString extra 3.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *vectors</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
 			
 			
-			<Anchor>//api/name/vectors</Anchor>
+			<Anchor>//api/name/extra3</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISTouch/vectors</TokenIdentifier>
-			<Abstract type="html">All 3D touch vectors.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISUserSite/extra3</TokenIdentifier>
+			<Abstract type="html">Site NSString extra 3.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) NSMutableArray *vectors</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *extra3</Declaration>
 			
 			
-			<Anchor>//api/name/vectors</Anchor>
+			<Anchor>//api/name/extra3</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/initWithEvent:andView:andLayer:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/getLanguagesString</TokenIdentifier>
+			<Abstract type="html">Method used to get an NSString represention of all site languages.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithEvent:(UIEvent *)event andView:(UIView *)view andLayer:(CCLayer *)layer</Declaration>
+			<Declaration>- (NSString *)getLanguagesString</Declaration>
+			
+			<ReturnValue><Abstract type="html">NSString represention of all site languages.</Abstract></ReturnValue>
+			<Anchor>//api/name/getLanguagesString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/getVersionsString</TokenIdentifier>
+			<Abstract type="html">Method used to get an NSString represention of all site versions.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)getVersionsString</Declaration>
+			
+			<ReturnValue><Abstract type="html">NSString represention of all site versions.</Abstract></ReturnValue>
+			<Anchor>//api/name/getVersionsString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/isLocationInsideWithLatitude:andLongitude:</TokenIdentifier>
+			<Abstract type="html">Method used to know if a lat/long coordinates is inside the site.</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)isLocationInsideWithLatitude:(double)latitude andLongitude:(double)longitude</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">Relative UIEvent.</Abstract>
+					<Name>latitude</Name>
+					<Abstract type="html">Coordinate latitude to check.</Abstract>
 				</Parameter><Parameter>
-					<Name>view</Name>
-					<Abstract type="html">Relative touched UIView.</Abstract>
-				</Parameter><Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">Relative touched CCLayer.</Abstract>
+					<Name>longitude</Name>
+					<Abstract type="html">Coordinate longitude to check.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/initWithEvent:andView:andLayer:</Anchor>
+			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the coordinate is inside, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/isLocationInsideWithLatitude:andLongitude:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/initWithEvent:andTouches:andOriginalTouches:andLayer:andTouchRays:andVectors:</TokenIdentifier>
-			<Abstract type="html">Second constructor.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISUserSite/getMinDistanceWithLatitude:andLongitude:</TokenIdentifier>
+			<Abstract type="html">Method used to get the minimum distance (in meters) between a lat/long coordinate and the site (4 corners).</Abstract>
+			<DeclaredIn>ISUserSite.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithEvent:(UIEvent *)event andTouches:(NSMutableArray *)touches andOriginalTouches:(NSMutableArray *)originalTouches andLayer:(CCLayer *)layer andTouchRays:(NSMutableArray *)touchRays andVectors:(NSMutableArray *)vectors</Declaration>
+			<Declaration>- (double)getMinDistanceWithLatitude:(double)latitude andLongitude:(double)longitude</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">Relative UIEvent.</Abstract>
+					<Name>latitude</Name>
+					<Abstract type="html">Coordinate latitude to use.</Abstract>
 				</Parameter><Parameter>
-					<Name>touches</Name>
-					<Abstract type="html">An array which contains all touches (finger).</Abstract>
-				</Parameter><Parameter>
-					<Name>originalTouches</Name>
-					<Abstract type="html">An array which contains all original touches (finger).</Abstract>
-				</Parameter><Parameter>
-					<Name>layer</Name>
-					<Abstract type="html">Relative touched CCLayer.</Abstract>
-				</Parameter><Parameter>
-					<Name>touchRays</Name>
-					<Abstract type="html">An array which contains all 3D touch rays.</Abstract>
-				</Parameter><Parameter>
-					<Name>vectors</Name>
-					<Abstract type="html">An array which contains all 3D touch vectors.</Abstract>
+					<Name>longitude</Name>
+					<Abstract type="html">Coordinate longitude to use.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/initWithEvent:andTouches:andOriginalTouches:andLayer:andTouchRays:andVectors:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISTouch/ISTouchWithISTouch:</TokenIdentifier>
-			<Abstract type="html">Static copy constructor.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
-			
-			<Declaration>+ (id)ISTouchWithISTouch:(ISTouch *)touch</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>touch</Name>
-					<Abstract type="html">ISTouch to copy.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/ISTouchWithISTouch:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISTouch/rotateWithAngle:andCenter:</TokenIdentifier>
-			<Abstract type="html">Method called to rotate all touch information.</Abstract>
-			<DeclaredIn>ISTouch.h</DeclaredIn>			
-			
-			<Declaration>- (ISTouch *)rotateWithAngle:(float)angle andCenter:(CGPoint)center</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">Angle to use to rotate.</Abstract>
-				</Parameter><Parameter>
-					<Name>center</Name>
-					<Abstract type="html">Relative rotation center.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/rotateWithAngle:andCenter:</Anchor>
+			<ReturnValue><Abstract type="html">The minimum computed distance.</Abstract></ReturnValue>
+			<Anchor>//api/name/getMinDistanceWithLatitude:andLongitude:</Anchor>
 		</Token>
 		
 	</File>

@@ -44,13 +44,17 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/customizeNotificationOnBeaconRegionEntry:">&nbsp;&nbsp;&nbsp;&nbsp;- customizeNotificationOnBeaconRegionEntry:</option>
+	<option value="//api/name/firstRangedISBeacon:onEntryforRegion:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- firstRangedISBeacon:onEntryforRegion:withError:</option>
 	
-	<option value="//api/name/firstRangedCLBeacon:onEntryforRegion:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- firstRangedCLBeacon:onEntryforRegion:withError:</option>
+	<option value="//api/name/onEnterBeacon:forRegion:andProximity:">&nbsp;&nbsp;&nbsp;&nbsp;- onEnterBeacon:forRegion:andProximity:</option>
 	
 	<option value="//api/name/onEnterBeaconRegion:">&nbsp;&nbsp;&nbsp;&nbsp;- onEnterBeaconRegion:</option>
 	
+	<option value="//api/name/onExitBeacon:forRegion:andProximity:">&nbsp;&nbsp;&nbsp;&nbsp;- onExitBeacon:forRegion:andProximity:</option>
+	
 	<option value="//api/name/onExitBeaconRegion:">&nbsp;&nbsp;&nbsp;&nbsp;- onExitBeaconRegion:</option>
+	
+	<option value="//api/name/rangedISBeacons:andReachedProximityBeacons:inRegion:withError:">&nbsp;&nbsp;&nbsp;&nbsp;- rangedISBeacons:andReachedProximityBeacons:inRegion:withError:</option>
 	
 	<option value="//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:">&nbsp;&nbsp;&nbsp;&nbsp;- shouldPresentLocalNotificationOnBeaconRegionEntry:</option>
 	
@@ -82,13 +86,17 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/customizeNotificationOnBeaconRegionEntry:">customizeNotificationOnBeaconRegionEntry:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstRangedISBeacon:onEntryforRegion:withError:">firstRangedISBeacon:onEntryforRegion:withError:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstRangedCLBeacon:onEntryforRegion:withError:">firstRangedCLBeacon:onEntryforRegion:withError:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onEnterBeacon:forRegion:andProximity:">onEnterBeacon:forRegion:andProximity:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onEnterBeaconRegion:">onEnterBeaconRegion:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onExitBeacon:forRegion:andProximity:">onExitBeacon:forRegion:andProximity:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onExitBeaconRegion:">onExitBeaconRegion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rangedISBeacons:andReachedProximityBeacons:inRegion:withError:">rangedISBeacons:andReachedProximityBeacons:inRegion:withError:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:">shouldPresentLocalNotificationOnBeaconRegionEntry:</a></span></li>
 	
@@ -148,35 +156,49 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/onEnterBeaconRegion:">&ndash;&nbsp;onEnterBeaconRegion:</a></code>
-		<span class="tooltip"><p>Method called when the user enter in a monitored beacon region.</p></span>
+		<span class="tooltip"><p>Method called when the user enters in a monitored beaconRegion.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/onExitBeaconRegion:">&ndash;&nbsp;onExitBeaconRegion:</a></code>
-		<span class="tooltip"><p>Method called when the user quit a monitored beacon region.</p></span>
+		<span class="tooltip"><p>Method called when the user exits a monitored beaconRegion.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/onEnterBeacon:forRegion:andProximity:">&ndash;&nbsp;onEnterBeacon:forRegion:andProximity:</a></code>
+		<span class="tooltip"><p>Method called when the beacon proximity is reached for an entered beaconRegion.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/onExitBeacon:forRegion:andProximity:">&ndash;&nbsp;onExitBeacon:forRegion:andProximity:</a></code>
+		<span class="tooltip"><p>Method called when the beacon proximity is not reached anymore for an entered beaconRegion.</p></span>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:">&ndash;&nbsp;shouldPresentLocalNotificationOnBeaconRegionEntry:</a></code>
-		<span class="tooltip"><p>Method used to inform BeaconProvider to notify or not on beacon region entry.</p></span>
+		<span class="tooltip"><p>Method used to let the <a href="../Classes/ISBeaconProvider.html">ISBeaconProvider</a> managing the UILocalNotification presentation on a beaconRegion entry.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/customizeNotificationOnBeaconRegionEntry:">&ndash;&nbsp;customizeNotificationOnBeaconRegionEntry:</a></code>
-		<span class="tooltip"><p>Method used to customize the notification on beacon region entry.</p></span>
+		<code><a href="#//api/name/firstRangedISBeacon:onEntryforRegion:withError:">&ndash;&nbsp;firstRangedISBeacon:onEntryforRegion:withError:</a></code>
+		<span class="tooltip"><p>Method used to get the first ranged beacon on a beaconRegion entry.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/firstRangedCLBeacon:onEntryforRegion:withError:">&ndash;&nbsp;firstRangedCLBeacon:onEntryforRegion:withError:</a></code>
-		<span class="tooltip"><p>Method used to get the nearest CLBeacon in BeaconRegion on region entry.</p></span>
+		<code><a href="#//api/name/rangedISBeacons:andReachedProximityBeacons:inRegion:withError:">&ndash;&nbsp;rangedISBeacons:andReachedProximityBeacons:inRegion:withError:</a></code>
+		<span class="tooltip"><p>Method used to get all ranged beacons in an entered beaconRegion and all beacons which have reached the region proximity.</p></span>
 	</span>
 	
 	
@@ -198,18 +220,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/customizeNotificationOnBeaconRegionEntry:" title="customizeNotificationOnBeaconRegionEntry:"></a>
-	<h3 class="subsubtitle method-title">customizeNotificationOnBeaconRegionEntry:</h3>
+	<a name="//api/name/firstRangedISBeacon:onEntryforRegion:withError:" title="firstRangedISBeacon:onEntryforRegion:withError:"></a>
+	<h3 class="subsubtitle method-title">firstRangedISBeacon:onEntryforRegion:withError:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method used to customize the notification on beacon region entry.</p>
+		<p>Method used to get the first ranged beacon on a beaconRegion entry.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)customizeNotificationOnBeaconRegionEntry:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)firstRangedISBeacon:(ISBeacon *)<em>beacon</em> onEntryforRegion:(ISBeaconRegion *)<em>beaconRegion</em> withError:(NSError *)<em>error</em></code></div>
 
     
 	
@@ -217,64 +239,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>beaconRegion</em></dt>
-			<dd><p>The beacon region the user enters in.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to customize the notification on beacon region entry.</p><div class="warning"><p><strong>Warning:</strong> If not implemented, a UILocalNotification is send using the beacon region title and message, by default.</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">ISPBeaconListener.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/firstRangedCLBeacon:onEntryforRegion:withError:" title="firstRangedCLBeacon:onEntryforRegion:withError:"></a>
-	<h3 class="subsubtitle method-title">firstRangedCLBeacon:onEntryforRegion:withError:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Method used to get the nearest CLBeacon in BeaconRegion on region entry.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)firstRangedCLBeacon:(CLBeacon *)<em>clBeacon</em> onEntryforRegion:(ISBeaconRegion *)<em>beaconRegion</em> withError:(NSError *)<em>error</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>clBeacon</em></dt>
-			<dd><p>The nearest beacon in region, if not error.</p></dd>
+			<dt><em>beacon</em></dt>
+			<dd><p>The first ranged <a href="../Classes/ISBeacon.html">ISBeacon</a> in region.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>beaconRegion</em></dt>
-			<dd><p>The beacon region the user enters in.</p></dd>
+			<dd><p>The ranged beaconRegion.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -292,7 +263,68 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to get the nearest CLBeacon in BeaconRegion on region entry.</p>
+		<p>Method used to get the first ranged beacon on a beaconRegion entry.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPBeaconListener.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/onEnterBeacon:forRegion:andProximity:" title="onEnterBeacon:forRegion:andProximity:"></a>
+	<h3 class="subsubtitle method-title">onEnterBeacon:forRegion:andProximity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called when the beacon proximity is reached for an entered beaconRegion.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)onEnterBeacon:(ISBeacon *)<em>beacon</em> forRegion:(ISBeaconRegion *)<em>beaconRegion</em> andProximity:(CLProximity)<em>proximity</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beacon</em></dt>
+			<dd><p>The beacon with reached proximity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beaconRegion</em></dt>
+			<dd><p>The beaconRegion associated to the beacon with reached proximity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>proximity</em></dt>
+			<dd><p>The proximity reached.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called when the beacon proximity is reached for an entered beaconRegion.</p>
 	</div>
 	
 	
@@ -316,7 +348,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method called when the user enter in a monitored beacon region.</p>
+		<p>Method called when the user enters in a monitored beaconRegion.</p>
 	</div>		
 	
     
@@ -343,7 +375,68 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called when the user enter in a monitored beacon region.</p>
+		<p>Method called when the user enters in a monitored beaconRegion.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPBeaconListener.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/onExitBeacon:forRegion:andProximity:" title="onExitBeacon:forRegion:andProximity:"></a>
+	<h3 class="subsubtitle method-title">onExitBeacon:forRegion:andProximity:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method called when the beacon proximity is not reached anymore for an entered beaconRegion.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)onExitBeacon:(ISBeacon *)<em>beacon</em> forRegion:(ISBeaconRegion *)<em>beaconRegion</em> andProximity:(CLProximity)<em>proximity</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beacon</em></dt>
+			<dd><p>The beacon with proximity CLProximityFar or CLProximityUnknown.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beaconRegion</em></dt>
+			<dd><p>The beaconRegion associated to the beacon with the no more reached proximity.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>proximity</em></dt>
+			<dd><p>The new proximity.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method called when the beacon proximity is not reached anymore for an entered beaconRegion.</p>
 	</div>
 	
 	
@@ -367,7 +460,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method called when the user quit a monitored beacon region.</p>
+		<p>Method called when the user exits a monitored beaconRegion.</p>
 	</div>		
 	
     
@@ -381,7 +474,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>beaconRegion</em></dt>
-			<dd><p>The beacon region the user exits.</p></dd>
+			<dd><p>The <a href="../Classes/ISBeaconRegion.html">ISBeaconRegion</a> the user exits.</p></dd>
 		</dl>
 		
 	</div>
@@ -394,7 +487,73 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method called when the user quit a monitored beacon region.</p>
+		<p>Method called when the user exits a monitored beaconRegion.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">ISPBeaconListener.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rangedISBeacons:andReachedProximityBeacons:inRegion:withError:" title="rangedISBeacons:andReachedProximityBeacons:inRegion:withError:"></a>
+	<h3 class="subsubtitle method-title">rangedISBeacons:andReachedProximityBeacons:inRegion:withError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Method used to get all ranged beacons in an entered beaconRegion and all beacons which have reached the region proximity.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)rangedISBeacons:(NSArray *)<em>beacons</em> andReachedProximityBeacons:(NSArray *)<em>reachedProximityBeacons</em> inRegion:(ISBeaconRegion *)<em>beaconRegion</em> withError:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beacons</em></dt>
+			<dd><p>All ranged beacons, nil if an error occured.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reachedProximityBeacons</em></dt>
+			<dd><p>beacons which have reached the region proximity, nil if an error occured.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>beaconRegion</em></dt>
+			<dd><p>The ranged beaconRegion.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>If ranging for the region has failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Method used to get all ranged beacons in an entered beaconRegion and all beacons which have reached the region proximity.</p>
 	</div>
 	
 	
@@ -418,7 +577,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Method used to inform BeaconProvider to notify or not on beacon region entry.</p>
+		<p>Method used to let the <a href="../Classes/ISBeaconProvider.html">ISBeaconProvider</a> managing the UILocalNotification presentation on a beaconRegion entry.</p>
 	</div>		
 	
     
@@ -441,7 +600,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>If BeaconProvider should or not notify on entry. Return YES if not implemented, by default.</p>
+		<p>If the <a href="../Classes/ISBeaconProvider.html">ISBeaconProvider</a> should manage the UILocalNotification presentation. YES, by default.</p>
 	</div>
 	
 	
@@ -450,7 +609,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Method used to inform BeaconProvider to notify or not on beacon region entry.</p>
+		<p>Method used to let the <a href="../Classes/ISBeaconProvider.html">ISBeaconProvider</a> managing the UILocalNotification presentation on a beaconRegion entry.</p>
 	</div>
 	
 	
@@ -480,7 +639,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 INSITEO. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						

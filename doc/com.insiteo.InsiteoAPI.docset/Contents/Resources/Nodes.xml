@@ -117,7 +117,6 @@
 						<NodeRef refid="94"/>
 						<NodeRef refid="95"/>
 						<NodeRef refid="96"/>
-						<NodeRef refid="97"/>
 						
 					</Subnodes>
 				</Node>
@@ -144,8 +143,8 @@
 			<Path>Classes/ISAnalyticsManager.html</Path>
 		</Node>
 		<Node id="5">
-			<Name>ISAuthManager</Name>
-			<Path>Classes/ISAuthManager.html</Path>
+			<Name>ISBeacon</Name>
+			<Path>Classes/ISBeacon.html</Path>
 		</Node>
 		<Node id="6">
 			<Name>ISBeaconProvider</Name>
@@ -172,276 +171,276 @@
 			<Path>Classes/ISCommonFunctions.html</Path>
 		</Node>
 		<Node id="12">
-			<Name>ISConfig</Name>
-			<Path>Classes/ISConfig.html</Path>
-		</Node>
-		<Node id="13">
 			<Name>ISDBHelperMap</Name>
 			<Path>Classes/ISDBHelperMap.html</Path>
 		</Node>
-		<Node id="14">
+		<Node id="13">
 			<Name>ISGenericRTO</Name>
 			<Path>Classes/ISGenericRTO.html</Path>
 		</Node>
-		<Node id="15">
+		<Node id="14">
 			<Name>ISGenericRTONode</Name>
 			<Path>Classes/ISGenericRTONode.html</Path>
 		</Node>
-		<Node id="16">
+		<Node id="15">
 			<Name>ISGenericRenderer</Name>
 			<Path>Classes/ISGenericRenderer.html</Path>
 		</Node>
-		<Node id="17">
+		<Node id="16">
 			<Name>ISGeoMatrix</Name>
 			<Path>Classes/ISGeoMatrix.html</Path>
 		</Node>
-		<Node id="18">
+		<Node id="17">
 			<Name>ISGeofenceArea</Name>
 			<Path>Classes/ISGeofenceArea.html</Path>
 		</Node>
-		<Node id="19">
+		<Node id="18">
 			<Name>ISGeofenceAreaRenderer</Name>
 			<Path>Classes/ISGeofenceAreaRenderer.html</Path>
 		</Node>
-		<Node id="20">
+		<Node id="19">
 			<Name>ISGeofenceProvider</Name>
 			<Path>Classes/ISGeofenceProvider.html</Path>
 		</Node>
-		<Node id="21">
+		<Node id="20">
 			<Name>ISGfxGeofenceArea</Name>
 			<Path>Classes/ISGfxGeofenceArea.html</Path>
 		</Node>
-		<Node id="22">
+		<Node id="21">
 			<Name>ISGfxItinerary</Name>
 			<Path>Classes/ISGfxItinerary.html</Path>
 		</Node>
-		<Node id="23">
+		<Node id="22">
 			<Name>ISGfxLocation</Name>
 			<Path>Classes/ISGfxLocation.html</Path>
 		</Node>
-		<Node id="24">
+		<Node id="23">
 			<Name>ISGfxMeetMePerson</Name>
 			<Path>Classes/ISGfxMeetMePerson.html</Path>
 		</Node>
-		<Node id="25">
+		<Node id="24">
 			<Name>ISGfxZone</Name>
 			<Path>Classes/ISGfxZone.html</Path>
 		</Node>
-		<Node id="26">
-			<Name>ISInitProvider</Name>
-			<Path>Classes/ISInitProvider.html</Path>
-		</Node>
-		<Node id="27">
-			<Name>ISInitTask</Name>
-			<Path>Classes/ISInitTask.html</Path>
-		</Node>
-		<Node id="28">
+		<Node id="25">
 			<Name>ISInsiteoError</Name>
 			<Path>Classes/ISInsiteoError.html</Path>
 		</Node>
-		<Node id="29">
+		<Node id="26">
 			<Name>ISItinerary</Name>
 			<Path>Classes/ISItinerary.html</Path>
 		</Node>
-		<Node id="30">
+		<Node id="27">
 			<Name>ISItineraryBaseRequest</Name>
 			<Path>Classes/ISItineraryBaseRequest.html</Path>
 		</Node>
-		<Node id="31">
+		<Node id="28">
 			<Name>ISItineraryInstruction</Name>
 			<Path>Classes/ISItineraryInstruction.html</Path>
 		</Node>
-		<Node id="32">
+		<Node id="29">
 			<Name>ISItineraryOptimizedRequest</Name>
 			<Path>Classes/ISItineraryOptimizedRequest.html</Path>
 		</Node>
-		<Node id="33">
+		<Node id="30">
 			<Name>ISItineraryProvider</Name>
 			<Path>Classes/ISItineraryProvider.html</Path>
 		</Node>
-		<Node id="34">
+		<Node id="31">
 			<Name>ISItineraryRenderer</Name>
 			<Path>Classes/ISItineraryRenderer.html</Path>
 		</Node>
-		<Node id="35">
+		<Node id="32">
 			<Name>ISItineraryRequest</Name>
 			<Path>Classes/ISItineraryRequest.html</Path>
 		</Node>
-		<Node id="36">
+		<Node id="33">
 			<Name>ISItinerarySection</Name>
 			<Path>Classes/ISItinerarySection.html</Path>
 		</Node>
-		<Node id="37">
+		<Node id="34">
 			<Name>ISLocation</Name>
 			<Path>Classes/ISLocation.html</Path>
 		</Node>
-		<Node id="38">
+		<Node id="35">
 			<Name>ISLocationManager</Name>
 			<Path>Classes/ISLocationManager.html</Path>
 		</Node>
-		<Node id="39">
+		<Node id="36">
 			<Name>ISLocationNode</Name>
 			<Path>Classes/ISLocationNode.html</Path>
 		</Node>
-		<Node id="40">
+		<Node id="37">
 			<Name>ISLocationProvider</Name>
 			<Path>Classes/ISLocationProvider.html</Path>
 		</Node>
-		<Node id="41">
+		<Node id="38">
 			<Name>ISLocationRenderer</Name>
 			<Path>Classes/ISLocationRenderer.html</Path>
 		</Node>
-		<Node id="42">
+		<Node id="39">
 			<Name>ISLocationRequest</Name>
 			<Path>Classes/ISLocationRequest.html</Path>
 		</Node>
-		<Node id="43">
+		<Node id="40">
 			<Name>ISMap</Name>
 			<Path>Classes/ISMap.html</Path>
 		</Node>
-		<Node id="44">
+		<Node id="41">
 			<Name>ISMap2DView</Name>
 			<Path>Classes/ISMap2DView.html</Path>
 		</Node>
-		<Node id="45">
+		<Node id="42">
 			<Name>ISMap3DView</Name>
 			<Path>Classes/ISMap3DView.html</Path>
 		</Node>
-		<Node id="46">
+		<Node id="43">
 			<Name>ISMapSettings</Name>
 			<Path>Classes/ISMapSettings.html</Path>
 		</Node>
-		<Node id="47">
+		<Node id="44">
 			<Name>ISMapView</Name>
 			<Path>Classes/ISMapView.html</Path>
 		</Node>
-		<Node id="48">
+		<Node id="45">
 			<Name>ISMeetMeExtChangeStatusRequest</Name>
 			<Path>Classes/ISMeetMeExtChangeStatusRequest.html</Path>
 		</Node>
-		<Node id="49">
+		<Node id="46">
 			<Name>ISMeetMeExtConnectRequest</Name>
 			<Path>Classes/ISMeetMeExtConnectRequest.html</Path>
 		</Node>
-		<Node id="50">
+		<Node id="47">
 			<Name>ISMeetMeExtJoinGroupRequest</Name>
 			<Path>Classes/ISMeetMeExtJoinGroupRequest.html</Path>
 		</Node>
-		<Node id="51">
+		<Node id="48">
 			<Name>ISMeetMeExtLeaveGroupsRequest</Name>
 			<Path>Classes/ISMeetMeExtLeaveGroupsRequest.html</Path>
 		</Node>
-		<Node id="52">
+		<Node id="49">
 			<Name>ISMeetMeExtRefreshGroupsRequest</Name>
 			<Path>Classes/ISMeetMeExtRefreshGroupsRequest.html</Path>
 		</Node>
-		<Node id="53">
+		<Node id="50">
 			<Name>ISMeetMeGroup</Name>
 			<Path>Classes/ISMeetMeGroup.html</Path>
 		</Node>
-		<Node id="54">
+		<Node id="51">
 			<Name>ISMeetMeInsChangeStatusRequest</Name>
 			<Path>Classes/ISMeetMeInsChangeStatusRequest.html</Path>
 		</Node>
-		<Node id="55">
+		<Node id="52">
 			<Name>ISMeetMeInsConnectRequest</Name>
 			<Path>Classes/ISMeetMeInsConnectRequest.html</Path>
 		</Node>
-		<Node id="56">
+		<Node id="53">
 			<Name>ISMeetMeInsCreateGroupRequest</Name>
 			<Path>Classes/ISMeetMeInsCreateGroupRequest.html</Path>
 		</Node>
-		<Node id="57">
+		<Node id="54">
 			<Name>ISMeetMeInsCreateTmpUserRequest</Name>
 			<Path>Classes/ISMeetMeInsCreateTmpUserRequest.html</Path>
 		</Node>
-		<Node id="58">
+		<Node id="55">
 			<Name>ISMeetMeInsCreateUserRequest</Name>
 			<Path>Classes/ISMeetMeInsCreateUserRequest.html</Path>
 		</Node>
-		<Node id="59">
+		<Node id="56">
 			<Name>ISMeetMeInsGetGroupsRequest</Name>
 			<Path>Classes/ISMeetMeInsGetGroupsRequest.html</Path>
 		</Node>
-		<Node id="60">
+		<Node id="57">
 			<Name>ISMeetMeInsJoinGroupRequest</Name>
 			<Path>Classes/ISMeetMeInsJoinGroupRequest.html</Path>
 		</Node>
-		<Node id="61">
+		<Node id="58">
 			<Name>ISMeetMeInsLeaveGroupsRequest</Name>
 			<Path>Classes/ISMeetMeInsLeaveGroupsRequest.html</Path>
 		</Node>
-		<Node id="62">
+		<Node id="59">
 			<Name>ISMeetMeInsRefreshGroupsRequest</Name>
 			<Path>Classes/ISMeetMeInsRefreshGroupsRequest.html</Path>
 		</Node>
-		<Node id="63">
+		<Node id="60">
 			<Name>ISMeetMePerson</Name>
 			<Path>Classes/ISMeetMePerson.html</Path>
 		</Node>
-		<Node id="64">
+		<Node id="61">
 			<Name>ISMeetMeProvider</Name>
 			<Path>Classes/ISMeetMeProvider.html</Path>
 		</Node>
-		<Node id="65">
+		<Node id="62">
 			<Name>ISMeetMeRenderer</Name>
 			<Path>Classes/ISMeetMeRenderer.html</Path>
 		</Node>
-		<Node id="66">
+		<Node id="63">
 			<Name>ISPackage</Name>
 			<Path>Classes/ISPackage.html</Path>
 		</Node>
-		<Node id="67">
+		<Node id="64">
 			<Name>ISPosition</Name>
 			<Path>Classes/ISPosition.html</Path>
 		</Node>
-		<Node id="68">
+		<Node id="65">
 			<Name>ISRODBHelper</Name>
 			<Path>Classes/ISRODBHelper.html</Path>
 		</Node>
-		<Node id="69">
+		<Node id="66">
 			<Name>ISRWDBHelper</Name>
 			<Path>Classes/ISRWDBHelper.html</Path>
 		</Node>
-		<Node id="70">
+		<Node id="67">
 			<Name>ISRect</Name>
 			<Path>Classes/ISRect.html</Path>
 		</Node>
-		<Node id="71">
+		<Node id="68">
 			<Name>ISRectF</Name>
 			<Path>Classes/ISRectF.html</Path>
 		</Node>
-		<Node id="72">
+		<Node id="69">
 			<Name>ISReverseRect</Name>
 			<Path>Classes/ISReverseRect.html</Path>
 		</Node>
-		<Node id="73">
+		<Node id="70">
+			<Name>ISSite</Name>
+			<Path>Classes/ISSite.html</Path>
+		</Node>
+		<Node id="71">
 			<Name>ISTileIndex</Name>
 			<Path>Classes/ISTileIndex.html</Path>
 		</Node>
-		<Node id="74">
+		<Node id="72">
 			<Name>ISTouch</Name>
 			<Path>Classes/ISTouch.html</Path>
 		</Node>
-		<Node id="75">
+		<Node id="73">
+			<Name>ISUser</Name>
+			<Path>Classes/ISUser.html</Path>
+		</Node>
+		<Node id="74">
 			<Name>ISUserSite</Name>
 			<Path>Classes/ISUserSite.html</Path>
 		</Node>
-		<Node id="76">
+		<Node id="75">
 			<Name>ISZone</Name>
 			<Path>Classes/ISZone.html</Path>
 		</Node>
-		<Node id="77">
+		<Node id="76">
 			<Name>ISZoneCategory</Name>
 			<Path>Classes/ISZoneCategory.html</Path>
 		</Node>
-		<Node id="78">
+		<Node id="77">
 			<Name>ISZonePoi</Name>
 			<Path>Classes/ISZonePoi.html</Path>
 		</Node>
-		<Node id="79">
+		<Node id="78">
 			<Name>ISZoomLevel</Name>
 			<Path>Classes/ISZoomLevel.html</Path>
+		</Node>
+		<Node id="79">
+			<Name>Insiteo</Name>
+			<Path>Classes/Insiteo.html</Path>
 		</Node>
 		
 		
@@ -450,70 +449,66 @@
 			<Path>Protocols/ISPAnalyticsListener.html</Path>
 		</Node>
 		<Node id="81">
-			<Name>ISPAuthListener</Name>
-			<Path>Protocols/ISPAuthListener.html</Path>
-		</Node>
-		<Node id="82">
 			<Name>ISPBeaconListener</Name>
 			<Path>Protocols/ISPBeaconListener.html</Path>
 		</Node>
-		<Node id="83">
+		<Node id="82">
 			<Name>ISPCancelable</Name>
 			<Path>Protocols/ISPCancelable.html</Path>
 		</Node>
-		<Node id="84">
+		<Node id="83">
 			<Name>ISPGeofenceListener</Name>
 			<Path>Protocols/ISPGeofenceListener.html</Path>
 		</Node>
-		<Node id="85">
+		<Node id="84">
 			<Name>ISPItineraryRenderListener</Name>
 			<Path>Protocols/ISPItineraryRenderListener.html</Path>
 		</Node>
-		<Node id="86">
+		<Node id="85">
 			<Name>ISPItineraryRequestListener</Name>
 			<Path>Protocols/ISPItineraryRequestListener.html</Path>
 		</Node>
-		<Node id="87">
+		<Node id="86">
 			<Name>ISPLbsModule</Name>
 			<Path>Protocols/ISPLbsModule.html</Path>
 		</Node>
-		<Node id="88">
+		<Node id="87">
 			<Name>ISPLocationListener</Name>
 			<Path>Protocols/ISPLocationListener.html</Path>
 		</Node>
-		<Node id="89">
+		<Node id="88">
 			<Name>ISPLocationRequestListener</Name>
 			<Path>Protocols/ISPLocationRequestListener.html</Path>
 		</Node>
-		<Node id="90">
+		<Node id="89">
 			<Name>ISPMapListener</Name>
 			<Path>Protocols/ISPMapListener.html</Path>
 		</Node>
-		<Node id="91">
+		<Node id="90">
 			<Name>ISPMeetMeListener</Name>
 			<Path>Protocols/ISPMeetMeListener.html</Path>
 		</Node>
-		<Node id="92">
+		<Node id="91">
 			<Name>ISPMeetMeRequestListener</Name>
 			<Path>Protocols/ISPMeetMeRequestListener.html</Path>
 		</Node>
-		<Node id="93">
+		<Node id="92">
 			<Name>ISPMotionListener</Name>
 			<Path>Protocols/ISPMotionListener.html</Path>
 		</Node>
-		<Node id="94">
+		<Node id="93">
 			<Name>ISPProtoEventBuilder</Name>
 			<Path>Protocols/ISPProtoEventBuilder.html</Path>
 		</Node>
-		<Node id="95">
+		<Node id="94">
 			<Name>ISPRTO</Name>
 			<Path>Protocols/ISPRTO.html</Path>
 		</Node>
-		<Node id="96">
+		<Node id="95">
 			<Name>ISPRTOListener</Name>
 			<Path>Protocols/ISPRTOListener.html</Path>
 		</Node>
-		<Node id="97">
+		<Node id="96">
 			<Name>ISPRenderer</Name>
 			<Path>Protocols/ISPRenderer.html</Path>
 		</Node>

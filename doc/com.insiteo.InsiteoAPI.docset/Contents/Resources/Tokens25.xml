@@ -1,222 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISGfxZone.html">
+	<File path="Classes/ISInsiteoError.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISGfxZone</TokenIdentifier>
-			<Abstract type="html">Class used to represent a Map Zone.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISInsiteoError</TokenIdentifier>
+			<Abstract type="html">Class used to represent an Insiteo error.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>
 			
 			<NodeRef refid="25"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZone:</TokenIdentifier>
-			<Abstract type="html">Related zone entitie.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/setCode:</TokenIdentifier>
+			<Abstract type="html">Error enum code.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEInsiteoErrorCode code</Declaration>
 			
 			
-			<Anchor>//api/name/zone</Anchor>
+			<Anchor>//api/name/code</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zone</TokenIdentifier>
-			<Abstract type="html">Related zone entitie.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInsiteoError/code</TokenIdentifier>
+			<Abstract type="html">Error enum code.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, retain) ISZone *zone</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEInsiteoErrorCode code</Declaration>
 			
 			
-			<Anchor>//api/name/zone</Anchor>
+			<Anchor>//api/name/code</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setNeedToBeDisplayed:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/setReason:</TokenIdentifier>
+			<Abstract type="html">Error enum reason.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEInsiteoErrorReason reason</Declaration>
 			
 			
-			<Anchor>//api/name/needToBeDisplayed</Anchor>
+			<Anchor>//api/name/reason</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/needToBeDisplayed</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone needs to be displayed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInsiteoError/reason</TokenIdentifier>
+			<Abstract type="html">Error enum reason.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean needToBeDisplayed</Declaration>
+			<Declaration>@property (nonatomic, readwrite) ISEInsiteoErrorReason reason</Declaration>
 			
 			
-			<Anchor>//api/name/needToBeDisplayed</Anchor>
+			<Anchor>//api/name/reason</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setIsTouched:</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/setMessage:</TokenIdentifier>
+			<Abstract type="html">Error message.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *message</Declaration>
 			
 			
-			<Anchor>//api/name/isTouched</Anchor>
+			<Anchor>//api/name/message</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/isTouched</TokenIdentifier>
-			<Abstract type="html">Boolean used to know if the zone is touched.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISInsiteoError/message</TokenIdentifier>
+			<Abstract type="html">Error message.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, readwrite) Boolean isTouched</Declaration>
+			<Declaration>@property (nonatomic, retain) NSString *message</Declaration>
 			
 			
-			<Anchor>//api/name/isTouched</Anchor>
+			<Anchor>//api/name/message</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setZoneColor:</TokenIdentifier>
-			<Abstract type="html">Zone rendering color.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
-			
-			
-			<Anchor>//api/name/zoneColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/zoneColor</TokenIdentifier>
-			<Abstract type="html">Zone rendering color.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) ccColor4B zoneColor</Declaration>
-			
-			
-			<Anchor>//api/name/zoneColor</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastRatio:</TokenIdentifier>
-			<Abstract type="html">Last rendering ratio.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
-			
-			
-			<Anchor>//api/name/lastRatio</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastRatio</TokenIdentifier>
-			<Abstract type="html">Last rendering ratio.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) float lastRatio</Declaration>
-			
-			
-			<Anchor>//api/name/lastRatio</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setLastOffset:</TokenIdentifier>
-			<Abstract type="html">Last rendering offset.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
-			
-			
-			<Anchor>//api/name/lastOffset</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/lastOffset</TokenIdentifier>
-			<Abstract type="html">Last rendering offset.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) CGPoint lastOffset</Declaration>
-			
-			
-			<Anchor>//api/name/lastOffset</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setShelvesMinZoom:</TokenIdentifier>
-			<Abstract type="html">Min zoom level from which zone shelves are visible.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int shelvesMinZoom</Declaration>
-			
-			
-			<Anchor>//api/name/shelvesMinZoom</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISGfxZone/shelvesMinZoom</TokenIdentifier>
-			<Abstract type="html">Min zoom level from which zone shelves are visible.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, readwrite) int shelvesMinZoom</Declaration>
-			
-			
-			<Anchor>//api/name/shelvesMinZoom</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/initWithZone:andRenderMode:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/initWithCode:andReason:</TokenIdentifier>
 			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithZone:(ISZone *)zone andRenderMode:(ISERenderMode)renderMode</Declaration>
+			<Declaration>- (id)initWithCode:(ISEInsiteoErrorCode)code andReason:(ISEInsiteoErrorReason)reason</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>zone</Name>
-					<Abstract type="html">Related zone entitie.</Abstract>
+					<Name>code</Name>
+					<Abstract type="html">Error code.</Abstract>
 				</Parameter><Parameter>
-					<Name>renderMode</Name>
-					<Abstract type="html">Current render mode.</Abstract>
+					<Name>reason</Name>
+					<Abstract type="html">Error reason.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithZone:andRenderMode:</Anchor>
+			<Anchor>//api/name/initWithCode:andReason:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/containsPoint:</TokenIdentifier>
-			<Abstract type="html">Method used to know if a point is in the concerned Zone.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISInsiteoError/initWithCode:andReason:andMessage:</TokenIdentifier>
+			<Abstract type="html">Secondary constructor.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>- (Boolean)containsPoint:(CGPoint)point</Declaration>
+			<Declaration>- (id)initWithCode:(ISEInsiteoErrorCode)code andReason:(ISEInsiteoErrorReason)reason andMessage:(NSString *)message</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>point</Name>
-					<Abstract type="html">Point to test.</Abstract>
+					<Name>code</Name>
+					<Abstract type="html">Error code.</Abstract>
+				</Parameter><Parameter>
+					<Name>reason</Name>
+					<Abstract type="html">Error reason.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">Error message.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">&lt;b&gt;YES&lt;/b&gt; if the zone contains the point, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
-			<Anchor>//api/name/containsPoint:</Anchor>
+			
+			<Anchor>//api/name/initWithCode:andReason:andMessage:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGfxZone/setOffset:andRatio:</TokenIdentifier>
-			<Abstract type="html">Method called to update the last offset and ratio computed.</Abstract>
-			<DeclaredIn>ISGfxZone.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/ISInsiteoError/ISInsiteoErrorWithCode:andReason:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
 			
-			<Declaration>- (void)setOffset:(CGPoint)offset andRatio:(float)ratio</Declaration>
+			<Declaration>+ (id)ISInsiteoErrorWithCode:(ISEInsiteoErrorCode)code andReason:(ISEInsiteoErrorReason)reason</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>offset</Name>
-					<Abstract type="html">Last offset computed.</Abstract>
+					<Name>code</Name>
+					<Abstract type="html">Error code.</Abstract>
 				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Last ratio computed.</Abstract>
+					<Name>reason</Name>
+					<Abstract type="html">Error reason.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setOffset:andRatio:</Anchor>
+			<Anchor>//api/name/ISInsiteoErrorWithCode:andReason:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInsiteoError/ISInsiteoErrorWithCode:andReason:andMessage:</TokenIdentifier>
+			<Abstract type="html">Static main constructor.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>+ (id)ISInsiteoErrorWithCode:(ISEInsiteoErrorCode)code andReason:(ISEInsiteoErrorReason)reason andMessage:(NSString *)message</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>code</Name>
+					<Abstract type="html">Error code.</Abstract>
+				</Parameter><Parameter>
+					<Name>reason</Name>
+					<Abstract type="html">Error reason.</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">Error message.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/ISInsiteoErrorWithCode:andReason:andMessage:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInsiteoError/getErrorCodeToString:</TokenIdentifier>
+			<Abstract type="html">Static method used to get the error code NSString representation.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getErrorCodeToString:(ISEInsiteoErrorCode)code</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>code</Name>
+					<Abstract type="html">Error code.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Error code NSString representation.</Abstract></ReturnValue>
+			<Anchor>//api/name/getErrorCodeToString:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInsiteoError/getErrorReasonToString:</TokenIdentifier>
+			<Abstract type="html">Static method used to get the error reason NSString representation.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)getErrorReasonToString:(ISEInsiteoErrorReason)reason</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>reason</Name>
+					<Abstract type="html">Error reason.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Error reason NSString representation.</Abstract></ReturnValue>
+			<Anchor>//api/name/getErrorReasonToString:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/ISInsiteoError/getErrorReasonFromStatusCode:</TokenIdentifier>
+			<Abstract type="html">Static method used to get an error reason from a given HTTP status code.</Abstract>
+			<DeclaredIn>ISInsiteoError.h</DeclaredIn>			
+			
+			<Declaration>+ (ISEInsiteoErrorReason)getErrorReasonFromStatusCode:(NSInteger)statusCode</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>statusCode</Name>
+					<Abstract type="html">HTTP status code.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An error reason (default: ISEInsiteoErrorReasonUnknown).</Abstract></ReturnValue>
+			<Anchor>//api/name/getErrorReasonFromStatusCode:</Anchor>
 		</Token>
 		
 	</File>

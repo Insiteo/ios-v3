@@ -1,41 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/ISInitTask.html">
+	<File path="Classes/ISItineraryBaseRequest.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/ISInitTask</TokenIdentifier>
-			<Abstract type="html">Class used to represent an API initialization task.</Abstract>
-			<DeclaredIn>ISInitProvider.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/ISItineraryBaseRequest</TokenIdentifier>
+			<Abstract type="html">Class used to represent a base itinerary request.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>
 			
 			<NodeRef refid="27"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitTask/initWithInitParameters:</TokenIdentifier>
-			<Abstract type="html">Main constructor.</Abstract>
-			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/setItinerary:</TokenIdentifier>
+			<Abstract type="html">Request itinerary (will be filled by the ISItineraryProvider.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithInitParameters:(InitParameters *)initParameters</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>initParameters</Name>
-					<Abstract type="html">The initialization parameters to use.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, retain) ISItinerary *itinerary</Declaration>
 			
-			<Anchor>//api/name/initWithInitParameters:</Anchor>
+			
+			<Anchor>//api/name/itinerary</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISInitTask/initAPI</TokenIdentifier>
-			<Abstract type="html">Method called to initialize the API.</Abstract>
-			<DeclaredIn>ISInitProvider.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryBaseRequest/itinerary</TokenIdentifier>
+			<Abstract type="html">Request itinerary (will be filled by the ISItineraryProvider.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
 			
-			<Declaration>- (void)initAPI</Declaration>
+			<Declaration>@property (nonatomic, retain) ISItinerary *itinerary</Declaration>
 			
 			
-			<Anchor>//api/name/initAPI</Anchor>
+			<Anchor>//api/name/itinerary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/setListener:</TokenIdentifier>
+			<Abstract type="html">Itinerary request listener.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) id&lt;ISPItineraryRequestListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryBaseRequest/listener</TokenIdentifier>
+			<Abstract type="html">Itinerary request listener.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) id&lt;ISPItineraryRequestListener&gt; listener</Declaration>
+			
+			
+			<Anchor>//api/name/listener</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/setPmr:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean pmr</Declaration>
+			
+			
+			<Anchor>//api/name/pmr</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISItineraryBaseRequest/pmr</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if we compute the route for disabled people.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean pmr</Declaration>
+			
+			
+			<Anchor>//api/name/pmr</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISItineraryBaseRequest/recompute</TokenIdentifier>
+			<Abstract type="html">Method called to recompute the same itinerary request.</Abstract>
+			<DeclaredIn>ISItineraryBaseRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)recompute</Declaration>
+			
+			
+			<Anchor>//api/name/recompute</Anchor>
 		</Token>
 		
 	</File>

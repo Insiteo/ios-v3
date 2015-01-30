@@ -12,28 +12,6 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/setConfig:</TokenIdentifier>
-			<Abstract type="html">Analytics configuration.</Abstract>
-			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) AnalyticsConfig *config</Declaration>
-			
-			
-			<Anchor>//api/name/config</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/ISAnalyticsManager/config</TokenIdentifier>
-			<Abstract type="html">Analytics configuration.</Abstract>
-			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, retain) AnalyticsConfig *config</Declaration>
-			
-			
-			<Anchor>//api/name/config</Anchor>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/setListener:</TokenIdentifier>
 			<Abstract type="html">Analytics listener.</Abstract>
 			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
@@ -78,14 +56,36 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISAnalyticsManager/instance</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/ISAnalyticsManager/sharedInstance</TokenIdentifier>
 			<Abstract type="html">Static method called to get the ISAnalyticsManager unique instance.</Abstract>
 			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
 			
-			<Declaration>+ (ISAnalyticsManager *)instance</Declaration>
+			<Declaration>+ (ISAnalyticsManager *)sharedInstance</Declaration>
 			
 			<ReturnValue><Abstract type="html">The ISAnalyticsManager unique instance.</Abstract></ReturnValue>
-			<Anchor>//api/name/instance</Anchor>
+			<Anchor>//api/name/sharedInstance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/startAnalytics</TokenIdentifier>
+			<Abstract type="html">Method called to start the ISAnalyticsManager.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)startAnalytics</Declaration>
+			
+			<ReturnValue><Abstract type="html">Return &lt;b&gt;YES&lt;/b&gt; if the ISAnalyticsManager is started, otherwise &lt;b&gt;NO&lt;/b&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/startAnalytics</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISAnalyticsManager/stopAnalytics</TokenIdentifier>
+			<Abstract type="html">Method called to stop the ISAnalyticsManager.</Abstract>
+			<DeclaredIn>ISAnalyticsManager.h</DeclaredIn>			
+			
+			<Declaration>- (Boolean)stopAnalytics</Declaration>
+			
+			
+			<Anchor>//api/name/stopAnalytics</Anchor>
 		</Token>
 		
 		<Token>
