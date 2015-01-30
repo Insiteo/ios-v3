@@ -78,5 +78,24 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ISApiKey</key>
+	<string>5a30df2a-6038-698f-e387-0691ff1239d6</string>
+	<key>ISAnalyticsAutoStart</key>
+	<true/>
+	<key>ISERenderMode</key>
+	<string>ISERenderMode2D</string>
+	<key>ISEServerType</key>
+	<string>ISEServerTypeTest</string>
+	<key>ISLocationFlags</key>
+	<array>
+		<string>GPS</string>
+		<string>BLE</string>
+		<string>COMPASS</string>
+		<string>MEMS</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string></string>
 </dict>
 </plist>

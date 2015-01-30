@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "InsiteoAPILocation.h"
 
-@property (strong, nonatomic) UIWindow *window;
+@interface AppDelegate : UIResponder <UIApplicationDelegate, ISPBeaconListener>
+
+@property (strong, nonatomic) UIWindow * window;
 
 @end

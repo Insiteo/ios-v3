@@ -15,8 +15,6 @@
 
 @private
     
-    id<ISPCancelable> m_currentTask;
-        
     MBProgressHUD * m_hud;
     ISMapView * m_mapView;
     
@@ -26,7 +24,5 @@
 }
 
 @property (nonatomic, retain) IBOutlet UIView * mapContentView;
-
-@property (nonatomic, retain) id<ISPCancelable> currentTask;
 
 @end

@@ -18,8 +18,8 @@
 "STR_UPDATING" = "Updating...";
 "STR_DOWNLOADING" = "Downloading...";
 "STR_INSTALLING" = "Installing...";
-"STR_INIT_FAILED" = "Initialization failed";
-"STR_INIT_SUCCEEDED" = "Initialization succeeded";
+"STR_START_FAILED" = "Initialization failed";
+"STR_START_SUCCEEDED" = "Initialization succeeded";
 "STR_UPDATE_FAILED" = "Update failed";
 "STR_UPDATE_SUCCEEDED" = "Update succeeded";
 "STR_LOC_RECEIVED" = "New location received";

@@ -10,18 +10,11 @@
 
 int const ALERTVIEW_RETRY_INIT = 0;
 
-#if ASK_FOR_UPDATE
-
-int const ALERTVIEW_UPDATE_PACKAGES = 1;
-
-#endif
-
 int const ALERTVIEW_LOCATE_EXT_POI = 2;
 
 int const ACTIONSHEET_CHANGE_MAP = 0;
 int const ACTIONSHEET_ACTIONS = 1;
 
-#import "Constants.h"
 #import "MyRto.h"
 
 @interface ViewController ()
@@ -33,58 +26,10 @@ int const ACTIONSHEET_ACTIONS = 1;
 @implementation ViewController
 
 @synthesize mapContentView;
-@synthesize currentTask = m_currentTask;
-
-#if ASK_FOR_UPDATE
-
-- (void)proposePackageUpdate {
-    UIAlertView * myAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"STR_NEW_DATA_TITLE", nil) message:NSLocalizedString(@"STR_NEW_DATA_MESSAGE", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"STR_NO", nil) otherButtonTitles:NSLocalizedString(@"STR_YES", nil), nil];
-    [myAlert setTag:ALERTVIEW_UPDATE_PACKAGES];
-    [myAlert show];
-}
-
-- (void)downloadPackages {
-    //Create the progress dialog. If it is canceled, it cancels the running download task
-    m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-    [m_hud setMode:MBProgressHUDModeDeterminate];
-    [m_hud setProgress:0.0];
-    [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
-    [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
-    
-    //Start an asynchronous download, and get running task (thus it can be canceled)
-    id<ISPCancelable> updateTask = [[ISInitProvider instance] updateWithUpdateHandler:^(ISInsiteoError *error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
-        NSString * message = nil;
-        if (error != nil) {
-            message = NSLocalizedString(@"STR_UPDATE_FAILED", nil);
-        } else {
-            message = NSLocalizedString(@"STR_UPDATE_SUCCEEDED", nil);
-        }
-        
-        [self launch:message];
-    } andUpdateProgressHandler:^(ISPackageType packageType, Boolean download, int progress, int total) {
-        double hudProgress = (float)progress/(float)total;
-        [m_hud setProgress:hudProgress];
-    }];
-    [self setCurrentTask:updateTask];
-    
-    
-    UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onHudDoubleTapped:)];
-    [tapGestureRecognizer setNumberOfTapsRequired:2];
-    [m_hud addGestureRecognizer:tapGestureRecognizer];
-    [tapGestureRecognizer release];
-}
-
-#endif
 
 - (void)startAPI {
-    [ISInitProvider setAPIKey:API_KEY];
-    
     //Create cancelable progress dialog. Canceling dialog will also cancel init task
     m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     [m_hud setMode:MBProgressHUDModeIndeterminate];
     [m_hud setLabelText:NSLocalizedString(@"STR_INITIALIZING", nil)];
     [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
@@ -94,95 +39,48 @@ int const ACTIONSHEET_ACTIONS = 1;
     [m_hud addGestureRecognizer:tapGestureRecognizer];
     [tapGestureRecognizer release];
     
-#if ASK_FOR_UPDATE
-    
-    id<ISPCancelable> initTask = [[ISInitProvider instance] startWithServerType:SERVER andSiteId:SITE_ID andLanguage:LANGUAGE andStartHandler:^NSArray *(ISInsiteoError *error, NSArray *newPackages) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
-        if (error != nil) {
-            m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            [m_hud setMode:MBProgressHUDModeText];
-            [m_hud setLabelText:error.errorCode];
-            [m_hud setDetailsLabelText:error.errorMessage];
-            [m_hud hide:YES afterDelay:2];
-            
-            [self launch:NSLocalizedString(@"STR_INIT_FAILED", nil)];
-        } else {
-            if ([newPackages count] > 0) {
-                [self proposePackageUpdate];
-            } else {
-                m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-                [m_hud setMode:MBProgressHUDModeIndeterminate];
-                [m_hud setLabelText:NSLocalizedString(@"STR_INITIALIZING", nil)];
-                
-                [self launch:NSLocalizedString(@"STR_INIT_SUCCEEDED", nil)];
-                
-                [MBProgressHUD hideHUDForView:self.view animated:NO];
-            }
-        }
-        
-        return nil;
-    } andRenderMode:RENDER_MODE];
-    
-#else
-    
-    id<ISPCancelable> initTask = [[ISInitProvider instance] startWithServerType:SERVER andSiteId:SITE_ID andLanguage:LANGUAGE andStartHandler:^NSArray * (ISInsiteoError * error, NSArray * newPackages) {
+    [[Insiteo sharedInstance] launchWithInitializeHandler:^(ISInsiteoError * error, ISUserSite * suggestedSite) {
+        NSLog(@"========================> 1) initializeDone: %@", ((error == nil) ? @"success" : @"fail"));
+    } andChooseSiteHandler:^CLLocationCoordinate2D {
+        return CLLocationCoordinate2DMake(43.393, -1.456);
+    } andStartHandler:^(ISInsiteoError * error, NSArray * newPackages) {
+        //Hide HUD
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
         if (error != nil) {
             //Error HUD
             m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [m_hud setMode:MBProgressHUDModeText];
-            [m_hud setLabelText:error.errorCode];
-            [m_hud setDetailsLabelText:error.errorMessage];
+            [m_hud setLabelText:[ISInsiteoError getErrorCodeToString:error.code]];
+            [m_hud setDetailsLabelText:[ISInsiteoError getErrorReasonToString:error.reason]];
             [m_hud hide:YES afterDelay:2];
             
             //Launch site
-            [self launch:NSLocalizedString(@"STR_INIT_FAILED", nil)];
-        } else {
+            [self launch:NSLocalizedString(@"STR_START_FAILED", nil)];
+        } else if ([newPackages count] > 0) {
             //Update HUD
             m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [m_hud setLabelText:NSLocalizedString(@"STR_UPDATING", nil)];
             [m_hud setDetailsLabelText:NSLocalizedString(@"STR_DOUBLE_TAP_TO_CANCEL", nil)];
-            
-            return newPackages;
         }
-        
-        return nil;
     } andUpdateHandler:^(ISInsiteoError * error) {
+        //Hide HUD
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-        NSString * message = nil;
-        if (error != nil) {
-            message = NSLocalizedString(@"STR_UPDATE_FAILED", nil);
-        } else {
-            message = NSLocalizedString(@"STR_UPDATE_SUCCEEDED", nil);
-        }
-        
         //Launch site
-        [self launch:message];
-    } andUpdateProgressHandler:^(ISPackageType packageType, Boolean download, int progress, int total) {
+        [self launch:((error != nil) ? NSLocalizedString(@"STR_UPDATE_FAILED", nil) : NSLocalizedString(@"STR_UPDATE_SUCCEEDED", nil))];
+    } andUpdateProgressHandler:^(ISEPackageType packageType, Boolean download, int progress, int total) {
+        //Update UI progress
         [m_hud setMode:MBProgressHUDModeDeterminate];
         [m_hud setProgress:0.0];
-        
-        if (download) {
-            [m_hud setLabelText:NSLocalizedString(@"STR_DOWNLOADING", nil)];
-        } else {
-            [m_hud setLabelText:NSLocalizedString(@"STR_INSTALLING", nil)];
-        }
-        
-        double hudProgress = (float)progress/(float)total;
-        [m_hud setProgress:hudProgress];
-    } andRenderMode:RENDER_MODE];
-    
-#endif
-    
-    [self setCurrentTask:initTask];
+        [m_hud setLabelText:(download ? NSLocalizedString(@"STR_DOWNLOADING", nil) : NSLocalizedString(@"STR_INSTALLING", nil))];
+        [m_hud setProgress:(float)progress/(float)total];
+    }];
 }
 
 - (void)startMap {
     //Initialize map controller
-    if (RENDER_MODE == ISERenderMode2D) {
+    if ([Insiteo currentUser].renderMode == ISERenderMode2D) {
         m_mapView = [[ISMap2DView map2DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
     } else {
         m_mapView = [[ISMap3DView map3DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
@@ -194,7 +92,7 @@ int const ACTIONSHEET_ACTIONS = 1;
     [m_mapView addRenderer:[m_locationProvider renderer]];
     
     //Add itinerary renderer
-    m_itineraryProvider = (ISItineraryProvider *)[[m_locationProvider getLbsModule:LBS_MODULE_ITINERARY] retain];
+    m_itineraryProvider = (ISItineraryProvider *)[[m_locationProvider getLbsModule:ISELbsModuleTypeItinerary] retain];
     ISItineraryRenderer * itineraryRenderer = [m_itineraryProvider renderer];
     [itineraryRenderer setRenderListener:self];
     [m_mapView addRenderer:itineraryRenderer];
@@ -207,7 +105,7 @@ int const ACTIONSHEET_ACTIONS = 1;
     //    [itineraryProvider setOnlyPath:YES];
     
     //Geofencing
-    m_geofenceProvider = (ISGeofenceProvider *)[[m_locationProvider getLbsModule:LBS_MODULE_GEOFENCING] retain];
+    m_geofenceProvider = (ISGeofenceProvider *)[[m_locationProvider getLbsModule:ISELbsModuleTypeGeofencing] retain];
     
     [m_mapView startRendering];
 }
@@ -215,13 +113,11 @@ int const ACTIONSHEET_ACTIONS = 1;
 #pragma mark - ISPInitListener
 
 - (void)launch:(NSString *)message {
-    ISInitProvider * initProvider = [ISInitProvider instance];
-    
     //Check that packges exist for map (MAP_DATA_PACKAGE), location, itinerary, and geofencing
-    if (    [initProvider hasPackageWithPackageType:MAP_DATA_PACKAGE andServerType:SERVER]
-        &&  [initProvider hasPackageWithPackageType:LOCATION_PACKAGE andServerType:SERVER]
-        &&  [initProvider hasPackageWithPackageType:ITINERARY_PACKAGE andServerType:SERVER]
-        &&  [initProvider hasPackageWithPackageType:GEOFENCING_PACKAGE andServerType:SERVER]) {
+    if ([[Insiteo currentSite] hasPackage:ISEPackageTypeMapData] &&
+        [[Insiteo currentSite] hasPackage:ISEPackageTypeLocation] &&
+        [[Insiteo currentSite] hasPackage:ISEPackageTypeItinerary] &&
+        [[Insiteo currentSite] hasPackage:ISEPackageTypeGeofencing]) {
         //If a message needs to be displayed
         if (message != nil) {
             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"STR_INFORMATION", nil) message:message delegate:nil cancelButtonTitle:NSLocalizedString(@"STR_OK", nil) otherButtonTitles:nil];
@@ -239,21 +135,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (alertView.tag) {
-            
-#if ASK_FOR_UPDATE
-            
-        case ALERTVIEW_UPDATE_PACKAGES : {
-            if (buttonIndex == alertView.cancelButtonIndex) {
-                [self launch:nil];
-            } else {
-                [self downloadPackages];
-            }
-            break;
-        }
-            
-#endif
-            
+    switch (alertView.tag) {            
         case ALERTVIEW_RETRY_INIT:  {
             [self startAPI];
             break;
@@ -491,7 +373,7 @@ int const ACTIONSHEET_ACTIONS = 1;
             }
         } else if (actionSheet.tag == ACTIONSHEET_CHANGE_MAP) {
             //Get clicked map
-            NSArray * maps = [[ISInitProvider instance].maps allValues];
+            NSArray * maps = [[Insiteo currentSite].maps allValues];
             ISMap * map = [maps objectAtIndex:buttonIndex];
             
             //Change the current map using the selected identifier
@@ -521,7 +403,7 @@ int const ACTIONSHEET_ACTIONS = 1;
     UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"STR_CHOOSE_MAP", nil) delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     
     //List all maps in an UIActionSheet
-    NSArray * maps = [[ISInitProvider instance].maps allValues];
+    NSArray * maps = [[Insiteo currentSite].maps allValues];
     for (ISMap * map in maps) {
         [actionSheet addButtonWithTitle:map.name];
     }
@@ -537,7 +419,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 - (void)threadStartLocation {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
-    [m_locationProvider startLocation:NAVIGATION_FLAGS andLocationListener:self];
+    [m_locationProvider startWithListener:self];
     
     [pool release];
 }
@@ -563,7 +445,7 @@ int const ACTIONSHEET_ACTIONS = 1;
 }
 
 - (IBAction)onHudDoubleTapped:(id)sender {
-    [m_currentTask cancel];
+    [[Insiteo sharedInstance].currentTask cancel];
     [m_hud hide:YES];
 }
 
@@ -585,7 +467,6 @@ int const ACTIONSHEET_ACTIONS = 1;
 }
 
 - (void)dealloc {
-    [m_currentTask release];
     [m_mapView release];
     [m_locationProvider release];
     [m_itineraryProvider release];

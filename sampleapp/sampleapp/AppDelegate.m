@@ -10,8 +10,31 @@
 
 @implementation AppDelegate
 
+#pragma mark - ISBeacon
+
+- (void)onEnterBeaconRegion:(ISBeaconRegion *)beaconRegion {
+    
+}
+
+- (void)onExitBeaconRegion:(ISBeaconRegion *)beaconRegion {
+    
+}
+
+- (void)onEnterBeacon:(ISBeacon *)beacon forRegion:(ISBeaconRegion *)beaconRegion andProximity:(CLProximity)proximity {
+    
+}
+
+- (void)onExitBeacon:(ISBeacon *)beacon forRegion:(ISBeaconRegion *)beaconRegion andProximity:(CLProximity)proximity {
+    
+}
+
+
+#pragma mark - Application
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //Start the beacon provider and set the ISPBeaconListener
+    [[ISBeaconProvider sharedInstance] startWithListener:self];
+    
     return YES;
 }
 							
@@ -29,8 +52,19 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
+#define kTimeToReinit 3600 //ex: every 1 hour, beacon regions are updated on the back office
+
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    //Check if user is authenticated
+    if ([[Insiteo sharedInstance] isAuthenticated]) {
+        //Check the interval between now
+        double interval = [[NSDate date] timeIntervalSinceDate:[Insiteo currentUser].lastInitializationDate];
+        
+        if (interval > kTimeToReinit) {
+            //Reinit the API, using the previous configuration
+            [[Insiteo sharedInstance] initializeWithInitializeHandler:nil andChooseSiteHandler:nil];
+        }
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
