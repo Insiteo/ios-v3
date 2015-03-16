@@ -56,11 +56,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISMap3DView/map3DViewWithFrame:andMapListener:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/ISMap3DView/getMap3DViewWithFrame:andMapListener:andHandler:</TokenIdentifier>
 			<Abstract type="html">Static constructor.</Abstract>
 			<DeclaredIn>ISMap3DView.h</DeclaredIn>			
 			
-			<Declaration>+ (ISMap3DView *)map3DViewWithFrame:(CGRect)frame andMapListener:(id&lt;ISPMapListener&gt;)mapListener</Declaration>
+			<Declaration>+ (void)getMap3DViewWithFrame:(CGRect)frame andMapListener:(id&lt;ISPMapListener&gt;)mapListener andHandler:(GetMap3DViewHandler)handler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>frame</Name>
@@ -68,10 +68,13 @@
 				</Parameter><Parameter>
 					<Name>mapListener</Name>
 					<Abstract type="html">Listener used to handle map events.</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">Map view creation completion handler.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/map3DViewWithFrame:andMapListener:</Anchor>
+			<Anchor>//api/name/getMap3DViewWithFrame:andMapListener:andHandler:</Anchor>
 		</Token>
 		
 		<Token>

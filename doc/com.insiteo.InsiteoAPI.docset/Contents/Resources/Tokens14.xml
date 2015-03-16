@@ -188,6 +188,28 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionEnabled:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the left action button is enabled.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean actionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/actionEnabled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/actionEnabled</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the left action button is enabled.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean actionEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/actionEnabled</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setActionImagePath:</TokenIdentifier>
 			<Abstract type="html">RTO action button sprite image path.</Abstract>
 			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
@@ -251,6 +273,28 @@
 			
 			
 			<Anchor>//api/name/actionBackgroundColorHighlighted</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/setIndicatorVisible:</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the right indicator is visible.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean indicatorVisible</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorVisible</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/ISGenericRTO/indicatorVisible</TokenIdentifier>
+			<Abstract type="html">Boolean used to know if the right indicator is visible.</Abstract>
+			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readwrite) Boolean indicatorVisible</Declaration>
+			
+			
+			<Anchor>//api/name/indicatorVisible</Anchor>
 		</Token>
 		
 		<Token>
@@ -348,11 +392,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/ISGenericRTO/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</TokenIdentifier>
 			<Abstract type="html">Main constructor</Abstract>
 			<DeclaredIn>ISGenericRTO.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath</Declaration>
+			<Declaration>- (id)initWithName:(NSString *)name andLabel:(NSString *)label andMetersPosition:(ISPosition *)metersPosition andWindowDisplayed:(Boolean)windowDisplayed andLabelDisplayed:(Boolean)labelDisplayed andWindowBackgroundColorNormal:(UIColor *)windowBackgroundColorNormal andWindowBackgroundColorHighlighted:(UIColor *)windowBackgroundColorHighlighted andActionEnabled:(Boolean)actionEnabled andActionImagePath:(NSString *)actionImagePath andActionBackgroundColorNormal:(UIColor *)actionBackgroundColorNormal andActionBackgroundColorHighlighted:(UIColor *)actionBackgroundColorHighlighted andIndicatorVisible:(Boolean)indicatorVisible andIndicatorImagePath:(NSString *)indicatorImagePath andWindowAnchorImagePath:(NSString *)windowAnchorImagePath andMarkerImagePath:(NSString *)markerImagePath</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -376,6 +420,9 @@
 					<Name>windowBackgroundColorHighlighted</Name>
 					<Abstract type="html">RTO window background color (highlighted state).</Abstract>
 				</Parameter><Parameter>
+					<Name>actionEnabled</Name>
+					<Abstract type="html">Boolean used to know if the action button is enabled.</Abstract>
+				</Parameter><Parameter>
 					<Name>actionImagePath</Name>
 					<Abstract type="html">RTO action image path.</Abstract>
 				</Parameter><Parameter>
@@ -384,6 +431,9 @@
 				</Parameter><Parameter>
 					<Name>actionBackgroundColorHighlighted</Name>
 					<Abstract type="html">RTO action image background color (highlighted state).</Abstract>
+				</Parameter><Parameter>
+					<Name>indicatorVisible</Name>
+					<Abstract type="html">Boolean used to know if the right indicator is visible.</Abstract>
 				</Parameter><Parameter>
 					<Name>indicatorImagePath</Name>
 					<Abstract type="html">RTO indicator image path.</Abstract>
@@ -396,7 +446,7 @@
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</Anchor>
+			<Anchor>//api/name/initWithName:andLabel:andMetersPosition:andWindowDisplayed:andLabelDisplayed:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</Anchor>
 		</Token>
 		
 		<Token>

@@ -34,11 +34,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/ISMap2DView/map2DViewWithFrame:andMapListener:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/ISMap2DView/getMap2DViewWithFrame:andMapListener:andHandler:</TokenIdentifier>
 			<Abstract type="html">Static constructor.</Abstract>
 			<DeclaredIn>ISMap2DView.h</DeclaredIn>			
 			
-			<Declaration>+ (ISMap2DView *)map2DViewWithFrame:(CGRect)frame andMapListener:(id&lt;ISPMapListener&gt;)mapListener</Declaration>
+			<Declaration>+ (void)getMap2DViewWithFrame:(CGRect)frame andMapListener:(id&lt;ISPMapListener&gt;)mapListener andHandler:(GetMap2DViewHandler)handler</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>frame</Name>
@@ -46,10 +46,13 @@
 				</Parameter><Parameter>
 					<Name>mapListener</Name>
 					<Abstract type="html">Listener used to handle map events.</Abstract>
+				</Parameter><Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">Map view creation completion handler.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/map2DViewWithFrame:andMapListener:</Anchor>
+			<Anchor>//api/name/getMap2DViewWithFrame:andMapListener:andHandler:</Anchor>
 		</Token>
 		
 		<Token>

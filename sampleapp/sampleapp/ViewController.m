@@ -180,13 +180,8 @@ int const ACTIONSHEET_ACTIONS = 1;
     [self setCurrentTask:initTask];
 }
 
-- (void)startMap {
-    //Initialize map controller
-    if (RENDER_MODE == ISERenderMode2D) {
-        m_mapView = [[ISMap2DView map2DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
-    } else {
-        m_mapView = [[ISMap3DView map3DViewWithFrame:self.mapContentView.frame andMapListener:self] retain];
-    }
+- (void)createMap:(ISMapView *)mapView {
+    m_mapView = [mapView retain];
     [self.mapContentView addSubview:m_mapView];
     
     //Add location renderer
@@ -210,6 +205,19 @@ int const ACTIONSHEET_ACTIONS = 1;
     m_geofenceProvider = (ISGeofenceProvider *)[[m_locationProvider getLbsModule:LBS_MODULE_GEOFENCING] retain];
     
     [m_mapView startRendering];
+}
+
+- (void)startMap {
+    //Initialize map controller
+    if (RENDER_MODE == ISERenderMode2D) {
+        [ISMap2DView getMap2DViewWithFrame:self.mapContentView.frame andMapListener:self andHandler:^(ISMap2DView * map2DView) {
+            [self createMap:map2DView];
+        }];
+    } else {
+        [ISMap3DView getMap3DViewWithFrame:self.mapContentView.frame andMapListener:self andHandler:^(ISMap3DView * map3DView) {
+            [self createMap:map3DView];
+        }];
+    }
 }
 
 #pragma mark - ISPInitListener
