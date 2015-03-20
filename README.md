@@ -1,5 +1,4 @@
 # Insiteo iOS sample application
-=======
 
 > Please unzip the **lib/InsiteoAPI.zip** archive before using the **sampleapp** project.
 
