@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ISBeaconDelegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">InsiteoSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Insiteo</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/onEnterBeacon:forRegion:">- onEnterBeacon:forRegion:</option>
+		
+		<option value="//api/name/onEnterBeaconRegion:">- onEnterBeaconRegion:</option>
+		
+		<option value="//api/name/onExitBeacon:forRegion:">- onExitBeacon:forRegion:</option>
+		
+		<option value="//api/name/onExitBeaconRegion:">- onExitBeaconRegion:</option>
+		
+		<option value="//api/name/rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:">- rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:</option>
+		
+		<option value="//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:">- shouldPresentLocalNotificationOnBeaconRegionEntry:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ISBeaconDelegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ISBeaconProvider.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Protocol used to handle Beacon events.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/onEnterBeaconRegion:" title="onEnterBeaconRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onEnterBeaconRegion:">&ndash;&nbsp;onEnterBeaconRegion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the user enters in a monitored beaconRegion.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)onEnterBeaconRegion:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconRegion</code></th>
+						<td><p>The beacon region the user enters in.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISBeaconProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onExitBeaconRegion:" title="onExitBeaconRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onExitBeaconRegion:">&ndash;&nbsp;onExitBeaconRegion:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the user exits a monitored beaconRegion.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)onExitBeaconRegion:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconRegion</code></th>
+						<td><p>The <a href="../Classes/ISBeaconRegion.html">ISBeaconRegion</a> the user exits.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISBeaconProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onEnterBeacon:forRegion:" title="onEnterBeacon:forRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onEnterBeacon:forRegion:">&ndash;&nbsp;onEnterBeacon:forRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the beacon proximity is reached for an entered beaconRegion.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)onEnterBeacon:(ISBeacon *)<em>beacon</em> forRegion:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beacon</code></th>
+						<td><p>The beacon with reached proximity.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconRegion</code></th>
+						<td><p>The beaconRegion associated to the beacon with reached proximity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISBeaconProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onExitBeacon:forRegion:" title="onExitBeacon:forRegion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onExitBeacon:forRegion:">&ndash;&nbsp;onExitBeacon:forRegion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when the beacon proximity is not reached anymore for an entered beaconRegion.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)onExitBeacon:(ISBeacon *)<em>beacon</em> forRegion:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beacon</code></th>
+						<td><p>The beacon with proximity CLProximityFar or CLProximityUnknown.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconRegion</code></th>
+						<td><p>The beaconRegion associated to the beacon with the no more reached proximity.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISBeaconProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:" title="shouldPresentLocalNotificationOnBeaconRegionEntry:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:">&ndash;&nbsp;shouldPresentLocalNotificationOnBeaconRegionEntry:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to let the <a href="../Classes/ISBeaconProvider.html">ISBeaconProvider</a> managing the UILocalNotification presentation on a beaconRegion entry.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldPresentLocalNotificationOnBeaconRegionEntry:(ISBeaconRegion *)<em>beaconRegion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconRegion</code></th>
+						<td><p>The beacon region the user enters in.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>If the <a href="../Classes/ISBeaconProvider.html">ISBeaconProvider</a> should manage the UILocalNotification presentation. YES, by default.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISBeaconProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:" title="rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:">&ndash;&nbsp;rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get all ranged beacons in an entered beaconRegion and all beacons which have reached the region proximity.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)rangedBeacons:(NSArray *)<em>beacons</em> andReachedProximityBeacons:(NSArray *)<em>reachedProximityBeacons</em> inRegion:(ISBeaconRegion *)<em>beaconRegion</em> andUnknownCLBeacons:(NSArray *)<em>unknownCLBeacons</em> withError:(NSError *)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beacons</code></th>
+						<td><p>All ranged beacons, nil if an error occured.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>reachedProximityBeacons</code></th>
+						<td><p>beacons which have reached the region proximity, nil if an error occured.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>beaconRegion</code></th>
+						<td><p>The ranged beaconRegion.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unknownCLBeacons</code></th>
+						<td><p>All CLBeacon which are not configured on the back office but found in the region.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>If ranging for the region has failed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISBeaconProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Insiteo. All rights reserved. Updated: 2015-04-30</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

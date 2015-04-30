@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ISGenericRTO Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">InsiteoSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Insiteo</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/actionBackgroundColorHighlighted">actionBackgroundColorHighlighted</option>
+		
+		<option value="//api/name/actionBackgroundColorNormal">actionBackgroundColorNormal</option>
+		
+		<option value="//api/name/actionButtonClicked">actionButtonClicked</option>
+		
+		<option value="//api/name/actionImagePath">actionImagePath</option>
+		
+		<option value="//api/name/currentMap">currentMap</option>
+		
+		<option value="//api/name/currentScene">currentScene</option>
+		
+		<option value="//api/name/draggable">draggable</option>
+		
+		<option value="//api/name/indicatorImagePath">indicatorImagePath</option>
+		
+		<option value="//api/name/markerImagePath">markerImagePath</option>
+		
+		<option value="//api/name/metersPosition">metersPosition</option>
+		
+		<option value="//api/name/rtoNode">rtoNode</option>
+		
+		<option value="//api/name/windowAnchorImagePath">windowAnchorImagePath</option>
+		
+		<option value="//api/name/windowBackgroundColorHighlighted">windowBackgroundColorHighlighted</option>
+		
+		<option value="//api/name/windowBackgroundColorNormal">windowBackgroundColorNormal</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/hideLabel">- hideLabel</option>
+		
+		<option value="//api/name/hideWindow">- hideWindow</option>
+		
+		<option value="//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andLabelInitiallyDisplayed:">- initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andLabelInitiallyDisplayed:</option>
+		
+		<option value="//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:">- initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:</option>
+		
+		<option value="//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:">- initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</option>
+		
+		<option value="//api/name/setOver:">- setOver:</option>
+		
+		<option value="//api/name/setOverAction:">- setOverAction:</option>
+		
+		<option value="//api/name/shouldToggleLabelOnMarkerClicked">- shouldToggleLabelOnMarkerClicked</option>
+		
+		<option value="//api/name/shouldToggleWindowOnMarkerClicked">- shouldToggleWindowOnMarkerClicked</option>
+		
+		<option value="//api/name/showLabel">- showLabel</option>
+		
+		<option value="//api/name/showWindow">- showWindow</option>
+		
+		<option value="//api/name/toggleLabel">- toggleLabel</option>
+		
+		<option value="//api/name/toggleWindow">- toggleWindow</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ISGenericRTO Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>CCNode</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/ISRTO.html">ISRTO</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ISGenericRTO.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Class which represent a basic RTO object (name + pin image).</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/metersPosition" title="metersPosition"></a>
+	<h3 class="method-title"><code><a href="#//api/name/metersPosition">&nbsp;&nbsp;metersPosition</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO position in meters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISPosition *metersPosition</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentMap" title="currentMap"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentMap">&nbsp;&nbsp;currentMap</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current rendering map.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISMap *currentMap</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/draggable" title="draggable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/draggable">&nbsp;&nbsp;draggable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Boolean used to know if the RTO is draggable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) Boolean draggable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/actionButtonClicked" title="actionButtonClicked"></a>
+	<h3 class="method-title"><code><a href="#//api/name/actionButtonClicked">&nbsp;&nbsp;actionButtonClicked</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Boolean used to know if the action button was clicked.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) Boolean actionButtonClicked</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rtoNode" title="rtoNode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rtoNode">&nbsp;&nbsp;rtoNode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Related 2D render node.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISGenericRTONode *rtoNode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/currentScene" title="currentScene"></a>
+	<h3 class="method-title"><code><a href="#//api/name/currentScene">&nbsp;&nbsp;currentScene</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current 3D scene (for 3D rendering only).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) CC3Scene *currentScene</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/windowBackgroundColorNormal" title="windowBackgroundColorNormal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/windowBackgroundColorNormal">&nbsp;&nbsp;windowBackgroundColorNormal</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO window background color for normal state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) UIColor *windowBackgroundColorNormal</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/windowBackgroundColorHighlighted" title="windowBackgroundColorHighlighted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/windowBackgroundColorHighlighted">&nbsp;&nbsp;windowBackgroundColorHighlighted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO window background color for highlighted state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) UIColor *windowBackgroundColorHighlighted</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/actionImagePath" title="actionImagePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/actionImagePath">&nbsp;&nbsp;actionImagePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO action button sprite image path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *actionImagePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/actionBackgroundColorNormal" title="actionBackgroundColorNormal"></a>
+	<h3 class="method-title"><code><a href="#//api/name/actionBackgroundColorNormal">&nbsp;&nbsp;actionBackgroundColorNormal</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO action button background color for normal state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) UIColor *actionBackgroundColorNormal</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/actionBackgroundColorHighlighted" title="actionBackgroundColorHighlighted"></a>
+	<h3 class="method-title"><code><a href="#//api/name/actionBackgroundColorHighlighted">&nbsp;&nbsp;actionBackgroundColorHighlighted</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO action button background color for highlighted state.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) UIColor *actionBackgroundColorHighlighted</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/indicatorImagePath" title="indicatorImagePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/indicatorImagePath">&nbsp;&nbsp;indicatorImagePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO indicator sprite image path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *indicatorImagePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/windowAnchorImagePath" title="windowAnchorImagePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/windowAnchorImagePath">&nbsp;&nbsp;windowAnchorImagePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO window anchor sprite image path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *windowAnchorImagePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/markerImagePath" title="markerImagePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/markerImagePath">&nbsp;&nbsp;markerImagePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO marker sprite image path.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) NSString *markerImagePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andLabelInitiallyDisplayed:" title="initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andLabelInitiallyDisplayed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andLabelInitiallyDisplayed:">&ndash;&nbsp;initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andLabelInitiallyDisplayed:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Main constructor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em> andLabel:(NSString *)<em>label</em> andMetersPosition:(ISPosition *)<em>metersPosition</em> andWindowInitiallyDisplayed:(Boolean)<em>windowInitiallyDisplayed</em> andLabelInitiallyDisplayed:(Boolean)<em>labelInitiallyDisplayed</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>RTO displayed name.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>label</code></th>
+						<td><p>RTO displayed label.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>metersPosition</code></th>
+						<td><p>RTO position in meters (could be nil in case of zone rendering).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowInitiallyDisplayed</code></th>
+						<td><p>Boolean used to know if the RTO window has to be displayed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>labelInitiallyDisplayed</code></th>
+						<td><p>Boolean used to know if the RTO label has to be displayed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:" title="initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:">&ndash;&nbsp;initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Main constructor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em> andLabel:(NSString *)<em>label</em> andMetersPosition:(ISPosition *)<em>metersPosition</em> andWindowInitiallyDisplayed:(Boolean)<em>windowInitiallyDisplayed</em> andWindowShouldToggle:(Boolean)<em>windowShouldToggle</em> andLabelInitiallyDisplayed:(Boolean)<em>labelInitiallyDisplayed</em> andLabelShouldToggle:(Boolean)<em>labelShouldToggle</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>RTO displayed name.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>label</code></th>
+						<td><p>RTO displayed label.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>metersPosition</code></th>
+						<td><p>RTO position in meters (could be nil in case of zone rendering).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowInitiallyDisplayed</code></th>
+						<td><p>Boolean used to know if the RTO window has to be displayed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowShouldToggle</code></th>
+						<td><p>Boolean used to know if the RTO window should toggle on RTO clicked.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>labelInitiallyDisplayed</code></th>
+						<td><p>Boolean used to know if the RTO label has to be displayed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>labelShouldToggle</code></th>
+						<td><p>Boolean used to know if the RTO label should toggle on RTO clicked.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:" title="initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:">&ndash;&nbsp;initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Main constructor</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithName:(NSString *)<em>name</em> andLabel:(NSString *)<em>label</em> andMetersPosition:(ISPosition *)<em>metersPosition</em> andWindowInitiallyDisplayed:(Boolean)<em>windowInitiallyDisplayed</em> andWindowShouldToggle:(Boolean)<em>windowShouldToggle</em> andLabelInitiallyDisplayed:(Boolean)<em>labelInitiallyDisplayed</em> andLabelShouldToggle:(Boolean)<em>labelShouldToggle</em> andWindowBackgroundColorNormal:(UIColor *)<em>windowBackgroundColorNormal</em> andWindowBackgroundColorHighlighted:(UIColor *)<em>windowBackgroundColorHighlighted</em> andActionEnabled:(Boolean)<em>actionEnabled</em> andActionImagePath:(NSString *)<em>actionImagePath</em> andActionBackgroundColorNormal:(UIColor *)<em>actionBackgroundColorNormal</em> andActionBackgroundColorHighlighted:(UIColor *)<em>actionBackgroundColorHighlighted</em> andIndicatorVisible:(Boolean)<em>indicatorVisible</em> andIndicatorImagePath:(NSString *)<em>indicatorImagePath</em> andWindowAnchorImagePath:(NSString *)<em>windowAnchorImagePath</em> andMarkerImagePath:(NSString *)<em>markerImagePath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>RTO displayed name.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>label</code></th>
+						<td><p>RTO displayed label.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>metersPosition</code></th>
+						<td><p>RTO position in meters (could be nil in case of zone rendering).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowInitiallyDisplayed</code></th>
+						<td><p>Boolean used to know if the RTO window has to be displayed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowShouldToggle</code></th>
+						<td><p>Boolean used to know if the RTO window should toggle on RTO clicked.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>labelInitiallyDisplayed</code></th>
+						<td><p>Boolean used to know if the RTO label has to be displayed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>labelShouldToggle</code></th>
+						<td><p>Boolean used to know if the RTO label should toggle on RTO clicked.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowBackgroundColorNormal</code></th>
+						<td><p>RTO window background color (normal state).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowBackgroundColorHighlighted</code></th>
+						<td><p>RTO window background color (highlighted state).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionEnabled</code></th>
+						<td><p>Boolean used to know if the action button is enabled.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionImagePath</code></th>
+						<td><p>RTO action image path.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionBackgroundColorNormal</code></th>
+						<td><p>RTO action image background color (normal state).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionBackgroundColorHighlighted</code></th>
+						<td><p>RTO action image background color (highlighted state).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>indicatorVisible</code></th>
+						<td><p>Boolean used to know if the right indicator is visible.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>indicatorImagePath</code></th>
+						<td><p>RTO indicator image path.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>windowAnchorImagePath</code></th>
+						<td><p>RTO window anchor image path.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>markerImagePath</code></th>
+						<td><p>RTO marker image path.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldToggleWindowOnMarkerClicked" title="shouldToggleWindowOnMarkerClicked"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldToggleWindowOnMarkerClicked">&ndash;&nbsp;shouldToggleWindowOnMarkerClicked</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to know if the RTO should toggle its window when the marker was clicked.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (Boolean)shouldToggleWindowOnMarkerClicked</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><b>YES</b> if you want a toggle action, otherwise <b>NO</b>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldToggleLabelOnMarkerClicked" title="shouldToggleLabelOnMarkerClicked"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldToggleLabelOnMarkerClicked">&ndash;&nbsp;shouldToggleLabelOnMarkerClicked</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to know if the RTO should toggle its label when the marker was clicked.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (Boolean)shouldToggleLabelOnMarkerClicked</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><b>YES</b> if you want a toggle action, otherwise <b>NO</b>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hideWindow" title="hideWindow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hideWindow">&ndash;&nbsp;hideWindow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to hide the window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)hideWindow</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showWindow" title="showWindow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showWindow">&ndash;&nbsp;showWindow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to show the window.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showWindow</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toggleWindow" title="toggleWindow"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toggleWindow">&ndash;&nbsp;toggleWindow</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to toggle RTO appearance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)toggleWindow</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hideLabel" title="hideLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hideLabel">&ndash;&nbsp;hideLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to hide the RTO label.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)hideLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showLabel" title="showLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showLabel">&ndash;&nbsp;showLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to show the RTO label.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toggleLabel" title="toggleLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toggleLabel">&ndash;&nbsp;toggleLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to toggle RTO label visibility.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)toggleLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setOver:" title="setOver:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setOver:">&ndash;&nbsp;setOver:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to render the annotation as touched or not.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setOver:(Boolean)<em>over</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>over</code></th>
+						<td><p><b>YES</b> if you want a touched effect, otherwise <b>NO</b>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setOverAction:" title="setOverAction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setOverAction:">&ndash;&nbsp;setOverAction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to render the action button as touched or not.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setOverAction:(Boolean)<em>over</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>over</code></th>
+						<td><p><b>YES</b> if you want a touched effect, otherwise <b>NO</b>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISGenericRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Insiteo. All rights reserved. Updated: 2015-04-30</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

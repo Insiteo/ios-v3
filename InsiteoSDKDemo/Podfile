@@ -1,0 +1,9 @@
+platform :ios, '5.1.1'
+
+target 'InsiteoSDKDemo' do
+
+pod 'InsiteoSDK', :podspec => 'http://dev.insiteo.com/api/download/ios/InsiteoSDK.podspec'
+pod 'MBProgressHUD', '~> 0.9.1'
+
+end
+

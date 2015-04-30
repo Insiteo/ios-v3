@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ISItineraryProvider Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">InsiteoSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Insiteo</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/lastItinerary">lastItinerary</option>
+		
+		<option value="//api/name/lastItineraryRequest">lastItineraryRequest</option>
+		
+		<option value="//api/name/lastLocation">lastLocation</option>
+		
+		<option value="//api/name/renderer">renderer</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/getVersion">+ getVersion</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andDelegate:andPMR:">- requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andDelegate:andPMR:</option>
+		
+		<option value="//api/name/requestItineraryFromCurrentLocationWithEndPositions:andDelegate:andPMR:">- requestItineraryFromCurrentLocationWithEndPositions:andDelegate:andPMR:</option>
+		
+		<option value="//api/name/requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andDelegate:andPMR:">- requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andDelegate:andPMR:</option>
+		
+		<option value="//api/name/requestItineraryToCurrentLocationWithStartPositions:andDelegate:andPMR:">- requestItineraryToCurrentLocationWithStartPositions:andDelegate:andPMR:</option>
+		
+		<option value="//api/name/requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andDelegate:andPMR:">- requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andDelegate:andPMR:</option>
+		
+		<option value="//api/name/requestItineraryWithStartPositions:andEndPositions:andDelegate:andPMR:">- requestItineraryWithStartPositions:andEndPositions:andDelegate:andPMR:</option>
+		
+		<option value="//api/name/requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andDelegate:andPMR:">- requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andDelegate:andPMR:</option>
+		
+		<option value="//api/name/updateItinerary:">- updateItinerary:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ISItineraryProvider Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ISItineraryProvider.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Class used to manage Itinerary requests.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/lastLocation" title="lastLocation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastLocation">&nbsp;&nbsp;lastLocation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Last location received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ISLocation *lastLocation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastItinerary" title="lastItinerary"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastItinerary">&nbsp;&nbsp;lastItinerary</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Last itinerary computed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ISItinerary *lastItinerary</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/renderer" title="renderer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderer">&nbsp;&nbsp;renderer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Itinerary Renderer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ISItineraryRenderer *renderer</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastItineraryRequest" title="lastItineraryRequest"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastItineraryRequest">&nbsp;&nbsp;lastItineraryRequest</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Last Itinerary request (could be use to cancel last request before asking another one).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) ISItineraryBaseRequest *lastItineraryRequest</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getVersion" title="getVersion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getVersion">+&nbsp;getVersion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Static method used to know the current itinerary library version.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)getVersion</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Current itinerary library version.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andDelegate:andPMR:" title="requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andDelegate:andPMR:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andDelegate:andPMR:">&ndash;&nbsp;requestItineraryFromCurrentLocationWithEndPoint:andEndMapId:andDelegate:andPMR:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get a route from the user current location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISItineraryRequest *)requestItineraryFromCurrentLocationWithEndPoint:(CGPoint)<em>endPoint</em> andEndMapId:(int)<em>endMapId</em> andDelegate:(id&lt;ISItineraryRequestDelegate&gt;)<em>delegate</em> andPMR:(Boolean)<em>pmr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endPoint</code></th>
+						<td><p>Itinerary request end point.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endMapId</code></th>
+						<td><p>Itinerary request end map identifier.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate to notify for <a href="../Classes/ISItineraryRequest.html">ISItineraryRequest</a> events (succeeded, failed).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pmr</code></th>
+						<td><p>Boolean used to know if we compute the route for disabled people.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Related request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestItineraryFromCurrentLocationWithEndPositions:andDelegate:andPMR:" title="requestItineraryFromCurrentLocationWithEndPositions:andDelegate:andPMR:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItineraryFromCurrentLocationWithEndPositions:andDelegate:andPMR:">&ndash;&nbsp;requestItineraryFromCurrentLocationWithEndPositions:andDelegate:andPMR:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get a route from the user current location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISItineraryRequest *)requestItineraryFromCurrentLocationWithEndPositions:(NSArray *)<em>endPositions</em> andDelegate:(id&lt;ISItineraryRequestDelegate&gt;)<em>delegate</em> andPMR:(Boolean)<em>pmr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endPositions</code></th>
+						<td><p>Itinerary request end position array.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate to notify for <a href="../Classes/ISItineraryRequest.html">ISItineraryRequest</a> events (succeeded, failed).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pmr</code></th>
+						<td><p>Boolean used to know if we compute the route for disabled people.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Related request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andDelegate:andPMR:" title="requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andDelegate:andPMR:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andDelegate:andPMR:">&ndash;&nbsp;requestItineraryToCurrentLocationWithStartPoint:andStartMapId:andDelegate:andPMR:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get a route to the user current location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISItineraryRequest *)requestItineraryToCurrentLocationWithStartPoint:(CGPoint)<em>startPoint</em> andStartMapId:(int)<em>startMapId</em> andDelegate:(id&lt;ISItineraryRequestDelegate&gt;)<em>delegate</em> andPMR:(Boolean)<em>pmr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPoint</code></th>
+						<td><p>Itinerary request start point.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startMapId</code></th>
+						<td><p>Itinerary request start map identifier.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate to notify for <a href="../Classes/ISItineraryRequest.html">ISItineraryRequest</a> events (succeeded, failed).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pmr</code></th>
+						<td><p>Boolean used to know if we compute the route for disabled people.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Related request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestItineraryToCurrentLocationWithStartPositions:andDelegate:andPMR:" title="requestItineraryToCurrentLocationWithStartPositions:andDelegate:andPMR:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItineraryToCurrentLocationWithStartPositions:andDelegate:andPMR:">&ndash;&nbsp;requestItineraryToCurrentLocationWithStartPositions:andDelegate:andPMR:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get a route to the user current location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISItineraryRequest *)requestItineraryToCurrentLocationWithStartPositions:(NSArray *)<em>startPositions</em> andDelegate:(id&lt;ISItineraryRequestDelegate&gt;)<em>delegate</em> andPMR:(Boolean)<em>pmr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPositions</code></th>
+						<td><p>Itinerary request start position array.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate to notify for <a href="../Classes/ISItineraryRequest.html">ISItineraryRequest</a> events (succeeded, failed).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pmr</code></th>
+						<td><p>Boolean used to know if we compute the route for disabled people.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Related request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andDelegate:andPMR:" title="requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andDelegate:andPMR:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andDelegate:andPMR:">&ndash;&nbsp;requestItineraryWithStartPoint:andStartMapId:andEndPoint:andEndMapId:andDelegate:andPMR:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get a route between two points.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISItineraryRequest *)requestItineraryWithStartPoint:(CGPoint)<em>startPoint</em> andStartMapId:(int)<em>startMapId</em> andEndPoint:(CGPoint)<em>endPoint</em> andEndMapId:(int)<em>endMapId</em> andDelegate:(id&lt;ISItineraryRequestDelegate&gt;)<em>delegate</em> andPMR:(Boolean)<em>pmr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPoint</code></th>
+						<td><p>Itinerary request start point.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startMapId</code></th>
+						<td><p>Itinerary request start map id.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endPoint</code></th>
+						<td><p>Itinerary request end point.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endMapId</code></th>
+						<td><p>Itinerary request end map id.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate to notify for <a href="../Classes/ISItineraryRequest.html">ISItineraryRequest</a> events (succeeded, failed).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pmr</code></th>
+						<td><p>Boolean used to know if we compute the route for disabled people.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Related request.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestItineraryWithStartPositions:andEndPositions:andDelegate:andPMR:" title="requestItineraryWithStartPositions:andEndPositions:andDelegate:andPMR:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestItineraryWithStartPositions:andEndPositions:andDelegate:andPMR:">&ndash;&nbsp;requestItineraryWithStartPositions:andEndPositions:andDelegate:andPMR:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get a route between two points.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISItineraryRequest *)requestItineraryWithStartPositions:(NSMutableArray *)<em>startPositions</em> andEndPositions:(NSMutableArray *)<em>endPositions</em> andDelegate:(id&lt;ISItineraryRequestDelegate&gt;)<em>delegate</em> andPMR:(Boolean)<em>pmr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startPositions</code></th>
+						<td><p>Itinerary request start positions array.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>endPositions</code></th>
+						<td><p>Itinerary request end positions array.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate to notify for <a href="../Classes/ISItineraryRequest.html">ISItineraryRequest</a> events (succeeded, failed).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pmr</code></th>
+						<td><p>Boolean used to know if we compute the route for disabled people.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Related request (nil if error).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andDelegate:andPMR:" title="requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andDelegate:andPMR:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andDelegate:andPMR:">&ndash;&nbsp;requestOptimizedItineraryWithWaypoints:andOptimMode:andKeepFirstPosition:andKeepLastPosition:andDelegate:andPMR:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to get an optimized route between several points.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISItineraryOptimizedRequest *)requestOptimizedItineraryWithWaypoints:(NSArray *)<em>waypoints</em> andOptimMode:(ISEOptimizationMode)<em>mode</em> andKeepFirstPosition:(Boolean)<em>keepFirstPosition</em> andKeepLastPosition:(Boolean)<em>keepLastPosition</em> andDelegate:(id&lt;ISItineraryRequestDelegate&gt;)<em>delegate</em> andPMR:(Boolean)<em>pmr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>waypoints</code></th>
+						<td><p>Waypoints to pass through.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>mode</code></th>
+						<td><p>Algorithm optimization mode.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keepFirstPosition</code></th>
+						<td><p>Boolean used to know if we treat the first position.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>keepLastPosition</code></th>
+						<td><p>Boolean used to know if we treat the last position.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>Delegate to notify for <a href="../Classes/ISItineraryRequest.html">ISItineraryRequest</a> events (succeeded, failed).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pmr</code></th>
+						<td><p>Boolean used to know if we compute a route for disabled people.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Related request (nil if error).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/updateItinerary:" title="updateItinerary:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/updateItinerary:">&ndash;&nbsp;updateItinerary:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to update the last itinerary.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)updateItinerary:(ISItinerary *)<em>itinerary</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>itinerary</code></th>
+						<td><p>Itinerary to use.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISItineraryProvider.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Insiteo. All rights reserved. Updated: 2015-04-30</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

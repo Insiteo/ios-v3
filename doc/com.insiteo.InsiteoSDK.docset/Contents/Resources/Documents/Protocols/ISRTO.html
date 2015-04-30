@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ISRTO Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">InsiteoSDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Insiteo</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/mapId">mapId</option>
+		
+		<option value="//api/name/object3d">object3d</option>
+		
+		<option value="//api/name/renderMode">renderMode</option>
+		
+		<option value="//api/name/rtoId">rtoId</option>
+		
+		<option value="//api/name/zoneOffset">zoneOffset</option>
+		
+		<option value="//api/name/zonePoi">zonePoi</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/cloneRTO">- cloneRTO</option>
+		
+		<option value="//api/name/onTouchDown:">- onTouchDown:</option>
+		
+		<option value="//api/name/onTouchMove:">- onTouchMove:</option>
+		
+		<option value="//api/name/onTouchUp:">- onTouchUp:</option>
+		
+		<option value="//api/name/remove2DFromLayer:">- remove2DFromLayer:</option>
+		
+		<option value="//api/name/remove3DFromLayer:">- remove3DFromLayer:</option>
+		
+		<option value="//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:">- render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</option>
+		
+		<option value="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:">- render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</option>
+		
+		<option value="//api/name/setDisplayEnabled:">- setDisplayEnabled:</option>
+		
+		<option value="//api/name/setResources">- setResources</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ISRTO Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ISRTO.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Protocol used to represent the beahviour of an RTO (rendering and touch).</p><div class="warning"><p><strong>Warning:</strong> In order to create an RTO with bitmaps, Cocos2d needs to be initialized, otherwise the application will crash.</p></div><div class="warning"><p><strong>Warning:</strong> In order to use Cocos2d and your own RTO (add to the current CCLayer), you will need to give it a unique identifier which you can get by calling <a href="../Classes/ISMapView.html#//api/name/generateCocos2dUniqueId">[ISMapView generateCocos2dUniqueId]</a>.</p></div>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="General" name="task_General"></a>
+						<h2 class="task-title">General</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/rtoId" title="rtoId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rtoId">&nbsp;&nbsp;rtoId</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A RTO unique identifier for the current class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int rtoId</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/zonePoi" title="zonePoi"></a>
+	<h3 class="method-title"><code><a href="#//api/name/zonePoi">&nbsp;&nbsp;zonePoi</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Related zone association (could be nil).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) ISZonePoi *zonePoi</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mapId" title="mapId"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mapId">&nbsp;&nbsp;mapId</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>RTO related map identifier (@see <a href="../Constants/ISERTOMapId.html">ISERTOMapId</a> for general).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int mapId</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cloneRTO" title="cloneRTO"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cloneRTO">&ndash;&nbsp;cloneRTO</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to clone an RTO (used when adding an RTO in several zones).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id&lt;ISRTO&gt;)cloneRTO</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result cloned RTO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDisplayEnabled:" title="setDisplayEnabled:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDisplayEnabled:">&ndash;&nbsp;setDisplayEnabled:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called show or hide an RTO.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setDisplayEnabled:(Boolean)<em>displayEnabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>displayEnabled</code></th>
+						<td><p><b>YES</b> for a visible RTO, otherwise <b>NO</b>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Render 2D" name="task_Render 2D"></a>
+						<h2 class="task-title">Render 2D</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:" title="render2DWithLayer:andRatio:andOffset:andAngle:andPriority:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/render2DWithLayer:andRatio:andOffset:andAngle:andPriority:">&ndash;&nbsp;render2DWithLayer:andRatio:andOffset:andAngle:andPriority:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to draw an RTO with a ratio and an offset.
+To obtain object position on screen, do (object_position_in_meter.x * aRatio + aOffset.x <b>AND</b> aOffset.y - object_position_in_meter.x * aRatio).
+If this object has no position (ie: ISRTO is put in a zone), simply draw it at aOffset.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)render2DWithLayer:(CCLayer *)<em>layer</em> andRatio:(double)<em>ratio</em> andOffset:(CGPoint)<em>offset</em> andAngle:(float)<em>angle</em> andPriority:(int)<em>priority</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>layer</code></th>
+						<td><p>The destination Cocos2d layer where this object should be added to.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ratio</code></th>
+						<td><p>The real/screen coord ratio, this is used to transform the object&rsquo;s real coords into screen coords.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>offset</code></th>
+						<td><p>In pixels, the offset from the (0, 0) of the drawing Cocos2d layer that should be added to this object coords.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>angle</code></th>
+						<td><p>The offset angle in case a rotation should be done. The rotation is relative to the screen center (clockwise).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>priority</code></th>
+						<td><p>The renderer priority, used as Z by Cocos2d.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/remove2DFromLayer:" title="remove2DFromLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/remove2DFromLayer:">&ndash;&nbsp;remove2DFromLayer:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to remove an RTO from the Cocos2d layer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)remove2DFromLayer:(CCLayer *)<em>layer</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>layer</code></th>
+						<td><p>The current Cocos2d layer used.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setResources" title="setResources"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setResources">&ndash;&nbsp;setResources</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to initialize RTO resources such as images, labels etc&hellip;</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setResources</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> This method will be called on the main thread (UI Thread).</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Touch" name="task_Touch"></a>
+						<h2 class="task-title">Touch</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/onTouchDown:" title="onTouchDown:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onTouchDown:">&ndash;&nbsp;onTouchDown:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when an RTO was touched down.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISETouchObjectResult)onTouchDown:(ISTouch *)<em>touch</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>touch</code></th>
+						<td><p>Object that contains iOS touch information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Touch event handling result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onTouchMove:" title="onTouchMove:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onTouchMove:">&ndash;&nbsp;onTouchMove:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when an RTO was touch-moved.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISETouchObjectResult)onTouchMove:(ISTouch *)<em>touch</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>touch</code></th>
+						<td><p>Object that contains iOS touch information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Touch event handling result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/onTouchUp:" title="onTouchUp:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/onTouchUp:">&ndash;&nbsp;onTouchUp:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called when an RTO was touched up.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISETouchObjectResult)onTouchUp:(ISTouch *)<em>touch</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>touch</code></th>
+						<td><p>Object that contains iOS touch information.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Touch event handling result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="warning"><p><strong>Warning:</strong> Cocos2d coordinates system is reversed.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Render 3D" name="task_Render 3D"></a>
+						<h2 class="task-title">Render 3D</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/renderMode" title="renderMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/renderMode">&nbsp;&nbsp;renderMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Current map render mode (2D or 3D).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) ISERenderMode renderMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/zoneOffset" title="zoneOffset"></a>
+	<h3 class="method-title"><code><a href="#//api/name/zoneOffset">&nbsp;&nbsp;zoneOffset</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Zone offset in meters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readwrite) CC3Vector zoneOffset</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/object3d" title="object3d"></a>
+	<h3 class="method-title"><code><a href="#//api/name/object3d">&nbsp;&nbsp;object3d</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>3D Object to handle in case of 3D rendering.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CC3Node *object3d</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:" title="render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:">&ndash;&nbsp;render3DWithScene:andLayer:andCurrentMap:andRatio:andAngle:andPriority:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to handle 3D rendering stuff.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)render3DWithScene:(CC3Scene *)<em>scene</em> andLayer:(CC3Node *)<em>layer</em> andCurrentMap:(ISMap *)<em>map</em> andRatio:(float)<em>ratio</em> andAngle:(float)<em>angle</em> andPriority:(int)<em>priority</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>scene</code></th>
+						<td><p>Current 3D scene.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>layer</code></th>
+						<td><p>Layer where the RTO is.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>map</code></th>
+						<td><p>Current displayed map.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ratio</code></th>
+						<td><p>Current ratio (depending on the current zoom level).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>angle</code></th>
+						<td><p>Current angle.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>priority</code></th>
+						<td><p>The renderer priority, used as Z by Cocos2d.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/remove3DFromLayer:" title="remove3DFromLayer:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/remove3DFromLayer:">&ndash;&nbsp;remove3DFromLayer:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method called to remove an RTO from the Cocos3d layer.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)remove3DFromLayer:(CC3Node *)<em>layer</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>layer</code></th>
+						<td><p>The current Cocos3d layer used.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISRTO.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Insiteo. All rights reserved. Updated: 2015-04-30</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
