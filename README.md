@@ -56,6 +56,10 @@ Then you will need to add all the wanted frameworks in the `Link Binary With Lib
 
 > **Looking for an older version?** You can get an older version of the SDK in the [releases](https://github.com/Insiteo/iOS/releases) section.
 
+## API reference
+
+[http://dev.insiteo.com/api/doc/ios/index.html](http://dev.insiteo.com/api/doc/ios/index.html)
+
 ## Initialization
 
 ### Initialize the API and start a site
