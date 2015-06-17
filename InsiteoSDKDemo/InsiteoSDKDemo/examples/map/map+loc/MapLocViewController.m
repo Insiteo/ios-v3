@@ -120,7 +120,7 @@
     //Check if Location Package is available before trying to use the location
     if ([[Insiteo currentSite] hasPackage:ISEPackageTypeLocation]) {
         //Init Location Provider and add its renderer
-        m_locationProvider = [[ISLocationProvider alloc] init];
+        m_locationProvider = [ISLocationProvider sharedInstance];
         [m_mapView addRenderer:m_locationProvider.renderer];
         
         //You could customize location rendering

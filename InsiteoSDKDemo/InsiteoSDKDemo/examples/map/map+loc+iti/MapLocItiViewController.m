@@ -131,7 +131,7 @@
     
     if ([[Insiteo currentSite] hasPackage:ISEPackageTypeLocation]) {
         //Init Location Provider and add its renderer
-        m_locationProvider = [[ISLocationProvider alloc] init];
+        m_locationProvider = [ISLocationProvider sharedInstance];
         [m_mapView addRenderer:m_locationProvider.renderer];
         
         //Add loc button
