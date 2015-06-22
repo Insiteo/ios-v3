@@ -58,7 +58,7 @@ Then you will need to add all the wanted frameworks in the `Link Binary With Lib
 
 ## API reference
 
-[http://dev.insiteo.com/api/doc/ios/3.4/index.html](http://dev.insiteo.com/api/doc/ios/index.html)
+[http://dev.insiteo.com/api/doc/ios/3.4/index.html](http://dev.insiteo.com/api/doc/ios/3.4/index.html)
 
 ## Initialization
 
