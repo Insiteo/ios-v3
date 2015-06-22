@@ -128,7 +128,7 @@ The [`launchWithInitializeHandler`](http://dev.insiteo.com/api/doc/ios/3.4/Class
 
 #### Change the current site
 
-You can easily change the current site by calling the [`Insiteo`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html#//api/name/startAndUpdateWithSite:andStartHandler:andUpdateHandler:andUpdateProgressHandler:](`startAndUpdateWithSite`) method on the [http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html) singleton.
+You can easily change the current site by calling the [`startAndUpdateWithSite`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html#//api/name/startAndUpdateWithSite:andStartHandler:andUpdateHandler:andUpdateProgressHandler:) method on the [`Insiteo`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html) singleton.
 
 ## Where to go from there?
 
