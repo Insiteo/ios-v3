@@ -16,7 +16,7 @@ ISGeofenceProvider * geofenceProvider = [m_locationProvider getLbsModule:ISEPack
 
 ### Understand geonotifications
 
-After starting the module, your delegate will be notified with 3 arrays of [`ISGeoFenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html).
+After starting the module, your delegate will be notified with 3 arrays of [`ISGeoFenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html).
 
 - The first one contains all zones the user just entered.
 - The second one contains all zones where the user still is and has spent a certain time.
@@ -44,17 +44,17 @@ After starting the module, your delegate will be notified with 3 arrays of [`ISG
 
 ### Dynamic geofencing
 
-In the last version of our API, geopush content can be added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceProvider.html) directly from your application in addition to the one fetched from the server. This enables, for example, your content to be more accurate to a specific user's behaviour or using context.
+In the last version of our API, geopush content can be added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html) directly from your application in addition to the one fetched from the server. This enables, for example, your content to be more accurate to a specific user's behaviour or using context.
 
-- The created [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html)'s polygon will be based on the specific [`ISZone`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISZone.html) parameters that have to be provided in the back office.
-- If the [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html) parameters (ie width, enteredTime, enteredEnabled...) are not set they will be fetched from the configuration file. This configuration file defines those parameters by [`ISMap`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISMap.html) and not by [`ISZone`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISZone.html).
-- If the creation succeeded the [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html) will be automatically added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceProvider.html).
+- The created [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html)'s polygon will be based on the specific [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html) parameters that have to be provided in the back office.
+- If the [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) parameters (ie width, enteredTime, enteredEnabled...) are not set they will be fetched from the configuration file. This configuration file defines those parameters by [`ISMap`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMap.html) and not by [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html).
+- If the creation succeeded the [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) will be automatically added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html).
 
 #### Adding content to a specific zone or for a specific zone/poi association
 
-To add a geopush content to a specific [`ISZone`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISZone.html) or [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISZonePoi.html), you can use the methods shown below.
+To add a geopush content to a specific [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html) or [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZonePoi.html), you can use the methods shown below.
 
-A polygon based on the ISZone parameters and the provided [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html) width will be created and this [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html) will be automatically added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceProvider.html).
+A polygon based on the ISZone parameters and the provided [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) width will be created and this [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) will be automatically added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html).
 
 ```objectivec++
 //For a ISZone
@@ -72,7 +72,7 @@ A polygon based on the ISZone parameters and the provided [`ISGeofenceArea`](htt
 
 #### Adding content for a given position
 
-To add a geopush content at a specific [`ISPosition`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISPosition.html), you can use the methods shown below.
+To add a geopush content at a specific [`ISPosition`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISPosition.html), you can use the methods shown below.
 
 A square of size on the given parameter (or by default 4 time the size defined in the configuration file) and center on the given position will be created.
 
@@ -85,7 +85,7 @@ A square of size on the given parameter (or by default 4 time the size defined i
 
 #### Removing a dynamic geofence area
 
-To remove a [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html) from the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceProvider.html) call the appropriate remove method based on how it was added.
+To remove a [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) from the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html) call the appropriate remove method based on how it was added.
 
 ```objectivec++
 - (void)removeGeofenceAreaWithGuid:(NSString *)guid;
@@ -99,7 +99,7 @@ To remove a [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/IS
 
 ### Geofencing rendering
 
-You can now view your [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISGeofenceArea.html) on your [`ISMapView`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISMapView.html). Like all other LBS services, you will have to retrieve its [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) and pass it to the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISMapView.html). All the geofencing zone will be displayed ie the one define on the back office that one created dynamically.
+You can now view your [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) on your [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html). Like all other LBS services, you will have to retrieve its [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) and pass it to the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html). All the geofencing zone will be displayed ie the one define on the back office that one created dynamically.
 
 > **Note:** 3D rendering is not available for this module.
 

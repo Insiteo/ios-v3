@@ -52,7 +52,7 @@ Then you will need to add all the wanted frameworks in the `Link Binary With Lib
  - The INSITEO `library` requires `iOS 5.1.1` or later.
  - The library is optimized for `armv7` and `arm64`.
 
-> **Note:** The Insiteo library is now full ARC compatible.
+> **Note:** The Insiteo library is now fully ARC compatible.
 
 > **Looking for an older version?** You can get an older version of the SDK in the [releases](https://github.com/Insiteo/iOS/releases) section.
 
@@ -83,7 +83,7 @@ Then you will need to add all the wanted frameworks in the `Link Binary With Lib
 </plist>
 ```
 
-The first step to access Insiteo's services, is to initialize our API via the [`Insiteo`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/Insiteo.html) singleton. This will be done with the [`launchWithInitializeHandler`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/Insiteo.html#//api/name/launchWithInitializeHandler:andChooseSiteHandler:andStartHandler:andUpdateHandler:andUpdateProgressHandler:). You will be then notified of API initialization through block handlers you specified.
+The first step to access Insiteo's services, is to initialize our API via the [`Insiteo`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html) singleton. This will be done with the [`launchWithInitializeHandler`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html#//api/name/launchWithInitializeHandler:andChooseSiteHandler:andStartHandler:andUpdateHandler:andUpdateProgressHandler:). You will be then notified of API initialization through block handlers you specified.
 
 Here is a snippet that will show you how to properly do the initialization process:
 
@@ -122,13 +122,13 @@ Here is a snippet that will show you how to properly do the initialization proce
 
 #### Handle the initialization process in background
 
-The [`launchWithInitializeHandler`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/Insiteo.html#//api/name/launchWithInitializeHandler:andChooseSiteHandler:andStartHandler:andUpdateHandler:andUpdateProgressHandler:) method is asynchronous. Be sure to provide valid blocks handler to be notified of initialization events.
+The [`launchWithInitializeHandler`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html#//api/name/launchWithInitializeHandler:andChooseSiteHandler:andStartHandler:andUpdateHandler:andUpdateProgressHandler:) method is asynchronous. Be sure to provide valid blocks handler to be notified of initialization events.
 
 > **Note:** If you wish to handle all the initialization steps manually you can individually call `initializeWithInitializeHandler:`, `startWithSite:` and `updateCurrentSiteWithWantedPackages:`. For more details please refer to the documentation and the sample app example.
 
 #### Change the current site
 
-You can easily change the current site by calling the [`Insiteo`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/Insiteo.html#//api/name/startAndUpdateWithSite:andStartHandler:andUpdateHandler:andUpdateProgressHandler:](`startAndUpdateWithSite`) method on the [http://dev.insiteo.com/api/doc/ios/Classes/3.4/Insiteo.html) singleton.
+You can easily change the current site by calling the [`Insiteo`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html#//api/name/startAndUpdateWithSite:andStartHandler:andUpdateHandler:andUpdateProgressHandler:](`startAndUpdateWithSite`) method on the [http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html) singleton.
 
 ## Where to go from there?
 

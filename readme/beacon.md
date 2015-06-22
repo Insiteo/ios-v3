@@ -11,9 +11,9 @@
 
 ### Start beacon regions management
 
-In order to start the beacon regions management, you need to start the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconProvider.html) singleton with the [`startWithDelegate`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconProvider.html#//api/name/startWithDelegate:) method. We highly recommend to start the provider in the `application:didFinishLaunchingWithOptions:` method of your `AppDelegate` in order to be started when the application is launched.
+In order to start the beacon regions management, you need to start the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html) singleton with the [`startWithDelegate`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html#//api/name/startWithDelegate:) method. We highly recommend to start the provider in the `application:didFinishLaunchingWithOptions:` method of your `AppDelegate` in order to be started when the application is launched.
 
-In order to use our the beacon regions management, you will need to start the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconProvider.html) singleton. To be notified on region entry, exit, etc. you have to pass a [`ISBeaconDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html)
+In order to use our the beacon regions management, you will need to start the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html) singleton. To be notified on region entry, exit, etc. you have to pass a [`ISBeaconDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html)
 
 ```objectivec++
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -24,11 +24,11 @@ In order to use our the beacon regions management, you will need to start the [`
 }
 ```
 
-> **Note:** A beacon region is represented by the [`ISBeaconRegion`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconRegion.html) object and a physical beacon device is represented by the [`ISBeacon`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeacon.html) object. The regions will be created according to your back office configuration.
+> **Note:** A beacon region is represented by the [`ISBeaconRegion`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconRegion.html) object and a physical beacon device is represented by the [`ISBeacon`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeacon.html) object. The regions will be created according to your back office configuration.
 
 ### Beacon region notifications
 
-The [`ISBeaconDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html) protocol provides a couple of callback methods to be notified when a user enters or exits an [`ISBeaconRegion`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconRegion.html) or if an [`ISBeacon`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeacon.html) has reached its beacon region `proximity`, according to your back office configuration.
+The [`ISBeaconDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html) protocol provides a couple of callback methods to be notified when a user enters or exits an [`ISBeaconRegion`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconRegion.html) or if an [`ISBeacon`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeacon.html) has reached its beacon region `proximity`, according to your back office configuration.
 
 ### Notifications on Entry and Exit
 
@@ -40,9 +40,9 @@ You could also implement two optionnal methods: [`onEnterBeacon:forRegion:`](htt
 
 > **Note:** The notification will be presented only if the message field is not empty on the back office.
 
-By defaut, on beacon region entry, the SDK presents a `UILocalNotification` displaying the beacon region [`message`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconRegion.html#//api/name/message) and store all its information in a `NSDictionary` into the `notification.userInfo` which could be retrieved using the `ISBeaconRegionKeys` specific key.
+By defaut, on beacon region entry, the SDK presents a `UILocalNotification` displaying the beacon region [`message`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconRegion.html#//api/name/message) and store all its information in a `NSDictionary` into the `notification.userInfo` which could be retrieved using the `ISBeaconRegionKeys` specific key.
 
-To retrieve a specific beacon region information from the `NSDictionary` when user swipe the presented notification on screen, you could use the specific keys defined in the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconProvider.html), in the `application:didReceiveLocalNotification:`:
+To retrieve a specific beacon region information from the `NSDictionary` when user swipe the presented notification on screen, you could use the specific keys defined in the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html), in the `application:didReceiveLocalNotification:`:
 
 ```objectivec++
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
@@ -83,7 +83,7 @@ When a user enters in a beacon region, the beacon provider starts ranging beacon
 
 ### Check for beacons configuration update
 
-As your beacon regions may have changed since your application was killed, the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISBeaconProvider.html) will automatically check on the back office, if the region is always available or if its notification message has changed, before any notification on region entry.
+As your beacon regions may have changed since your application was killed, the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html) will automatically check on the back office, if the region is always available or if its notification message has changed, before any notification on region entry.
 
 > **Note:** If data network connections are not available, the last known configuration will be used.
 

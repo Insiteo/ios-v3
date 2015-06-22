@@ -16,9 +16,9 @@
 
 You can use our `LocationAPI` to obtain location information. The `LocationAPI` needs initialization information in order to communicate with our servers. You can easily link this library to the INSITEO map, so the location can be displayed on it.
 
-In order to use our `LocationAPI`, you will need to get the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISLocationProvider.html) singleton.
+In order to use our `LocationAPI`, you will need to get the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html) singleton.
 
-To receive location, you will need to start the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISLocationProvider.html), with a [`ISLocationDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISLocationDelegate.html):
+To receive location, you will need to start the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html), with a [`ISLocationDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISLocationDelegate.html):
 
 > **Which flags to use** By default we will use the location flags described in your `.plist`. Please contact us to get the appropriate location settings.
 
@@ -56,7 +56,7 @@ Available location-based services are:
 
 #### Get a specific LBS module
 
-To use them, you have to request them from [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISLocationProvider.html) with the [`getLbsModule`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISLocationProvider.html#//api/name/getLbsModule:) method.
+To use them, you have to request them from [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html) with the [`getLbsModule`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html#//api/name/getLbsModule:) method.
 
 ## Where to go from there?
 
