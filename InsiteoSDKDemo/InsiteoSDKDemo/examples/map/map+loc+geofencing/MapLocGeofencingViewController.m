@@ -351,7 +351,7 @@
         ISMap * map = [maps objectAtIndex:buttonIndex];
         
         //Change the current map using the selected identifier
-        [m_mapView changeMapWithMapId:map.mapId andKeepPosition:YES andKeepZoomLevel:YES andKeepRotationAngle:YES];
+        [m_mapView changeMapWithMapId:map.mapId andKeepPosition:YES andKeepZoomLevel:YES andKeepRotationAngle:YES andCompletionHandler:nil];
     }
 }
 

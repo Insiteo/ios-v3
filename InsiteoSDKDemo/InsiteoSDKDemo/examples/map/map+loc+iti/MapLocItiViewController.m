@@ -404,7 +404,7 @@
     
     //Change map if needed to see the start waypoint on itinerary success
     if (m_startWaypoint != nil) {
-        [m_mapView changeMapWithMapId:m_startWaypoint.metersPosition.mapId andKeepPosition:YES andKeepZoomLevel:YES andKeepRotationAngle:YES];
+        [m_mapView changeMapWithMapId:m_startWaypoint.metersPosition.mapId andKeepPosition:YES andKeepZoomLevel:YES andKeepRotationAngle:YES andCompletionHandler:nil];
     }
 }
 
@@ -523,8 +523,7 @@
             ISMap * map = [maps objectAtIndex:buttonIndex];
             
             //Change the current map using the selected identifier
-            [m_mapView changeMapWithMapId:map.mapId andKeepPosition:YES andKeepZoomLevel:YES andKeepRotationAngle:YES];
-            
+            [m_mapView changeMapWithMapId:map.mapId andKeepPosition:YES andKeepZoomLevel:YES andKeepRotationAngle:YES andCompletionHandler:nil];
         } else if (actionSheet.tag == kActionSheetIti) {
             if (buttonIndex != actionSheet.destructiveButtonIndex) {
                 if (buttonIndex == 1) { //Itinerary from position

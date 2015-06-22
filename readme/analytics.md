@@ -10,9 +10,9 @@ If you have decided to use the analytics service then the user's location will b
 
 ### Generic events
 
-For any other type of events you would like to keep track of you can use the [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/ISAnalyticsGenericEvent.html). This event enables you to add up to 2 NSString, 2 int, 2 double, 2 [`ISPosition`](http://dev.insiteo.com/api/doc/ios/Classes/ISPosition.html) and a label to match most cases.
+For any other type of events you would like to keep track of you can use the [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISAnalyticsGenericEvent.html). This event enables you to add up to 2 NSString, 2 int, 2 double, 2 [`ISPosition`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISPosition.html) and a label to match most cases.
 
-Adding a [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/ISAnalyticsGenericEvent.html) to the [`ISAnalyticsManager`](http://dev.insiteo.com/api/doc/ios/Classes/ISAnalyticsManager.html).
+Adding a [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISAnalyticsGenericEvent.html) to the [`ISAnalyticsManager`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISAnalyticsManager.html).
 
 ```objectivec++
 ISAnalyticsGenericEvent * zoneEvent = [[ISAnalyticsGenericEvent alloc] initWithEventType:@"generic_event"];
@@ -26,17 +26,17 @@ ISAnalyticsGenericEvent * zoneEvent = [[ISAnalyticsGenericEvent alloc] initWithE
 Insiteo's API already trace some basic events among them:
 - Location start and stop
 - Geofence entered, stayed and left
-- Map changes, zone clicks and [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) added with [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/Classes/ISZonePoi.html)
+- Map changes, zone clicks and [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) added with [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISZonePoi.html)
 - Itinerary requests
 - iBeacon events
 
 #### Tracking products displayed on map
 
-If you want to trace when a product is added to the map you can use [`addRTO:inZonePoi:`](http://dev.insiteo.com/api/doc/ios/Classes/ISMapView.html#//api/name/addRTO:inZonePoi:). This will generate a [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/ISAnalyticsGenericEvent.html) with the String1 set with the external id of the Poi defined in the [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/Classes/ISZonePoi.html).
+If you want to trace when a product is added to the map you can use [`addRTO:inZonePoi:`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISMapView.html#//api/name/addRTO:inZonePoi:). This will generate a [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISAnalyticsGenericEvent.html) with the String1 set with the external id of the Poi defined in the [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISZonePoi.html).
 
 #### Completing a generic event
 
-It can be useful in some cases to add information to a [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/ISAnalyticsGenericEvent.html) for that you must set a [`ISAnalyticsDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISAnalyticsDelegate.html) that will be notified everytime a new generic event is added. Returning false in this method will dismiss the event.
+It can be useful in some cases to add information to a [`ISAnalyticsGenericEvent`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISAnalyticsGenericEvent.html) for that you must set a [`ISAnalyticsDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISAnalyticsDelegate.html) that will be notified everytime a new generic event is added. Returning false in this method will dismiss the event.
 
 ## You missed a thing?
 

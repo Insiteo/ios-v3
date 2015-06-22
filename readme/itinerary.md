@@ -29,7 +29,7 @@ To compute an itinerary between two points, simply do like this:
 ISItineraryRequest * request = [itineraryProvider requestItineraryWithStartPoint:CGPointMake(50, 50) andStartMapId:1 andEndPoint:CGPointMake(200, 100) andEndMapId:2 andDelegate:itineraryDelegate andPMR:NO];
 ```
 
-> **Note:** An [`ISItineraryRequest`](http://dev.insiteo.com/api/doc/ios/Classes/ISItineraryRequest.html) is returned in order to identify sender through callbacks.
+> **Note:** An [`ISItineraryRequest`](http://dev.insiteo.com/api/doc/ios/Classes/3.4/ISItineraryRequest.html) is returned in order to identify sender through callbacks.
 
 ### Request an itinerary from user location
 
