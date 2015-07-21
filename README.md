@@ -48,6 +48,8 @@ Then you will need to add all the wanted frameworks in the `Link Binary With Lib
 - Apple `libz.dylib`
 - Apple `libsqlite3.dylib`
 
+Don't forget to add the `-ObjC` flag in your build settings `Other linker flags` section.
+
 > **Requirements**
  - The INSITEO `library` requires `iOS 5.1.1` or later.
  - The library is optimized for `armv7` and `arm64`.
