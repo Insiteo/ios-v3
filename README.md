@@ -91,13 +91,13 @@ Here is a snippet that will show you how to properly do the initialization proce
 
 ```objectivec++
 //Initialize the API
-[[Insiteo sharedInstance] launchWithInitializeHandler:^(ISInsiteoError * error, ISUserSite * suggestedSite, Boolean fromLocalCache) {
+[[Insiteo sharedInstance] launchWithInitializeHandler:^(ISError * error, ISUserSite * suggestedSite, Boolean fromLocalCache) {
     //Check initialization status
     Boolean initializationSuccess = (error == nil);
 } andChooseSiteHandler:^CLLocation * {
     //You can return here a CLLocation that will determine the most suitable site to start
     return [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
-} andStartHandler:^(ISInsiteoError * error, NSArray * newPackages) {
+} andStartHandler:^(ISError * error, NSArray * newPackages) {
     //Check start status
     if (error == nil) {
         //Success!
@@ -105,7 +105,7 @@ Here is a snippet that will show you how to properly do the initialization proce
     } else {
         //[1] It means that INSITEO servers could not be reached. If you want to use an INSITEO module, you have to check if your application has enough data to run. This can be done using hasPackageWithPackageType:andServerType on Insiteo singleton.
     }
-} andUpdateHandler:^(ISInsiteoError * error) {
+} andUpdateHandler:^(ISError * error) {
     //Check update status
     if (error == nil) {
         //Success! You can now launch your application with all up to date data.
