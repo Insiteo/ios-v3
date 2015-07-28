@@ -43,7 +43,7 @@ To receive location, you will need to start the [`ISLocationProvider`](http://de
 
 ```objectivec++
     //Start location
-    m_locationProvider = [ISLocationProvider sharedInstance startWithDelegate:self];
+    m_locationProvider = [ISLocationProvider sharedInstance];
     //Add location renderer in the ISMapView to displayed it on the map
     [mapView addRenderer:[m_locationProvider renderer]];
 ```
