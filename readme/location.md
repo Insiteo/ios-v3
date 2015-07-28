@@ -35,12 +35,17 @@ To receive location, you will need to start the [`ISLocationProvider`](http://de
 </plist>
 ```
 
-```objectivec++
-//Start location
-[[ISLocationProvider sharedInstance] startWithDelegate:aDelegate];
 
-//Add location renderer to the ISMapView, thus location is displayed on map
-[mapView addRenderer:[locProvider renderer]];
+```objectivec++
+    //Create a variable to store location 
+    ISLocationProvider * m_locationProvider;
+```
+
+```objectivec++
+    //Start location
+    m_locationProvider = [ISLocationProvider sharedInstance startWithDelegate:self];
+    //Add location renderer in the ISMapView to displayed it on the map
+    [mapView addRenderer:[m_locationProvider renderer]];
 ```
 
 > **Prerequisites**
