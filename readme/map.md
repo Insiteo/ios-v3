@@ -23,13 +23,13 @@ In order to use our `MapAPI`, you will need to get an [`ISMapView`](http://dev.i
 
 ```objectivec++
 //ISMap2DView initialization
-[ISMap2DView getMap2DViewWithFrame:self.view.frame andDelegate:self andHandler:^(ISMap2DView * map2DView) {
+[ISMap2DView getMap2DViewWithFrame:self.view.frame andMapDelegate:self andHandler:^(ISMap2DView * map2DView) {
     //At this point, the map view is correctly initialized
     [self.view addSubView:map2DView];
 }];
 
 //ISMap3DView initialization
-[ISMap3DView getMap3DViewWithFrame:self.view.frame andDelegate:self andHandler:^(ISMap3DView * map3DView) {
+[ISMap3DView getMap3DViewWithFrame:self.view.frame andMapDelegate:self andHandler:^(ISMap3DView * map3DView) {
     //At this point, the map view is correctly initialized
     [self.view addSubView:map3DView];
 }];

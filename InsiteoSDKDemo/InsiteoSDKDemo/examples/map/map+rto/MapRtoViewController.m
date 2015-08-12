@@ -117,7 +117,7 @@
     //By default, ISGenericRTOs will be rendered using the default ISGenericRenderer
     //so you don't need to implement anything. But if you want to use the ISPRTOListener, you need to create manually the renderer and add a listener.
     //ISGenericRenderer * isGenericRenderer = [[ISGenericRenderer alloc] initWithRTOClass:[ISGenericRTO class] andPriority:7];
-    //[isGenericRenderer setRtoListener:self];
+    //[isGenericRenderer setRtoDelegate:self];
     //[m_mapView addRenderer:isGenericRenderer];
     
     //Specify a renderer to render your custom RTO class
