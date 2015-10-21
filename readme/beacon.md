@@ -73,9 +73,13 @@ To disable the `UILocalNotification` presentation for all beacon regions just `r
     UILocalNotification * notification = [[UILocalNotification alloc] init];
     notification.alertBody = [NSString stringWithFormat:@"%@", beaconRegion.customId];
     notification.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+
     return NO;
 }
 ```
+
+Finally, you could specify a delay to schedule the default notification on region entry (which will be cancelled on region exit) using the Custom field in the Back Office. The field should be a JSON string like : `{"delay": <delay_in_seconds>}`.
 
 ### Get ranged beacons for an entered beacon region
 
