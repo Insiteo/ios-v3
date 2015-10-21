@@ -17,6 +17,7 @@
 		E249CF121AD6B3C100EA4D92 /* btn_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E249CF101AD6B3C100EA4D92 /* btn_location@2x.png */; };
 		E249CF1C1AD6BE9300EA4D92 /* InitAllInOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E249CF1B1AD6BE9300EA4D92 /* InitAllInOneViewController.m */; };
 		E249CF1F1AD6BEC700EA4D92 /* InitStepByStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E249CF1E1AD6BEC700EA4D92 /* InitStepByStepViewController.m */; };
+		E259AE4B1BB9717000CE0F52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E259AE4A1BB9717000CE0F52 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		E26D3C701ACEC88400B51DEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D3C6F1ACEC88400B51DEF /* main.m */; };
 		E26D3C731ACEC88400B51DEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D3C721ACEC88400B51DEF /* AppDelegate.m */; };
 		E26D3C7B1ACEC88400B51DEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26D3C7A1ACEC88400B51DEF /* Images.xcassets */; };
@@ -54,21 +55,22 @@
 		A128494835DFEDC0787B407F /* libPods-InsiteoSDKDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InsiteoSDKDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2080BD41ADBEDD700E6299B /* btn_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_map.png; sourceTree = "<group>"; };
 		E2080BD51ADBEDD700E6299B /* btn_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_map@2x.png"; sourceTree = "<group>"; };
-		E2080BDF1ADBFA0100E6299B /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalyticsViewController.h; path = examples/analytics/AnalyticsViewController.h; sourceTree = "<group>"; };
-		E2080BE01ADBFA0100E6299B /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalyticsViewController.m; path = examples/analytics/AnalyticsViewController.m; sourceTree = "<group>"; };
+		E2080BDF1ADBFA0100E6299B /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AnalyticsViewController.h; path = examples/analytics/AnalyticsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E2080BE01ADBFA0100E6299B /* AnalyticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AnalyticsViewController.m; path = examples/analytics/AnalyticsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E249CEF31AD6A9EF00EA4D92 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		E249CEF41AD6A9EF00EA4D92 /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
 		E249CF0F1AD6B3C100EA4D92 /* btn_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_location.png; sourceTree = "<group>"; };
 		E249CF101AD6B3C100EA4D92 /* btn_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_location@2x.png"; sourceTree = "<group>"; };
-		E249CF1A1AD6BE9300EA4D92 /* InitAllInOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitAllInOneViewController.h; path = "examples/init api/InitAllInOneViewController.h"; sourceTree = "<group>"; };
-		E249CF1B1AD6BE9300EA4D92 /* InitAllInOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitAllInOneViewController.m; path = "examples/init api/InitAllInOneViewController.m"; sourceTree = "<group>"; };
-		E249CF1D1AD6BEC700EA4D92 /* InitStepByStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitStepByStepViewController.h; path = "examples/init api/InitStepByStepViewController.h"; sourceTree = "<group>"; };
-		E249CF1E1AD6BEC700EA4D92 /* InitStepByStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitStepByStepViewController.m; path = "examples/init api/InitStepByStepViewController.m"; sourceTree = "<group>"; };
+		E249CF1A1AD6BE9300EA4D92 /* InitAllInOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = InitAllInOneViewController.h; path = "examples/init api/InitAllInOneViewController.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E249CF1B1AD6BE9300EA4D92 /* InitAllInOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = InitAllInOneViewController.m; path = "examples/init api/InitAllInOneViewController.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E249CF1D1AD6BEC700EA4D92 /* InitStepByStepViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = InitStepByStepViewController.h; path = "examples/init api/InitStepByStepViewController.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E249CF1E1AD6BEC700EA4D92 /* InitStepByStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = InitStepByStepViewController.m; path = "examples/init api/InitStepByStepViewController.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E259AE4A1BB9717000CE0F52 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		E26D3C6A1ACEC88400B51DEF /* InsiteoSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsiteoSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26D3C6E1ACEC88400B51DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26D3C6F1ACEC88400B51DEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E26D3C711ACEC88400B51DEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E26D3C721ACEC88400B51DEF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E26D3C711ACEC88400B51DEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E26D3C721ACEC88400B51DEF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E26D3C7A1ACEC88400B51DEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E26D3C831ACEC88400B51DEF /* InsiteoSDKDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsiteoSDKDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26D3C881ACEC88400B51DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,14 +79,14 @@
 		E26D3CA61ACED80A00B51DEF /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		E26D3CAD1ACED9C600B51DEF /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTableViewController.h; path = examples/MainTableViewController.h; sourceTree = "<group>"; };
 		E26D3CAE1ACED9C600B51DEF /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTableViewController.m; path = examples/MainTableViewController.m; sourceTree = "<group>"; };
-		E285ECA61AD524E500F89AFD /* BeaconsMonitoringTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconsMonitoringTableViewController.h; sourceTree = "<group>"; };
-		E285ECA71AD524E500F89AFD /* BeaconsMonitoringTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconsMonitoringTableViewController.m; sourceTree = "<group>"; };
+		E285ECA61AD524E500F89AFD /* BeaconsMonitoringTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BeaconsMonitoringTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E285ECA71AD524E500F89AFD /* BeaconsMonitoringTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BeaconsMonitoringTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E285ECAF1AD52EDD00F89AFD /* ic_ibeacon_in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_ibeacon_in.png; sourceTree = "<group>"; };
 		E285ECB01AD52EDD00F89AFD /* ic_ibeacon_in@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_ibeacon_in@2x.png"; sourceTree = "<group>"; };
 		E285ECB11AD52EDD00F89AFD /* ic_ibeacon_out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_ibeacon_out.png; sourceTree = "<group>"; };
 		E285ECB21AD52EDD00F89AFD /* ic_ibeacon_out@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_ibeacon_out@2x.png"; sourceTree = "<group>"; };
-		E285ECB71AD5311200F89AFD /* BeaconRegionDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconRegionDetailTableViewController.h; sourceTree = "<group>"; };
-		E285ECB81AD5311200F89AFD /* BeaconRegionDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconRegionDetailTableViewController.m; sourceTree = "<group>"; };
+		E285ECB71AD5311200F89AFD /* BeaconRegionDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BeaconRegionDetailTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E285ECB81AD5311200F89AFD /* BeaconRegionDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BeaconRegionDetailTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E293D8551AD7B59200605093 /* MapRtoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRtoViewController.h; sourceTree = "<group>"; };
 		E293D8561AD7B59200605093 /* MapRtoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRtoViewController.m; sourceTree = "<group>"; };
 		E293D8571AD7B59200605093 /* MyRTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRTO.h; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		E26D3C6D1ACEC88400B51DEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E259AE4A1BB9717000CE0F52 /* LaunchScreen.xib */,
 				E26D3CA51ACED80A00B51DEF /* iTunesArtwork.png */,
 				E26D3CA61ACED80A00B51DEF /* iTunesArtwork@2x.png */,
 				E26D3C6E1ACEC88400B51DEF /* Info.plist */,
@@ -380,7 +383,7 @@
 		E26D3C621ACEC88400B51DEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Insiteo;
 				TargetAttributes = {
 					E26D3C691ACEC88400B51DEF = {
@@ -427,6 +430,7 @@
 				E26D3CA81ACED80A00B51DEF /* iTunesArtwork@2x.png in Resources */,
 				E2080BD71ADBEDD700E6299B /* btn_map@2x.png in Resources */,
 				E285ECB61AD52EDD00F89AFD /* ic_ibeacon_out@2x.png in Resources */,
+				E259AE4B1BB9717000CE0F52 /* LaunchScreen.xib in Resources */,
 				E285ECB31AD52EDD00F89AFD /* ic_ibeacon_in.png in Resources */,
 				E285ECB41AD52EDD00F89AFD /* ic_ibeacon_in@2x.png in Resources */,
 				E26D3C7B1ACEC88400B51DEF /* Images.xcassets in Resources */,
@@ -537,6 +541,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -551,7 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -588,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -603,9 +608,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = InsiteoSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.insiteo.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -617,9 +624,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = InsiteoSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.insiteo.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -638,6 +647,7 @@
 				);
 				INFOPLIST_FILE = InsiteoSDKDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.insiteo.insiteosdkdemo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InsiteoSDKDemo.app/InsiteoSDKDemo";
 			};
@@ -653,6 +663,7 @@
 				);
 				INFOPLIST_FILE = InsiteoSDKDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.insiteo.insiteosdkdemo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InsiteoSDKDemo.app/InsiteoSDKDemo";
 			};

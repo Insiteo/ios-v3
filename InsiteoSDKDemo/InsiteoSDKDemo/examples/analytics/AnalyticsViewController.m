@@ -44,15 +44,16 @@
         //Hide HUD
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-        if (error) {
-            //You could even try to start using your last known data
-            [self startWithErrorMessage:@"Start has failed"];
-            
-        } else if ([newPackages count] > 0) {
+        //New packages ?
+        if ([newPackages count] > 0) {
             //Update HUD
             m_hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             [m_hud setLabelText:@"Updating"];
             [m_hud setDetailsLabelText:@"Double tap to cancel"];
+            
+        } else {
+            //You could even try to start using your last known data
+            [self startWithErrorMessage:(error) ? @"Start has failed" : nil];
         }
         
     } andUpdateHandler:^(ISError * error) {
@@ -71,11 +72,13 @@
     }];
 }
 
+
 - (IBAction)onHudDoubleTapped:(id)sender {
     [m_hud hide:YES];
     //Cancel Insiteo current task
     [[Insiteo sharedInstance].currentTask cancel];
 }
+
 
 #pragma mark - Start
 
@@ -99,6 +102,7 @@
         [[ISAnalyticsManager sharedInstance] addGenericEvent:genericEvent];
     }
 }
+
 
 #pragma mark - ISPAnalyticsListener
 
@@ -125,6 +129,7 @@
     //For other event just return as default
     return YES;
 }
+
 
 #pragma mark - UI
 
