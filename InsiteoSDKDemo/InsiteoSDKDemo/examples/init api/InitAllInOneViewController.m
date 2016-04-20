@@ -156,7 +156,7 @@ typedef NS_ENUM(NSUInteger, EInformationApplicationRows) {
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
     if (section == EInformationSectionPackages) {
-        return [NSString stringWithFormat:@"%i %@", [m_packages count], @"Packages"];
+        return [NSString stringWithFormat:@"%ld %@", (unsigned long)[m_packages count], @"Packages"];
         
     }
     

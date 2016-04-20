@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6297F2D5FF9DEC628442B8A7 /* libPods-InsiteoSDKDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A128494835DFEDC0787B407F /* libPods-InsiteoSDKDemo.a */; };
 		E2080BD61ADBEDD700E6299B /* btn_map.png in Resources */ = {isa = PBXBuildFile; fileRef = E2080BD41ADBEDD700E6299B /* btn_map.png */; };
 		E2080BD71ADBEDD700E6299B /* btn_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2080BD51ADBEDD700E6299B /* btn_map@2x.png */; };
 		E2080BE11ADBFA0100E6299B /* AnalyticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2080BE01ADBFA0100E6299B /* AnalyticsViewController.m */; };
@@ -17,7 +16,7 @@
 		E249CF121AD6B3C100EA4D92 /* btn_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E249CF101AD6B3C100EA4D92 /* btn_location@2x.png */; };
 		E249CF1C1AD6BE9300EA4D92 /* InitAllInOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E249CF1B1AD6BE9300EA4D92 /* InitAllInOneViewController.m */; };
 		E249CF1F1AD6BEC700EA4D92 /* InitStepByStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E249CF1E1AD6BEC700EA4D92 /* InitStepByStepViewController.m */; };
-		E259AE4B1BB9717000CE0F52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E259AE4A1BB9717000CE0F52 /* LaunchScreen.xib */; settings = {ASSET_TAGS = (); }; };
+		E259AE4B1BB9717000CE0F52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E259AE4A1BB9717000CE0F52 /* LaunchScreen.xib */; };
 		E26D3C701ACEC88400B51DEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D3C6F1ACEC88400B51DEF /* main.m */; };
 		E26D3C731ACEC88400B51DEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E26D3C721ACEC88400B51DEF /* AppDelegate.m */; };
 		E26D3C7B1ACEC88400B51DEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26D3C7A1ACEC88400B51DEF /* Images.xcassets */; };
@@ -50,9 +49,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4BFAC4D72B6E87D14B36F041 /* Pods-InsiteoSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsiteoSDKDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-InsiteoSDKDemo/Pods-InsiteoSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
-		9FD08AC4DFDDB9A1AC1534ED /* Pods-InsiteoSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsiteoSDKDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InsiteoSDKDemo/Pods-InsiteoSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		A128494835DFEDC0787B407F /* libPods-InsiteoSDKDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InsiteoSDKDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2080BD41ADBEDD700E6299B /* btn_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_map.png; sourceTree = "<group>"; };
 		E2080BD51ADBEDD700E6299B /* btn_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_map@2x.png"; sourceTree = "<group>"; };
 		E2080BDF1ADBFA0100E6299B /* AnalyticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AnalyticsViewController.h; path = examples/analytics/AnalyticsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -106,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6297F2D5FF9DEC628442B8A7 /* libPods-InsiteoSDKDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,23 +115,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00ED77C8F2765F1A07702BC0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9FD08AC4DFDDB9A1AC1534ED /* Pods-InsiteoSDKDemo.debug.xcconfig */,
-				4BFAC4D72B6E87D14B36F041 /* Pods-InsiteoSDKDemo.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		BBEC1FA654FAF43F0D45EA97 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A128494835DFEDC0787B407F /* libPods-InsiteoSDKDemo.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E2080BDE1ADBF94E00E6299B /* analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +148,6 @@
 				E26D3C6C1ACEC88400B51DEF /* InsiteoSDKDemo */,
 				E26D3C861ACEC88400B51DEF /* InsiteoSDKDemoTests */,
 				E26D3C6B1ACEC88400B51DEF /* Products */,
-				00ED77C8F2765F1A07702BC0 /* Pods */,
-				BBEC1FA654FAF43F0D45EA97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,11 +320,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E26D3C8D1ACEC88400B51DEF /* Build configuration list for PBXNativeTarget "InsiteoSDKDemo" */;
 			buildPhases = (
-				3A5B0C9DBAFDB5D45125C019 /* Check Pods Manifest.lock */,
 				E26D3C661ACEC88400B51DEF /* Sources */,
 				E26D3C671ACEC88400B51DEF /* Frameworks */,
 				E26D3C681ACEC88400B51DEF /* Resources */,
-				DA8B1F5BDD4BD4A5CFD9101A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -445,39 +419,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3A5B0C9DBAFDB5D45125C019 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DA8B1F5BDD4BD4A5CFD9101A /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InsiteoSDKDemo/Pods-InsiteoSDKDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E26D3C661ACEC88400B51DEF /* Sources */ = {
@@ -603,7 +544,6 @@
 		};
 		E26D3C8E1ACEC88400B51DEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9FD08AC4DFDDB9A1AC1534ED /* Pods-InsiteoSDKDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -619,7 +559,6 @@
 		};
 		E26D3C8F1ACEC88400B51DEF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BFAC4D72B6E87D14B36F041 /* Pods-InsiteoSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
