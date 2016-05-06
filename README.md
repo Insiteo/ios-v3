@@ -17,12 +17,12 @@ InsiteoSDK is available through CocoaPods. To install it, simply add the followi
 
 ```ruby
 platform :ios, '5.1.1'
-pod 'InsiteoSDK', :podspec => 'http://dev.insiteo.com/api/download/ios/3.4.4/InsiteoSDK.podspec'
+pod 'InsiteoSDK', :podspec => 'http://dev.insiteo.com/api/download/ios/3.4.5/InsiteoSDK.podspec'
 ```
 
 ### Manual
 
-Download the `InsiteoSDK` [here](http://dev.insiteo.com/api/download/ios/3.4.4/InsiteoSDK.zip).
+Download the `InsiteoSDK` [here](http://dev.insiteo.com/api/download/ios/3.4.5/InsiteoSDK.zip).
 
 INSITEO 's modules are provided as an iOS `library` and an iOS `bundle`. To use them, you will need to link it with your application project. To do that, simply add the `InsiteoSDK` folder to you project.
 
