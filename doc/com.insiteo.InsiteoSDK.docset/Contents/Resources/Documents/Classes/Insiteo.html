@@ -98,6 +98,10 @@
 		
 		<option value="//api/name/hasCurrentSite">- hasCurrentSite</option>
 		
+		<option value="//api/name/initializeLocallyWithLastConfiguration">- initializeLocallyWithLastConfiguration</option>
+		
+		<option value="//api/name/initializeLocallyWithLastConfigurationAndAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:">- initializeLocallyWithLastConfigurationAndAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:</option>
+		
 		<option value="//api/name/initializeWithAPIKey:andLanguage:andAnalyticsAutoStart:andInitializeHandler:andChooseSiteHandler:">- initializeWithAPIKey:andLanguage:andAnalyticsAutoStart:andInitializeHandler:andChooseSiteHandler:</option>
 		
 		<option value="//api/name/initializeWithAPIKey:andLanguage:andAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:andInitializeHandler:andChooseSiteHandler:">- initializeWithAPIKey:andLanguage:andAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:andInitializeHandler:andChooseSiteHandler:</option>
@@ -1296,6 +1300,136 @@
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/initializeLocallyWithLastConfiguration" title="initializeLocallyWithLastConfiguration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializeLocallyWithLastConfiguration">&ndash;&nbsp;initializeLocallyWithLastConfiguration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to initialize the API locally using your .plist configuration (analyticsAutoStart = .plist > YES,
+serverType = .plist > ISEServerTypeUnknown, serverUrl = .plist > nil, renderMode = .plist > ISERenderModeUnknown)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISError *)initializeLocallyWithLastConfiguration</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error if the API has never been synchronized, otherwise nil.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>In order to keep your data up-to-date, you will need to call one of the other API initialization method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Insiteo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initializeLocallyWithLastConfigurationAndAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:" title="initializeLocallyWithLastConfigurationAndAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initializeLocallyWithLastConfigurationAndAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:">&ndash;&nbsp;initializeLocallyWithLastConfigurationAndAnalyticsAutoStart:andServerType:andServerUrl:andRenderMode:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Method used to initialize the API locally with last known configuration.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISError *)initializeLocallyWithLastConfigurationAndAnalyticsAutoStart:(BOOL)<em>analyticsAutoStart</em> andServerType:(ISEServerType)<em>serverType</em> andServerUrl:(NSString *)<em>serverUrl</em> andRenderMode:(ISERenderMode)<em>renderMode</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>analyticsAutoStart</code></th>
+						<td><p>Boolean used to know if we can start analytics automatically.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>serverType</code></th>
+						<td><p>INSITEO server type.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>serverUrl</code></th>
+						<td><p>Specific server URL to use (if nil, the url will be created according to the server type).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>renderMode</code></th>
+						<td><p>Wanted render mode.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An error if the API has never been synchronized, otherwise nil.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>In order to keep your data up-to-date, you will need to call one of the other API initialization method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">Insiteo.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/getBestSiteWithLatitude:andLongitude:" title="getBestSiteWithLatitude:andLongitude:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/getBestSiteWithLatitude:andLongitude:">&ndash;&nbsp;getBestSiteWithLatitude:andLongitude:</a></code>
 </h3>
@@ -1739,7 +1873,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Insiteo. All rights reserved. Updated: 2016-04-15</p>
+						<p class="copyright">Copyright &copy; 2016 Insiteo. All rights reserved. Updated: 2016-05-10</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
