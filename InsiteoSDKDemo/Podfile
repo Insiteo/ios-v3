@@ -2,7 +2,7 @@ platform :ios, '6.0'
 
 target 'InsiteoSDKDemo' do
 
-pod 'InsiteoSDK', :podspec => 'http://dev.insiteo.com/api/download/ios/3.4.5/InsiteoSDK.podspec'
+pod 'InsiteoSDK', :podspec => 'https://github.com/Insiteo/ios-v3/InsiteoSDK.podspec'
 pod 'MBProgressHUD', '~> 0.9.1'
 
 end

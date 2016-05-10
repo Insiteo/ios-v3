@@ -17,12 +17,12 @@ InsiteoSDK is available through CocoaPods. To install it, simply add the followi
 
 ```ruby
 platform :ios, '5.1.1'
-pod 'InsiteoSDK', :podspec => 'http://dev.insiteo.com/api/download/ios/3.4.5/InsiteoSDK.podspec'
+pod 'InsiteoSDK', :podspec => 'https://github.com/Insiteo/ios-v3/InsiteoSDK.podspec'
 ```
 
 ### Manual
 
-Download the `InsiteoSDK` [here](http://dev.insiteo.com/api/download/ios/3.4.5/InsiteoSDK.zip).
+Download the `InsiteoSDK` [here](https://github.com/Insiteo/ios-v3/releases/download/3.5.0/InsiteoSDK-v3.5.0.zip).
 
 INSITEO 's modules are provided as an iOS `library` and an iOS `bundle`. To use them, you will need to link it with your application project. To do that, simply add the `InsiteoSDK` folder to you project.
 
@@ -137,6 +137,7 @@ You can easily change the current site by calling the [`startAndUpdateWithSite`]
 - [Display your first map](readme/map.md).
 - [Get your first location](readme/location.md).
 - [Configure your iBeacons](readme/beacon.md).
+- [Room counting with iBeacons](readme/room_counting.md).
 - [Compute your first itinerary](readme/itinerary.md).
 - [Setup your first geofencing zone](readme/geofence.md).
 - [Enable analytics](readme/analytics.md).
