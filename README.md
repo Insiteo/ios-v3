@@ -137,6 +137,7 @@ You can easily change the current site by calling the [`startAndUpdateWithSite`]
 - [Display your first map](readme/map.md).
 - [Get your first location](readme/location.md).
 - [Configure your iBeacons](readme/beacon.md).
+- [Room couting with iBeacons](readme/room_couting.md).
 - [Compute your first itinerary](readme/itinerary.md).
 - [Setup your first geofencing zone](readme/geofence.md).
 - [Enable analytics](readme/analytics.md).
