@@ -79,7 +79,7 @@ The best way to report background location data through Insiteo SDK is to initia
 
 
 
-## You missed a thing?
+## Missing something?
 
 - [Project setup](../README.md).
 - [Configure your iBeacons](beacon.md).
