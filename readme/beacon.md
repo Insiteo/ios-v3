@@ -4,7 +4,7 @@
 
 > **Only supported on iOS 7.0 or higher** This service is only supported in iOS 7.0 or higher.
 
-> **iOS 8 compatibility** In order to be iOS 8 fully compatible, you will need to add the `NSLocationWhenInUseUsageDescription` key and the `NSLocationAlwaysUsageDescription` in your `.plist`. You can leave the corresponding value empty or specify a custom message that will be displayed the first time the SDK will ask to use the location service.
+> **iOS 8 and above compatibility** In order to be fully compatible with iOS 8 and above, you will need to add the `NSLocationWhenInUseUsageDescription` key and the `NSLocationAlwaysUsageDescription` in your `.plist`. You can leave the corresponding value empty or specify a custom message that will be displayed the first time the SDK will ask to use the location service.
 
 > **Prerequisites**
 - The API has to be initialized at least once to retrieve your back office configuration.
