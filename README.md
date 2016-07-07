@@ -17,7 +17,7 @@ InsiteoSDK is available through CocoaPods. To install it, simply add the followi
 
 ```ruby
 platform :ios, '5.1.1'
-pod 'InsiteoSDK', :podspec => 'https://github.com/Insiteo/ios-v3/InsiteoSDK.podspec'
+pod 'InsiteoSDK', :podspec => 'https://raw.github.com/Insiteo/ios-v3/master/InsiteoSDK.podspec'
 ```
 
 ### Manual
