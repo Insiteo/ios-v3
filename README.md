@@ -22,7 +22,7 @@ pod 'InsiteoSDK', :podspec => 'https://raw.github.com/Insiteo/ios-v3/master/Insi
 
 ### Manual
 
-Download the `InsiteoSDK` [here](https://github.com/Insiteo/ios-v3/releases/download/3.5.0/InsiteoSDK-v3.5.0.zip).
+Download the `InsiteoSDK` [here](https://github.com/Insiteo/ios-v3/releases/download/3.5.1/InsiteoSDK-v3.5.1.zip).
 
 INSITEO 's modules are provided as an iOS `library` and an iOS `bundle`. To use them, you will need to link it with your application project. To do that, simply add the `InsiteoSDK` folder to you project.
 
