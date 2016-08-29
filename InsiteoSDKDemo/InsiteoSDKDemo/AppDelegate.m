@@ -2,13 +2,10 @@
 //  AppDelegate.m
 //  InsiteoSDKDemo
 //
-//  Created by Lionel on 03/04/2015.
-//  Copyright (c) 2015 Insiteo. All rights reserved.
+//  Copyright (c) 2015-present Insiteo. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
-#import "MainTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,17 +13,7 @@
 
 @implementation AppDelegate
 
-@synthesize window = m_window;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    m_window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    //Start examples
-    MainTableViewController * mainController = [[MainTableViewController alloc] init];
-    UINavigationController * navigationController = [[UINavigationController alloc] initWithRootViewController:mainController];
-    [m_window setRootViewController:navigationController];
-    
-    [m_window makeKeyAndVisible];
     return YES;
 }
 

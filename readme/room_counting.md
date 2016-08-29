@@ -1,22 +1,22 @@
-## Room Counting
+# Room Counting
 
-### Pre-requisites
+## Requirements
 
-> **Important**: In order to use the room counting feature, your application must enable the  [iBeacon configuration](beacon.md). Also keep in mind that users must have **enabled their bluetooth** on their phone to detect iBeacons. 
+> **Important**: In order to use the room counting feature, your application must enable the  [iBeacon configuration](beacon.md). Also keep in mind that users must have **enabled their bluetooth** on their phone to detect iBeacon. 
 
-Room counting is based on iBeacon location service and Insiteo analytics. You must have intialized the SDK properly at least once with analytics enabled for the system to work (.plist configuration or using initialization parameters). Analytics configuration and iBeacon regions are retrieved from the server and stored in your client configuration.
+Room counting is based on iBeacon location service and Insiteo analytics. You must have intialized the SDK properly at least once with analytics enabled for the system to work (`.plist` configuration or using initialization parameters). Analytics configuration and iBeacon regions are retrieved from the server and stored in your client configuration.
 
 
-### Best Practices
+## 1. Best Practices
 
 The best way to report background location data through Insiteo SDK is to initialize the SDK as soon as possible. Indeed, when your application is woken up from iBeacon service, the OS starts your application for ~10 seconds in the background. The Insiteo class provides a local initialization method `-initializeLocallyWithLastConfiguration` which uses your last known configuration to avoid server synchronization that could take a long time. You don't need to start an Insiteo site.
 
 > **Note:** Such as with standard initialization methods, a full local initialization method with parameters is available.
 
 
-### Usage
+## 2. Usage
 
-- Start the Beacon Provider as soon as possible in `application:didFinishLaunchingWithOptions:`
+- 1. Start the Beacon Provider as soon as possible in `application:didFinishLaunchingWithOptions:`
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -28,7 +28,7 @@ The best way to report background location data through Insiteo SDK is to initia
 }
 ```
 
-- Detect if the application is woken up from location service (in the background):
+- 2. Detect if the application is woken up from location service (in the background):
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -41,7 +41,7 @@ The best way to report background location data through Insiteo SDK is to initia
 }
 ```
 
-- According to `launchOptions` you can either choose to initialize the SDK locally or remotely:
+- 3. According to `launchOptions` you can either choose to initialize the SDK locally or remotely:
 
 ```objective-c
 - (void)viewDidLoad {
@@ -77,10 +77,19 @@ The best way to report background location data through Insiteo SDK is to initia
 }
 ```
 
+> **Note:** You can do all the process in `application:didFinishLaunchingWithOptions:` from your `AppDelegate` class. 
 
 
-## You missed a thing?
+## Where To Go From Here?
 
-- [Project setup](../README.md).
-- [Configure your iBeacons](beacon.md).
-
+- Map rendering:
+	- [Display your first map](map.md).
+	- [Add graphical objects on map](map.md#2-add-graphical-objects-on-map)
+- Location:
+	- [Get your first location](location.md).
+	- [Setup your first geofencing zone](geofence.md).
+	- [Configure your iBeacons](beacon.md).
+- Itinerary:
+	- [Compute your first itinerary](itinerary.md).
+- Analytics tracking events:
+	- [Track Custom Events](analytics.md).

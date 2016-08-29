@@ -1,165 +1,351 @@
-## Map
+# Map Rendering
 
-> **2D or 3D** Be aware, that you can't use both 2D and 3D in the same running application. Don't forget to add the `glsl` folder in your application resources, otherwise the 3D engine won't work.
+## Requirements
 
-> **Packages dependencies** Be aware that you need to have installed at least the following packages:
-- A `ISEPackageTypeMapData` package, which contains maps information such as zoom levels and scales.
-- A `ISEPackageTypeTiles` package, which contains `.3cm` files that will be displayed.
-- **3D only** A `ISEPackageTypeMap3d` package, which contains all 3D files.
+- Successful SDK initialization and Site started (see [Getting Started Guide](../README.md)).
+- You **cannot use both 2D and 3D** in the same application session, you will have to kill and restart your application to switch from one to the other.
+- **3D:** Do not forget to add and link the `glsl` folder in your Xcode project, otherwise the 3D engine will not work and will potentially crash.
+- **Packages dependencies**: you need to have downloaded and installed at least the following packages:
+	- `ISEPackageTypeMapData` package, which contains maps information such as zoom levels and scales.
+	- `ISEPackageTypeTiles` package, which contains `.3cm` files to display your maps.
+	- (3D only) `ISEPackageTypeMap3d` package, which contains specific rendering files.
 
-> You can easily check if the package is available on the device with the following method: `[[Insiteo currentSite] hasPackage:ISEPackageTypeMapData]`.
+> **Reminder:** To check if a package is available for the current site, just call `[[Insiteo currentSite] hasPackage:My-PACKAGE-TYPE]`.
 
-### Display a MapView
 
-A [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) is provided and can be used to display a 2D/3D map component with specific interactive areas. The API also provides advanced features such as additional rendering layouts management (promotional, special areas etc &#8230;) or specific events handling. To use this component you have to make sure that you have downloaded all the required packages.
+## 1. Create and Display an Insiteo Map View
 
-The [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) will display a 2D tiled map or 3D plane of the site (depending on your `ISERenderMode`), and provide common map interaction (such as move, center, and pinch to zoom), animation and more. It also handle the [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html) rendering and touch behavior.
+To display your 2D/3D map, you will have to use the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISMapView.html) class which is the main class for map rendering. It will display a 2D/3D tiled map component and will provide basic map user interactions (pan, pinch to zoom, rotation, animated centering, touch detection, etc.) and advanced rendering (POI, zones, etc.).
 
-The [`ISMap2DView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMap2DView.html) uses the [`Cocos2D`](http://cocos2d.spritebuilder.com/) Objective-C 2D engine and you can refer to its documentation [here](http://www.cocos2d-swift.org/docs/).
+To handle map view events (touch events, on zoom end, on map clicked, etc.), you must add a [`ISMapViewDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISMapViewDelegate.html) delegate on map view creation.
 
-The [`ISMap3DView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMap3DView.html) uses the [`Cocos3D`](http://cocos3d.org/) Objective-C 3D engine (based on Cocos2D) and you can refer to its documentation [here](http://cocos3d.org/api/index.html).
+According to the selected render mode `ISERenderMode2D` or `ISERenderMode3D` respectively a [`ISMap2DView`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISMap2DView.html) (`Cocos2D` engine) or a [`ISMap3DView`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISMap3DView.html) (`Cocos3D` engine) can be created. Here is a snippet of code that explain how to create a map view according to the render mode:
 
-In order to use our `MapAPI`, you will need to get an [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html):
-
-```objectivec++
-//ISMap2DView initialization
-[ISMap2DView getMap2DViewWithFrame:self.view.frame andMapDelegate:self andHandler:^(ISMap2DView * map2DView) {
-    //At this point, the map view is correctly initialized
-    [self.view addSubView:map2DView];
-}];
-
-//ISMap3DView initialization
-[ISMap3DView getMap3DViewWithFrame:self.view.frame andMapDelegate:self andHandler:^(ISMap3DView * map3DView) {
-    //At this point, the map view is correctly initialized
-    [self.view addSubView:map3DView];
-}];
+```objective-c
+// Check common packages
+if ([[Insiteo currentSite] hasPackage:ISEPackageTypeMapData] &&
+    [[Insiteo currentSite] hasPackage:ISEPackageTypeTiles]) {
+    
+    // Check render mode
+    if ([Insiteo currentUser].renderMode == ISERenderMode2D) {
+        // 2D
+        [ISMap2DView getMap2DViewWithFrame:self.view.frame andMapDelegate:self andHandler:^(ISMap2DView *map2DView) {
+            // At this point, the map view is correctly initialized
+            self.mapView = map2DView;
+            [self.view addSubView:map2DView];
+        }];
+    } else if ([Insiteo currentUser].renderMode == ISERenderMode3D) {
+        // Check 3D package
+        if ([[Insiteo currentSite] hasPackage:ISEPackageTypeMap3d]) {
+            // 3D
+            [ISMap3DView getMap3DViewWithFrame:self.view.frame andMapDelegate:self andHandler:^(ISMap3DView *map3DView) {
+                // At this point, the map view is correctly initialized
+                self.mapView = map3DView;
+                [self.view addSubView:map3DView];
+            }];
+        }
+    } else {
+        // Unknown, something wrong happened or is not well initialized...
+    }
+}
 ```
 
-> **Prerequisites** You will need to initialize the [`Insiteo`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/Insiteo.html) singleton before instantiating [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html). [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) events will be notified via the [`ISMapViewDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISMapViewDelegate.html) protocol.
+### Start map view rendering
 
-### Adding graphical objects on map
+When your map is created and every other rendering objects are prepared, you can start rendering by calling [`startRendering`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISMapView.html#//api/name/startRendering):
 
-The [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) also allows you to display custom interactive objects. This can be done by implementing the renderer interface [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) and the Render Touch Object interface [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) or by simply extending the [`ISGenericRenderer`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGenericRenderer.html) and [`ISGenericRTO`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGenericRTO.html) that already provide common behavior (icon and label rendering, touch handling and so on, you can check their behavior in our SampleApp).
-
-The [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) will also detect touches, and dispatch them to all [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html). A delegate can be set on the map view, to be notified of clicks on specific [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) class (see [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) class documentation).
-
-Adding, removing [`ISGenericRTO`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGenericRTO.html) to the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) and listening for their events:
-
-```objectivec++
-//This method will add the rto at a given position
-ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:@"My RTO name" andLabel:@"My RTO" andMetersPosition:givenPosition andWindowDisplayed:YES andLabelDisplayed:YES];
-[m_mapView addRTO:rto];
-[rto release];
-
-//And to remove it
-[m_mapView removeRTO:rto];
-
-//This method will add the rto to the given zone
-ISGenericRTO * rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalPoiId andLabel:@"My RTO" andMetersPosition:nil andWindowDisplayed:YES andLabelDisplayed:YES];
-[m_mapView addRTO:rto inZone:zonePoi.zoneId];
-[rto release];
-
-//And to remove it
-[m_mapView removeRTO:rto fromZone:zoneId];
-
-//Add a delegate for this type of IRTO
-[m_mapView setRTODelegate:rtoDelegate withRTOClass:[GfxRTO class]];
+```objective-c
+// Prepare all rendering customization (location/itinerary/custom) before !
+...
+// Then start rendering
+[self.mapView startRendering];
 ```
 
-### Create your own ISRenderer
+As best practices, we recommend you to start and stop the map rendering according to the parent `UIViewController` state changes.
 
-A renderer is a class that defines drawing and touch behavior for a certain type of [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html). Once added to the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) a renderer will have its [`render2D`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/render2DWithLayer:andRatio:andOffset:andAngle:) or [`render3D`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/render3DWithScene:andRatio:andAngle:) method call by the map rendering loop to enable to do its rendering operation and it will also be notify when to handle touch events ([`onTouchDown`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/onTouchDown:), [`onTouchMove`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/onTouchMove:), [`onTouchUp`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/onTouchUp:)). If you want to use your own customized renderer, you will need to create a class that implements the [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) interface. Then you will be able to specify your own renderering and touch behavior. 
-
-[`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) uses a priority value that will define it's 2D rendering and touch order. Highest priority renderered last (so on the top) and notify by touch first.
-
-To register a new renderer as a map's renderer, simply do like this:
-
-```objectivec++
-//How to add a custom renderer
-[mapView addRenderer:aRenderer]];
-```
-
-### Create your own ISRTO
-
-To draw a customized rendering object on the map, you will need to create a class that implements the [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) interface. Then you will be able to specify your object's behavior through methods like:
-
-```objectivec++
-//The 2D method you will need to override in order to manually manage your object rendering
-- (void)render2DWithLayer:(CCLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle andPriority:(int)priority;
-
-//The 3D method you will need to override in order to manually manage your object rendering
-- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andAngle:(float)angle andPriority:(int)priority;
-
-//Because once added to the world a 3D object will always be drawn it is up to you to remove the object from the world when required
-- (void)remove3DFromLayer:(CC3Node *)layer;
-
-//Method that gets called when the IRTO have to handle a touch down event
-- (ISETouchObjectResult)onTouchDown:(ISTouch *)touch;
-```
-
-#### Where to find my ISRTO?
-
-All [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) of class corresponding to the custom renderer class, when added via [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html), will be put in custom renderer. If you add an [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) and there are no [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) defined for that specific class, the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html) will automatically create a [`ISGenericRenderer`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGenericRenderer.html) to handle it. So creating your own [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) does not mean that you necessarily have to create you own [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html).
-
-#### Zone offsets in 3D
-
-In 3D, you can specify an offset through the z axis still by using the following method [`addRTO:inZone:withOffset:`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html#//api/name/addRTO:inZone:withOffset:).
-
-### Link with external content
-
-With the Insiteo framework, you can link your content to our zone based system. To do that you will have to register this content through our back office. For example you can link a shop to one of our zone and then, get back this content in your application, simply by requesting our framework.
-
-[![alt tag](http://img.youtube.com/vi/CLvNfQuzyUw/0.jpg)](https://www.youtube.com/watch?v=CLvNfQuzyUw)
-
-[Insiteo Interactive maps - 2 minutes tutorial](https://www.youtube.com/watch?v=CLvNfQuzyUw)
-
-To get all related Insiteo zones for a given external POI, you can use the [`ISDBHelperMap`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISDBHelperMap.html) class like so:
-
-```objectivec++
-//Get all Zone/POI assocations for a given external identifier
-NSArray * zonesPois = [ISDBHelperMap getExternalZonePoisForExtIdPoi:externalPoiId];
-```
-
-> **Note:** An array is returned, because you can link a POI to several zones and a zone can contains several POIs.
-
-To get all POIs related to a given Insiteo zone, you can use the [`ISDBHelperMap`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISDBHelperMap.html) class like so:
-
-```objectivec++
-//Get all external Zone/POI assocations for a given zone identifier
-NSArray * zonesPois = [ISDBHelperMap getZonePoisForIdZone:zoneId andExternal:YES];
-```
-
-Each method returns an [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZonePoi.html) object which contains a position in meters and an offset (if specified) in order to place your on [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) on our map.
-
-#### Zone/Poi associations offsets
-
-If you want an offset to be used when drawing an [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) in a [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html) you have to explicitly set it we adding the [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) to the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html).
-
-### Best practices
-
-We recommend you to start and stop the map rendering according to the parent UIViewController state changes.
-
-```objectivec++
-//Insiteo
+```objective-c
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [mapView startRendering];
+    ...
+    // Start rendering
+    [self.mapView startRendering];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [mapView stopRendering];
+    ...
+    // Stop rendering
+    [self.mapView stopRendering];
 }
 ```
 
-## Where to go from there?
 
-- [Get your first location](location.md).
-- [Configure your iBeacons](beacon.md).
-- [Compute your first itinerary](itinerary.md).
-- [Setup your first geofencing zone](geofence.md).
-- [Enable analytics](analytics.md).
+## 2. Add Graphical Objects on Map
 
-## You missed a thing?
+The `ISMapView` allows you to display custom interactive objects (`RTO` for Rendering Touch Object) and provides a specific interface [`ISRTO`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html) which defines all properties and methods to create graphical objects and an interface [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) to render them on the map view. The `ISMapView` will also detect touches dispatched to all `ISRTO` objects. To handle selection and clicks on specific `ISRTO` objects, you can implement the [`ISRTODelegate `](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISRTODelegate.html) which provides a couple of useful callbacks (`onRTOClicked`, `onRTOMoved`, etc.).
 
-- [Project setup](../README.md).
+### ISRTO objects
+
+To draw custom rendering objects on map, you will need to create a class that is conformed to the `ISRTO` protocol. Then you will be able to specify your object's behavior through methods like:
+
+```objectivec++
+// Define resources such as marker images, labels, etc.
+- (void)setResources;
+
+// 2D rendering methods
+- (void)render2DWithLayer:(CCLayer *)layer andRatio:(double)ratio andOffset:(CGPoint)offset andAngle:(float)angle andPriority:(int)priority;
+- (void)remove2DFromLayer:(CCLayer *)layer;
+
+// 3D rendering methods
+- (void)render3DWithScene:(CC3Scene *)scene andLayer:(CC3Node *)layer andCurrentMap:(ISMap *)map andRatio:(float)ratio andAngle:(float)angle andPriority:(int)priority;
+- (void)remove3DFromLayer:(CC3Node *)layer;
+
+// Touch methods
+- (ISETouchObjectResult)onTouchDown:(ISTouch *)touch;
+- (ISETouchObjectResult)onTouchMove:(ISTouch *)touch;
+- (ISETouchObjectResult)onTouchUp:(ISTouch *)touch;
+```
+
+When your class is ready, you can simply add your custom RTO like:
+
+```objective-c
+// Create a RTO (for example with a label and a specific zoom level to be rendered)
+id<ISRTO> myCustomRTO = [[MyCustomRTO alloc] initWithLabel:@"My-Label" zoomLevel:2];
+// Add it to the map view
+[self.mapView addRTO:myCustomRTO];
+```
+
+And to subscribe RTOs events such as click, move and drag events, add 
+
+```objective-c
+// Add a delegate for this type of IRTO
+[self.mapView setRTODelegate:self withRTOClass:[MyCustomRTO class]];
+```
+
+> **Note:** When RTOs are added and rendered on map, when you don't need them (not visible on screen, not on the same map floor, etc.), you should call 2D or 3D remove method to limit memory and CPU usage.
+
+### ISRTO renderer
+
+A renderer is a class that defines drawing and touch behavior for a specific type of `ISRTO`. If you want to use your own customized renderer, you will need to create a class that is conformed to the [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) protocol. Once added to the `ISMapView` the renderer rendering method ([`render2D`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/render2DWithLayer:andRatio:andOffset:andAngle:) or [`render3D`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/render3DWithScene:andRatio:andAngle:)) will be called during the map rendering loop and will be notified to handle its own touch operations ([`onTouchDown`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/onTouchDown:), [`onTouchMove`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/onTouchMove:), [`onTouchUp`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html#//api/name/onTouchUp:)).
+
+`ISRenderer` uses a priority value that will define it's 2D rendering and touch order. Highest priority renderered last (so on the top) and notify by touch first.
+
+To register a new renderer as a map's renderer, simply do like this:
+
+```objective-c
+// Create your custom RTO renderer
+id<ISRTORenderer> myCustomRenderer = [[MyCustomRenderer alloc] initWithRTOClass:[MyCustomRTO class] priority:7];
+// Add it to the map view to inform that MyCustomRTO objects will be rendered through this renderer
+[mapView addRenderer: myCustomRenderer]];
+```
+
+> **Note:** You are **not required** to create a `ISRenderer` class by yourself, by default, when no renderer is specified for a `ISRTO` class, the map view will automatically create a `ISGenericRenderer` to render your RTO class (see the following section). 
+
+### Time Saving: Use Generic RTOs
+
+To help you adding POIs on your map, we provide you the [`ISGenericRTO`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISGenericRTO.html) and the [`ISGenericRenderer`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISGenericRenderer.html) classes which respectively are conforms to `ISRTO` and `ISRenderer` protocols and implements common behaviors (marker with label and button, touch handling, etc.). We tried to make this class as modular and overridable as possible (multiple constructors, access to many properties) in order to let you customize the RTO. Most of the time, if you attempt to change a particular behavior or want to change RTO design, you can create a class that inherits from the `ISGenericRTO` class. By default, when the RTO is clicked, the window visibility is toggled (if hidden -> visible, visible -> hidden).
+
+The `ISGenericRTO` has a marker icon, a label and a floating window with a buttons and title and looks like:
+
+![alt tag](assets/map-genericrto.png)
+
+
+#### Add and Remove Generic RTOs
+
+You can add or remove RTOs on map view using an Insiteo meter position directly (see [`ISPosition`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISPosition.html) class):
+
+```objective-c
+// Create RTO with a position with default resources
+ISGenericRTO *rto = [[ISGenericRTO alloc] initWithName:@"My name"
+                                              andLabel:@"My label"
+                                     andMetersPosition:rtoPosition // a position in meters
+                           andWindowInitiallyDisplayed:YES // Yes, I want to display the window
+                            andLabelInitiallyDisplayed:YES]; // and the label under the marker when added
+// Simply add
+[self.mapView addRTO:rto];
+// or remove it
+[self.mapView removeRTO:rto];
+```
+
+#### Customize Generic RTO
+
+We tried to provide as much constructors as possible to let you customize the generic RTO as you want. If you want to change default images and default colors, you will have to use the [full class constructor](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISGenericRTO.html#//api/name/initWithName:andLabel:andMetersPosition:andWindowInitiallyDisplayed:andWindowShouldToggle:andLabelInitiallyDisplayed:andLabelShouldToggle:andWindowBackgroundColorNormal:andWindowBackgroundColorHighlighted:andActionEnabled:andActionImagePath:andActionBackgroundColorNormal:andActionBackgroundColorHighlighted:andIndicatorVisible:andIndicatorImagePath:andWindowAnchorImagePath:andMarkerImagePath:) to pass your images path and your application design colors. Then, if you want to change other properties, like texts font, colors, position etc. you can but you will have to override the [`setResources`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRTO.html#//api/name/setResources) method and change what you want.
+
+##### Example
+
+We will create a RTO class that inherits from `ISGenericRTO` and we will customize as much as we can to show you how to do that properly. Here is what we expect:
+
+![alt tag](assets/map-genericrto-customization.png)
+ 
+Here is all the code to customize the generic RTO:
+
+```objective-c
+// 1. Create a class that inherits from ISGenericRTO
+
+#import <InsiteoSDK/InsiteoSDK.h>
+
+@interface CustomRTO : ISGenericRTO
+
+// Add your custom properties, custom constructor and methods
+- (instancetype)initWithPosition:(ISPosition *)position;
+
+@end
+
+// 2. Implement your customization
+
+@implementation CustomRTO
+
+#pragma mark - Initialization
+
+- (instancetype)initWithPosition:(ISPosition *)position {
+    // Get your images path
+    NSString *markerPath = [[NSBundle mainBundle] pathForResource:@"marker-toilet" ofType:@"png"];
+    NSString *favPath = [[NSBundle mainBundle] pathForResource:@"favorite" ofType:@"png"];
+    
+    // Use the full constructor to pass as many parameters as you want
+    self = [super initWithName:@"Women & Men Toilets"
+                      andLabel:@"wc"
+             andMetersPosition:position
+   andWindowInitiallyDisplayed:NO
+         andWindowShouldToggle:YES
+    andLabelInitiallyDisplayed:YES
+          andLabelShouldToggle:NO
+andWindowBackgroundColorNormal:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1]
+andWindowBackgroundColorHighlighted:nil
+              andActionEnabled:YES
+            andActionImagePath:favPath
+andActionBackgroundColorNormal:[UIColor colorWithRed:0.2 green:0.48 blue:1 alpha:1]
+andActionBackgroundColorHighlighted:[UIColor colorWithRed:0.25 green:0.52 blue:1 alpha:1]
+           andIndicatorVisible:YES
+         andIndicatorImagePath:nil
+      andWindowAnchorImagePath:nil
+            andMarkerImagePath:markerPath];
+    if (self) {
+        // For this example we don't need to do anything else here
+    }
+    return self;
+}
+
+#pragma mark - Override ISGenericRTO methods
+
+// This method is called when a RTO is clicked, by default it returns `YES` so you can override or 
+// add specific feature
+- (Boolean)shouldToggleWindowOnMarkerClicked {
+	// For example, we will specified that this clicked RTO should be drawn on top of the other
+	// so I change its z-order to 0.
+    self.zOrder = 0; // Will be drawn on top
+    return YES;
+}
+
+// This is in this method that all customization should be done, in order to be called only once
+- (void)setResources {
+	 // Call super in order to initialize properly each default resources 
+    [super setResources];
+    
+    // Then do your customization here...
+    
+    // Adjust window positions to be as you want (according to your marker image size)
+    CGPoint windowPosition = self.rtoNode.annotationLayerColor.position;
+    [self.rtoNode.annotationLayerColor setPosition:CGPointMake(windowPosition.x, windowPosition.y + 8)];
+    
+    CGPoint anchorPosition = self.rtoNode.windowAnchorSprite.position;
+    [self.rtoNode.windowAnchorSprite setPosition:CGPointMake(anchorPosition.x, anchorPosition.y + 8)];
+    
+    CGPoint actionBGPosition = self.rtoNode.actionBackgroundSprite.position;
+    [self.rtoNode.actionBackgroundSprite setPosition:CGPointMake(actionBGPosition.x, actionBGPosition.y + 8)];
+    
+    CGPoint indicatorBGPosition = self.rtoNode.indicatorBackgroundSprite.position;
+    [self.rtoNode.indicatorBackgroundSprite setPosition:CGPointMake(indicatorBGPosition.x, indicatorBGPosition.y + 8)];
+    
+    // Name
+    CGPoint namePosition = self.rtoNode.descriptionName.position;
+    [self.rtoNode.descriptionName setPosition:CGPointMake(namePosition.x, namePosition.y + 8)];
+    [self.rtoNode.descriptionName setFontName:[UIFont systemFontOfSize:18 weight:UIFontWeightThin].fontName]; // Change the font
+    [self.rtoNode.descriptionName setFontSize:18]; // New font size
+    
+    // Label
+    CGPoint labelPosition = self.rtoNode.descriptionLabel.position;
+    [self.rtoNode.descriptionLabel setPosition:CGPointMake(labelPosition.x, labelPosition.y - 10)];
+    [self.rtoNode.descriptionLabel setFontName:[UIFont systemFontOfSize:14 weight:UIFontWeightMedium].fontName];
+    [self.rtoNode.descriptionLabel setFontSize:14]; 
+    [self.rtoNode.descriptionLabel setColor:ccc3(51, 123, 255)]; // New text color
+    
+    // We do not want the default stroke label
+    [self.rtoNode.descriptionStrokeLabel removeFromParent];
+}
+
+// 3. And that's all, I think that you can be able to customize as much as possible this class to match your application design ! 
+// For advanced customizations, please use Cocos2D/3D documentation and create your own ISRTO class and ISRTORenderer.
+
+@end
+
+```
+
+
+### Link POIs With External Content
+
+The Insiteo SDK allows you to link external content to POIs by using our back office. You have to create zones on your map, define POIs with `identifier` to be retrieved through the SDK.
+Here is a quick tutorial video that shows you how to process to create zones with identifier on your map:
+
+[![alt tag](http://img.youtube.com/vi/lFgNcIqiuOM/0.jpg)](https://www.youtube.com/watch?v=lFgNcIqiuOM)
+
+Once your POIs are defined on the back office, retrieved from SDK initialization and update, you are ready to link each POIs identifiers to your custom data. Your back office zones are represented by the [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISZone.html) class object and can be retrieved for a specific `ISSite` and `mapId` through its [`getZonesWithMapId:`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISSite.html#//api/name/getZonesWithMapId:) method. Finally, the association between a zone and POIs is represented by the [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISZonePoi.html) class.
+
+`ISZonePoi` objects can be retrieved with a zone identifier and the [`ISDBHelperMap`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISDBHelperMap.html) class which is a helper class around the map view.
+
+> **Note:** an `ISZone` can contain several `ISZonePoi` and a POI can be linked to several zones.
+
+Basically, you can add RTOs on map view based on zones identifier and position instead of a meter position (you will add an offset from zone center). For example, when a click is detected on a zone on the map view, you may want to display all RTOs which have been created on back office into that specific zone by using the `ISMapView` [`addRTO:inZone:withOffset:`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISMapView.html#//api/name/addRTO:inZone:withOffset:):
+
+```objective-c
+// ISMapViewDelegate callback
+- (void)onZoneClickedWithZone:(ISZone *)zone {
+    // Get external zone pois associations for the clicked zone
+    NSArray *zonesPois = [ISDBHelperMap getZonePoisForIdZone:zone.idZone andExternal:YES];
+    if ([zonesPois count] > 0) {
+        // Clear all other ISGenericRTO/CustomRTO to only display new one(s)
+        [self.mapView clearRendererWithRTOClass:[ISGenericRTO class]];
+        [self.mapView clearRendererWithRTOClass:[CustomRTO class]];
+        
+        for (ISZonePoi *zonePoi in zonesPois) {
+            // Add new one
+            ISGenericRTO *rto = [[ISGenericRTO alloc] initWithName:zonePoi.externalPoiId
+                                                          andLabel:@"My label"
+                                                 andMetersPosition:nil // No position needed here
+                                       andWindowInitiallyDisplayed:NO
+                                        andLabelInitiallyDisplayed:NO];
+            // This will add the RTO at the center of the zone + offset
+            [self.mapView addRTO:rto 
+                          inZone:zone.idZone 
+                      withOffset:cc3v(zonePoi.offset.x, zonePoi.offset.y, 0)]; // Add z offset for 3D
+        }
+    }
+}
+...
+// To remove a rto from a zone
+[self.mapView removeRTO:rto fromZone:zoneId];
+```
+
+To get all related Insiteo zones for a given external POI, you can use:
+
+```objective-c
+// Get all Zone/POI assocations for a given external identifier
+NSArray *zonesPois = [ISDBHelperMap getExternalZonePoisForExtIdPoi:externalPoiId];
+```
+
+Here is an illustration of defined POIs in a zone on back office, retrieved and convert to `ISZonePoi` and finally displayed as a `ISGenericRTO`:
+
+![alt tag](assets/map-pois-zonepoi.png)
+
+
+## Where To Go From Here?
+
+- Location:
+	- [Get your first location](location.md).
+	- [Setup your first geofencing zone](geofence.md).
+	- [Configure your iBeacons](beacon.md).
+	- [Room counting with iBeacons](room_counting.md).
+- Itinerary:
+	- [Compute your first itinerary](itinerary.md).
+- Analytics tracking events:
+	- [Track Custom Events](analytics.md).

@@ -1,71 +1,139 @@
-## Location
+# Location
 
-> **Packages dependencies** If you intend to use this service you have to make sure that the `location` package have been properly downloaded. You can easily check if the package is available on the device with the following method: `[[Insiteo currentSite] hasPackage:ISEPackageTypeLocation]`.
+## Requirements
 
-> **iOS 8 compatibility** In order to be iOS 8 fully compatible, you will need to add the `NSLocationWhenInUseUsageDescription` key in your `.plist`. You can leave the corresponding value empty or specify a custom message that will be displayed the first time the SDK will ask to use the location service.
+- Successful SDK initialization and Site started (see [Getting Started Guide](../README.md)).
+- **Packages dependencies**: you need to have downloaded and installed the `ISEPackageTypeLocation` package, which contains all location files and required data.
+- **iOS 8+ compatibility**: Since iOS 8, you have to add the `NSLocationWhenInUseUsageDescription` or `NSLocationAlwaysUsageDescription` key in your `.plist` to access user location (see [Location Authorization Guide](../README.md#location-authorization-ios-8) for more details).
 
-### Location process
+> **Reminder:** To check if a package is available for the current site, just call `[[Insiteo currentSite] hasPackage:My-PACKAGE-TYPE]`.
 
-![alt tag](http://dev.insiteo.com/api/img/LocationLost.png)
+## 1. Location process
 
-![alt tag](http://dev.insiteo.com/api/img/StartNoBeacons.png)
-
-![alt tag](http://dev.insiteo.com/api/img/StartNoLoc.png)
+![alt tag](assets/location-lost.png)
+![alt tag](assets/location-start-no-beacons.png)
+![alt tag](assets/location-start-no-loc.png)
 
 ### Get your first location
 
-You can use our `LocationAPI` to obtain location information. The `LocationAPI` needs initialization information in order to communicate with our servers. You can easily link this library to the INSITEO map, so the location can be displayed on it.
+The location service needs to be configured properly to retrive user location information and communicate with our backend. Every location process will be managed by the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html) class as a singleton.
 
-In order to use our `LocationAPI`, you will need to get the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html) singleton.
+#### Configurate the location provider
 
-To receive location, you will need to start the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html), with a [`ISLocationDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISLocationDelegate.html):
+There are two ways to configure the provider:
 
-> **Which flags to use** By default we will use the location flags described in your `.plist`. Please contact us to get the appropriate location settings.
-
+- **Recommanded**: by adding the following keys in your application `.plist`:
+ 
 ```xml
+<plist>
   ...
   <key>ISELocationFlag</key>
   <array>
-   <string>ISELocationFlagGps</string>
-   <string>ISELocationFlagBle</string>
-   <string>ISELocationFlagCompass</string>
-   <string>ISELocationFlagMems</string>
+   <!-- We highly recommand to use all flags for best location. Contact us for more details -->
+   <string>ISELocationFlagGps</string> <!-- GPS detection -->
+   <string>ISELocationFlagBle</string> <!-- BLE detection -->
+   <string>ISELocationFlagCompass</string> <!-- Device orientation -->
+   <string>ISELocationFlagMems</string> <!-- Device accelerometers -->
   </array>
- </dict>
 </plist>
 ```
+- Alternatively, you can pass the flags through the location provider start method as a bitmask (see following section for usage explanation).
 
-```objectivec++
-//Start location
+
+#### Start location service
+
+To begin receiving user location, you have to start the provider with [`startWithDelegate:`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html#//api/name/startWithDelegate:) if you have defined flags in your application `.plist`, otherwise use [`startWithFlags:andDelegate:`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html#//api/name/startWithFlags:andDelegate:) and pass all desired flags separated by a `|` (bitmask). To be notified on location initialization, on new location received, etc. you can set a [`ISLocationDelegate`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISLocationDelegate.html) which provides a couple of usefull callbacks to work with.
+
+```objective-c
+// Start location provider (flags in .plist)
 [[ISLocationProvider sharedInstance] startWithDelegate:aDelegate];
 
-//Add location renderer to the ISMapView, thus location is displayed on map
-[mapView addRenderer:[locProvider renderer]];
+// Start location provider directly with flags
+[[ISLocationProvider sharedInstance] startWithFlags:ISELocationFlagGps|ISELocationFlagBle|ISELocationFlagCompass|ISELocationFlagMems
+                                        andDelegate:aDelegate];
 ```
 
-> **Prerequisites**
-- The API needs to be initialized.
-- You can now be notified when no registered beacons were detected, which probably means that the user started the location whereas he is not on site.
+You are able to specify location frequency by calling an alternative [start method](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html#//api/name/startWithFlags:andDelegate:andScanFrequency:):
 
-### Available services
+```objective-c
+// Start location provider directly with flags and scan frequency (default 2000 ms)
+[[ISLocationProvider sharedInstance] startWithFlags:ISELocationFlagGps|ISELocationFlagBle|ISELocationFlagCompass|ISELocationFlagMems
+                                        andDelegate:aDelegate
+                                   andScanFrequency:3000]; // 3s for example
+```
 
-Available location-based services are:
+Finally, you can ask for a unique location by calling the [`requestUniqueLocationWithLocationRequestDelegate:andLocationFlags:`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html#//api/name/requestUniqueLocationWithLocationRequestDelegate:andLocationFlags:) method. For more methods or information, see [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html) class reference.
 
-- `ISELbsModuleTypeItinerary`: this module computes the route between an arrival point, and a departure point (could be the user current location).
-- `ISELbsModuleTypeGeofencing`: this module detects when user location is in "active" areas, and notify the application that the user entered/stayed in/left these areas.
 
-#### Get a specific LBS module
+#### Stop location service
 
-To use them, you have to request them from [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html) with the [`getLbsModule`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISLocationProvider.html#//api/name/getLbsModule:) method.
+To stop the location provider, simply call [`stopLocation`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html#//api/name/stopLocation) method:
 
-## Where to go from there?
+```objective-c
+// Stop location provider
+[[ISLocationProvider sharedInstance] stopLocation];
+```
 
-- [Configure your iBeacons](beacon.md).
-- [Compute your first itinerary](itinerary.md).
-- [Setup your first geofencing zone](geofence.md).
-- [Enable analytics](analytics.md).
+## 2. User Location Rendering
 
-## You missed a thing?
+> **Note:** See our [Map View rendering guide](map.md) for more details about map and objects rendering.
 
-- [Project setup](../README.md).
-- [Display your first map](map.md).
+User location can be rendered on map like other graphical objects through a special `ISRenderer` class that should be added on your map view. By default, the [`ISLocationRenderer`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationRenderer.html) class will draw a blue dot with azimuth and accuracy and which is created but not added on the map view. You will need to add it manually if you want to render the position on your map view:
+
+```objective-c
+// Get the location renderer from provider
+ISLocationRenderer *locationRenderer = [ISLocationProvider sharedInstance].renderer;
+// Add it to the map view
+[self.mapView addRenderer:locationRenderer];
+```
+
+#### Customize user location
+
+By default, user location rendering looks like:
+
+![alt tag](assets/location-default-rendering.png)
+
+For now, you can only change user location and accuracy colors and choose to display or hide the compass orientation triangle. Here are the properties to use in order to customize rendering:
+
+- [`locationColor`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationRenderer.html#//api/name/locationColor) to change the dot and compass color (blue, by default),
+- [`accuracyColor`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationRenderer.html#//api/name/accuracyColor) to change the accuracy circle color (light blue, by default),
+- [`locationLostColor`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationRenderer.html#//api/name/locationLostColor) to change the dot and compass color when location has been lost.
+
+> **Important**: If you attempt to customize rendering, you **must do it before trying to start location** in order for the changes to take effects. As best practices, do all customization before calling `[self.mapView startRendering]`.
+
+#### Advanced customization
+
+If you want to use different pictures or do more complex customizations, you will need to create your own renderer (`ISRenderer`) and RTO (`ISRTO`) (see [Graphical objects guide](map.md#2-add-graphical-objects-on-map) for more details or contact us for specific code request).
+
+
+## 3. Mix Location With Other Services
+
+Insiteo location service can be mixed to work with two other services ([`ISELbsModuleType`](http://dev.insiteo.com/api/doc/ios/3.5/Constants/ISELbsModuleType.html)):
+
+-  [Itinerary](itinerary.md): this service will compute optimal route between two or several points and compute itineraries from/to user location (`ISELbsModuleTypeItinerary`).
+- [Geofencing](geofencing.md): this service can detect when user location has crossed a specific region boundaries (enter or exit) and when it stays in the area (`ISELbsModuleTypeGeofencing`).
+
+To access a specific service, you will need to call the [`getLbsModule`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html#//api/name/getLbsModule:) method from the location provider:
+
+```objective-c
+// Get Itinerary module
+ISItineraryProvider *itineraryProvider = (ISItineraryProvider *)[[ISLocationProvider sharedInstance] getLbsModule:ISELbsModuleTypeItinerary];
+
+// Get Geofencing module
+ISGeofenceProvider *geofenceProvider = (ISGeofenceProvider *)[[ISLocationProvider sharedInstance] getLbsModule:ISELbsModuleTypeGeofencing];
+```
+
+
+## Where To Go From Here?
+
+- Map rendering:
+	- [Display your first map](map.md).
+	- [Add graphical objects on map](map.md#2-add-graphical-objects-on-map)
+- Location:
+	- [Setup your first geofencing zone](geofence.md).
+	- [Configure your iBeacons](beacon.md).
+	- [Room counting with iBeacons](room_counting.md).
+- Itinerary:
+	- [Compute your first itinerary](itinerary.md).
+- Analytics tracking events:
+	- [Track Custom Events](analytics.md).

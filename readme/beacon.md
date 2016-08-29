@@ -1,111 +1,117 @@
-## Beacons
+# Beacons detection
 
-> **Don't forget to create your regions on the back office** If you intend to use this service you have to make sure that your beacon regions have been properly created on the back office.
+## Requirements
 
-> **Only supported on iOS 7.0 or higher** This service is only supported in iOS 7.0 or higher.
+- **Don't forget to create your regions on the back office** If you intend to use this service you have to make sure that your beacon regions have been properly created on the back office.
 
-> **iOS 8 and above compatibility** In order to be fully compatible with iOS 8 and above, you will need to add the `NSLocationWhenInUseUsageDescription` key and the `NSLocationAlwaysUsageDescription` in your `.plist`. You can leave the corresponding value empty or specify a custom message that will be displayed the first time the SDK will ask to use the location service.
+- **Only supported on iOS 7.0 or higher** This service is only supported in iOS 7.0 or higher.
 
-> **Prerequisites**
-- The API has to be initialized at least once to retrieve your back office configuration.
+- **iOS 8 and above compatibility** In order to be fully compatible with iOS 8 and above, you will need to add the `NSLocationAlwaysUsageDescription` in your `.plist`. You can leave the corresponding value empty or specify a custom message that will be displayed the first time the SDK will ask to use the location service.
+- Successful SDK initialization and Site started (see [Getting Started Guide](../README.md)).
 
-### Start beacon regions management
 
-In order to start the beacon regions management, you need to start the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html) singleton with the [`startWithDelegate`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html#//api/name/startWithDelegate:) method. We highly recommend to start the provider in the `application:didFinishLaunchingWithOptions:` method of your `AppDelegate` in order to be started when the application is launched.
+## 1. Start Beacon Regions Detection
 
-In order to use our the beacon regions management, you will need to start the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html) singleton. To be notified on region entry, exit, etc. you have to pass a [`ISBeaconDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html)
+In order to start beacon regions detection, you will need to work with the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISBeaconProvider.html) class and call the start methode as soon as possible to be awaken and let the SDK the possibility to execute default behaviors in background.
 
-```objectivec++
+> **Note:** We highly recommend to start the provider in the `application:didFinishLaunchingWithOptions:` method of your `AppDelegate` in order to be started when the application is launched.
+
+```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    ...
-    //Start the beacon provider and set the ISBeaconDelegate (your AppDelegate for example)
+    // Start Beacon management
     [[ISBeaconProvider sharedInstance] startWithDelegate:self];
-    ...
 }
 ```
 
-> **Note:** A beacon region is represented by the [`ISBeaconRegion`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconRegion.html) object and a physical beacon device is represented by the [`ISBeacon`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeacon.html) object. The regions will be created according to your back office configuration.
+To be notified on region entry, on region exit, when a region is ranging beacons or if a specific beacon proximity (immediate/near/far) has been detected, you can set a [`ISBeaconDelegate`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISBeaconDelegate.html) when you start the provider or set it later through its [delegate](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISBeaconProvider.html#//api/name/delegate) property.
 
-### Beacon region notifications
+> **Note:** Beacon regions are represented by the [`ISBeaconRegion`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISBeaconRegion.html) class and physical beacons by the [`ISBeacon`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISBeaconRegion.html) class.
+ 
+### Get ranged beacons for a region
 
-The [`ISBeaconDelegate`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html) protocol provides a couple of callback methods to be notified when a user enters or exits an [`ISBeaconRegion`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconRegion.html) or if an [`ISBeacon`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeacon.html) has reached its beacon region `proximity`, according to your back office configuration.
+When a user enters in a beacon region, the beacon provider starts ranging beacons for that specific region. In order to retrieve beacons ranging information, you should implement the [`rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISBeaconDelegate.html#//api/name/rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:) method, which provides all ranged beacons (created on the back office or unknown but detected by the OS), and all beacons which have reached the `proximity` of the beacon region.
 
-### Notifications on Entry and Exit
 
-The [`onEnterBeaconRegion:`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html#//api/name/onEnterBeaconRegion:) and the [`onExitBeaconRegion:`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html#//api/name/onExitBeaconRegion:) methods are called when a user enters or exits a specific beacon region (those two methods are required when implemeting the protocol).
+### Stop beacon management
 
-You could also implement two optionnal methods: [`onEnterBeacon:forRegion:`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html#//api/name/onEnterBeacon:forRegion:) and [`onExitBeacon:forRegion:`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html#//api/name/onExitBeacon:forRegion:) to be notified when a beacon has reached its beacon region `proximity` (enter) or when the beacon proximity does not match anymore (exit).
+Simply call the `ISBeaconProvider` stop method:
 
-### Customize a Beacon Region Entry
+```objective-c
+// Stop Beacon management
+[[ISBeaconProvider sharedInstance] stop];
+```
 
-> **Note:** The notification will be presented only if the message field is not empty on the back office.
+> **Warning:** Stopping the beacon provider will stop all beacon regions detection and your application **will not be waken in background**, unless you call the start method again.
 
-By defaut, on beacon region entry, the SDK presents a `UILocalNotification` displaying the beacon region [`message`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconRegion.html#//api/name/message) and store all its information in a `NSDictionary` into the `notification.userInfo` which could be retrieved using the `ISBeaconRegionKeys` specific key.
+## 2. Present a Notification on Region Entry
 
-To retrieve a specific beacon region information from the `NSDictionary` when user swipe the presented notification on screen, you could use the specific keys defined in the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html), in the `application:didReceiveLocalNotification:`:
+By default, if the message property a region exists and is not empty, a `UILocalNotification` will be presented to the user on region entry.
 
-```objectivec++
+All region information will be stored into a `NSDictionary` using `ISBeaconRegionKeys` and set in the `userInfo` of the local notification (this can be useful to retrieve dynamically which region had send the notification and which message was displayed for example):
+
+```objective-c
+// User has clicked or swipped the notification
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    //Get entered beacon region information
-    NSDictionary * beaconRegionsKeys = [notification.userInfo objectForKey:ISBeaconRegionKeys];
-    //Then retrieve desired information using other specific keys provided by the ISBeaconProvider
-    //(ex: ISBeaconRegionUUIDKey, ISBeaconRegionMajorKey, ISBeaconRegionMinorKey, etc.)
+    // Get beacon region information
+    NSDictionary *beaconRegionsKeys = [notification.userInfo objectForKey:ISBeaconRegionKeys];
+    if (beaconRegionsKeys) {
+    	// Then retrieve desired information using other specific keys provided by the ISBeaconProvider
+    	// (ex: ISBeaconRegionUUIDKey, ISBeaconRegionMajorKey, ISBeaconRegionMinorKey, etc.)
+    }
 }
 ```
 
-You could override the presentation of the `UILocalNotification` or only tell the SDK to display nothing, by implementing the [`shouldPresentLocalNotificationOnBeaconRegionEntry:`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html#//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:) method.
+You can override the presentation of the `UILocalNotification` or tell the beacon provider to not send the notification by implementing the [`shouldPresentLocalNotificationOnBeaconRegionEntry:`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISBeaconDelegate.html#//api/name/shouldPresentLocalNotificationOnBeaconRegionEntry:) method.
 
-To disable the `UILocalNotification` presentation for all beacon regions just `return NO`. Then, if you only want to disable the notification for a specific region, `return NO` for that one, and `return YES` for the others. Finally, if you want to display by yourself the notification, implement your code then `return NO`:
+To disable the `UILocalNotification` presentation for all beacon regions just return `NO`. Then, if you only want to disable the notification for a specific region, return `NO` for that specific one and `YES` for the others. Finally, if you want to display by yourself the notification, implement your code then return `NO`:
 
-```objectivec++
+```objective-c
 - (BOOL)shouldPresentLocalNotificationOnBeaconRegionEntry:(ISBeaconRegion *)beaconRegion {
-    //First case, disable notification for each Beacon Region
+    // First case, disable notification for each Beacon Region
     return NO;
 
-    //Second case, only disable for a specific Beacon Region (ex: customId == @"no-notif")
+    // Second case, only disable for a specific Beacon Region (ex: customId == @"no-notif")
     if ([beaconRegion.customId isEqualToString:@"no-notif"]) {
         return NO;
     } else {
         return YES;
     }
 
-    //Third case, disable notification and present a UILocalNotification on your own
-    UILocalNotification * notification = [[UILocalNotification alloc] init];
-    notification.alertBody = [NSString stringWithFormat:@"%@", beaconRegion.customId];
-    notification.soundName = UILocalNotificationDefaultSoundName;
+    // Third case, disable notification and present a UILocalNotification on your own
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = @"My custom message";
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 
     return NO;
 }
 ```
 
-Finally, you could specify a delay to schedule the default notification on region entry (which will be cancelled on region exit) using the Custom field in the Back Office. The field should be a JSON string like : `{"delay": <delay_in_seconds>}`.
+### Delayed the notification presentation on entry
 
-### Get ranged beacons for an entered beacon region
+You can specify a delay to schedule the default notification on region entry (which will be cancelled on region exit) using the `Custom` field on the back office. The field should be a valid `JSON string` like: `{"delay": 15}` (present notification after 15 seconds).
 
-When a user enters in a beacon region, the beacon provider starts ranging beacons for that specific region. In order to retrieve beacons ranging information, you should implement the [`rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:`](http://dev.insiteo.com/api/doc/ios/Protocols/ISBeaconDelegate.html#//api/name/rangedBeacons:andReachedProximityBeacons:inRegion:andUnknownCLBeacons:withError:) method, which provides all ranged beacons (created on the back office or unknown but detected by the OS), and all beacons which have reached the `proximity` of the beacon region.
 
-### Check for beacons configuration update
+## 3. Update Beacon Configuration Periodically
 
-As your beacon regions may have changed since your application was killed, the [`ISBeaconProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISBeaconProvider.html) will automatically check on the back office, if the region is always available or if its notification message has changed, before any notification on region entry.
+As your beacon regions may have changed since your application was killed, the beacon provider will automatically check on the back office, if the region is always available or if its notification message has changed, before sending the notification on region entry.
 
 > **Note:** If data network connections are not available, the last known configuration will be used.
 
-If you attempt to force an API initialization on application wake up, you could for example implements the code snippet below into your `AppDelegate`:
+If you attempt to force SDK initialization on application wake up, you could for example implements the code snippet below into your `AppDelegate`:
 
-```objectivec++
+```objective-c
 #define kTimeToReinit 3600 //ex: every 1 hour, beacon regions are updated on the back office
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     ...
-    //Check if user is authenticated
+    // Check if user is authenticated
     if ([[Insiteo sharedInstance] isAuthenticated]) {
-        //Get last API initialization date
-        NSDate * lastInit = [Insiteo currentUser].lastInitializationDate;
-        //Check the interval between now
+        // Get last API initialization date
+        NSDate *lastInit = [Insiteo currentUser].lastInitializationDate;
+        // Check the interval between now
         double interval = [[NSDate date] timeIntervalSinceDate:lastInit];
         if (interval > kTimeToReinit) {
-            //Reinit the API, using the previous configuration
+            // Reinit the API, using the previous configuration
             [[Insiteo sharedInstance] initializeWithInitializeHandler:nil
                                                  andChooseSiteHandler:nil];
         }
@@ -114,14 +120,17 @@ If you attempt to force an API initialization on application wake up, you could 
 }
 ```
 
-## Where to go from there?
 
-- [Compute your first itinerary](itinerary.md).
-- [Setup your first geofencing zone](geofence.md).
-- [Enable analytics](analytics.md).
+## Where To Go From Here?
 
-## You missed a thing?
-
-- [Project setup](../README.md).
-- [Display your first map](map.md).
-- [Get your first location](location.md).
+- Map rendering:
+	- [Display your first map](map.md).
+	- [Add graphical objects on map](map.md#2-add-graphical-objects-on-map)
+- Location:
+	- [Get your first location](location.md).
+	- [Setup your first geofencing zone](geofence.md).
+	- [Room counting with iBeacons](room_counting.md).
+- Itinerary:
+	- [Compute your first itinerary](itinerary.md).
+- Analytics tracking events:
+	- [Track Custom Events](analytics.md).

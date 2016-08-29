@@ -1,116 +1,155 @@
-## Geofencing
+# Geofencing
 
-> **Packages dependencies** If you intend to use the this service you have to make sure that the `geofencing` package have been properly downloaded. You can easily check if the package is available on the device with the following method: `[[Insiteo currentSite] hasPackage:ISEPackageTypeGeofencing]`.
+## Requirements
 
-### Start the Geofencing module
+- Successful SDK initialization and Site started (see [Getting Started Guide](../README.md)).
+- **Packages dependencies**: you need to have downloaded and installed the following packages:
+	- `ISEPackageTypeLocation` because geofencing is based on user location (see [Location Guide](location.md)).
+	- `ISEPackageTypeGeofencing` which contains areas definitions and other required data.
 
-To start the `Geofencing` module, simply do like so:
+> **Reminder:** To check if a package is available for the current site, just call `[[Insiteo currentSite] hasPackage:My-PACKAGE-TYPE]`.
 
-```objectivec++
-//Get the geofencing module from the location provider
-ISGeofenceProvider * geofenceProvider = [m_locationProvider getLbsModule:ISEPackageTypeGeofencing];
+## 1. Start Geofencing module
+
+By default, the geofencing module is created inside the [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html) but is not running. To start the module, you will need to get the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISGeofenceProvider.html) instance and set a [`ISGeofenceDelegate`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISGeofenceDelegate.html) to be notified when user enters/stay/leaves a specific geofence area:
+
+```objective-c
+// Get the geofencing module from location provider
+ISGeofenceProvider *geofenceProvider = (ISGeofenceProvider *)[[ISLocationProvider sharedInstance] getLbsModule:ISELbsModuleTypeGeofencing];
     
-//"Start" geofencing
-[geofenceProvider setdelegate:delegate];
+// "Start" by adding a delegate
+[geofenceProvider setDelegate:aDelegate];
 ```
 
-### Understand geonotifications
+### Geofence areas detection
 
-After starting the module, your delegate will be notified with 3 arrays of [`ISGeoFenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html).
+After starting the module, your class implementing the `ISGeofenceDelegate` protocol will be notified with 3 arrays of [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISGeofenceArea.html) objects which are represented by a center and a polygon.
 
-- The first one contains all zones the user just entered.
-- The second one contains all zones where the user still is and has spent a certain time.
-- The third one contains all zones the user just left.
+- the first one contains all zones the user has just entered,
+- the second one contains all zones where the user is still inside and has spent a specific time,
+- the third one contains all zones the user has just left.
 
-```objectivec++
-//Method alled when geofencing module has new data available
-- (void)onGeofenceDataUpdateWithEnteredAreas:(NSArray *)enteredAreas andStayedAreas:(NSArray *)stayedAreas andLeftAreas:(NSArray *)leftAreas {
-    //Entered areas
-  for (ISGeofenceArea * geoArea in enteredAreas) {
-        NSLog(@"User entered area %@", geoArea.GUID);
+```objective-c
+// Called when geofencing module has new data available
+- (void)onGeofenceDataUpdateWithEnteredAreas:(NSArray *)enteredAreas
+                              andStayedAreas:(NSArray *)stayedAreas
+                                andLeftAreas:(NSArray *)leftAreas {
+    // Entered areas
+    for (ISGeofenceArea *area in enteredAreas) {
+        NSLog(@"User entered area %@", area.guid);
     }
-
-    //Stayed areas
-    for (ISGeofenceArea * geoArea in stayedAreas) {
-        NSLog(@"User still is in area %@", geoArea.GUID);
+    
+    // Stayed areas
+    for (ISGeofenceArea *area in stayedAreas) {
+        NSLog(@"User still is in area %@", area.guid);
     }
-
-    //Left areas
-    for (ISGeofenceArea * geoArea in leftAreas) {
-        NSLog(@"User has left area %@", geoArea.GUID);
+    
+    // Left areas
+    for (ISGeofenceArea *area in leftAreas) {
+        NSLog(@"User has left area %@", area.guid);
     }
 }
 ```
 
-### Dynamic geofencing
+### Add and remove geofence areas programmatically
 
-In the last version of our API, geopush content can be added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html) directly from your application in addition to the one fetched from the server. This enables, for example, your content to be more accurate to a specific user's behaviour or using context.
+Geofence areas can be added to the `ISGeofenceProvider` directly from your application in addition to the  fetched ones from the server. For example, it enables your content to be more accurate to a specific user's behaviour or a specific context. 
 
-- The created [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html)'s polygon will be based on the specific [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html) parameters that have to be provided in the back office.
-- If the [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) parameters (ie width, enteredTime, enteredEnabled...) are not set they will be fetched from the configuration file. This configuration file defines those parameters by [`ISMap`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMap.html) and not by [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html).
-- If the creation succeeded the [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) will be automatically added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html).
+Created geofence areas will depend on zones configuration (back-end) by default or specified parameters during creation (polygon width, time to consider a stay, an entry or exit, label, message, etc.). 
 
-#### Adding content to a specific zone or for a specific zone/poi association
+#### Add a geofence area near a zone or a POI
 
-To add a geopush content to a specific [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZone.html) or [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISZonePoi.html), you can use the methods shown below.
-
-A polygon based on the ISZone parameters and the provided [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) width will be created and this [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) will be automatically added to the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html).
-
-```objectivec++
-//For a ISZone
+A geofence area can be associated to a [`ISZone`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISZone.html) (the polygon will be created at the front of the zone according to its size) or [`ISZonePoi`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISZonePoi.html) (the polygon will be centered and created with a size).
+ 
+```objective-c
+// Associated to a zone (ISZone)
+// Using default configuration for the polygon
 - (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andLabel:(NSString *)label andMessage:(NSString *)message;
 
-- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message;
-...
+// Custom polygon
+- (ISGeofenceArea *)addGeofenceAreaWithZoneId:(int)zoneId
+                                   andPolygon:(NSMutableArray *)polygon
+                                     andLabel:(NSString *)label
+                                   andMessage:(NSString *)message;
 
-//For a ISZonePoi association
-- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andLabel:(NSString *)label andMessage:(NSString *)message;
+// Associated to a POI (ISZonePoi)
+- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi
+                                      andLabel:(NSString *)label
+                                    andMessage:(NSString *)message;
 
-- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi andPolygon:(NSMutableArray *)polygon andLabel:(NSString *)label andMessage:(NSString *)message;
-...
+- (ISGeofenceArea *)addGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi
+                                    andPolygon:(NSMutableArray *)polygon
+                                      andLabel:(NSString *)label
+                                    andMessage:(NSString *)message;
 ```
 
-#### Adding content for a given position
+#### Add a geofence area at a specific position
 
-To add a geopush content at a specific [`ISPosition`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISPosition.html), you can use the methods shown below.
+It is possible to add a geofence area at a specific [`ISPosition`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISPosition.html), you can use the methods shown below. A square of size on the given parameter (or by default 4 time the size defined in the configuration file) and center on the given position will be created.
 
-A square of size on the given parameter (or by default 4 time the size defined in the configuration file) and center on the given position will be created.
+```objective-c
+// Use default time configuration
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid
+                                  andCenter:(ISPosition *)center
+                                   andLabel:(NSString *)label
+                                 andMessage:(NSString *)message;
 
-```objectivec++
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message;
-
-- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid andCenter:(ISPosition *)center andLabel:(NSString *)label andMessage:(NSString *)message andEventTime:(float)eventTime;
-...
+// Specify time for entry/exit and stay events
+- (ISGeofenceArea *)addGeofenceAreaWithGUID:(NSString *)guid
+                                  andCenter:(ISPosition *)center
+                                   andLabel:(NSString *)label
+                                 andMessage:(NSString *)message
+                               andEventTime:(float)eventTime;
 ```
 
-#### Removing a dynamic geofence area
+#### Remove a geofence area
 
-To remove a [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) from the [`ISGeofenceProvider`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceProvider.html) call the appropriate remove method based on how it was added.
+To remove a `ISGeofenceArea` from the geofence provider, just call the appropriate remove method based on how it was added.
 
-```objectivec++
+```objective-c
+// If the area was added with a unique identifier
 - (void)removeGeofenceAreaWithGuid:(NSString *)guid;
 
+// If the area was associated to a specific zone identifier
 - (void)removeGeofenceAreaWithZoneId:(int)zoneId;
 
+// If the area was associated to a POI
 - (void)removeGeofenceAreaWithZonePoi:(ISZonePoi *)zonePoi;
 
+// Or using directly the area to remove
 - (void)removeGeofenceAreaWithArea:(ISGeofenceArea *)area;
 ```
 
-### Geofencing rendering
+## 2. Geofencing rendering
 
-You can now view your [`ISGeofenceArea`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISGeofenceArea.html) on your [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html). Like all other LBS services, you will have to retrieve its [`ISRenderer`](http://dev.insiteo.com/api/doc/ios/Protocols/ISRenderer.html) and pass it to the [`ISMapView`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISMapView.html). All the geofencing zone will be displayed ie the one define on the back office that one created dynamically.
+Such as [location rendering](location.md#2-user-location-rendering) or [itinerary rendering](itinerary.md#2-itineraries-rendering), geofence areas can be rendered on your map view (essentially for debug). You have to retrieve the specific `ISRenderer` from the geofence provider and add it manually on the map view to see your areas. By default, the [`ISGeofenceAreaRenderer`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISGeofenceRenderer.html) will draw geofence areas polygon in red and it cannot be customized for the moment.
+
+```objective-c
+// Get the geofencing module from location provider
+ISGeofenceProvider *geofenceProvider = (ISGeofenceProvider *)[[ISLocationProvider sharedInstance] getLbsModule:ISELbsModuleTypeGeofencing];
+// Get geofence areas renderer
+ISGeofenceAreaRenderer *geofenceAreaRenderer = geofenceProvider.renderer;
+// Add it to the map view
+[self.mapView addRenderer:geofenceAreaRenderer];
+```
+
+Here is how geofence areas can looks like on your map view:
+
+![alt tag](assets/geofencing-default-rendering.png)
 
 > **Note:** 3D rendering is not available for this module.
 
-## Where to go from there?
 
-- [Enable analytics](analytics.md).
+## Where To Go From Here?
 
-## You missed a thing?
-
-- [Project setup](../README.md).
-- [Display your first map](map.md).
-- [Get your first location](location.md).
-- [Configure your iBeacons](beacon.md).
-- [Compute your first itinerary](itinerary.md).
+- Map rendering:
+	- [Display your first map](map.md).
+	- [Add graphical objects on map](map.md#2-add-graphical-objects-on-map)
+- Location:
+	- [Get your first location](location.md).
+	- [Configure your iBeacons](beacon.md).
+	- [Room counting with iBeacons](room_counting.md).
+- Itinerary:
+	- [Compute your first itinerary](itinerary.md).
+- Analytics tracking events:
+	- [Track Custom Events](analytics.md).

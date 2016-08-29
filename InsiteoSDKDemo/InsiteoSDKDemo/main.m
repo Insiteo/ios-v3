@@ -2,8 +2,7 @@
 //  main.m
 //  InsiteoSDKDemo
 //
-//  Created by Lionel on 03/04/2015.
-//  Copyright (c) 2015 Insiteo. All rights reserved.
+//  Copyright (c) 2015-present Insiteo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

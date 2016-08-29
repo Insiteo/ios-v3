@@ -1,83 +1,176 @@
-## Itinerary
+# Itinerary
 
-> **Packages dependencies** If you intend to use the this service you have to make sure that the `itinerary` package have been properly downloaded. You can easily check if the package is available on the device with the following method: `[[Insiteo currentSite] hasPackage:ISEPackageTypeItinerary]`.
+## Requirements
 
-### Enable itinerary rendering
+- Successful SDK initialization and Site started (see [Getting Started Guide](../README.md)).
+- **Packages dependencies**: you need to have downloaded and installed the following packages:
+	- `ISEPackageTypeItinerary` package, which contains all itinerary required data.
+	- Optional: if you attempt to use itinerary with user location, you will need to have installed the `ISEPackageTypeLocation` package and have started properly user location detection (see [Location Guide](location.md)).
 
-To use location-based services, such as `Itinerary` or `GeoFencing` you have to get the module from the location provider. If you want it to be displayed on an INSITEO map, do as below:
+> **Reminder:** To check if a package is available for the current site, just call `[[Insiteo currentSite] hasPackage:My-PACKAGE-TYPE]`.
 
-```objectivec++
-//Get the itinerary provider
-ISGfxItineraryProvider * itineraryProvider = (ISGfxItineraryProvider *)[locProvider getLbsModule:ISEPackageTypeItinerary];
 
-//Get itinerary renderer linked to provider
-ISItineraryRenderer * itineraryRenderer = [itineraryProvider renderer];
+## 1. Compute Itineraries
 
-//Register for itinerary rendering user interaction (such as clicks).
-[itineraryRenderer setDelegate:Delegate];
+In order to compute itineraries, you will have to work with the [`ISItineraryProvider`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryProvider.html) main class.
 
-//Add renderer so itinerary is displayed on map
-[mapView addRenderer:itineraryRenderer];
+To access itinerary provider singleton, you have to get the instance from Insiteo location provider [`ISLocationProvider`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html) singleton and use the [`getLbsModule:`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISLocationProvider.html#//api/name/getLbsModule:) method:
+
+```objective-c
+// Get itinerary provider from Insiteo location singleton
+ISItineraryProvider *itineraryProvider = (ISItineraryProvider *)[[ISLocationProvider sharedInstance] getLbsModule:ISELbsModuleTypeItinerary];
 ```
 
-### Request an itinerary between two points
+The itinerary provider class has a couple of methods to compute itineraries between two or multiple points, from user location etc. An itinerary request is represented by the [`ISItineraryBaseRequest`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryBaseRequest.html) class which contains itinerary request information and let you the possibility to cancel or recompute.
 
-To compute an itinerary between two points, simply do like this:
+To handle itineraries computation success (or failure) and recomputation, you can set a [`ISItineraryRequestDelegate`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISItineraryRequestDelegate.html) to the provider and implements required callbacks.
 
-```objectivec++
-//Request an itinerary between two points (A on map "1", the other on map "2")
-ISItineraryRequest * request = [itineraryProvider requestItineraryWithStartPoint:CGPointMake(50, 50) andStartMapId:1 andEndPoint:CGPointMake(200, 100) andEndMapId:2 andDelegate:itineraryDelegate andPMR:NO];
+
+#### Request an itinerary between two points
+
+To compute an itinerary between two Insiteo positions (see [`ISPosition`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISPosition.html), x, y and map identifier), simply do like this:
+
+```objective-c
+// p1 is on map with id 1
+ISPosition *p1 = [ISPosition ISPositionWithX:200 andY:100 andMapId:1];
+// p2 is on map with id 2
+ISPosition *p2 = [ISPosition ISPositionWithX:50 andY:20 andMapId:2];
+// Compute an itinerary between two points (with or without PMR paths)
+ISItineraryRequest *request = [itineraryProvider requestItineraryWithStartPoint:p1.coordinates
+                                                                  andStartMapId:p1.mapId
+                                                                    andEndPoint:p2.coordinates
+                                                                    andEndMapId:p2.mapId
+                                                                    andDelegate:self
+                                                                         andPMR:NO]; // Disabled people
 ```
 
-> **Note:** An [`ISItineraryRequest`](http://dev.insiteo.com/api/doc/ios/3.4/Classes/ISItineraryRequest.html) is returned in order to identify sender through callbacks.
+The result is a [`ISItineraryRequest`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRequest.html) object.
 
-### Request an itinerary from user location
 
-To compute an itinerary from the user location, please do like this:
+#### Request an optimized route between several points
 
-```objectivec++
-//Request an itinerary from the user location to a point A
-ISItineraryRequest * request = [itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:CGPointMake(200, 100) andEndMapId:2 andDelegate:itineraryDelegate andPMR:NO];
+If you want to compute an optimized route between several points, you need to:
+
+- select a computation mode (see [`ISEOptimizationMode `](http://dev.insiteo.com/api/doc/ios/3.5/Constants/ISEOptimizationMode.html)), 
+- an array of Insiteo positions (see [`ISPosition`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISPosition.html), x, y and map identifier),
+- define if you want to keep the first inserted position at the same place during computation (basically the departure),
+- define if you want to keep the last inserted position at the same place during computation (basically the arrival).
+
+```objective-c
+// Random points
+ISPosition *p1 = [ISPosition ISPositionWithX:50 andY:20 andMapId:1]; // Departure
+ISPosition *p2 = [ISPosition ISPositionWithX:10 andY:33 andMapId:1];
+ISPosition *p3 = [ISPosition ISPositionWithX:6 andY:110 andMapId:2];
+ISPosition *p4 = [ISPosition ISPositionWithX:41 andY:23 andMapId:3];
+ISPosition *p5 = [ISPosition ISPositionWithX:18 andY:12 andMapId:1]; // No I don't want to use as arrival
+
+// Compute
+ISItineraryOptimizedRequest *request = [itineraryProvider requestOptimizedItineraryWithWaypoints:@[ p1, p2, p3, p4, p5 ]
+                                                                                    andOptimMode:ISEOptimizationModeNearestNeighbourShortestPath
+                                                                            andKeepFirstPosition:YES
+                                                                             andKeepLastPosition:NO
+                                                                                     andDelegate:self
+                                                                                          andPMR:NO];
+
 ```
 
-### Request an optimized route
+The result is a [`ISItineraryOptimizedRequest`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryOptimizedRequest.html) object.
 
-If you want to compute an optimized route between several points, you can proceed as follow:
+> **Note:** There are multiple optimization modes available but we **highly recommend** to keep `ISEOptimizationModeNearestNeighbourShortestPath` as the default one.
 
-```objectivec++
-//Request an optimized route between several waypoints (an ISItineraryOptimizedRequest is returned)
-ISItineraryOptimizedRequest * optimizedRequest = [itineraryProvider requestOptimizedItineraryWithWaypoints:waypoints andOptimMode:ISEOptimizationModeNearestNeighbourShortestPath andKeepFirstPosition:YES andKeepLastPosition:NO andDelegate:itineraryDelegate andPMR:NO];
+
+#### Request an itinerary from user location
+
+To compute an itinerary from the user location, you need to have location available for your current site, and have started the location provider (see [Location Guide](location.md)).
+
+```objective-c
+// Arrival point on map id 2
+CGPoint arrival = CGPointMake(200, 100);
+// Request an itinerary from user location
+ISItineraryRequest *request = [itineraryProvider requestItineraryFromCurrentLocationWithEndPoint:arrival
+                                                                                     andEndMapId:2
+                                                                                     andDelegate:itineraryDelegate
+                                                                                          andPMR:NO];
 ```
 
-> **Note:** You can specify if you want to keep the first position, last position, or both.
+The result is a [`ISItineraryRequest`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRequest.html) object.
 
-> **Note:** There are multiple optimization modes available but we highly recommend to keep `ISEOptimizationModeNearestNeighbourShortestPath` as the default one.
 
-### Recomputation
+#### Itinerary recomputation according to user location
 
-When using the itinerary service along with the location you can refresh the route according to the user's position in the following way:
+When you ask for an itinerary request depending on user location, you are able to refresh according to a specific distance between the last computed route and current user location using `ISItineraryRequestDelegate` [`onItineraryChangedWithRequest:andDistanceToItinerary:`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISItineraryRequestDelegate.html#//api/name/onItineraryChangedWithRequest:andDistanceToItinerary:) callback:
 
-```objectivec++
-//Method called when the user position changed
+```objective-c
+// We usually recommand to use 10 meters for recomputation
+#define kRecomputationDistance 10
+
 - (void)onItineraryChangedWithRequest:(ISItineraryBaseRequest *)request andDistanceToItinerary:(float)distanceToItinerary {
-    //You can check if the distance between the user location and the computed itineray needs a recomputation
-    if (distanceToItinerary > MAX_RECOMPUTATION_DISTANCE) {
-        //Recompute the itinerary
+	// You can filter itinerary request according to its class
+	if ([request isKindOfClass:[ISItineraryOptimizedRequest class]]) {
+		// Ex: I used my location as departure, but I only want to have a route once and I 
+		// don't want to recompute each time.
+		return;
+	}
+	
+    // Compare the distance between user location to itinerary and your constant value
+    if (distanceToItinerary >= kRecomputationDistance) { 
+		// It is a simple itinerary with my location, I want to recompute
         [request recompute];
     }
 }
 ```
+> **Note:** As a best practise, we do **not recommand** to call `recompute` too often. According to the number of waypoints, the complexity of your map and paths itinerary computation can take several seconds to get a result.
 
-> **Note:** We usually use `10.0` meters as `MAX_RECOMPUTATION_DISTANCE`.
 
-## Where to go from there?
+## 2. Itineraries Rendering
 
-- [Setup your first geofencing zone](geofence.md).
-- [Enable analytics](analytics.md).
+> **Note:** See our [Map View rendering guide](map.md) for more details about map and objects rendering.
 
-## You missed a thing?
+Like custom graphical objects, itineraries are rendered through a special `ISRenderer` class that should be added on your map view in order to draw paths and waypoints. The [`ISItineraryRenderer`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html) class manages itinerary rendering and allows you to customize colors and shapes of the waypoints and paths. By default, the renderer is created and is a [property](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryProvider.html#//api/name/renderer) of the itinerary provider but is not added to the map view. You must add it manually to enable itineraries rendering:
 
-- [Project setup](../README.md).
-- [Display your first map](map.md).
-- [Get your first location](location.md).
-- [Configure your iBeacons](beacon.md).
+```objective-c
+// Get the itinerary provider
+ISItineraryProvider *itineraryProvider = (ISItineraryProvider *)[[ISLocationProvider sharedInstance] getLbsModule:ISELbsModuleTypeItinerary];
+// Get itinerary renderer
+ISItineraryRenderer *itineraryRenderer = itineraryProvider.renderer;
+// Add it to the map view
+[self.mapView addRenderer:itineraryRender];
+```
+
+You can handle itinerary graphical objects touch events on waypoints, instruction path or map switcher clicked by adding a [`ISItineraryRenderDelegate`](http://dev.insiteo.com/api/doc/ios/3.5/Protocols/ISItineraryRenderDelegate.html) to the renderer.
+
+#### Customize itineraries
+
+By default, itineraries looks like:
+
+![alt tag](assets/itinerary-default-rendering.png)
+
+You have the possibility to customize paths thickness and colors, choose to display or not waypoints, etc. by updating `ISItineraryRenderer` properties:
+
+- Common (both 2D/3D):
+	- Path color: use [`frontFillColor`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/frontFillColor),
+	- Path thickness: use [`frontStrokeThickness`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/frontStrokeThickness),
+- 2D only:
+	- Background path color: use [`backFillColor`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/backFillColor),
+	- Background path thickness: use [`backStrokeThickness`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/backStrokeThickness),
+	- Hide waypoints pictures: set [`onlyPath`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/onlyPath) to `YES` (`NO` by default),
+	- Display itinerary instantaneously: set [`progressiveDrawing`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/progressiveDrawing) to `NO` (`YES` by default).
+	- Path color according to user location: use [`selectedFillColor`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/selectedFillColor) (defaut is set to gray color).
+- 3D only:
+	- Change waypoints color (they cannot be hidden yet): use [`defaultWaypointColor`](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/defaultWaypointColor), [`startWaypointColor `](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/startWaypointColor), [`endWaypointColor `](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/endWaypointColor), [`entryWaypointColor `](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/entryWaypointColor) and [`mapChangerWaypointColor `](http://dev.insiteo.com/api/doc/ios/3.5/Classes/ISItineraryRenderer.html#//api/name/mapChangerWaypointColor).
+
+> **Important**: If you attempt to customize rendering, you **must do it before trying to start itineraries computation** in order for the changes to take effects. As best practices, do all customization before calling `[self.mapView startRendering]`.
+
+
+## Where To Go From Here?
+
+- Map rendering:
+	- [Display your first map](map.md).
+	- [Add graphical objects on map](map.md#2-add-graphical-objects-on-map)
+- Location:
+	- [Get your first location](location.md).
+	- [Setup your first geofencing zone](geofence.md).
+	- [Configure your iBeacons](beacon.md).
+	- [Room counting with iBeacons](room_counting.md).
+- Analytics tracking events:
+	- [Track Custom Events](analytics.md).
