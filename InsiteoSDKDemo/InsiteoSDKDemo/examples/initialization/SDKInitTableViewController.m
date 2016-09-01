@@ -250,7 +250,7 @@ typedef NS_ENUM(NSUInteger, SectionApplicationRows) {
 
 - (void)downloadPackages:(NSArray *)packages {
     if (packages) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
         hud.label.text = @"Updating";
         hud.detailsLabel.text = @"Double tap to cancel";
         
