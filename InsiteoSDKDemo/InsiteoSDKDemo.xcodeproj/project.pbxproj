@@ -19,14 +19,14 @@
 		E27E0EFD1D65BA3D00418BF0 /* SDKInitTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E0EFC1D65BA3D00418BF0 /* SDKInitTableViewController.m */; };
 		E27E0F0E1D65EC8100418BF0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E0F0D1D65EC8100418BF0 /* MapViewController.m */; };
 		E27E0F111D65FD6600418BF0 /* MyCustomRTO.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E0F101D65FD6600418BF0 /* MyCustomRTO.m */; };
-		E27E0F161D65FDDB00418BF0 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E0F121D65FDDB00418BF0 /* favorite.png */; };
-		E27E0F171D65FDDB00418BF0 /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E0F131D65FDDB00418BF0 /* favorite@2x.png */; };
-		E27E0F181D65FDDB00418BF0 /* marker-toilet.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E0F141D65FDDB00418BF0 /* marker-toilet.png */; };
-		E27E0F191D65FDDB00418BF0 /* marker-toilet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27E0F151D65FDDB00418BF0 /* marker-toilet@2x.png */; };
 		E27E0F1D1D65FF0900418BF0 /* MyCustomRTORenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E27E0F1C1D65FF0900418BF0 /* MyCustomRTORenderer.m */; };
 		E285ECA81AD524E500F89AFD /* BeaconsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E285ECA71AD524E500F89AFD /* BeaconsTableViewController.m */; };
 		E285ECB91AD5311200F89AFD /* BeaconRegionDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E285ECB81AD5311200F89AFD /* BeaconRegionDetailsTableViewController.m */; };
 		E293D8DE1AD8092800605093 /* ItineraryWaypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = E293D8DD1AD8092800605093 /* ItineraryWaypoint.m */; };
+		E2BD1FA81D7870EF00919100 /* favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BD1FA41D7870EF00919100 /* favorite.png */; };
+		E2BD1FA91D7870EF00919100 /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BD1FA51D7870EF00919100 /* favorite@2x.png */; };
+		E2BD1FAA1D7870EF00919100 /* marker-toilet.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BD1FA61D7870EF00919100 /* marker-toilet.png */; };
+		E2BD1FAB1D7870EF00919100 /* marker-toilet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2BD1FA71D7870EF00919100 /* marker-toilet@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +50,6 @@
 		E27E0F0D1D65EC8100418BF0 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = examples/map/MapViewController.m; sourceTree = "<group>"; };
 		E27E0F0F1D65FD6600418BF0 /* MyCustomRTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCustomRTO.h; path = examples/map/MyCustomRTO.h; sourceTree = "<group>"; };
 		E27E0F101D65FD6600418BF0 /* MyCustomRTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCustomRTO.m; path = examples/map/MyCustomRTO.m; sourceTree = "<group>"; };
-		E27E0F121D65FDDB00418BF0 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorite.png; path = ../../../../../../../../../Desktop/TestRTOs/favorite.png; sourceTree = "<group>"; };
-		E27E0F131D65FDDB00418BF0 /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "favorite@2x.png"; path = "../../../../../../../../../Desktop/TestRTOs/favorite@2x.png"; sourceTree = "<group>"; };
-		E27E0F141D65FDDB00418BF0 /* marker-toilet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "marker-toilet.png"; path = "../../../../../../../../../Desktop/TestRTOs/marker-toilet.png"; sourceTree = "<group>"; };
-		E27E0F151D65FDDB00418BF0 /* marker-toilet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "marker-toilet@2x.png"; path = "../../../../../../../../../Desktop/TestRTOs/marker-toilet@2x.png"; sourceTree = "<group>"; };
 		E27E0F1B1D65FF0900418BF0 /* MyCustomRTORenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCustomRTORenderer.h; path = examples/map/MyCustomRTORenderer.h; sourceTree = "<group>"; };
 		E27E0F1C1D65FF0900418BF0 /* MyCustomRTORenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCustomRTORenderer.m; path = examples/map/MyCustomRTORenderer.m; sourceTree = "<group>"; };
 		E285ECA61AD524E500F89AFD /* BeaconsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BeaconsTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -62,6 +58,10 @@
 		E285ECB81AD5311200F89AFD /* BeaconRegionDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BeaconRegionDetailsTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E293D8DC1AD8092800605093 /* ItineraryWaypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItineraryWaypoint.h; path = examples/map/ItineraryWaypoint.h; sourceTree = "<group>"; };
 		E293D8DD1AD8092800605093 /* ItineraryWaypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItineraryWaypoint.m; path = examples/map/ItineraryWaypoint.m; sourceTree = "<group>"; };
+		E2BD1FA41D7870EF00919100 /* favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = favorite.png; path = resources/images/favorite.png; sourceTree = "<group>"; };
+		E2BD1FA51D7870EF00919100 /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "favorite@2x.png"; path = "resources/images/favorite@2x.png"; sourceTree = "<group>"; };
+		E2BD1FA61D7870EF00919100 /* marker-toilet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "marker-toilet.png"; path = "resources/images/marker-toilet.png"; sourceTree = "<group>"; };
+		E2BD1FA71D7870EF00919100 /* marker-toilet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "marker-toilet@2x.png"; path = "resources/images/marker-toilet@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,12 +158,12 @@
 		E27E0F1A1D65FDE700418BF0 /* Custom RTO images */ = {
 			isa = PBXGroup;
 			children = (
+				E2BD1FA41D7870EF00919100 /* favorite.png */,
+				E2BD1FA51D7870EF00919100 /* favorite@2x.png */,
+				E2BD1FA61D7870EF00919100 /* marker-toilet.png */,
+				E2BD1FA71D7870EF00919100 /* marker-toilet@2x.png */,
 				E20AE1371D674E060063154A /* flag.png */,
 				E20AE1381D674E060063154A /* flag@2x.png */,
-				E27E0F121D65FDDB00418BF0 /* favorite.png */,
-				E27E0F131D65FDDB00418BF0 /* favorite@2x.png */,
-				E27E0F141D65FDDB00418BF0 /* marker-toilet.png */,
-				E27E0F151D65FDDB00418BF0 /* marker-toilet@2x.png */,
 			);
 			name = "Custom RTO images";
 			sourceTree = "<group>";
@@ -252,12 +252,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E27E0F191D65FDDB00418BF0 /* marker-toilet@2x.png in Resources */,
-				E27E0F171D65FDDB00418BF0 /* favorite@2x.png in Resources */,
 				E20AE13A1D674E060063154A /* flag@2x.png in Resources */,
-				E27E0F161D65FDDB00418BF0 /* favorite.png in Resources */,
-				E27E0F181D65FDDB00418BF0 /* marker-toilet.png in Resources */,
+				E2BD1FAB1D7870EF00919100 /* marker-toilet@2x.png in Resources */,
+				E2BD1FA91D7870EF00919100 /* favorite@2x.png in Resources */,
+				E2BD1FA81D7870EF00919100 /* favorite.png in Resources */,
 				E20AE1391D674E060063154A /* flag.png in Resources */,
+				E2BD1FAA1D7870EF00919100 /* marker-toilet.png in Resources */,
 				E27E0EFA1D65B75700418BF0 /* Main.storyboard in Resources */,
 				E259AE4B1BB9717000CE0F52 /* LaunchScreen.xib in Resources */,
 				E26D3C7B1ACEC88400B51DEF /* Images.xcassets in Resources */,
