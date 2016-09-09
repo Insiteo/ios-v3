@@ -43,6 +43,8 @@ The best way to report background location data through Insiteo SDK is to initia
 
 - 3. According to `launchOptions` you can either choose to initialize the SDK locally or remotely:
 
+> We **highly recommend** to **NOT start** the SDK when room counting in background is enable to avoid downloading/installing package automatically each time your application is awaken.
+
 ```objective-c
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,17 +62,22 @@ The best way to report background location data through Insiteo SDK is to initia
     }
     
     if (!localInit) {   
-    	// If local init failed, try the standard way (remotely)
+    	// If local init failed, you can try the standard way (remotely)
         [[Insiteo sharedInstance] initializeWithInitializeHandler:^(ISError *error, ISUserSite *suggestedSite, Boolean fromLocalCache) {
             if (error) {
                 // Init error...
             } else {
-				// Init succeed, do you stuff !
+				// Init succeed !
             }
         } andChooseSiteHandler:nil];
         
     } else {
-        // Local init succeed, you can do your stuff !
+        // Local init succeed, you can now start your site
+        // NB: We highly recommand to NOT call the start SDK method if your application is 
+        // awaken from iBeacon
+        if (!wasLaunchFromBG) {
+        	// Not from BG => OK you can start
+        }
     }
     
     ...
