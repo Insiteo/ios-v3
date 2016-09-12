@@ -167,14 +167,14 @@ If something wrong or is not working as expected maybe you can try to enable SDK
 ## Where To Go From Here?
 
 - Map rendering:
-	- [Display your first map](readme/map.md).
-	- [Add graphical objects on map](readme/map.md#2-add-graphical-objects-on-map)
+	- [Display your first map](https://github.com/Insiteo/ios-v3/tree/master/readme/map.md).
+	- [Add graphical objects on map](https://github.com/Insiteo/ios-v3/tree/master/readme/map.md#2-add-graphical-objects-on-map)
 - Location:
-	- [Get your first location](readme/location.md).
-	- [Setup your first geofencing zone](readme/geofence.md).
-	- [Configure your iBeacons](readme/beacon.md).
-	- [Room counting with iBeacons](readme/room_counting.md).
+	- [Get your first location](https://github.com/Insiteo/ios-v3/tree/master/readme/location.md).
+	- [Setup your first geofencing zone](https://github.com/Insiteo/ios-v3/tree/master/readme/geofence.md).
+	- [Configure your iBeacons](https://github.com/Insiteo/ios-v3/tree/master/readme/beacon.md).
+	- [Room counting with iBeacons](https://github.com/Insiteo/ios-v3/tree/master/readme/room_counting.md).
 - Itinerary:
-	- [Compute your first itinerary](readme/itinerary.md).
+	- [Compute your first itinerary](https://github.com/Insiteo/ios-v3/tree/master/readme/itinerary.md).
 - Analytics tracking events:
-	- [Track Custom Events](readme/analytics.md).
+	- [Track Custom Events](https://github.com/Insiteo/ios-v3/tree/master/readme/analytics.md).
