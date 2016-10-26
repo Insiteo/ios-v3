@@ -36,11 +36,37 @@ andActionBackgroundColorHighlighted:[UIColor colorWithRed:0.25 green:0.52 blue:1
             andMarkerImagePath:markerPath];
     if (self) {
         _zoomLevel = zoomLevel;
+        _hidden = NO;
     }
     return self;
 }
 
 #pragma mark - Override ISGenericRTO methods
+
+- (ISETouchObjectResult)onTouchUp:(ISTouch *)touch {
+    if ([self isHidden]) {
+        // Do not react to touch when hidden
+        return ISETouchObjectResultNothing;
+    }
+    return [super onTouchUp:touch];
+}
+
+- (ISETouchObjectResult)onTouchDown:(ISTouch *)touch {
+    if ([self isHidden]) {
+        // Do not react to touch when hidden
+        return ISETouchObjectResultNothing;
+    }
+    return [super onTouchDown:touch];
+}
+
+
+- (ISETouchObjectResult)onTouchMove:(ISTouch *)touch {
+    if ([self isHidden]) {
+        // Do not react to touch when hidden
+        return ISETouchObjectResultNothing;
+    }
+    return [super onTouchMove:touch];
+}
 
 // This method is called when a RTO is clicked, by default it returns `YES` so you can override or
 // add specific feature

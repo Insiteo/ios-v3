@@ -28,9 +28,11 @@
         BOOL checkZoomLevel = (rto.zoomLevel <= currentZoomLevel);
         if (checkZoomLevel && self.currentMap.mapId == rto.mapId) {
             // Visible
+            rto.hidden = NO;
             [rto render2DWithLayer:layer andRatio:ratio andOffset:offset andAngle:angle andPriority:self.priority];
         } else {
             // Hidden
+            rto.hidden = YES;
             [rto remove2DFromLayer:layer];
         }
     }
