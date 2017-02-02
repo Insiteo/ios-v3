@@ -39,7 +39,7 @@ You can now import our SDK using `#import <InsiteoSDK/InsiteoSDK.h>`.
 
 Alternatively, you can install the iOS SDK manually by following the steps below:
 
-- Download the latest version of [Insiteo SDK](https://github.com/Insiteo/ios-v3/releases/download/3.6.0/InsiteoSDK-v3.6.0.zip).
+- Download the latest version of [Insiteo SDK](https://github.com/Insiteo/ios-v3/releases/download/3.6.1/InsiteoSDK-v3.6.1.zip).
 
 Insiteo's modules are provided as an iOS `library` and an iOS `bundle`. To use them, you will need to link it with your application project. To do that, simply add the `InsiteoSDK` folder to you project.
 
