@@ -192,41 +192,41 @@ typedef NS_ENUM(NSUInteger, ExamplesMapRows) {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UIViewController *newController;
-    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     switch (indexPath.section) {
         case ExamplesSectionInit: {
             // Init
-            SDKInitTableViewController *initController =
-            (SDKInitTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SDKInitExample"];
-            initController.exampleInitMode = (InitMode)indexPath.row;
-            newController = initController;
+            [self performSegueWithIdentifier:@"showInitExample" sender:cell];
             break;
         } case ExamplesSectionMap: {
             // Map
-            MapViewController *mapController =
-            (MapViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"MapExample"];
-            mapController.exampleMapMode = (MapMode)indexPath.row;
-            newController = mapController;
+            [self performSegueWithIdentifier:@"showMapExample" sender:cell];
             break;
         } case ExamplesSectionBeacons: {
             // iBeacons
-            BeaconsTableViewController *beaconsController =
-            (BeaconsTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"BeaconsExample"];
-            newController = beaconsController;
+            [self performSegueWithIdentifier:@"showBeaconExample" sender:cell];
             break;
         } case ExamplesSectionAnalytics: {
             // Analytics
-            AnalyticsViewController *analyticsController =
-            (AnalyticsViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AnalyticsExample"];
-            newController = analyticsController;
+            [self performSegueWithIdentifier:@"showAnalyticsExample" sender:cell];
             break;
         } default:
             break;
     }
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UITableViewCell *cell = (UITableViewCell *)sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
-    if (newController) {
-        [self.navigationController pushViewController:newController animated:YES];
+    if ([segue.identifier isEqualToString:@"showInitExample"]) {
+        SDKInitTableViewController *initController = (SDKInitTableViewController *)segue.destinationViewController;
+        initController.exampleInitMode = (InitMode)indexPath.row;
+    } else if ([segue.identifier isEqualToString:@"showMapExample"]) {
+        MapViewController *mapController = (MapViewController *)segue.destinationViewController;
+        mapController.exampleMapMode = (MapMode)indexPath.row;
     }
 }
 

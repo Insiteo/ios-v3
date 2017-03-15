@@ -233,6 +233,15 @@
             break;
     }
     
+    // Disable zoom gesture (you may still change the zoom level programatically)
+    //_mapView.zoomEnabled = NO;
+    
+    // Disable rotation gesture (you may still change the rotation angle programatically)
+    //_mapView.rotationEnabled = NO;
+    
+    // Disable pan gesture (you may still change the map center programatically)
+    //_mapView.scrollEnabled = NO;
+    
     // Start rendering
     [_mapView startRendering];
 }
