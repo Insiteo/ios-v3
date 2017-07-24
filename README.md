@@ -35,7 +35,7 @@ $ pod install
 
 You can now import our SDK using `#import <InsiteoSDK/InsiteoSDK.h>`.
 
-PS : If you want to use beta builds then you need to replace `master` by the branch name where is the build you're looking for. The branch name will be `3.X`, actually it's `3.6` for `3.6.3f` beta build.
+PS : If you want to use other builds then you need to replace `master` by the branch name where is the build you're looking for.
 
 ```ruby
 pod 'InsiteoSDK', :podspec => 'https://raw.github.com/Insiteo/ios-v3/<Here the branch name>/InsiteoSDK.podspec'
