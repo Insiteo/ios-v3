@@ -4,10 +4,8 @@ Insiteo is a provider of indoor location based services such as Map rendering, L
 
 This sample application will demonstrate how to take full advantage of those services and integrate them in your application.
 
-If you wish to evaluate indoor location in your own building, you can order our test pack including 8 BLE beacons here:
-[http://www.insiteo.com/joomla/index.php/en/contact-us](http://www.insiteo.com/joomla/index.php/en/contact-us).
 
-If you want more information on our services [http://www.insiteo.com/joomla/index.php](http://www.insiteo.com/joomla/index.php)
+If you want more information on our services [http://www.insiteo.com/](http://www.insiteo.com/)
 
 
 ## Insiteo SDK Class Reference
