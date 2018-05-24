@@ -172,5 +172,7 @@ You have the possibility to customize paths thickness and colors, choose to disp
 	- [Setup your first geofencing zone](geofence.md).
 	- [Configure your iBeacons](beacon.md).
 	- [Room counting with iBeacons](room_counting.md).
+- Room counting:
+	- [Track occupancy](https://github.com/Insiteo/ios-v3/tree/master/readme/room_counting.md).
 - Analytics tracking events:
 	- [Track Custom Events](analytics.md).

@@ -151,5 +151,7 @@ Here is how geofence areas can looks like on your map view:
 	- [Room counting with iBeacons](room_counting.md).
 - Itinerary:
 	- [Compute your first itinerary](itinerary.md).
+- Room counting:
+	- [Track occupancy](https://github.com/Insiteo/ios-v3/tree/master/readme/room_counting.md).
 - Analytics tracking events:
 	- [Track Custom Events](analytics.md).

@@ -132,5 +132,7 @@ If you attempt to force SDK initialization on application wake up, you could for
 	- [Room counting with iBeacons](room_counting.md).
 - Itinerary:
 	- [Compute your first itinerary](itinerary.md).
+- Room counting:
+	- [Track occupancy](https://github.com/Insiteo/ios-v3/tree/master/readme/room_counting.md).
 - Analytics tracking events:
 	- [Track Custom Events](analytics.md).

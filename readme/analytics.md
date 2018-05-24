@@ -51,3 +51,5 @@ It can be useful in some cases to add information to a [`ISAnalyticsGenericEvent
 	- [Room counting with iBeacons](room_counting.md).
 - Itinerary:
 	- [Compute your first itinerary](itinerary.md).
+- Room Counting:
+	- [Track occupancy](https://github.com/Insiteo/ios-v3/tree/master/readme/room_counting.md).
