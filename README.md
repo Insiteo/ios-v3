@@ -180,5 +180,7 @@ If something wrong or is not working as expected maybe you can try to enable SDK
 	- [Room counting with iBeacons](https://github.com/Insiteo/ios-v3/tree/master/readme/room_counting.md).
 - Itinerary:
 	- [Compute your first itinerary](https://github.com/Insiteo/ios-v3/tree/master/readme/itinerary.md).
+- Room counting:
+	- [Track occupancy](https://github.com/Insiteo/ios-v3/tree/master/readme/room_counting.md).
 - Analytics tracking events:
 	- [Track Custom Events](https://github.com/Insiteo/ios-v3/tree/master/readme/analytics.md).
