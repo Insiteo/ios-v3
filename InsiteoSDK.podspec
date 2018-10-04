@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'InsiteoSDK'
-  s.version      = '3.6.7'
+  s.version      = '3.6.9'
   s.summary      = 'Official Insiteo SDK for iOS to access Insiteo indoor location based services core features'
 
   s.description  = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '5.1.1'
 
-  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.7/InsiteoSDK-v3.6.7.zip', :flatten => true }
+  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/beta/InsiteoSDK-v3.6.9.zip', :flatten => true }
   s.preserve_paths = 'InsiteoSDK/**/*'
 
   s.public_header_files = 'InsiteoSDK/include/*.h'
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'CoreBluetooth', 'CoreGraphics', 'CoreLocation', 'CoreMotion', 'CoreTelephony', 'CoreText', 'Foundation', 'OpenAL', 'OpenGLES', 'QuartzCore', 'UIKit'
 
-  s.libraries = 'stdc++.6.0.9', 'z', 'sqlite3'
+  s.libraries = 'c++', 'z', 'sqlite3'
 
   s.vendored_libraries = 'InsiteoSDK/libInsiteoSDK.a'
 
