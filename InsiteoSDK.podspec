@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '5.1.1'
 
-  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/beta/InsiteoSDK-v3.6.9.zip', :flatten => true }
+  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.9/InsiteoSDK-v3.6.9.zip', :flatten => true }
   s.preserve_paths = 'InsiteoSDK/**/*'
 
   s.public_header_files = 'InsiteoSDK/include/*.h'
