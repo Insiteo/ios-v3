@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.license      = "Copyright 2015-present Insiteo SAS - All Rights Reserved"
   s.author       = "Insiteo"
 
-  s.platform     = :ios, '5.1.1'
+  s.platform     = :ios, '8.0'
 
   s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.9/InsiteoSDK-v3.6.9.zip', :flatten => true }
   s.preserve_paths = 'InsiteoSDK/**/*'
