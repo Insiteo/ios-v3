@@ -19,17 +19,17 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '8.0'
 
   s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.9/InsiteoSDK-v3.6.9.zip', :flatten => true }
-  s.preserve_paths = 'InsiteoSDK/**/*'
+  s.preserve_paths = '**/*'
 
-  s.public_header_files = 'InsiteoSDK/include/*.h'
+  s.public_header_files = 'include/*.h'
 
-  s.resources = 'InsiteoSDK/InsiteoSDK.bundle', 'InsiteoSDK/glsl/**/*.{fsh,vsh}'
+  s.resources = 'InsiteoSDK.bundle', 'glsl/**/*.{fsh,vsh}'
 
   s.frameworks = 'CoreBluetooth', 'CoreGraphics', 'CoreLocation', 'CoreMotion', 'CoreTelephony', 'CoreText', 'Foundation', 'OpenAL', 'OpenGLES', 'QuartzCore', 'UIKit'
 
   s.libraries = 'c++', 'z', 'sqlite3'
 
-  s.vendored_libraries = 'InsiteoSDK/libInsiteoSDK.a'
+  s.vendored_libraries = 'libInsiteoSDK.a'
 
   s.requires_arc = false
 
