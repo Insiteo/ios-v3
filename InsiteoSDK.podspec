@@ -1,15 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name         = 'InsiteoSDK'
-  s.version      = '3.6.18'
+  s.version      = '3.6.20'
   s.summary      = 'Official Insiteo SDK for iOS to access Insiteo indoor location based services core features'
 
   s.description  = <<-DESC
                    The Insiteo SDK indoor location based services for iOS provides:
                    * 2D/3D map rendering
                    * Indoor location
-                   * Itinerary
-                   * Geofencing
                    DESC
 
   s.homepage     = 'https://github.com/Insiteo/ios-v3'
@@ -18,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '8.0'
 
-  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.18/InsiteoSDK-v3.6.18.zip', :flatten => true }
+  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.20/InsiteoSDK-v3.6.20.zip', :flatten => true }
   s.preserve_paths = '**/*'
 
   s.public_header_files = 'include/*.h'
