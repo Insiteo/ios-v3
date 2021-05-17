@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'InsiteoSDK'
-  s.version      = '3.6.21'
+  s.version      = '3.6.22'
   s.summary      = 'Official Insiteo SDK for iOS to access Insiteo indoor location based services core features'
 
   s.description  = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '8.0'
 
-  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.21/InsiteoSDK-v3.6.21.zip', :flatten => true }
+  s.source = { :http => 'https://github.com/Insiteo/ios-v3/releases/download/3.6.22/InsiteoSDK-v3.6.2Z.zip', :flatten => true }
   s.preserve_paths = '**/*'
 
   s.public_header_files = 'include/*.h'
